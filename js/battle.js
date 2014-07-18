@@ -33,6 +33,7 @@ var photoCloud = {
 
     $(document).on('click', '#wall-scroller a', function(e) {
       e.preventDefault();
+      return false; // nobody gets a link
       if (this.submissions[e.target.id.substr(7)].link)
         window.open(this.sanitize(this.submissions[e.target.id.substr(7)].link));
     }.bind(this));
