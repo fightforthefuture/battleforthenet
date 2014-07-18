@@ -1,0 +1,27 @@
+@screen-xl-min: 1700px;
+
+// media queries
+@desktop-xl:   ~"only screen and (min-width:"@screen-xl-min~")";
+@desktop-lg:   ~"only screen and (min-width:"@screen-lg-min~")";
+@desktop-md:   ~"only screen and (min-width:"@screen-md-min~")";
+@desktop-sm:   ~"only screen and (min-width:"@screen-sm-min~")";
+@tablet:       ~"only screen and (min-width:"@screen-sm-min~")";
+@phone:        ~"only screen and (min-width:"@screen-xs-min~")";
+
+// colors
+@black: #000000;
+@darkgrey: #67727E;
+@greengrey: #E8EEF1;
+@link: #86332F;
+@link-hover: #C54A45;
+@white: #FFFFFF;
+
+// gradients
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}

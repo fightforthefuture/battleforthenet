@@ -1,0 +1,72 @@
+.sharing-buttons {
+
+  margin: 0;
+  padding: 0;
+
+  body > & {
+    left: 0;
+    position: fixed;
+    top: 40%;
+    z-index: 99;
+  }
+
+  .jumbotron > & {
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 175px;
+  }
+
+  li {
+    font-weight: bold;
+    font-size: 0.8em;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 5px 5px 0;
+
+    a {
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      color: @white;
+      display: inline-block;
+      height: 100%;
+      padding: 5px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      width: 100%;
+
+      .jumbotron > & {
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+      }
+
+      &.facebook {
+        background: #3C5A96;
+      }
+
+      &.googleplus {
+        background: #DB585A;
+      }
+
+      &.reddit {
+        background: #FF4500;
+      }
+
+      &.tumblr {
+        background: #32506E;
+      }
+
+      &.twitter {
+        background: #59ADEB;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      body > & span {
+        .visible-lg-inline;
+      }
+    }
+  }
+}
