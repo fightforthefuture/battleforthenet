@@ -308,7 +308,7 @@ var photoCloud = {
       e.preventDefault();
 
       var target = '#' + this.href.split('#')[1];
-      $(target).velocity('scroll', 777, function() {
+      $(target).velocity('scroll', {duration: 777, offset: -50}, function() {
         location.hash = target;
       });
     });
