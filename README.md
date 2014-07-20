@@ -37,6 +37,38 @@ done on our **[Battle for the Net Trello board][3]!**
 
 If you're interested in volunteering, contact <jeff@rubbingalcoholic.com>
 
+### A note about Less for CSS
+
+Our styles are written in **[Less][7]**, a pre-processor language that gets
+compiled to CSS. All of the styles for the site live in
+ 
+    ./less/css/battleforthenet.less
+
+    => WHICH COMPILES TO =>
+
+    ./css/battleforthenet.css
+
+So to do this, via the command line, you would use the `lessc` command with the
+`-x` option (to minify). Example:
+
+    lessc ./less/css/battleforthenet.less -x > ./css/battleforthenet.css
+
+There are also GUI utilities, such as [WinLess][8] that will monitor your less
+files for changes and automatically compile to the location of your choice.
+This is useful if you make a lot of style edits or don't want to manually
+recompile after each one.
+
+Two more things to note about our Less implementation:
+
+1. Only the battleforthenet.less file needs to be edited. The other .less files
+   in the project are automatically included during compilation.
+
+2. The compiled, minified `css/battleforthenet.css` WILL CONFLICT every time a
+   git pull comes down with changes from another commit. Don't worry about it.
+   Just compile what's in the latest `less/css/battleforthenet.less` file and
+   commit the resulting .css file to resolve the conflict.
+   
+
 
 [1]: https://www.battleforthenet.com
 [2]: http://www.fcc.gov/comments
@@ -44,3 +76,5 @@ If you're interested in volunteering, contact <jeff@rubbingalcoholic.com>
 [4]: https://www.fightforthefuture.org
 [5]: http://www.demandprogress.org
 [6]: http://www.netneutrality.com
+[7]: http://lesscss.org/
+[8]: http://winless.org/
