@@ -60,14 +60,14 @@ recompile after each one.
 
 Two more things to note about our Less implementation:
 
-1. Only the battleforthenet.less file needs to be edited. The other .less files
-   in the project are automatically included during compilation.
+1. Only the `less/css/battleforthenet.less` file needs to be edited. The other
+   .less files in the project are automatically included during compilation.
 
-2. The compiled, minified `css/battleforthenet.css` WILL CONFLICT every time a
-   git pull comes down with changes from another commit. Don't worry about it.
+2. The compiled, minified `css/battleforthenet.css` **WILL CONFLICT** each time
+   a git pull comes down with style changes from another commit. Don't worry.
    Just compile what's in the latest `less/css/battleforthenet.less` file and
    commit the resulting .css file to resolve the conflict.
-   
+
 
 
 [1]: https://www.battleforthenet.com
