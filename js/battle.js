@@ -282,6 +282,18 @@ var photoCloud = {
   if (window.location.href.indexOf('#PARTICIPANT') != -1)
     $('#participantModal').modal('show');
 
+  // ShareProgress Facebook button override
+  $('a.share.facebook').click(function(e) {
+    e.preventDefault();
+    $('#sp_fb a').click();
+  });
+
+  // ShareProgress Twitter button override
+  $('a.share.twitter').click(function(e) {
+    e.preventDefault();
+    $('#sp_tw a').click();
+  });
+
   var formFields = [
     "action_comment",
     "address1",
@@ -308,7 +320,7 @@ var photoCloud = {
       e.preventDefault();
 
       var target = '#' + this.href.split('#')[1];
-      $(target).velocity('scroll', {duration: 777, offset: -50}, function() {
+      $(target).velocity('scroll', {duration: 777, offset: -66}, function() {
         location.hash = target;
       });
     });
