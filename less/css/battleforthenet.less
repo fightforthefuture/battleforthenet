@@ -973,6 +973,11 @@ section.political {
       position: relative;
       width: 300px;
 
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
       .details {
         bottom: 15px;
         padding: 0 24px;
@@ -1038,21 +1043,13 @@ section.political {
     }
   }
 
-  .placeholder {
-    max-width: none;
-    img {
-      padding: 5%;
-      width: 100%;
-    }
+  a.btn {
+    font-size: 24px;
+    margin: 32px 0 0;
+    padding: 10px 22px;
 
-    a.btn {
-      font-size: 24px;
-      margin: 32px 0 0;
-      padding: 10px 22px;
-
-      @media @tablet {
-        font-size: 32px;
-      }
+    @media @tablet {
+      font-size: 32px;
     }
   }
 }
