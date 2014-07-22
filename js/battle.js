@@ -63,7 +63,7 @@ var photoCloud = {
         if (data.length == 0)
         {
           console.log('OMG EMPTY - starting over');
-          this.processed = 0;        
+          this.processed = 0;
         }
         callback();
       }.bind(this)
@@ -81,7 +81,7 @@ var photoCloud = {
 
         if (id >= this.nodeCount - 1)
           this.stopRandomBubble = false;
-        
+
       }.bind(this), id*10);
     }.bind(this);
 
@@ -103,7 +103,7 @@ var photoCloud = {
 
   newNode: function(data) {
     var maxRandomDelay = 5000;
-    
+
     var randomDelay = function(id, data, offsets) {
       setTimeout(function() {
         this.loadImageAndDoCallback(this.sanitize(data.avatar), function() {
@@ -273,7 +273,7 @@ var photoCloud = {
 
   if ($('section.wall').length) {
     photoCloud.init();
-    $('.wall-under a').click(function(e) { 
+    $('.wall-under a').click(function(e) {
       e.preventDefault();
       photoCloud.loadMore();
     });
@@ -326,6 +326,14 @@ var photoCloud = {
       $selected.addClass('selected');
     })
     .trigger('hashchange');
+
+  $('.isotope').isotope({
+    itemSelector: '.politician',
+    masonry: {
+      columnWidth : 150,
+      isFitWidth  : true
+    }
+  });
 
   // MODAL //
   // Save comment.

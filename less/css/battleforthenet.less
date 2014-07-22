@@ -899,6 +899,145 @@ section.political {
     max-width: 740px;
   }
 
+  .key {
+    h3 {
+      border-left: solid 10px @white;
+      color: @white;
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 29px;
+      margin: 24px 12px 0;
+      padding-left: 10px;
+      text-transform: uppercase;
+
+      &.cable {
+        border-color: #ee4b4c;
+      }
+
+      &.unknown {
+        border-color: #343444;
+      }
+
+      &.internet {
+        border-color: #2dbb9b;
+      }
+    }
+  }
+
+  .cash {
+    background-color: #292937;
+    margin: 12px auto 12px;
+    padding: 8px;
+    height: 48px;
+    max-width: 580px;
+
+    .spending {
+      float: left;
+      height: 31px;
+      line-height: 31px;
+
+      .money-sign {
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 7px;
+      }
+
+      .amount {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 6px;
+        text-decoration: underline;
+      }
+
+      &.cable {
+        background-color: #ee4b4c;
+        width: 70%;
+      }
+
+      &.internet {
+        background-color: #2dbb9b;
+        width: 30%;
+      }
+    }
+  }
+
+  .isotope {
+    margin: 0 auto;
+    padding: 24px 0;
+
+    .politician {
+      height: 376px;
+      position: relative;
+      width: 300px;
+
+      .details {
+        bottom: 15px;
+        padding: 0 24px;
+        position: absolute;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        width: 100%;
+
+        .name {
+          border-bottom: 1px solid rgba(46, 46, 46, 0.5);
+          font-size: 22px;
+          font-weight: bold;
+          margin-bottom: 6px;
+        }
+        .organization {
+          font-size: 9px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+
+      &.small {
+        height: 188px;
+        width: 150px;
+
+        .details {
+          bottom: 6px;
+
+          .name {
+            border-bottom: none;
+            font-size: 15px;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .color {
+        background-color: rgba(231, 75, 76, 0.5);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      &.team-cable {
+        .color {
+          background-color: rgba(236, 78, 75, 0.5);
+        }
+      }
+
+      &.team-internet {
+        .color {
+          background-color: rgba(44, 188, 155, 0.5);
+        }
+      }
+    }
+  }
+
+  .cash-note {
+    font-size: 13px;
+    a {
+      color: #2dbb9b;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
   .placeholder {
     max-width: none;
     img {

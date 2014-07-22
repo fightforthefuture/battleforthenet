@@ -1,0 +1,77 @@
+# Isotope
+
+_Filter & sort magical layouts_
+
+See [isotopejs.com](http://isotopejs.com) for complete docs and demos.
+
+## Install
+
+A packaged source file includes everything you need to use Isotope.
+
++ [isotope.pkgd.js](http://isotope.metafizzy.co/beta/isotope.pkgd.js)
++ [isotope.pkgd.min.js](http://isotope.metafizzy.co/beta/isotope.pkgd.min.js)
+
+### Bower
+
+If you are cool with the command line, install Isotope as a [Bower](http://bower.io) package:
+
+``` bash
+bower install isotope
+```
+
+## License
+
+Isotope may be used in commercial projects and applications with the one-time purchase of a commercial license. If you are paid to do your job, and part of your job is implementing Isotope, a commercial license is required.
+
+http://isotope.metafizzy.co/license.html
+
+For non-commercial, personal, or open source projects and applications, you may use Isotope under the terms of the [GPL v3 License](http://choosealicense.com/licenses/gpl-v3/). You may use Isotope for free.
+
+## Initialize
+
+### In JavaScript
+
+``` js
+// jQuery
+$('#container').isotope({
+  // options...
+  itemSelector: '.item',
+  masonry: {
+    columnWidth: 200
+  }
+});
+```
+
+``` js
+// vanilla JS
+var container = document.querySelector('#container');
+var iso = new Isotope( container, {
+  // options...
+  itemSelector: '.item',
+  masonry: {
+    columnWidth: 200
+  }
+});
+```
+
+### In HTML
+
+Add a class of `js-isotope` to your element. Options can be set in JSON in `data-isotope-options`.
+
+``` html
+<div class="js-isotope" data-isotope-options='{ "itemSelector": ".item", "masonry": { "columnWidth": 200 } }'>
+  <div class="item"></div>
+  <div class="item"></div>
+  ...
+</div>
+```
+
+## Support
+
+[CodersClan has a dedicated support forum for Isotope](https://www.codersclan.net/?repo_id=1), where you can get personal support from experienced developers.
+
+#### [Get support on CodersClan](https://www.codersclan.net/?repo_id=1)
+
+* * *
+
+By [Metafizzy](http://metafizzy.co)
