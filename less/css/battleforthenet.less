@@ -16,7 +16,7 @@ body {
   @media @tablet {
     background-position: center top;
     background-size: cover;
-  } 
+  }
 }
 
 
@@ -364,6 +364,14 @@ header.navigation {
 
       &:hover {
         color: #2dbb9b
+      }
+
+      &.additional {
+        display: none;
+
+        @media @tablet {
+          display: block;
+        }
       }
 
       @media @phone {
@@ -797,7 +805,7 @@ section.wall {
 
     div.arrow {
       position: absolute;
-      width: 0; 
+      width: 0;
       height: 0;
       margin-left: -15px;
       border-left: 15px solid transparent;
