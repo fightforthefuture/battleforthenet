@@ -975,9 +975,14 @@ section.political {
     padding: 28px 0 42px;
 
     .politician {
-      height: 376px;
+      height: 190px;
       position: relative;
-      width: 300px;
+      width: 150px;
+
+      @media @phone {
+        height: 380px;
+        width: 300px;
+      }
 
       img {
         height: 100%;
@@ -1005,7 +1010,7 @@ section.political {
       }
 
       &.small {
-        height: 188px;
+        height: 190px;
         width: 150px;
 
         .details {
