@@ -3,6 +3,29 @@ if (!window.jQuery) {
   alert('Sorry! Your browser is super outdated, and might have viruses. Please upgrade to Firefox, Chrome, or a newer version of IE - immediately.');
 }
 
+jQuery.template = (function ($) {
+    var templates = {};
+
+    return function (target, values) {
+        if (!templates[target]) {
+            templates[target] = $(target).html();
+        }
+
+        var html = templates[target];
+        for (var i in values) {
+            var pattern = new RegExp('\\$' + i, 'g');
+            html = html.replace(pattern, values[i]);
+        }
+
+        var $html = $(html);
+        for (var i in values) {
+            $html.find('.text-' + i).text(values[i]);
+        }
+
+        return $html;
+    }
+})(jQuery);
+
 var photoCloud = {
 
   // array of submissions from api
@@ -346,14 +369,6 @@ var photoCloud = {
     })
     .trigger('hashchange');
 
-  $('.isotope').isotope({
-    itemSelector: '.politician',
-    masonry: {
-      columnWidth : 150,
-      isFitWidth  : true
-    }
-  });
-
   // MODAL //
   // Save comment.
   $('#editModal .modal-footer button').on('click', function(e) {
@@ -445,6 +460,24 @@ var photoCloud = {
     window.org = 'fp';
   }
 
+  // Political Scoreboard
+  $.getJSON('/js/scoreboard.json', function(players) {
+    var $isotope = $('.isotope');
+
+    for (var i in players) {
+      var $el = $.template('#player', players[i]);
+      $el.appendTo($isotope);
+    }
+
+    $isotope.isotope({
+      itemSelector: '.politician',
+      masonry: {
+        columnWidth : 150,
+        isFitWidth  : true
+      }
+    });
+  });
+
   // Support IE9+
   function getInternetExplorerVersion()
   // Returns the version of Internet Explorer or a -1
@@ -471,3 +504,5 @@ var photoCloud = {
     }
   }
 })(jQuery);
+
+

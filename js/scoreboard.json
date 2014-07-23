@@ -1,0 +1,135 @@
+[
+    {
+        "image": "wheeler.jpg",
+        "name": "Wheeler",
+        "organization": "FCC",
+        "size": "large",
+        "team": "team-cable"
+    },
+    {
+        "image": "walden.jpg",
+        "name": "Waldon",
+        "organization": "Congress",
+        "size": "small",
+        "team": "team-cable"
+    },
+    {
+        "image": "latta.jpg",
+        "name": "Latta",
+        "organization": "Congress",
+        "size": "small",
+        "team": "team-cable"
+    },
+    {
+        "image": "barton.jpg",
+        "name": "Barton",
+        "organization": "House",
+        "size": "small",
+        "team": "team-cable"
+    },
+    {
+        "image": "pompeo.jpg",
+        "name": "Pompeo",
+        "organization": "Congress",
+        "size": "small",
+        "team": "team-cable"
+    },
+    {
+        "image": "pai.jpg",
+        "name": "Pai",
+        "organization": "FCC",
+        "size": "small",
+        "team": "team-cable"
+    },
+    {
+        "image": "oreilly.jpg",
+        "name": "O'Reilly",
+        "organization": "FCC",
+        "size": "small",
+        "team": "team-cable"
+    },
+    {
+        "image": "obama.jpg",
+        "name": "Obama",
+        "organization": "President",
+        "size": "large",
+        "team": "undecided"
+    },
+    {
+        "image": "durbin.jpg",
+        "name": "Durbin",
+        "organization": "Senate",
+        "size": "small",
+        "team": "undecided"
+    },
+    {
+        "image": "waxman.jpg",
+        "name": "Waxman",
+        "organization": "House",
+        "size": "small",
+        "team": "undecided"
+    },
+    {
+        "image": "rosenworcel.jpg",
+        "name": "Rosenworcel",
+        "organization": "FCC",
+        "size": "small",
+        "team": "undecided"
+    },
+    {
+        "image": "reid.jpg",
+        "name": "Reid",
+        "organization": "Senate",
+        "size": "small",
+        "team": "undecided"
+    },
+    {
+        "image": "wyden.jpg",
+        "name": "Wyden",
+        "organization": "Senate",
+        "size": "large",
+        "team": "team-internet"
+    },
+    {
+        "image": "schumer.jpg",
+        "name": "Schumer",
+        "organization": "Senate",
+        "size": "small",
+        "team": "team-internet"
+    },
+    {
+        "image": "nelson.jpg",
+        "name": "Nelson",
+        "organization": "Senate",
+        "size": "small",
+        "team": "team-internet"
+    },
+    {
+        "image": "clyburn.jpg",
+        "name": "Clyburn",
+        "organization": "FCC",
+        "size": "small",
+        "team": "team-internet"
+    },
+    {
+        "image": "markey.jpg",
+        "name": "Markey",
+        "organization": "Senate",
+        "size": "small",
+        "team": "team-internet"
+    },
+    {
+        "image": "eshoo.jpg",
+        "name": "Eshoo",
+        "organization": "House",
+        "size": "small",
+        "team": "team-internet"
+    },
+    {
+        "image": "franken.jpg",
+        "name": "Franken",
+        "organization": "Senate",
+        "size": "small",
+        "team": "team-internet"
+    }
+]
