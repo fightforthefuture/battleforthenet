@@ -286,6 +286,16 @@ var photoCloud = {
     });
   }
 
+  if ($('a.break').length) {
+    $('a.break').click(function(e) {
+      e.preventDefault();
+      window.open($('a.break').attr('href'));
+    });
+    setTimeout(function() {
+      $('a.break').css('opacity', 1);
+    }, 2000);
+  }
+
   if (window.location.href.indexOf('#PARTICIPANT') != -1)
     $('#participantModal').modal('show');
 

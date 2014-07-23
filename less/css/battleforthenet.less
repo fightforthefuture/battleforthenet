@@ -1120,14 +1120,14 @@ section.share-images {
   }
   hr {
     max-width: 700px;
-    margin: 30px auto 50px auto;
+    margin: 40px auto 40px auto;
     border-color: #2c2c35;
   }
 
   .widget {
 
     text-align: left;
-    
+
     .preview {
 
       img {
@@ -1298,6 +1298,43 @@ img.github {
   @media @tablet {
     display: block;
   }
+}
+
+a.break {
+  position: fixed;
+  font-family: Proxima Nova;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  padding: 10px 15px 10px 52px;
+  box-sizing: border-box;
+  color: white;
+  z-index: 9003;
+  background-color: #7573bc;
+  background-image: url('../images/background-v3.jpg');
+  background-position: left top;
+  background-repeat: no-repeat;;
+  background-image: url('../images/breaking.png');
+  background-position: 12px 6px;
+  background-repeat: no-repeat;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
+  font-weight: bold;
+  opacity: 0;
+  box-shadow: 0px 5px 20px black;
+
+  @media @tablet {
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+    display: inline-block;
+    width: auto;
+  }
+}
+a.break:hover {
+  background-color: #6361a2;
 }
 
 body.embed { background: transparent; }
