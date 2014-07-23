@@ -19,9 +19,11 @@ var photoCloud = {
   bubblePopTimer: null,
   stopRandomBubble: false,
   bubbleRandomInterval: 5000,
+  xhr: false,
+  $el: $('#wall-scroller'),
 
   init: function() {
-    this.centerOffset = $('#wall-scroller').offset();
+    this.centerOffset = this.$el.offset();
     $('section.wall').css('height', this.rows * this.thumbSize + 'px');
 
     this.load(function() {
@@ -31,18 +33,18 @@ var photoCloud = {
     }.bind(this));
 
 
-    $(document).on('click', '#wall-scroller a', function(e) {
+    this.$el.on('click', 'a', function(e) {
       e.preventDefault();
       return false; // nobody gets a link
       if (this.submissions[e.target.id.substr(7)].link)
         window.open(this.sanitize(this.submissions[e.target.id.substr(7)].link));
     }.bind(this));
 
-    $(document).on('mouseover', '#wall-scroller a', function(e) {
+    this.$el.on('mouseover', 'a', function(e) {
       this.stopRandomBubble = true;
       this.showBubble(e.target.id.substr(7));
     }.bind(this));
-    $(document).on('mouseout', '#wall-scroller a', function(e) {
+    this.$el.on('mouseout', 'a', function(e) {
       this.stopRandomBubble = false;
       this.hideBubbles();
     }.bind(this));
@@ -52,7 +54,12 @@ var photoCloud = {
 
   load: function(callback) {
     this.processing = true;
-    $.ajax({
+
+    if (this.xhr) {
+      this.xhr.abort();
+    }
+
+    this.xhr = $.ajax({
       url: 'https://api.battleforthenet.com/participants',
       data: 'limit='+this.limit+'&skip='+this.processed,
       dataType: 'json',
@@ -164,7 +171,7 @@ var photoCloud = {
       href: '#',
       target: '_blank'
     });
-    a.appendTo('#wall-scroller');
+    a.appendTo(this.$el);
     setTimeout(function() {
       a.css('opacity', 1);
     }, 10);
@@ -185,7 +192,7 @@ var photoCloud = {
               width:'+this.bubbleWidth+'px;'
     });
     div.html('<strong>'+this.sanitize(data.blurb)+'</strong><span '+(data.link ? /*'class="link"'*/'' : '')+'>'+this.sanitize(data.name)+'</span>');
-    div.appendTo('#wall-scroller');
+    div.appendTo(this.$el);
 
     var aOffsetX = offsets.left+(this.thumbSize/2);
     var aOffsetY = offsets.top-26;
@@ -201,14 +208,14 @@ var photoCloud = {
       style: 'left:'+aOffsetX+'px; \
               top:'+aOffsetY+'px;'
     });
-    arrow.appendTo('#wall-scroller');
+    arrow.appendTo(this.$el);
   },
 
   showRandomBubble: function() {
     if (this.stopRandomBubble)
       return false;
 
-    var links = $('#wall-scroller a');
+    var links = this.$el.find('a');
     var random = Math.floor(Math.random() * links.length);
     this.showBubble(random);
   },
@@ -217,7 +224,7 @@ var photoCloud = {
     if (this.bubblePopTimer)
       clearTimeout(this.bubblePopTimer);
     this.bubblePopTimer = null;
-    $('#wall-scroller a').removeClass('hovered');
+    this.$el.find('a').removeClass('hovered');
     $('div.arrow').css('opacity', 0);
     $('div.bubble').css('opacity', 0);
   },
