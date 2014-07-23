@@ -979,28 +979,22 @@ section.political {
       position: relative;
       width: 150px;
 
-      @media @phone {
-        height: 380px;
-        width: 300px;
-      }
-
       img {
         height: 100%;
         width: 100%;
       }
 
       .details {
-        bottom: 15px;
+        bottom: 6px;
         padding: 0 24px;
         position: absolute;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
         width: 100%;
 
         .name {
-          border-bottom: 1px solid rgba(46, 46, 46, 0.5);
-          font-size: 22px;
+          font-size: 15px;
           font-weight: bold;
-          margin-bottom: 6px;
+          margin-bottom: 0;
         }
         .organization {
           font-size: 9px;
@@ -1020,6 +1014,21 @@ section.political {
             border-bottom: none;
             font-size: 15px;
             margin-bottom: 0;
+          }
+        }
+      }
+
+      @media @phone {
+        height: 380px;
+        width: 300px;
+
+        .details {
+          bottom: 15px;
+
+          .name {
+            border-bottom: 1px solid rgba(46, 46, 46, 0.5);
+            font-size: 22px;
+            margin-bottom: 6px;
           }
         }
       }
