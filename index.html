@@ -211,160 +211,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           </h3>
         </div>
 
-        <div class="isotope">
-          <div class="politician team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/wheeler.jpg">
-            <div class="details">
-              <div class="name">Wheeler</div>
-              <div class="organization">FCC</div>
-            </div>
-          </div>
-          <div class="politician small team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/walden.jpg">
-            <div class="details">
-              <div class="name">Waldon</div>
-              <div class="organization">Congress</div>
-            </div>
-          </div>
-          <div class="politician small team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/latta.jpg">
-            <div class="details">
-              <div class="name">Latta</div>
-              <div class="organization">Congress</div>
-            </div>
-          </div>
-          <div class="politician small team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/barton.jpg">
-            <div class="details">
-              <div class="name">Barton</div>
-              <div class="organization">House</div>
-            </div>
-          </div>
-          <div class="politician small team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/pompeo.jpg">
-            <div class="details">
-              <div class="name">Pompeo</div>
-              <div class="organization">Congress</div>
-            </div>
-          </div>
-          <div class="politician small team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/pai.jpg">
-            <div class="details">
-              <div class="name">Pai</div>
-              <div class="organization">FCC</div>
-            </div>
-          </div>
-          <div class="politician small team-cable">
-            <div class="color"></div>
-            <img src="images/scoreboard/oreilly.jpg">
-            <div class="details">
-              <div class="name">O'Reilly</div>
-              <div class="organization">FCC</div>
-            </div>
-          </div>
-          <div class="politician undecided">
-            <div class="color"></div>
-            <img src="images/scoreboard/obama.jpg">
-            <div class="details">
-              <div class="name">Obama</div>
-              <div class="organization">President</div>
-            </div>
-          </div>
-          <div class="politician small undecided">
-            <div class="color"></div>
-            <img src="images/scoreboard/durbin.jpg">
-            <div class="details">
-              <div class="name">Durbin</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-          <div class="politician small undecided">
-            <div class="color"></div>
-            <img src="images/scoreboard/waxman.jpg">
-            <div class="details">
-              <div class="name">Waxman</div>
-              <div class="organization">House</div>
-            </div>
-          </div>
-          <div class="politician small undecided">
-            <div class="color"></div>
-            <img src="images/scoreboard/rosenworcel.jpg">
-            <div class="details">
-              <div class="name">Rosenworcel</div>
-              <div class="organization">FCC</div>
-            </div>
-          </div>
-          <div class="politician small undecided">
-            <div class="color"></div>
-            <img src="images/scoreboard/reid.jpg">
-            <div class="details">
-              <div class="name">Reid</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-          <div class="politician team-internet">
-            <div class="color"></div>
-            <img src="images/scoreboard/wyden.jpg">
-            <div class="details">
-              <div class="name">Wyden</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-          <div class="politician team-internet small">
-            <div class="color"></div>
-            <img src="images/scoreboard/schumer.jpg">
-            <div class="details">
-              <div class="name">Schumer</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-          <div class="politician team-internet small">
-            <div class="color"></div>
-            <img src="images/scoreboard/nelson.jpg">
-            <div class="details">
-              <div class="name">Nelson</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-          <div class="politician team-internet small">
-            <div class="color"></div>
-            <img src="images/scoreboard/clyburn.jpg">
-            <div class="details">
-              <div class="name">Clyburn</div>
-              <div class="organization">FCC</div>
-            </div>
-          </div>
-          <div class="politician team-internet small">
-            <div class="color"></div>
-            <img src="images/scoreboard/markey.jpg">
-            <div class="details">
-              <div class="name">Markey</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-          <div class="politician team-internet small">
-            <div class="color"></div>
-            <img src="images/scoreboard/eshoo.jpg">
-            <div class="details">
-              <div class="name">Eshoo</div>
-              <div class="organization">House</div>
-            </div>
-          </div>
-          <div class="politician team-internet small">
-            <div class="color"></div>
-            <img src="images/scoreboard/franken.jpg">
-            <div class="details">
-              <div class="name">Franken</div>
-              <div class="organization">Senate</div>
-            </div>
-          </div>
-        </div>
+        <div class="isotope"></div>
 
         <div class="cash">
           <div class="spending cable">
@@ -598,6 +445,16 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         window.onload = (typeof window.onload != 'function') ?
           loadChartbeat : function() { oldonload(); loadChartbeat(); };
       })();
+    </script>
+    <script type="text/template" id="player">
+      <div class="politician $team $size">
+        <div class="color"></div>
+        <img src="images/scoreboard/$image">
+        <div class="details">
+          <div class="name text-name"></div>
+          <div class="organization text-organization"></div>
+        </div>
+      </div>
     </script>
   </body>
 </html>
