@@ -380,6 +380,12 @@ header.navigation {
       }
     }
   }
+
+  @media @tablet {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
 }
 
 .modal-backdrop{
@@ -1200,12 +1206,12 @@ body.privacy {
 }
 
 img.github {
-  position: fixed;
+  position: absolute;
   display: none;
   top: 0px;
   right: 0px;
   border: 0;
-  z-index: 9003;
+  z-index: 9001;
   @media @tablet {
     display: block;
   }
