@@ -35,7 +35,9 @@ our [battleforthenet.com][1] site. You can see our code right in this Github
 repo by switching to the _gh_pages_ branch, and you can see the work we need
 done on our **[Battle for the Net Trello board][3]!**
 
-If you're interested in volunteering, contact <jeff@rubbingalcoholic.com>
+If you're interested in volunteering, contact <jeff@rubbingalcoholic.com> or
+check out https://fightforthefuture.github.io/volunteers for more information
+about volunteering.
 
 ### A note about Less for CSS
 
