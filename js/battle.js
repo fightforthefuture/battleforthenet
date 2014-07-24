@@ -471,13 +471,47 @@ var photoCloud = {
   }
 
   // Political Scoreboard
-  $.getJSON('/js/scoreboard.json', function(players) {
+  $.getJSON('https://spreadsheets.google.com/feeds/list/1-hBOL7oNJXWvUdhK0veiybSXaYFUZu1aNUuRyNeaUmg/default/public/values?alt=json', function(response) {
     var $isotope = $('.isotope');
 
-    for (var i in players) {
-      var $el = $.template('#player', players[i]);
-      $el.appendTo($isotope);
+
+    // Parse & sort
+    var players = [];
+    for (var i in response.feed.entry) {
+      var player = response.feed.entry[i];
+
+      player = {
+        name: player.gsx$name.$t,
+        organization: player.gsx$organization.$t,
+        image: player.gsx$imagepleasedontedit.$t,
+        weight: player.gsx$weight.$t,
+        team: player.gsx$team.$t,
+        size: player.gsx$size.$t
+      };
+
+      if (player.team) {
+        players.push(player);
+      }
     }
+
+    players = players.sort(function (a, b) {
+      return b.weight - a.weight;
+    });
+
+    // Create elements
+    var $els = $('<div>');
+    for (var i in players) {
+      if (i > 50) {
+        break;
+      }
+
+      var player = players[i],
+          $el = $.template('#player', player);
+
+      $el.appendTo($els);
+    }
+
+    $els.appendTo($isotope);
 
     $isotope.isotope({
       itemSelector: '.politician',
