@@ -974,10 +974,15 @@ section.political {
     margin: 0 auto;
     padding: 28px 0 42px;
 
+    &.no-transitions .politician {
+      transition-property: none !important;
+    }
+
     .politician {
       height: 190px;
       position: relative;
       width: 150px;
+
 
       img {
         height: 100%;
