@@ -124,11 +124,15 @@ jQuery(function($) {
 
             player = _.findWhere(players, query);
 
-            if (!player && query.team === 'undecided') {
-                if ((position.x + 1) / across > .5) {
-                    query.team = 'team-internet';
+            if (!player) {
+                if (query.team === 'undecided') {
+                    if ((position.x + 1) / across > .5) {
+                        query.team = 'team-internet';
+                    } else {
+                        query.team = 'team-cable';
+                    }
                 } else {
-                    query.team = 'team-cable';
+                    query.team = 'undecided';
                 }
             }
 
