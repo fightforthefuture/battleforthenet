@@ -948,24 +948,34 @@ section.understand {
     margin: 12px auto 0;
     max-width: 650px;
   }
-
-  iframe {
-    border: 10px solid #4c4c64;
-    border-radius: 5px;    
-    margin-top: 36px;
-    box-sizing: border-box;
-    width: 315px;
-    height: 240px;
-
-    @media @phone {
-      height: 264px;
-      width: 400px;
-    }
-
+  .video_wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    margin: 30px auto 0px auto;
     @media @tablet {
+      padding-top: 0px;
+      padding-bottom: 0px;
       height: 399px;
       width: 640px;
     }
+  }
+  .video_wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border: 10px solid #4c4c64;
+    border-radius: 5px;    
+    box-sizing: border-box;
+  
+  }
+
+  iframe {
+    
   }
 
   .understand-take-action {
