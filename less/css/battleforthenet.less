@@ -930,7 +930,7 @@ section.understand {
   color: @white;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px;
+  padding: 60px 0px;
   text-align: center;
 
   h2 {
@@ -951,10 +951,11 @@ section.understand {
 
   iframe {
     border: 10px solid #4c4c64;
-    border-radius: 5px;
-    height: 168px;
+    border-radius: 5px;    
     margin-top: 36px;
-    width: 230px;
+    box-sizing: border-box;
+    width: 315px;
+    height: 240px;
 
     @media @phone {
       height: 264px;
