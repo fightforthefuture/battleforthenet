@@ -710,34 +710,26 @@ section.team-internet {
   }
 
   a.btn {
-    font-size: 24px;
+    font-size: 22px;
     margin: 32px 0 0;
-    padding: 10px 22px;
+    padding: 9px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    vertical-align: middle;
+    text-transform: uppercase;
 
     @media @tablet {
-      font-size: 32px;
+      font-size: 20px;
+    }
+    img {
+      vertical-align: middle;
+      margin-top: -5px;
     }
   }
 }
 
-section.wall-under {
-  background-color: #313142;
-  color: @white;
-  font-family: 'Proxima Nova', sans-serif;
-  font-weight: 300;
-  padding: 40px 28px 60px 28px;
-  text-align: center;
 
-  a.btn {
-    font-size: 24px;
-    margin: 0px 0 0;
-    padding: 10px 22px;
-
-    @media @tablet {
-      font-size: 32px;
-    }
-  }
-}
 
 section.wall {
   background-color: #000;
@@ -826,6 +818,105 @@ section.wall {
       opacity: 0;
       pointer-events: none;
     }
+  }
+
+}
+
+section.wall-under {
+  background-color: #313142;
+  color: @white;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 300;
+  padding: 40px 28px 60px 28px;
+  text-align: center;
+  .columns {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    display: none;
+    @media @tablet {
+      display: block;
+    }
+  }
+  .columns .show_all {
+    display: none;
+  }
+  .columns.obscured {
+  }
+  .columns.obscured .show_all {
+    position: absolute;
+    display: block;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    border: 0px none transparent;
+    z-index: 2;
+    font-size: 16px;
+  }
+  .columns.obscured .show_all a {
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Proxima Nova', sans-serif;
+    text-decoration: underline;
+  }
+  .columns.obscured .show_all a:hover {
+    color: pink;
+  }
+  .columns.obscured .gradient {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+
+    pointer-events: none;
+    z-index: 1;
+    border: 0px none transparent;
+    background: url(../images/gradient.png) bottom left repeat-x;
+
+
+  }
+  .columns > div {
+    border-right: 1px solid #4e4e66;
+    padding: 0px;
+  }
+  .columns > div.listing {
+    min-height: 350px;
+  }
+  .columns > div:last-child {
+    border: 0px none transparent;
+  }
+  h5 {
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0px 0px 15px 0px;
+    border-bottom: 1px solid #4e4e66;
+  }
+  ul {
+    margin: 20px 0px 0px 0px;
+    padding: 0px;
+    list-style-type: none;
+  }
+  li { 
+    padding: 0px 15px;
+  }
+  li a, li span {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px 0px;
+    border-bottom: 1px solid #4e4e66;
+    color: white;
+  }
+  li span {
+    border-bottom: 1px solid transparent;
+  }
+  li a:hover {
+    border-bottom: 1px solid white;
   }
 }
 

@@ -305,7 +305,7 @@ var photoCloud = {
 
   if ($('section.wall').length) {
     photoCloud.init();
-    $('.wall-under a').click(function(e) {
+    $('a.moar-people').click(function(e) {
       e.preventDefault();
       photoCloud.loadMore();
     });
@@ -334,6 +334,23 @@ var photoCloud = {
   $('a.share.twitter').click(function(e) {
     e.preventDefault();
     $('#sp_tw a').click();
+  });
+
+  $('.columns .show_all a').click(function(e) {
+    e.preventDefault();
+    $('.columns').removeClass('obscured');
+    var biggest_height = 0;
+    $('.columns > div').each(function() {
+      var height = $(this).innerHeight();
+      if (height > biggest_height)
+        biggest_height = height;
+    });
+    $('.columns > div.listing').each(function() {
+      $(this).css('height', biggest_height +'px');
+    });
+    $( ".columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
+      // Animation complete.
+    });
   });
 
   var formFields = [
@@ -497,5 +514,26 @@ var photoCloud = {
       $('input, textarea').placeholder();
     }
   }
+
+  $.ajax({
+    url: 'https://api.battleforthenet.com/participants/listed',
+    dataType: 'json',
+    type: 'get',
+    success: function(data) {
+      for (var i=0; i<data.length; i++)
+      {
+        var li = $('<li/>', {
+          id: 'listing_'+data[i]._id
+        });
+        var html = '<span>' + data[i].name + '</span>';
+
+        if (data[i].link)
+          html = '<a href="'+data[i].link+'" target="_blank">' + data[i].name + '</a>';
+
+        li.html(html);
+        li.appendTo($('.listing.'+data[i].listing+ ' ul'));
+      }
+    }
+  });
 
 })(jQuery);
