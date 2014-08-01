@@ -16,7 +16,8 @@ jQuery(function($) {
                 image: '/images/scoreboard/' + player.gsx$imagepleasedontedit.$t,
                 weight: player.gsx$weight.$t,
                 team: player.gsx$team.$t,
-                size: player.gsx$size.$t
+                size: player.gsx$size.$t,
+                meta: player.gsx$meta.$t
             };
 
             if (player.team) {
@@ -31,8 +32,11 @@ jQuery(function($) {
         // Create elements
         var $els = $('<div>');
         for (var i in players) {
-            var player = players[i],
-                $el = $.template('#player', player);
+            var player = players[i];
+            var $el = $.template('#player', player);
+            console.log(player);
+            console.log($el);
+            console.log('---');
 
             $el.data('meta', player);
 
