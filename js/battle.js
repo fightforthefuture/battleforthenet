@@ -303,6 +303,21 @@ var photoCloud = {
 
 (function($) {
 
+  $.ajax({
+    url: 'http://fftf-geocoder.herokuapp.com/',
+    dataType: 'json',
+    type: 'get',
+    success: function(data) {
+      console.log('geo data: ', data);
+      if (data.country && data.country.iso_code)
+      {
+        $('#country').val(data.country.iso_code);
+        if (data.country.iso_code != "US")
+          $('.form .note').html('Net neutrality matters. <strong>Everywhere.</strong>');
+      }
+    }
+  });
+
   if ($('section.wall').length) {
     photoCloud.init();
     $('a.moar-people').click(function(e) {
@@ -421,12 +436,13 @@ var photoCloud = {
     });
 
     doc['action_comment'] = $("[name=action_comment]").val();
-
+    doc['country'] = $('#country').val();
     doc['org'] = window.org;
 
     if (ok) {
       $.ajax({
         url: "https://api.battleforthenet.com/submit",
+        // url: "http://debbie:3019/submit",
         type: "post",
         dataType: "json",
         data: doc,
@@ -515,25 +531,27 @@ var photoCloud = {
     }
   }
 
-  $.ajax({
-    url: 'https://api.battleforthenet.com/participants/listed',
-    dataType: 'json',
-    type: 'get',
-    success: function(data) {
-      for (var i=0; i<data.length; i++)
-      {
-        var li = $('<li/>', {
-          id: 'listing_'+data[i]._id
-        });
-        var html = '<span>' + data[i].name + '</span>';
+  if ($('.listing').length) {
+    $.ajax({
+      url: 'https://api.battleforthenet.com/participants/listed',
+      dataType: 'json',
+      type: 'get',
+      success: function(data) {
+        for (var i=0; i<data.length; i++)
+        {
+          var li = $('<li/>', {
+            id: 'listing_'+data[i]._id
+          });
+          var html = '<span>' + data[i].name + '</span>';
 
-        if (data[i].link)
-          html = '<a href="'+data[i].link+'" target="_blank">' + data[i].name + '</a>';
+          if (data[i].link)
+            html = '<a href="'+data[i].link+'" target="_blank">' + data[i].name + '</a>';
 
-        li.html(html);
-        li.appendTo($('.listing.'+data[i].listing+ ' ul'));
+          li.html(html);
+          li.appendTo($('.listing.'+data[i].listing+ ' ul'));
+        }
       }
-    }
-  });
+    });
+  }
 
 })(jQuery);

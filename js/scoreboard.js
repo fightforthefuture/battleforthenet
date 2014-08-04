@@ -34,9 +34,6 @@ jQuery(function($) {
         for (var i in players) {
             var player = players[i];
             var $el = $.template('#player', player);
-            console.log(player);
-            console.log($el);
-            console.log('---');
 
             $el.data('meta', player);
 
