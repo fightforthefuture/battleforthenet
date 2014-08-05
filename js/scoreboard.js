@@ -25,7 +25,18 @@ jQuery(function($) {
         }
 
         players = players.sort(function(a, b) {
-            return b.weight - a.weight;
+            var weightA = a.weight,
+                weightB = b.weight;
+
+            if (a.organization === 'Senate') {
+                weightA += 10;
+            }
+
+            if (b.organization === 'Senate') {
+                weightB += 10;
+            }
+
+            return weightB - weightA;
         });
 
         // Create elements
