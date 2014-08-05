@@ -1356,3 +1356,22 @@ body.embed .editModal .modal-content .modal-header p { display: none; }
 body.embed .editModal .modal-content .modal-header .close { margin-top: -12px; }
 body.embed .editModal .modal-content .modal-disclosure { display: block; margin-top: 15px; color: #bbb; text-align: center; }
 
+body#scoreboard {
+  background-image: none;
+
+  #contact-them {
+    height: 480px;
+
+    @media @phone {
+      height: 420px;
+    }
+
+    @media @tablet {
+      height: 420px;
+    }
+
+    @media @desktop-md {
+      height: 380px;
+    }
+  }
+}
