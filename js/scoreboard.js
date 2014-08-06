@@ -4,6 +4,8 @@ jQuery(function($) {
     var spreadsheetKey = $isotope.data('spreadsheet-key');
     var spreadsheetUrl = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetKey + '/default/public/values?alt=json';
 
+    var isFrontpage = $isotope.data('frontpage');
+
     $.getJSON(spreadsheetUrl, function(response) {
         // Parse & sort by weight
         var players = [];
@@ -11,6 +13,7 @@ jQuery(function($) {
             var player = response.feed.entry[i];
 
             player = {
+                frontpage: +player.gsx$frontpage.$t,
                 name: player.gsx$name.$t,
                 organization: player.gsx$organization.$t,
                 image: '/images/scoreboard/' + player.gsx$imagepleasedontedit.$t,
@@ -20,13 +23,24 @@ jQuery(function($) {
                 meta: player.gsx$meta.$t
             };
 
-            if (player.team) {
+            if (player.team && (!isFrontpage || player.frontpage === 1)) {
                 players.push(player);
             }
         }
 
         players = players.sort(function(a, b) {
-            return b.weight - a.weight;
+            var weightA = a.weight,
+                weightB = b.weight;
+
+            if (a.organization === 'Senate') {
+                weightA += 10;
+            }
+
+            if (b.organization === 'Senate') {
+                weightB += 10;
+            }
+
+            return weightB - weightA;
         });
 
         // Create elements

@@ -1204,6 +1204,18 @@ section.political {
     @media @tablet {
       font-size: 32px;
     }
+
+
+
+    &.btn-all {
+      background-color: #7573bc;
+      color: @white;
+      margin-bottom: 32px;
+
+      &:hover {
+        background-color: #605fa2;
+      }
+    }
   }
 }
 
@@ -1474,3 +1486,34 @@ body.embed .editModal .modal-content .modal-header p { display: none; }
 body.embed .editModal .modal-content .modal-header .close { margin-top: -12px; }
 body.embed .editModal .modal-content .modal-disclosure { display: block; margin-top: 15px; color: #bbb; text-align: center; }
 
+body#scoreboard {
+  background-image: none;
+
+  .homepage-link {
+    color: #7573bc;
+    left: 12px;
+    position: absolute;
+    top: 12px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @white;
+    }
+  }
+
+  #contact-them {
+    height: 480px;
+
+    @media @phone {
+      height: 420px;
+    }
+
+    @media @tablet {
+      height: 420px;
+    }
+
+    @media @desktop-md {
+      height: 380px;
+    }
+  }
+}
