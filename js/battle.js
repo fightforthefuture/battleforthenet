@@ -304,11 +304,10 @@ var photoCloud = {
 (function($) {
 
   $.ajax({
-    url: 'http://fftf-geocoder.herokuapp.com/',
+    url: '//fftf-geocoder.herokuapp.com/',
     dataType: 'json',
     type: 'get',
     success: function(data) {
-      console.log('geo data: ', data);
       if (data.country && data.country.iso_code)
       {
         $('#country').val(data.country.iso_code);
@@ -541,7 +540,7 @@ var photoCloud = {
         {
           if (!data[i].listing)
             continue;
-          
+
           var li = $('<li/>', {
             id: 'listing_'+data[i]._id
           });
