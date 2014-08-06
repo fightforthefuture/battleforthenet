@@ -539,13 +539,16 @@ var photoCloud = {
       success: function(data) {
         for (var i=0; i<data.length; i++)
         {
+          if (!data[i].listing)
+            continue;
+          
           var li = $('<li/>', {
             id: 'listing_'+data[i]._id
           });
-          var html = '<span>' + data[i].name + '</span>';
+          var html = '<span>' + photoCloud.sanitize(data[i].name) + '</span>';
 
           if (data[i].link)
-            html = '<a href="'+data[i].link+'" target="_blank">' + data[i].name + '</a>';
+            html = '<a href="'+photoCloud.sanitize(data[i].link)+'" target="_blank">' + photoCloud.sanitize(data[i].name) + '</a>';
 
           li.html(html);
           li.appendTo($('.listing.'+data[i].listing+ ' ul'));
