@@ -138,7 +138,7 @@ var photoCloud = {
 
     var randomDelay = function(id, data, offsets) {
       setTimeout(function() {
-        this.loadImageAndDoCallback(this.sanitize(data.avatar.replace('http:', '')), function() {
+        this.loadImageAndDoCallback(this.sanitize(data.avatar.replace('http:', '')), data._id, function() {
           this.insertNodeElement(id, data, offsets);
         }.bind(this));
       }.bind(this), Math.floor(Math.random() * maxRandomDelay));
@@ -159,7 +159,7 @@ var photoCloud = {
     if (offsets.OUT_OF_BOUNDS)
       return;
 
-    this.loadImageAndDoCallback(this.sanitize(data.avatar.replace('http:', '')), function() {
+    this.loadImageAndDoCallback(this.sanitize(data.avatar.replace('http:', '')), data._id, function() {
       $('#avatar_'+id).css('opacity', 0);
       $('#bubble_'+id).css('opacity', 0);
       $('#pointy_'+id).css('opacity', 0);
@@ -174,11 +174,15 @@ var photoCloud = {
     this.processed++;
   },
 
-  loadImageAndDoCallback: function(src, callback) {
+  loadImageAndDoCallback: function(src, id, callback) {
     var image = new Image();
     image.src = src;
     image.onload = callback;
-    image.onerror = callback;
+    image.onerror = function() {
+      if (src.indexOf('twimg.com') != -1)
+        this.reportBrokenImage(id);
+      callback()
+    }.bind(this);
   },
 
   insertNodeElement: function(id, data, offsets) {
@@ -297,11 +301,27 @@ var photoCloud = {
     str = str.replace(/shit/ig, '$#!@');
     str = str.replace(/fuck/ig, '@!#&');
     return str;
+  },
+
+  reportBrokenImage: function(id)
+  {
+    $.ajax({
+      url: "https://api.battleforthenet.com/participants/brokenImage",
+      // url: "http://debbie:3019/participants/reportBrokenImage", // JL TEST ~
+      type: "post",
+      dataType: "json",
+      data: { id: id },
+      success: function(res) {
+        console.log('reported broken image: ', res);
+      }
+    });
   }
 };
 
 
 (function($) {
+
+  // photoCloud.reportBrokenImage('53c43b6de4c4540200af5800'); // JL TEST ~
 
   $.ajax({
     url: '//fftf-geocoder.herokuapp.com/',
@@ -441,7 +461,7 @@ var photoCloud = {
     if (ok) {
       $.ajax({
         url: "https://api.battleforthenet.com/submit",
-        // url: "http://debbie:3019/submit",
+        // url: "http://debbie:3019/submit",    // JL TEST ~ 
         type: "post",
         dataType: "json",
         data: doc,
