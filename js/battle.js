@@ -138,7 +138,7 @@ var photoCloud = {
 
     var randomDelay = function(id, data, offsets) {
       setTimeout(function() {
-        this.loadImageAndDoCallback(this.sanitize(data.avatar), function() {
+        this.loadImageAndDoCallback(this.sanitize(data.avatar.replace('http:', '')), function() {
           this.insertNodeElement(id, data, offsets);
         }.bind(this));
       }.bind(this), Math.floor(Math.random() * maxRandomDelay));
@@ -159,7 +159,7 @@ var photoCloud = {
     if (offsets.OUT_OF_BOUNDS)
       return;
 
-    this.loadImageAndDoCallback(this.sanitize(data.avatar), function() {
+    this.loadImageAndDoCallback(this.sanitize(data.avatar.replace('http:', '')), function() {
       $('#avatar_'+id).css('opacity', 0);
       $('#bubble_'+id).css('opacity', 0);
       $('#pointy_'+id).css('opacity', 0);
@@ -189,7 +189,7 @@ var photoCloud = {
               top:'+offsets.top+'px; \
               width:'+this.thumbSize+'px; \
               height:'+this.thumbSize+'px; \
-              background-image: url('+this.sanitize(data.avatar)+'); \
+              background-image: url('+this.sanitize(data.avatar.replace('http:', ''))+'); \
               background-size: '+this.thumbSize+'px auto;'
     });
     a.attr({
