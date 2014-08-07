@@ -306,7 +306,7 @@ var photoCloud = {
   reportBrokenImage: function(id)
   {
     $.ajax({
-      url: "https://api.battleforthenet.com/participants/brokenImage",
+      url: "https://api.battleforthenet.com/participants/reportBrokenImage",
       // url: "http://debbie:3019/participants/reportBrokenImage", // JL TEST ~
       type: "post",
       dataType: "json",
