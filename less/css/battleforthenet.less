@@ -1083,7 +1083,7 @@ section.political {
 
   .isotope {
     margin: 0 auto;
-    padding: 28px 0 42px;
+    padding: 28px 0 0px 0;
 
     &.no-transitions .politician {
       transition-property: none !important;
@@ -1211,6 +1211,8 @@ section.political {
       background-color: #7573bc;
       color: @white;
       margin-bottom: 32px;
+      font-size: 22px;
+      padding: 3px 10px;
 
       &:hover {
         background-color: #605fa2;
@@ -1361,21 +1363,6 @@ body.privacy {
     }
   }
 
-  section.title {
-    background-color: #7573bc;
-    padding: 36px 28px 52px;
-    text-align: center;
-
-    a {
-      font-weight: bold;
-    }
-
-    h2 {
-      color: @white;
-      font-size: 64px;
-    }
-  }
-
   section.team-internet {
     p {
       text-align: left;
@@ -1384,6 +1371,22 @@ body.privacy {
     &.fight-for-the-future {
       background-color: #1c1c25;
     }
+  }
+}
+
+section.title {
+  background-color: #7573bc;
+  padding: 36px 28px 52px;
+  text-align: center;
+
+  a {
+    color: white;
+    font-weight: bold;
+  }
+
+  h2 {
+    color: @white;
+    font-size: 64px;
   }
 }
 
@@ -1490,14 +1493,16 @@ body#scoreboard {
   background-image: none;
 
   .homepage-link {
-    color: #7573bc;
-    left: 12px;
-    position: absolute;
-    top: 12px;
-    transition: color 0.3s;
+    background-color: #7573bc;
+    color: white;
+    display: block;
+    font-weight: bold;
+    padding: 15px 20px;
+    transition: color 0.3s, background-color 0.3s;
 
     &:hover {
-      color: @white;
+      background-color: #605fa2;
+      text-decoration: underline;
     }
   }
 
