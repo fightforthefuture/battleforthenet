@@ -35,6 +35,7 @@ var photoCloud = {
   processing: false,
   processed: 0,
   limit: 500,
+  page: 0,
   nodeCount: 0,
   thumbSize: 60,
   rows: 10,
@@ -86,16 +87,18 @@ var photoCloud = {
 
     this.xhr = $.ajax({
       url: 'https://api.battleforthenet.com/participants',
-      data: 'limit='+this.limit+'&skip='+this.processed,
+      data: 'limit='+this.limit+'&skip='+(this.page * this.limit),
       dataType: 'json',
       type: 'get',
       success: function(data) {
+        this.page++;
         this.processing = false;
         this.submissions = this.submissions.concat(data);
         if (data.length == 0)
         {
           console.log('OMG EMPTY - starting over');
           this.processed = 0;
+          this.page = 0;
         }
         callback();
       }.bind(this)
