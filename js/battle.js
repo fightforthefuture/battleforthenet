@@ -14,7 +14,6 @@ if (!window.jQuery) {
         var $html = $('<div>' + templates[target] + '</div>');
 
         for (var i in values) {
-            $html.find('.attribute-' + i).attr(i, values[i]);
             $html.find('.class-' + i).addClass(values[i]);
             $html.find('.href-' + i).attr('href', values[i]);
             $html.find('.src-' + i).attr('src', values[i]);
@@ -464,7 +463,7 @@ var photoCloud = {
     if (ok) {
       $.ajax({
         url: "https://api.battleforthenet.com/submit",
-        // url: "http://debbie:3019/submit",    // JL TEST ~ 
+        // url: "http://debbie:3019/submit",    // JL TEST ~
         type: "post",
         dataType: "json",
         data: doc,
