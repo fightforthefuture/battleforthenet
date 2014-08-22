@@ -3,15 +3,25 @@
 @import "social_media.less";
 @import "fonts.less";
 
+/* Bootstrap add-on */
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 body {
   background-attachment: fixed;
   background-color: #0d0c11;
   background-image: url('../images/background-v5.jpg');
   background-position: left top;
   background-repeat: no-repeat;
-  background-size: 300%;
   color: @darkgrey;
   font-family: 'Roboto', sans-serif;
+
+  &#developer {
+    background-image: url('../images/tools/developer.jpg');
+  }
+
 
   &#scoreboard {
     background-image: none;
@@ -19,7 +29,7 @@ body {
 
   @media @tablet {
     background-position: center top;
-    background-size: cover;
+    background-size: auto 790px;
   }
 }
 
@@ -45,8 +55,38 @@ a {
   max-width: 950px;
   padding: 100px 50px 0;
 
+  &.developer {
+    padding: 100px 0px 20px 0px;
+    position: relative;
+    text-shadow: 0px 1px 10px black;
+
+    .signup-thanks {
+      position: absolute;
+      bottom: 40px;
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+  }
+
+  small {
+    color: white;
+    opacity: .6;
+  }
+
+  .input-group {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+  }
+
   @media @tablet {
     padding-top: 190px;
+
+    &.developer {
+      padding-top: 190px;
+    }
   }
 
   background: transparent;
@@ -71,12 +111,26 @@ a {
 
   p {
     font-size: 16px;
-    text-transform: uppercase;
     padding-top: 12px;
+
+    &.slogan {
+      text-transform: uppercase;
+    }
 
     @media @desktop-md {
       padding: 0 20px;
       font-size: 22px;
+    }
+  }
+
+  a.privacy {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: underline;
+      color: pink;
     }
   }
 }
@@ -342,6 +396,15 @@ header.navigation {
   padding: 0;
   text-align: center;
   text-transform: uppercase;
+
+  a.back {
+    display: block;
+    padding: 20px 0px 0px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    color: white; 
+  }
 
   ul {
     margin: 0;
@@ -652,8 +715,9 @@ header.navigation {
   }
 }
 
-section.team-cable {
-  background-color: rgba(28, 28, 37, .90);
+section.team-cable, section.widget {
+  background-color: rgba(28, 28, 37, 1);
+
   color: @white;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
@@ -676,6 +740,50 @@ section.team-cable {
     margin: 36px auto 0;
     max-width: 650px;
   }
+
+  
+
+  
+}
+
+section.widget {
+  background-color: #313142;
+
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: pink;
+      text-decoration: underline;
+    }
+  }
+
+  .mockups {
+    padding-top: 25px;
+
+    img {
+      display: block;
+      margin: 15px auto 5px auto;
+    }
+
+    iframe {
+      display: block;
+      margin: 15px auto 5px auto;
+      width: 750px;
+      height: 400px;
+    }
+  }
+
+  hr {
+    background-color: #313141;
+    border: none;
+    height: 1px;
+    margin: 25px auto 0px auto;
+    max-width: 740px;
+  }
+
 }
 
 section.team-internet {
@@ -1269,6 +1377,15 @@ section.share-images {
 
     text-align: left;
 
+    a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+      &:hover {
+        color: pink;
+      }
+    }
+
     .preview {
 
       img {
@@ -1281,6 +1398,12 @@ section.share-images {
     font-size: 24px;
     margin: 32px 0 0;
     padding: 10px 22px;
+    text-decoration: none;
+    font-weight: normal;
+
+    &:hover {
+      color: white;
+    }
 
     @media @tablet {
       font-size: 32px;
@@ -1382,6 +1505,10 @@ section.title {
   a {
     color: white;
     font-weight: bold;
+
+    &:hover {
+      color: pink;
+    }
   }
 
   h2 {
