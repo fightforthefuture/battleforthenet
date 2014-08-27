@@ -40,6 +40,10 @@
 
   <body id="developer">
 
+    <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank">
+      <img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" class="github fixed" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+    </a>
+
     <a name="email-updates"></a>    
     <div class="container-fluid">
       <div id="first-fold">
@@ -89,7 +93,7 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
 <p>
 A few days before the final FCC deadline for open Internet comments, we are
 making an open call for action on September 10<sup>th</sup> called
-<strong>Internet Slowdown Day</strong>. This day will be impossible for the
+<strong>The Internet Slowdown</strong>. This day will be impossible for the
 FCC, lawmakers, and the world to ignore and we will ensure that we get real Net
 Neutrality rules. We have sites signed up to go big, we just need you too. If
 everyone who sees this page spreads the word, we will make it very clear that
@@ -117,7 +121,7 @@ help make this a day to remember.
         <h2>
           Get the Modal / Banner Widget
         </h2>
-        <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank" class="btn btn-success">Get the code!</a>
+        <!-- <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank" class="btn btn-success">Get the code!</a> -->
         <p>
             Embed our action modal / banner on your
             site with just one line of Javascript code. This will show visitors
@@ -125,17 +129,43 @@ help make this a day to remember.
             We're working on a new modal experience for our September 10<sup>th</sup> action, but the banner version is ready!
             Be sure to <a href="#email-updates">sign up for email updates</a> to get the latest information!
         </p>
-        <hr/>
+        
+        <h3>Light version:</h3>
+        <div class="codebox round">
+            <iframe class="banner" frameborder="no" src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/banner.html#EMBED-LIGHT"></iframe>                  
+            <pre>&lt;script type="text/javascript">
+  var _bftn_options = { animation: 'banner' }
+&lt;/script>
+&lt;script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async>&lt;/script></pre>
+        </div>
+        <small>( <strong>Note:</strong> this will only show up on Sept 10th, and only once per user )</small>
+
+        <h3>Dark version:</h3>
+          <div class="codebox round">
+            <iframe class="banner" frameborder="no" src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/banner.html#EMBED"></iframe>                  
+            <pre>&lt;script type="text/javascript">
+  var _bftn_options = { animation: 'banner', theme: 'dark' }
+&lt;/script>
+&lt;script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async>&lt;/script></pre>
+        </div>
+        <small>( <strong>Note:</strong> this will only show up on Sept 10th, and only once per user )</small>
+        <br/>
+        <!--
         <div class="mockups">
             <img src="https://fightforthefuture.github.io/battleforthenet-widget/demos/banner.png"/>
             (The new banner version, <a href="https://github.com/fightforthefuture/battleforthenet-widget#installation-instructions-banner" target="_blank">get it here!</a>)
-            <!--
-            <iframe class="widget_preview" frameborder="no" src="https://www.stoptheslowlane.com/widget/iframe/iframe.html#SHOW_LOADER"></iframe>
-            (The old modal animation, <a href="http://rubbingalcoholic.com/#ALWAYS_SHOW_SL_WIDGET" target="_blank">see working demo here</a>)
-            <iframe class="widget_preview" frameborder="no" src="https://www.stoptheslowlane.com/widget/iframe/iframe.html#SHOW_COMCAST"></iframe>                  
-            (The old alternate animation, <a href="http://blog.rubbingalcoholic.com/#ALWAYS_SHOW_SL_WIDGET" target="_blank">see working demo here</a>)
-            -->
         </div>
+        -->
+        <div class="modal-preview">
+          <img src="/images/tools/modal.png">
+        </div>
+        <div class="codebox wide">
+        <pre>&lt;script src="//fightforthefuture.github.io/battleforthenet-widget/widget.min.js"
+    async>&lt;/script></pre>
+        </div>
+        <small>( <strong>Note:</strong> this will only show up on Sept 10th, and only once per user )</small>
 
       </section>
 

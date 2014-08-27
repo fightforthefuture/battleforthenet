@@ -766,6 +766,7 @@ section.team-cable, section.widget {
 
 section.widget {
   background-color: #313142;
+  color: #c7bdd5;
 
   a {
     color: white;
@@ -797,30 +798,53 @@ section.widget {
       margin-top: -5px;
     }
   }
-
-  .mockups {
-    padding-top: 0px;
-
-    img {
-      display: block;
-      margin: 15px auto 5px auto;
-    }
-
-    iframe {
-      display: block;
-      margin: 15px auto 5px auto;
-      width: 750px;
-      height: 400px;
-    }
+  h2 {
+    color: white;
+  }
+  h3 {
+    margin-top: 40px;
+    font-size: 20px;
+    color: white;
   }
 
-  hr {
-    background-color: #313141;
-    border: none;
-    height: 1px;
-    margin: 25px auto 0px auto;
-    max-width: 740px;
+  iframe.banner {
+    width: 500px;
+    height: 100px;
   }
+
+  .codebox {
+    margin: 0px auto 3px auto;
+    width: 510px;
+    padding: 13px 5px 15px 5px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+
+    &.round {
+      border-radius: 60px 60px 10px 10px;
+    }
+
+    &.wide {
+      width: 700px;
+    }
+
+    pre {
+      margin: 0px 6px;
+      text-align: left;
+      color: #827495;
+      background: black;
+      border-radius: 10px;
+      border: 0px;
+    }
+  }
+  small {
+    font-size: 13px;
+    opacity: .6;
+  }
+
+  .modal-preview {
+    margin-top: 40px;
+  }
+
 
 }
 
@@ -1630,6 +1654,9 @@ img.github {
   z-index: 9001;
   @media @tablet {
     display: block;
+  }
+  &.fixed {
+    position: fixed;
   }
 }
 
