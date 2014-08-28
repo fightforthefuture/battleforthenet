@@ -58,6 +58,7 @@ a {
   text-shadow: 0px 1px 10px black;
 
   &.developer {
+    max-width: 100%;
     padding: 100px 0px 20px 0px;
     position: relative;
     
@@ -70,11 +71,11 @@ a {
       width: 100%;
     }
 
-  }
+    p {
+      max-width: 950px;
+      margin: 20px auto;
+    }
 
-  small {
-    color: white;
-    opacity: .6;
   }
 
   .input-group {
@@ -756,7 +757,7 @@ section.team-cable, section.widget {
   p {
     font-size: 18px;
     margin: 36px auto 0;
-    max-width: 650px;
+    max-width: 768px;
   }
 
   
@@ -764,8 +765,44 @@ section.team-cable, section.widget {
   
 }
 
-section.widget {
+section.its-on, section.push-notification, section.join-us {
   background-color: #313142;
+    color: @white;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 300;
+  padding: 60px 28px;
+  text-align: center;
+
+  h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin: 0 0 32px;
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 0 4px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 36px auto 0;
+    max-width: 768px;
+  }
+
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: pink;
+      text-decoration: underline;
+    }
+  }
+}
+
+section.widget {
   color: #c7bdd5;
 
   a {
@@ -855,6 +892,10 @@ section.call-to-action {
   font-weight: 300;
   padding: 60px 28px 60px 28px;
   text-align: center;
+
+  &.opaque {
+    background: white;
+  }
   
   a {
     text-decoration: underline;
@@ -863,6 +904,12 @@ section.call-to-action {
     &:hover {
       color: #1c1c25;
     }
+  }
+
+  h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin: 0 0 32px;
   }
 
   p {

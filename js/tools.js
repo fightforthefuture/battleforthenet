@@ -33,7 +33,24 @@
     /*
     
     */
+    // Slide to new hash targets.
+    $('a').each(function(i) {
+        if (!$(this).attr('href') || !$(this).attr('href').match(/^#/)) {
+            return;
+        }
+        $(this).on('click', function(e) {
+            if (this.href.match(/#home/)) {
+                    return;
+            }
 
+            e.preventDefault();
+
+            var target = '#' + this.href.split('#')[1];
+            $(target).velocity('scroll', {duration: 777, offset: -66}, function() {
+                location.hash = target;
+            });
+        });
+    });
 
 
 })(jQuery);
