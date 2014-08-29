@@ -807,12 +807,12 @@ section.widget {
 
   a {
     color: white;
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: normal;
+    border-bottom: 1px dotted rgba(255, 255, 255, .5);
 
     &:hover {
       color: pink;
-      text-decoration: underline;
+      border-bottom: 1px dotted pink;      
     }
   }
 
@@ -1479,7 +1479,7 @@ section.political {
 
 section.share-images {
   background-color: #1c1c25;
-  color: @white;
+  color: #c7bdd5;;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
   padding: 60px 28px 80px 28px;
@@ -1489,6 +1489,7 @@ section.share-images {
     font-size: 48px;
     font-weight: 300;
     margin: 0 0 12px;
+    color: white;
 
     @media @phone {
       font-size: 58px;
