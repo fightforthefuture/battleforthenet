@@ -849,19 +849,35 @@ section.widget {
     height: 100px;
   }
 
+  iframe.modalDemo {
+    width: 750px;
+    height: 467px;
+  }
+
   .codebox {
     margin: 0px auto 3px auto;
     width: 510px;
     padding: 13px 5px 15px 5px;
     background: rgba(0, 0, 0, .5);
     border-radius: 10px;
+    text-align: center;
+
+    p {
+      padding: 5px 10px 10px 10px;
+      margin: 0px;
+      font-size: 15px;
+
+      a {
+        font-weight: normal;
+      }
+    }
 
     &.round {
       border-radius: 60px 60px 10px 10px;
     }
 
     &.wide {
-      width: 700px; 
+      width: 760px; 
     }
 
     pre {
@@ -876,10 +892,6 @@ section.widget {
   small {
     font-size: 13px;
     opacity: .6;
-  }
-
-  .modal-preview {
-    margin-top: 40px;
   }
 
 
