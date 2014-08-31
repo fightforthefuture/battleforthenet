@@ -366,7 +366,24 @@ question? <a href="mailto:team@fightforthefuture.org">Contact us</a>.
     <script src="../js/vendor/jquery.velocity.js"></script>
     <script src="../js/vendor/underscore.js"></script>
     <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../js/tools.js"></script>    
+    <script src="../js/tools.js"></script>   
+
+    <script type="text/javascript">
+      var _sf_async_config = { uid: 47331, domain: 'battleforthenet.com', useCanonical: true };
+      (function() {
+        function loadChartbeat() {
+          window._sf_endpt = (new Date()).getTime();
+          var e = document.createElement('script');
+          e.setAttribute('language', 'javascript');
+          e.setAttribute('type', 'text/javascript');
+          e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+          document.body.appendChild(e);
+        };
+        var oldonload = window.onload;
+        window.onload = (typeof window.onload != 'function') ?
+          loadChartbeat : function() { oldonload(); loadChartbeat(); };
+      })();
+    </script> 
     
   </body>
 </html>
