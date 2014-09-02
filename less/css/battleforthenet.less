@@ -1795,6 +1795,95 @@ section.political {
   }
 }
 
+section.change-avatar {
+  background-color: #1c1c25;
+  color: #c7bdd5;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 300;
+  padding: 60px 28px 10px 28px;
+  text-align: center;
+ 
+
+  h2 {
+    font-size: 48px;
+    font-weight: 300;
+    margin: 0 0 12px;
+    color: white;
+
+    @media @phone {
+      font-size: 58px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    margin: 12px auto 0;
+    max-width: 650px;
+  }
+
+  div.avatar-wrapper{
+    max-width: 700px;
+    margin: auto;
+  }
+
+  div.image {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 25px 6px 0px 6px;
+    border-radius: 5px;
+    border: 7px solid #2e2e3d;
+    max-width: 100%;
+
+  }
+
+  div.image img {
+    width: 140px;
+    height: auto;
+  }
+  hr {
+    max-width: 700px;
+    margin: 40px auto 40px auto;
+    border-color: #2c2c35;
+  }
+
+  .widget {
+
+    text-align: left;
+
+    a {
+      color: white;
+      font-weight: bold;
+      text-decoration: underline;
+      &:hover {
+        color: pink;
+      }
+    }
+
+    .preview {
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  a.btn {
+    font-size: 24px;
+    margin: 32px 0 0;
+    padding: 10px 22px;
+    text-decoration: none;
+    font-weight: normal;
+
+    &:hover {
+      color: white;
+    }
+
+    @media @tablet {
+      font-size: 32px;
+    }
+  }
+
+}
 
 section.share-images {
   background-color: #1c1c25;
