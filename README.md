@@ -70,6 +70,26 @@ Two more things to note about our Less implementation:
    Just compile what's in the latest `less/css/battleforthenet.less` file and
    commit the resulting .css file to resolve the conflict.
 
+### Grunt: an easy way of compiling Less to CSS
+
+If you're having trouble compiling the Less code (seems to be an issue for
+developers on OS X), consider using Grunt. This will always be the most reliable
+way, but requires using terminal. Like the WinLess tool, Grunt can watch for
+changes to the battleforthenet.less file and automatically minify and compile.
+
+**Installing Grunt**
+
+1. You must already have Node.js and npm installed.
+   [**See this post**][9] for OS X installation instructions.
+2. Open a terminal and `cd` to your project directory
+3. Enter `npm install` and wait. That's it!
+
+**Using Grunt**
+
+1. Open a terminal and `cd` to your project directory
+2. Enter `grunt`
+3. Grunt will watch for file changes to battleforthenet.less and auto-compile.
+
 
 
 [1]: https://www.battleforthenet.com
@@ -80,3 +100,4 @@ Two more things to note about our Less implementation:
 [6]: http://www.netneutrality.com
 [7]: http://lesscss.org/
 [8]: http://winless.org/
+[9]: http://coolestguidesontheplanet.com/installing-node-js-osx-10-9-mavericks/
