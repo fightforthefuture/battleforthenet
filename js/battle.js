@@ -372,19 +372,38 @@ var photoCloud = {
     $('#sp_tw a').click();
   });
 
-  $('.columns .show_all a').click(function(e) {
+  // Wall Under
+  $('.wall-under .columns .show_all a').click(function(e) {
     e.preventDefault();
-    $('.columns').removeClass('obscured');
+    $('.wall-under .columns').removeClass('obscured');
     var biggest_height = 0;
-    $('.columns > div').each(function() {
+    $('.wall-under .columns > div').each(function() {
       var height = $(this).innerHeight();
       if (height > biggest_height)
         biggest_height = height;
     });
-    $('.columns > div.listing').each(function() {
+    $('.wall-under .columns > div.listing').each(function() {
       $(this).css('height', biggest_height +'px');
     });
-    $( ".columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
+    $( ".wall-under .columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
+      // Animation complete.
+    });
+  });
+  
+  // Questions and Answers
+  $('.questions-answers .columns .show_all a').click(function(e) {
+    console.log('clicked'+ this);
+    $('.questions-answers .columns').removeClass('obscured');
+    var biggest_height = 0;
+    $('.questions-answers .columns > div').each(function() {
+      var height = $(this).innerHeight();
+      if (height > biggest_height)
+        biggest_height = height;
+    });
+    $('.questions-answers .columns > div.listing').each(function() {
+      $(this).css('height', biggest_height +'px');
+    });
+    $( ".questions-answers .columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
       // Animation complete.
     });
   });
