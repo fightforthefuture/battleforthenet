@@ -160,8 +160,21 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         </section>
 
         -->
-        <iframe frameborder="no" src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED">
-  </iframe>
+        
+        <!--<iframe frameborder="no" id="main_form" src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED"></iframe>-->
+
+        <script type="text/javascript">
+          var iframe = document.createElement('iframe');
+          iframe.id = '_bftn_iframe_embed';
+
+          if (window.location.href.indexOf('skip_call') == -1)
+            iframe.src = 'https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED';
+          else
+            iframe.src = 'https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED-NOCALL';
+          iframe.frameBorder = 0;
+          iframe.allowTransparency = true; 
+          document.getElementById('first-fold').appendChild(iframe);
+        </script>
 
           
       </div>
