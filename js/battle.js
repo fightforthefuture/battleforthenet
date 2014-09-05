@@ -320,6 +320,7 @@ var photoCloud = {
   }
 };
 
+var loaded_wall = false;
 
 (function($) {
 
@@ -338,14 +339,6 @@ var photoCloud = {
       }
     }
   });
-
-  if ($('section.wall').length) {
-    photoCloud.init();
-    $('a.moar-people').click(function(e) {
-      e.preventDefault();
-      photoCloud.loadMore();
-    });
-  }
 
   if ($('a.break').length) {
     $('a.break').click(function(e) {

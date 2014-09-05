@@ -12,5 +12,14 @@ jQuery(function($) {
             $("#join-the-slowdown header a").addClass('break');
         }
     });
+
+    $('section.wall').waypoint(function() {
+        photoCloud.init();
+        $('a.moar-people').click(function(e) {
+          e.preventDefault();
+          photoCloud.loadMore();
+        });
+    }, { offset: '100%', triggerOnce: true });
+
     
 });
