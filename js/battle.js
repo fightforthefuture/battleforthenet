@@ -85,7 +85,7 @@ var photoCloud = {
     }
 
     this.xhr = $.ajax({
-      url: 'https://api.battleforthenet.com/participants',
+      url: 'https://participants.battleforthenet.com/participants',
       data: 'limit='+this.limit+'&skip='+(this.page * this.limit),
       dataType: 'json',
       type: 'get',
@@ -307,6 +307,7 @@ var photoCloud = {
 
   reportBrokenImage: function(id)
   {
+    /*
     $.ajax({
       url: "https://api.battleforthenet.com/participants/reportBrokenImage",
       // url: "http://debbie:3019/participants/reportBrokenImage", // JL TEST ~
@@ -317,6 +318,7 @@ var photoCloud = {
         console.log('reported broken image: ', res);
       }
     });
+    */
   }
 };
 
@@ -566,7 +568,7 @@ var loaded_wall = false;
 
   if ($('.listing').length) {
     $.ajax({
-      url: 'https://api.battleforthenet.com/participants/listed',
+      url: 'https://participants.battleforthenet.com/participants/listed',
       dataType: 'json',
       type: 'get',
       success: function(data) {
