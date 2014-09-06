@@ -474,7 +474,7 @@ var loaded_wall = false;
 
     if (ok) {
       $.ajax({
-        url: "https://api.battleforthenet.com/submit",
+        url: "https://queue.battleforthenet.com/submit",
         // url: "http://debbie:3019/submit",    // JL TEST ~
         type: "post",
         dataType: "json",
