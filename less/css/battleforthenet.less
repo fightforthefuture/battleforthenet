@@ -1122,13 +1122,18 @@ section.team-cable, section.widget {
   
 }
 
-section.its-on, section.push-notification, section.join-us {
+section.its-on, section.push-notification, section.join-us, section.whos-in {
   background-color: #313142;
     color: @white;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
   padding: @section_vert_padding_mobile 20px;
   text-align: center;
+
+  &.whos-in {
+    background: #1C1C25;
+    border-top: 6px solid #313142;
+  }
 
   &.join-us {
     padding-top: 0px;
@@ -1175,6 +1180,35 @@ section.its-on, section.push-notification, section.join-us {
     height: auto;
     margin-top: 20px;
     margin-bottom: -20px;
+  }
+
+  .fftf {
+    max-width: 100%;
+    display: block;
+    margin: 5px auto 40px auto;
+
+    @media @tablet {
+      width: 500px;
+
+    }
+  }
+
+  .logos {
+    max-width: 850px;
+    margin: 0px auto 0px auto;
+
+    img {
+      display: inline-block;
+      margin: 0 0 4px;
+
+      width: auto;
+      height: 40px;
+
+      @media @tablet {
+        width: auto;
+        height: auto;
+      }
+    }
   }
 }
 
@@ -1330,24 +1364,6 @@ section.call-to-action {
 
     @media @tablet {
       padding-left: 40px;
-    }
-  }
-
-  .logos {
-    max-width: 850px;
-    margin: 0px auto 40px auto;
-
-    img {
-      display: inline-block;
-      margin: 0 0 4px;
-
-      width: auto;
-      height: 40px;
-
-      @media @tablet {
-        width: auto;
-        height: auto;
-      }
     }
   }
 }
