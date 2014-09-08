@@ -3,6 +3,12 @@
 @import "social_media.less";
 @import "fonts.less";
 
+@h2_font_size_mobile: 28px;
+@h2_font_size: 50px;
+@section_vert_padding: 60px;
+@section_vert_padding_mobile: 40px;
+@pink: #c7bdd5;
+
 /* Bootstrap add-on */
 .col-centered{
     float: none;
@@ -59,7 +65,7 @@ a {
 .jumbotron {
   margin: 0 auto;
   max-width: 950px;
-  padding: 80px 50px 0;
+  padding: 30px 20px 0;
   text-shadow: 0px 1px 10px black;
 
   @media @tablet {
@@ -75,9 +81,10 @@ a {
     padding: 100px 0px 20px 0px;
     position: relative;
 
-    padding: 0px 15px;
+    padding: 30px 15px;
 
     @media @tablet {
+      @padding-top: 0px;
       .row {
         
 
@@ -87,9 +94,9 @@ a {
         }
       }
 
-    .signup {
-      padding-bottom: 50px;
-    }
+      .signup {
+        padding-bottom: 50px;
+      }
     }
     
 
@@ -130,7 +137,7 @@ a {
   text-align: center;
 
   h1 {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Proxima Nova', sans-serif;
     font-weight: 300;
     margin: 0;
@@ -184,14 +191,16 @@ section.join-the-slowdown {
     color: @white;
     text-align: center;
     position: absolute;
+    display: none;
     
     @media @phone {
-        margin: 0 auto 66px auto;
-      }
+      margin: 0 auto 66px auto;
+    }
 
-      @media @tablet {
-        margin: 66px auto 66px auto;
-      }
+    @media @tablet {
+      margin: 66px auto 66px auto;
+      display: block;
+    }
 
 
 
@@ -727,6 +736,7 @@ header.navigation {
   padding: 0;
   text-align: center;
   text-transform: uppercase;
+  display: none;
 
   a.highlight-green {
     color: #2dbb9b !important;
@@ -785,6 +795,7 @@ header.navigation {
 
   @media @tablet {
     position: fixed;
+    display: block;
     width: 100%;
     z-index: 10;
   }
@@ -1053,21 +1064,54 @@ header.navigation {
 section.team-cable, section.widget {
   background-color: rgba(28, 28, 37, 1);
 
-  color: @white;
+  color: @pink;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  &.widget {
+    display: none;
+
+    @media @tablet {
+      display: block;
+    }    
+  }
+
+  &.widget.mobile-friendly {
+    display: block;
+
+    @media @tablet {
+      display: none;
+    }   
+  }
+
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   h2 {
-    font-size: 50px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 32px;
+    color: @white;
+
+    @media @tablet {
+      font-size: @h2_font_size;
+    }
   }
 
   img {
     display: inline-block;
     margin: 0 0 4px;
+
+    width: auto;
+    height: 50px;
+
+    @media @tablet {
+      width: auto;
+      height: auto;
+    }
   }
 
   p {
@@ -1075,9 +1119,6 @@ section.team-cable, section.widget {
     margin: 36px auto 0;
     max-width: 768px;
   }
-
-  
-
   
 }
 
@@ -1086,13 +1127,25 @@ section.its-on, section.push-notification, section.join-us {
     color: @white;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  &.join-us {
+    padding-top: 0px;
+  }
+
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   h2 {
-    font-size: 50px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 32px;
+
+    @media @tablet {
+      font-size: @h2_font_size;
+    }
   }
 
   img {
@@ -1118,6 +1171,8 @@ section.its-on, section.push-notification, section.join-us {
   }
 
   img.bottom {
+    max-width: 100%;
+    height: auto;
     margin-top: 20px;
     margin-bottom: -20px;
   }
@@ -1224,8 +1279,12 @@ section.call-to-action {
   color: @black;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px 60px 28px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
+
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
 
   &.opaque {
     background: white;
@@ -1241,17 +1300,24 @@ section.call-to-action {
   }
 
   h2 {
-    font-size: 50px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 32px;
+
+    @media @tablet {
+      font-size: @h2_font_size;
+    }
   }
 
   p {
     font-size: 18px;
-    text-align: justify;
     margin: 12px auto 0;
     max-width: 800px;
     font-weight: 500;
+
+    @media @tablet {
+      text-align: justify;
+    }
   }
 
   ul {
@@ -1260,7 +1326,11 @@ section.call-to-action {
     margin: 0px auto;
     font-size: 18px;
     font-weight: 500;
-    padding: 20px 0px 20px 40px;
+    padding: 20px 0px 20px 20px;
+
+    @media @tablet {
+      padding-left: 40px;
+    }
   }
 }
 
@@ -1269,13 +1339,25 @@ section.team-internet {
   color: @white;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px 40px 28px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   h2 {
-    font-size: 62px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
-    margin: 0 0 12px;
+
+
+    margin: 0 0 32px;
+    
+
+    @media @tablet {
+      margin: 0 0 12px;
+      font-size: @h2_font_size;
+    }
   }
 
   p {
@@ -1290,7 +1372,7 @@ section.team-internet {
   }
 
   a {
-    color: #2dbb9b;
+    color: #fff;
     text-decoration: underline;
     font-weight: bold;
   }
@@ -1416,6 +1498,13 @@ section.wall-under {
   font-weight: 300;
   padding: 40px 28px 40px 28px;
   text-align: center;
+
+  display: none;
+
+  @media @tablet {
+    display: block;
+  }
+
   .columns {
     position: relative;
     height: 350px;
@@ -1513,19 +1602,24 @@ section.wall-under {
 
 section.understand {
   background-color: #1c1c25;
-  color: @white;
+  color: @pink;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 0px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   h2 {
-    font-size: 48px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 12px;
+    color: @white;
 
-    @media @phone {
-      font-size: 58px;
+    @media @tablet {
+      font-size: @h2_font_size;
     }
   }
 
@@ -1554,7 +1648,11 @@ section.understand {
     width: 100%;
     height: 100%;
 
-    border: 10px solid #4c4c64;
+    border: 0px;
+
+    @media @tablet {
+      border: 10px solid #4c4c64;
+    }
     border-radius: 5px;    
     box-sizing: border-box;
   
@@ -1581,7 +1679,7 @@ section.understand {
       font-weight: 300;
       max-width: 600px;
       margin: 0 auto;
-      padding: 15px;
+      padding: 15px 0px;
       border-bottom: 1px solid #4e4e66;
     }
     a {
@@ -1602,8 +1700,13 @@ section.questions-answers {
   color: @white;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 40px 28px 40px 28px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: left;
+
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   .columns {
     position: relative;
     height: 350px;
@@ -1617,7 +1720,8 @@ section.questions-answers {
     }
   }
   a{
-    color:#2dbb9b;
+    color:white;
+    text-decoration: underline;
   }
   .columns .show_all {
     display: none;
@@ -1668,13 +1772,24 @@ section.questions-answers {
 
   h5, h2 {
     font-family: 'Proxima Nova', sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
-    padding: 0px 0px 15px 15px;
     border-bottom: 1px solid #4e4e66;
+    padding: 0px 0px 15px 0px;
+    margin: 30px 0px 15px 0px;
+    &:first-child {
+      margin-top: 0px;
+    }
+    @media @tablet {
+      font-size: 30px;
+      padding: 0px 0px 15px 15px;
+    }
+
   }
-  p { 
-    padding: 0px 15px;
+  p {
+    @media @tablet {
+      padding: 0px 15px;
+    }
   }
 }
 
@@ -1683,19 +1798,24 @@ section.tshirt {
   background-image: url('../images/tshirt-background.png');
   background-repeat: no-repeat;
   background-position: 50% 105%;
-  color: @white;
+  color: @pink;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 0px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   h2 {
-    font-size: 48px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 12px;
+    color: @white;
 
-    @media @phone {
-      font-size: 58px;
+    @media @tablet {
+      font-size: @h2_font_size;
     }
   } 
    
@@ -1721,19 +1841,25 @@ section.tshirt {
 
 section.political {
   background-color: #15151c;
-  color: @white;
+  color: @pink;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px;
+  padding: @section_vert_padding_mobile 0px;
   text-align: center;
 
-  h2 {
-    font-size: 48px;
-    font-weight: 300;
-    margin: 0 0 12px;
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
 
-    @media @phone {
-      font-size: 57px;
+  h2 {
+    font-size: @h2_font_size_mobile;
+    font-weight: 300;
+    margin: 0 0 32px;
+    color: @white;
+
+    @media @tablet {
+      margin: 0 0 12px;
+      font-size: @h2_font_size;
     }
   }
 
@@ -1741,6 +1867,11 @@ section.political {
     font-size: 18px;
     margin: 12px auto 20px;
     max-width: 650px;
+    padding: 0px 20px;
+
+    @media @tablet {
+      padding: 0px;
+    }
   }
 
   hr {
@@ -1961,18 +2092,22 @@ section.change-avatar {
   color: #c7bdd5;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px 10px 28px;
+  padding: @section_vert_padding_mobile 20px 10px 20px;
   text-align: center;
+
+  @media @tablet {
+    padding: @section_vert_padding 20px 10px 20px;
+  }
  
 
   h2 {
-    font-size: 48px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 12px;
     color: white;
 
-    @media @phone {
-      font-size: 58px;
+    @media @tablet {
+      font-size: @h2_font_size;
     }
   }
 
@@ -1998,8 +2133,16 @@ section.change-avatar {
   }
 
   div.image img {
-    width: 140px;
+
+    width: 100px;
     height: auto;
+
+    @media @tablet {
+      width: 140px;
+      height: auto;
+    }
+
+
   }
   hr {
     max-width: 700px;
@@ -2048,21 +2191,26 @@ section.change-avatar {
 
 section.share-images {
   background-color: #1c1c25;
-  color: #c7bdd5;
+  color: @pink;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
-  padding: 60px 28px 80px 28px;
+  padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
   h2 {
-    font-size: 48px;
+    font-size: @h2_font_size_mobile;
     font-weight: 300;
     margin: 0 0 12px;
     color: white;
 
-    @media @phone {
-      font-size: 58px;
+    @media @tablet {
+      font-size: @h2_font_size;
     }
+
   }
 
   p {
@@ -2230,7 +2378,11 @@ section.title {
 
   h2 {
     color: @white;
-    font-size: 64px;
+    font-size: @h2_font_size_mobile;
+
+    @media @tablet {
+      font-size: @h2_font_size;
+    }
   }
 }
 

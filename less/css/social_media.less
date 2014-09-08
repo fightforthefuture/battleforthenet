@@ -4,10 +4,33 @@
   padding: 0;
 
   body > & {
-    left: 0;
+
+    left: 0px;
+    bottom: 0px;
     position: fixed;
-    top: 40%;
     z-index: 99;
+    width: 100%;
+    text-align: center;
+    
+    background: rgba(0,0,0,0); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, #000000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,#000000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,#000000 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,#000000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+    @media @tablet {
+      width: auto;
+      text-align: auto;
+      left: 0;
+      position: fixed;
+      top: 40%;
+      bottom: auto;
+      z-index: 99;
+      background: none;
+    }
   }
 
   .jumbotron > & {
@@ -22,11 +45,29 @@
     font-size: 0.8em;
     list-style-type: none;
     margin: 0;
-    padding: 5px 5px 5px 0;
+
+    padding: 0px 5px 0px 5px;
+    display: inline-block;
+
+
+    @media @tablet {
+      display: block;
+      padding: 5px 5px 5px 0;
+    }
 
     a {
-      border-bottom-right-radius: 3px;
+      @media @tablet {
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border-top-left-radius: 3px;
       border-top-right-radius: 3px;
+
       color: @white;
       display: inline-block;
       height: 100%;
