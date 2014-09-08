@@ -85,7 +85,7 @@ var photoCloud = {
     }
 
     this.xhr = $.ajax({
-      url: 'https://participants.battleforthenet.com/participants',
+      url: '//participants.battleforthenet.com/participants',
       data: 'limit='+this.limit+'&skip='+(this.page * this.limit),
       dataType: 'json',
       type: 'get',
@@ -476,7 +476,7 @@ var loaded_wall = false;
 
     if (ok) {
       $.ajax({
-        url: "https://queue.battleforthenet.com/submit",
+        url: "//queue.battleforthenet.com/submit",
         // url: "http://debbie:3019/submit",    // JL TEST ~
         type: "post",
         dataType: "json",
@@ -507,7 +507,7 @@ var loaded_wall = false;
     var newData = $('#participant_form').serialize();
     var combinedData = window.cachedData + '&' + newData;
     $.ajax({
-      url: 'https://api.battleforthenet.com/participant/create',
+      url: '//api.battleforthenet.com/participant/create',
       type: 'post',
       xhrFields: {
         withCredentials: true
@@ -568,7 +568,7 @@ var loaded_wall = false;
 
   if ($('.listing').length) {
     $.ajax({
-      url: 'https://participants.battleforthenet.com/participants/listed',
+      url: '//participants.battleforthenet.com/participants/listed',
       dataType: 'json',
       type: 'get',
       success: function(data) {
