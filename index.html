@@ -150,7 +150,9 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           var loc = window.location.href;
           var widget_url = '//widget.battleforthenet.com/iframe/modal.html';
 
-          if (loc.indexOf('skip_call') != -1)
+          if (loc.indexOf('skip_call') != -1 && loc.indexOf('oo') != -1)
+            iframe.src = widget_url + '#EMBED-NOCALL-UNCHECK';
+          else if (loc.indexOf('skip_call') != -1)
             iframe.src = widget_url + '#EMBED-NOCALL';
           else if (loc.indexOf('skip_email') != -1)
             iframe.src = widget_url + '#EMBED-NOEMAIL';
@@ -164,6 +166,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
             iframe.src = widget_url + '#EMBED';
             
           iframe.frameBorder = 0;
+          iframe.scrolling = 'no';
           iframe.allowTransparency = true; 
           document.getElementById('first-fold').appendChild(iframe);
         </script>

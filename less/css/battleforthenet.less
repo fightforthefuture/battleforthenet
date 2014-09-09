@@ -713,7 +713,9 @@ section.form {
     margin: 25px auto 0px auto; 
 
     width: 100%;
-    height: 500px; 
+    height: 520px; 
+    overflow: hidden;
+    overflow-y: hidden;
 
     @media @tablet {
       margin-top: 0px;
@@ -1127,10 +1129,19 @@ section.its-on, section.push-notification, section.join-us, section.whos-in {
   &.whos-in {
     background: #1C1C25;
     border-top: 6px solid #313142;
+    display: block !important;
 
     .row {
       max-width: 1000px; 
       margin: 10px auto;
+
+      .columns {
+        height: auto !important;
+        display: block !important;
+
+      }
+    
+
 
     .fp {
       width: 500px;
@@ -1219,7 +1230,7 @@ section.its-on, section.push-notification, section.join-us, section.whos-in {
   .logos {
     max-width: 850px;
     margin: 0px auto 0px auto;
-
+    height: auto;
     img {
       display: inline-block;
       margin: 0 0 4px;
@@ -2746,4 +2757,16 @@ body#scoreboard {
 
 
     }
+}
+
+#developer section.wall-under {
+  .columns {
+    display: block;
+
+    .gradient {
+          background: url(../images/gradient-dark.png) bottom left repeat-x !important;
+        }
+      
+  }
+
 }
