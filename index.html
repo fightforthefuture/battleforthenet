@@ -147,14 +147,21 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           var iframe = document.createElement('iframe');
           iframe.id = '_bftn_iframe_embed';
 
-          if (window.location.href.indexOf('skip_call') != -1)
-            iframe.src = '//widget.battleforthenet.com/iframe/modal.html#EMBED-NOCALL';
-          else if (window.location.href.indexOf('skip_email') != -1)
-            iframe.src = '//widget.battleforthenet.com/iframe/modal.html#EMBED-NOEMAIL';
-          else if (window.location.href.indexOf('oo') != -1)
-            iframe.src = '//widget.battleforthenet.com/iframe/modal.html#EMBED-UNCHECK';
+          var loc = window.location.href;
+          var widget_url = '//widget.battleforthenet.com/iframe/modal.html';
+
+          if (loc.indexOf('skip_call') != -1)
+            iframe.src = widget_url + '#EMBED-NOCALL';
+          else if (loc.indexOf('skip_email') != -1)
+            iframe.src = widget_url + '#EMBED-NOEMAIL';
+          else if (loc.indexOf('oo') != -1)
+            iframe.src = widget_url + '#EMBED-UNCHECK';
+          else if (loc.indexOf('org=fp') != -1)
+            iframe.src = widget_url + '#EMBED-FP';
+          else if (loc.indexOf('org=dp') != -1)
+            iframe.src = widget_url + '#EMBED-DP';
           else
-            iframe.src = '//widget.battleforthenet.com/iframe/modal.html#EMBED';
+            iframe.src = widget_url + '#EMBED';
             
           iframe.frameBorder = 0;
           iframe.allowTransparency = true; 
