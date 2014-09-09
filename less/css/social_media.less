@@ -45,7 +45,7 @@
     font-size: 0.8em;
     list-style-type: none;
     margin: 0;
-
+    text-align: left;
     padding: 0px 5px 0px 5px;
     display: inline-block;
 
@@ -76,6 +76,11 @@
       transition: opacity 0.3s;
       width: 100%;
 
+      img {
+        width: 16px;
+        height: 16px;
+      }
+
       .jumbotron > & {
         border-bottom-left-radius: 3px;
         border-top-left-radius: 3px;
@@ -91,6 +96,10 @@
 
       &.reddit {
         background: #FF4500;
+      }
+
+      &.pressthis {
+        background: #1e8cbe;
       }
 
       &.tumblr {
