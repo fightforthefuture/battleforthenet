@@ -373,7 +373,8 @@ var loaded_wall = false;
     $('.wall-under .columns').removeClass('obscured');
     var biggest_height = 0;
     $('.wall-under .columns > div').each(function() {
-      var height = $(this).innerHeight();
+      var height = 400;//$(this).innerHeight();
+      $(this).css({'overflow':'auto'});//set overflow
       if (height > biggest_height)
         biggest_height = height;
     });
