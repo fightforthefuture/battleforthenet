@@ -1,0 +1,20 @@
+.count {
+    font-size: 18px;
+    padding: 32px 0 24px;
+}
+
+.count a {
+    color: #2dbb9b;
+    text-decoration: underline;
+}
+
+.count a:hover {
+    color: #31d2ae;
+}
+
+@media screen and (min-width: 768px) {
+    .count {
+        font-size: 32px;
+        padding-bottom: 24px;
+    }
+}
