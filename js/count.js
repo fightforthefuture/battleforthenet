@@ -1,6 +1,9 @@
 jQuery(function($) {
     setTimeout(function() {
-        var numAnim = new countUp("animated-count", 100000000, 440000000, 0, 3.3);
+        var baseline = 440000000;
+        var calls = 80603;
+        var comments = 451387;
+        var numAnim = new countUp("animated-count", baseline, baseline + calls + comments, 0, 3.3);
         numAnim.start();
-    }, 1000);
+    }, 2500);
 });

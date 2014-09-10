@@ -4,17 +4,24 @@
 }
 
 .count a {
-    color: #2dbb9b;
+    color: white;
     text-decoration: underline;
 }
 
-.count a:hover {
-    color: #31d2ae;
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        padding-top: 125px;
+    }
+
+    .count {
+        font-size: 28px;
+        margin: -32px 0 0;
+    }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     .count {
-        font-size: 32px;
-        padding-bottom: 24px;
+        font-size: 28px;
+        margin: -46px 0 0;
     }
 }
