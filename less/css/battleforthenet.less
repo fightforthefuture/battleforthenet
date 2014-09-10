@@ -2770,3 +2770,147 @@ body#scoreboard {
   }
 
 }
+
+body#letter {
+
+  background-attachment: scroll;
+  background-color: #211f33;
+  background-image: url('../images/background-v8.png');
+
+  section.title{
+    padding: 5px;
+
+    h2 {
+      font-size:20px
+    }
+
+  }
+  section.wall-under {
+      display: block;
+      background-color: transparent !important;
+      background: url(../images/hole.png) bottom no-repeat !important;
+      background-size: 100% 30px !important;
+      padding: 10px;
+      margin: 0 auto;
+      max-width: 900px !important;
+
+      .container {
+        max-width: 900px;
+      }
+
+      .columns {
+        display: block;
+        height: 700px;
+
+        .gradient {
+              background: url(../images/curve.png) bottom no-repeat !important;
+              background-size: 100% 22px !important;
+              
+              
+        }
+
+        .show_all {
+          color: #7c5bd2;
+
+          a {
+            color: #7c5bd2;
+          }
+        }
+        .letter-wrapper {
+            
+
+          
+
+          .the-letter {
+            background: url(../images/letter.png)  no-repeat !important;
+            background-size: 100% !important;
+            color: #000;
+
+            .headline{
+                padding: 60px 60px 10px 60px;
+
+                h1 {
+                  
+                  border-bottom: 1px #aaa solid;
+                  font-weight: 300;
+                  font-size: 60px;
+                  padding: 25px; 
+                  margin: 5% auto 0 auto;
+                max-width: 500px;
+                }
+            }
+            .letter-copy {
+              padding: 1% 10% 10% 10%;
+              background: url(../images/letter-repeat.png) repeat-y !important;
+              background-size: 100% !important;
+              text-align: left;
+              font-size: 18px;
+              color: #211f33;
+              border-radius: 0 0 15px 15px;
+
+              
+            }
+         }
+          
+        }
+      }   
+  }
+}
+
+  section.signatories {
+      display: block;
+      background-color: transparent !important;
+      padding: 60px;
+      margin: 0 auto;
+      max-width: 900px !important;
+      color: @white;
+      text-align: center;
+
+      h2 {
+
+        
+        font-family: 'Proxima Nova', sans-serif;
+        font-size: 66px;
+        line-height: 72px;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: rgb(0, 0, 0) 0px 1px 10px;
+      }
+
+      h3 {
+
+      font-family: 'Proxima Nova',sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 auto  15px auto;
+      padding: 15px 0px;
+
+      color: rgb(93, 93, 136);
+      
+       }
+       a {
+      color:@white; 
+      font-size: 16px;
+      font-weight: 300;
+      border-bottom: 1px solid @white;
+       }
+      a:hover {
+      color: pink;
+
+    }
+
+     h3 a {
+      color: rgb(198, 198, 227);
+      font-family: 'Proxima Nova',sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 10px;
+      padding: 0px;
+      border-bottom: 1px solid  rgb(93, 93, 136);
+      
+       }
+  
+
+
+}
+
