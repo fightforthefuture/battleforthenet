@@ -165,6 +165,9 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           else
             iframe.src = widget_url + '#EMBED';
             
+          if(/(iPhone|iPod)/g.test(navigator.userAgent))
+            iframe.style = 'width: 280px; height: 550px;';
+
           iframe.frameBorder = 0;
           iframe.scrolling = 'no';
           iframe.allowTransparency = true; 
