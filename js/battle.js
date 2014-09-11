@@ -386,6 +386,24 @@ var loaded_wall = false;
   });
 
   // Questions and Answers
+  $('.faqs .columns .show_all a').click(function(e) {
+    console.log('clicked'+ this);
+    $('.faqs .columns').removeClass('obscured');
+    var biggest_height = 0;
+    $('.faqs .columns > div').each(function() {
+      var height = $(this).innerHeight();
+      if (height > biggest_height)
+        biggest_height = height;
+    });
+    $('.faqs .columns > div.listing').each(function() {
+      $(this).css('height', biggest_height +'px');
+    });
+    $( ".faqs .columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
+      // Animation complete.
+    });
+  });
+  
+  // Questions and Answers
   $('.questions-answers .columns .show_all a').click(function(e) {
     console.log('clicked'+ this);
     $('.questions-answers .columns').removeClass('obscured');

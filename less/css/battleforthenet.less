@@ -1839,6 +1839,105 @@ section.understand {
   }
 }
 
+section.faqs {
+  background-color: #313142;
+  color: @white;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 300;
+  padding: @section_vert_padding_mobile 20px;
+  text-align: left;
+
+  @media @tablet {
+    padding: @section_vert_padding 20px;
+  }
+
+  .columns {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+
+  }
+  @media (min-width: 768px) {
+    padding-bottom: 60px;
+    .columns {
+      display: block;
+    }
+  }
+  a{
+    color:white;
+    text-decoration: underline;
+  }
+  .columns .show_all {
+    display: none;
+  }
+  .columns.obscured .show_all {
+    position: absolute;
+    display: block;
+    text-align:center;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    border: 0px none transparent;
+    z-index: 2;
+    font-size: 16px;
+  }
+  .columns.obscured .show_all a {
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Proxima Nova', sans-serif;
+    text-decoration: underline;
+  }
+  .columns.obscured .show_all a:hover {
+    color: pink;
+  }
+  .columns.obscured .gradient {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+
+    pointer-events: none;
+    z-index: 1;
+    border: 0px none transparent;
+    background: url(../images/gradient.png) bottom left repeat-x;
+
+
+  }
+  .columns > div {
+    padding: 0px;
+  }
+  .columns > div.listing {
+    min-height: 350px;
+    box-sizing: border-box;
+    border: 0px none transparent;
+  }
+
+  h5, h2 {
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    border-bottom: 1px solid #4e4e66;
+    padding: 0px 0px 15px 0px;
+    margin: 30px 0px 15px 0px;
+    &:first-child {
+      margin-top: 0px;
+    }
+    @media @tablet {
+      font-size: 30px;
+      padding: 0px 0px 15px 15px;
+    }
+
+  }
+  p {
+    @media @tablet {
+      padding: 0px 15px;
+    }
+  }
+}
+
+
 section.questions-answers {
   background-color: #313142;
   color: @white;
