@@ -1083,8 +1083,17 @@ section.team-cable, section.what-we-did {
 
     @media @tablet {
       font-size: @h2_font_size;
-      padding: 60px 0 30px 0;
+      padding: 60px 0 10px 0;
     }
+
+  p
+  {
+    @media @tablet {
+      
+      padding: 10px 0;
+    }
+
+  }
   }
 
   img {
@@ -1104,10 +1113,14 @@ section.team-cable, section.what-we-did {
     width: 100% !important;
     max-width: 1200px;
     height: auto;
+    margin-top: 10px;
 
     @media @desktop-lg {
-      
       margin-bottom: 60px;
+    }
+
+    @media @tablet {
+      margin-top: 30px;
     }
   }
 
