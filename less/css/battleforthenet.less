@@ -113,6 +113,11 @@ a {
       margin: 20px auto;
     }
 
+    a {
+      color: @white;
+      text-decoration: underline;
+    }
+
   }
 
   .input-group {
@@ -1056,6 +1061,64 @@ header.navigation {
     }
   }
 }
+
+section.team-cable, section.what-we-did {
+  color: @white;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 300;
+  padding: @section_vert_padding_mobile 0px;
+  text-align: center;
+  background: #313142 !important;
+
+  @media @tablet {
+    padding: 0px;
+  }
+
+  h2 {
+    font-size: @h2_font_size_mobile;
+    font-weight: 300;
+    margin: 0 0 32px;
+
+    color: @white;
+
+    @media @tablet {
+      font-size: @h2_font_size;
+      padding: 60px 0 30px 0;
+    }
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 0 4px;
+
+    width: auto;
+    height: 50px;
+
+    @media @tablet {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  img.info{
+    width: 100% !important;
+    max-width: 1200px;
+    height: auto;
+
+    @media @desktop-lg {
+      
+      margin-bottom: 60px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    margin: 36px auto 0;
+    max-width: 768px;
+  }
+  
+}
+
 
 section.team-cable, section.widget {
   background-color: rgba(28, 28, 37, 1);
