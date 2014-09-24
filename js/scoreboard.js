@@ -21,7 +21,8 @@ jQuery(function($) {
                 team: player.gsx$team.$t,
                 size: player.gsx$size.$t,
                 meta: player.gsx$meta.$t,
-                twitter: player.gsx$twitter.$t
+                twitter: player.gsx$twitter.$t,
+                sharetext: player.gsx$sharetext.$t
             };
 
             if (player.team && (!isFrontpage || player.frontpage === 1)) {
@@ -51,8 +52,17 @@ jQuery(function($) {
             var $el = $.template('#player', player);
 
             if (player.twitter) {
+                var shareText;
+                if (player.sharetext) {
+                    shareText = encodeURIComponent(player.sharetext);
+                } else {
+                    shareText = '.@' + player.twitter + '%20who%27s%20side%20are%20you%20on?%20%23TeamInternet%20or%20%23TeamCable?%20Ask%20the%20FCC%20for%20Title%20II%20reclassification!';
+                }
+
+                var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://www.battleforthenet.com&related=fightfortheftr';
+
                 var $twitterOverlay = $.template('#twitter-overlay', {
-                    twitter: 'https://twitter.com/intent/tweet?text=.@' + player.twitter + '%20who%27s%20side%20are%20you%20on?%20%23TeamInternet%20or%20%23TeamCable?%20Ask%20the%20FCC%20for%20Title%20II%20reclassification!&url=https://www.battleforthenet.com&related=fightfortheftr'
+                    twitter: url
                 });
 
                 $el.append($twitterOverlay);
