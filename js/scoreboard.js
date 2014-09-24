@@ -18,14 +18,15 @@ jQuery(function($) {
                 organization: player.gsx$organization.$t,
                 image: '/images/scoreboard/' + player.gsx$imagepleasedontedit.$t,
                 weight: player.gsx$weight.$t,
-                team: player.gsx$team.$t,
+                team: player.gsx$team.$t || 'undecided',
                 size: player.gsx$size.$t,
                 meta: player.gsx$meta.$t,
                 twitter: player.gsx$twitter.$t,
                 sharetext: player.gsx$sharetext.$t
             };
 
-            if (player.team && (!isFrontpage || player.frontpage === 1)) {
+            // Only hand picked players should show on the homepage.
+            if (!isFrontpage || player.frontpage === 1) {
                 players.push(player);
             }
         }
@@ -56,7 +57,7 @@ jQuery(function($) {
                 if (player.sharetext) {
                     shareText = encodeURIComponent(player.sharetext);
                 } else {
-                    shareText = '.@' + player.twitter + '%20who%27s%20side%20are%20you%20on?%20%23TeamInternet%20or%20%23TeamCable?%20Ask%20the%20FCC%20for%20Title%20II%20reclassification!';
+                    shareText = '.@' + player.twitter + '%20whose%20side%20are%20you%20on?%20%23TeamInternet%20or%20%23TeamCable?%20Ask%20the%20FCC%20for%20Title%20II%20reclassification!';
                 }
 
                 var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://www.battleforthenet.com&related=fightfortheftr';
