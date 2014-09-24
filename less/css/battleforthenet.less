@@ -2233,6 +2233,39 @@ section.political {
         }
       }
 
+      .twitter {
+        background-color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+
+        -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+
+        img {
+          height: auto;
+          width: auto;
+          padding-top: 170px;
+          margin-top: 40px;
+
+          -webkit-transition: margin-top 0.3s;
+                  transition: margin-top 0.3s;
+        }
+
+        &:hover {
+          opacity: 1;
+
+          img {
+            margin-top: 0;
+          }
+        }
+      }
+
       &.small {
         height: 190px;
         width: 150px;
@@ -2245,6 +2278,10 @@ section.political {
             font-size: 15px;
             margin-bottom: 0;
           }
+        }
+
+        .twitter img {
+          padding-top: 65px;
         }
       }
 

@@ -20,7 +20,8 @@ jQuery(function($) {
                 weight: player.gsx$weight.$t,
                 team: player.gsx$team.$t,
                 size: player.gsx$size.$t,
-                meta: player.gsx$meta.$t
+                meta: player.gsx$meta.$t,
+                twitter: player.gsx$twitter.$t
             };
 
             if (player.team && (!isFrontpage || player.frontpage === 1)) {
@@ -48,6 +49,14 @@ jQuery(function($) {
         for (var i in players) {
             var player = players[i];
             var $el = $.template('#player', player);
+
+            if (player.twitter) {
+                var $twitterOverlay = $.template('#twitter-overlay', {
+                    twitter: 'https://twitter.com/' + player.twitter
+                });
+
+                $el.append($twitterOverlay);
+            }
 
             $el.data('meta', player);
 
