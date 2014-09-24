@@ -402,7 +402,7 @@ var loaded_wall = false;
       // Animation complete.
     });
   });
-  
+
   // Questions and Answers
   $('.questions-answers .columns .show_all a').click(function(e) {
     console.log('clicked'+ this);
@@ -612,6 +612,10 @@ var loaded_wall = false;
 
   // Starting the count animation
   setTimeout(function() {
+    if (!window.countUp) {
+      return;
+    }
+
     var baseline = 4400000;
     var calls = 80603;
     var comments = 451387;
