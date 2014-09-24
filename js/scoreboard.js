@@ -52,7 +52,7 @@ jQuery(function($) {
 
             if (player.twitter) {
                 var $twitterOverlay = $.template('#twitter-overlay', {
-                    twitter: 'https://twitter.com/' + player.twitter
+                    twitter: 'https://twitter.com/intent/tweet?text=.@' + player.twitter + '%20who%27s%20side%20are%20you%20on?%20%23TeamInternet%20or%20%23TeamCable?%20Ask%20the%20FCC%20for%20Title%20II%20reclassification!&url=https://www.battleforthenet.com&related=fightfortheftr'
                 });
 
                 $el.append($twitterOverlay);
