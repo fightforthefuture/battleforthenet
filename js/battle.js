@@ -438,6 +438,7 @@ var loaded_wall = false;
       // Animation complete.
     });
   });
+  
 
   var formFields = [
     "action_comment",
