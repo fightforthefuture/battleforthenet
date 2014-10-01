@@ -420,6 +420,24 @@ var loaded_wall = false;
       // Animation complete.
     });
   });
+  
+  // Myths Debunked
+  $('.myths .columns .show_all a').click(function(e) {
+    console.log('clicked'+ this);
+    $('.myths .columns').removeClass('obscured');
+    var biggest_height = 0;
+    $('.myths .columns > div').each(function() {
+      var height = $(this).innerHeight();
+      if (height > biggest_height)
+        biggest_height = height;
+    });
+    $('.myths .columns > div.listing').each(function() {
+      $(this).css('height', biggest_height +'px');
+    });
+    $( ".myths .columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
+      // Animation complete.
+    });
+  });
 
   var formFields = [
     "action_comment",
