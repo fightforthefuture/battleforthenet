@@ -50,7 +50,7 @@
 
           </ul>
         </header>
-        <section class="jumbotron developer" id="main">
+        <section class="jumbotron developer short" id="main">
 
           
           <h1>
@@ -65,6 +65,42 @@
           
          
         </section>
+        <script type="text/javascript">
+          var iframe = document.createElement('iframe');
+          iframe.id = '_bftn_iframe_embed';
+
+          var loc = window.location.href;
+          var widget_url = '//fightforthefuture.github.io/stop-comcast-widget/iframe/modal.html';
+
+          if (loc.indexOf('skip_call') != -1 && loc.indexOf('oo') != -1)
+            iframe.src = widget_url + '#EMBED-NOCALL-UNCHECK';
+          else if (loc.indexOf('skip_call') != -1)
+            iframe.src = widget_url + '#EMBED-NOCALL';
+          else if (loc.indexOf('skip_email') != -1)
+            iframe.src = widget_url + '#EMBED-NOEMAIL';
+          else if (loc.indexOf('oo') != -1)
+            iframe.src = widget_url + '#EMBED-UNCHECK';
+          else if (loc.indexOf('org=fp') != -1)
+            iframe.src = widget_url + '#EMBED-FP';
+          else if (loc.indexOf('org=dp') != -1)
+            iframe.src = widget_url + '#EMBED-DP';
+          else if (loc.indexOf('org=fff') != -1)
+            iframe.src = widget_url + '#EMBED-FFF';
+          else
+            iframe.src = widget_url + '#EMBED';
+
+          if(/(iPhone|iPod)/g.test(navigator.userAgent))
+          {
+            iframe.style.width = '320px';
+            iframe.style.height = '550px';
+          }
+
+          iframe.frameBorder = 0;
+          iframe.className = 'short';
+          iframe.scrolling = 'no';
+          iframe.allowTransparency = true;
+          document.getElementById('main').appendChild(iframe);
+        </script>
         
       </div>
 
