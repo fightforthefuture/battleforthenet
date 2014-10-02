@@ -1177,6 +1177,106 @@ section.what-we-did {
 
 }
 
+section.infographic {
+  color: @white;
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 300;
+  padding: @section_vert_padding_mobile 0px;
+  text-align: center;
+  background: #313142 !important;
+
+  @media @tablet {
+    padding: 0px;
+  }
+
+  h2 {
+    font-size: @h2_font_size_mobile;
+    font-weight: 300;
+    margin: 0 0 20px;
+
+    color: @white;
+
+    @media @tablet {
+      font-size: @h2_font_size;
+      padding: 60px 0 10px 0;
+    }
+
+  p
+  {
+    @media @tablet {
+
+      padding: 10px 0;
+    }
+
+  }
+  }
+
+  img {
+    display: inline-block;
+    margin: 0 0 4px;
+
+    width: 100%;
+    height: 50px;
+
+    @media @tablet {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  img.info{
+    width: 100% !important;
+    max-width: 1200px;
+    height: auto;
+    
+    margin-top: 10px;
+
+    @media @desktop-lg {
+      margin-bottom: 30px;
+    }
+
+    @media @tablet {
+      margin-top: 30px;
+    }
+    
+    margin: 0px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 30px auto 30px auto;
+    max-width: 768px;
+  }
+
+   .other-resources {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 45px 0 10px 0;
+
+    h2 {
+
+      font-family: 'Proxima Nova',sans-serif;
+      font-size: 30px;
+      font-weight: 300;
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 15px 0px;
+      border-bottom: 1px solid #4e4e66;
+    }
+    a {
+      color:@white;
+      font-size: 16px;
+      font-weight: 300;
+      border-bottom: 1px solid @white;
+    }
+    a:hover {
+      color: pink;
+
+    }
+  }
+
+}
+
 
 section.team-cable, section.widget {
   background-color: rgba(28, 28, 37, 1);
@@ -1251,6 +1351,15 @@ section.its-on, section.push-notification, section.join-us, section.whos-in {
     background: #1C1C25;
     border-top: 6px solid #313142;
     display: block !important;
+
+    .col-lg-6  {
+      padding: 0 0 0 10%;
+    }
+
+    ul {
+      text-align: left;
+      list-style: disc;
+    }
 
     .row {
       max-width: 1000px;
@@ -1981,6 +2090,30 @@ section.faqs {
     }
   }
 }
+
+#comcast section.faqs {
+  background-color: #1c1c25 !important; 
+
+  h2 {
+   font-family: 'Proxima Nova', sans-serif;
+    font-size: 50px !important;
+    font-weight: 300;
+    border-bottom: 0px transparent;
+    padding: 0px 0px 15px 0px;
+    margin: 30px 0px 15px 0px;
+    text-align: center;
+    &:first-child {
+      margin-top: 0px;
+    }
+    @media @tablet {
+      font-size: 30px;
+      padding: 0px 0px 15px 15px;
+    }
+  }
+
+
+}
+
 
 section.myths {
   background-color: #1c1c25;
@@ -3202,6 +3335,7 @@ body#letter {
 
 
 
+
           .the-letter {
             background: url(../images/letter.png)  no-repeat !important;
             background-size: 100% !important;
@@ -3294,6 +3428,81 @@ body#letter {
 
 
 }
+
+section.letter-under {
+      display: block;
+      background-color: #1c1c25 !important;
+      padding: 0;
+      margin: 0;
+      
+
+      .container {
+        max-width: 900px;
+      }
+
+      .columns {
+        display: block;
+        padding: 20px 0;
+
+        .gradient {
+              background: url(../images/curve.png) bottom no-repeat !important;
+              background-size: 100% 22px !important;
+
+
+        }
+
+        .show_all {
+          color: #7c5bd2;
+
+          a {
+            color: #7c5bd2;
+          }
+        }
+        .letter-wrapper {
+          margin: 10px;
+
+          @media @tablet {
+              margin: 50px 0;
+          }
+
+
+
+          .the-letter {
+            background: url(../images/letter.png)  no-repeat !important;
+            background-size: 100% !important;
+            color: #000;
+            border-radius: 0 0 15px 15px;
+
+            .headline{
+                padding: 60px 60px 10px 60px;
+                text-align: center;
+
+                h2 {
+                  text-align: center;
+                  border-bottom: 1px #aaa solid;
+                  font-weight: 300;
+                  font-size: 40px;
+                  padding: 25px;
+                  margin: 5% auto 0 auto;
+                max-width: 500px;
+                }
+            }
+            .letter-copy {
+              padding: 1% 10% 10% 10%;
+              background: url(../images/letter-repeat.png) repeat-y !important;
+              background-size: 100% !important;
+              text-align: left;
+              font-size: 18px;
+              color: #211f33;
+              border-radius: 0 0 15px 15px;
+
+
+            }
+         }
+
+        }
+      }
+  }
 
 
 

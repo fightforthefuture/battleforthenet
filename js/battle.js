@@ -439,6 +439,24 @@ var loaded_wall = false;
     });
   });
   
+  // Letter Debunked
+  $('.letter-under .columns .show_all a').click(function(e) {
+    console.log('clicked'+ this);
+    $('.letter-under .columns').removeClass('obscured');
+    var biggest_height = 0;
+    $('.letter-under .columns > div').each(function() {
+      var height = $(this).innerHeight();
+      if (height > biggest_height)
+        biggest_height = height;
+    });
+    $('.letter-under .columns > div.listing').each(function() {
+      $(this).css('height', biggest_height +'px');
+    });
+    $( ".letter-under .columns" ).animate({ height: biggest_height+'px'}, 1000, function() {
+      // Animation complete.
+    });
+  });
+  
 
   var formFields = [
     "action_comment",
