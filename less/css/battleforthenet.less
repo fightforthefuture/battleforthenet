@@ -3529,115 +3529,130 @@ body#google-employees {
        font-size: 18px;
        font-family: 'Proxima Nova', sans-serif;
       }
-    
-    section#main.jumbotron {
+
+    .container-fluid {
         background-image: url('../images/background-v9.jpg') !important;
-        background-size: auto 100%;
+        background-size: auto 100% !important;
         background-repeat: no-repeat;
         background-position: center top;
-        padding: 5%  11%;
 
-        
-        h1 {
-          text-shadow: none ;
-          font-weight: 400;
-          font-size: 45px;
-          color: #fff;
-        }
-
-        h2 {
-          text-shadow: none !important ;
-          color: #fff;
-          font-size: 24px;
-          line-height: 34px;
-        }
-
-        a.btn {
-         border-color: #2656ab;
-
-         &:hover {
-          border-color: #2656ab;
-         }
-        }
-
-        .col-md-8 {
-          float: none;
-          border-top: 6px solid #245dc1;
-          border-bottom: 10px solid #bfbfbf;
-          padding: 0;
-          margin: 0 auto 60px auto;
-          font-weight: 400;
-          box-shadow: 0 0 3px rgba(0, 0, 0, .7);
-
-        
-
-          .sign-widget {
-            width: 100%;
-            background: #f9f9f9;
-            border-right: 1px solid #d9d9d9;
-            border-left: 1px solid #d9d9d9;
-            padding: 10px 20px;
+        section#main.jumbotron {
+            
+            padding: 5%  11%;
+            display:block;
 
 
-            h3 {
-              color: #424242;
-              margin-top: 0;
-              line-height: 32px;
-              text-shadow: none;
+          .col-md-8 {
+            display:block;
+
+            @media @desktop-md {
+              padding-right: 10%;
             }
 
-            form{
-              input {
-                width: 100%;
-                margin: 8px 0;
-                border-radius: 2px;
-                border: 1px solid #c2c2c2;
-                padding: 5px;
-                font-weight: 400;
-                font-family: 'Proxima Nova', sans-serif;
+            h1 {
+              text-shadow: none ;
+              font-weight: 400;
+              font-size: 45px;
+              color: #fff;
 
-              }
-              input[type=submit]{
-                margin: 10px 0;
-                border: none;
-                background-color: #5cb85c;
-                border-color: #4cae4c;
-                height: 50px;
-                color: #fff;
-                font-size: 18px;
-                font-weight: bold;
-                
-                &:hover {
-                  background-color: #449d44;
-                  border-color: #398439;
-                }
-
-                &:disabled {
-                  background-color: gray;
-                  cursor: default;
-                  opacity: .3;
-                }
-              }
             }
-            .legal-text {
-              text-align: center;
-              font-size: 11px;
-              padding: 5px 0;
-              text-shadow: none;
-              color: #424242;
 
-              a {
-                font-weight: bold;
-                color: #424242;
-              }
+            h2 {
+              text-shadow: none !important ;
+              color: #fff;
+              font-size: 24px;
+              line-height: 34px;
+            }
+
+            a.btn {
+             border-color: #2656ab;
+             &:hover {
+              border-color: #2656ab;
+             }
             }
           }
 
+            .col-md-4 {
+              float: none;
+              border-top: 6px solid #245dc1;
+              border-bottom: 10px solid #bfbfbf;
+              padding: 0;
+              margin: 0 auto 60px auto;
+              font-weight: 400;
+              box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+
+              @media @desktop-md {
+                float: right;
+              }
+            
+
+              .sign-widget {
+                width: 100%;
+                background: #f9f9f9;
+                border-right: 1px solid #d9d9d9;
+                border-left: 1px solid #d9d9d9;
+                padding: 10px 20px;
+
+
+                h3 {
+                  color: #424242;
+                  margin-top: 0;
+                  line-height: 32px;
+                  text-shadow: none;
+                }
+
+                form{
+                  input {
+                    width: 100%;
+                    margin: 8px 0;
+                    border-radius: 2px;
+                    border: 1px solid #c2c2c2;
+                    padding: 5px;
+                    font-weight: 400;
+                    font-family: 'Proxima Nova', sans-serif;
+
+                  }
+                  input[type=submit]{
+                    margin: 10px 0;
+                    border: none;
+                    background-color: #5cb85c;
+                    border-color: #4cae4c;
+                    height: 50px;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: bold;
+                    
+                    &:hover {
+                      background-color: #449d44;
+                      border-color: #398439;
+                    }
+
+                    &:disabled {
+                      background-color: gray;
+                      cursor: default;
+                      opacity: .3;
+                    }
+                  }
+                }
+                .legal-text {
+                  text-align: center;
+                  font-size: 11px;
+                  padding: 5px 0;
+                  text-shadow: none;
+                  color: #424242;
+
+                  a {
+                    font-weight: bold;
+                    color: #424242;
+                  }
+                }
+              }
+
+              
+            }
           
         }
-      
-    }
-
+      }
      section.letter {
         background-color: #fff;
         padding: 6% 10%;
