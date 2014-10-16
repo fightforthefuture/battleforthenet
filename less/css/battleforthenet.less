@@ -3537,11 +3537,6 @@ body#google-employees {
         background-position: center top;
         padding: 5%  11%;
 
-        @media @desktop-lg {
-          background-size: 100%  auto !important ;
-          background-position: center center;
-        }
-
         
         h1 {
           text-shadow: none ;
@@ -3564,33 +3559,17 @@ body#google-employees {
           border-color: #2656ab;
          }
         }
-      
-    }
-
-     section.letter {
-        background-color: #fff;
-        padding: 6% 10%;
-        border-top: 1px solid #d9d9d9;
 
         .col-md-8 {
-          float: none;
-
-          @media @desktop-md {
-            padding: 20px 80px 60px 40px;
-          }
-        }
-        .col-md-4 {
           float: none;
           border-top: 6px solid #245dc1;
           border-bottom: 10px solid #bfbfbf;
           padding: 0;
           margin: 0 auto 60px auto;
           font-weight: 400;
+          box-shadow: 0 0 3px rgba(0, 0, 0, .7);
 
-          @media @desktop-md  {
-            float: right;
-            margin: 0 0 60px 0;
-          }
+        
 
           .sign-widget {
             width: 100%;
@@ -3604,6 +3583,7 @@ body#google-employees {
               color: #424242;
               margin-top: 0;
               line-height: 32px;
+              text-shadow: none;
             }
 
             form{
@@ -3643,6 +3623,8 @@ body#google-employees {
               text-align: center;
               font-size: 11px;
               padding: 5px 0;
+              text-shadow: none;
+              color: #424242;
 
               a {
                 font-weight: bold;
@@ -3653,6 +3635,23 @@ body#google-employees {
 
           
         }
+      
+    }
+
+     section.letter {
+        background-color: #fff;
+        padding: 6% 10%;
+        border-top: 1px solid #d9d9d9;
+
+        .col-md-12 {
+          float: none;
+
+          @media @desktop-md  {
+                  padding: 40px;
+                }
+          
+        }
+        
 
       }
 
