@@ -72,10 +72,16 @@
             <div class="col-md-4">
               <div class="sign-widget">
                 <h3>Join us calling on Google to come out for strong net neutrality</h3>
-                <form>
-                  <input type="text" name="name" placeholder="Name">
-                  <input type="text" name="email" placeholder="Email">
-                  <input type="text" name="department" placeholder="Department">
+                <form id="action_form" action="https://queue.fightforthefuture.org/action" method="POST">
+                  <input type="hidden" name="guard" value=""/>
+                  <div style="display: none;">
+                    <label for="hp_enabled"><input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label>
+                    <label for="hp_disabled"><input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label>
+                  </div>
+                  <input type="hidden" name="tag" value="googlenetneutrality"/>
+                  <input type="text" name="member[first_name]" placeholder="Name">
+                  <input type="text" name="member[email]" placeholder="Email">
+                  <input type="text" name="meta_data" placeholder="Department">
                   <input type="submit" value="Sign The Letter">
                 </form>
                 <div class="legal-text">
@@ -206,17 +212,8 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../js/vendor/jquery.js"></script>
-    <script src="../js/vendor/jquery.velocity.js"></script>
-    <script src="../js/vendor/isotope.pkgd.js"></script>
-    <script src="../js/vendor/underscore.js"></script>
-    <script src="../js/vendor/waypoints.js"></script>
     <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--[if lt IE 10]>
-      <script src="js/vendor/jquery.placeholder.js"></script>
-    <![endif]-->
-    <script src="../js/battle.js"></script>
-    <script src="../js/scoreboard.js"></script>
-    <script src="../js/waypoints.js"></script>
+    <script src="action.js"></script>
     <script type="text/javascript">
       var _sf_async_config = { uid: 47331, domain: 'battleforthenet.com', useCanonical: true };
       (function() {
