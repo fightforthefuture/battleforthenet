@@ -9595,15 +9595,15 @@ body#google-employees section.letter {
   padding: 6% 10%;
   border-top: 1px solid #d9d9d9;
 }
-body#google-employees section.letter .col-md-9 {
+body#google-employees section.letter .col-md-8 {
   float: none;
 }
 @media only screen and (min-width: 992px ) {
-  body#google-employees section.letter .col-md-9 {
-    padding: 20px 80px 100px 40px;
+  body#google-employees section.letter .col-md-8 {
+    padding: 20px 80px 60px 40px;
   }
 }
-body#google-employees section.letter .col-md-3 {
+body#google-employees section.letter .col-md-4 {
   float: none;
   border-top: 6px solid #245dc1;
   border-bottom: 10px solid #bfbfbf;
@@ -9612,24 +9612,24 @@ body#google-employees section.letter .col-md-3 {
   font-weight: 400;
 }
 @media only screen and (min-width: 992px ) {
-  body#google-employees section.letter .col-md-3 {
+  body#google-employees section.letter .col-md-4 {
     float: right;
     margin: 0 0 60px 0;
   }
 }
-body#google-employees section.letter .col-md-3 .sign-widget {
+body#google-employees section.letter .col-md-4 .sign-widget {
   width: 100%;
   background: #f9f9f9;
   border-right: 1px solid #d9d9d9;
   border-left: 1px solid #d9d9d9;
   padding: 10px 20px;
 }
-body#google-employees section.letter .col-md-3 .sign-widget h3 {
+body#google-employees section.letter .col-md-4 .sign-widget h3 {
   color: #424242;
   margin-top: 0;
   line-height: 32px;
 }
-body#google-employees section.letter .col-md-3 .sign-widget form input {
+body#google-employees section.letter .col-md-4 .sign-widget form input {
   width: 100%;
   margin: 8px 0;
   border-radius: 2px;
@@ -9638,7 +9638,7 @@ body#google-employees section.letter .col-md-3 .sign-widget form input {
   font-weight: 400;
   font-family: 'Proxima Nova', sans-serif;
 }
-body#google-employees section.letter .col-md-3 .sign-widget form input[type=submit] {
+body#google-employees section.letter .col-md-4 .sign-widget form input[type=submit] {
   margin: 10px 0;
   border: none;
   background-color: #5cb85c;
@@ -9648,16 +9648,16 @@ body#google-employees section.letter .col-md-3 .sign-widget form input[type=subm
   font-size: 18px;
   font-weight: bold;
 }
-body#google-employees section.letter .col-md-3 .sign-widget form input[type=submit]:hover {
+body#google-employees section.letter .col-md-4 .sign-widget form input[type=submit]:hover {
   background-color: #449d44;
   border-color: #398439;
 }
-body#google-employees section.letter .col-md-3 .sign-widget .legal-text {
+body#google-employees section.letter .col-md-4 .sign-widget .legal-text {
   text-align: center;
   font-size: 11px;
   padding: 5px 0;
 }
-body#google-employees section.letter .col-md-3 .sign-widget .legal-text a {
+body#google-employees section.letter .col-md-4 .sign-widget .legal-text a {
   font-weight: bold;
   color: #424242;
 }
@@ -9673,7 +9673,7 @@ body#google-employees section.care .col-md-12 {
 }
 @media only screen and (min-width: 992px ) {
   body#google-employees section.care .col-md-12 {
-    padding: 0 40px;
+    padding: 40px;
   }
 }
 body#google-employees section.care .col-md-12 h2 {
