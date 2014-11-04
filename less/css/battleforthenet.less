@@ -18,7 +18,7 @@
 body {
   background-attachment: fixed;
   background-color: #0d0c11;
-  background-image: url('../images/background-v7.jpg');
+  background-image: url('../images/background-v10.jpg');
   background-position: left top;
   background-repeat: no-repeat;
   color: @darkgrey;
@@ -72,6 +72,7 @@ a {
   max-width: 950px;
   padding: 30px 20px 0;
   text-shadow: 0px 1px 10px black;
+  position: relative;
 
   @media @tablet {
     padding: 60px 50px 0;
@@ -79,6 +80,15 @@ a {
 
   @media @desktop-sm  {
     padding: 20px 50px 40p;
+  }
+
+  .signup-thanks {
+    position: absolute;
+    left: 0px;
+    bottom: 40px;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
   }
 
   &.developer {
@@ -105,13 +115,7 @@ a {
     }
 
 
-    .signup-thanks {
-      position: absolute;
-      bottom: 40px;
-      font-size: 20px;
-      text-align: center;
-      width: 100%;
-    }
+
 
     p {
       max-width: 950px;
@@ -1632,7 +1636,7 @@ section.call-to-action {
   }
 }
 
-section.team-internet {
+section.vigil, section.team-internet {
   background-color: #313142;
   color: @white;
   font-family: 'Proxima Nova', sans-serif;
@@ -1656,12 +1660,21 @@ section.team-internet {
       margin: 0 0 12px;
       font-size: @h2_font_size;
     }
+
+  }
+
+  &.vigil h2 {
+    margin-bottom: 30px;
   }
 
   p {
     font-size: 18px;
     margin: 12px auto 0;
     max-width: 650px;
+  }
+
+  &.vigil p {
+    max-width: 800px;
   }
 
   img {
@@ -1694,6 +1707,7 @@ section.team-internet {
       margin-top: -5px;
     }
   }
+
 }
 
 

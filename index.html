@@ -70,14 +70,37 @@
 
 
 
-        <section class="jumbotron" id="main">
+        <section class="jumbotron email_signup" id="main">
 
           <h1>
-            We're in the battle for the net.
+            Join the vigil for net neutrality.
           </h1>
 
           <div class="count">
-            <strong>Urgent:</strong> the FCC's plan just leaked. It would give cable companies the power to slow & break the sites you love. Stop them.
+            <p><strong>Urgent:</strong> the FCC's plan just leaked. It would give cable companies the power to slow & break the sites you love. <a href="http://cms.fightforthefuture.org/emergency/" target="_blank">Learn more.</a>
+            <br/><br/>
+            On November 6th, we'll gather at the White House and across government buildings nationwide holding our cell phones, candles, and flashlights up to shine light on the corruption that is unfolding in Washington, DC, and demand a free and uncensored Internet for all.
+            <a href="http://www.popularresistance.org/internet-emergency/" target="_blank">Find a protest nearby.</a>
+            </p>
+          </div>
+
+          <div class="signup">
+            <div class="row">
+              <div class="col-xs-12 col-centered">
+                <div class="input-group">
+                  <input type="text" class="form-control input-lg" placeholder="Your email address" id="email">
+                  <span class="input-group-btn">
+                    <button class="btn btn-success btn-lg" type="button" id="subscribe"><strong>Join the vigil for net neutrality</strong></button>
+                  </span>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+            <a href="https://fightforthefuture.org/" target="_blank" class="privacy">Fight for the Future</a> will contact you.
+            <a href="/privacy" class="privacy">Privacy policy</a>
+            <br/><br/>
+          </div>
+          <div class="signup-thanks" style="display: none;">
+            <strong>Thanks! We'll send you #VigilForNetNeutrality updates!</strong>
           </div>
 
          <!-- <p class="slogan">
@@ -150,7 +173,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
 
         <!--<iframe frameborder="no" id="main_form" src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED"></iframe>-->
 
-        
+        <!--
         <script type="text/javascript">
           var iframe = document.createElement('iframe');
           iframe.id = '_bftn_iframe_embed';
@@ -186,6 +209,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           iframe.allowTransparency = true;
           document.getElementById('first-fold').appendChild(iframe);
         </script>
+        -->
         <!--
         <script type="text/javascript">
           var iframe = document.createElement('iframe');
@@ -224,29 +248,29 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           document.getElementById('first-fold').appendChild(iframe);
         </script>
         -->
+
+
         
       </div>
 
-         <section class="join-the-slowdown" id="join-the-slowdown">
-            <header>
-                <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-                <!-- Comment / uncomment the following line, customize as you wish -->
-                &#9650;
-                <a href="https://www.battleforthenet.com/sept10th/">
-                    <!-- Leave this alone below
-                    <div class="spinner-container">
-                        <div class="spinner"></div>
-                        <div id="spinner-text">!</div>
-                    </div>
-                         Leave this alone above -->
-                    It's not too late! Get tools like this, and join the Internet Slowdown.
-                </a>
-                <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            </header>
-        </section>
+
       </div>
       <section id="supporters" class="hidden">
         <p>This is a placeholder, probably for sponsor logos, etc.</p>
+      </section>
+
+      <section id="vigil" class="vigil">
+        <h2>
+          Join our vigil in front of the White House
+        </h2>
+        <p>
+          This is it. The FCC is finalizing its net neutrality proposal right now and it's a fake plan that leaves the door open for Cable companies to censor and abuse Internet access. We don't have much time. The coming days are critical to show President Obama, the FCC, and the world that The Internet will accept nothing less than lasting net neutrality through Title II reclassification. 
+        </p>
+        <p>
+          In Hungary, thousands of citizens just beat back a tyrannical Internet Tax during massive protests where they held their cell phones in the air. A threat to Internet users' freedom anywhere is a threat to internet users' freedom everywhere. On November 6th, we'll hold our phones, candles, and flashlights up to shine light and protest on the shameful "hybrid" proposal President Obama and FCC Chair Tom Wheeler is advancing. 
+        </p>
+        <br/>
+        <img src="images/vigil.jpg">
       </section>
 
       <section id="team-cable" class="team-cable">
@@ -269,12 +293,12 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         <p>
  We believe in the free and open Internet, with no arbitrary fees or slow lanes for sites that can't pay. All of the people, companies, and organizations below have taken a stand for "Title II reclassification," the <em>only</em> option that lets the FCC stop Team Cable from breaking the key principles of the Internet we love. Will you join us? <a href="#_bftn_iframe_embed">Take Action</a>.
         </p>
-        <a class="btn btn-success moar-people"><img src="images/refresh.png" /> Load more</a>
+        <!--<a class="btn btn-success moar-people"><img src="images/refresh.png" /> Load more</a>-->
         <!--<img src="images/teaminternet.png"/>-->
         <!--<a href="#what-to-do" class="btn btn-success">Take action now</a>-->
       </section>
 
-      <section id="wall" class="wall">
+      <section id="wall" class="wall" style="display: none;">
         <div id="wall-scroller">
         </div>
       </section>
