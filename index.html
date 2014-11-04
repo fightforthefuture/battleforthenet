@@ -77,63 +77,60 @@
           </h1>
 
           <div class="count">
-            <p><strong>Urgent:</strong> the FCC's plan just leaked. It would give cable companies the power to slow & break the sites you love. <a href="http://cms.fightforthefuture.org/emergency/" target="_blank">Learn more.</a>
-            <br/><br/>
-            On November 6th, we'll gather at the White House and across government buildings nationwide holding our cell phones, candles, and flashlights up to shine light on the corruption that is unfolding in Washington, DC, and demand a free and uncensored Internet for all.
-            <a href="http://www.popularresistance.org/internet-emergency/" target="_blank">Find a protest nearby.</a>
+            <p><strong>Urgent:</strong> the FCC's plan just leaked. It would give cable companies the power to slow & break the sites you love. We have to stop them.
+           
             </p>
           </div>
 
-          <div class="signup">
-            <div class="row">
-              <div class="col-xs-12 col-centered">
-                <div class="input-group">
-                  <input type="text" class="form-control input-lg" placeholder="Your email address" id="email">
-                  <span class="input-group-btn">
-                    <button class="btn btn-success btn-lg" type="button" id="subscribe"><strong>Join the vigil for net neutrality</strong></button>
-                  </span>
-                </div><!-- /input-group -->
-              </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-            <a href="https://fightforthefuture.org/" target="_blank" class="privacy">Fight for the Future</a> will contact you.
-            <a href="/privacy" class="privacy">Privacy policy</a>
-            <br/><br/>
-          </div>
-          <div class="signup-thanks" style="display: none;">
-            <strong>Thanks! We'll send you #VigilForNetNeutrality updates!</strong>
-          </div>
+
 
          <!-- <p class="slogan">
             Cable companies are spending millions to gut net neutrality and slow your internet to a crawl. We can't let them.
           </p> -->
         </section>
 
-        <!--
+        
 
         <section class="form" id="what-to-do">
           <div class="shadow">
             <header>
               <h2>
-                Take action now!
+                Join the protests.
               </h2>
               <p class="note">
-                Congress &amp; the FCC must hear from <strong>all of us</strong>
+                 Take a stand for the Internet, this Thursday night.
               </p>
             </header>
-            <form role="form" name="petition">
-              <input type="hidden" name="country" id="country" value="US"/>
+            <form action="https://queue.fightforthefuture.org/action" method="POST" class="group" name="petition">
+              <div style="display: none;">
+                <label for="hp_enabled"><input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label>
+                <label for="hp_disabled"><input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label>
+              </div>
+              <input type="hidden" name="member[language]" value="en">
+              <input type="hidden" name="member[country]" value="US" id="country">
+              <input type="hidden" name="salsa" value="true">
+              <input type="hidden" name="language_id" value="en">
+              <input type="hidden" name="member[movement_id]" value="1">
+              <input type="hidden" name="member[user_agent]" value="">
+              <input type="hidden" name="member[ip_address]" value="">
+              <input type="hidden" name="tag" value="nocompromiseprotest" />
+              <input type="text" name="guard" placeholder="Please leave this field blank" style="display: none;">
+              <input type="hidden" name="action" value="1" />
               <div class="left">
-                <label class="sr-only" for="name">Full Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Name" title="FULL NAME" required>
-                <label class="sr-only" for="email_addr">Email Address</label>
-                <input type="email" id="email_addr" name="email" class="form-control" placeholder="Email" title="EMAIL" required>
+                <div class="flex">
+                  <label class="sr-only" for="name">Full Name</label>
+                  <input type="text" id="name" name="member[first_name]" class="form-control input-name" placeholder="Name" title="FULL NAME" required>
+                  <label class="sr-only" for="email_addr">Email Address</label>
+                  <input type="email" id="email_addr" name="member[email]" class="form-control" placeholder="Email" title="EMAIL" required>
+                </div>
                 <div class="flex">
                   <label class="sr-only" for="addr">Address</label>
-                  <input type="text" id="addr" name="address1" class="form-control input-address" placeholder="Address" title="ADDRESS" required>
+                  <input type="text" id="addr" name="member[street_address]" class="form-control input-address" placeholder="Address" title="ADDRESS" required>
                   <label class="sr-only" for="zip">Zip Code</label>
-                  <input type="text" id="zip" name="zip" class="form-control input-zip" placeholder="ZIP" title="ZIP">
+                  <input type="text" id="zip" name="member[postcode]" class="form-control input-zip" placeholder="ZIP" title="ZIP">
                 </div>
               </div>
+              <!--
               <div class="right" data-toggle="modal" data-target="#editModal">
                 <label class="sr-only" for="comment">Comment</label>
                 <div class="textarea-fade"></div>
@@ -150,13 +147,14 @@ My friends, family, and I use the Internet for conversation and fun, but also fo
 
 ISPs are opposing Title II so that they can destroy the FCC's net neutrality rules in court. This is the same trick they pulled last time. Please, let's not be fooled again. Title II is the strong, legally sound way to enforce net neutrality. Use it.</textarea>
               </div>
+              -->
               <div class="row call-to-action">
                 <div class="col-md-12">
                   <div class="background">
-                    <button type="submit" class="btn btn-default">Submit Your Comment</button>
+                    <button type="submit" class="btn btn-default">Sign up now</button>
 
                     <p class="disclaimer copy">
-                      <a href="http://www.demandprogress.org/" target="_blank">Demand Progress</a> and <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy</a>
+                      <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you. <a href="/privacy/" target="_blank">Privacy</a>
                     </p>
 
                     <p class="disclaimer copy fp-copy">
@@ -168,8 +166,9 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
             </form>
           </div>
         </section>
+        <br/><br/>
 
-        -->
+      
 
         <!--<iframe frameborder="no" id="main_form" src="https://fightforthefuture.github.io/battleforthenet-widget/iframe/modal.html#EMBED"></iframe>-->
 
@@ -293,12 +292,12 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         <p>
  We believe in the free and open Internet, with no arbitrary fees or slow lanes for sites that can't pay. All of the people, companies, and organizations below have taken a stand for "Title II reclassification," the <em>only</em> option that lets the FCC stop Team Cable from breaking the key principles of the Internet we love. Will you join us? <a href="#_bftn_iframe_embed">Take Action</a>.
         </p>
-        <!--<a class="btn btn-success moar-people"><img src="images/refresh.png" /> Load more</a>-->
+        <a class="btn btn-success moar-people"><img src="images/refresh.png" /> Load more</a>
         <!--<img src="images/teaminternet.png"/>-->
         <!--<a href="#what-to-do" class="btn btn-success">Take action now</a>-->
       </section>
 
-      <section id="wall" class="wall" style="display: none;">
+      <section id="wall" class="wall">
         <div id="wall-scroller">
         </div>
       </section>

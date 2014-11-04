@@ -545,9 +545,10 @@ var loaded_wall = false;
     $('#editModal').modal('hide');
   });
 
-  function postUser($form) {
+  function postUser(form) {
     var ok = true;
     var doc = {};
+    /*
     formFields.forEach(function(field) {
       if ($("input[name=" + field + "]", $form)[0] && $("input[name=" + field + "]", $form).val() === "") {
         ok = false;
@@ -559,7 +560,16 @@ var loaded_wall = false;
     doc['action_comment'] = $("[name=action_comment]").val();
     doc['country'] = $('#country').val();
     doc['org'] = window.org;
+    */
 
+    $.post(form.attr('action'), form.serialize(), function(data){
+        /*
+        $action_widget = document.getElementById('action_widget');
+        $action_widget.className = ( $action_widget.className == 'share-widget' )? '' : 'share-widget';
+        */
+    });
+
+    /*
     if (ok) {
       $.ajax({
         url: "//queue.battleforthenet.com/submit",
@@ -572,6 +582,7 @@ var loaded_wall = false;
         }
       });
     }
+    */
     return ok;
   }
 
@@ -621,10 +632,12 @@ var loaded_wall = false;
 
   // Send 20% of forms to FP page.
   window.org = '';
+  /*
   if (Math.random() < 0.20) {
     $('.call-to-action').addClass('fp');
     window.org = 'fp';
   }
+  */
 
   // Support IE9+
   function getInternetExplorerVersion()
