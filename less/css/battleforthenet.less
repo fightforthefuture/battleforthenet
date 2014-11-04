@@ -18,7 +18,7 @@
 body {
   background-attachment: fixed;
   background-color: #0d0c11;
-  background-image: url('../images/background-v10.jpg');
+  background-image: url('../images/background-v11.jpg');
   background-position: left top;
   background-repeat: no-repeat;
   color: @darkgrey;
@@ -580,7 +580,7 @@ section.form {
     }
 
     .left {
-      height: 132px;
+      height: 88px;
 
       width: 100%;
 
@@ -592,7 +592,11 @@ section.form {
         display: flex;         /* NEW, Spec - Opera 12.1, Firefox 20+ */
 
         input {
-          border-bottom: none;
+          /*border-bottom: none;*/
+        }
+
+        .input-name {
+          border-right: 1px solid #d8d8e9;
         }
 
         .input-address {
@@ -610,11 +614,13 @@ section.form {
         }
       }
 
+      /*
       @media @tablet {
         border-right: 1px solid #d1d1e9;
         float: left;
         width: 250px;
       }
+      */
     }
 
     .right {
