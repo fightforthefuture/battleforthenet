@@ -387,6 +387,7 @@ var loaded_wall = false;
     $('#participantModal').modal('show');
 
   // ShareProgress Facebook button override
+  /*
   $('a.share.facebook').click(function(e) {
     e.preventDefault();
     $('#sp_fb a').click();
@@ -397,6 +398,7 @@ var loaded_wall = false;
     e.preventDefault();
     $('#sp_tw a').click();
   });
+  */
 
   // Wall Under
   $('.wall-under .columns .show_all a').click(function(e) {
@@ -591,10 +593,13 @@ var loaded_wall = false;
     if (postUser($(this))) {
       window.cachedData = $('#what-to-do form').serialize();
       $("input:not([type=image],[type=button],[type=submit])").val('');
+      /*
       if (!$('body').hasClass('embed'))
         $('#participantModal').modal('show');
       else
         $('#thanksModal').modal('show');
+      */
+      $('#thanksModal').modal('show');
     } else {
       alert('Please complete the rest of the form. Thanks!');
     }
