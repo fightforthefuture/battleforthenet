@@ -528,6 +528,8 @@ var loaded_wall = false;
       var $navigation = $('#navigation a');
       $navigation.removeClass('selected');
       var hash = location.hash || '#home';
+      if (hash.indexOf('?') != -1)
+        hash = hash.substr(0, hash.indexOf('?'));
       var $selected = $navigation.filter('[href=' + hash + ']');
       if ($selected.length === 0) {
         $selected = $navigation.first();
