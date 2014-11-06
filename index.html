@@ -270,7 +270,19 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         <br/>
         <div class="other-resources">
 <h2>Find a protest near you</h2>
-<a href="http://www.popularresistance.org/internet-emergency/" target="_blank"><iframe frameborder="0" width="725" height="408" src="https://maps.battleforthenet.com/maps/battle-for-the-net/?embedded"></iframe></a><p> <a href="http://www.popularresistance.org/internet-emergency/" class="btn btn-success" target="_blank">Host your own protest</a></p>
+
+<div id="map_iframe_container"></div>
+<script type="text/javascript">
+  var iframe = document.createElement('iframe');
+  iframe.id = '_bftn_map_iframe';
+  iframe.style = "width: 100%; max-width: 725px; height: 408px;"
+  iframe.src = "https://maps.battleforthenet.com/maps/battle-for-the-net/?embedded"
+  iframe.frameBorder = 0;
+  iframe.scrolling = 'no';
+  iframe.allowTransparency = true;
+  document.getElementById('map_iframe_container').appendChild(iframe);
+</script>
+<p> <a href="mailto:team@fightforthefuture.org?subject=I'm%20in!" class="btn btn-success" target="_blank">Host your own protest</a></p>
 <p><a href="https://www.facebook.com/events/302789543260406/?ref=22" target="_blank">North Front of the White House, Lafayette Park, Washington, DC</a> <br><br> <a href="https://www.facebook.com/events/317631865090096/?ref=22" target="_blank">Civic Center Plaza in San Francisco, California</a><br><br>
 <a href="https://www.facebook.com/events/606539376138831" target="_blank">Massachusetts State House in Boston, Massachusetts</a><br><br>
 <a href="https://www.facebook.com/events/582368051868041/?ref=5" target="_blank">Union Square Park in New York City, New York</a><br>
