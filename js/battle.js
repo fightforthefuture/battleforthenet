@@ -517,6 +517,9 @@ var loaded_wall = false;
       e.preventDefault();
 
       var target = '#' + this.href.split('#')[1];
+
+      window.location.hash = target;
+
       $(target).velocity('scroll', {duration: 777, offset: -66}, function() {
         location.hash = target;
       });
@@ -525,16 +528,23 @@ var loaded_wall = false;
 
   $(window)
     .on('hashchange', function() {
+      console.log('er');
       var $navigation = $('#navigation a');
       $navigation.removeClass('selected');
       var hash = location.hash || '#home';
       if (hash.indexOf('?') != -1)
         hash = hash.substr(0, hash.indexOf('?'));
+      for (var i =0; i< $navigation.length; i++)
+        if ($($navigation[i]).attr('href').indexOf(hash) != -1)
+          $($navigation[i]).addClass('selected')
+      /*
+      console.log('hash: ', hash);
       var $selected = $navigation.filter('[href=' + hash + ']');
-      if ($selected.length === 0) {
+      if ($selected.length !== 0) {
         $selected = $navigation.first();
       }
       $selected.addClass('selected');
+      */
     })
     .trigger('hashchange');
 
