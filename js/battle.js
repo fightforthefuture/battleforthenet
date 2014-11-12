@@ -575,7 +575,6 @@ var loaded_wall = false;
     doc['country'] = $('#country').val();
     doc['org'] = window.org;
     */
-
     $.post(form.attr('action'), form.serialize(), function(data){
         /*
         $action_widget = document.getElementById('action_widget');
@@ -604,7 +603,7 @@ var loaded_wall = false;
     e.preventDefault();
     if (postUser($(this))) {
       window.cachedData = $('#what-to-do form').serialize();
-      $("input:not([type=image],[type=button],[type=submit])").val('');
+      $("input:not([type=image],[type=button],[type=submit],[type=hidden])").val('');
       /*
       if (!$('body').hasClass('embed'))
         $('#participantModal').modal('show');
