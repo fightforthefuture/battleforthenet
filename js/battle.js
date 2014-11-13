@@ -518,6 +518,9 @@ var loaded_wall = false;
 
       var target = '#' + this.href.split('#')[1];
 
+      if (target == '#')
+        return false;
+
       window.location.hash = target;
 
       $(target).velocity('scroll', {duration: 777, offset: -66}, function() {
