@@ -783,6 +783,25 @@ section.form {
     }
   }
 }
+section.map {
+  background-color: #313142;
+
+  iframe.map {
+
+    display: block;
+    margin: 0px auto;
+    min-width: 320px;
+    width: 100%;
+    height: 400px;
+
+    @media @tablet {
+      width: 100%;
+      max-width: 960px;
+      height: 500px;
+      border: 1px solid white;
+    }
+  }
+}
 
 header.navigation {
   background-color: rgba(0, 0, 0, 0.8);
@@ -1671,6 +1690,13 @@ section.vigil, section.team-internet {
   padding: @section_vert_padding_mobile 20px;
   text-align: center;
 
+  &.vigil {
+    &.below {
+      padding-top: 1px;
+    }
+    padding-bottom: 1px;
+  }
+
   @media @tablet {
     padding: @section_vert_padding 20px;
   }
@@ -1717,7 +1743,7 @@ section.vigil, section.team-internet {
 
   a.btn {
     font-size: 18px;
-    margin: 32px 0 0;
+    margin: 0px 0 0;
     padding: 7px 15px;
     color: white;
     text-decoration: none;
