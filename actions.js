@@ -1,4 +1,4 @@
-TeamFuture.jsonp({
+OAP.jsonp({
     "org": {
         "name": "Battle for the Net",
         "description": "Fight for the Future is dedicated to protecting and expanding the Internet's transformative power in our lives by creating civic campaigns that are engaging for millions of people. Alongside internet users everywhere we beat back attempts to limit our basic rights and freedoms, and empower people to demand technology (and policy) that serves their interests. Activating the internet for the public good can only lead to a more vibrant and awesome world. More coming soon.",
