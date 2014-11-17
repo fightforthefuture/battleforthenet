@@ -1,4 +1,4 @@
-TeamFuture.jsonp({
+OAP.jsonp({
     "org": {
         "name": "Battle for the Net",
         "description": "Fight for the Future is dedicated to protecting and expanding the Internet's transformative power in our lives by creating civic campaigns that are engaging for millions of people. Alongside internet users everywhere we beat back attempts to limit our basic rights and freedoms, and empower people to demand technology (and policy) that serves their interests. Activating the internet for the public good can only lead to a more vibrant and awesome world. More coming soon.",
@@ -10,7 +10,7 @@ TeamFuture.jsonp({
             "id": "comcast_merger",
             "url": "https://www.battleforthenet.com/comcast",
             "title": "Stop the Comcast / TWC Merger!",
-            "image_splash": "http://battle.dev/images/notification.jpg",
+            "image_splash": "https://www.battleforthenet.com/images/notification.jpg",
             "notification": "Help us stop the Comcast / TWC merger!",
             "description": "Comcast and TWC are the worst companies in America. Now they want to become even bigger and raise prices on consumers by merging. Stop them!",
             "date": "2014-10-10",
@@ -46,22 +46,26 @@ TeamFuture.jsonp({
                             {
                                 "name": "member[first_name]",
                                 "type": "text",
-                                "placeholder": "Your name"
+                                "placeholder": "Your name",
+                                "autofill": "first_name"
                             },
                             {
                                 "name": "member[email]",
                                 "type": "text",
-                                "placeholder": "Email"
+                                "placeholder": "Email",
+                                "autofill": "email"
                             },
                             {
                                 "name": "member[street_address]",
                                 "type": "text",
-                                "placeholder": "Street Address"
+                                "placeholder": "Street Address",
+                                "autofill": "street_address"
                             },
                             {
                                 "name": "member[postcode]",
                                 "type": "text",
-                                "placeholder": "Postal Code"
+                                "placeholder": "Postal Code",
+                                "autofill": "zip"
                             },
                             {
                                 "name": "submit",
@@ -87,7 +91,6 @@ TeamFuture.jsonp({
                             }
                         ],
                         "disclosure": "We'll deliver this letter to the FCC, your members of Congress and the White House. We'll never share your email with anyone else.",
-                        "privacy_policy": "https://www.battleforthenet.com/privacy",
                         "next": {
                             "id": "comcast_call",
                             "overrides": {
@@ -114,7 +117,8 @@ TeamFuture.jsonp({
                             {
                                 "name": "userPhone",
                                 "type": "text",
-                                "placeholder": "Enter your phone number."
+                                "placeholder": "Enter your phone number.",
+                                "autofill": "phone_number"
                             },
                             {
                                 "name": "submit",
@@ -147,7 +151,7 @@ TeamFuture.jsonp({
             "id": "battleforthenet",
             "url": "https://www.battleforthenet.com",
             "title": "Battle for the Net!",
-            "image_splash": "http://battle.dev/images/notification.jpg",
+            "image_splash": "https://www.battleforthenet.com/images/notification.jpg",
             "date": "2014-09-10",
             "notification": "Deadline: tell the FCC to defend net neutrality!",
             "description": "The FCC is poised to destroy net neutrality forever! Help us stop them!",
