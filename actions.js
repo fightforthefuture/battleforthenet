@@ -7,6 +7,22 @@ OAP.jsonp({
     },
     "campaigns": [
         {
+            "default_locale": "en",
+            "locales": {
+                "es": {
+                    "actions": {
+                        "petitions": [
+                            {
+                                "id": "comcast_petition",
+                                "title": "El stop-o el Comast y El TWC merger-o",
+                                "letter": {
+                                    "text": "lol"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
             "id": "comcast_merger",
             "url": "https://www.battleforthenet.com/comcast",
             "title": "Stop the Comcast / TWC Merger!",
