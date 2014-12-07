@@ -533,7 +533,6 @@ var loaded_wall = false;
 
   $(window)
     .on('hashchange', function() {
-      console.log('er');
       var $navigation = $('#navigation a');
       $navigation.removeClass('selected');
       var hash = location.hash || '#home';
