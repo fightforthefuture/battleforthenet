@@ -9,11 +9,19 @@ jQuery(function($) {
     var spreadsheetData = [];
     var players = [];
 
+    var state = location.href.match(/state=([\w-_\s\+]+)/i);
+    if (state)
+    {
+        state = state[1].replace('+', ' ').replace('%20', ' ');
+        $politicalSelect.val(state)
+    }
+
     $.getJSON(spreadsheetUrl, function(response) {
+
         spreadsheetData = response.feed.entry;
         // Parse & sort by weight
         
-        showPlayers(spreadsheetData, true);
+        showPlayers(spreadsheetData, true, state);
 
         // Resort based on teams, every resize.
         $(window).on('resize', function onResize() {
@@ -46,21 +54,10 @@ jQuery(function($) {
 
             return;
 
-            for (var i=0; i<spreadsheetData.length; i++) {
-                if (spreadsheetData[i].gsx$state.$t == whichState) {
-                    subset.push(spreadsheetData[i]);
-                }
-            }
-            showPlayers(subset, false);
-
-            $isotope.isotope('updateSortData').isotope();
-
-            return true;
         });
-
     });
 
-    function showPlayers(data, showGeneral) {
+    function showPlayers(data, showGeneral, state) {
         $isotope.html('');
         players = [];
 
@@ -138,10 +135,21 @@ jQuery(function($) {
         // Initialize isotope.
         $isotope.isotope({
             filter: function() {
-                if (!isFrontpage)
-                    return true;
 
-                return frontpage = $(this).find('.frontpage').text() == 1;
+                if (!state)
+                {
+
+                    if (!isFrontpage)
+                        return true;
+
+                    return frontpage = $(this).find('.frontpage').text() == 1;
+                }
+                else
+                {
+                    var filterState = $(this).find('.state').text();
+                    // return true to show, false to hide
+                    return filterState == state;
+                }
             },
             getSortData: {
                 weight: function(el) {
