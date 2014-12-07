@@ -7,17 +7,27 @@ OAP.jsonp({
     },
     "campaigns": [
         {
-            "default_locale": "en",
+            "default_locale": "en-us",
             "locales": {
-                "es": {
+                "es-mx": {
+                    "title": "Spanish version of campaign",
+                    "notification": "Detener la fusión Comcast y Time Warner Cable.",
+                    "description": "Comcast y TWC son los peores empresas en América. Ahora quieren ser aún más grande y subir los precios en los consumidores mediante la fusión. Detenerlos!",
+                    "action_button_text": "Tomar Medidas",
                     "actions": {
                         "petitions": [
                             {
                                 "id": "comcast_petition",
                                 "title": "El stop-o el Comast y El TWC merger-o",
                                 "letter": {
-                                    "text": "lol"
-                                }
+                                    "text": "lolddd"
+                                },
+                                "fields": [
+                                    {
+                                        "name": "member[first_name]",
+                                        "placeholder": "Spanished Localized Value"
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -164,6 +174,15 @@ OAP.jsonp({
             }
         },
         {
+            "default_locale": "en-us",
+            "locales": {
+                "es-mx": {
+                    "title": "Batalla por el Internet!",
+                    "notification": "Batalla por el Internet!",
+                    "description": "La FCC está a punto de destruir la neutralidad de la red para siempre! Ayúdanos a detenerlos!",
+                    "action_button_text": "Tomar Medidas"
+                }
+            },
             "id": "battleforthenet",
             "url": "https://www.battleforthenet.com",
             "title": "Battle for the Net!",

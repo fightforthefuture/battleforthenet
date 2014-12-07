@@ -1,16 +1,71 @@
 jQuery(function($) {
     // Political Scoreboard
     var $isotope = $('.isotope');
+    var $politicalSelect = $('.political select');
     var spreadsheetKey = $isotope.data('spreadsheet-key');
     var spreadsheetUrl = 'https://spreadsheets.google.com/feeds/list/' + spreadsheetKey + '/default/public/values?alt=json';
 
     var isFrontpage = $isotope.data('frontpage');
+    var spreadsheetData = [];
+    var players = [];
 
     $.getJSON(spreadsheetUrl, function(response) {
+        spreadsheetData = response.feed.entry;
         // Parse & sort by weight
-        var players = [];
-        for (var i in response.feed.entry) {
-            var player = response.feed.entry[i];
+        
+        showPlayers(spreadsheetData, true);
+
+        // Resort based on teams, every resize.
+        $(window).on('resize', function onResize() {
+            regenerateWeights(players);
+            $isotope.isotope('updateSortData').isotope();
+        });
+
+        $politicalSelect.on('change', function() {
+            var whichState = $(this).val();
+            var subset = [];
+
+            if (whichState == 'all')
+                return $isotope.isotope({
+                    filter: function() {
+                        if (!isFrontpage)
+                            return true;
+
+                        return frontpage = $(this).find('.frontpage').text()==1;
+                    }
+                });
+
+            $isotope.isotope({
+                filter: function() {
+                    // `this` is the item element. Get text of element's .number
+                    var state = $(this).find('.state').text();
+                    // return true to show, false to hide
+                    return state == whichState;
+                }
+            });
+
+            return;
+
+            for (var i=0; i<spreadsheetData.length; i++) {
+                if (spreadsheetData[i].gsx$state.$t == whichState) {
+                    subset.push(spreadsheetData[i]);
+                }
+            }
+            showPlayers(subset, false);
+
+            $isotope.isotope('updateSortData').isotope();
+
+            return true;
+        });
+
+    });
+
+    function showPlayers(data, showGeneral) {
+        $isotope.html('');
+        players = [];
+
+        for (var i in data) {
+            var player = data[i];
 
             player = {
                 frontpage: +player.gsx$frontpage.$t,
@@ -22,13 +77,15 @@ jQuery(function($) {
                 size: player.gsx$size.$t,
                 meta: player.gsx$meta.$t,
                 twitter: player.gsx$twitter.$t,
-                sharetext: player.gsx$sharetext.$t
+                sharetext: player.gsx$sharetext.$t,
+                subdomain: player.gsx$subdomain.$t,
+                state: player.gsx$state.$t,
             };
 
             // Only hand picked players should show on the homepage.
-            if (!isFrontpage || player.frontpage === 1) {
-                players.push(player);
-            }
+            //if (!isFrontpage || player.frontpage === 1 || !showGeneral) {
+            players.push(player);
+            //}
         }
 
         players = players.sort(function(a, b) {
@@ -80,6 +137,12 @@ jQuery(function($) {
 
         // Initialize isotope.
         $isotope.isotope({
+            filter: function() {
+                if (!isFrontpage)
+                    return true;
+
+                return frontpage = $(this).find('.frontpage').text() == 1;
+            },
             getSortData: {
                 weight: function(el) {
                     var meta = $(el).data('meta');
@@ -93,18 +156,12 @@ jQuery(function($) {
             },
             sortBy: 'weight'
         });
-
-        // Resort based on teams, every resize.
-        $(window).on('resize', function onResize() {
-            regenerateWeights(players);
-            $isotope.isotope('updateSortData').isotope();
-        });
-    });
+    }
 
     // Political Scoreboard logic
     function regenerateWeights(players) {
         var across = Math.floor($('#political').width() / 150),
-            eligible = Math.ceil(across / 3);
+            eligible = Math.ceil(across);
 
         // We can't sort with less than 3 columns.
         if (across < 3) {
@@ -162,12 +219,12 @@ jQuery(function($) {
             if (!player) {
                 if (query.team === 'undecided') {
                     if ((position.x + 1) / across > .5) {
-                        query.team = 'team-internet';
+                        query.team = 'undecided';
                     } else {
                         query.team = 'team-cable';
                     }
                 } else {
-                    query.team = 'undecided';
+                    query.team = 'team-internet';
                 }
             }
 
@@ -179,6 +236,7 @@ jQuery(function($) {
             }
 
             player.weightGenerated = weight--;
+
             player.positioned = true;
 
             map[position.x][position.y] = true;
