@@ -2428,7 +2428,7 @@ section.tshirt {
 }
 
 section.political {
-  background-color: #15151c;
+  background: #15151c url(../images/usmap.png) center 30px no-repeat;
   color: @pink;
   font-family: 'Proxima Nova', sans-serif;
   font-weight: 300;
@@ -2442,7 +2442,8 @@ section.political {
   h2 {
     font-size: @h2_font_size_mobile;
     font-weight: 300;
-    margin: 0 0 32px;
+    margin: 10 0 32px;
+    padding-top: 10px;
     color: @white;
 
     @media @tablet {
@@ -2533,6 +2534,18 @@ section.political {
         width: 30%;
       }
     }
+  }
+
+  select {
+    font-size: 30px;
+    color: white;
+    background: #4dbca1;
+    border: 0px none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  select option {
+    color: white;
   }
 
   .isotope {

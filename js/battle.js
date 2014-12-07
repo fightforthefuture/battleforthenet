@@ -342,6 +342,8 @@ var loaded_wall = false;
     }
   });
 
+  $('.political select')[0].selectedIndex = 0;
+
   $('#subscribe').click(function(e) {
       e.preventDefault();
 
@@ -550,6 +552,7 @@ var loaded_wall = false;
       */
     })
     .trigger('hashchange');
+
 
   // MODAL //
   // Save comment.
