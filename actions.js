@@ -18,9 +18,9 @@ OAP.jsonp({
                         "petitions": [
                             {
                                 "id": "comcast_petition",
-                                "title": "El stop-o el Comast y El TWC merger-o",
+                                "title": "Stop the merger -- SPANISH VERSION",
                                 "letter": {
-                                    "text": "lolddd"
+                                    "text": "Here's the petition text that you'd see with Spanish Locale"
                                 },
                                 "fields": [
                                     {
