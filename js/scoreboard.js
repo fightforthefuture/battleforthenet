@@ -33,7 +33,7 @@ jQuery(function($) {
             var whichState = $(this).val();
             var subset = [];
 
-            if (whichState == 'all')
+            if (whichState == 'key')
                 return $isotope.isotope({
                     filter: function() {
                         if (!isFrontpage)
@@ -42,6 +42,18 @@ jQuery(function($) {
                         return frontpage = $(this).find('.frontpage').text()==1;
                     }
                 });
+            else if (whichState == 'team-internet')
+                return $isotope.isotope({ filter: '.team-internet' });
+            else if (whichState == 'team-cable')
+                return $isotope.isotope({ filter: '.team-cable' });
+            else if (whichState == 'undecided')
+                return $isotope.isotope({ filter: function() {
+                    return !$(this).hasClass('team-internet') && !$(this).hasClass('team-cable') 
+                } });
+            else if (whichState == 'all')
+                return $isotope.isotope({ filter: function() {
+                    return true
+                } });
 
             $isotope.isotope({
                 filter: function() {
