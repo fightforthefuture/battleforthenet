@@ -185,24 +185,38 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           <script type="text/javascript">
             var loc = window.location.href;
 
-            if (loc.indexOf('org=fp') != -1)
+            random_org = null;
+
+            if (loc.indexOf('org=') == -1)
+            {
+              var coin_toss = Math.random();
+              if (coin_toss < .2)
+                random_org = 'fp'
+              else if (coin_toss < .6)
+                random_org = 'dp'
+              else
+                random_org = 'fftf'
+            }
+
+            if (loc.indexOf('org=fp') != -1 || random_org == 'fp')
             {
               document.getElementById('org').value = 'fp';
               document.getElementById('randomize_disclosure').style.display = 'none';
               document.getElementById('fp_disclosure').style.display = 'block';
             }
-            else if (loc.indexOf('org=dp') != -1)
+            else if (loc.indexOf('org=dp') != -1 || random_org == 'dp')
             {
               document.getElementById('org').value = 'dp';
               document.getElementById('randomize_disclosure').style.display = 'none';
               document.getElementById('dp_disclosure').style.display = 'block';
             }
-            else if (loc.indexOf('org=fftf') != -1)
+            else if (loc.indexOf('org=fftf') != -1 || random_org == 'fftf')
             {
               document.getElementById('org').value = 'fftf';
               document.getElementById('randomize_disclosure').style.display = 'none';
               document.getElementById('fftf_disclosure').style.display = 'block';
             }
+
           </script>
         </section>
         <br/><br/>
