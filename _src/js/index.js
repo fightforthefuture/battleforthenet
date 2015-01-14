@@ -26,7 +26,7 @@ var Queue = require('./Queue');
     }, 200);
 
     // Preload the background
-    new ImagePreloader('./images/ImageBack1.jpg', function() {
+    new ImagePreloader('./images/Imagesmall.jpg', function() {
         var background = document.getElementById('background');
         background.className += ' fadeIn ';
         background.style.backgroundImage = 'url(' + this.src + ')';
@@ -152,14 +152,15 @@ var Queue = require('./Queue');
                     target: '.modals-target',
                     template: e.target.responseText
                 });
-                $('.modal .close').click(function(e) {
+                document.querySelector('.modal .close').addEventListener('click', function(e) {
                     e.preventDefault();
-                    $('.overlay').addClass('invisible');
-                });
-                $('.shareBtn.twitter').click(function(e) {
+                    document.querySelector('.overlay').className += ' invisible ';
+                }, false);
+
+                document.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
                     e.preventDefault();
                     window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-                });
+                }, false);
             }
         });
 
@@ -172,7 +173,6 @@ var Queue = require('./Queue');
                         template: e.target.responseText
                     });
 
-                    loadCSS('scoreboard/scoreboard.css');
                     loadJS('js/scoreboard.js', true);
                 }
             });
