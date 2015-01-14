@@ -2499,7 +2499,7 @@ section.political {
 
   .cash {
     background-color: #292937;
-    margin: 12px auto 12px;
+    margin: 35px auto 12px;
     padding: 8px;
     height: 48px;
     max-width: 580px;
@@ -2569,7 +2569,7 @@ section.political {
       height: 190px;
       position: relative;
       width: 150px;
-
+      box-sizing: border-box;
 
       img {
         height: 100%;
@@ -2671,7 +2671,14 @@ section.political {
         width: 100%;
       }
 
+      &.active {
+        .color {
+          box-shadow: inset 0 0 20px black;
+        }
+      }
+
       &.team-cable {
+
         .color {
           background-color: rgba(234, 37, 37, 0.5);
         }
