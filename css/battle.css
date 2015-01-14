@@ -746,6 +746,7 @@ a.shareBtn.twitter {
     -webkit-border-top-left-radius: 10px;
     -moz-border-radius-topleft: 10px;
     border-top-left-radius: 10px;
+    z-index: 1;
 }
 .bottom_bar img {
     vertical-align: middle;
