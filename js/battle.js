@@ -418,9 +418,9 @@ OrganizationRotation.prototype.addEventListeners = function() {
     random_org = null;
     if (loc.indexOf('org=') == -1) {
         var coin_toss = Math.random();
-        if (coin_toss < .33) {
+        if (coin_toss < .20) {
             random_org = 'fp';
-        } else if (coin_toss < .66) {
+        } else if (coin_toss < .60) {
             random_org = 'dp';
         } else {
             random_org = 'fftf';
