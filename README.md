@@ -1,4 +1,4 @@
-Battle for the Net!
+Battle for the Net.
 -------------------
 
 * **This is the source code for [battleforthenet.com][1]!**
