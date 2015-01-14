@@ -313,6 +313,15 @@ header nav a {
 </section>
 
 <script>
+// Dependencies for Political Scoreboard.
+// On desktop browsers, we'll show this on the homepage.
+if (!navigator.userAgent.match(/mobile/i)) {
+    document.write("<script src='//cdn.optimizely.com/js/1886210014.js'><\/script>");
+    document.write("<link rel='stylesheet' href='scoreboard/scoreboard.css' \/>");
+    document.write("<script src='js/vendor/jquery.js'><\/script>");
+    document.write("<script src='js/vendor/underscore.js'><\/script>");
+    document.write("<script src='js/vendor/isotope.pkgd.js'><\/script>");
+}
 
 var GLOBAL_TWEET_TEXT = 'These senators & reps can kill net neutrality in a matter of weeks. Find out if yours is one https://www.battleforthenet.com/scoreboard https://pic.twitter.com/r6V33Ileya';
 
@@ -360,16 +369,6 @@ if (IsOldIE) {
     location.href = 'https://www.mozilla.org/en-US/firefox/new/';
 } else {
     window.addEventListener('load', function() {
-        // Dependencies for Political Scoreboard.
-        // On desktop browsers, we'll show this on the homepage.
-        if (!navigator.userAgent.match(/mobile/i)) {
-            document.write("<script src='//cdn.optimizely.com/js/1886210014.js'><\/script>");
-            document.write("<link rel='stylesheet' href='scoreboard/scoreboard.css' \/>");
-            document.write("<script src='js/vendor/jquery.js'><\/script>");
-            document.write("<script src='js/vendor/underscore.js'><\/script>");
-            document.write("<script src='js/vendor/isotope.pkgd.js'><\/script>");
-        }
-
         innerHeight; // Paint before fetching new assets
         loadCSS('./css/battle.css');
         loadJS('./js/battle.js');
