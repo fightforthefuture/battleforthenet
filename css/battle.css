@@ -531,6 +531,12 @@ body #battle .phone-call-form footer button:active {
     width: 140px;
     height: 72px;
 }
+@media screen and (max-width: 520px) {
+    #battle section#team-internet .supporter img {
+        width: 130px;
+        height: 67px;
+    }
+}
 
 /* Political Scoreboard */
 #battle section#political {
@@ -832,32 +838,41 @@ a.shareBtn.facebook {
 a.shareBtn.twitter {
     background-color: #2D98D6;
 }
-.bottom_bar {
-    position: fixed;
-    right: 0px;
-    bottom: 0px;
+.bottom-bar {
     background: #5d5d7a;
-    padding: 10px 20px;
-    box-shadow: 0px 0px 5px black;
-    -webkit-border-top-left-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    border-top-left-radius: 10px;
+    border-radius: 10px 0 0 0;
+    bottom: 0;
+    box-shadow: 0 0 5px black;
+    padding: 10px 20px 6px;;
+    position: fixed;
+    right: 0;
     z-index: 1;
 }
-.bottom_bar img {
-    vertical-align: middle;
+.bottom-bar img {
+    height: 20px;
     margin-right: 5px;
+    opacity: 0;
+    vertical-align: middle;
+    width: 19px;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
 }
-.bottom_bar a {
+.bottom-bar a {
     color: white;
-    text-decoration: underline;
     font-weight: bold;
+
+    -webkit-transition: text-shadow 0.3s;
+            transition: text-shadow 0.3s;
 }
-.bottom_bar a:hover {
+.bottom-bar a:hover {
     text-shadow: 0px 0px 5px white;
 }
+.bottom-bar a .underline {
+    text-decoration: underline;
+}
 @media screen and (max-width: 520px) {
-    .bottom_bar {
+    .bottom-bar {
         display: none;
     }
 }
