@@ -325,6 +325,7 @@ body #battle #petition .right #comment {
     border-radius: 0 6px 0 0;
     color: #ccc;
     font-family: "proxima-nova", sans-serif;
+    font-size: 15px;
     height: 90px;
     overflow: hidden;
     padding: 12px;
