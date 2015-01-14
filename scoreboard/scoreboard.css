@@ -324,12 +324,14 @@ section.political .isotope .politician.team-cable .color {
     background-color: rgba(234,37,37,.5);
 }
 
-section.political .isotope .politician.half-evil .color {
+section.political .isotope .politician.half-good .color {
+    /*
     background: -moz-linear-gradient(left,rgba(234,37,37,.5) 0,rgba(52,52,68,.5) 40%);
     background: -webkit-gradient(linear,left top,right top,color-stop(0%,rgba(234,37,37,.5)),color-stop(40%,rgba(52,52,68,.5)));
     background: -webkit-linear-gradient(left,rgba(234,37,37,.5) 0,rgba(52,52,68,.5) 40%);
     background: -o-linear-gradient(left,rgba(234,37,37,.5) 0,rgba(52,52,68,.5) 40%);
     background: -ms-linear-gradient(left,rgba(234,37,37,.5) 0,rgba(52,52,68,.5) 40%);
+    */
     background: linear-gradient(to right,rgba(234,37,37,.5) 0,rgba(52,52,68,.5) 40%);
 }
 
