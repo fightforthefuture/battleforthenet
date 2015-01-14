@@ -177,30 +177,32 @@ jQuery(function($) {
             else
                 subdomain += '.breaksthe.net';
 
-            if (player.twitter) {
-                var shareText;
-                if (player.sharetext) {
-                    shareText = encodeURIComponent(player.sharetext);
-                } else {
-                    shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
+            if (player.organization == 'Senate' || player.organization == 'House') {
+                if (player.twitter) {
+                    var shareText;
+                    if (player.sharetext) {
+                        shareText = encodeURIComponent(player.sharetext);
+                    } else {
+                        shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
+                    }
+
+                    var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
+                    console.log(url);
+
+                    var $twitterOverlay = $.template('#twitter-overlay', {
+                        twitter: url,
+                        subdomain: subdomain
+                    });
+
+                    $el.append($twitterOverlay);
                 }
+                else {
+                    var $moreOverlay = $.template('#more-overlay', {
+                        subdomain: subdomain
+                    });
 
-                var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
-                console.log(url);
-
-                var $twitterOverlay = $.template('#twitter-overlay', {
-                    twitter: url,
-                    subdomain: subdomain
-                });
-
-                $el.append($twitterOverlay);
-            }
-            else {
-                var $moreOverlay = $.template('#more-overlay', {
-                    subdomain: subdomain
-                });
-
-                $el.append($moreOverlay);
+                    $el.append($moreOverlay);
+                }
             }
 
             $el.data('meta', player);
