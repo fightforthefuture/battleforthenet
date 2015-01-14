@@ -83,6 +83,7 @@ jQuery(function($) {
                 image: '/images/scoreboard/' + player.gsx$imagepleasedontedit.$t,
                 weight: player.gsx$weight.$t,
                 team: player.gsx$team.$t || 'undecided',
+                siteactive: player.gsx$siteactive.$t,
                 size: player.gsx$size.$t,
                 meta: player.gsx$meta.$t,
                 twitter: player.gsx$twitter.$t,

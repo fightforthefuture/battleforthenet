@@ -122,7 +122,7 @@
               <input type="hidden" name="member[user_agent]" value="">
               <input type="hidden" name="member[ip_address]" value="">
               <input type="hidden" name="tag" value="battle-for-the-net-november" />
-              <!--<input type="hidden" name="org" value="fftf-dp" />-->
+              <input type="hidden" name="org" id="org" value="randomize" />
               <input type="text" name="guard" placeholder="Please leave this field blank" style="display: none;">
               <input type="hidden" name="action" value="1" />
               <div class="left">
@@ -162,18 +162,62 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
                   <div class="background">
                     <button type="submit" class="btn btn-default">Send to Congress</button>
 
-                    <p class="disclaimer copy">
-                      <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you. <a href="/privacy/" target="_blank">Privacy</a>
+                    <p class="disclaimer copy" id="randomize_disclosure">
+                      <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a>, <a href="https://demandprogress.org" target="_blank">Demand Progress</a> or <a href="http://www.freepress.net/" target="_blank">Free Press Action Fund</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy</a>
                     </p>
 
-                    <p class="disclaimer copy fp-copy">
-                      <a href="http://www.freepress.net/">Free Press Action Fund</a> will contact you about future campaigns. <a href="http://www.freepress.net/privacy-copyright">Privacy Policy</a>
+                    <p class="disclaimer copy" id="fp_disclosure" style="display: none;">
+                      <a href="http://www.freepress.net/">Free Press Action Fund</a> will contact you about future campaigns. <a href="/privacy">Privacy Policy</a>
+                    </p>
+
+                    <p class="disclaimer copy" id="dp_disclosure" style="display: none;">
+                      <a href="https://www.demandprogress.org/">Demand Progress</a> will contact you about future campaigns. <a href="/privacy">Privacy Policy</a>
+                    </p>
+
+                    <p class="disclaimer copy" id="fftf_disclosure" style="display: none;">
+                      <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy">Privacy Policy</a>
                     </p>
                   </div>
                 </div>
               </div>
             </form>
           </div>
+          <script type="text/javascript">
+            var loc = window.location.href;
+
+            random_org = null;
+
+            if (loc.indexOf('org=') == -1)
+            {
+              var coin_toss = Math.random();
+              if (coin_toss < .2)
+                random_org = 'fp'
+              else if (coin_toss < .6)
+                random_org = 'dp'
+              else
+                random_org = 'fftf'
+            }
+
+            if (loc.indexOf('org=fp') != -1 || random_org == 'fp')
+            {
+              document.getElementById('org').value = 'fp';
+              document.getElementById('randomize_disclosure').style.display = 'none';
+              document.getElementById('fp_disclosure').style.display = 'block';
+            }
+            else if (loc.indexOf('org=dp') != -1 || random_org == 'dp')
+            {
+              document.getElementById('org').value = 'dp';
+              document.getElementById('randomize_disclosure').style.display = 'none';
+              document.getElementById('dp_disclosure').style.display = 'block';
+            }
+            else if (loc.indexOf('org=fftf') != -1 || random_org == 'fftf')
+            {
+              document.getElementById('org').value = 'fftf';
+              document.getElementById('randomize_disclosure').style.display = 'none';
+              document.getElementById('fftf_disclosure').style.display = 'block';
+            }
+
+          </script>
         </section>
         <br/><br/>
 
@@ -334,10 +378,12 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         <!--<a href="#home" class="btn btn-success">Take action now</a>-->
       </section>
 
+      <!--
       <section id="wall" class="wall">
         <div id="wall-scroller">
         </div>
       </section>
+      -->
 
       <section id="wall-under" class="wall-under">
 
@@ -884,7 +930,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
 
     </script>
     <script type="text/template" id="player">
-      <div class="politician class-team class-size class-meta">
+      <div class="politician class-team class-size class-meta class-siteactive">
         <div class="color"></div>
         <img class="src-image">
         <div class="details">
