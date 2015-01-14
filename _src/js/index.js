@@ -26,7 +26,7 @@ var Queue = require('./Queue');
     }, 200);
 
     // Preload the background
-    new ImagePreloader('./images/background.jpg', function() {
+    new ImagePreloader('./images/ImageBack1.jpg', function() {
         var background = document.getElementById('background');
         background.className += ' fadeIn ';
         background.style.backgroundImage = 'url(' + this.src + ')';
