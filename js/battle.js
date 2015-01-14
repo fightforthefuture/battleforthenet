@@ -76,7 +76,7 @@ var Queue = require('./Queue');
 
     var LiveURLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
-        politicians: 'http://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
+        politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
     };
     var DebugURLs = {
         geography: 'debug/geography.json',
