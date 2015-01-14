@@ -167,7 +167,7 @@ body #battle .form-wrapper .politicians .politician p.name {
     letter-spacing: 1px;
     position: absolute;
     text-align: center;
-    text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
     width: 100%;
     z-index: 1;
 }
@@ -189,12 +189,12 @@ body #battle .form-wrapper .politicians .politician p.stance {
     z-index: 1;
 }
 
-body #battle .form-wrapper .politicians .politician.team-cable p.name,
+/* body #battle .form-wrapper .politicians .politician.team-cable p.name, */
 body #battle .form-wrapper .politicians .politician.team-cable p.stance {
     color: #fc3d41;
 }
 
-body #battle .form-wrapper .politicians .politician.team-internet p.name,
+/* body #battle .form-wrapper .politicians .politician.team-internet p.name, */
 body #battle .form-wrapper .politicians .politician.team-internet p.stance {
     color: #20cba1;
 }
@@ -735,4 +735,32 @@ a.shareBtn.facebook {
 }
 a.shareBtn.twitter {
     background-color: #2D98D6;
+}
+.bottom_bar {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background: #5d5d7a;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 5px black;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+}
+.bottom_bar img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.bottom_bar a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.bottom_bar a:hover {
+    text-shadow: 0px 0px 5px white;
+}
+@media screen and (max-width: 520px) {
+    .bottom_bar {
+        display: none;
+    }
 }
