@@ -301,6 +301,54 @@ body #battle #petition button:active {
     opacity: 0.7;
 }
 
+body #battle #petition .right {
+    border-bottom: 1px solid #ccc;
+    clear: both;
+    cursor: pointer;
+    height: 92px;
+    position: relative;
+}
+
+body #battle #petition .right #comment {
+    border: none;
+    color: #ccc;
+    font-family: "proxima-nova", sans-serif;
+    height: 90px;
+    overflow: hidden;
+    padding: 12px;
+    width: 100%;
+}
+
+body #battle #petition .right .textarea-fade {
+    background-image: url(../images/textarea-fade.png);
+    background-image: linear-gradient(to 95%, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1));
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    height: 90px;
+    position: absolute;
+    width: 100%
+}
+
+body #battle #petition .right .edit {
+    bottom: 10px;
+    color: #2dbb9b;
+    font-size: 10px;
+    font-weight: 700;
+    left: 15px;
+    position: absolute;
+    text-transform: uppercase;
+    /*width: 100%;*/
+}
+
+body #battle #petition .right:hover .edit {
+    text-decoration:underline
+}
+
+
+
+
+
+
 body #battle p.disclaimer {
     color: #5d5d7a;
     font-size: 13px;
