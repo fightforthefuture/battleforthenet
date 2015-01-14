@@ -1,0 +1,124 @@
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+@font-face {
+    font-family:'Proxima Nova';font-style:normal;font-weight:300;src:local('Proxima Nova Light'),local('Proxima-Nova-Light'),url(../fonts/proximanova-light-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family:'Proxima Nova';font-style:normal;font-weight:400;src:local('Proxima Nova Regular'),local('Proxima-Nova-Regular'),url(../fonts/proximanova-regular-webfont.woff) format('woff');
+}
+
+@font-face {
+    font-family:'Proxima Nova';font-style:normal;font-weight:700;src:local('Proxima Nova Bold'),local('Proxima-Nova-Bold'),url(../fonts/proximanova-bold-webfont.woff) format('woff');
+}
+
+body {
+    margin: 0;
+    padding: 0px;
+    overflow-y: scroll;
+    
+}
+body#scoreboard {
+    background-image: none;
+    background: #1b1b23;
+}
+
+body#scoreboard .homepage-link {
+    background-color: #7573bc;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    padding: 15px 20px;
+    transition: color .3s,background-color .3s;
+}
+
+body#scoreboard .homepage-link:hover {
+    background-color: #605fa2;
+    text-decoration: underline;
+}
+
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;
+}
+
+input,button,select,textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+
+a:hover,a:focus {
+    color: #2a6496;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+section.title {
+    background-color: #7573bc;
+    padding: 36px 28px 52px;
+    text-align: center;
+}
+
+section.title a {
+    color: #fff;
+    font-weight: 700;
+}
+
+section.title a:hover {
+    color: pink;
+}
+
+section.title h2 {
+    color: #fff;
+    font-size: 28px;
+}
+
+.btn {
+    font-size: 32px;
+    margin: 32px 0px 0px;
+    padding: 10px 22px;
+    color: #FFF;
+    background-color: #449D44;
+    border-color: #398439;
+    text-decoration: none;
+    outline: 0px none;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.42857;
+    border-radius: 4px;
+    -moz-user-select: none;
+    
+}
+.btn:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #348D34;
+}

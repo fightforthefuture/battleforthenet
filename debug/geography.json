@@ -1,0 +1,13 @@
+{
+  "country": {
+    "iso_code": "US"
+  },
+  "subdivisions": [
+    {
+      "iso_code": "CA",
+      "names": {
+        "en": "California"
+      }
+    }
+  ]
+}
