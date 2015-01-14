@@ -111,7 +111,8 @@ PetitionForm.prototype.addEventListeners = function() {
             }
         });
 
-        $('.overlay').removeClass('invisible');
+        var overlayNode = document.querySelector('.overlay');
+        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
     }, false);
 };
 
