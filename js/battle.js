@@ -158,6 +158,10 @@ var Queue = require('./Queue');
                     e.preventDefault();
                     $('.overlay').addClass('invisible');
                 });
+                $('.shareBtn.twitter').click(function(e) {
+                    e.preventDefault();
+                    window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+                });
             }
         });
 
