@@ -182,10 +182,11 @@ jQuery(function($) {
                 if (player.sharetext) {
                     shareText = encodeURIComponent(player.sharetext);
                 } else {
-                    shareText = '.@' + player.twitter + '%20whose%20side%20are%20you%20on?%20%23TeamInternet%20or%20%23TeamCable?%20Ask%20the%20FCC%20for%20Title%20II%20reclassification!';
+                    shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
                 }
 
-                var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://www.battleforthenet.com&related=fightfortheftr';
+                var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
+                console.log(url);
 
                 var $twitterOverlay = $.template('#twitter-overlay', {
                     twitter: url,
