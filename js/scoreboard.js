@@ -27,7 +27,7 @@ jQuery(function($) {
     var $isotope = $('.isotope');
     var $politicalSelect = $('.political select');
     var spreadsheetKey = $isotope.data('spreadsheet-key');
-    var spreadsheetUrl = 'http://s3.amazonaws.com/battleforthenet/scoreboard/current.json';
+    var spreadsheetUrl = 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json';
 
     var spreadsheetData = [];
     var players = [];
