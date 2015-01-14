@@ -73,7 +73,7 @@ var Queue = require('./Queue');
     });
 
     var LiveURLs = {
-        geography: 'https://fftf-geocoder.herokuapp.com',
+        geography: 'https://fftf-geocoder.herokuapp.com', 
         politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
     };
     var DebugURLs = {
