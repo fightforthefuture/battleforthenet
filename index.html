@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Join the Battle for Net Neutrality</title>
+<meta name="description" content="These could be the final days of the open web or the first days of the rebellion that saves it. Join the nationwide protest to save the Internet on November 13th">
+<meta name="author" content="Fight for the Future">
+<meta property="og:title" content="In days, the most important FCC decision of our lifetime happens -- save net neutrality or lose it forever..."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.battleforthenet.com"/>
+<meta property="og:image" content="https://www.battleforthenet.com/images/cruz_moron_2.png"/>
+<meta property="og:site_name" content="Battle For The Net"/>
+<meta property="og:description" content="but these people are trying to kill net neutrality right now on behalf of Cable. Can you help change history?"/>
+<meta itemprop="name" content="Battle For The Net">
+<meta itemprop="description" content="You're our only hope.">
+<meta itemprop="image" content="https://www.battleforthenet.com/images/share/facebook.jpg">
+<meta name="twitter:card" content="photo"/>
+<meta name="twitter:site" content="@FightForTheFtr"/>
+<meta name="twitter:title" content="Battle for the Net"/>
+<meta name="twitter:description" content="As historic FCC vote on #netneutrality draws near, Congress is working to kill it. Change history: battleforthenet.com"/>
+<meta name="twitter:image" content="https://www.battleforthenet.com/images/cruz_moron.png"/>
+<meta name="twitter:url" content="https://www.battleforthenet.com/#protest"/>
+<style>
+html {
+    background-color: #1b1b24;
+    font-family: arial, sans-serif;
+    overflow-y: scroll;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    width: 100%;
+}
+
+* {
+    -webkit-tap-highlight-color: 0;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+#battle {
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#battle .padded-900 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    padding: 0 25px;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+#battle h1,
+#battle p {
+    opacity: 0;
+
+    -webkit-transition: opacity 0.8s;
+            transition: opacity 0.8s;
+}
+
+#battle h1 {
+    font-size: 27px;
+}
+
+#battle p {
+    color: #e0e0e0;
+    font-size: 19px;
+    line-height: 26px;
+
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+}
+
+#battle p.please-wait {
+    color: #5d5d7a;
+    opacity: 0 !important;
+
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+
+    -webkit-transition: opacity 1s;
+            transition: opacity 1s;
+}
+
+#background {
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 729px;
+    position: absolute;
+    width: 100%;
+}
+
+#battle .spinner {
+    height: 100px;
+    margin: -50px auto 0;
+    overflow: hidden;
+    width: 200px;
+}
+
+#battle .timer {
+    position: relative;
+}
+
+#battle .timer .tagline {
+    color: #8888b9;
+    font-size: 17px;
+    line-height: 22px;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.8s;
+            transition: opacity 0.8s;
+}
+
+#battle .timer .card {
+    border-radius: 8px;
+    background-color: rgba(93, 93, 122, 0.2);
+    display: inline-block;
+    height: 85px;
+    margin-bottom: 4px;
+    padding: 0 4px;
+    position: relative;
+    width: 80px;
+
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+#battle .timer .card > div {
+    opacity: 0;
+
+    -webkit-transition: opacity 0.8s;
+            transition: opacity 0.8s;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-name: fadeIn;
+}
+
+.pulse {
+    -webkit-animation-direction: alternate;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: fadeIn;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: fadeIn;
+    opacity: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+header nav {
+    background-color: #12121a;
+    height: 66px;
+    position: relative;
+    text-align: center;
+}
+
+header nav a {
+    opacity: 0;
+
+    -webkit-transition: opacity 1s 0.3s;
+            transition: opacity 1s 0.3s;
+}
+
+@media screen and (min-width: 460px) {
+    .mobile {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 459px) {
+    .desktop {
+        display: none !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="home"></div>
+
+<div id="background"></div>
+
+<header class="desktop">
+    <nav class="tk-proxima-nova bold">
+        <a href="#" class="highlighted">home</a>
+        <a href="#team-cable">team cable</a>
+        <a href="#team-internet">team internet</a>
+        <a href="scoreboard/">scoreboard</a>
+    </nav>
+</header>
+
+<section id="battle" class="fadeIn">
+    <div class="spinner"></div>
+
+    <div class="timer">
+        <div class="card days">
+            <div class="number tk-bebas-neue">-</div>
+
+            <div class="type tk-proxima-nova">
+                days
+            </div>
+        </div>
+
+        <div class="card hours">
+            <div class="number tk-bebas-neue">-</div>
+
+            <div class="type tk-proxima-nova">
+                hours
+            </div>
+        </div>
+
+        <div class="card minutes">
+            <div class="number tk-bebas-neue">-</div>
+
+            <div class="type tk-proxima-nova">
+                minutes
+            </div>
+        </div>
+
+        <div class="card seconds">
+            <div class="number tk-bebas-neue">-</div>
+
+            <div class="type tk-proxima-nova">
+                seconds
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="tagline padded-900 tk-proxima-nova light">
+            Until we win net neutrality, or lose it forever.
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <h1 class="padded-900 tk-proxima-nova">
+        The most important FCC vote of our lifetime is about to happen.
+    </h1>
+
+    <p class="padded-900 tk-proxima-nova light">
+        On Feb 26 the FCC will vote to save net neutrality or let Comcast and other ISPs create Internet slow lanes. Some members of Congress, on behalf of their Cable donors, are trying to stop the FCC from protecting the Internet we love. There isn't much time to stop them, contact them now.
+    </p>
+
+    <p class="please-wait padded-900 pulse">
+        Please wait...
+    </p>
+
+    <p class="form-wrapper loading padded-900 tk-proxima-nova"></p>
+
+    <div class="team-cable-target"></div>
+    <div class="team-internet-target"></div>
+    <div class="scoreboard-target"></div>
+    <div class="footer-target"></div>
+    <div class="modals-target"></div>
+</section>
+
+<script>
+// Dependencies for Political Scoreboard.
+// On desktop browsers, we'll show this on the homepage.
+if (!navigator.userAgent.match(/mobile/i)) {
+    document.write("<script src='js/vendor/jquery.js'><\/script>");
+    document.write("<script src='js/vendor/underscore.js'><\/script>");
+    document.write("<script src='js/vendor/isotope.pkgd.js'><\/script>");
+}
+
+var global = {
+    fontsAreReady: false
+};
+
+function loadCSS(href) {
+    var link = document.createElement('link');
+    link.setAttribute('href', href);
+    link.setAttribute('rel', 'stylesheet');
+    document.head.appendChild(link);
+}
+function loadJS(src, blocking) {
+    var script = document.createElement('script');
+    script.setAttribute('src', src);
+    if (blocking) {
+        script.setAttribute('async', false);
+    }
+    document.body.appendChild(script);
+}
+
+var IsOldIE = (function(){
+    var undef,
+        v = 3,
+        div = document.createElement('div'),
+        all = div.getElementsByTagName('i');
+
+    while (
+        div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+        all[0]
+    );
+
+    return v > 4 ? v : undef;
+
+}());
+
+if (IsOldIE) {
+    alert('Sorry, your web browser if very outdated. Please upgrade to Firefox, Chrome, or another modern browser. You will now be redirected.');
+
+    if (typeof window.event !== 'undefined' && window.event) {
+        window.event.returnValue = false;
+    }
+
+    location.href = 'https://www.mozilla.org/en-US/firefox/new/';
+} else {
+    window.addEventListener('load', function() {
+        innerHeight; // Paint before fetching new assets
+        loadCSS('./css/battle.css');
+        loadJS('./js/battle.js');
+        loadJS('./js/typekit.js');
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "blueprint-reactify",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Antaki",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "vinyl-source-stream": "^1.0.0",
+    "gulp-sourcemaps": "^1.2.8",
+    "vinyl-buffer": "^1.0.0",
+    "gulp-util": "^3.0.1",
+    "watchify": "^2.2.1",
+    "browserify": "^7.0.0",
+    "brfs": "^1.2.0",
+    "reactify": "^0.17.1",
+    "react": "^0.12.1",
+    "fastclick": "^1.0.3"
+  }
+}

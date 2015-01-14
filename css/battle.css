@@ -1,0 +1,643 @@
+header nav {
+    position: relative;
+    z-index: 1;
+}
+
+header nav a {
+    color: #94949d;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 66px;
+    padding: 0 12px;
+    text-transform: uppercase;
+}
+
+header nav a:active,
+header nav a:hover,
+body header nav a.highlighted {
+    color: #2dbb9b;
+}
+
+body.loaded header nav a {
+    opacity: 1;
+}
+
+#battle .timer .card {
+    -webkit-transition: background-color 0.4s ease-out;
+            transition: background-color 0.6s ease-out;
+}
+
+#battle .timer .card > div {
+    -webkit-transition: opacity 0.4s ease-out;
+            transition: opacity 0.4s ease-out;
+}
+
+#battle .timer .card::after,
+#battle .timer .card::before {
+    background-color: #201b25;
+    border-radius: 6px;
+    content: '';
+    height: 12px;
+    position: absolute;
+    top: 38px;
+    width: 12px;
+}
+
+#battle .timer .card::after {
+    right: -8px;
+}
+
+#battle .timer .card::before {
+    left: -8px;
+}
+
+#battle .timer .card .number {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 52px;
+    padding-top: 14px;
+
+    background: -webkit-linear-gradient(#fff 64%, #c9c9e6 66%, #dedef0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#battle .timer .card .type {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body.slow .tk-bebas-neue,
+body.slow .tk-proxima-nova {
+    font-family: arial, sans-serif !important;
+}
+
+body.typekit #battle h1 {
+    font-size: 28px;
+}
+
+body.typekit #battle p {
+    font-size: 20px;
+}
+
+body.loaded #battle h1,
+body.loaded #battle p {
+    opacity: 1;
+}
+
+body.loaded #battle p.form-wrapper {
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+}
+
+body.loaded #battle p.form-wrapper.loading {
+    opacity: 0;
+}
+
+body.typekit #battle .timer .card .number {
+    font-size: 70px;
+    font-weight: normal;
+    line-height: 60px;
+    padding-top: 8px;
+}
+
+body.typekit #battle .timer .card .type {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#battle .timer.loaded .tagline {
+    opacity: 1;
+}
+
+
+#battle .timer.loaded .card {
+    background-color: rgba(93, 93, 122, 1);
+
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+}
+
+#battle .timer.loaded .card > div {
+    opacity: 1;
+
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+}
+
+#battle .timer .card.hours > div {
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+}
+
+#battle .timer .card.minutes > div {
+    -webkit-transition-delay: 0.3s;
+            transition-delay: 0.3s;
+}
+
+#battle .timer .card.seconds > div {
+    -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+}
+
+
+
+/* Politicians */
+body #battle .form-wrapper .politicians {
+    margin: 0 auto;
+    position: relative;
+    width: 270px;
+}
+
+body #battle .form-wrapper .politicians .politician {
+    display: inline-block;
+    height: 150px;
+    margin: 0 0 12px;
+    position: relative;
+    width: 115px;
+}
+
+body #battle .form-wrapper .politicians .politician p.name {
+    bottom: 2px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    z-index: 1;
+}
+
+body #battle .form-wrapper .politicians .politician p.stance {
+    background: #2e2e3f;
+    border-radius: 7px;
+    bottom: 0;
+    color: #ccc;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 17px;
+    margin: 0 0 0 5px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    width: 105px;
+    z-index: 1;
+}
+
+body #battle .form-wrapper .politicians .politician.team-cable p.name,
+body #battle .form-wrapper .politicians .politician.team-cable p.stance {
+    color: #fc3d41;
+}
+
+body #battle .form-wrapper .politicians .politician.team-internet p.name,
+body #battle .form-wrapper .politicians .politician.team-internet p.stance {
+    color: #20cba1;
+}
+
+body #battle .form-wrapper .politicians .politician img {
+    border-radius: 7px;
+    display: block;
+    opacity: 0;
+    width: 115px;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+@media screen and (min-width: 520px) {
+    body #battle .form-wrapper .politicians .politician {
+        display: block;
+        position: absolute;
+    }
+
+    body #battle .form-wrapper .politicians .politician:first-child {
+        left: -115px;
+        top: 24px;
+    }
+
+    body #battle .form-wrapper .politicians .politician:last-child {
+        left: 270px;
+        top: 24px;
+    }
+
+    body #battle .form-wrapper .politicians .politician:first-child img {
+        border-radius: 7px 0 0 7px;
+    }
+
+    body #battle .form-wrapper .politicians .politician:last-child img {
+        border-radius: 0 7px 7px 0;
+    }
+}
+
+/* Form */
+body #battle #petition {
+    background-color: #fff;
+    border-radius: 6px;
+    color: #505073;
+    margin: 0 auto;
+    width: 270px;
+}
+
+body #battle #petition input:first-child {
+    border-radius: 6px 6px 0 0;
+}
+
+body #battle #petition input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    color: #505073;
+    display: block;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 43px;
+    line-height: 19px;
+    margin: 0;
+    padding: 12px 14px;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+body #battle #petition input.input-address {
+    border-right: 1px solid #ccc;
+    float: left;
+    width: 150px;
+}
+
+body #battle #petition input.input-zip {
+    float: left;
+    width: 120px;
+}
+
+body #battle #petition button {
+    background-color: #20cba1;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 43px;
+    margin: 6px 0 8px;
+    text-transform: uppercase;
+    width: 250px;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+body #battle #petition button:hover {
+    opacity: 0.9;
+}
+
+body #battle #petition button:active {
+    opacity: 0.7;
+}
+
+body #battle p.disclaimer {
+    color: #5d5d7a;
+    font-size: 13px;
+}
+
+body #battle p.disclaimer a {
+    color: #8d8db2;
+}
+
+body #battle p.disclaimer a:hover {
+    color: #20cba1;
+}
+
+
+
+/* Phone call form */
+body #battle .phone-call-form {
+    display: none;
+    margin: 0 auto;
+    width: 270px;
+}
+
+body #battle .phone-call-form header {
+    background-color: #5d5d7a;
+    border-radius: 6px 6px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 26px 30px;
+}
+
+body #battle .phone-call-form section {
+    background-color: #fff;
+    color: #7d7d97;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 20px 20px;
+}
+
+body #battle .phone-call-form section input {
+    border: 1px solid #ccc;
+    color: #505073;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 12px;
+}
+
+body #battle .phone-call-form section .policy {
+    line-height: 22px;
+    font-weight: normal;
+}
+
+body #battle .phone-call-form footer {
+    background-color: #c6e5dd;
+    border-radius: 0 0 6px 6px;
+}
+
+body #battle .phone-call-form footer button {
+    background-color: #20cba1;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 43px;
+    margin: 6px 0 8px;
+    text-transform: uppercase;
+    width: 250px;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+body #battle .phone-call-form footer button:hover {
+    opacity: 0.9;
+}
+
+body #battle .phone-call-form footer button:active {
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 500px) {
+    body #battle .phone-call-form {
+        width: 420px;
+    }
+}
+
+/* Modal */
+
+/* Team Cable */
+#battle section#team-cable {
+    background-color: #1c1c25;
+    border-top: 10px solid #112;
+    font-family: "proxima-nova", sans-serif;
+    margin: 64px 0 0;
+    padding: 16px 25px 64px;
+}
+#battle section#team-cable h2 {
+    font-size: 50px;
+    font-weight: 300;
+}
+#battle section#team-cable p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+
+/* Team Internet */
+#battle section#team-internet {
+    background-color: #313142;
+    border-top: 10px solid #112;
+    font-family: "proxima-nova", sans-serif;
+    margin: 64px 0 0;
+    padding: 16px 25px 64px;
+}
+#battle section#team-internet h2 {
+    font-size: 50px;
+    font-weight: 300;
+}
+#battle section#team-internet p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#team-internet .supporter {
+    display: inline-block;
+}
+
+/* Political Scoreboard */
+#battle section#political {
+    background-color: #111;
+    border-top: 10px solid #112;
+    font-family: "proxima-nova", sans-serif;
+    padding: 64px 25px 64px;
+}
+#battle section#political h2 {
+    font-size: 50px;
+    font-weight: 300;
+}
+#battle section#political p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#political .supporter {
+    display: inline-block;
+}
+
+
+
+
+/* Footer */
+.footer-target footer {
+  border-top: 4px solid #3b3b58;
+  background: #5d5d88;
+  color: #c6c6e3;
+  padding: 40px 0px;
+  text-align: center;
+  font-family: 'Proxima Nova', sans-serif;
+}
+.footer-target footer .org_logo {
+  display: inline-block;
+  padding: 32px;
+}
+.footer-target footer .socials {
+  padding: 10px 0px 20px 0px;
+}
+.footer-target footer .socials img {
+  margin: 0px 7px;
+  width: 24px;
+  height: 24px;
+}
+.footer-target footer .socials a {
+  opacity: .5;
+}
+.footer-target footer .socials a:hover {
+  opacity: 1;
+}
+.footer-target footer .blurb {
+  font-size: 23px;
+  font-weight: 100;
+  padding-bottom: 10px;
+}
+.footer-target footer .blurb p {
+  margin-bottom: 0px;
+}
+.footer-target footer .blurb a {
+  color: white;
+}
+.footer-target footer .blurb a:hover {
+  color: pink;
+}
+.footer-target footer .blurb small {
+  font-size: 14px;
+}
+.footer-target footer .blurb em {
+  margin: 0px 10px 0px 7px;
+}
+.footer-target footer hr {
+  border-top: 1px solid #666694;
+  border-left: 0px none transparent;
+  border-right: 0px none transparent;
+  border-bottom: 0px none transparent;
+}
+.footer-target footer hr.narrow {
+  width: 200px;
+}
+#supporters {
+  background: #ffffff;
+}
+body.privacy {
+  background-color: #101010;
+  background-image: none;
+}
+body.privacy img {
+  margin: 0 0 24px;
+  max-width: 500px;
+  width: 100%;
+}
+body.privacy a {
+  color: #ffffff;
+  font-weight: bold;
+}
+body.privacy a:hover,
+body.privacy a:select {
+  text-decoration: underline;
+}
+body.privacy section.team-internet p {
+  text-align: left;
+}
+body.privacy section.team-internet.fight-for-the-future {
+  background-color: #1c1c25;
+}
+
+
+
+
+
+/* Spinner */
+@-webkit-keyframes timer-spinner {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.6);
+                transform: rotate(0deg) scale(0.6);
+    }
+    100% {
+        -webkit-transform: rotate(360deg) scale(0.6);
+                transform: rotate(360deg) scale(0.6);
+    }
+}
+@keyframes timer-spinner {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.6);
+                transform: rotate(0deg) scale(0.6);
+    }
+    100% {
+        -webkit-transform: rotate(360deg) scale(0.6);
+                transform: rotate(360deg) scale(0.6);
+    }
+}
+#battle .timer-spinner {
+    height: 200px;
+    margin: 0 auto;
+    width: 200px;
+    -webkit-animation: timer-spinner 3s infinite linear;
+            animation: timer-spinner 3s infinite linear;
+
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+}
+#battle .timer-spinner > div {
+    background: #747499;
+    border-radius: 6px;
+    height: 40px;
+    left: 94px;
+    position: absolute;
+    top: 80px;
+    width: 12px;
+}
+#battle .timer-spinner > div:nth-of-type(1) {
+    opacity: 0.1;
+    -webkit-transform:rotate(0deg) translate(0,-60px);
+            transform:rotate(0deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(2) {
+    opacity: 0.2;
+    -webkit-transform:rotate(30deg) translate(0,-60px);
+            transform:rotate(30deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(3) {
+    opacity: 0.3;
+    -webkit-transform:rotate(60deg) translate(0,-60px);
+            transform:rotate(60deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(4) {
+    opacity: 0.4;
+    -webkit-transform:rotate(90deg) translate(0,-60px);
+            transform:rotate(90deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(5) {
+    opacity: 0.5;
+    -webkit-transform:rotate(120deg) translate(0,-60px);
+            transform:rotate(120deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(6) {
+    opacity: 0.6;
+    -webkit-transform:rotate(150deg) translate(0,-60px);
+            transform:rotate(150deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(7) {
+    opacity: 0.7;
+    -webkit-transform:rotate(180deg) translate(0,-60px);
+            transform:rotate(180deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(8) {
+    opacity: 0.8;
+    -webkit-transform:rotate(210deg) translate(0,-60px);
+            transform:rotate(210deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(9) {
+    opacity: 0.9;
+    -webkit-transform:rotate(240deg) translate(0,-60px);
+            transform:rotate(240deg) translate(0,-60px);
+}
+#battle .timer-spinner > div:nth-of-type(10) {
+    opacity: 1.0;
+    -webkit-transform:rotate(270deg) translate(0,-60px);
+            transform:rotate(270deg) translate(0,-60px);
+}
