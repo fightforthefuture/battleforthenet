@@ -70,6 +70,11 @@ PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
     var politiciansNode = this.DOMNode.querySelector('.politicians');
+    petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        window.open('./letter/');
+    }, false);
 
     petitionFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
