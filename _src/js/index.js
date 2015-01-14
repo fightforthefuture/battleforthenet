@@ -173,7 +173,6 @@ var Queue = require('./Queue');
                         template: e.target.responseText
                     });
 
-                    loadCSS('scoreboard/scoreboard.css');
                     loadJS('js/scoreboard.js', true);
                 }
             });
