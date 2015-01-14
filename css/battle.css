@@ -234,6 +234,17 @@ body #battle .form-wrapper .politicians .politician img {
     }
 }
 
+@media screen and (min-width: 900px) {
+    body #battle .form-wrapper .politicians {
+        width: 540px;
+    }
+
+    body #battle .form-wrapper .politicians .politician:last-child {
+        left: 540px;
+        top: 24px;
+    }
+}
+
 /* Form */
 body #battle #petition {
     background-color: #fff;
@@ -311,6 +322,7 @@ body #battle #petition .right {
 
 body #battle #petition .right #comment {
     border: none;
+    border-radius: 0 6px 0 0;
     color: #ccc;
     font-family: "proxima-nova", sans-serif;
     height: 90px;
@@ -343,6 +355,34 @@ body #battle #petition .right .edit {
 body #battle #petition .right:hover .edit {
     text-decoration:underline
 }
+
+@media screen and (min-width: 900px) {
+    body #battle #petition {
+        width: 540px;
+    }
+
+    body #battle #petition .left {
+        float: left;
+    }
+
+    body #battle #petition .right {
+        border-left: 1px solid #ccc;
+        clear: none;
+        float: left;
+        height: 129px;
+        width: 270px;
+    }
+
+    body #battle #petition .right .textarea-fade {
+        background-image: linear-gradient(to 90%, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1));
+    }
+
+    body #battle #petition .right #comment,
+    body #battle #petition .right .textarea-fade {
+        height: 127px;
+    }
+}
+
 
 
 
