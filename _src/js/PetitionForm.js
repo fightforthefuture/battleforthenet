@@ -17,6 +17,8 @@ function PetitionForm(params) {
 }
 
 PetitionForm.prototype.selectPoliticians = function() {
+    this.politicians = [];
+
     if (this.geography.country.iso_code === 'US') {
         var stateName = this.geography.subdivisions[0].names.en;
         this.politicians = this.allPoliticians.filter(function(politician) {
