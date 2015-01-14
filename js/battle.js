@@ -544,7 +544,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         var campaignId = 'jan14th';
         var phoneNumber = phoneCallFormNode.querySelector('#phone').value;
-        var postalCode = petitionFormNode.querySelector('#zip');
+        var postalCode = petitionFormNode.querySelector('#zip').value;
 
         var url =
             'https://call-congress.fightforthefuture.org/create?' +
