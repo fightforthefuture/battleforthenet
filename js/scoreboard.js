@@ -38,6 +38,10 @@ jQuery(function($) {
         state = state[1].replace('+', ' ').replace('%20', ' ');
         $politicalSelect.val(state);
     }
+    else if (location.href.indexOf('keyplayers') != -1) {
+        var state = 'key';
+        $politicalSelect.val(state);
+    }
 
     if (window.global && global.ajaxResponses) {
         onPoliticiansAvailable(global.ajaxResponses.politicians);
@@ -51,7 +55,7 @@ jQuery(function($) {
         // Parse & sort by weight
 
         if (state) {
-            showPlayers(spreadsheetData, true, state);
+            showPlayers(spreadsheetData, true, state != 'key' ? state : null);
         } else {
             if (window.global && global.ajaxResponses) {
                 onGeocoderResponse(global.ajaxResponses.geography);
