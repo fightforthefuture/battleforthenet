@@ -579,13 +579,14 @@ body #battle .thanks {
     background-color: #c6e5dd;
     border-radius: 7px;
     display: block;
-    font-size: 14px;
-    padding: 25px;
-    margin: 0 25px;
+    margin: 0 auto;
+    padding: 15px 20px 10px;
+    width: 280px;
 }
 
 body #battle .thanks h2 {
     color: #20cba1;
+    line-height: 1;
 }
 
 /* Modal */

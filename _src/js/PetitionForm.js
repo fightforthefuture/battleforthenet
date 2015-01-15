@@ -181,6 +181,7 @@ PetitionForm.prototype.addEventListeners = function() {
         overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
 
         petitionFormNode.style.display = 'none';
+        phoneCallFormNode.style.display = 'none';
         politiciansNode.style.display = 'none';
         thanksNode.style.display = 'block';
     }.bind(this), false);
