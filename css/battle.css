@@ -562,10 +562,30 @@ body #battle .phone-call-form footer button:active {
     opacity: 0.7;
 }
 
+body #battle .phone-call-form footer a.alternative-cta {
+    color: #20cba1;
+    display: block;
+    font-size: 14px;
+    padding: 0 0 12px;
+}
+
 @media screen and (min-width: 500px) {
     body #battle .phone-call-form {
         width: 420px;
     }
+}
+
+body #battle .thanks {
+    background-color: #c6e5dd;
+    border-radius: 7px;
+    display: block;
+    font-size: 14px;
+    padding: 25px;
+    margin: 0 25px;
+}
+
+body #battle .thanks h2 {
+    color: #20cba1;
 }
 
 /* Modal */
