@@ -574,7 +574,13 @@ function PetitionForm(params) {
 PetitionForm.prototype.selectPoliticians = function() {
     this.politicians = [];
 
-    if (this.geography.country.iso_code === 'US') {
+    if (
+        this.geography.country.iso_code === 'US' &&
+        this.geography.subdivisions &&
+        this.geography.subdivisions[0] &&
+        this.geography.subdivisions[0].names &&
+        this.geography.subdivisions[0].names.en
+    ) {
         var stateName = this.geography.subdivisions[0].names.en;
         this.politicians = this.allPoliticians.filter(function(politician) {
             return (
