@@ -165,9 +165,9 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
 
         if (player.organization == 'Senate' || player.organization == 'House') {
             if (this.isMobile) {
-                element.addEventListener('click', function(e) {
+                element.addEventListener('click', function(subdomain) {
                     location.href = subdomain;
-                }, true);
+                }.bind(null, subdomain), true);
             }
             else if (player.twitter) {
                 var shareText;
@@ -293,7 +293,7 @@ PoliticalScoreboard.prototype.onPoliticiansAvailable = function onPoliticiansAva
 
     // Parse & sort by weight
     if (this.state) {
-        this.showPlayers(this.spreadsheetData, true, state != 'key' ? state : null);
+        this.showPlayers(this.spreadsheetData, true, this.state != 'key' ? this.state : null);
     } else {
         if (
             window.global
@@ -366,11 +366,11 @@ PoliticalScoreboard.prototype.initialize = function initialize() {
     if (this.state)
     {
         this.state = this.state[1].replace('+', ' ').replace('%20', ' ');
-        politicalSelect.value = this.state;
+        this.politicalSelect.value = this.state;
     }
     else if (location.href.indexOf('keyplayers') != -1) {
         this.state = 'key';
-        politicalSelect.value = this.state;
+        this.politicalSelect.value = this.state;
     }
 
     if (
