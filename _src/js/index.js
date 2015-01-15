@@ -2,10 +2,11 @@ var AJAX = require('./AJAX');
 var Countdown = require('./Countdown');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
+var MobileMenu = require('./MobileMenu');
 var OrganizationRotation = require('./OrganizationRotation');
-var SimpleSection = require('./SimpleSection');
 var PetitionForm = require('./PetitionForm');
 var Queue = require('./Queue');
+var SimpleSection = require('./SimpleSection');
 
 
 
@@ -44,6 +45,8 @@ var Queue = require('./Queue');
         }
     }, 1200);
 
+    // Enable mobile menu
+    new MobileMenu();
 })();
 
 

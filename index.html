@@ -204,6 +204,14 @@ a {
     clear: both;
 }
 
+.mobile-navigation {
+    height: 66px;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.8s 0.8s;
+            transition: opacity 0.8s 0.8s;
+}
+
 header nav {
     background-color: #12121a;
     height: 66px;
@@ -237,13 +245,23 @@ header nav a {
 
 <div id="background"></div>
 
-<header class="desktop">
-    <nav class="tk-proxima-nova bold">
+<header>
+    <nav class="desktop tk-proxima-nova bold">
         <a href="#" class="highlighted">home</a>
         <a href="#team-cable">team cable</a>
         <a href="#team-internet">team internet</a>
         <a href="scoreboard/">scoreboard</a>
     </nav>
+
+    <div id="mobile-navigation" class="mobile mobile-navigation">
+        <div class="hamburger">Menu</div>
+
+        <ul>
+            <li><a href="#team-cable">team cable</a></li>
+            <li><a href="#team-internet">team internet</a></li>
+            <li><a href="scoreboard/">scoreboard</a></li>
+        </ul>
+    </div>
 </header>
 
 <section id="battle" class="fadeIn">
