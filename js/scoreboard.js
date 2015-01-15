@@ -85,33 +85,65 @@ jQuery(function($) {
         }
 
         $politicalSelect.on('change', function() {
-            var whichState = $(this).val();
-            var subset = [];
+            var filter;
+            var selection = $(this).val();
 
-            if (whichState == 'key')
-                return $isotope.isotope({
-                    filter: function() {
-                        return $(this).find('.frontpage').text()==1;
+            switch (selection) {
+                case 'key':
+                    filter = function() {
+                        return $(this).find('.frontpage').text() == 1;
                     }
-                });
-            else if (whichState == 'team-internet')
-                return $isotope.isotope({ filter: '.team-internet' });
-            else if (whichState == 'team-cable')
-                return $isotope.isotope({ filter: '.team-cable' });
-            else if (whichState == 'undecided')
-                return $isotope.isotope({ filter: function() {
-                    return !$(this).hasClass('team-internet') && !$(this).hasClass('team-cable')
-                } });
+                    break;
+
+                case 'team-internet':
+                    filter = '.team-internet';
+                    break;
+
+                case 'team-cable':
+                    filter = '.team-cable';
+                    break;
+
+                case 'undecided':
+                    filter = function() {
+                        return (
+                            !$(this).hasClass('team-internet')
+                            &&
+                            !$(this).hasClass('team-cable')
+                        );
+                    }
+                    break;
+
+                default:
+                    filter = function() {
+                        // `this` is the item element. Get text of element's .number
+                        var state = $(this).find('.state').text();
+                        // return true to show, false to hide
+                        return (state == selection);
+                    }
+            }
 
             $isotope.isotope({
-                filter: function() {
-                    // `this` is the item element. Get text of element's .number
-                    var state = $(this).find('.state').text();
-                    // return true to show, false to hide
-                    return state == whichState;
-                }
+                filter: filter
             });
+
+            loadFilteredImages();
         });
+    }
+
+    function loadFilteredImages() {
+        var isotope = $isotope.data('isotope');
+
+        var element;
+        var image;
+        var now = Date.now();
+        for (var i = 0, length = isotope.filteredItems.length; i < length; i++) {
+            element = isotope.filteredItems[i].element;
+            if (!element.hasAttribute('image-has-loaded')) {
+                image = element.querySelector('.target-image');
+                image.src = image.getAttribute('target');
+                element.setAttribute('image-has-loaded', now);
+            }
+        }
     }
 
     function showPlayers(data, showGeneral, state) {
@@ -251,6 +283,8 @@ jQuery(function($) {
             },
             sortBy: 'weight'
         });
+
+        loadFilteredImages();
     }
 
     // Political Scoreboard logic
