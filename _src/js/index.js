@@ -162,8 +162,8 @@ var Queue = require('./Queue');
                 }
 
                 overlayNode.querySelector('.gutter').addEventListener('click', function(e) {
-                    e.preventDefault();
                     if (e.target === e.currentTarget) {
+                        e.preventDefault();
                         overlayNode.className += ' invisible ';
                     }
                 }, false);
