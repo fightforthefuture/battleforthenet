@@ -569,6 +569,63 @@ body #battle .phone-call-form footer button:active {
     display: inline-block;
 }
 
+/* Learn More */
+#battle section#learn-more {
+    background-color: #1b1b24;
+    font-family: "proxima-nova", sans-serif;
+    padding: 16px 25px 64px;
+}
+#battle section#learn-more h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+#battle section#learn-more p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#learn-more .break {
+    background-color: red;
+    height: 3px;
+    margin: 15px auto 30px;
+    width: 8%;
+}
+#battle section#learn-more .video_wrapper {
+    height: 0;
+    margin: 30px auto;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    position: relative;
+}
+#battle section#learn-more .video_wrapper iframe {
+    border-radius: 5px;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+@media only screen and (min-width: 768px) {
+    #battle section#learn-more .video_wrapper {
+        height: 399px;
+        padding-bottom: 0;
+        padding-top: 0;
+        width: 640px;
+    }
+
+    #battle section#learn-more .video_wrapper iframe {
+        border: 10px solid #4c4c64;
+    }
+}
+
 
 
 
