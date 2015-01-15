@@ -109,8 +109,11 @@ var SimpleSection = require('./SimpleSection');
         }
     });
 
+    // Let's selectively bust browser caches
+    var buster = '?buster=' + Date.now();
+
     new AJAX({
-        url: 'templates/PetitionForm.html',
+        url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
             global.ajaxResponses.formTemplate = e.target.responseText;
             ajaxQueue.tick();
@@ -119,7 +122,7 @@ var SimpleSection = require('./SimpleSection');
 
     function loadMoreSections() {
         new AJAX({
-            url: 'templates/TeamCableSection.html',
+            url: 'templates/TeamCableSection.html' + buster,
             success: function(e) {
                 new SimpleSection({
                     target: '.team-cable-target',
@@ -129,7 +132,7 @@ var SimpleSection = require('./SimpleSection');
         });
 
         new AJAX({
-            url: 'templates/TeamInternetSection.html',
+            url: 'templates/TeamInternetSection.html' + buster,
             success: function(e) {
                 new SimpleSection({
                     target: '.team-internet-target',
@@ -139,7 +142,7 @@ var SimpleSection = require('./SimpleSection');
         });
 
         new AJAX({
-            url: 'templates/LearnMoreSection.html',
+            url: 'templates/LearnMoreSection.html' + buster,
             success: function(e) {
                 new SimpleSection({
                     target: '.learn-more-target',
@@ -149,7 +152,7 @@ var SimpleSection = require('./SimpleSection');
         });
 
         new AJAX({
-            url: 'templates/Footer.html',
+            url: 'templates/Footer.html' + buster,
             success: function(e) {
                 new SimpleSection({
                     target: '.footer-target',
@@ -158,8 +161,22 @@ var SimpleSection = require('./SimpleSection');
             }
         });
 
+        if (!navigator.userAgent.match(/mobile/i)) {
+            new AJAX({
+                url: 'templates/PoliticalScoreboardSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.scoreboard-target',
+                        template: e.target.responseText
+                    });
+
+                    loadJS('js/scoreboard.js' + buster, true);
+                }
+            });
+        }
+
         new AJAX({
-            url: 'templates/Modals.html',
+            url: 'templates/Modals.html' + buster,
             success: function(e) {
                 new SimpleSection({
                     target: '.modals-target',
@@ -192,19 +209,5 @@ var SimpleSection = require('./SimpleSection');
                 }, false);
             }
         });
-
-        if (!navigator.userAgent.match(/mobile/i)) {
-            new AJAX({
-                url: 'templates/PoliticalScoreboardSection.html',
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.scoreboard-target',
-                        template: e.target.responseText
-                    });
-
-                    loadJS('js/scoreboard.js', true);
-                }
-            });
-        }
     }
 })();
