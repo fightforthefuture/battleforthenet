@@ -126,10 +126,7 @@ PetitionForm.prototype.addEventListeners = function() {
             url: url,
             method: 'POST',
             form: petitionFormNode,
-            success: function(e) {
-                var json = JSON.parse(e.target.responseText);
-                console.log('Petition response:', json);
-            }
+            success: function(e) {}
         });
 
         if (!phoneFormWasSkipped) {

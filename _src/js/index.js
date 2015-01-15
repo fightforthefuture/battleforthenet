@@ -1,4 +1,5 @@
 var AJAX = require('./AJAX');
+var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -47,6 +48,11 @@ var SimpleSection = require('./SimpleSection');
 
     // Enable mobile menu
     new MobileMenu();
+
+    // Analytics
+    setTimeout(function() {
+        new Chartbeat();
+    }, 1000);
 })();
 
 

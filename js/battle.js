@@ -1,6 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./js/index.js":[function(require,module,exports){
 (function (global){
 var AJAX = require('./AJAX');
+var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -49,6 +50,11 @@ var SimpleSection = require('./SimpleSection');
 
     // Enable mobile menu
     new MobileMenu();
+
+    // Analytics
+    setTimeout(function() {
+        new Chartbeat();
+    }, 1000);
 })();
 
 
@@ -215,7 +221,7 @@ var SimpleSection = require('./SimpleSection');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js","./Countdown":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Countdown.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\PetitionForm.js","./Queue":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Countdown.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\PetitionForm.js","./Queue":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -310,6 +316,32 @@ AJAX.prototype.serializeForm = function(form) {
 };
 
 module.exports = AJAX;
+
+},{}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Chartbeat.js":[function(require,module,exports){
+function Chartbeat() {
+    this.addGlobals();
+    this.addScript();
+}
+
+Chartbeat.prototype.addGlobals = function addGlobals() {
+    window._sf_startpt = Date.now();
+    window._sf_endpt = Date.now();
+    window._sf_async_config = {
+        domain: 'battleforthenet.com',
+        uid: 47331,
+        useCanonical: true
+    };
+};
+
+Chartbeat.prototype.addScript = function addScript() {
+    var script = document.createElement('script');
+    script.setAttribute('language', 'javascript');
+    script.setAttribute('type', 'text/javascript');
+    script.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+    document.body.appendChild(script);
+};
+
+module.exports = Chartbeat;
 
 },{}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Countdown.js":[function(require,module,exports){
 function Countdown(params) {
@@ -639,10 +671,7 @@ PetitionForm.prototype.addEventListeners = function() {
             url: url,
             method: 'POST',
             form: petitionFormNode,
-            success: function(e) {
-                var json = JSON.parse(e.target.responseText);
-                console.log('Petition response:', json);
-            }
+            success: function(e) {}
         });
 
         if (!phoneFormWasSkipped) {
