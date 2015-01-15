@@ -4,10 +4,11 @@ var AJAX = require('./AJAX');
 var Countdown = require('./Countdown');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
+var MobileMenu = require('./MobileMenu');
 var OrganizationRotation = require('./OrganizationRotation');
-var SimpleSection = require('./SimpleSection');
 var PetitionForm = require('./PetitionForm');
 var Queue = require('./Queue');
+var SimpleSection = require('./SimpleSection');
 
 
 
@@ -46,6 +47,8 @@ var Queue = require('./Queue');
         }
     }, 1200);
 
+    // Enable mobile menu
+    new MobileMenu();
 })();
 
 
@@ -209,7 +212,7 @@ var Queue = require('./Queue');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js","./Countdown":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Countdown.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\LoadingIcon.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\PetitionForm.js","./Queue":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js","./Countdown":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Countdown.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\PetitionForm.js","./Queue":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -433,6 +436,40 @@ function LoadingIcon(params) {
 }
 
 module.exports = LoadingIcon;
+
+},{}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\MobileMenu.js":[function(require,module,exports){
+function MobileMenu() {
+    this.root = document.getElementById('mobile-navigation');
+    this.list = this.root.querySelector('ul');
+    this.hamburger = this.root.querySelector('.hamburger');
+    this.height = (this.list.children.length * 44);
+
+    this.list.expanded = false;
+
+    this.hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        this.list.expanded = !this.list.expanded;
+        this.updateExpansionStyles();
+    }.bind(this), false);
+
+    this.list.addEventListener('click', function(e) {
+        this.list.expanded = false;
+        this.updateExpansionStyles();
+    }.bind(this), false);
+}
+
+MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
+    if (this.list.expanded) {
+        this.list.style.height = this.height + 'px';
+        this.root.classList.add('expanded');
+    } else {
+        this.list.style.height = '0';
+        this.root.classList.remove('expanded');
+    }
+};
+
+module.exports = MobileMenu;
 
 },{}],"c:\\Users\\Chris\\projects\\archive-battleforthenet-www\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
 function OrganizationRotation() {

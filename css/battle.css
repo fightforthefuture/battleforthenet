@@ -1,3 +1,94 @@
+body.loaded .mobile-navigation {
+    opacity: 1;
+}
+
+.mobile-navigation {
+    display: block;
+    margin: 0 0 10px;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.mobile-navigation.expanded {
+    height: auto;
+}
+
+.mobile-navigation.expanded ul {
+    opacity: 1;
+    -webkit-transition: height 0s, opacity 0.2s;
+    transition: height 0s, opacity 0.2s;
+}
+
+.mobile-navigation .hamburger {
+    background-color: #12121a;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    color: #8888b9;
+    cursor: pointer;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 12px;
+    position: relative;
+    transition: all 0.1s ease 0s;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+.mobile-navigation.expanded .hamburger {
+    background-color: #191924;
+}
+
+.mobile-navigation .hamburger:hover {
+    background-color: #191924;
+}
+
+.mobile-navigation .hamburger:active {
+    background-color: #20202f;
+}
+
+.mobile-navigation ul {
+    background-color: #191924;
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.1) inset, 0 2px 0 rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    height: 0;
+    list-style: outside none none;
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    -webkit-transition: height 0s 0.2s, opacity 0.2s;
+    transition: height 0s 0.2s, opacity 0.2s;
+}
+
+.mobile-navigation ul li {
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1) inset, 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.mobile-navigation ul li a {
+    color: #8888b9;
+    display: block;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    padding: 12px 0;
+    text-transform: capitalize;
+}
+
+.mobile-navigation ul li:hover {
+    background-color: #20202f;
+}
+
+.mobile-navigation ul li:active {
+    background-color: #28283c;
+}
+
+
+
 header nav {
     position: relative;
     z-index: 1;
@@ -23,7 +114,7 @@ body.loaded header nav a {
 }
 
 #battle .timer .card {
-    -webkit-transition: background-color 0.4s ease-out;
+    -webkit-transition: background-color 0.6s ease-out;
             transition: background-color 0.6s ease-out;
 }
 
@@ -115,9 +206,6 @@ body.typekit #battle .timer .card .type {
 
 #battle .timer.loaded .card {
     background-color: rgba(93, 93, 122, 1);
-
-    -webkit-transform: scale(1) translate(0, 0);
-            transform: scale(1) translate(0, 0);
 }
 
 #battle .timer.loaded .card > div {
