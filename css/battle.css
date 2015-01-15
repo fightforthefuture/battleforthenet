@@ -642,18 +642,11 @@ body #battle .thanks h2 {
     display: inline-block;
 }
 #battle section#team-internet .supporter img {
-    width: 140px;
-    height: 72px;
+    max-width: 100%;
     opacity: 0;
 
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s;
-}
-@media screen and (max-width: 520px) {
-    #battle section#team-internet .supporter img {
-        width: 130px;
-        height: 67px;
-    }
 }
 
 /* Political Scoreboard */
