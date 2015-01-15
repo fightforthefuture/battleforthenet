@@ -153,19 +153,27 @@ var Queue = require('./Queue');
                     template: e.target.responseText
                 });
 
-                document.querySelector('.overlay .gutter').addEventListener('click', function(e) {
+                // Shortcut
+                var overlayNode = document.querySelector('.overlay');
+
+                // Watch for testing URL
+                if (location.href.match(/sharing_modal=1/)) {
+                    overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+                }
+
+                overlayNode.querySelector('.gutter').addEventListener('click', function(e) {
                     e.preventDefault();
                     if (e.target === e.currentTarget) {
-                        document.querySelector('.overlay').className += ' invisible ';
+                        overlayNode.className += ' invisible ';
                     }
                 }, false);
 
-                document.querySelector('.modal .close').addEventListener('click', function(e) {
+                overlayNode.querySelector('.modal .close').addEventListener('click', function(e) {
                     e.preventDefault();
-                    document.querySelector('.overlay').className += ' invisible ';
+                    overlayNode.className += ' invisible ';
                 }, false);
 
-                document.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
+                overlayNode.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
                     e.preventDefault();
                     window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
                 }, false);
