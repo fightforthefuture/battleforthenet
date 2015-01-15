@@ -89,6 +89,6 @@ AJAX.prototype.serializeForm = function(form) {
     }
 
     return q.join("&");
-}
+};
 
 module.exports = AJAX;
