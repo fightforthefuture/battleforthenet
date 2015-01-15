@@ -75,7 +75,7 @@ var Queue = require('./Queue');
     });
 
     var LiveURLs = {
-        geography: 'https://fftf-geocoder.herokuapp.com', 
+        geography: 'https://fftf-geocoder.herokuapp.com',
         politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
     };
     var DebugURLs = {
@@ -154,6 +154,14 @@ var Queue = require('./Queue');
                     target: '.modals-target',
                     template: e.target.responseText
                 });
+
+                document.querySelector('.overlay .gutter').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (e.target === e.currentTarget) {
+                        document.querySelector('.overlay').className += ' invisible ';
+                    }
+                }, false);
+
                 document.querySelector('.modal .close').addEventListener('click', function(e) {
                     e.preventDefault();
                     document.querySelector('.overlay').className += ' invisible ';
