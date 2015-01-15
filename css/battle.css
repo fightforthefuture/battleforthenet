@@ -1075,3 +1075,140 @@ a.shareBtn.twitter {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sharing-buttons {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 459px) {
+    .sharing-buttons {
+      display: none;
+    }
+}
+
+.sharing-buttons li a span {
+    display: none;
+}
+
+.share-buttons-target .sharing-buttons {
+  left: 0px;
+  bottom: 0px;
+  position: fixed;
+  z-index: 99;
+  width: 300px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, #000000));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+  /* IE6-9 */
+}
+@media screen and (min-width: 460px) {
+  .share-buttons-target .sharing-buttons {
+    width: auto;
+    text-align: auto;
+    left: 0;
+    position: fixed;
+    top: 40%;
+    bottom: auto;
+    z-index: 99;
+    background: none;
+  }
+}
+.sharing-buttons li {
+  font-weight: bold;
+  font-size: 0.8em;
+  list-style-type: none;
+  margin: 0;
+  text-align: left;
+  padding: 0px 5px 0px 5px;
+  display: inline-block;
+}
+@media screen and (min-width: 460px) {
+  .sharing-buttons li {
+    display: block;
+    padding: 5px 5px 5px 0;
+  }
+}
+.sharing-buttons li a {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: white;
+  display: inline-block;
+  height: 100%;
+  padding: 7px 7px 3px;
+  position: relative;
+  text-decoration: none;
+  -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+  width: 100%;
+}
+.sharing-buttons li a span {
+    position: absolute;
+    top: 7px;
+}
+@media screen and (min-width: 460px) {
+  .sharing-buttons li a {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}
+.sharing-buttons li a img {
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+          transition: opacity 0.6s;
+}
+.sharing-buttons li a.facebook {
+  background: #3C5A96;
+}
+.sharing-buttons li a.googleplus {
+  background: #DB585A;
+}
+.sharing-buttons li a.reddit {
+  background: #FF4500;
+}
+.sharing-buttons li a.pressthis {
+  background: #1e8cbe;
+}
+.sharing-buttons li a.tumblr {
+  background: #32506E;
+}
+.sharing-buttons li a.twitter {
+  background: #59ADEB;
+}
+.sharing-buttons li a:hover {
+  opacity: 0.9;
+}
+

@@ -181,6 +181,16 @@ var SimpleSection = require('./SimpleSection');
                     loadJS('js/scoreboard.js' + buster, true);
                 }
             });
+
+            new AJAX({
+                url: 'templates/ShareButtons.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.share-buttons-target',
+                        template: e.target.responseText
+                    });
+                }
+            });
         }
 
         new AJAX({
