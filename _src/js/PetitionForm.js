@@ -88,12 +88,26 @@ PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
     var politiciansNode = this.DOMNode.querySelector('.politicians');
+    var thanksNode = this.DOMNode.querySelector('.thanks');
+    var phoneFormWasSkipped = false;
 
     // Watch for shared URL
     if (location.href.match(/call_tool=1/)) {
         petitionFormNode.style.display = 'none';
         politiciansNode.style.display = 'none';
+        phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
+        var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
+        alternativeCTA.style.display = 'block';
         phoneCallFormNode.style.display = 'block';
+
+        alternativeCTA.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            petitionFormNode.style.display = 'block';
+            phoneCallFormNode.style.display = 'none';
+            politiciansNode.style.display = 'block';
+            phoneFormWasSkipped = true;
+        }, false);
     }
 
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
@@ -106,12 +120,8 @@ PetitionForm.prototype.addEventListeners = function() {
     petitionFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        petitionFormNode.style.display = 'none';
-        politiciansNode.style.display = 'none';
-
-        phoneCallFormNode.style.display = 'block';
-
         var url = petitionFormNode.getAttribute('action');
+
         new AJAX({
             url: url,
             method: 'POST',
@@ -122,12 +132,32 @@ PetitionForm.prototype.addEventListeners = function() {
             }
         });
 
+        if (!phoneFormWasSkipped) {
+            petitionFormNode.style.display = 'none';
+            politiciansNode.style.display = 'none';
+            phoneCallFormNode.style.display = 'block';
+        } else {
+            petitionFormNode.style.display = 'none';
+            politiciansNode.style.display = 'none';
+            thanksNode.style.display = 'block';
+        }
+
     }, false);
 
     phoneCallFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
 
         var campaignId = 'jan14th';
+
+        // Bonus
+        var now = Date.now();
+        var startTime = 1421351700000; // 2:55pm EST
+        var endTime = 1421362800000; // 6:00pm EST
+        if (now >= startTime && now < endTime) {
+            campaignId = 'jan14th-BONUS';
+        }
+        // End bonus
+
         var phoneNumber = phoneCallFormNode.elements.phone.value;
         var postalCode = petitionFormNode.elements.zip.value || '95051';
 
@@ -144,12 +174,15 @@ PetitionForm.prototype.addEventListeners = function() {
 
         new AJAX({
             url: url,
-            success: function(e) {
-            }
+            success: function(e) {}
         });
 
         var overlayNode = document.querySelector('.overlay');
         overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+
+        petitionFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
+        thanksNode.style.display = 'block';
     }.bind(this), false);
 };
 
