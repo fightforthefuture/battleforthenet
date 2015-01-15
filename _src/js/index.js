@@ -136,6 +136,16 @@ var Queue = require('./Queue');
         });
 
         new AJAX({
+            url: 'templates/LearnMoreSection.html',
+            success: function(e) {
+                new SimpleSection({
+                    target: '.learn-more-target',
+                    template: e.target.responseText
+                });
+            }
+        });
+
+        new AJAX({
             url: 'templates/Footer.html',
             success: function(e) {
                 new SimpleSection({
