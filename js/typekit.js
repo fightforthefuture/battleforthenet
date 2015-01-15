@@ -55,7 +55,6 @@ W.K=!J.sa;W.xa=!J.sw;W.ha=!J.sb;X.ia=W;J.f&&(fb=new L(J.f),X.Z=fb);var K;if(J.fn
 Typekit.load({
     loading: function() {
         // JavaScript to execute when fonts start loading
-        console.log('Loading...');
     },
     active: function() {
         // JavaScript to execute when fonts become active
