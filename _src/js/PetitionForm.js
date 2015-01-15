@@ -66,16 +66,43 @@ PetitionForm.prototype.render = function() {
     this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
 };
 
+PetitionForm.prototype.validateEmail = function(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
+PetitionForm.prototype.validatePhoneNumber = function(num) {
+   num = num.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
+   num = num.replace("+", "").replace(/\-/g, '');
+
+   if (num.charAt(0) == "1")
+       num = num.substr(1);
+
+   if (num.length != 10)
+       return false;
+
+   return num;
+};
+
 PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
     var politiciansNode = this.DOMNode.querySelector('.politicians');
+
+    // Watch for shared URL
+    if (location.href.match(/call_tool=1/)) {
+        petitionFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
+        phoneCallFormNode.style.display = 'block';
+    }
+
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
         e.preventDefault();
 
         window.open('./letter/');
     }, false);
 
+    // Petition Form: Submit event listener
     petitionFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -101,8 +128,13 @@ PetitionForm.prototype.addEventListeners = function() {
         e.preventDefault();
 
         var campaignId = 'jan14th';
-        var phoneNumber = phoneCallFormNode.querySelector('#phone').value;
-        var postalCode = petitionFormNode.querySelector('#zip').value;
+        var phoneNumber = phoneCallFormNode.elements.phone.value;
+        var postalCode = petitionFormNode.elements.zip.value || '95051';
+
+        phoneNumber = this.validatePhoneNumber(phoneNumber);
+        if (!phoneNumber) {
+            return alert('Please enter a valid US phone number!');
+        }
 
         var url =
             'https://call-congress.fightforthefuture.org/create?' +
@@ -118,7 +150,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         var overlayNode = document.querySelector('.overlay');
         overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
-    }, false);
+    }.bind(this), false);
 };
 
 module.exports = PetitionForm;
