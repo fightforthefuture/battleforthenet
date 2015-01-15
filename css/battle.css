@@ -503,6 +503,11 @@ body #battle .phone-call-form footer button:active {
 }
 #battle section#team-cable img {
     height: 72px;
+    min-width: 126px;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
 }
 
 /* Team Internet */
@@ -530,6 +535,10 @@ body #battle .phone-call-form footer button:active {
 #battle section#team-internet .supporter img {
     width: 140px;
     height: 72px;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
 }
 @media screen and (max-width: 520px) {
     #battle section#team-internet .supporter img {
