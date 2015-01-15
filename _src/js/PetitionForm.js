@@ -152,15 +152,6 @@ PetitionForm.prototype.addEventListeners = function() {
 
         var campaignId = 'jan14th';
 
-        // Bonus
-        var now = Date.now();
-        var startTime = 1421351700000; // 2:55pm EST
-        var endTime = 1421362800000; // 6:00pm EST
-        if (now >= startTime && now < endTime) {
-            campaignId = 'jan14th-BONUS';
-        }
-        // End bonus
-
         var phoneNumber = phoneCallFormNode.elements.phone.value;
         var postalCode = petitionFormNode.elements.zip.value || '95051';
 
