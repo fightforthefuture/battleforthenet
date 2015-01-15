@@ -4383,7 +4383,7 @@ function onReady() {
         // We can't sort with less than 3 columns.
         if (across < 3) {
             for (var i = 0; i < players.length; i++) {
-                player[i].weightGenerated = null;
+                players[i].weightGenerated = null;
             }
             return;
         }
