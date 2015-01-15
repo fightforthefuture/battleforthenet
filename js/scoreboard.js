@@ -1,3 +1,459 @@
+/*
+    Political Scoreboard
+    (as seen on Battle for the Net)
+
+    An experience by DP, FFTF and FP.
+
+    Depends on Isotope.
+    Supports modern browsers (IE10+).
+*/
+
+function PoliticalScoreboard() {
+    this.isotopeNode = document.querySelector('.isotope');
+    this.players = [];
+    this.politicalSelect = document.querySelector('.political select');
+    this.spreadsheetData = [];
+    this.spreadsheetKey = this.isotopeNode.getAttribute('data-spreadsheet-key');
+    this.spreadsheetUrl = 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json';
+    this.state = location.href.match(/state=([\w-_\s\+]+)/i);
+    this.isMobile = navigator.userAgent.match(/mobile/i);
+
+    this.initialize();
+}
+
+PoliticalScoreboard.prototype.AJAX = function template(params) {
+    if (this.AJAX) {
+        console.log('Please use the `new` operator');
+        return;
+    }
+
+    this.async = params.async || true;
+    this.error = params.error;
+    this.method = params.method || 'GET';
+    this.success = params.success;
+    this.form = params.form;
+    this.url = params.url;
+
+    this.request = new XMLHttpRequest();
+    this.request.open(this.method, this.url, this.async);
+
+    if (this.success) {
+        this.request.onload = this.success;
+    }
+
+    if (this.error) {
+        this.request.onerror = this.error;
+    }
+
+    this.request.send();
+};
+
+PoliticalScoreboard.prototype.template = function template(target, values) {
+    this.templates = this.templates || [];
+
+    if (!this.templates[target]) {
+        this.templates[target] = document.querySelector(target).innerHTML;
+    }
+
+    var element = document.createElement('div');
+    element.innerHTML = this.templates[target];
+
+    var match;
+    for (var i in values) {
+        match = element.querySelector('.class-' + i);
+        if (match) {
+            match.className += ' ' + values[i];
+        }
+
+        match = element.querySelector('.href-' + i);
+        if (match) {
+            match.setAttribute('href', values[i]);
+        }
+
+        match = element.querySelector('.src-' + i);
+        if (match) {
+            match.setAttribute('src', values[i]);
+        }
+
+        match = element.querySelector('.target-' + i);
+        if (match) {
+            match.setAttribute('target', values[i]);
+        }
+
+        match = element.querySelector('.text-' + i);
+        if (match) {
+            match.textContent = values[i];
+        }
+    }
+
+    return element.firstElementChild;
+}
+
+PoliticalScoreboard.prototype.findWhere = function findWhere(array, params) {
+    var item, match;
+
+    for (var i = 0; i < array.length; i++) {
+        item = array[i];
+        match = true;
+
+        for (var j in params) {
+            if (item[j] !== params[j]) {
+                match = false;
+                break;
+            }
+        }
+
+        if (match) {
+            return item;
+        }
+    }
+
+    return;
+};
+
+PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGeneral, state) {
+    this.isotopeNode.textContent = '';
+    players = [];
+
+    var imageBaseURL = 'images/scoreboard/';
+    if (location.href.match(/\/scoreboard\//)) {
+        imageBaseURL = '../' + imageBaseURL;
+    }
+
+    var player;
+    for (var i = 0; i < data.length; i++) {
+        player = {
+            frontpage: +data[i].gsx$frontpage.$t,
+            first: data[i].gsx$first.$t,
+            name: data[i].gsx$name.$t,
+            organization: data[i].gsx$organization.$t,
+            image: imageBaseURL + data[i].gsx$imagepleasedontedit.$t,
+            weight: data[i].gsx$weight.$t,
+            team: data[i].gsx$team.$t || 'undecided',
+            size: data[i].gsx$size.$t,
+            meta: data[i].gsx$meta.$t,
+            twitter: data[i].gsx$twitter.$t,
+            sharetext: data[i].gsx$sharetext.$t,
+            subdomain: data[i].gsx$subdomain.$t,
+            state: data[i].gsx$state.$t,
+        };
+
+        players.push(player);
+    }
+
+    // Create elements
+    var player;
+    var wrapper = document.createElement('div');
+    for (var i = 0; i < players.length; i++) {
+        player = players[i];
+
+        var element = this.template('#player', player);
+
+        var subdomain = 'http://';
+
+        if (player.subdomain) {
+            subdomain += player.subdomain;
+        } else {
+            subdomain += player.first + player.name;
+        }
+
+        if (player.team == 'team-internet') {
+            subdomain += '.savesthe.net';
+        } else {
+            subdomain += '.breaksthe.net';
+        }
+
+        if (player.organization == 'Senate' || player.organization == 'House') {
+            if (this.isMobile) {
+                element.addEventListener('click', function(e) {
+                    location.href = subdomain;
+                }, true);
+            }
+            else if (player.twitter) {
+                var shareText;
+                if (player.sharetext) {
+                    shareText = encodeURIComponent(player.sharetext);
+                } else {
+                    shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
+                }
+
+                var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
+
+                var twitterOverlay = this.template('#twitter-overlay', {
+                    twitter: url,
+                    subdomain: subdomain
+                });
+
+                element.appendChild(twitterOverlay);
+            }
+            else {
+                var moreOverlay = this.template('#more-overlay', {
+                    subdomain: subdomain
+                });
+
+                element.appendChild(moreOverlay);
+            }
+        }
+
+        for (var j in player) {
+            element.setAttribute('data-' + j, player[j]);
+        }
+
+        wrapper.appendChild(element);
+    }
+    this.isotopeNode.appendChild(wrapper);
+
+    // Mark body as loaded.
+    if (location.href.match(/\/scoreboard\//)) {
+        document.body.className = 'loaded';
+    }
+
+    // Initialize isotope.
+    this.isotope = new Isotope(this.isotopeNode, {
+        filter: function(el) {
+            if (!state)
+            {
+                return el.querySelector('.frontpage').textContent == 1;
+            }
+            else
+            {
+                var filterState = el.querySelector('.state').textContent;
+                // return true to show, false to hide
+                return filterState == state;
+            }
+        },
+        getSortData: {
+            weight: function(el) {
+                return -el.getAttribute('data-weight');
+            },
+
+            senators: function(el) {
+                return (el.getAttribute('data-organization') === 'Senate') ? -1 : 1;
+            },
+
+            team: function(el) {
+                var score;
+                var team = el.getAttribute('data-team');
+                switch (team) {
+                    case 'team-cable':
+                        score = -2;
+                    break;
+                    case 'team-internet':
+                        score = -1;
+                    break;
+                    default:
+                        score = 0;
+                    break;
+                }
+                return score;
+            }
+        },
+        itemSelector: '.politician',
+        masonry: {
+            columnWidth: 150,
+            isFitWidth: true
+        },
+        sortBy: ['team', 'weight', 'senators']
+    });
+
+    this.loadFilteredImages();
+};
+
+PoliticalScoreboard.prototype.loadFilteredImages = function loadFilteredImages() {
+    var element;
+    var image;
+    var now = Date.now();
+    for (var i = 0, length = this.isotope.filteredItems.length; i < length; i++) {
+        element = this.isotope.filteredItems[i].element;
+        if (!element.hasAttribute('image-has-loaded')) {
+            image = element.querySelector('.target-image');
+            image.src = image.getAttribute('target');
+            element.setAttribute('image-has-loaded', now);
+        }
+    }
+};
+
+PoliticalScoreboard.prototype.onGeocoderResponse = function onGeocoderResponse(data) {
+    if (
+        data.country.iso_code === 'US' &&
+        data.subdivisions &&
+        data.subdivisions[0] &&
+        data.subdivisions[0].names &&
+        data.subdivisions[0].names.en
+    ) {
+        this.state = data.subdivisions[0].names.en;
+        this.politicalSelect.value = this.state;
+    }
+
+    this.showPlayers(this.spreadsheetData, true, this.state || false);
+}
+
+PoliticalScoreboard.prototype.onPoliticiansAvailable = function onPoliticiansAvailable(spreadsheetData) {
+    this.spreadsheetData = spreadsheetData;
+
+    // Parse & sort by weight
+    if (this.state) {
+        this.showPlayers(this.spreadsheetData, true, state != 'key' ? state : null);
+    } else {
+        if (
+            window.global
+            &&
+            global.ajaxResponses
+            &&
+            global.ajaxResponses.politicians
+            &&
+            global.ajaxResponses.geography
+        ) {
+            this.onGeocoderResponse(global.ajaxResponses.geography);
+        } else {
+            new this.AJAX({
+                url: '//fftf-geocoder.herokuapp.com/',
+                success: function(e) {
+                    var json = JSON.parse(e.target.responseText);
+                    this.onGeocoderResponse(json);
+                }.bind(this)
+            });
+        }
+    }
+
+    this.politicalSelect.addEventListener('change', function(e) {
+        var filter;
+        var selection = e.target.value;
+
+        switch (selection) {
+            case 'key':
+                filter = function(el) {
+                    return el.querySelector('.frontpage').textContent == 1;
+                }
+                break;
+
+            case 'team-internet':
+                filter = '.team-internet';
+                break;
+
+            case 'team-cable':
+                filter = '.team-cable';
+                break;
+
+            case 'undecided':
+                filter = function(el) {
+                    return (
+                        !el.className.match(/team-internet/)
+                        &&
+                        !el.className.match(/team-cable/)
+                    );
+                }
+                break;
+
+            default:
+                filter = function(el) {
+                    // `this` is the item element. Get text of element's .number
+                    var state = el.querySelector('.state').textContent;
+                    // return true to show, false to hide
+                    return (state == selection);
+                }
+        }
+
+        this.isotope.arrange({
+            filter: filter
+        });
+
+        this.loadFilteredImages();
+    }.bind(this), false);
+};
+
+PoliticalScoreboard.prototype.initialize = function initialize() {
+    if (this.state)
+    {
+        this.state = this.state[1].replace('+', ' ').replace('%20', ' ');
+        politicalSelect.value = this.state;
+    }
+    else if (location.href.indexOf('keyplayers') != -1) {
+        this.state = 'key';
+        politicalSelect.value = this.state;
+    }
+
+    if (
+        window.global
+        &&
+        global.ajaxResponses
+        &&
+        global.ajaxResponses.politicians
+        &&
+        global.ajaxResponses.geography
+    ) {
+        this.onPoliticiansAvailable(global.ajaxResponses.politicians);
+    } else {
+        new this.AJAX({
+            url: this.spreadsheetUrl,
+            success: function(e) {
+                var json = JSON.parse(e.target.responseText);
+                this.onPoliticiansAvailable(json.feed.entry);
+            }.bind(this)
+        });
+    }
+};
+
+
+// Instantiate
+function onReady() {
+    new PoliticalScoreboard();
+}
+
+if (document.body.className.match('loaded')) {
+    setTimeout(onReady);
+} else {
+    document.addEventListener('DOMContentLoaded', onReady);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*!
  * Isotope PACKAGED v2.0.0
  * Filter & sort magical layouts
@@ -3887,580 +4343,3 @@ if ( typeof define === 'function' && define.amd ) {
 }
 
 })( window );
-
-
-
-
-
-
-(function() {
-
-
-
-
-
-function AJAX(params) {
-    this.async = params.async || true;
-    this.error = params.error;
-    this.method = params.method || 'GET';
-    this.success = params.success;
-    this.form = params.form;
-    this.url = params.url;
-
-    this.request = new XMLHttpRequest();
-    this.request.open(this.method, this.url, this.async);
-
-    if (this.success) {
-        this.request.onload = this.success;
-    }
-
-    if (this.error) {
-        this.request.onerror = this.error;
-    }
-
-    this.request.send();
-
-}
-
-
-
-var isotope;
-
-var _ = {};
-_.findWhere = function findWhere(array, params) {
-    var item, match;
-
-    for (var i = 0; i < array.length; i++) {
-        item = array[i];
-        match = true;
-
-        for (var j in params) {
-            if (item[j] !== params[j]) {
-                match = false;
-                break;
-            }
-        }
-
-        if (match) {
-            return item;
-        }
-    }
-
-    return;
-};
-
-
-var Template = (function () {
-    var templates = {};
-
-    function Template(target, values) {
-        if (!templates[target]) {
-            templates[target] = document.querySelector(target).innerHTML;
-        }
-
-        var element = document.createElement('div');
-        element.innerHTML = templates[target];
-
-        var match;
-        for (var i in values) {
-            match = element.querySelector('.class-' + i);
-            if (match) {
-                match.className += ' ' + values[i];
-            }
-
-            match = element.querySelector('.href-' + i);
-            if (match) {
-                match.setAttribute('href', values[i]);
-            }
-
-            match = element.querySelector('.src-' + i);
-            if (match) {
-                match.setAttribute('src', values[i]);
-            }
-
-            match = element.querySelector('.target-' + i);
-            if (match) {
-                match.setAttribute('target', values[i]);
-            }
-
-            match = element.querySelector('.text-' + i);
-            if (match) {
-                match.textContent = values[i];
-            }
-        }
-
-        return element.firstElementChild;
-    }
-
-    return Template;
-})();
-
-if (document.body.className.match('loaded')) {
-    onReady();
-} else {
-    document.addEventListener('DOMContentLoaded', onReady);
-}
-
-function onReady() {
-    // Political Scoreboard
-    var isotopeNode = document.querySelector('.isotope');
-    var politicalSelect = document.querySelector('.political select');
-    var spreadsheetKey = isotopeNode.getAttribute('data-spreadsheet-key');
-    var spreadsheetUrl = 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json';
-
-    var spreadsheetData = [];
-    var players = [];
-
-    var state = location.href.match(/state=([\w-_\s\+]+)/i);
-    if (state)
-    {
-        state = state[1].replace('+', ' ').replace('%20', ' ');
-        politicalSelect.value = state;
-    }
-    else if (location.href.indexOf('keyplayers') != -1) {
-        var state = 'key';
-        politicalSelect.value = state;
-    }
-
-    if (
-        window.global
-        &&
-        global.ajaxResponses
-        &&
-        global.ajaxResponses.politicians
-        &&
-        global.ajaxResponses.geography
-    ) {
-        onPoliticiansAvailable(global.ajaxResponses.politicians);
-    } else {
-        new AJAX({
-            url: spreadsheetUrl,
-            success: function(e) {
-                var json = JSON.parse(e.target.responseText);
-                onPoliticiansAvailable(json.feed.entry);
-            }
-        });
-    }
-
-    function onPoliticiansAvailable(spreadsheetData) {
-        // Parse & sort by weight
-        if (state) {
-            showPlayers(spreadsheetData, true, state != 'key' ? state : null);
-        } else {
-            if (
-                window.global
-                &&
-                global.ajaxResponses
-                &&
-                global.ajaxResponses.politicians
-                &&
-                global.ajaxResponses.geography
-            ) {
-                onGeocoderResponse(global.ajaxResponses.geography);
-            } else {
-                new AJAX({
-                    url: '//fftf-geocoder.herokuapp.com/',
-                    success: function(e) {
-                        var json = JSON.parse(e.target.responseText);
-                        onGeocoderResponse(json);
-                    }
-                });
-            }
-        }
-
-        function onGeocoderResponse(data) {
-            if (
-                data.country.iso_code === 'US' &&
-                data.subdivisions &&
-                data.subdivisions[0] &&
-                data.subdivisions[0].names &&
-                data.subdivisions[0].names.en
-            ) {
-                state = data.subdivisions[0].names.en;
-                politicalSelect.value = state;
-            }
-
-            showPlayers(spreadsheetData, true, state || false);
-        }
-
-        politicalSelect.addEventListener('change', function() {
-            var filter;
-            var selection = this.value;
-
-            switch (selection) {
-                case 'key':
-                    filter = function(el) {
-                        return el.querySelector('.frontpage').textContent == 1;
-                    }
-                    break;
-
-                case 'team-internet':
-                    filter = '.team-internet';
-                    break;
-
-                case 'team-cable':
-                    filter = '.team-cable';
-                    break;
-
-                case 'undecided':
-                    filter = function(el) {
-                        return (
-                            !el.className.match(/team-internet/)
-                            &&
-                            !el.className.match(/team-cable/)
-                        );
-                    }
-                    break;
-
-                default:
-                    filter = function(el) {
-                        // `this` is the item element. Get text of element's .number
-                        var state = el.querySelector('.state').textContent;
-                        // return true to show, false to hide
-                        return (state == selection);
-                    }
-            }
-
-            isotope.arrange({
-                filter: filter
-            });
-
-            loadFilteredImages();
-        });
-    }
-
-    function loadFilteredImages() {
-        var element;
-        var image;
-        var now = Date.now();
-        for (var i = 0, length = isotope.filteredItems.length; i < length; i++) {
-            element = isotope.filteredItems[i].element;
-            if (!element.hasAttribute('image-has-loaded')) {
-                image = element.querySelector('.target-image');
-                image.src = image.getAttribute('target');
-                element.setAttribute('image-has-loaded', now);
-            }
-        }
-    }
-
-    function showPlayers(data, showGeneral, state) {
-        isotopeNode.textContent = '';
-        players = [];
-
-        var imageBaseURL = 'images/scoreboard/';
-        if (location.href.match(/\/scoreboard\//)) {
-            imageBaseURL = '../' + imageBaseURL;
-        }
-
-        var player;
-        for (var i = 0; i < data.length; i++) {
-            player = {
-                frontpage: +data[i].gsx$frontpage.$t,
-                first: data[i].gsx$first.$t,
-                name: data[i].gsx$name.$t,
-                organization: data[i].gsx$organization.$t,
-                image: imageBaseURL + data[i].gsx$imagepleasedontedit.$t,
-                weight: data[i].gsx$weight.$t,
-                team: data[i].gsx$team.$t || 'undecided',
-                size: data[i].gsx$size.$t,
-                meta: data[i].gsx$meta.$t,
-                twitter: data[i].gsx$twitter.$t,
-                sharetext: data[i].gsx$sharetext.$t,
-                subdomain: data[i].gsx$subdomain.$t,
-                state: data[i].gsx$state.$t,
-            };
-
-            // Only hand picked players should show on the homepage.
-            //if (!isFrontpage || player.frontpage === 1 || !showGeneral) {
-            players.push(player);
-            //}
-        }
-
-        players = players.sort(function(a, b) {
-            var weightA = a.weight,
-                weightB = b.weight;
-
-            if (a.organization === 'Senate') {
-                weightA += 10;
-            }
-
-            if (b.organization === 'Senate') {
-                weightB += 10;
-            }
-
-            return weightB - weightA;
-        });
-
-        // Create elements
-        var player;
-        var wrapper = document.createElement('div');
-        for (var i = 0; i < players.length; i++) {
-            player = players[i];
-
-            var element = new Template('#player', player);
-
-            var subdomain = 'http://';
-
-            if (player.subdomain)
-                subdomain += player.subdomain;
-            else
-                subdomain += player.first + player.name;
-
-            if (player.team == 'team-internet')
-                subdomain += '.savesthe.net';
-            else
-                subdomain += '.breaksthe.net';
-
-            if (player.organization == 'Senate' || player.organization == 'House') {
-                if (player.twitter) {
-                    var shareText;
-                    if (player.sharetext) {
-                        shareText = encodeURIComponent(player.sharetext);
-                    } else {
-                        shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
-                    }
-
-                    var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
-
-                    var twitterOverlay = new Template('#twitter-overlay', {
-                        twitter: url,
-                        subdomain: subdomain
-                    });
-
-                    element.appendChild(twitterOverlay);
-                }
-                else {
-                    var moreOverlay = new Template('#more-overlay', {
-                        subdomain: subdomain
-                    });
-
-                    element.appendChild(moreOverlay);
-                }
-            }
-
-            for (var j in player) {
-                element.setAttribute('data-' + j, player[j]);
-            }
-
-            wrapper.appendChild(element);
-        }
-        isotopeNode.appendChild(wrapper);
-
-        // Sort based on teams.
-        regenerateWeights(players);
-
-        // Mark body as loaded.
-        if (location.href.match(/\/scoreboard\//)) {
-            document.body.className = 'loaded';
-        }
-
-        // Initialize isotope.
-        isotope = new Isotope(isotopeNode, {
-            filter: function(el) {
-                if (!state)
-                {
-                    return el.querySelector('.frontpage').textContent == 1;
-                }
-                else
-                {
-                    var filterState = el.querySelector('.state').textContent;
-                    // return true to show, false to hide
-                    return filterState == state;
-                }
-            },
-            getSortData: {
-                weight: function(el) {
-                    return -el.getAttribute('data-weight');
-                },
-
-                senators: function(el) {
-                    return (el.getAttribute('data-organization') === 'Senate') ? -1 : 1;
-                },
-
-                team: function(el) {
-                    var score;
-                    var team = el.getAttribute('data-team');
-                    switch (team) {
-                        case 'team-cable':
-                            score = -2;
-                        break;
-                        case 'team-internet':
-                            score = -1;
-                        break;
-                        default:
-                            score = 0;
-                        break;
-                    }
-                    return score;
-                }
-            },
-            itemSelector: '.politician',
-            masonry: {
-                columnWidth: 150,
-                isFitWidth: true
-            },
-            sortBy: ['team', 'weight', 'senators']
-        });
-
-        loadFilteredImages();
-    }
-
-    // Political Scoreboard logic
-    function regenerateWeights(players) {
-        var across = Math.floor(document.querySelector('#political').offsetWidth / 150),
-            eligible = Math.ceil(across);
-
-        // We can't sort with less than 3 columns.
-        if (across < 3) {
-            for (var i = 0; i < players.length; i++) {
-                players[i].weightGenerated = null;
-            }
-            return;
-        }
-
-        // Create a map, for hit detection.
-        var map = [];
-        for (var i = 0; i < across; i++) {
-            map.push([]);
-        }
-
-        var position = {
-                x: 0,
-                y: 0
-            },
-            remaining = players.length,
-            weight = 10000;
-
-        // Add flag to each player.
-        for (var i = 0; i < players.length; i++) {
-            players[i].positioned = false;
-        }
-
-        // Place each player.
-        while (remaining > 0) {
-            var availability = getSpatialAvailability(position, map);
-            if (!availability) {
-                position = movePosition(position, map);
-                continue;
-            }
-
-            var player,
-                query = {
-                    positioned: false
-                };
-
-            if (availability === 'small') {
-                query.size = 'small';
-            }
-
-            if (position.x <= eligible - 1) {
-                query.team = 'team-cable';
-            } else if (position.x >= across - eligible) {
-                query.team = 'team-internet';
-            } else {
-                query.team = 'undecided';
-            }
-
-            player = _.findWhere(players, query);
-
-            if (!player) {
-                if (query.team === 'undecided') {
-                    if ((position.x + 1) / across > .5) {
-                        query.team = 'undecided';
-                    } else {
-                        query.team = 'team-cable';
-                    }
-                } else {
-                    query.team = 'team-internet';
-                }
-            }
-
-            player = _.findWhere(players, query);
-
-            if (!player) {
-                delete query.team;
-                player = _.findWhere(players, query);
-            }
-            if (player)
-            {
-
-
-                player.weightGenerated = weight--;
-
-                player.positioned = true;
-
-                map[position.x][position.y] = true;
-                if (player.size === 'large') {
-                    map[position.x + 1][position.y] = true;
-                    map[position.x][position.y + 1] = true;
-                    map[position.x + 1][position.y + 1] = true;
-                }
-            }
-
-            // printMap(position, map);
-
-            position = movePosition(position, map);
-
-            remaining--;
-        }
-    }
-
-    function printMap(position, map) {
-        var width = map.length;
-
-        console.log('');
-
-        var msg;
-        for (var y = 0, yMax = map[0].length; y < yMax; y++) {
-            msg = y + ': ';
-            for (var x = 0, xMax = map.length; x < xMax; x++) {
-                var value = map[x][y];
-
-                var character;
-                if (x === position.x && y === position.y) {
-                    character = '* ';
-                } else if (value === undefined) {
-                    character = '- ';
-                } else if (value === true) {
-                    character = 'x ';
-                }
-
-                msg += character;
-            }
-            console.log(msg + '\n');
-        }
-    }
-
-    function movePosition(position, map) {
-        position.x++;
-
-        if (position.x === map.length) {
-            position.x = 0;
-            position.y++;
-        }
-
-        return position;
-    }
-
-    function getSpatialAvailability(position, map) {
-        if (map[position.x][position.y]) {
-            return false;
-        }
-
-        if (!map[position.x][position.y + 1] &&
-            map[position.x + 1] &&
-            !map[position.x + 1][position.y] &&
-            !map[position.x + 1][position.y + 1]
-        ) {
-            return 'large';
-        }
-
-        return 'small';
-    }
-}
-
-
-
-
-
-})();
