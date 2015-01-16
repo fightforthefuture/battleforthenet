@@ -55,15 +55,31 @@ PetitionForm.prototype.render = function() {
     this.DOMNode.innerHTML = Template(this.formTemplate, {
         politicians: this.politicians.map(function(politician) {
             var team = politician.gsx$team.$t;
+
             var stance = 'undecided';
             if (team === 'team-cable') {
                 stance = 'anti internet';
             } else if (team === 'team-internet') {
                 stance = 'pro internet';
             }
+
+            var url = 'http://';
+            if (politician.gsx$subdomain.$t) {
+                url += politician.gsx$subdomain.$t;
+            } else {
+                url += politician.gsx$first.$t + politician.gsx$name.$t;
+            }
+            if (politician.gsx$team.$t.trim() === 'team-internet') {
+                url += '.savesthe.net';
+            } else {
+                url += '.breaksthe.net';
+            }
+            url = url.toLowerCase();
+
             return {
                 image: 'images/scoreboard/' + politician.gsx$imagepleasedontedit.$t,
                 name: politician.gsx$name.$t,
+                url: url,
                 stance: stance,
                 team: team
             };
