@@ -1,5 +1,5 @@
 <div class="politicians">
-    <div class="politician <%= politicians[0].team %>">
+    <a class="politician <%= politicians[0].team %>" href="<%= politicians[0].url %>" target="_blank">
         <p class="name">
             <%= politicians[0].name %>
         </p>
@@ -7,9 +7,9 @@
             <%= politicians[0].stance %>
         </p>
         <img src="<%= politicians[0].image %>" onload="this.style.opacity=1" />
-    </div>
+    </a>
 
-    <div class="politician <%= politicians[1].team %>">
+    <a class="politician <%= politicians[1].team %>" href="<%= politicians[1].url %>" target="_blank">
         <p class="name">
             <%= politicians[1].name %>
         </p>
@@ -17,7 +17,7 @@
             <%= politicians[1].stance %>
         </p>
         <img src="<%= politicians[1].image %>" onload="this.style.opacity=1"  />
-    </div>
+    </a>
 </div>
 
 <div class="clear"></div>
