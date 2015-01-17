@@ -167,7 +167,7 @@ var SimpleSection = require('./SimpleSection');
             }
         });
 
-        if (!navigator.userAgent.match(/mobile/i)) {
+        if (global.isDesktop) {
             new AJAX({
                 url: 'templates/PoliticalScoreboardSection.html' + buster,
                 success: function(e) {
