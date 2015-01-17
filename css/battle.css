@@ -805,7 +805,7 @@ body.privacy a {
   font-weight: bold;
 }
 body.privacy a:hover,
-body.privacy a:select {
+body.privacy a:active {
   text-decoration: underline;
 }
 body.privacy section.team-internet p {
