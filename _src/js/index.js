@@ -6,9 +6,15 @@ var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
 var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
+var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
 
+
+// Add polyfills for older supported browsers
+(function(){
+    new Polyfills();
+})();
 
 
 // Design enhancements
