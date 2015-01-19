@@ -1,6 +1,7 @@
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
+var DetectFeatures = require('./DetectFeatures');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
@@ -11,8 +12,9 @@ var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
 
 
-// Add polyfills for older supported browsers
+// Detect features & apply polyfills
 (function(){
+    new DetectFeatures();
     new Polyfills();
 })();
 

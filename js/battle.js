@@ -3,6 +3,7 @@
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
+var DetectFeatures = require('./DetectFeatures');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
@@ -13,8 +14,9 @@ var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
 
 
-// Add polyfills for older supported browsers
+// Detect features & apply polyfills
 (function(){
+    new DetectFeatures();
     new Polyfills();
 })();
 
@@ -237,7 +239,7 @@ var SimpleSection = require('./SimpleSection');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -460,6 +462,21 @@ Countdown.prototype.updateDates = function(difference) {
 };
 
 module.exports = Countdown;
+
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js":[function(require,module,exports){
+function DetectFeatures() {
+    this.detectSVG();
+}
+
+DetectFeatures.prototype.detectSVG = function detectSVG() {
+    var feature = 'http://www.w3.org/TR/SVG11/feature#Image';
+    var version = '1.1';
+    if (document.implementation.hasFeature(feature, version)) {
+        document.body.className += ' svg ';
+    }
+};
+
+module.exports = DetectFeatures;
 
 },{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js":[function(require,module,exports){
 function ImagePreloader(src, callback) {

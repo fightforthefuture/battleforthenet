@@ -142,11 +142,13 @@ body.loaded header nav a {
 }
 
 #battle .timer .card .number {
-    font-size: 60px;
+    font-size: 52px;
     font-weight: bold;
     line-height: 52px;
     padding-top: 14px;
+}
 
+body.svg #battle .timer .card .number {
     background: -webkit-linear-gradient(#fff 64%, #c9c9e6 66%, #dedef0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
