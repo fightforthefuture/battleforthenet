@@ -513,10 +513,10 @@ function MobileMenu() {
 MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
     if (this.list.expanded) {
         this.list.style.height = this.height + 'px';
-        this.root.classList.add('expanded');
+        this.root.className += ' expanded ';
     } else {
         this.list.style.height = '0';
-        this.root.classList.remove('expanded');
+        this.root.className = this.root.className.replace(/ expanded /, '');
     }
 };
 
