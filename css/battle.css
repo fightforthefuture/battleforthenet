@@ -1070,7 +1070,7 @@ a.shareBtn.twitter {
 .bottom-bar a .underline {
     text-decoration: underline;
 }
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 520px), screen and (max-height: 520px) {
     .bottom-bar {
         display: none;
     }
