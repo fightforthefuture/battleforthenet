@@ -314,7 +314,7 @@ var SimpleSection = require('./SimpleSection');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -410,7 +410,7 @@ AJAX.prototype.serializeForm = function(form) {
 
 module.exports = AJAX;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js":[function(require,module,exports){
 function Chartbeat() {
     this.addGlobals();
     this.addScript();
@@ -436,7 +436,7 @@ Chartbeat.prototype.addScript = function addScript() {
 
 module.exports = Chartbeat;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js":[function(require,module,exports){
 function Countdown(params) {
     this.date = params.date;
     this.interval = null;
@@ -538,7 +538,7 @@ Countdown.prototype.updateDates = function(difference) {
 
 module.exports = Countdown;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js":[function(require,module,exports){
 function DetectFeatures() {
     this.detectSVG();
 }
@@ -553,7 +553,7 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 
 module.exports = DetectFeatures;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\GoogleAnalytics.js":[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -570,7 +570,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js":[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -586,7 +586,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js":[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -597,7 +597,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js":[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -631,7 +631,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -667,7 +667,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js":[function(require,module,exports){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 
@@ -866,7 +866,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
 module.exports = PetitionForm;
 
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js":[function(require,module,exports){
 function Polyfills() {
     this.bind();
 }
@@ -898,7 +898,7 @@ Polyfills.prototype.bind = function() {
 
 module.exports = Polyfills;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js":[function(require,module,exports){
 function Queue(params) {
     this.callback = params.callback;
     this.context = params.context || this;
@@ -921,7 +921,7 @@ Queue.prototype.destroy = function() {
 
 module.exports = Queue;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js":[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -939,7 +939,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js":[function(require,module,exports){
+},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js":[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
