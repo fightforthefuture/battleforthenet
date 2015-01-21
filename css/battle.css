@@ -235,6 +235,7 @@ body.typekit #battle .timer .card .type {
 
 /* Politicians */
 body #battle .form-wrapper .politicians {
+    display: none;
     margin: 0 auto;
     position: relative;
     width: 270px;
@@ -527,6 +528,7 @@ body #battle .phone-call-form section input {
     font-size: 15px;
     font-weight: bold;
     padding: 6px 12px;
+    width: 200px;
 }
 
 body #battle .phone-call-form section .policy {
@@ -593,6 +595,57 @@ body #battle .thanks h2 {
 }
 
 /* Modal */
+
+/* Livestream */
+#battle section#livestream {
+    margin-top: 42px;
+}
+
+#battle section#livestream a {
+    color: #20cba1;
+}
+
+#battle section#livestream .video_wrapper {
+    height: 0;
+    margin: 30px auto;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    position: relative;
+}
+
+#battle section#livestream .video_wrapper #livestream-iframe {
+    border-radius: 5px;
+    border: 0;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+#battle section#livestream .twitter-timeline {
+    padding: 0 25px;
+}
+
+@media only screen and (min-width: 768px) {
+    #battle section#livestream .video_wrapper {
+        height: 399px;
+        padding-bottom: 0;
+        padding-top: 0;
+        width: 640px;
+    }
+
+    #battle section#livestream .video_wrapper #livestream-iframe {
+        border: 10px solid #4c4c64;
+    }
+}
+
+/*270 x 175
+420 x 273*/
 
 /* Team Cable */
 #battle section#team-cable {
