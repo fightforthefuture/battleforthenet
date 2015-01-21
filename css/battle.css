@@ -482,7 +482,7 @@ body #battle #petition .right:hover .edit {
 
 
 body #battle div.disclaimer_container {
-    display: none;
+    display: none;                        /* JL NOTE ~ disabled for Committee */
 }
 body #battle p.disclaimer {
     color: #5d5d7a;
@@ -572,7 +572,7 @@ body #battle .phone-call-form footer button:active {
 
 body #battle .phone-call-form footer a.alternative-cta {
     color: #20cba1;
-    display: block;
+    display: none !important;             /* JL NOTE ~ disabled for Committee */
     font-size: 14px;
     padding: 0 0 12px;
 }
