@@ -136,24 +136,6 @@ var SimpleSection = require('./SimpleSection');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/Livestream.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.livestream-target',
-                        template: e.target.responseText
-                    });
-
-                    loadJS('https://platform.twitter.com/widgets.js');
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
                 url: 'templates/TeamCableSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
