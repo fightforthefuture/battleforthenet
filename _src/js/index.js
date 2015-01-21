@@ -242,6 +242,11 @@ var SimpleSection = require('./SimpleSection');
                             template: e.target.responseText
                         });
 
+                        document.querySelector('.sharing-buttons').querySelector('.twitter').addEventListener('click', function(e) {
+                            e.preventDefault();
+                            window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+                        }, false);
+
                         if (queue.length > 0) {
                             queue.shift()();
                         }
