@@ -481,10 +481,13 @@ body #battle #petition .right:hover .edit {
 
 
 
-
+body #battle div.disclaimer_container {
+    display: none;
+}
 body #battle p.disclaimer {
     color: #5d5d7a;
     font-size: 13px;
+    display: none;
 }
 
 body #battle p.disclaimer a {
@@ -647,16 +650,29 @@ body #battle .thanks h2 {
 /*270 x 175
 420 x 273*/
 
+#battle section h2 {
+    font-size: 45px;
+    font-weight: 300;
+}
+#battle section p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+
 /* Team Cable */
 #battle section#team-cable {
     background-color: #1c1c25;
+    background-color: black;
     font-family: "proxima-nova", sans-serif;
     margin: 64px 0 0;
     padding: 16px 25px 64px;
 }
 #battle section#team-cable h2 {
-    font-size: 50px;
-    font-weight: 300;
+
 }
 #battle section#team-cable p {
     color: #eee;
@@ -679,20 +695,14 @@ body #battle .thanks h2 {
 #battle section#team-internet {
     background-color: #313142;
     font-family: "proxima-nova", sans-serif;
-    margin: 64px 0 0;
+    margin: 0px 0 0;
     padding: 16px 25px 64px;
 }
 #battle section#team-internet h2 {
-    font-size: 50px;
-    font-weight: 300;
+
 }
 #battle section#team-internet p {
-    color: #eee;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 32px;
-    margin: 36px auto 0;
-    max-width: 768px;
+
 }
 #battle section#team-internet .supporter {
     display: inline-block;
@@ -712,16 +722,10 @@ body #battle .thanks h2 {
     padding: 64px 25px 64px;
 }
 #battle section#political h2 {
-    font-size: 50px;
-    font-weight: 300;
+
 }
 #battle section#political p {
-    color: #eee;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 32px;
-    margin: 36px auto 0;
-    max-width: 768px;
+
 }
 #battle section#political .supporter {
     display: inline-block;
@@ -734,17 +738,10 @@ body #battle .thanks h2 {
     padding: 16px 25px 64px;
 }
 #battle section#learn-more h2 {
-    font-size: 50px;
-    font-weight: 300;
     margin-bottom: 0;
 }
 #battle section#learn-more p {
-    color: #eee;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 32px;
-    margin: 36px auto 0;
-    max-width: 768px;
+
 }
 #battle section#learn-more .break {
     background-color: red;
