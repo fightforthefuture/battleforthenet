@@ -2,6 +2,7 @@ var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var DetectFeatures = require('./DetectFeatures');
+var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
@@ -55,6 +56,7 @@ var SimpleSection = require('./SimpleSection');
     // Analytics
     setTimeout(function() {
         new Chartbeat();
+        new GoogleAnalytics();
     }, 1000);
 })();
 
