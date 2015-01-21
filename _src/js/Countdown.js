@@ -71,7 +71,7 @@ Countdown.prototype.tick = function() {
         this.showIntro();
     }
 
-    if (difference < 0) {
+    if (difference === 0) {
         document.querySelector('#battle h1').textContent = 'The most important FCC vote of our lifetime just happened.';
         this.destroy();
         return;
