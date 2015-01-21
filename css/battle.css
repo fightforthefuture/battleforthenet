@@ -616,6 +616,10 @@ body #battle .thanks h2 {
     position: relative;
 }
 
+#battle section#livestream .video_wrapper img {
+    max-width: 100%;
+}
+
 #battle section#livestream .twitter-timeline {
     padding: 0 25px;
 }
