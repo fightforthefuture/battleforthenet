@@ -63,7 +63,7 @@ Countdown.prototype.showIntro = function() {
 
 Countdown.prototype.tick = function() {
     var now = Date.now();
-    var difference = this.date - now;
+    var difference = Math.max(0, this.date - now);
 
     this.updateDates(difference);
 
