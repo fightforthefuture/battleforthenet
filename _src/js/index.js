@@ -42,11 +42,6 @@ var SimpleSection = require('./SimpleSection');
         background.style.backgroundImage = 'url(' + this.src + ')';
     });
 
-    // Show the spinner
-    new LoadingIcon({
-        target: '#battle .spinner'
-    });
-
     setTimeout(function() {
         if (!global.fontsAreReady) {
             global.fontsAreReady = true;
@@ -135,103 +130,176 @@ var SimpleSection = require('./SimpleSection');
     });
 
     function loadMoreSections() {
-        new AJAX({
-            url: 'templates/TeamCableSection.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.team-cable-target',
-                    template: e.target.responseText
-                });
-            }
+        var queue = [];
+
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/Livestream.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.livestream-target',
+                        template: e.target.responseText
+                    });
+
+                    loadJS('https://platform.twitter.com/widgets.js');
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
         });
 
-        new AJAX({
-            url: 'templates/TeamInternetSection.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.team-internet-target',
-                    template: e.target.responseText
-                });
-            }
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/TeamCableSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.team-cable-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
         });
 
-        new AJAX({
-            url: 'templates/LearnMoreSection.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.learn-more-target',
-                    template: e.target.responseText
-                });
-            }
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/TeamInternetSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.team-internet-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
         });
 
-        new AJAX({
-            url: 'templates/Footer.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.footer-target',
-                    template: e.target.responseText
-                });
-            }
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/LearnMoreSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.learn-more-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/Footer.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.footer-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
         });
 
         if (global.isDesktop) {
-            new AJAX({
-                url: 'templates/PoliticalScoreboardSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.scoreboard-target',
-                        template: e.target.responseText
-                    });
+            queue.push(function() {
+                new AJAX({
+                    url: 'templates/PoliticalScoreboardSection.html' + buster,
+                    success: function(e) {
+                        new SimpleSection({
+                            target: '.scoreboard-target',
+                            template: e.target.responseText
+                        });
 
-                    loadJS('js/scoreboard.js' + buster, true);
-                }
+                        loadJS('js/scoreboard.js' + buster, true);
+
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
+                    }
+                });
             });
 
-            new AJAX({
-                url: 'templates/ShareButtons.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.share-buttons-target',
-                        template: e.target.responseText
-                    });
-                }
+            queue.push(function() {
+                new AJAX({
+                    url: 'templates/ShareButtons.html' + buster,
+                    success: function(e) {
+                        new SimpleSection({
+                            target: '.share-buttons-target',
+                            template: e.target.responseText
+                        });
+
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
+                    }
+                });
             });
         }
 
-        new AJAX({
-            url: 'templates/Modals.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.modals-target',
-                    template: e.target.responseText
-                });
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/Modals.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.modals-target',
+                        template: e.target.responseText
+                    });
 
-                // Shortcut
-                var overlayNode = document.querySelector('.overlay');
+                    // Shortcut
+                    var overlayNode = document.querySelector('.overlay');
 
-                // Watch for testing URL
-                if (location.href.match(/sharing_modal=1/)) {
-                    overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
-                }
+                    // Watch for testing URL
+                    if (location.href.match(/sharing_modal=1/)) {
+                        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+                    }
 
-                overlayNode.querySelector('.gutter').addEventListener('click', function(e) {
-                    if (e.target === e.currentTarget) {
+                    overlayNode.querySelector('.gutter').addEventListener('click', function(e) {
+                        if (e.target === e.currentTarget) {
+                            e.preventDefault();
+                            overlayNode.className += ' invisible ';
+                        }
+                    }, false);
+
+                    overlayNode.querySelector('.modal .close').addEventListener('click', function(e) {
                         e.preventDefault();
                         overlayNode.className += ' invisible ';
+                    }, false);
+
+                    overlayNode.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
+                        e.preventDefault();
+                        window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+                    }, false);
+
+                    if (queue.length > 0) {
+                        queue.shift()();
                     }
-                }, false);
-
-                overlayNode.querySelector('.modal .close').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    overlayNode.className += ' invisible ';
-                }, false);
-
-                overlayNode.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-                }, false);
-            }
+                }
+            });
         });
+
+
+        queue.push(function() {
+            // Show the spinner
+            new LoadingIcon({
+                target: '#battle .spinner'
+            });
+        });
+
+        // Start queue
+        queue.shift()();
     }
 })();
