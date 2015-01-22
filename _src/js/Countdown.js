@@ -63,7 +63,7 @@ Countdown.prototype.showIntro = function() {
 
 Countdown.prototype.tick = function() {
     var now = Date.now();
-    var difference = this.date - now;
+    var difference = Math.max(0, this.date - now);
 
     this.updateDates(difference);
 
@@ -71,7 +71,7 @@ Countdown.prototype.tick = function() {
         this.showIntro();
     }
 
-    if (difference < 0) {
+    if (difference === 0) {
         document.querySelector('#battle h1').textContent = 'The most important FCC vote of our lifetime just happened.';
         this.destroy();
         return;
