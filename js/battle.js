@@ -50,7 +50,7 @@ var SimpleSection = require('./SimpleSection');
             global.fontsAreReady = true;
             document.body.className += ' loaded slow ';
         }
-    }, 1200);
+    }, 300);
 
     // Enable mobile menu
     new MobileMenu();
@@ -59,7 +59,7 @@ var SimpleSection = require('./SimpleSection');
     setTimeout(function() {
         new Chartbeat();
         new GoogleAnalytics();
-    }, 1000);
+    }, 1200);
 })();
 
 
@@ -84,7 +84,7 @@ var SimpleSection = require('./SimpleSection');
             new OrganizationRotation();
 
             // Add more sections
-            loadMoreSections();
+            setTimeout(loadMoreSections, 400);
         }
     });
 
