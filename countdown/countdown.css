@@ -2,14 +2,6 @@ body#developer {
     background-image: url(../images/tools/countdown-background.jpg);
 }
 
-.jumbotron.developer iframe.banner {
-    left: 0;
-    position: relative;
-
-    -webkit-transition: left 0.3s;
-            transition: left 0.3s;
-}
-
 @media screen and (max-width: 320px) {
     .jumbotron.developer iframe.banner {
         left: -15px;
