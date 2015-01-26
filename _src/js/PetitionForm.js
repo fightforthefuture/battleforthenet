@@ -4,17 +4,87 @@ var Template = require('./Template');
 
 function PetitionForm(params) {
     // Params
-    this.formTemplate = params.formTemplate
+    this.allPoliticians = params.allPoliticians;
+    this.formTemplate = params.formTemplate;
+    this.geography = params.geography;
     this.target = params.target;
 
     this.DOMNode = document.querySelector(this.target);
 
+    this.selectPoliticians();
     this.render();
     this.addEventListeners();
 }
 
+PetitionForm.prototype.selectPoliticians = function() {
+    this.politicians = [];
+
+    if (
+        this.geography.country.iso_code === 'US' &&
+        this.geography.subdivisions &&
+        this.geography.subdivisions[0] &&
+        this.geography.subdivisions[0].names &&
+        this.geography.subdivisions[0].names.en
+    ) {
+        var stateName = this.geography.subdivisions[0].names.en;
+        this.politicians = this.allPoliticians.filter(function(politician) {
+            return (
+                (politician.gsx$state.$t === stateName)
+                &&
+                (politician.gsx$organization.$t === 'Senate')
+            );
+        });
+    }
+
+    if (this.politicians.length === 0) {
+        var teamCable = this.allPoliticians.filter(function(politician) {
+            return (
+                (politician.gsx$team.$t === 'team-cable')
+            )
+        });
+
+        this.politicians = [];
+        this.politicians[0] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
+        while (!this.politicians[1] || this.politicians[0] === this.politicians[1]) {
+            this.politicians[1] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
+        }
+    }
+};
+
 PetitionForm.prototype.render = function() {
-    this.DOMNode.innerHTML = Template(this.formTemplate, {});
+    this.DOMNode.innerHTML = Template(this.formTemplate, {
+        politicians: this.politicians.map(function(politician) {
+            var team = politician.gsx$team.$t;
+
+            var stance = 'undecided';
+            if (team === 'team-cable') {
+                stance = 'anti internet';
+            } else if (team === 'team-internet') {
+                stance = 'pro internet';
+            }
+
+            var url = 'http://';
+            if (politician.gsx$subdomain.$t) {
+                url += politician.gsx$subdomain.$t;
+            } else {
+                url += politician.gsx$first.$t + politician.gsx$name.$t;
+            }
+            if (politician.gsx$team.$t.trim() === 'team-internet') {
+                url += '.savesthe.net';
+            } else {
+                url += '.breaksthe.net';
+            }
+            url = url.toLowerCase();
+
+            return {
+                image: 'images/scoreboard/' + politician.gsx$imagepleasedontedit.$t,
+                name: politician.gsx$name.$t,
+                url: url,
+                stance: stance,
+                team: team
+            };
+        })
+    });
     this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
 };
 
@@ -39,20 +109,23 @@ PetitionForm.prototype.validatePhoneNumber = function(num) {
 PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
+    var politiciansNode = this.DOMNode.querySelector('.politicians');
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var phoneFormWasSkipped = false;
 
-    petitionFormNode.style.display = 'none';
+    // petitionFormNode.style.display = 'none';
+    // politiciansNode.style.display = 'none';
     phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
-    alternativeCTA.style.display = 'block';
-    phoneCallFormNode.style.display = 'block';
+    // alternativeCTA.style.display = 'block';
+    // phoneCallFormNode.style.display = 'block';
 
     alternativeCTA.addEventListener('click', function(e) {
         e.preventDefault();
 
         petitionFormNode.style.display = 'block';
         phoneCallFormNode.style.display = 'none';
+        politiciansNode.style.display = 'block';
         phoneFormWasSkipped = true;
     }, false);
 
@@ -77,9 +150,11 @@ PetitionForm.prototype.addEventListeners = function() {
 
         if (!phoneFormWasSkipped) {
             petitionFormNode.style.display = 'none';
+            politiciansNode.style.display = 'none';
             phoneCallFormNode.style.display = 'block';
         } else {
             petitionFormNode.style.display = 'none';
+            politiciansNode.style.display = 'none';
             thanksNode.style.display = 'block';
         }
 
@@ -114,6 +189,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
         thanksNode.style.display = 'block';
     }.bind(this), false);
 };

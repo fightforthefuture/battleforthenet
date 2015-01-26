@@ -67,14 +67,15 @@ var SimpleSection = require('./SimpleSection');
     // Let's selectively bust browser caches
     var buster = '?buster=' + Date.now();
 
-    new AJAX({
-        url: 'templates/PetitionForm.html' + buster,
-        success: function(e) {
+    var ajaxQueue = new Queue({
+        callback: function() {
             var pleaseWaitNode = document.querySelector('#battle .please-wait');
             pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
 
             new PetitionForm({
-                formTemplate: e.target.responseText,
+                allPoliticians: global.ajaxResponses.politicians,
+                formTemplate: global.ajaxResponses.formTemplate,
+                geography: global.ajaxResponses.geography,
                 target: '#battle .form-wrapper'
             });
 
@@ -83,6 +84,52 @@ var SimpleSection = require('./SimpleSection');
 
             // Add more sections
             setTimeout(loadMoreSections, 400);
+        },
+        remaining: 3
+    });
+
+    var LiveURLs = {
+        geography: 'https://fftf-geocoder.herokuapp.com',
+        politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
+    };
+    var DebugURLs = {
+        geography: 'debug/geography.json',
+        politicians: 'debug/politicians.json'
+    };
+
+    var URLs;
+    if (location.href.match(/localhost/)) {
+        URLs = DebugURLs;
+    } else {
+        URLs = LiveURLs;
+    }
+
+    new AJAX({
+        url: URLs.geography,
+        success: function(e) {
+            var json = JSON.parse(e.target.responseText);
+            global.ajaxResponses.geography = json;
+            ajaxQueue.tick();
+        }
+    });
+
+    new AJAX({
+        url: URLs.politicians,
+        success: function(e) {
+            var json = JSON.parse(e.target.responseText);
+            global.ajaxResponses.politicians = json.feed.entry;
+            ajaxQueue.tick();
+        }
+    });
+
+    // Let's selectively bust browser caches
+    var buster = '?buster=' + Date.now();
+
+    new AJAX({
+        url: 'templates/PetitionForm.html' + buster,
+        success: function(e) {
+            global.ajaxResponses.formTemplate = e.target.responseText;
+            ajaxQueue.tick();
         }
     });
 

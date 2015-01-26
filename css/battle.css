@@ -235,7 +235,7 @@ body.typekit #battle .timer .card .type {
 
 /* Politicians */
 body #battle .form-wrapper .politicians {
-    display: none;
+    display: block;
     margin: 0 auto;
     position: relative;
     width: 270px;
@@ -482,7 +482,6 @@ body #battle #petition .right:hover .edit {
 
 
 body #battle div.disclaimer_container {
-    display: none;                        /* JL NOTE ~ disabled for Committee */
 }
 body #battle p.disclaimer {
     color: #5d5d7a;
@@ -571,8 +570,8 @@ body #battle .phone-call-form footer button:active {
 }
 
 body #battle .phone-call-form footer a.alternative-cta {
+    display: block;
     color: #20cba1;
-    display: none !important;             /* JL NOTE ~ disabled for Committee */
     font-size: 14px;
     padding: 0 0 12px;
 }
