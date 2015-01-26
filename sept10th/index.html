@@ -27,7 +27,7 @@
     <title>Join the Battle for Net Neutrality</title>
     <link href="../css/battleforthenet.legacy.bloated.lol.css" rel="stylesheet">
 
-   
+
 
   </head>
 
@@ -37,7 +37,7 @@
       <img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" class="github fixed" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
     </a>
 
-    <a name="email-updates"></a>    
+    <a name="email-updates"></a>
     <div class="container-fluid">
       <div id="first-fold">
         <header class="navigation" id="navigation">
@@ -56,37 +56,56 @@
         </header>
         <section class="jumbotron developer" id="main">
 
-          
+
           <h1>
             <strong>Sept. 10<sup>th</sup></strong> is the Internet Slowdown
           </h1>
           <p>
-             Cable companies want to slow down (and break!) your favorite sites, for profit. To fight back, let's cover the web with symbolic "loading" icons, to remind everyone what an Internet without net neutrality would look like, and drive record numbers of emails and calls to lawmakers. <br> 
-             <a href="#infographic">Look what we just did together.</a> Are you in? 
+             Cable companies want to slow down (and break!) your favorite sites, for profit. To fight back, let's cover the web with symbolic "loading" icons, to remind everyone what an Internet without net neutrality would look like, and drive record numbers of emails and calls to lawmakers. <br>
+             <a href="#infographic">Look what we just did together.</a> Are you in?
           </p>
-          
+
           <div class="signup">
             <div class="row">
               <div class="col-xs-12 col-centered">
-                <div class="input-group">
-                  <input type="text" class="form-control input-lg" placeholder="Your email" id="email">
-                  <span class="input-group-btn">
-                    <button class="btn btn-success btn-lg" type="button" id="subscribe">Join the action</button>
-                  </span>
-                </div><!-- /input-group -->
+                <form action="https://queue.fightforthefuture.org/action" method="POST" class="group" name="form" id="form">
+                  <div class="input-group">
+                    <div style="display: none;">
+                      <label for="hp_enabled">
+                        <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label>
+                      <label for="hp_disabled">
+                        <input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label>
+                    </div>
+                    <input type="hidden" name="member[language]" value="en">
+                    <input type="hidden" name="member[country]" value="US" id="country">
+                    <input type="hidden" name="salsa" value="true">
+                    <input type="hidden" name="language_id" value="en">
+                    <input type="hidden" name="member[movement_id]" value="1">
+                    <input type="hidden" name="member[user_agent]" value="">
+                    <input type="hidden" name="member[ip_address]" value="">
+                    <input type="hidden" name="tag" value="battle-for-the-net-slash-sept10th" />
+                    <input type="hidden" name="org" id="org" value="randomize" />
+                    <input type="text" name="guard" placeholder="Please leave this field blank" style="display: none;">
+                    <input type="hidden" name="action" value="1" />
+                    <input type="text" class="form-control input-lg" placeholder="Your email" id="email" name="member[email]" required />
+                    <span class="input-group-btn">
+                      <button class="btn btn-success btn-lg" type="submit" id="subscribe">Join the action</button>
+                    </span>
+                  </div><!-- /input-group -->
+                </form>
               </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
             <a href="https://fightforthefuture.org/" target="_blank" class="privacy">Fight for the Future</a> and <a href="http://demandprogress.org/" target="_blank" class="privacy">Demand Progress</a> will send you developer updates. <br/><a href="http://freepress.net/" target="_blank" class="privacy">Free Press</a> will contact you about campaigns.
             <a href="/privacy" class="privacy">Privacy policy</a>
           </div>
-          <div class="signup-thanks" style="display: none;">
+          <div class="signup-thanks" style="display: none; position: static;">
             Thanks! We'll send you #InternetSlowdown updates!
           </div>
         </section>
-        
+
       </div>
 
-      
+
 
       <section id="wall-under" class="whos-in wall-under">
 
@@ -97,17 +116,22 @@
             <div id="who">
               <small>Participants</small>
               <div class="row">
-                
-                <div class="col-md-3 org_logo freepress"><a href="http://www.freepress.org/" target="_blank"><img class="fp" src="../images/freepress.png"></a></div>
-                <div class="col-md-3 org_logo"><a href="https://www.fightforthefuture.org" target="_blank"><img class="fftf" src="../images/team-internet/fftf.png"></a></div>
-                <div class="col-md-3 org_logo"><a href="http://www.demandprogress.org/" target="_blank"><img class="dp" src="../images/dp-white.png"/></a></div>
-                <div class="col-md-3 org_logo"><a href="http://www.engine.is/" target="_blank"><img class="eis" src="../images/engineis-white.png"/></a></div>
+
+                <div class="col-sm-3 org_logo freepress"><a href="http://www.freepress.org/" target="_blank"><img class="fp" src="../images/freepress.png"></a></div>
+
+                <div class="col-sm-3 org_logo"><a href="https://www.fightforthefuture.org" target="_blank"><img class="fftf" src="../images/team-internet/fftf.png"></a></div>
+
+                <div class="col-sm-3 org_logo"><a href="http://www.demandprogress.org/" target="_blank"><img class="dp" src="../images/dp-white.png"/></a></div>
+
+                <div class="col-sm-3 org_logo"><a href="http://www.engine.is/" target="_blank"><img class="eis" src="../images/engineis-white.png"/></a></div>
 
               </div>
-              
+
+              <br>
+
               <div class="logos">
 
-                    <img src="../images/team-internet/wordpress.png">   
+                    <img src="../images/team-internet/wordpress.png">
            <img src="../images/team-internet/mozilla.png">           <img src="../images/team-internet/namecheap.png">
             <img src="../images/team-internet/reddit.png">
                       <img src="../images/team-internet/netflix.png">
@@ -138,7 +162,7 @@
              <img src="../images/team-internet/ccia.png">
           <img src="../images/team-internet/centerformediajustice.png">
           <img src="../images/team-internet/cheapair.png">
-          
+
           <img src="../images/team-internet/chess.png">
           <img src="../images/team-internet/chromastudios.png">
           <img src="../images/team-internet/citysearch.png">
@@ -196,13 +220,13 @@
 
 
 <!--
-  .g8"""bgd MMP""MM""YMM      db             `7MMF'  `7MMF'`7MM"""YMM  `7MM"""Mq.  `7MM"""YMM  
-.dP'     `M P'   MM   `7     ;MM:              MM      MM    MM    `7    MM   `MM.   MM    `7  
-dM'       `      MM         ,V^MM.             MM      MM    MM   d      MM   ,M9    MM   d    
-MM               MM        ,M  `MM             MMmmmmmmMM    MMmmMM      MMmmdM9     MMmmMM    
-MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.     MM   Y  , 
-`Mb.     ,',,    MM  ,,   A'     VML  ,,       MM      MM    MM     ,M   MM   `Mb.   MM     ,M 
-  `"bmmmd' db  .JMML.db .AMA.   .AMMA.db     .JMML.  .JMML..JMMmmmmMMM .JMML. .JMM..JMMmmmmMMM                                                                                                                                                
+  .g8"""bgd MMP""MM""YMM      db             `7MMF'  `7MMF'`7MM"""YMM  `7MM"""Mq.  `7MM"""YMM
+.dP'     `M P'   MM   `7     ;MM:              MM      MM    MM    `7    MM   `MM.   MM    `7
+dM'       `      MM         ,V^MM.             MM      MM    MM   d      MM   ,M9    MM   d
+MM               MM        ,M  `MM             MMmmmmmmMM    MMmmMM      MMmmdM9     MMmmMM
+MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.     MM   Y  ,
+`Mb.     ,',,    MM  ,,   A'     VML  ,,       MM      MM    MM     ,M   MM   `Mb.   MM     ,M
+  `"bmmmd' db  .JMML.db .AMA.   .AMMA.db     .JMML.  .JMML..JMMmmmmMMM .JMML. .JMM..JMMmmmmMMM
 -->
 
 <h2>How to participate</h2>
@@ -249,12 +273,12 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
             The best way? Run the
             <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank">#InternetSlowdown Action Widget!</a>
             It's easy to install on your site with just one line of code.
-            You can also change your site’s logo (or one of its letters) to a 
+            You can also change your site’s logo (or one of its letters) to a
             spinning wheel of death or embed this action tool in a high traffic
             page. We’ve also got widgets for
             <a href="http://en.support.wordpress.com/widgets/internet-defense-league-widget/" target="_blank">Wordpress.com</a>,
             and
-            <a href="https://wordpress.org/plugins/cat-signal/" target="_blank">Wordpress (self hosted)</a>. 
+            <a href="https://wordpress.org/plugins/cat-signal/" target="_blank">Wordpress (self hosted)</a>.
 
         </p>
         <p>
@@ -275,12 +299,12 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
             <a href="#get-modal">Run this modal.</a>
             The runner up?
             <a href="#get-banner">This alert.</a>
-            You can also change your site’s logo (or one of its letters) to a 
+            You can also change your site’s logo (or one of its letters) to a
             spinning wheel of death or embed this action tool in a high traffic
             page. We’ve also got widgets for
             <a href="http://en.support.wordpress.com/widgets/internet-defense-league-widget/" target="_blank">Wordpress.com</a>,
             and
-            <a href="https://wordpress.org/plugins/cat-signal/" target="_blank">Wordpress (self hosted)</a>. 
+            <a href="https://wordpress.org/plugins/cat-signal/" target="_blank">Wordpress (self hosted)</a>.
 
         </p>
         <p>
@@ -289,9 +313,9 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
           but you can <a href="https://github.com/fightforthefuture/battleforthenet-widget#installation-instructions-banner" target="_blank">change the URL</a> if you like.
         </p>
         <h3>Modal:</h3>
-        
+
         <div id="get-modal" class="codebox wide">
-        <iframe class="modalDemo" frameborder="no" src="https://widget.battleforthenet.com/iframe/modal.html#EMBED"></iframe>                  
+        <iframe class="modalDemo" frameborder="no" src="https://widget.battleforthenet.com/iframe/modal.html#EMBED"></iframe>
         <p>To show the modal on September 10th, paste this code into the &lt;HEAD> of your site. <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank">More info</a>.</p>
         <pre>&lt;script src="//widget.battleforthenet.com/widget.min.js" async>&lt;/script></pre>
         </div>
@@ -301,7 +325,7 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
             <div class="col-lg-6">
               <h3>Light banner:</h3>
               <div class="codebox round" id="modal">
-                  <iframe class="banner" frameborder="no" src="https://widget.battleforthenet.com/iframe/banner.html#EMBED-LIGHT"></iframe>                  
+                  <iframe class="banner" frameborder="no" src="https://widget.battleforthenet.com/iframe/banner.html#EMBED-LIGHT"></iframe>
                   <p>Paste this code into the &lt;HEAD> of your site. <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank">More info</a>.</p>
                   <pre>&lt;script type="text/javascript">
     var _bftn_options = { animation: 'banner' }
@@ -313,7 +337,7 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
             <div class="col-lg-6">
               <h3>Dark banner:</h3>
               <div class="codebox round">
-                <iframe class="banner" frameborder="no" src="https://widget.battleforthenet.com/iframe/banner.html#EMBED"></iframe>                  
+                <iframe class="banner" frameborder="no" src="https://widget.battleforthenet.com/iframe/banner.html#EMBED"></iframe>
                 <p>Paste this code into the &lt;HEAD> of your site. <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank">More info</a>.</p>
                 <pre>&lt;script type="text/javascript">
     var _bftn_options = { animation: 'banner', theme: 'dark' }
@@ -325,9 +349,9 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
           </div>
         </div>
 
-        
 
-        
+
+
         <br/>
         <!--
         <div class="mockups">
@@ -366,7 +390,7 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
           <div class="image"><img src="../images/change_avatar/avatar-red.gif"/></div>
           <div class="image"><img src="../images/change_avatar/avatar-white-red.gif"/></div>
           <div class="image"><img src="../images/change_avatar/avatar-cat.gif"/></div>
-          
+
         </div>
         <!--
         <hr/>
@@ -430,7 +454,7 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
           FCC as possible.
         </p>
       </section>
--->      
+-->
 
       <section id="announce" class="join-us">
       <br>
@@ -558,22 +582,8 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
       </li>
     </ul>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../js/vendor/jquery.js"></script>
-    <script src="../js/vendor/jquery.velocity.js"></script>
-    <script src="../js/vendor/isotope.pkgd.js"></script>
-    <script src="../js/vendor/underscore.js"></script>
-    <script src="../js/vendor/waypoints.js"></script>
-    <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!--[if lt IE 10]>
-      <script src="js/vendor/jquery.placeholder.js"></script>
-    <![endif]-->
-    <script src="../js/battle.js"></script>
-    <script src="../js/scoreboard.js"></script>
-    <script src="../js/waypoints.js"></script>
-    <script src="../js/tools.js"></script>
+    <!-- JavaScript -->
+    <script src="./sept10th.js"></script>
     <script type="text/javascript">
       var _sf_async_config = { uid: 47331, domain: 'battleforthenet.com', useCanonical: true };
       (function() {
@@ -589,7 +599,7 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
         window.onload = (typeof window.onload != 'function') ?
           loadChartbeat : function() { oldonload(); loadChartbeat(); };
       })();
-    </script> 
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -600,6 +610,6 @@ MM.              MM        AbmmmqMA            MM      MM    MM   Y  ,   MM  YM.
       ga('send', 'pageview');
 
     </script>
-    
+
   </body>
 </html>
