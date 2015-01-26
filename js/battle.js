@@ -69,14 +69,15 @@ var SimpleSection = require('./SimpleSection');
     // Let's selectively bust browser caches
     var buster = '?buster=' + Date.now();
 
-    new AJAX({
-        url: 'templates/PetitionForm.html' + buster,
-        success: function(e) {
+    var ajaxQueue = new Queue({
+        callback: function() {
             var pleaseWaitNode = document.querySelector('#battle .please-wait');
             pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
 
             new PetitionForm({
-                formTemplate: e.target.responseText,
+                allPoliticians: global.ajaxResponses.politicians,
+                formTemplate: global.ajaxResponses.formTemplate,
+                geography: global.ajaxResponses.geography,
                 target: '#battle .form-wrapper'
             });
 
@@ -85,6 +86,52 @@ var SimpleSection = require('./SimpleSection');
 
             // Add more sections
             setTimeout(loadMoreSections, 400);
+        },
+        remaining: 3
+    });
+
+    var LiveURLs = {
+        geography: 'https://fftf-geocoder.herokuapp.com',
+        politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
+    };
+    var DebugURLs = {
+        geography: 'debug/geography.json',
+        politicians: 'debug/politicians.json'
+    };
+
+    var URLs;
+    if (location.href.match(/localhost/)) {
+        URLs = DebugURLs;
+    } else {
+        URLs = LiveURLs;
+    }
+
+    new AJAX({
+        url: URLs.geography,
+        success: function(e) {
+            var json = JSON.parse(e.target.responseText);
+            global.ajaxResponses.geography = json;
+            ajaxQueue.tick();
+        }
+    });
+
+    new AJAX({
+        url: URLs.politicians,
+        success: function(e) {
+            var json = JSON.parse(e.target.responseText);
+            global.ajaxResponses.politicians = json.feed.entry;
+            ajaxQueue.tick();
+        }
+    });
+
+    // Let's selectively bust browser caches
+    var buster = '?buster=' + Date.now();
+
+    new AJAX({
+        url: 'templates/PetitionForm.html' + buster,
+        success: function(e) {
+            global.ajaxResponses.formTemplate = e.target.responseText;
+            ajaxQueue.tick();
         }
     });
 
@@ -251,7 +298,7 @@ var SimpleSection = require('./SimpleSection');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js","./Chartbeat":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js","./Countdown":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Countdown.js","./DetectFeatures":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/DetectFeatures.js","./GoogleAnalytics":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/GoogleAnalytics.js","./ImagePreloader":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ImagePreloader.js","./LoadingIcon":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/LoadingIcon.js","./MobileMenu":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/MobileMenu.js","./OrganizationRotation":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/OrganizationRotation.js","./PetitionForm":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/PetitionForm.js","./Polyfills":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Polyfills.js","./Queue":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Queue.js","./SimpleSection":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/SimpleSection.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -347,7 +394,7 @@ AJAX.prototype.serializeForm = function(form) {
 
 module.exports = AJAX;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js":[function(require,module,exports){
 function Chartbeat() {
     this.addGlobals();
     this.addScript();
@@ -373,7 +420,7 @@ Chartbeat.prototype.addScript = function addScript() {
 
 module.exports = Chartbeat;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Countdown.js":[function(require,module,exports){
 function Countdown(params) {
     this.date = params.date;
     this.interval = null;
@@ -475,7 +522,7 @@ Countdown.prototype.updateDates = function(difference) {
 
 module.exports = Countdown;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/DetectFeatures.js":[function(require,module,exports){
 function DetectFeatures() {
     this.detectSVG();
 }
@@ -490,7 +537,7 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 
 module.exports = DetectFeatures;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\GoogleAnalytics.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/GoogleAnalytics.js":[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -507,7 +554,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ImagePreloader.js":[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -523,7 +570,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/LoadingIcon.js":[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -534,7 +581,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/MobileMenu.js":[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -568,7 +615,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/OrganizationRotation.js":[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -604,24 +651,94 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/PetitionForm.js":[function(require,module,exports){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 
 
 function PetitionForm(params) {
     // Params
-    this.formTemplate = params.formTemplate
+    this.allPoliticians = params.allPoliticians;
+    this.formTemplate = params.formTemplate;
+    this.geography = params.geography;
     this.target = params.target;
 
     this.DOMNode = document.querySelector(this.target);
 
+    this.selectPoliticians();
     this.render();
     this.addEventListeners();
 }
 
+PetitionForm.prototype.selectPoliticians = function() {
+    this.politicians = [];
+
+    if (
+        this.geography.country.iso_code === 'US' &&
+        this.geography.subdivisions &&
+        this.geography.subdivisions[0] &&
+        this.geography.subdivisions[0].names &&
+        this.geography.subdivisions[0].names.en
+    ) {
+        var stateName = this.geography.subdivisions[0].names.en;
+        this.politicians = this.allPoliticians.filter(function(politician) {
+            return (
+                (politician.gsx$state.$t === stateName)
+                &&
+                (politician.gsx$organization.$t === 'Senate')
+            );
+        });
+    }
+
+    if (this.politicians.length === 0) {
+        var teamCable = this.allPoliticians.filter(function(politician) {
+            return (
+                (politician.gsx$team.$t === 'team-cable')
+            )
+        });
+
+        this.politicians = [];
+        this.politicians[0] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
+        while (!this.politicians[1] || this.politicians[0] === this.politicians[1]) {
+            this.politicians[1] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
+        }
+    }
+};
+
 PetitionForm.prototype.render = function() {
-    this.DOMNode.innerHTML = Template(this.formTemplate, {});
+    this.DOMNode.innerHTML = Template(this.formTemplate, {
+        politicians: this.politicians.map(function(politician) {
+            var team = politician.gsx$team.$t;
+
+            var stance = 'undecided';
+            if (team === 'team-cable') {
+                stance = 'anti internet';
+            } else if (team === 'team-internet') {
+                stance = 'pro internet';
+            }
+
+            var url = 'http://';
+            if (politician.gsx$subdomain.$t) {
+                url += politician.gsx$subdomain.$t;
+            } else {
+                url += politician.gsx$first.$t + politician.gsx$name.$t;
+            }
+            if (politician.gsx$team.$t.trim() === 'team-internet') {
+                url += '.savesthe.net';
+            } else {
+                url += '.breaksthe.net';
+            }
+            url = url.toLowerCase();
+
+            return {
+                image: 'images/scoreboard/' + politician.gsx$imagepleasedontedit.$t,
+                name: politician.gsx$name.$t,
+                url: url,
+                stance: stance,
+                team: team
+            };
+        })
+    });
     this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
 };
 
@@ -646,20 +763,23 @@ PetitionForm.prototype.validatePhoneNumber = function(num) {
 PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
+    var politiciansNode = this.DOMNode.querySelector('.politicians');
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var phoneFormWasSkipped = false;
 
-    petitionFormNode.style.display = 'none';
+    // petitionFormNode.style.display = 'none';
+    // politiciansNode.style.display = 'none';
     phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
-    alternativeCTA.style.display = 'block';
-    phoneCallFormNode.style.display = 'block';
+    // alternativeCTA.style.display = 'block';
+    // phoneCallFormNode.style.display = 'block';
 
     alternativeCTA.addEventListener('click', function(e) {
         e.preventDefault();
 
         petitionFormNode.style.display = 'block';
         phoneCallFormNode.style.display = 'none';
+        politiciansNode.style.display = 'block';
         phoneFormWasSkipped = true;
     }, false);
 
@@ -684,9 +804,11 @@ PetitionForm.prototype.addEventListeners = function() {
 
         if (!phoneFormWasSkipped) {
             petitionFormNode.style.display = 'none';
+            politiciansNode.style.display = 'none';
             phoneCallFormNode.style.display = 'block';
         } else {
             petitionFormNode.style.display = 'none';
+            politiciansNode.style.display = 'none';
             thanksNode.style.display = 'block';
         }
 
@@ -721,13 +843,14 @@ PetitionForm.prototype.addEventListeners = function() {
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
         thanksNode.style.display = 'block';
     }.bind(this), false);
 };
 
 module.exports = PetitionForm;
 
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js":[function(require,module,exports){
+},{"./AJAX":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js","./Template":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Polyfills.js":[function(require,module,exports){
 function Polyfills() {
     this.bind();
 }
@@ -759,7 +882,7 @@ Polyfills.prototype.bind = function() {
 
 module.exports = Polyfills;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Queue.js":[function(require,module,exports){
 function Queue(params) {
     this.callback = params.callback;
     this.context = params.context || this;
@@ -782,7 +905,7 @@ Queue.prototype.destroy = function() {
 
 module.exports = Queue;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/SimpleSection.js":[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -800,7 +923,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js":[function(require,module,exports){
+},{"./Template":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js":[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
