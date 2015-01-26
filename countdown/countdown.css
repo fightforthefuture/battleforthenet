@@ -62,3 +62,7 @@ section.sign-up p {
     max-width: 950px;
     padding: 0px 20px;
 }
+
+section.widget .codebox.round {
+    border-radius: 10px;
+}
