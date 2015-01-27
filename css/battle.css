@@ -680,15 +680,68 @@ body #battle .thanks h2 {
 #battle section#team-internet p {
 
 }
-#battle section#team-internet .supporter {
-    display: inline-block;
-}
-#battle section#team-internet .supporter img {
-    max-width: 100%;
-    opacity: 0;
 
-    -webkit-transition: opacity 0.3s;
-            transition: opacity 0.3s;
+#battle section#team-internet .supporters {
+    margin: 0 auto;
+    max-width: 960px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1100px) {
+    #battle section#team-internet .supporters {
+        max-width: 650px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #battle section#team-internet .supporters {
+        max-width: 480px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #battle section#team-internet .supporters {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    #battle section#team-internet .supporters {
+        max-width: 240px;
+    }
+}
+
+#battle section#team-internet .supporters li {
+    background-image: url(../images/team-internet-logos.jpg);
+    float: left;
+    height: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+}
+
+#battle section#team-internet .btn {
+    background: #4dbca1;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+    margin: 40px auto;
+    padding: 0 24px;
+    text-align: center;
+    text-transform: uppercase;
+
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
+}
+
+#battle section#team-internet .btn:hover {
+    background-color: #64d0b6;
 }
 
 /* Political Scoreboard */
