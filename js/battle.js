@@ -160,7 +160,8 @@ var SimpleSection = require('./SimpleSection');
                         template: e.target.responseText
                     });
 
-                    var icons = document.querySelectorAll('#team-internet li');
+                    var wrapper = document.querySelector('#team-internet .supporters');
+                    var icons = wrapper.querySelectorAll('li');
                     var icon, pos;
                     for (var i = 0; i < icons.length; i++) {
                         icon = icons[i];
@@ -168,6 +169,26 @@ var SimpleSection = require('./SimpleSection');
                         icon.style.backgroundPosition = '0 -' + (pos * 60) + 'px';
                     }
 
+                    if (global.isDesktop) {
+                        var hideTimeout = null;
+
+                        wrapper.addEventListener('mouseover', function(e) {
+                            console.log('Show popup.');
+                            console.log(e.target.getAttribute('name'));
+                            console.log(e.target.getAttribute('quote'));
+                            clearTimeout(hideTimeout);
+                        }, false);
+
+                        wrapper.addEventListener('mouseout', function(e) {
+                            console.log('Hide popup in the future.');
+                            clearTimeout(hideTimeout);
+                            hideTimeout = setTimeout(function() {
+                                console.log('Hide popup.');
+                            }, 1200);
+                        }, false);
+                    }
+
+                    // Continue
                     if (queue.length > 0) {
                         queue.shift()();
                     }
