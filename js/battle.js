@@ -160,6 +160,14 @@ var SimpleSection = require('./SimpleSection');
                         template: e.target.responseText
                     });
 
+                    var icons = document.querySelectorAll('#team-internet li');
+                    var icon, pos;
+                    for (var i = 0; i < icons.length; i++) {
+                        icon = icons[i];
+                        pos = icon.getAttribute('pos') - 1;
+                        icon.style.backgroundPosition = '0 -' + (pos * 60) + 'px';
+                    }
+
                     if (queue.length > 0) {
                         queue.shift()();
                     }
