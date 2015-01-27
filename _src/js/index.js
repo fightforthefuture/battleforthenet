@@ -122,9 +122,6 @@ var SimpleSection = require('./SimpleSection');
         }
     });
 
-    // Let's selectively bust browser caches
-    var buster = '?buster=' + Date.now();
-
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
