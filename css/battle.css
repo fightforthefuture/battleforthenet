@@ -1256,6 +1256,7 @@ a.shareBtn.twitter {
     line-height: 25px;
     width: 25px;
     text-align: center;
+    text-decoration: none;
     border-radius: 25px;
     background: #29293d;
     color: rgba(255, 255, 255, .5);
@@ -1271,6 +1272,7 @@ a.shareBtn.twitter {
 .action-bar a.butt {
     display: inline-block;
     vertical-align: middle;
+    text-decoration: none;
     background: #8283b0;
     border-radius: 20px;
     height: 40px;
@@ -1303,6 +1305,15 @@ a.shareBtn.twitter {
 .action-bar a.butt:hover {
     text-shadow: 0px 0px 5px white;
     background: #626390;
+}
+.action-bar a {
+    color: white;
+    text-decoration: underline;
+}
+.action-bar a:hover {
+    color: pink;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
 }
 @media screen and (max-width: 1200px) {
     .action-bar {
