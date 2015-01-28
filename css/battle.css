@@ -570,7 +570,7 @@ body #battle .phone-call-form footer button:active {
 }
 
 body #battle .phone-call-form footer a.alternative-cta {
-    display: none;
+    display: block;
     color: #20cba1;
     font-size: 14px;
     padding: 0 0 12px;
