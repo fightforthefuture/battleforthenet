@@ -13,6 +13,8 @@ var PetitionForm = require('./PetitionForm');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
+var ActionBar = require('./ActionBar');
+var Modals = require('./Modals');
 
 
 // Detect features & apply polyfills
@@ -202,6 +204,22 @@ var SimpleSection = require('./SimpleSection');
             });
         });
 
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/ActionBar.html' + buster,
+                success: function(e) {
+                    new ActionBar({
+                        target: '.actionbar-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
         if (global.isDesktop) {
             queue.push(function() {
                 new AJAX({
@@ -247,35 +265,14 @@ var SimpleSection = require('./SimpleSection');
             new AJAX({
                 url: 'templates/Modals.html' + buster,
                 success: function(e) {
-                    new SimpleSection({
+                    global.modals = new Modals({
                         target: '.modals-target',
                         template: e.target.responseText
                     });
 
-                    // Shortcut
-                    var overlayNode = document.querySelector('.overlay');
-
-                    // Watch for testing URL
                     if (location.href.match(/sharing_modal=1/)) {
-                        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+                        global.modals.display('call_modal');
                     }
-
-                    overlayNode.querySelector('.gutter').addEventListener('click', function(e) {
-                        if (e.target === e.currentTarget) {
-                            e.preventDefault();
-                            overlayNode.className += ' invisible ';
-                        }
-                    }, false);
-
-                    overlayNode.querySelector('.modal .close').addEventListener('click', function(e) {
-                        e.preventDefault();
-                        overlayNode.className += ' invisible ';
-                    }, false);
-
-                    overlayNode.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
-                        e.preventDefault();
-                        window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-                    }, false);
 
                     if (queue.length > 0) {
                         queue.shift()();
@@ -298,7 +295,7 @@ var SimpleSection = require('./SimpleSection');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js","./Chartbeat":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js","./Countdown":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Countdown.js","./DetectFeatures":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/DetectFeatures.js","./GoogleAnalytics":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/GoogleAnalytics.js","./ImagePreloader":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ImagePreloader.js","./LoadingIcon":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/LoadingIcon.js","./MobileMenu":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/MobileMenu.js","./OrganizationRotation":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/OrganizationRotation.js","./PetitionForm":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/PetitionForm.js","./Polyfills":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Polyfills.js","./Queue":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Queue.js","./SimpleSection":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/SimpleSection.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js":[function(require,module,exports){
+},{"./AJAX":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js","./ActionBar":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ActionBar.js","./Chartbeat":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js","./Countdown":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Countdown.js","./DetectFeatures":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/DetectFeatures.js","./GoogleAnalytics":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/GoogleAnalytics.js","./ImagePreloader":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ImagePreloader.js","./LoadingIcon":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/LoadingIcon.js","./MobileMenu":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/MobileMenu.js","./Modals":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Modals.js","./OrganizationRotation":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/OrganizationRotation.js","./PetitionForm":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/PetitionForm.js","./Polyfills":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Polyfills.js","./Queue":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Queue.js","./SimpleSection":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/SimpleSection.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -394,7 +391,45 @@ AJAX.prototype.serializeForm = function(form) {
 
 module.exports = AJAX;
 
-},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ActionBar.js":[function(require,module,exports){
+var Template = require('./Template');
+
+function ActionBar(params) {
+    this.target = params.target;
+    this.template = params.template;
+
+    this.DOMNode = document.querySelector(this.target);
+
+    this.render();
+    this.animateIn();
+    this.addEventListeners();
+}
+
+ActionBar.prototype.render = function() {
+    this.DOMNode.innerHTML = Template(this.template, {});
+};
+
+ActionBar.prototype.animateIn = function() {
+    setTimeout(function() {
+        var bar = document.querySelector('.action-bar');
+        bar.className += ' visible';
+        
+    }, 100);
+}
+
+ActionBar.prototype.addEventListeners = function() {
+    var closeNode = this.DOMNode.querySelector('.x');
+    closeNode.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var bar = document.querySelector('.action-bar');
+        bar.className = bar.className.replace('visible', '');
+    });
+}
+
+module.exports = ActionBar;
+
+},{"./Template":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js":[function(require,module,exports){
 function Chartbeat() {
     this.addGlobals();
     this.addScript();
@@ -615,7 +650,69 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/OrganizationRotation.js":[function(require,module,exports){
+},{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Modals.js":[function(require,module,exports){
+var Template = require('./Template');
+
+function Modals(params) {
+    this.target = params.target;
+    this.template = params.template;
+
+    this.DOMNode = document.querySelector(this.target);
+
+    this.render();
+    this.addEventListeners();
+}
+
+Modals.prototype.render = function() {
+    this.DOMNode.innerHTML = Template(this.template, {});
+};
+
+Modals.prototype.display = function(id) {
+    var overlayNode = document.getElementById(id);
+    overlayNode.style.display = 'table';
+    setTimeout(function() {
+        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+    }, 50);
+};
+Modals.prototype.hide = function(id) {
+    var overlayNode = document.getElementById(id);
+    overlayNode.className += 'invisible';
+    setTimeout(function() {
+        overlayNode.style.display = 'none';
+    }, 400);
+}
+
+Modals.prototype.addEventListeners = function() {
+
+    var modals = document.getElementsByClassName('overlay');
+
+    var reallyBindEvents = function(modal) {
+        modal.querySelector('.gutter').addEventListener('click', function(e) {
+            if (e.target === e.currentTarget) {
+                e.preventDefault();
+                this.hide(modal.id);
+            }
+        }.bind(this), false);
+
+        modal.querySelector('.modal .close').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.hide(modal.id);
+        }.bind(this), false);
+
+        modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+        }, false);
+    }.bind(this);
+
+    for (var i = 0; i < modals.length; i++) {
+        reallyBindEvents(modals[i]);
+    }
+}
+
+module.exports = Modals;
+
+},{"./Template":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/OrganizationRotation.js":[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -652,6 +749,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 module.exports = OrganizationRotation;
 
 },{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/PetitionForm.js":[function(require,module,exports){
+(function (global){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 
@@ -838,8 +936,7 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
 
-        var overlayNode = document.querySelector('.overlay');
-        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+        global.modals.display('call_modal');
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
@@ -850,6 +947,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
 module.exports = PetitionForm;
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./AJAX":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/AJAX.js","./Template":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Polyfills.js":[function(require,module,exports){
 function Polyfills() {
     this.bind();

@@ -947,6 +947,7 @@ body.privacy section.team-internet.fight-for-the-future {
     height: 100%;
     background: rgba(0, 0, 0, .5);
     display: table;
+    display: none;
     z-index: 9001;
 
     -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
@@ -1063,44 +1064,98 @@ a.shareBtn.facebook {
 a.shareBtn.twitter {
     background-color: #2D98D6;
 }
-.bottom-bar {
-    background: #5d5d7a;
-    border-radius: 10px 0 0 0;
+.action-bar {
+    background: #39394d;
+    width: 100%;
     bottom: 0;
-    box-shadow: 0 0 5px black;
-    padding: 10px 20px 6px;;
+    left: 0;
+    padding: 6px 20px 10px;;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    box-sizing: border-box;
     position: fixed;
-    right: 0;
     z-index: 1;
-}
-.bottom-bar img {
-    height: 20px;
-    margin-right: 5px;
-    opacity: 0;
-    vertical-align: middle;
-    width: 19px;
-
-    -webkit-transition: opacity 0.3s;
-            transition: opacity 0.3s;
-}
-.bottom-bar a {
-    color: white;
     font-weight: bold;
+    line-height: 45px;
+    vertical-align: middle;
+    letter-spacing: 1px;
+    margin-bottom: -100%;
+    -webkit-transition: all 1s;
+            transition: all 1s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+}
+.action-bar.visible {
+    margin-bottom: 0px;
+}
+.action-bar a.x {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    height: 25px;
+    line-height: 25px;
+    width: 25px;
+    text-align: center;
+    border-radius: 25px;
+    background: #29293d;
+    color: rgba(255, 255, 255, .5);
+    font-weight: normal;
+    font-size: 25px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+}
+.action-bar a.x:hover {
+    color: #29293d;
+    background: #aaa;
+}
+.action-bar a.butt {
+    display: inline-block;
+    vertical-align: middle;
+    background: #8283b0;
+    border-radius: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0px 20px;
+    color: white;
+    margin-left: 10px;
 
-    -webkit-transition: text-shadow 0.3s;
-            transition: text-shadow 0.3s;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
 }
-.bottom-bar a:hover {
+.action-bar a.butt > span {
+    color: #555579;
+    font-size: 20px;
+    font-family: "Courier New", sans-serif;
+    vertical-align: middle;
+    font-weight: bold;
+    -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    letter-spacing: 0px;
+}
+.action-bar a.butt:hover > span {
+    color: white;
+}
+.action-bar > div {
+    display: inline;
+}
+.action-bar a.butt:hover {
     text-shadow: 0px 0px 5px white;
+    background: #29293d;
 }
-.bottom-bar a .underline {
-    text-decoration: underline;
+@media screen and (max-width: 1200px) {
+    .action-bar {
+        padding-bottom: 15px;
+    }
+    .action-bar > div {
+        display: block;
+    }
 }
-@media screen and (max-width: 520px), screen and (max-height: 520px) {
-    .bottom-bar {
+@media screen and (max-width: 767px) {
+    .action-bar {
         display: none;
     }
 }
+
 
 
 
