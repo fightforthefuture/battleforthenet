@@ -126,9 +126,6 @@ var Modals = require('./Modals');
         }
     });
 
-    // Let's selectively bust browser caches
-    var buster = '?buster=' + Date.now();
-
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
@@ -165,6 +162,35 @@ var Modals = require('./Modals');
                         template: e.target.responseText
                     });
 
+                    var wrapper = document.querySelector('#team-internet .supporters');
+                    var icons = wrapper.querySelectorAll('li');
+                    var icon, pos;
+                    for (var i = 0; i < icons.length; i++) {
+                        icon = icons[i];
+                        pos = icon.getAttribute('pos') - 1;
+                        icon.style.backgroundPosition = '0 -' + (pos * 60) + 'px';
+                    }
+
+                    if (global.isDesktop) {
+                        var hideTimeout = null;
+
+                        wrapper.addEventListener('mouseover', function(e) {
+                            console.log('Show popup.');
+                            console.log(e.target.getAttribute('name'));
+                            console.log(e.target.getAttribute('quote'));
+                            clearTimeout(hideTimeout);
+                        }, false);
+
+                        wrapper.addEventListener('mouseout', function(e) {
+                            console.log('Hide popup in the future.');
+                            clearTimeout(hideTimeout);
+                            hideTimeout = setTimeout(function() {
+                                console.log('Hide popup.');
+                            }, 1200);
+                        }, false);
+                    }
+
+                    // Continue
                     if (queue.length > 0) {
                         queue.shift()();
                     }
@@ -272,6 +298,9 @@ var Modals = require('./Modals');
 
                     if (location.href.match(/sharing_modal=1/)) {
                         global.modals.display('call_modal');
+                    }
+                    if (location.href.match(/twitter_modal=1/)) {
+                        global.modals.display('twitter_modal');
                     }
 
                     if (queue.length > 0) {
@@ -392,6 +421,7 @@ AJAX.prototype.serializeForm = function(form) {
 module.exports = AJAX;
 
 },{}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/ActionBar.js":[function(require,module,exports){
+(function (global){
 var Template = require('./Template');
 
 function ActionBar(params) {
@@ -425,10 +455,16 @@ ActionBar.prototype.addEventListeners = function() {
         var bar = document.querySelector('.action-bar');
         bar.className = bar.className.replace('visible', '');
     });
+
+    document.getElementById('join-tw').addEventListener('click', function(e) {
+        e.preventDefault();
+        global.modals.display('twitter_modal');
+    })
 }
 
 module.exports = ActionBar;
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./Template":"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Template.js"}],"/home/jeff/Documents/htdocs/battleforthenet-www/_src/js/Chartbeat.js":[function(require,module,exports){
 function Chartbeat() {
     this.addGlobals();
@@ -699,10 +735,11 @@ Modals.prototype.addEventListeners = function() {
             this.hide(modal.id);
         }.bind(this), false);
 
-        modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-        }, false);
+        if (modal.querySelector('.shareBtn.twitter'))
+            modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+            }, false);
     }.bind(this);
 
     for (var i = 0; i < modals.length; i++) {
@@ -865,21 +902,23 @@ PetitionForm.prototype.addEventListeners = function() {
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var phoneFormWasSkipped = false;
 
-    // petitionFormNode.style.display = 'none';
-    // politiciansNode.style.display = 'none';
-    phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
-    var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
-    // alternativeCTA.style.display = 'block';
-    // phoneCallFormNode.style.display = 'block';
+    if (location.href.match(/call_tool=1/)) {
+        petitionFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
+        phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
+        var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
+        alternativeCTA.style.display = 'block';
+        phoneCallFormNode.style.display = 'block';
 
-    alternativeCTA.addEventListener('click', function(e) {
-        e.preventDefault();
+        alternativeCTA.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        petitionFormNode.style.display = 'block';
-        phoneCallFormNode.style.display = 'none';
-        politiciansNode.style.display = 'block';
-        phoneFormWasSkipped = true;
-    }, false);
+            petitionFormNode.style.display = 'block';
+            phoneCallFormNode.style.display = 'none';
+            politiciansNode.style.display = 'block';
+            phoneFormWasSkipped = true;
+        }, false);
+    }
 
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
         e.preventDefault();
@@ -918,7 +957,7 @@ PetitionForm.prototype.addEventListeners = function() {
         var campaignId = 'jan14th';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
-        var postalCode = petitionFormNode.elements.zip.value || '95051';
+        var postalCode = petitionFormNode.elements.zip.value || '';
 
         phoneNumber = this.validatePhoneNumber(phoneNumber);
         if (!phoneNumber) {
@@ -926,7 +965,7 @@ PetitionForm.prototype.addEventListeners = function() {
         }
 
         var url =
-            'https://call-congress.fightforthefuture.org/create?' +
+            'https://call-congress.fightforthefuture.org/create?' + 
             'campaignId=' + campaignId + '&' +
             'userPhone=' + phoneNumber + '&' +
             'zipcode=' + postalCode;

@@ -24,9 +24,25 @@
     <div class="gutter">
         <div class="modal">
             <a class="close" href="#">×</a>
-            <h1>Join with Twitterasdf</h1>
-            <a class="shareBtn facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com">Share on Facebook</a>
-            <a class="shareBtn twitter" target="_blank" href="https://twitter.com/intent/tweet?hashtags=CallTheFCC&text=&related=fightfortheftr">Share on Twitter</a>
+            <h1>Join with Twitter</h1>
+            <h2>We’re building a network of Twitter users to re-broadcast urgent alerts about the Internet Countdown &amp; threats to online freedom. Will you let the Internet Defense League post to your Twitter?</h2>
+            <p class="small"><a href="https://www.internetdefenseleague.org" target="_blank">Learn more about the Internet Defense League...</a></p>
+            <form action="http://radiant-earth-4575.herokuapp.com/auth/twitter_prep" method="POST" id="tweez">
+                <label for="email">Your email
+                    <span>(Optional)</span>
+                </label>
+                <input type="text" name="email" id="emaildudez">
+                <hr/>
+                <label>Maximum frequency:</label>
+                <select name="frequency">
+                    <option value="1" selected>Tweet once a day</option>
+                    <option value="2">Tweet once a week</option>
+                    <option value="3">Tweet once a month</option>
+                    <option value="4">Tweet three times a year</option>
+                </select>
+                <hr/>
+                <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
+            </form>
         </div>
     </div>
 </div>

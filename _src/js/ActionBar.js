@@ -31,6 +31,11 @@ ActionBar.prototype.addEventListeners = function() {
         var bar = document.querySelector('.action-bar');
         bar.className = bar.className.replace('visible', '');
     });
+
+    document.getElementById('join-tw').addEventListener('click', function(e) {
+        e.preventDefault();
+        global.modals.display('twitter_modal');
+    })
 }
 
 module.exports = ActionBar;

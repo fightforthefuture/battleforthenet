@@ -124,9 +124,6 @@ var Modals = require('./Modals');
         }
     });
 
-    // Let's selectively bust browser caches
-    var buster = '?buster=' + Date.now();
-
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
@@ -163,6 +160,35 @@ var Modals = require('./Modals');
                         template: e.target.responseText
                     });
 
+                    var wrapper = document.querySelector('#team-internet .supporters');
+                    var icons = wrapper.querySelectorAll('li');
+                    var icon, pos;
+                    for (var i = 0; i < icons.length; i++) {
+                        icon = icons[i];
+                        pos = icon.getAttribute('pos') - 1;
+                        icon.style.backgroundPosition = '0 -' + (pos * 60) + 'px';
+                    }
+
+                    if (global.isDesktop) {
+                        var hideTimeout = null;
+
+                        wrapper.addEventListener('mouseover', function(e) {
+                            console.log('Show popup.');
+                            console.log(e.target.getAttribute('name'));
+                            console.log(e.target.getAttribute('quote'));
+                            clearTimeout(hideTimeout);
+                        }, false);
+
+                        wrapper.addEventListener('mouseout', function(e) {
+                            console.log('Hide popup in the future.');
+                            clearTimeout(hideTimeout);
+                            hideTimeout = setTimeout(function() {
+                                console.log('Hide popup.');
+                            }, 1200);
+                        }, false);
+                    }
+
+                    // Continue
                     if (queue.length > 0) {
                         queue.shift()();
                     }
@@ -270,6 +296,9 @@ var Modals = require('./Modals');
 
                     if (location.href.match(/sharing_modal=1/)) {
                         global.modals.display('call_modal');
+                    }
+                    if (location.href.match(/twitter_modal=1/)) {
+                        global.modals.display('twitter_modal');
                     }
 
                     if (queue.length > 0) {
