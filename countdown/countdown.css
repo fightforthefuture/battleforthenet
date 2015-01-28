@@ -9,13 +9,31 @@ body#developer {
     }
 }
 
+section.big-honking-header {
+    padding: 20px 20px;
+    background: black;
+}
+section.big-honking-header h1 {
+    font-size: 90px;
+    font-weight: normal;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media screen and (max-width: 767px) {
+    section.big-honking-header h1 {
+        font-size: 40px;
+    }
+}
+
 section.sign-up {
     color: #FFF;
     font-family: "Proxima Nova",sans-serif;
     font-weight: 300;
     text-align: center;
-    padding: 60px 20px;
-    background: rgba(0,0,0,.5);
+    padding: 20px 20px;
+    background: rgba(0,0,0,.7);
 }
 
 section.sign-up h2 {
