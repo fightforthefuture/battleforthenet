@@ -46,10 +46,11 @@ Modals.prototype.addEventListeners = function() {
             this.hide(modal.id);
         }.bind(this), false);
 
-        modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-        }, false);
+        if (modal.querySelector('.shareBtn.twitter'))
+            modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+            }, false);
     }.bind(this);
 
     for (var i = 0; i < modals.length; i++) {

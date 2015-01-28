@@ -113,21 +113,23 @@ PetitionForm.prototype.addEventListeners = function() {
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var phoneFormWasSkipped = false;
 
-    // petitionFormNode.style.display = 'none';
-    // politiciansNode.style.display = 'none';
-    phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
-    var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
-    // alternativeCTA.style.display = 'block';
-    // phoneCallFormNode.style.display = 'block';
+    if (location.href.match(/call_tool=1/)) {
+        petitionFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
+        phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
+        var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
+        alternativeCTA.style.display = 'block';
+        phoneCallFormNode.style.display = 'block';
 
-    alternativeCTA.addEventListener('click', function(e) {
-        e.preventDefault();
+        alternativeCTA.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        petitionFormNode.style.display = 'block';
-        phoneCallFormNode.style.display = 'none';
-        politiciansNode.style.display = 'block';
-        phoneFormWasSkipped = true;
-    }, false);
+            petitionFormNode.style.display = 'block';
+            phoneCallFormNode.style.display = 'none';
+            politiciansNode.style.display = 'block';
+            phoneFormWasSkipped = true;
+        }, false);
+    }
 
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
         e.preventDefault();
@@ -166,7 +168,7 @@ PetitionForm.prototype.addEventListeners = function() {
         var campaignId = 'jan14th';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
-        var postalCode = petitionFormNode.elements.zip.value || '95051';
+        var postalCode = petitionFormNode.elements.zip.value || '';
 
         phoneNumber = this.validatePhoneNumber(phoneNumber);
         if (!phoneNumber) {
@@ -174,7 +176,7 @@ PetitionForm.prototype.addEventListeners = function() {
         }
 
         var url =
-            'https://call-congress.fightforthefuture.org/create?' +
+            'https://call-congress.fightforthefuture.org/create?' + 
             'campaignId=' + campaignId + '&' +
             'userPhone=' + phoneNumber + '&' +
             'zipcode=' + postalCode;
