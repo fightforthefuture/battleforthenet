@@ -11,6 +11,8 @@ var PetitionForm = require('./PetitionForm');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
+var ActionBar = require('./ActionBar');
+var Modals = require('./Modals');
 
 
 // Detect features & apply polyfills
@@ -200,6 +202,22 @@ var SimpleSection = require('./SimpleSection');
             });
         });
 
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/ActionBar.html' + buster,
+                success: function(e) {
+                    new ActionBar({
+                        target: '.actionbar-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
         if (global.isDesktop) {
             queue.push(function() {
                 new AJAX({
@@ -245,35 +263,14 @@ var SimpleSection = require('./SimpleSection');
             new AJAX({
                 url: 'templates/Modals.html' + buster,
                 success: function(e) {
-                    new SimpleSection({
+                    global.modals = new Modals({
                         target: '.modals-target',
                         template: e.target.responseText
                     });
 
-                    // Shortcut
-                    var overlayNode = document.querySelector('.overlay');
-
-                    // Watch for testing URL
                     if (location.href.match(/sharing_modal=1/)) {
-                        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+                        global.modals.display('call_modal');
                     }
-
-                    overlayNode.querySelector('.gutter').addEventListener('click', function(e) {
-                        if (e.target === e.currentTarget) {
-                            e.preventDefault();
-                            overlayNode.className += ' invisible ';
-                        }
-                    }, false);
-
-                    overlayNode.querySelector('.modal .close').addEventListener('click', function(e) {
-                        e.preventDefault();
-                        overlayNode.className += ' invisible ';
-                    }, false);
-
-                    overlayNode.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
-                        e.preventDefault();
-                        window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-                    }, false);
 
                     if (queue.length > 0) {
                         queue.shift()();

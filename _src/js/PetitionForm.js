@@ -184,8 +184,7 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
 
-        var overlayNode = document.querySelector('.overlay');
-        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+        global.modals.display('call_modal');
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
