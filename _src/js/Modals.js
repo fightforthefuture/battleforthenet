@@ -50,6 +50,12 @@ Modals.prototype.addEventListeners = function() {
             modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
                 e.preventDefault();
                 window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+                if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
+            }, false);
+
+        if (modal.querySelector('.shareBtn.facebook'))
+            modal.querySelector('.shareBtn.facebook').addEventListener('click', function(e) {
+                if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
             }, false);
     }.bind(this);
 
