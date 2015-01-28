@@ -168,7 +168,7 @@ PetitionForm.prototype.addEventListeners = function() {
         var campaignId = 'jan14th';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
-        var postalCode = petitionFormNode.elements.zip.value || '95051';
+        var postalCode = petitionFormNode.elements.zip.value || '';
 
         phoneNumber = this.validatePhoneNumber(phoneNumber);
         if (!phoneNumber) {
