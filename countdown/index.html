@@ -69,52 +69,58 @@
           <p>
              Last year,  more than 40,000 websites participated in the Internet Slowdown to demand real net neutrality. It worked! But monopolistic Cable companies are pouring millions into a last ditch effort to derail the FCC's historic vote. Help us flood Washington, DC with calls and emails to show lawmakers that the whole Internet is watching, and we're literally counting down the seconds until we get real net neutrality.
           </p>
-          <p>
-            <div class="signup">
-              <div class="row">
-                <div class="col-xs-12 col-centered">
-                  <form action="https://queue.fightforthefuture.org/action" method="POST" class="group" name="form" id="form">
-                    <div class="input-group">
-                      <div style="display: none;">
-                        <label for="hp_enabled">
-                          <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label>
-                        <label for="hp_disabled">
-                          <input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label>
-                      </div>
-                      <input type="hidden" name="member[language]" value="en">
-                      <input type="hidden" name="member[country]" value="US" id="country">
-                      <input type="hidden" name="salsa" value="true">
-                      <input type="hidden" name="language_id" value="en">
-                      <input type="hidden" name="member[movement_id]" value="1">
-                      <input type="hidden" name="member[user_agent]" value="">
-                      <input type="hidden" name="member[ip_address]" value="">
-                      <input type="hidden" name="tag" value="battle-for-the-net-slash-countdown" />
-                      <input type="hidden" name="org" id="org" value="fftf" />
-                      <input type="text" name="guard" placeholder="Please leave this field blank" style="display: none;">
-                      <input type="hidden" name="action" value="1" />
-                      <input type="text" class="form-control input-lg" placeholder="Your email" id="email" name="member[email]" required />
-                      <span class="input-group-btn">
-                        <button class="btn btn-success btn-lg" type="submit" id="subscribe">Join the action</button>
-                      </span>
-                    </div><!-- /input-group -->
-                  </form>
-                </div><!-- /.col-lg-6 -->
-              </div><!-- /.row -->
-              <a href="https://fightforthefuture.org/" target="_blank" class="privacy">Fight for the Future</a> will send you campaign-related updates. <a href="/privacy" class="privacy" target="_blank">Privacy policy</a>
-            </div>
-            <div class="signup-thanks" style="display: none; position: static;">
-              Thanks! We'll send you #InternetCountdown updates!
-            </div>
-          </p>
-
+          
         </section>
 
       </div>
 
+      <section id="sign-up" class="sign-up">
+
+        <h2>Sign up to get the latest updates <span>on how you can help.</span></h2>
+
+        <div class="signup">
+          <div class="row">
+            <div class="col-xs-12 col-centered">
+              <form action="https://queue.fightforthefuture.org/action" method="POST" class="group" name="form" id="form">
+                <div class="input-group">
+                  <div style="display: none;">
+                    <label for="hp_enabled">
+                      <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label>
+                    <label for="hp_disabled">
+                      <input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label>
+                  </div>
+                  <input type="hidden" name="member[language]" value="en">
+                  <input type="hidden" name="member[country]" value="US" id="country">
+                  <input type="hidden" name="salsa" value="true">
+                  <input type="hidden" name="language_id" value="en">
+                  <input type="hidden" name="member[movement_id]" value="1">
+                  <input type="hidden" name="member[user_agent]" value="">
+                  <input type="hidden" name="member[ip_address]" value="">
+                  <input type="hidden" name="tag" value="battle-for-the-net-slash-countdown" />
+                  <input type="hidden" name="org" id="org" value="fftf" />
+                  <input type="text" name="guard" placeholder="Please leave this field blank" style="display: none;">
+                  <input type="hidden" name="action" value="1" />
+                  <input type="text" class="form-control input-lg" placeholder="Your email" id="email" name="member[email]" required />
+                  <span class="input-group-btn">
+                    <button class="btn btn-success btn-lg" type="submit" id="subscribe">Join the action</button>
+                  </span>
+                </div><!-- /input-group -->
+              </form>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+          <a href="https://fightforthefuture.org/" target="_blank" class="privacy">Fight for the Future</a> will send you campaign-related updates. <a href="/privacy" class="privacy" target="_blank">Privacy policy</a>
+        </div>
+        <div class="signup-thanks" style="display: none; position: static;">
+          Thanks! We'll send you #InternetSlowdown updates!
+        </div>
+        <div class="join-twitter">
+            <button class="btn btn-success btn-lg" id="twitter-button">Join with Twitter</button>
+        </div>
+      </section>
 
       <section id="sites" class="widget">
         <h2>
-          Help us pass real net neutrality -- add the Countdown to your site!
+          Help us pass real net neutrality&mdash;<br/>add the Countdown to your site!
         </h2>
         <!-- <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank" class="btn btn-success">Get the code!</a> -->
 
@@ -380,6 +386,35 @@
         </a>
       </li>
     </ul>
+
+    <div id="battle">
+      <div class="overlay twitter invisible" id="twitter_modal">
+          <div class="gutter">
+              <div class="modal">
+                  <a class="close" href="#">×</a>
+                  <h1>Join with Twitter</h1>
+                  <p class="nopad">We’re building a network of Twitter users to re-broadcast urgent alerts about the Internet Countdown &amp; threats to online freedom. Will you let the Internet Defense League post to your Twitter?</p>
+                  <p class="small"><a href="https://www.internetdefenseleague.org" target="_blank">Learn more about the Internet Defense League...</a></p>
+                  <form action="//radiant-earth-4575.herokuapp.com/auth/twitter_prep" method="POST" id="tweez">
+                      <label for="email">Your email
+                          <span>(Optional)</span>
+                      </label>
+                      <input type="text" name="email" id="emaildudez">
+                      <hr/>
+                      <label>Maximum frequency:</label>
+                      <select name="frequency">
+                          <option value="1" selected>Tweet once a day</option>
+                          <option value="2">Tweet once a week</option>
+                          <option value="3">Tweet once a month</option>
+                          <option value="4">Tweet three times a year</option>
+                      </select>
+                      <hr/>
+                      <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -113,12 +113,28 @@ function $$(query, callback) {
 }
 
 // Setup AJAX form submissions
+function modal_show(id) {
+    var overlayNode = document.getElementById(id);
+    overlayNode.style.display = 'table';
+    setTimeout(function() {
+        overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
+    }, 50);
+};
+function modal_hide(id) {
+    var overlayNode = document.getElementById(id);
+    overlayNode.className += 'invisible';
+    setTimeout(function() {
+        overlayNode.style.display = 'none';
+    }, 400);
+}
+
+
 var form = $('#form');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     $('.signup').style.display = 'none';
-    $('.signup-thanks').style.display = 'block';
+    $('.signup-thanks').style.display = 'inline-block';
 
     new AJAX({
         form: form,
@@ -129,3 +145,21 @@ form.addEventListener('submit', function(e) {
         url: form.getAttribute('action')
     });
 }, false);
+
+document.getElementById('twitter-button').addEventListener('click', function(e) {
+    modal_show('twitter_modal');
+}, false);
+
+var modal = document.getElementById('twitter_modal');
+
+modal.querySelector('.gutter').addEventListener('click', function(e) {
+    if (e.target === e.currentTarget) {
+        e.preventDefault();
+        modal_hide(modal.id);
+    }
+}.bind(this), false);
+
+modal.querySelector('.modal .close').addEventListener('click', function(e) {
+    e.preventDefault();
+    modal_hide(modal.id);
+}.bind(this), false);
