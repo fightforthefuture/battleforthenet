@@ -216,6 +216,7 @@ header nav {
     height: 66px;
     position: relative;
     text-align: center;
+    white-space: nowrap;
 }
 
 header nav a {
@@ -225,13 +226,13 @@ header nav a {
             transition: opacity 1s 0.3s;
 }
 
-@media screen and (min-width: 460px) {
+@media screen and (min-width: 620px) {
     .mobile {
         display: none !important;
     }
 }
 
-@media screen and (max-width: 459px) {
+@media screen and (max-width: 619px) {
     .desktop {
         display: none !important;
     }
@@ -249,7 +250,8 @@ header nav a {
         <a href="#" class="highlighted">home</a>
         <a href="#team-cable">team cable</a>
         <a href="#team-internet">team internet</a>
-        <a href="scoreboard/">scoreboard</a>
+        <a href="./scoreboard/">scoreboard</a>
+        <a href="./countdown/">countdown</a>
     </nav>
 
     <div id="mobile-navigation" class="mobile mobile-navigation">
@@ -258,7 +260,8 @@ header nav a {
         <ul>
             <li><a href="#team-cable">team cable</a></li>
             <li><a href="#team-internet">team internet</a></li>
-            <li><a href="scoreboard/">scoreboard</a></li>
+            <li><a href="./scoreboard/">scoreboard</a></li>
+            <li><a href="./countdown/">countdown</a></li>
         </ul>
     </div>
 </header>
