@@ -681,6 +681,55 @@ body #battle .thanks h2 {
 
 }
 
+#battle section#team-internet .quote-bubble {
+    background-color: white;
+    box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.9);
+    color: black;
+    display: none;
+    padding: 18px 18px 0;
+    position: fixed;
+    width: 300px;
+
+    /* Temporary */
+    padding-bottom: 18px;
+    right: 0;
+    top: 0;
+}
+
+#battle section#team-internet .quote-bubble .name {
+    color: rgba(49, 49, 66, 1);
+    font-weight: bold;
+}
+
+#battle section#team-internet .quote-bubble .quote {
+    color: rgba(49, 49, 66, 1);
+}
+
+#battle section#team-internet .quote-bubble .quote:after,
+#battle section#team-internet .quote-bubble .quote:before {
+    color: rgba(49, 49, 66, 0.2);
+    content: '"';
+    font-weight: bold;
+    padding: 0 2px;
+}
+
+#battle section#team-internet .quote-bubble .arrow-wrapper {
+    height: 16px;
+    margin: 0 auto;
+    width: 30px;
+
+    /* Temporary */
+    display: none;
+}
+
+#battle section#team-internet .quote-bubble .arrow-wrapper .arrow {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
 #battle section#team-internet .supporters {
     margin: 0 auto;
     max-width: 960px;
