@@ -111,25 +111,24 @@ PetitionForm.prototype.addEventListeners = function() {
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
     var politiciansNode = this.DOMNode.querySelector('.politicians');
     var thanksNode = this.DOMNode.querySelector('.thanks');
-    var phoneFormWasSkipped = false;
+    var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
+    var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
 
     if (location.href.match(/call_tool=1/)) {
         petitionFormNode.style.display = 'none';
         politiciansNode.style.display = 'none';
         phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
-        var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
-        alternativeCTA.style.display = 'block';
         phoneCallFormNode.style.display = 'block';
-
-        alternativeCTA.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            petitionFormNode.style.display = 'block';
-            phoneCallFormNode.style.display = 'none';
-            politiciansNode.style.display = 'block';
-            phoneFormWasSkipped = true;
-        }, false);
+        disclaimerNode.style.display = 'none';
     }
+    alternativeCTA.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        petitionFormNode.style.display = 'none';
+        phoneCallFormNode.style.display = 'none';
+        thanksNode.style.display = 'block';
+        global.modals.display('share_modal');
+    }, false);
 
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
         e.preventDefault();
@@ -149,16 +148,12 @@ PetitionForm.prototype.addEventListeners = function() {
             form: petitionFormNode,
             success: function(e) {}
         });
-
-        if (!phoneFormWasSkipped) {
-            petitionFormNode.style.display = 'none';
-            politiciansNode.style.display = 'none';
-            phoneCallFormNode.style.display = 'block';
-        } else {
-            petitionFormNode.style.display = 'none';
-            politiciansNode.style.display = 'none';
-            thanksNode.style.display = 'block';
-        }
+       
+        petitionFormNode.style.display = 'none';
+        politiciansNode.style.display = 'none';
+        phoneCallFormNode.style.display = 'block';
+        disclaimerNode.style.display = 'none';
+      
 
     }, false);
 
