@@ -1,3 +1,4 @@
+var ActionBar = require('./ActionBar');
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
@@ -6,13 +7,13 @@ var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
+var Modals = require('./Modals');
 var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
-var ActionBar = require('./ActionBar');
-var Modals = require('./Modals');
+var TeamInternetSection = require('./TeamInternetSection');
 
 
 // Detect features & apply polyfills
@@ -155,40 +156,11 @@ var Modals = require('./Modals');
             new AJAX({
                 url: 'templates/TeamInternetSection.html' + buster,
                 success: function(e) {
-                    new SimpleSection({
+                    new TeamInternetSection({
                         target: '.team-internet-target',
                         template: e.target.responseText
                     });
 
-                    var wrapper = document.querySelector('#team-internet .supporters');
-                    var icons = wrapper.querySelectorAll('li');
-                    var icon, pos;
-                    for (var i = 0; i < icons.length; i++) {
-                        icon = icons[i];
-                        pos = icon.getAttribute('pos') - 1;
-                        icon.style.backgroundPosition = '0 -' + (pos * 60) + 'px';
-                    }
-
-                    if (global.isDesktop) {
-                        var hideTimeout = null;
-
-                        wrapper.addEventListener('mouseover', function(e) {
-                            console.log('Show popup.');
-                            console.log(e.target.getAttribute('name'));
-                            console.log(e.target.getAttribute('quote'));
-                            clearTimeout(hideTimeout);
-                        }, false);
-
-                        wrapper.addEventListener('mouseout', function(e) {
-                            console.log('Hide popup in the future.');
-                            clearTimeout(hideTimeout);
-                            hideTimeout = setTimeout(function() {
-                                console.log('Hide popup.');
-                            }, 1200);
-                        }, false);
-                    }
-
-                    // Continue
                     if (queue.length > 0) {
                         queue.shift()();
                     }
@@ -228,23 +200,23 @@ var Modals = require('./Modals');
             });
         });
 
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/ActionBar.html' + buster,
-                success: function(e) {
-                    new ActionBar({
-                        target: '.actionbar-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
         if (global.isDesktop) {
+            queue.push(function() {
+                new AJAX({
+                    url: 'templates/ActionBar.html' + buster,
+                    success: function(e) {
+                        new ActionBar({
+                            target: '.actionbar-target',
+                            template: e.target.responseText
+                        });
+
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
+                    }
+                });
+            });
+
             queue.push(function() {
                 new AJAX({
                     url: 'templates/PoliticalScoreboardSection.html' + buster,
