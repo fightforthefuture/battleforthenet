@@ -9,26 +9,6 @@ body#developer {
     }
 }
 
-section.sign-up {
-    color: #FFF;
-    font-family: "Proxima Nova",sans-serif;
-    font-weight: 300;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-section.sign-up h2 {
-    font-size: 50px;
-    font-weight: 300;
-}
-
-section.sign-up .signup {
-    font-size: 14px;
-    margin: 20px auto;
-    max-width: 630px;
-    padding: 0px 20px;
-}
-
 @media screen and (max-width: 420px) {
     section.sign-up .signup .input-group {
         display: block;
@@ -53,23 +33,10 @@ section.sign-up .signup {
         width: 100%;
     }
 }
-
-section.sign-up .signup a {
-    color: white;
-    font-weight: bold;
-}
-
-section.sign-up .signup .row {
-    padding-bottom: 12px;
-}
-
-section.sign-up p {
-    font-size: 22px;
-    margin: 20px auto;
-    max-width: 950px;
-    padding: 0px 20px;
-}
-
 section.widget .codebox.round {
     border-radius: 10px;
+}
+
+.jumbotron.developer .signup {
+    padding-bottom: 0px;
 }
