@@ -1,6 +1,18 @@
 body#developer {
     background-image: url(../images/tools/countdown-background.jpg);
 }
+section.widget {
+    background-color: #313142;
+}
+section.push-notification {
+    background-color: #1C1C25;
+}
+section.change-avatar, section.share-images {
+    background-color: #313142;
+}
+section.join-us {
+    background-color: #1C1C25;
+}
 
 @media screen and (max-width: 320px) {
     .jumbotron.developer iframe.banner {
@@ -15,7 +27,7 @@ section.big-honking-header {
 }
 section.big-honking-header h1 {
     font-size: 90px;
-    font-weight: normal;
+    font-weight: 100;
     color: white;
     margin: 0px;
     padding: 0px;
@@ -33,7 +45,7 @@ section.sign-up {
     font-weight: 300;
     text-align: center;
     padding: 20px 20px;
-    background: rgba(0,0,0,.7);
+    background: #1C1C25;
 }
 
 section.sign-up h2 {
