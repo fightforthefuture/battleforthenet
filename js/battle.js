@@ -436,6 +436,7 @@ ActionBar.prototype.addEventListeners = function() {
     document.getElementById('join-tw').addEventListener('click', function(e) {
         e.preventDefault();
         global.modals.display('twitter_modal');
+        if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
     })
 }
 
