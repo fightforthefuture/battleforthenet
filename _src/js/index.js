@@ -247,6 +247,11 @@ var TeamInternetSection = require('./TeamInternetSection');
                         document.querySelector('.sharing-buttons').querySelector('.twitter').addEventListener('click', function(e) {
                             e.preventDefault();
                             window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+                            if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
+                        }, false);
+
+                        document.querySelector('.sharing-buttons').querySelector('.facebook').addEventListener('click', function(e) {
+                            if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
                         }, false);
 
                         if (queue.length > 0) {

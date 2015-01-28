@@ -148,6 +148,7 @@ PetitionForm.prototype.addEventListeners = function() {
             form: petitionFormNode,
             success: function(e) {}
         });
+        if (ga) ga('send', 'event', 'form', 'submit', 'email');
        
         petitionFormNode.style.display = 'none';
         politiciansNode.style.display = 'none';
@@ -180,6 +181,7 @@ PetitionForm.prototype.addEventListeners = function() {
             url: url,
             success: function(e) {}
         });
+        if (ga) ga('send', 'event', 'form', 'submit', 'call');
 
         global.modals.display('call_modal');
 
