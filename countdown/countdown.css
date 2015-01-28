@@ -9,6 +9,31 @@ body#developer {
     }
 }
 
+section.sign-up {
+    color: #FFF;
+    font-family: "Proxima Nova",sans-serif;
+    font-weight: 300;
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0,0,0,.5);
+}
+
+section.sign-up h2 {
+    font-size: 50px;
+    font-weight: 300;
+}
+section.sign-up h2 span {
+    display: block;
+    opacity: .6;
+}
+
+section.sign-up .signup {
+    font-size: 14px;
+    margin: 20px auto;
+    max-width: 630px;
+    padding: 0px 20px;
+}
+
 @media screen and (max-width: 420px) {
     section.sign-up .signup .input-group {
         display: block;
@@ -33,10 +58,216 @@ body#developer {
         width: 100%;
     }
 }
+
+section.sign-up .signup a {
+    color: white;
+    font-weight: bold;
+}
+
+section.sign-up .signup .row {
+    padding-bottom: 12px;
+}
+
+section.sign-up p {
+    font-size: 22px;
+    margin: 20px auto;
+    max-width: 950px;
+    padding: 0px 20px;
+}
+
 section.widget .codebox.round {
     border-radius: 10px;
 }
 
-.jumbotron.developer .signup {
-    padding-bottom: 0px;
+div.signup {
+    display: inline-block;
+}
+div.signup .btn {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    section.sign-up {
+        padding: 40px 20px;
+    }
+    section.sign-up h2 {
+        font-size: 28px;
+    }
+    section.sign-up h2 span {
+        display: inline;
+    }
+    section.sign-up .signup {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+div.join-twitter {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 0px 0px 0px;
+}
+div.join-twitter .btn {
+    background: #59adeb;
+    border-color: #59adeb;
+    font-weight: bold;
+}
+
+
+
+
+.overlay {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: table;
+    display: none;
+    z-index: 9001;
+
+    -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+            transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+}
+.overlay.invisible {
+    pointer-events: none;
+    opacity: 0;
+    left: 99999px;
+
+    -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
+            transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
+}
+.overlay .gutter {
+    display: table-cell;
+    vertical-align: middle;
+}
+.overlay .gutter .modal {
+    max-width: 550px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    margin: 0px auto;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+.overlay .modal a.close {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    color: black;
+    opacity: .4;
+    text-decoration: none;
+    font-size: 30px;
+}
+.overlay .modal a.close:hover {
+    opacity: .6;
+}
+.overlay .modal h1 {
+    background: #20cba1;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.overlay .modal h2 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0px 25px;
+    margin: 0px auto;
+}
+.overlay .modal label {
+    font-size: 13px;
+    display: inline-block;
+    width: 130px;
+    text-align: left;
+}
+.overlay .modal label span {
+    color: gray;
+}
+.overlay .modal input {
+    width: 280px;
+    font-size: 20px;
+}
+.overlay .modal select {
+    width: 280px;
+    font-size: 20px;
+}
+.overlay .modal hr {
+    border: 0px;
+}
+.overlay .modal button {
+    display: block;
+    margin: 25px auto 20px auto;
+    outline: medium none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    
+    padding: 0.5em 2em 0.55em;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5em;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #12A1D6;
+    
+    background: #32c0f2; /* Old browsers */
+    background: -moz-linear-gradient(top, #32c0f2 0%, #028bbb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#32c0f2), color-stop(100%,#028bbb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #32c0f2 0%,#028bbb 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32c0f2', endColorstr='#028bbb',GradientType=0 ); /* IE6-9 */
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
+
+    color: white;
+}
+#battle .overlay .modal p {
+    color: #888888;
+    max-width: 500px;
+    margin: 0px auto;
+    padding: 30px 25px;
+    font-size: 18px;
+}
+#battle .overlay .modal p.nopad {
+    padding: 0px 25px;
+}
+#battle .overlay .modal p.small {
+    padding: 20px 25px 20px 25px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 480px), screen and (max-height: 480px) {
+    #battle .overlay .modal h1 {
+        font-size: 18px;
+        padding: 15px 10px;
+    }
+    #battle .overlay .modal h2 {
+        font-size: 14px;
+        padding: 0px 10px;
+    }
+    #battle .overlay .modal p, #battle .overlay .modal p.small {
+        font-size: 12px;
+        line-height: 1.7;
+        padding: 10px 10px;
+    }
+    #battle .overlay .modal a.shareBtn {
+        font-size: 0.7em;
+        line-height: 40px;
+        margin: 10px 7px 10px 7px;
+        padding: 0 18px;
+    }
+    .overlay .modal button {
+        margin-bottom: 10px;
+    }
 }
