@@ -200,23 +200,23 @@ var TeamInternetSection = require('./TeamInternetSection');
             });
         });
 
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/ActionBar.html' + buster,
-                success: function(e) {
-                    new ActionBar({
-                        target: '.actionbar-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
         if (global.isDesktop) {
+            queue.push(function() {
+                new AJAX({
+                    url: 'templates/ActionBar.html' + buster,
+                    success: function(e) {
+                        new ActionBar({
+                            target: '.actionbar-target',
+                            template: e.target.responseText
+                        });
+
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
+                    }
+                });
+            });
+
             queue.push(function() {
                 new AJAX({
                     url: 'templates/PoliticalScoreboardSection.html' + buster,
