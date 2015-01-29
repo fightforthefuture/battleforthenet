@@ -372,6 +372,12 @@ var loaded_wall = false;
   // Wall Under
   $('.wall-under .columns .show_all a').click(function(e) {
     e.preventDefault();
+
+    var length = document.querySelector('.person ul').children.length;
+    if (!length) {
+      return;
+    }
+
     $('.wall-under .columns').removeClass('obscured');
     var biggest_height = 0;
     $('.wall-under .columns > div').each(function() {
