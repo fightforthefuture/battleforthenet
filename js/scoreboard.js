@@ -189,10 +189,13 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
                 var shareText;
                 if (player.sharetext) {
                     shareText = encodeURIComponent(player.sharetext);
+                } else if (player.team == 'team-internet') {
+                    // shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
+                    shareText = encodeURIComponent('Can @'+player.twitter+' save the Internet? See '+subdomain.toLowerCase()+' and battleforthe.net right now! https://pic.twitter.com/r6V33Ileya');
                 } else {
-                    shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
+                    shareText = encodeURIComponent('Will @'+player.twitter+' kill the Internet? See '+subdomain.toLowerCase()+' and battleforthe.net right now! https://pic.twitter.com/r6V33Ileya');
                 }
-
+                
                 var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
 
                 var twitterOverlay = this.template('#twitter-overlay', {
