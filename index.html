@@ -344,12 +344,6 @@ global.isDesktop = !navigator.userAgent.match(/mobile/i);
 global.isMobile = !global.isDesktop;
 global.modals = null;
 
-// Dependencies for Political Scoreboard.
-// On desktop browsers, we'll show this on the homepage.
-if (global.isDesktop) {
-    document.write("<link rel='stylesheet' href='scoreboard/scoreboard.css' \/>");
-}
-
 var GLOBAL_TWEET_TEXT = 'The clock is ticking for net neutrality—join the #InternetCountdown and help win this fight! https://www.battleforthenet.com https://pic.twitter.com/ekfHaoBSCV';
 //var GLOBAL_TWEET_TEXT = 'URGENT: Congress meeting right now to kill the FCC\'s net neutrality plan. Visit battleforthenet.com or dial 858 WHEELER to stop them!';
 
