@@ -163,6 +163,22 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
             subdomain += '.breaksthe.net';
         }
 
+        var bindGAEvents = function(el) {
+            var tweet_link = el.querySelector('.tweet_link');
+            if (tweet_link) {
+                tweet_link.addEventListener('click', function() {
+                    if (ga) ga('send', 'event', 'button', 'click', 'share_twitter_scoreboard');
+                }, true);
+            }
+
+            var more_link = el.querySelector('.more_link');
+            if (more_link) {
+                more_link.addEventListener('click', function() {
+                    if (ga) ga('send', 'event', 'button', 'click', 'individual_site');
+                }, true);
+            }
+        }
+
         if (player.organization == 'Senate' || player.organization == 'House') {
             if (this.isMobile) {
                 element.addEventListener('click', function(subdomain) {
@@ -183,7 +199,7 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
                     twitter: url,
                     subdomain: subdomain
                 });
-
+                bindGAEvents(twitterOverlay);
                 element.appendChild(twitterOverlay);
             }
             else {
@@ -191,6 +207,7 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
                     subdomain: subdomain
                 });
 
+                bindGAEvents(moreOverlay);
                 element.appendChild(moreOverlay);
             }
         }
@@ -319,6 +336,8 @@ PoliticalScoreboard.prototype.onPoliticiansAvailable = function onPoliticiansAva
     this.politicalSelect.addEventListener('change', function(e) {
         var filter;
         var selection = e.target.value;
+
+        if (ga) ga('send', 'event', 'dropdown', 'change', 'scoreboard');
 
         switch (selection) {
             case 'key':

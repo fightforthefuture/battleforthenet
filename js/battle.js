@@ -887,6 +887,15 @@ PetitionForm.prototype.addEventListeners = function() {
     var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
 
+    var politicians = this.DOMNode.getElementsByClassName('politician');
+    var bindPoliticianEvents = function(politician) {
+        politician.addEventListener('click', function(e) {
+            if (ga) ga('send', 'event', 'button', 'click', 'individual_site');
+        }, true);
+    }
+    for (var i = 0; i < politicians.length; i++)
+        bindPoliticianEvents(politicians[i]);
+
     if (location.href.match(/call_tool=1/)) {
         petitionFormNode.style.display = 'none';
         politiciansNode.style.display = 'none';
