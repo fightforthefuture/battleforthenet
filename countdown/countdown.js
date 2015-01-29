@@ -144,10 +144,12 @@ form.addEventListener('submit', function(e) {
         },
         url: form.getAttribute('action')
     });
+    if (ga) ga('send', 'event', 'form', 'submit', 'countdown_email');
 }, false);
 
 document.getElementById('twitter-button').addEventListener('click', function(e) {
     modal_show('twitter_modal');
+    if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
 }, false);
 
 var modal = document.getElementById('twitter_modal');
@@ -163,3 +165,33 @@ modal.querySelector('.modal .close').addEventListener('click', function(e) {
     e.preventDefault();
     modal_hide(modal.id);
 }.bind(this), false);
+
+
+
+var tweets = document.getElementsByClassName('twitter');
+
+var bindTweetEvents = function(link) {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+        if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
+    }, false);
+}
+
+for (var i = 0; i < tweets.length; i++) {
+    if (tweets[i].tagName == 'A')
+        bindTweetEvents(tweets[i]);
+}
+
+var facebooks = document.getElementsByClassName('facebook');
+
+var bindFacebookEvents = function(link) {
+    link.addEventListener('click', function(e) {
+        if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
+    }, false);
+}
+
+for (var i = 0; i < facebooks.length; i++) {
+    if (facebooks[i].tagName == 'A')
+        bindFacebookEvents(facebooks[i]);
+}
