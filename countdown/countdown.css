@@ -106,6 +106,12 @@ section.sign-up p {
     padding: 0px 20px;
 }
 
+section.sign-up p.disclaimer {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
 section.widget .codebox.round {
     border-radius: 10px;
 }
