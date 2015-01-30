@@ -280,6 +280,9 @@ var TeamInternetSection = require('./TeamInternetSection');
                         global.modals.display('twitter_modal');
                     }
 
+                    if (document.referrer.indexOf('http://t.co') != -1)
+                        global.modals.display('twitter_modal');
+
                     if (queue.length > 0) {
                         queue.shift()();
                     }
@@ -712,6 +715,13 @@ Modals.prototype.addEventListeners = function() {
             e.preventDefault();
             this.hide(modal.id);
         }.bind(this), false);
+
+        if (modal.querySelector('.no_thanks'))
+            modal.querySelector('.no_thanks').addEventListener('click', function(e) {
+                e.preventDefault();
+                this.hide(modal.id);
+                if (ga) ga('send', 'event', 'button', 'click', 'dismiss_twitter');
+            }.bind(this), false);
 
         if (modal.querySelector('.shareBtn.twitter'))
             modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {

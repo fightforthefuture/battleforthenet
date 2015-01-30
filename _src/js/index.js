@@ -278,6 +278,9 @@ var TeamInternetSection = require('./TeamInternetSection');
                         global.modals.display('twitter_modal');
                     }
 
+                    if (document.referrer.indexOf('http://t.co') != -1)
+                        global.modals.display('twitter_modal');
+
                     if (queue.length > 0) {
                         queue.shift()();
                     }
