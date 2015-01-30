@@ -231,7 +231,7 @@ for (var i = 0; i < facebooks.length; i++) {
         document.getElementById('fftf_disclosure').style.display = 'block';
     }
 
-    if (document.referrer.indexOf('http://t.co') != -1)
+    if (document.referrer.indexOf('//t.co') != -1)
         modal_show('twitter_modal');
 
 
