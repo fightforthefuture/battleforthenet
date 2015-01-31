@@ -4,6 +4,7 @@ function TeamInternetSection(params) {
     this.target = params.target;
     this.template = params.template;
     this.timeout = null;
+    this.timeoutDuration = 32;
 
     this.render();
     this.wrapper = document.querySelector(this.target + ' .supporters');
@@ -84,7 +85,7 @@ TeamInternetSection.prototype.onHoverEnd = function onHoverEnd(e) {
         return;
     }
 
-    this.timeout = setTimeout(this.hideBubble, 300);
+    this.timeout = setTimeout(this.hideBubble, this.timeoutDuration);
 };
 
 TeamInternetSection.prototype.onHoverBubbleStart = function onHoverBubbleStart() {
@@ -92,7 +93,7 @@ TeamInternetSection.prototype.onHoverBubbleStart = function onHoverBubbleStart()
 };
 
 TeamInternetSection.prototype.onHoverBubbleEnd = function onHoverBubbleEnd() {
-    this.timeout = setTimeout(this.hideBubble, 300);
+    this.timeout = setTimeout(this.hideBubble, this.timeoutDuration);
 };
 
 TeamInternetSection.prototype.hideBubble = function hideBubble() {
