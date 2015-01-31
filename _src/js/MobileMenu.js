@@ -2,7 +2,7 @@ function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
     this.hamburger = this.root.querySelector('.hamburger');
-    this.height = (this.list.children.length * 44);
+    this.height = (this.list.children.length * 42);
 
     this.list.expanded = false;
 
