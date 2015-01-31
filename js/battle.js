@@ -1079,6 +1079,7 @@ var SimpleSection = require('./SimpleSection');
 function TeamInternetSection(params) {
     this.target = params.target;
     this.template = params.template;
+    this.timeout = null;
 
     this.render();
     this.wrapper = document.querySelector(this.target + ' .supporters');
@@ -1087,9 +1088,13 @@ function TeamInternetSection(params) {
 
     if (global.isDesktop) {
         this.quoteBubble = document.querySelector(this.target + ' .quote-bubble');
+        this.arrowWrapper = this.quoteBubble.querySelector('.arrow-wrapper');
 
         this.onHoverEnd = this.onHoverEnd.bind(this);
         this.onHoverStart = this.onHoverStart.bind(this);
+        this.onHoverBubbleStart = this.onHoverBubbleStart.bind(this);
+        this.onHoverBubbleEnd = this.onHoverBubbleEnd.bind(this);
+        this.hideBubble = this.hideBubble.bind(this);
 
         this.quoteBubbleIsVisible = false;
 
@@ -1117,16 +1122,37 @@ TeamInternetSection.prototype.setBackgrounds = function setBackgrounds() {
 TeamInternetSection.prototype.addQuoteBubble = function addQuoteBubble() {
     this.wrapper.addEventListener('mouseover', this.onHoverStart, false);
     this.wrapper.addEventListener('mouseout', this.onHoverEnd, false);
+    this.quoteBubble.addEventListener('mouseover', this.onHoverBubbleStart, false);
+    this.quoteBubble.addEventListener('mouseout', this.onHoverBubbleEnd, false);
     window.addEventListener('resize', this.onHoverEnd, false);
     window.addEventListener('scroll', this.onHoverEnd, false);
 };
 
 TeamInternetSection.prototype.onHoverStart = function onHoverStart(e) {
+    clearTimeout(this.timeout);
     this.quoteBubbleIsVisible = true;
 
     this.quoteBubble.style.display = 'block';
     this.quoteBubble.querySelector('.name').textContent = e.target.getAttribute('name');
     this.quoteBubble.querySelector('.quote').textContent = e.target.getAttribute('quote');
+
+    var logoRect = e.target.getBoundingClientRect();
+    var bubbleRect = this.quoteBubble.getBoundingClientRect();
+
+    var minLeft = 10;
+    var maxLeft = document.body.clientWidth - bubbleRect.width - minLeft;
+    var targetCenter = logoRect.left + (logoRect.width / 2);
+    var targetLeft = targetCenter - (bubbleRect.width / 2);
+    var safeLeft = Math.max(minLeft, Math.min(maxLeft, targetLeft));
+    var differenceLeft = targetLeft - safeLeft;
+
+    var minTop = 10;
+    var maxTop = document.body.clientHeight - bubbleRect.height - minTop;
+    var targetTop = logoRect.top - bubbleRect.height;
+
+    this.arrowWrapper.style.marginLeft = (115 + differenceLeft) + 'px';
+    this.quoteBubble.style.left = safeLeft + 'px';
+    this.quoteBubble.style.top = targetTop + 'px';
 };
 
 TeamInternetSection.prototype.onHoverEnd = function onHoverEnd(e) {
@@ -1134,8 +1160,20 @@ TeamInternetSection.prototype.onHoverEnd = function onHoverEnd(e) {
         return;
     }
 
-    this.quoteBubbleIsVisible = false;
+    this.timeout = setTimeout(this.hideBubble, 300);
+};
 
+TeamInternetSection.prototype.onHoverBubbleStart = function onHoverBubbleStart() {
+    clearTimeout(this.timeout);
+};
+
+TeamInternetSection.prototype.onHoverBubbleEnd = function onHoverBubbleEnd() {
+    this.timeout = setTimeout(this.hideBubble, 300);
+};
+
+TeamInternetSection.prototype.hideBubble = function hideBubble() {
+    clearTimeout(this.timeout);
+    this.quoteBubbleIsVisible = false;
     this.quoteBubble.style.display = 'none';
 };
 
