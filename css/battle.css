@@ -86,6 +86,21 @@ body.loaded .mobile-navigation {
     background-color: #28283c;
 }
 
+.mobile-navigation ul li.donate-li {
+    background-color: #20cba1;
+}
+
+.mobile-navigation ul li.donate-li:active,
+.mobile-navigation ul li.donate-li:hover {
+    background-color: #2aedbd;
+}
+
+.mobile-navigation ul li.donate-li a.donate {
+    color: white;
+    font-family: "proxima-nova", arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
 
 header nav {
@@ -106,6 +121,24 @@ header nav a:active,
 header nav a:hover,
 body header nav a.highlighted {
     color: #2dbb9b;
+}
+
+header nav a.donate {
+    background-color: #20cba1;
+    border-radius: 999px;
+    color: white;
+    font-family: "proxima-nova", arial, sans-serif;
+    letter-spacing: 1px;
+    line-height: 35px;
+    margin: 0 0 0 8px;
+    padding: 0 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+header nav a.donate:active,
+header nav a.donate:hover {
+    background-color: #2aedbd;
+    color: white;
 }
 
 body.loaded header nav a {
@@ -1133,13 +1166,13 @@ body.privacy section.team-internet.fight-for-the-future {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    
+
     padding: 0.5em 2em 0.55em;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
     border-radius: 0.5em;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
     border: 1px solid #12A1D6;
-    
+
     background: #32c0f2; /* Old browsers */
     background: -moz-linear-gradient(top, #32c0f2 0%, #028bbb 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#32c0f2), color-stop(100%,#028bbb)); /* Chrome,Safari4+ */
@@ -1152,7 +1185,7 @@ body.privacy section.team-internet.fight-for-the-future {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
-    
+
 
     color: white;
 }
