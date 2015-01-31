@@ -6,7 +6,7 @@ body.loaded .mobile-navigation {
     display: block;
     position: relative;
     text-align: center;
-    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
@@ -23,17 +23,26 @@ body.loaded .mobile-navigation {
 .mobile-navigation .hamburger {
     background-color: #12121a;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-    color: #8888b9;
     cursor: pointer;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0 auto;
-    padding: 12px;
+    height: 48px;
+    padding: 7px 0 0;
     position: relative;
-    transition: all 0.1s ease 0s;
+
     -webkit-transition: all 0.1s;
     transition: all 0.1s;
+}
+
+.mobile-navigation .hamburger hr {
+    background-color: rgba(93, 93, 122, 0.6);
+    border: none;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+    height: 3px;
+    margin: 6px auto;
+    max-width: 32px;
+    padding: 0;
+
+    -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s;
 }
 
 .mobile-navigation.expanded .hamburger {
@@ -46,6 +55,15 @@ body.loaded .mobile-navigation {
 
 .mobile-navigation .hamburger:active {
     background-color: #20202f;
+}
+
+.mobile-navigation .hamburger:hover hr,
+.mobile-navigation .hamburger.expanded hr {
+    background-color: rgba(93, 93, 122, 0.8);
+}
+
+.mobile-navigation .hamburger:active hr {
+    background-color: rgba(93, 93, 122, 1);
 }
 
 .mobile-navigation ul {
@@ -72,8 +90,10 @@ body.loaded .mobile-navigation {
 .mobile-navigation ul li a {
     color: #8888b9;
     display: block;
-    font-family: "proxima-nova", sans-serif;
-    font-weight: 400;
+    font-family: "proxima-nova", arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 18px;
     padding: 12px 0;
     text-transform: capitalize;
 }
@@ -97,9 +117,6 @@ body.loaded .mobile-navigation {
 
 .mobile-navigation ul li.donate-li a.donate {
     color: white;
-    font-family: "proxima-nova", arial, sans-serif;
-    font-weight: bold;
-    letter-spacing: 1px;
 }
 
 
