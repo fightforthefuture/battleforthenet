@@ -133,6 +133,9 @@ header nav a.donate {
     margin: 0 0 0 8px;
     padding: 0 15px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+    -webkit-transition: opacity 1s 0.3s, background-color 0.1s;
+            transition: opacity 1s 0.3s, background-color 0.1s;
 }
 
 header nav a.donate:active,
