@@ -37,9 +37,11 @@ OrganizationRotation.prototype.addEventListeners = function() {
         chosenOrg = 'fftf';
     }
 
-    var donationLinks = document.querySelectorAll('header a.donate');
-    for (var i = 0; i < donationLinks.length; i++) {
-        donationLinks[i].href = donationLinks[i].getAttribute('href-' + chosenOrg);
+    if (!randomOrg) {
+        var donationLinks = document.querySelectorAll('header a.donate');
+        for (var i = 0; i < donationLinks.length; i++) {
+            donationLinks[i].href = donationLinks[i].getAttribute('href-' + chosenOrg);
+        }
     }
 };
 
