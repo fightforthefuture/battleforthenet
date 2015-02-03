@@ -923,6 +923,24 @@ body #battle .thanks h2 {
   text-align: center;
   font-family: 'Proxima Nova', sans-serif;
 }
+.footer-target footer .built_by {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.footer-target footer .built_by img {
+    margin-top: 10px;
+    width: 470px;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.footer-target footer .built_by img:last-child {
+    width: 70px;
+    vertical-align: middle;
+    height: auto;
+}
 .footer-target footer .org_logo {
   display: inline-block;
   padding: 32px;
