@@ -93,7 +93,8 @@ var TeamInternetSection = require('./TeamInternetSection');
 
     var LiveURLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
-        politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json'
+        politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json',
+        politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
     };
     var DebugURLs = {
         geography: 'debug/geography.json',
@@ -119,11 +120,26 @@ var TeamInternetSection = require('./TeamInternetSection');
     new AJAX({
         url: URLs.politicians,
         success: function(e) {
-            var json = JSON.parse(e.target.responseText);
-            global.ajaxResponses.politicians = json.feed.entry;
-            ajaxQueue.tick();
+            try {
+                var json = JSON.parse(e.target.responseText);
+                global.ajaxResponses.politicians = json.feed.entry;
+                ajaxQueue.tick();
+            } catch (e) {
+                grabPoliticiansFromGoogle();
+            }
         }
     });
+
+    function grabPoliticiansFromGoogle() {
+        new AJAX({
+            url: URLs.politiciansOnGoogle,
+            success: function(e) {
+                var json = JSON.parse(e.target.responseText);
+                global.ajaxResponses.politicians = json.feed.entry;
+                ajaxQueue.tick();
+            }
+        });
+    }
 
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
