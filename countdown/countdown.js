@@ -166,12 +166,13 @@ modal.querySelector('.modal .close').addEventListener('click', function(e) {
     modal_hide(modal.id);
 }.bind(this), false);
 
+/*
 modal.querySelector('.modal .no_thanks').addEventListener('click', function(e) {
     e.preventDefault();
     modal_hide(modal.id);
     if (ga) ga('send', 'event', 'button', 'click', 'dismiss_twitter');
 }.bind(this), false);
-
+*/
 
 
 var tweets = document.getElementsByClassName('twitter');
