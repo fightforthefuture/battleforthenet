@@ -919,7 +919,7 @@ body #battle .thanks h2 {
   border-top: 4px solid #3b3b58;
   background: #5d5d88;
   color: #c6c6e3;
-  padding: 40px 0px 80px 0px;
+  padding: 40px 0px 85px 0px;
   text-align: center;
   font-family: 'Proxima Nova', sans-serif;
 }
@@ -937,7 +937,7 @@ body #battle .thanks h2 {
     vertical-align: middle;
 }
 .footer-target footer .built_by img:last-child {
-    width: 70px;
+    width: 45px;
     vertical-align: middle;
     height: auto;
 }
