@@ -1148,12 +1148,19 @@ TeamInternetSection.prototype.addQuoteBubble = function addQuoteBubble() {
 };
 
 TeamInternetSection.prototype.onHoverStart = function onHoverStart(e) {
+    var name = e.target.getAttribute('name');
+    var quote = e.target.getAttribute('quote');
+
+    if (!name || !quote) {
+        return;
+    }
+
     clearTimeout(this.timeout);
     this.quoteBubbleIsVisible = true;
 
     this.quoteBubble.style.display = 'block';
-    this.quoteBubble.querySelector('.name').textContent = e.target.getAttribute('name');
-    this.quoteBubble.querySelector('.quote').textContent = e.target.getAttribute('quote');
+    this.quoteBubble.querySelector('.name').textContent = name;
+    this.quoteBubble.querySelector('.quote').textContent = quote;
 
     var logoRect = e.target.getBoundingClientRect();
     var bubbleRect = this.quoteBubble.getBoundingClientRect();
