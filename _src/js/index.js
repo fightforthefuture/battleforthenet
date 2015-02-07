@@ -101,12 +101,10 @@ var TeamInternetSection = require('./TeamInternetSection');
         politicians: 'debug/politicians.json'
     };
 
-    var URLs;
-    if (location.href.match(/localhost/)) {
-        URLs = DebugURLs;
-    } else {
-        URLs = LiveURLs;
-    }
+    var URLs = LiveURLs;
+    // if (location.href.match(/localhost/)) {
+    //     URLs = DebugURLs;
+    // }
 
     new AJAX({
         url: URLs.geography,
@@ -118,21 +116,22 @@ var TeamInternetSection = require('./TeamInternetSection');
     });
 
     new AJAX({
-        url: URLs.politicians,
+        url: URLs.politiciansOnGoogle,
         success: function(e) {
             try {
                 var json = JSON.parse(e.target.responseText);
                 global.ajaxResponses.politicians = json.feed.entry;
                 ajaxQueue.tick();
             } catch (e) {
-                grabPoliticiansFromGoogle();
+                grabPoliticiansFromBackup();
             }
-        }
+        },
+        error: grabPoliticiansFromBackup
     });
 
-    function grabPoliticiansFromGoogle() {
+    function grabPoliticiansFromBackup() {
         new AJAX({
-            url: URLs.politiciansOnGoogle,
+            url: URLs.politicians,
             success: function(e) {
                 var json = JSON.parse(e.target.responseText);
                 global.ajaxResponses.politicians = json.feed.entry;
