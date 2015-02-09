@@ -29,7 +29,7 @@ var TeamInternetSection = require('./TeamInternetSection');
     setTimeout(function() {
         var countdownDelay = 0;
         if (!global.fontsAreReady) {
-            countdownDelay = 1000;
+            countdownDelay = 128;
         }
 
         setTimeout(function() {
@@ -37,21 +37,23 @@ var TeamInternetSection = require('./TeamInternetSection');
                 date: new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime()
             });
         }, countdownDelay);
-    }, 200);
+    }, 128);
 
     // Preload the background
-    new ImagePreloader('./images/Imagesmall.jpg', function() {
-        var background = document.getElementById('background');
-        background.className += ' fadeIn ';
-        background.style.backgroundImage = 'url(' + this.src + ')';
-    });
+    setTimeout(function() {
+        new ImagePreloader('./images/Imagesmall.jpg', function() {
+            var background = document.getElementById('background');
+            background.className += ' fadeIn ';
+            background.style.backgroundImage = 'url(' + this.src + ')';
+        });
+    }, 128);
 
     setTimeout(function() {
         if (!global.fontsAreReady) {
             global.fontsAreReady = true;
             document.body.className += ' loaded slow ';
         }
-    }, 300);
+    }, 256);
 
     // Enable mobile menu
     new MobileMenu();
