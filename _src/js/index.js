@@ -70,26 +70,8 @@ var TeamInternetSection = require('./TeamInternetSection');
     // Let's selectively bust browser caches
     var buster = '?buster=' + Date.now();
 
-    var ajaxQueue = new Queue({
-        callback: function() {
-            var pleaseWaitNode = document.querySelector('#battle .please-wait');
-            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
-
-            new PetitionForm({
-                allPoliticians: global.ajaxResponses.politicians,
-                formTemplate: global.ajaxResponses.formTemplate,
-                geography: global.ajaxResponses.geography,
-                target: '#battle .form-wrapper'
-            });
-
-            // Rotate organizations
-            new OrganizationRotation();
-
-            // Add more sections
-            setTimeout(loadMoreSections, 400);
-        },
-        remaining: 3
-    });
+    // allPoliticians: global.ajaxResponses.politicians,
+    // geography: global.ajaxResponses.geography,
 
     var LiveURLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
@@ -107,44 +89,21 @@ var TeamInternetSection = require('./TeamInternetSection');
     // }
 
     new AJAX({
-        url: URLs.geography,
-        success: function(e) {
-            var json = JSON.parse(e.target.responseText);
-            global.ajaxResponses.geography = json;
-            ajaxQueue.tick();
-        }
-    });
-
-    new AJAX({
-        url: URLs.politiciansOnGoogle,
-        success: function(e) {
-            try {
-                var json = JSON.parse(e.target.responseText);
-                global.ajaxResponses.politicians = json.feed.entry;
-                ajaxQueue.tick();
-            } catch (e) {
-                grabPoliticiansFromBackup();
-            }
-        },
-        error: grabPoliticiansFromBackup
-    });
-
-    function grabPoliticiansFromBackup() {
-        new AJAX({
-            url: URLs.politicians,
-            success: function(e) {
-                var json = JSON.parse(e.target.responseText);
-                global.ajaxResponses.politicians = json.feed.entry;
-                ajaxQueue.tick();
-            }
-        });
-    }
-
-    new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
-            global.ajaxResponses.formTemplate = e.target.responseText;
-            ajaxQueue.tick();
+            var pleaseWaitNode = document.querySelector('#battle .please-wait');
+            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
+
+            new PetitionForm({
+                formTemplate: e.target.responseText,
+                target: '#battle .form-wrapper'
+            });
+
+            // Rotate organizations
+            new OrganizationRotation();
+
+            // Add more sections
+            setTimeout(loadMoreSections, 400);
         }
     });
 
