@@ -1,4 +1,4 @@
-var ActionBar = require('./ActionBar');
+// var ActionBar = require('./ActionBar');
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
@@ -175,21 +175,21 @@ var TeamInternetSection = require('./TeamInternetSection');
         });
 
         if (global.isDesktop) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/ActionBar.html' + buster,
-                    success: function(e) {
-                        new ActionBar({
-                            target: '.actionbar-target',
-                            template: e.target.responseText
-                        });
+            // queue.push(function() {
+            //     new AJAX({
+            //         url: 'templates/ActionBar.html' + buster,
+            //         success: function(e) {
+            //             new ActionBar({
+            //                 target: '.actionbar-target',
+            //                 template: e.target.responseText
+            //             });
 
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
-                    }
-                });
-            });
+            //             if (queue.length > 0) {
+            //                 queue.shift()();
+            //             }
+            //         }
+            //     });
+            // });
 
             queue.push(function() {
                 new AJAX({
