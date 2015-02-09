@@ -115,6 +115,34 @@ var TeamInternetSection = require('./TeamInternetSection');
 
         queue.push(function() {
             new AJAX({
+                url: URLs.geography,
+                success: function(e) {
+                    var response = JSON.parse(e.target.responseText);
+
+                    // Cache
+                    global.ajaxResponses.geography = response;
+
+                    // Update form
+                    var countryInput = document.querySelector('[name="member[country]"]');
+                    if (
+                        countryInput
+                        &&
+                        response.country
+                        &&
+                        response.country.iso_code
+                    ) {
+                        countryInput.value = response.country.iso_code;
+                    }
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
                 url: 'templates/TeamCableSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
