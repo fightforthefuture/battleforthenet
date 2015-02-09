@@ -56,6 +56,9 @@ var TeamInternetSection = require('./TeamInternetSection');
     // Enable mobile menu
     new MobileMenu();
 
+    // Let's bust the bfcache
+    window.addEventListener('unload', function() {});
+
     // Analytics
     setTimeout(function() {
         new Chartbeat();
