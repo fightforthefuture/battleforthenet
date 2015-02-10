@@ -19,6 +19,10 @@ PetitionForm.prototype.render = function() {
 
 };
 
+PetitionForm.prototype.setCountryCode = function(countryCode) {
+    this.DOMNode.querySelector('[name="member[country]"]').value = countryCode;
+};
+
 PetitionForm.prototype.validateEmail = function(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
