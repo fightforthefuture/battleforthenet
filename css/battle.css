@@ -288,7 +288,7 @@ body.typekit #battle .timer .card .type {
 
 /* Politicians */
 body #battle .form-wrapper .politicians {
-    display: block;
+    display: none;
     margin: 0 auto;
     position: relative;
     width: 270px;
@@ -355,6 +355,10 @@ body #battle .form-wrapper .politicians .politician img {
 }
 
 @media screen and (min-width: 520px) {
+    body #battle .form-wrapper .politicians {
+        display: block;
+    }
+
     body #battle .form-wrapper .politicians .politician {
         display: block;
         position: absolute;
@@ -790,11 +794,11 @@ body #battle .thanks h2 {
 
 @media only screen and (max-width: 1100px) {
     #battle section#team-internet .supporters {
-        max-width: 600px;
+        max-width: 720px;
     }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 790px) {
     #battle section#team-internet .supporters {
         max-width: 480px;
     }
@@ -802,18 +806,12 @@ body #battle .thanks h2 {
 
 @media only screen and (max-width: 600px) {
     #battle section#team-internet .supporters {
-        max-width: 300px;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-    #battle section#team-internet .supporters {
         max-width: 240px;
     }
 }
 
 #battle section#team-internet .supporters li {
-    background-image: url(../images/team-internet-logos.jpg);
+    background-image: url(../images/team-internet-logos.jpg?rev1);
     float: left;
     height: 60px;
     list-style: none;
