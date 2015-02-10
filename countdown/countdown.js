@@ -235,5 +235,72 @@ for (var i = 0; i < facebooks.length; i++) {
     if (document.referrer.indexOf('//t.co') != -1)
         modal_show('twitter_modal');
 
+    new AJAX({
+        method: 'GET',
+        success: function(res) {
+            var data = res.target.responseText;
+            var d = document.getElementById;
+            var c = function(nStr)
+            {
+                nStr += '';
+                var x = nStr.split('.');
+                var x1 = x[0];
+                var x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+            var s = function(str) {
+                var rex = /(<([^>]+)>)/ig;
+                str = str.replace(rex, "");
+                str = str.replace("javascript:", "");
+                return str;
+            }
+
+            try {
+                data = JSON.parse(data);
+            } catch(err) {
+                return console.error('Could not parse leaderboard data :(');
+            }
+            console.log('leaderboard', data);
+
+            document.getElementById('sites_participating').innerHTML = c(data.sites_participating);
+            document.getElementById('sites_total_actions').innerHTML = c(data.sites_total_actions);
+            document.getElementById('total_calls').innerHTML = c(data.total_calls);
+            document.getElementById('total_calls_last_24').innerHTML = c(data.total_calls_last_24);
+            document.getElementById('total_emails').innerHTML = c(data.total_emails);
+
+            for (var site in data.sites_top) {
+                if (data.sites_top.hasOwnProperty(site)) {
+                    var val = c(data.sites_top[site].replace('.0', ''));
+                    var site = s(site);
+                    var li = document.createElement('li');
+                    li.innerHTML = '<a href="http://'+ site +'" target="_blank">'+ site +' ('+val+')</a>';
+                    document.getElementById('sites_top').appendChild(li);
+                }
+            }
+
+            for (var site in data.sites_top_today) {
+                if (data.sites_top_today.hasOwnProperty(site)) {
+                    var val = c(data.sites_top_today[site].replace('.0', ''));
+                    var site = s(site);
+                    var li = document.createElement('li');
+                    li.innerHTML = '<a href="http://'+ site +'" target="_blank">'+ site +' ('+val+')</a>';
+                    document.getElementById('sites_top_today').appendChild(li);
+                }
+            }
+
+            document.getElementById('show_all').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('show_all').style.display = 'none';
+                document.getElementById('columns').className = document.getElementById('columns').className.replace(/obscured/g, '');
+                document.getElementById('columns').style.height = 'auto';
+            }.bind(this), false);
+        },
+        url: 'https://battleforthenet.s3.amazonaws.com/leaderboards/internetcountdown.click.json'
+    });
+
 
 })();

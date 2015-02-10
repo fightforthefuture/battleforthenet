@@ -4,6 +4,25 @@ body#developer {
 section.widget {
     background-color: #313142;
 }
+section.wall-under {
+    background-color: #1C1C25;
+    font-size: 16px;
+}
+section.wall-under h2 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+}
+section.wall-under table {
+    margin: 0px auto;
+}
+section.wall-under table td {
+    padding-right: 10px;
+    text-align: left;
+}
+/*
 section.push-notification {
     background-color: #1C1C25;
 }
@@ -20,6 +39,7 @@ section.join-us {
         position: relative;
     }
 }
+*/
 
 section.big-honking-header {
     padding: 40px 20px;
