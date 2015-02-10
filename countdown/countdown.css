@@ -19,6 +19,10 @@ section.wall-under p a {
     color: white;
     border-bottom: 1px dotted white;
 }
+section.wall-under p a:hover {
+    color: pink;
+    border-bottom: 1px dotted pink;
+}
 section.wall-under h2 {
     font-size: 50px;
     font-weight: 300;
