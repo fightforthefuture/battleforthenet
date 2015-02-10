@@ -9,6 +9,16 @@ section.wall-under {
     background-color: #1C1C25;
     font-size: 16px;
 }
+section.wall-under p {
+    font-size: 18px;
+    margin: 0px auto 26px;
+    max-width: 768px;
+    color: #C7BDD5;
+}
+section.wall-under p a {
+    color: white;
+    border-bottom: 1px dotted white;
+}
 section.wall-under h2 {
     font-size: 50px;
     font-weight: 300;
