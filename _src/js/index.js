@@ -1,4 +1,4 @@
-var ActionBar = require('./ActionBar');
+// var ActionBar = require('./ActionBar');
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
@@ -14,6 +14,7 @@ var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
 var TeamInternetSection = require('./TeamInternetSection');
+var YourSenators = require('./YourSenators');
 
 
 // Detect features & apply polyfills
@@ -29,32 +30,41 @@ var TeamInternetSection = require('./TeamInternetSection');
     setTimeout(function() {
         var countdownDelay = 0;
         if (!global.fontsAreReady) {
-            countdownDelay = 1000;
+            countdownDelay = 128;
         }
 
         setTimeout(function() {
             var countdown = new Countdown({
                 date: new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime()
             });
+
+            new LoadingIcon({
+                target: '#battle .spinner'
+            });
         }, countdownDelay);
-    }, 200);
+    }, 128);
 
     // Preload the background
-    new ImagePreloader('./images/Imagesmall.jpg', function() {
-        var background = document.getElementById('background');
-        background.className += ' fadeIn ';
-        background.style.backgroundImage = 'url(' + this.src + ')';
-    });
+    setTimeout(function() {
+        new ImagePreloader('./images/Imagesmall.jpg', function() {
+            var background = document.getElementById('background');
+            background.className += ' fadeIn ';
+            background.style.backgroundImage = 'url(' + this.src + ')';
+        });
+    }, 128);
 
     setTimeout(function() {
         if (!global.fontsAreReady) {
             global.fontsAreReady = true;
             document.body.className += ' loaded slow ';
         }
-    }, 300);
+    }, 256);
 
     // Enable mobile menu
     new MobileMenu();
+
+    // Let's bust the bfcache
+    window.addEventListener('unload', function() {});
 
     // Analytics
     setTimeout(function() {
@@ -70,26 +80,8 @@ var TeamInternetSection = require('./TeamInternetSection');
     // Let's selectively bust browser caches
     var buster = '?buster=' + Date.now();
 
-    var ajaxQueue = new Queue({
-        callback: function() {
-            var pleaseWaitNode = document.querySelector('#battle .please-wait');
-            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
-
-            new PetitionForm({
-                allPoliticians: global.ajaxResponses.politicians,
-                formTemplate: global.ajaxResponses.formTemplate,
-                geography: global.ajaxResponses.geography,
-                target: '#battle .form-wrapper'
-            });
-
-            // Rotate organizations
-            new OrganizationRotation();
-
-            // Add more sections
-            setTimeout(loadMoreSections, 400);
-        },
-        remaining: 3
-    });
+    // allPoliticians: global.ajaxResponses.politicians,
+    // geography: global.ajaxResponses.geography,
 
     var LiveURLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
@@ -101,51 +93,46 @@ var TeamInternetSection = require('./TeamInternetSection');
         politicians: 'debug/politicians.json'
     };
 
-    var URLs;
-    if (location.href.match(/localhost/)) {
-        URLs = DebugURLs;
-    } else {
-        URLs = LiveURLs;
-    }
-
-    new AJAX({
-        url: URLs.geography,
-        success: function(e) {
-            var json = JSON.parse(e.target.responseText);
-            global.ajaxResponses.geography = json;
-            ajaxQueue.tick();
-        }
-    });
-
-    new AJAX({
-        url: URLs.politicians,
-        success: function(e) {
-            try {
-                var json = JSON.parse(e.target.responseText);
-                global.ajaxResponses.politicians = json.feed.entry;
-                ajaxQueue.tick();
-            } catch (e) {
-                grabPoliticiansFromGoogle();
-            }
-        }
-    });
-
-    function grabPoliticiansFromGoogle() {
-        new AJAX({
-            url: URLs.politiciansOnGoogle,
-            success: function(e) {
-                var json = JSON.parse(e.target.responseText);
-                global.ajaxResponses.politicians = json.feed.entry;
-                ajaxQueue.tick();
-            }
-        });
-    }
+    var URLs = LiveURLs;
+    // if (location.href.match(/localhost/)) {
+    //     URLs = DebugURLs;
+    // }
 
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
-            global.ajaxResponses.formTemplate = e.target.responseText;
-            ajaxQueue.tick();
+            var pleaseWaitNode = document.querySelector('#battle .please-wait');
+            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
+
+            var petitionForm = new PetitionForm({
+                formTemplate: e.target.responseText,
+                target: '#battle .form-wrapper'
+            });
+
+            // Rotate organizations
+            new OrganizationRotation();
+
+            // Get geography
+            new AJAX({
+                url: URLs.geography,
+                success: function(e) {
+                    // Parse JSON
+                    var response = JSON.parse(e.target.responseText);
+
+                    // Save for later
+                    global.ajaxResponses.geography = response;
+
+                    // Update country field
+                    petitionForm.setCountryCode(response.country.iso_code);
+
+                    new YourSenators({
+                        callback: loadMoreSections,
+                        geography: response,
+                        target: '.your-senators-target',
+                        URLs: URLs
+                    });
+                }
+            });
         }
     });
 
@@ -217,21 +204,21 @@ var TeamInternetSection = require('./TeamInternetSection');
         });
 
         if (global.isDesktop) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/ActionBar.html' + buster,
-                    success: function(e) {
-                        new ActionBar({
-                            target: '.actionbar-target',
-                            template: e.target.responseText
-                        });
+            // queue.push(function() {
+            //     new AJAX({
+            //         url: 'templates/ActionBar.html' + buster,
+            //         success: function(e) {
+            //             new ActionBar({
+            //                 target: '.actionbar-target',
+            //                 template: e.target.responseText
+            //             });
 
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
-                    }
-                });
-            });
+            //             if (queue.length > 0) {
+            //                 queue.shift()();
+            //             }
+            //         }
+            //     });
+            // });
 
             queue.push(function() {
                 new AJAX({
@@ -301,14 +288,6 @@ var TeamInternetSection = require('./TeamInternetSection');
                         queue.shift()();
                     }
                 }
-            });
-        });
-
-
-        queue.push(function() {
-            // Show the spinner
-            new LoadingIcon({
-                target: '#battle .spinner'
             });
         });
 

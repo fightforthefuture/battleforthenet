@@ -195,7 +195,7 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
                 } else {
                     shareText = encodeURIComponent('Will @'+player.twitter+' kill the Internet? See '+subdomain.toLowerCase()+' and battleforthe.net right now! https://pic.twitter.com/r6V33Ileya');
                 }
-                
+
                 var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
 
                 var twitterOverlay = this.template('#twitter-overlay', {
@@ -410,6 +410,15 @@ PoliticalScoreboard.prototype.initialize = function initialize() {
             url: this.spreadsheetUrl,
             success: function(e) {
                 var json = JSON.parse(e.target.responseText);
+
+                if (
+                    window.global
+                    &&
+                    global.ajaxResponses
+                ) {
+                    global.ajaxResponses.politicians = json;
+                }
+
                 this.onPoliticiansAvailable(json.feed.entry);
             }.bind(this)
         });

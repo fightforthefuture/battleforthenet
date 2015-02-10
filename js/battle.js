@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./js/index.js":[function(require,module,exports){
 (function (global){
-var ActionBar = require('./ActionBar');
+// var ActionBar = require('./ActionBar');
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
@@ -16,6 +16,7 @@ var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
 var TeamInternetSection = require('./TeamInternetSection');
+var YourSenators = require('./YourSenators');
 
 
 // Detect features & apply polyfills
@@ -31,32 +32,41 @@ var TeamInternetSection = require('./TeamInternetSection');
     setTimeout(function() {
         var countdownDelay = 0;
         if (!global.fontsAreReady) {
-            countdownDelay = 1000;
+            countdownDelay = 128;
         }
 
         setTimeout(function() {
             var countdown = new Countdown({
                 date: new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime()
             });
+
+            new LoadingIcon({
+                target: '#battle .spinner'
+            });
         }, countdownDelay);
-    }, 200);
+    }, 128);
 
     // Preload the background
-    new ImagePreloader('./images/Imagesmall.jpg', function() {
-        var background = document.getElementById('background');
-        background.className += ' fadeIn ';
-        background.style.backgroundImage = 'url(' + this.src + ')';
-    });
+    setTimeout(function() {
+        new ImagePreloader('./images/Imagesmall.jpg', function() {
+            var background = document.getElementById('background');
+            background.className += ' fadeIn ';
+            background.style.backgroundImage = 'url(' + this.src + ')';
+        });
+    }, 128);
 
     setTimeout(function() {
         if (!global.fontsAreReady) {
             global.fontsAreReady = true;
             document.body.className += ' loaded slow ';
         }
-    }, 300);
+    }, 256);
 
     // Enable mobile menu
     new MobileMenu();
+
+    // Let's bust the bfcache
+    window.addEventListener('unload', function() {});
 
     // Analytics
     setTimeout(function() {
@@ -72,26 +82,8 @@ var TeamInternetSection = require('./TeamInternetSection');
     // Let's selectively bust browser caches
     var buster = '?buster=' + Date.now();
 
-    var ajaxQueue = new Queue({
-        callback: function() {
-            var pleaseWaitNode = document.querySelector('#battle .please-wait');
-            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
-
-            new PetitionForm({
-                allPoliticians: global.ajaxResponses.politicians,
-                formTemplate: global.ajaxResponses.formTemplate,
-                geography: global.ajaxResponses.geography,
-                target: '#battle .form-wrapper'
-            });
-
-            // Rotate organizations
-            new OrganizationRotation();
-
-            // Add more sections
-            setTimeout(loadMoreSections, 400);
-        },
-        remaining: 3
-    });
+    // allPoliticians: global.ajaxResponses.politicians,
+    // geography: global.ajaxResponses.geography,
 
     var LiveURLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
@@ -103,51 +95,46 @@ var TeamInternetSection = require('./TeamInternetSection');
         politicians: 'debug/politicians.json'
     };
 
-    var URLs;
-    if (location.href.match(/localhost/)) {
-        URLs = DebugURLs;
-    } else {
-        URLs = LiveURLs;
-    }
-
-    new AJAX({
-        url: URLs.geography,
-        success: function(e) {
-            var json = JSON.parse(e.target.responseText);
-            global.ajaxResponses.geography = json;
-            ajaxQueue.tick();
-        }
-    });
-
-    new AJAX({
-        url: URLs.politicians,
-        success: function(e) {
-            try {
-                var json = JSON.parse(e.target.responseText);
-                global.ajaxResponses.politicians = json.feed.entry;
-                ajaxQueue.tick();
-            } catch (e) {
-                grabPoliticiansFromGoogle();
-            }
-        }
-    });
-
-    function grabPoliticiansFromGoogle() {
-        new AJAX({
-            url: URLs.politiciansOnGoogle,
-            success: function(e) {
-                var json = JSON.parse(e.target.responseText);
-                global.ajaxResponses.politicians = json.feed.entry;
-                ajaxQueue.tick();
-            }
-        });
-    }
+    var URLs = LiveURLs;
+    // if (location.href.match(/localhost/)) {
+    //     URLs = DebugURLs;
+    // }
 
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
-            global.ajaxResponses.formTemplate = e.target.responseText;
-            ajaxQueue.tick();
+            var pleaseWaitNode = document.querySelector('#battle .please-wait');
+            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
+
+            var petitionForm = new PetitionForm({
+                formTemplate: e.target.responseText,
+                target: '#battle .form-wrapper'
+            });
+
+            // Rotate organizations
+            new OrganizationRotation();
+
+            // Get geography
+            new AJAX({
+                url: URLs.geography,
+                success: function(e) {
+                    // Parse JSON
+                    var response = JSON.parse(e.target.responseText);
+
+                    // Save for later
+                    global.ajaxResponses.geography = response;
+
+                    // Update country field
+                    petitionForm.setCountryCode(response.country.iso_code);
+
+                    new YourSenators({
+                        callback: loadMoreSections,
+                        geography: response,
+                        target: '.your-senators-target',
+                        URLs: URLs
+                    });
+                }
+            });
         }
     });
 
@@ -219,21 +206,21 @@ var TeamInternetSection = require('./TeamInternetSection');
         });
 
         if (global.isDesktop) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/ActionBar.html' + buster,
-                    success: function(e) {
-                        new ActionBar({
-                            target: '.actionbar-target',
-                            template: e.target.responseText
-                        });
+            // queue.push(function() {
+            //     new AJAX({
+            //         url: 'templates/ActionBar.html' + buster,
+            //         success: function(e) {
+            //             new ActionBar({
+            //                 target: '.actionbar-target',
+            //                 template: e.target.responseText
+            //             });
 
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
-                    }
-                });
-            });
+            //             if (queue.length > 0) {
+            //                 queue.shift()();
+            //             }
+            //         }
+            //     });
+            // });
 
             queue.push(function() {
                 new AJAX({
@@ -306,21 +293,13 @@ var TeamInternetSection = require('./TeamInternetSection');
             });
         });
 
-
-        queue.push(function() {
-            // Show the spinner
-            new LoadingIcon({
-                target: '#battle .spinner'
-            });
-        });
-
         // Start queue
         queue.shift()();
     }
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./ActionBar":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ActionBar.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js","./Modals":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Modals.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js","./TeamInternetSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\TeamInternetSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js","./Modals":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Modals.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js","./TeamInternetSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\TeamInternetSection.js","./YourSenators":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\YourSenators.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.error = params.error;
@@ -416,53 +395,7 @@ AJAX.prototype.serializeForm = function(form) {
 
 module.exports = AJAX;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ActionBar.js":[function(require,module,exports){
-(function (global){
-var Template = require('./Template');
-
-function ActionBar(params) {
-    this.target = params.target;
-    this.template = params.template;
-
-    this.DOMNode = document.querySelector(this.target);
-
-    this.render();
-    this.animateIn();
-    this.addEventListeners();
-}
-
-ActionBar.prototype.render = function() {
-    this.DOMNode.innerHTML = Template(this.template, {});
-};
-
-ActionBar.prototype.animateIn = function() {
-    setTimeout(function() {
-        var bar = document.querySelector('.action-bar');
-        bar.className += ' visible';
-        
-    }, 100);
-}
-
-ActionBar.prototype.addEventListeners = function() {
-    var closeNode = this.DOMNode.querySelector('.x');
-    closeNode.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        var bar = document.querySelector('.action-bar');
-        bar.className = bar.className.replace('visible', '');
-    });
-
-    document.getElementById('join-tw').addEventListener('click', function(e) {
-        e.preventDefault();
-        global.modals.display('twitter_modal');
-        if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
-    })
-}
-
-module.exports = ActionBar;
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Chartbeat.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js":[function(require,module,exports){
 function Chartbeat() {
     this.addGlobals();
     this.addScript();
@@ -488,7 +421,7 @@ Chartbeat.prototype.addScript = function addScript() {
 
 module.exports = Chartbeat;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Countdown.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js":[function(require,module,exports){
 function Countdown(params) {
     this.date = params.date;
     this.interval = null;
@@ -590,7 +523,7 @@ Countdown.prototype.updateDates = function(difference) {
 
 module.exports = Countdown;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\DetectFeatures.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js":[function(require,module,exports){
 function DetectFeatures() {
     this.detectSVG();
 }
@@ -605,7 +538,7 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 
 module.exports = DetectFeatures;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\GoogleAnalytics.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js":[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -622,7 +555,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\ImagePreloader.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js":[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -638,7 +571,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\LoadingIcon.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js":[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -649,7 +582,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\MobileMenu.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js":[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -683,7 +616,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Modals.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Modals.js":[function(require,module,exports){
 var Template = require('./Template');
 
 function Modals(params) {
@@ -759,7 +692,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
+},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -809,7 +742,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\PetitionForm.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js":[function(require,module,exports){
 (function (global){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
@@ -817,88 +750,23 @@ var Template = require('./Template');
 
 function PetitionForm(params) {
     // Params
-    this.allPoliticians = params.allPoliticians;
     this.formTemplate = params.formTemplate;
-    this.geography = params.geography;
     this.target = params.target;
 
     this.DOMNode = document.querySelector(this.target);
 
-    this.selectPoliticians();
     this.render();
     this.addEventListeners();
 }
 
-PetitionForm.prototype.selectPoliticians = function() {
-    this.politicians = [];
+PetitionForm.prototype.render = function() {
+    this.DOMNode.innerHTML = Template(this.formTemplate, {});
+    this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
 
-    if (
-        this.geography.country.iso_code === 'US' &&
-        this.geography.subdivisions &&
-        this.geography.subdivisions[0] &&
-        this.geography.subdivisions[0].names &&
-        this.geography.subdivisions[0].names.en
-    ) {
-        var stateName = this.geography.subdivisions[0].names.en;
-        this.politicians = this.allPoliticians.filter(function(politician) {
-            return (
-                (politician.gsx$state.$t === stateName)
-                &&
-                (politician.gsx$organization.$t === 'Senate')
-            );
-        });
-    }
-
-    if (this.politicians.length === 0) {
-        var teamCable = this.allPoliticians.filter(function(politician) {
-            return (
-                (politician.gsx$team.$t === 'team-cable')
-            )
-        });
-
-        this.politicians = [];
-        this.politicians[0] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
-        while (!this.politicians[1] || this.politicians[0] === this.politicians[1]) {
-            this.politicians[1] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
-        }
-    }
 };
 
-PetitionForm.prototype.render = function() {
-    this.DOMNode.innerHTML = Template(this.formTemplate, {
-        politicians: this.politicians.map(function(politician) {
-            var team = politician.gsx$team.$t;
-
-            var stance = 'undecided';
-            if (team === 'team-cable') {
-                stance = 'anti internet';
-            } else if (team === 'team-internet') {
-                stance = 'pro internet';
-            }
-
-            var url = 'http://';
-            if (politician.gsx$subdomain.$t) {
-                url += politician.gsx$subdomain.$t;
-            } else {
-                url += politician.gsx$first.$t + politician.gsx$name.$t;
-            }
-            if (politician.gsx$team.$t.trim() === 'team-internet') {
-                url += '.savesthe.net';
-            } else {
-                url += '.breaksthe.net';
-            }
-            url = url.toLowerCase();
-
-            return {
-                image: 'images/scoreboard/' + politician.gsx$imagepleasedontedit.$t,
-                name: politician.gsx$name.$t,
-                url: url,
-                stance: stance,
-                team: team
-            };
-        })
-    });
-    this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
+PetitionForm.prototype.setCountryCode = function(countryCode) {
+    this.DOMNode.querySelector('[name="member[country]"]').value = countryCode;
 };
 
 PetitionForm.prototype.validateEmail = function(email) {
@@ -922,23 +790,24 @@ PetitionForm.prototype.validatePhoneNumber = function(num) {
 PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
-    var politiciansNode = this.DOMNode.querySelector('.politicians');
+    // var politiciansNode = this.DOMNode.querySelector('.politicians');
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
 
-    var politicians = this.DOMNode.getElementsByClassName('politician');
-    var bindPoliticianEvents = function(politician) {
-        politician.addEventListener('click', function(e) {
-            if (ga) ga('send', 'event', 'button', 'click', 'individual_site');
-        }, true);
-    }
-    for (var i = 0; i < politicians.length; i++)
-        bindPoliticianEvents(politicians[i]);
+    // var politicians = this.DOMNode.getElementsByClassName('politician');
+    // var bindPoliticianEvents = function(politician) {
+    //     politician.addEventListener('click', function(e) {
+    //         if (ga) ga('send', 'event', 'button', 'click', 'individual_site');
+    //     }, true);
+    // }
+    // for (var i = 0; i < politicians.length; i++) {
+    //     bindPoliticianEvents(politicians[i]);
+    // }
 
     if (location.href.match(/call_tool=1/)) {
         petitionFormNode.style.display = 'none';
-        politiciansNode.style.display = 'none';
+        // politiciansNode.style.display = 'none';
         phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
@@ -971,12 +840,12 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'email');
-       
+
         petitionFormNode.style.display = 'none';
-        politiciansNode.style.display = 'none';
+        // politiciansNode.style.display = 'none';
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
-      
+
 
     }, false);
 
@@ -994,7 +863,7 @@ PetitionForm.prototype.addEventListeners = function() {
         }
 
         var url =
-            'https://call-congress.fightforthefuture.org/create?' + 
+            'https://call-congress.fightforthefuture.org/create?' +
             'campaignId=' + campaignId + '&' +
             'userPhone=' + phoneNumber + '&' +
             'zipcode=' + postalCode;
@@ -1009,7 +878,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
-        politiciansNode.style.display = 'none';
+        // politiciansNode.style.display = 'none';
         thanksNode.style.display = 'block';
     }.bind(this), false);
 };
@@ -1017,7 +886,7 @@ PetitionForm.prototype.addEventListeners = function() {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\AJAX.js","./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Polyfills.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js":[function(require,module,exports){
 function Polyfills() {
     this.bind();
 }
@@ -1049,7 +918,7 @@ Polyfills.prototype.bind = function() {
 
 module.exports = Polyfills;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Queue.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js":[function(require,module,exports){
 function Queue(params) {
     this.callback = params.callback;
     this.context = params.context || this;
@@ -1072,7 +941,7 @@ Queue.prototype.destroy = function() {
 
 module.exports = Queue;
 
-},{}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js":[function(require,module,exports){
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js":[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -1090,7 +959,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\TeamInternetSection.js":[function(require,module,exports){
+},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\TeamInternetSection.js":[function(require,module,exports){
 (function (global){
 var SimpleSection = require('./SimpleSection');
 
@@ -1148,12 +1017,19 @@ TeamInternetSection.prototype.addQuoteBubble = function addQuoteBubble() {
 };
 
 TeamInternetSection.prototype.onHoverStart = function onHoverStart(e) {
+    var name = e.target.getAttribute('name');
+    var quote = e.target.getAttribute('quote');
+
+    if (!name || !quote) {
+        return;
+    }
+
     clearTimeout(this.timeout);
     this.quoteBubbleIsVisible = true;
 
     this.quoteBubble.style.display = 'block';
-    this.quoteBubble.querySelector('.name').textContent = e.target.getAttribute('name');
-    this.quoteBubble.querySelector('.quote').textContent = e.target.getAttribute('quote');
+    this.quoteBubble.querySelector('.name').textContent = name;
+    this.quoteBubble.querySelector('.quote').textContent = quote;
 
     var logoRect = e.target.getBoundingClientRect();
     var bubbleRect = this.quoteBubble.getBoundingClientRect();
@@ -1199,7 +1075,7 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 module.exports = TeamInternetSection;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet\\_src\\js\\Template.js":[function(require,module,exports){
+},{"./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js":[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
@@ -1236,4 +1112,156 @@ var Template = function template(str, data){
 
 module.exports = Template;
 
-},{}]},{},["./js/index.js"]);
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\YourSenators.js":[function(require,module,exports){
+(function (global){
+var AJAX = require('./AJAX');
+var Template = require('./Template');
+
+function YourSenators(params) {
+    this.callback = params.callback;
+    this.geography = params.geography;
+    this.politicians = [];
+    this.target = params.target;
+    this.URLs = params.URLs;
+
+    this.DOMNode = document.querySelector(params.target);
+
+    this.fetchPoliticiansFromBackup = this.fetchPoliticiansFromBackup.bind(this);
+
+    this.fetchTemplate();
+}
+
+YourSenators.prototype.fetchTemplate = function() {
+    new AJAX({
+        url: 'templates/YourSenators.html' + '?buster=' + Date.now(),
+        success: function(e) {
+            this.formTemplate = e.target.responseText;
+            this.fetchPoliticians();
+        }.bind(this)
+    });
+};
+
+YourSenators.prototype.fetchPoliticians = function() {
+    new AJAX({
+        url: this.URLs.politiciansOnGoogle,
+        success: function(e) {
+            try {
+                var json = JSON.parse(e.target.responseText);
+
+                if (
+                    window.global
+                    &&
+                    global.ajaxResponses
+                ) {
+                    global.ajaxResponses.politicians = json.feed.entry;
+                }
+
+                this.allPoliticians = json.feed.entry;
+
+                this.selectPoliticians();
+                this.render();
+                this.callback();
+            } catch (e) {
+                this.fetchPoliticiansFromBackup();
+            }
+        }.bind(this),
+        error: this.fetchPoliticiansFromBackup
+    });
+};
+
+YourSenators.prototype.fetchPoliticiansFromBackup = function() {
+    new AJAX({
+        url: this.URLs.politicians,
+        success: function(e) {
+            var json = JSON.parse(e.target.responseText);
+
+            if (
+                window.global
+                &&
+                global.ajaxResponses
+            ) {
+                global.ajaxResponses.politicians = json.feed.entry;
+            }
+
+            this.allPoliticians = json.feed.entry;
+
+            this.selectPoliticians();
+            this.render();
+            this.callback();
+        }.bind(this)
+    });
+};
+
+YourSenators.prototype.selectPoliticians = function() {
+    if (
+        this.geography.country.iso_code === 'US' &&
+        this.geography.subdivisions &&
+        this.geography.subdivisions[0] &&
+        this.geography.subdivisions[0].names &&
+        this.geography.subdivisions[0].names.en
+    ) {
+        var stateName = this.geography.subdivisions[0].names.en;
+        this.politicians = this.allPoliticians.filter(function(politician) {
+            return (
+                (politician.gsx$state.$t === stateName)
+                &&
+                (politician.gsx$organization.$t === 'Senate')
+            );
+        });
+    }
+
+    if (this.politicians.length === 0) {
+        var teamCable = this.allPoliticians.filter(function(politician) {
+            return (
+                (politician.gsx$team.$t === 'team-cable')
+            );
+        });
+
+        this.politicians = [];
+        this.politicians[0] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
+        while (!this.politicians[1] || this.politicians[0] === this.politicians[1]) {
+            this.politicians[1] = teamCable[Math.floor(Math.random() * teamCable.length) - 1];
+        }
+    }
+};
+
+YourSenators.prototype.render = function() {
+    this.DOMNode.innerHTML = Template(this.formTemplate, {
+        politicians: this.politicians.map(function(politician) {
+            var team = politician.gsx$team.$t;
+
+            var stance = 'undecided';
+            if (team === 'team-cable') {
+                stance = 'anti internet';
+            } else if (team === 'team-internet') {
+                stance = 'pro internet';
+            }
+
+            var url = 'http://';
+            if (politician.gsx$subdomain.$t) {
+                url += politician.gsx$subdomain.$t;
+            } else {
+                url += politician.gsx$first.$t + politician.gsx$name.$t;
+            }
+            if (politician.gsx$team.$t.trim() === 'team-internet') {
+                url += '.savesthe.net';
+            } else {
+                url += '.breaksthe.net';
+            }
+            url = url.toLowerCase();
+
+            return {
+                image: 'images/scoreboard/' + politician.gsx$imagepleasedontedit.$t,
+                name: politician.gsx$name.$t,
+                url: url,
+                stance: stance,
+                team: team
+            };
+        })
+    });
+};
+
+module.exports = YourSenators;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}]},{},["./js/index.js"]);
