@@ -288,7 +288,7 @@ body.typekit #battle .timer .card .type {
 
 /* Politicians */
 body #battle .form-wrapper .politicians {
-    display: block;
+    display: none;
     margin: 0 auto;
     position: relative;
     width: 270px;
@@ -355,6 +355,10 @@ body #battle .form-wrapper .politicians .politician img {
 }
 
 @media screen and (min-width: 520px) {
+    body #battle .form-wrapper .politicians {
+        display: block;
+    }
+
     body #battle .form-wrapper .politicians .politician {
         display: block;
         position: absolute;

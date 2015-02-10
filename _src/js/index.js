@@ -14,6 +14,7 @@ var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var SimpleSection = require('./SimpleSection');
 var TeamInternetSection = require('./TeamInternetSection');
+var YourSenators = require('./YourSenators');
 
 
 // Detect features & apply polyfills
@@ -103,7 +104,7 @@ var TeamInternetSection = require('./TeamInternetSection');
             var pleaseWaitNode = document.querySelector('#battle .please-wait');
             pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
 
-            new PetitionForm({
+            var petitionForm = new PetitionForm({
                 formTemplate: e.target.responseText,
                 target: '#battle .form-wrapper'
             });
@@ -111,41 +112,32 @@ var TeamInternetSection = require('./TeamInternetSection');
             // Rotate organizations
             new OrganizationRotation();
 
-            // Add more sections
-            setTimeout(loadMoreSections, 400);
+            // Get geography
+            new AJAX({
+                url: URLs.geography,
+                success: function(e) {
+                    // Parse JSON
+                    var response = JSON.parse(e.target.responseText);
+
+                    // Save for later
+                    global.ajaxResponses.geography = response;
+
+                    // Update country field
+                    petitionForm.setCountryCode(response.country.iso_code);
+
+                    new YourSenators({
+                        callback: loadMoreSections,
+                        geography: response,
+                        target: '.your-senators-target',
+                        URLs: URLs
+                    });
+                }
+            });
         }
     });
 
     function loadMoreSections() {
         var queue = [];
-
-        queue.push(function() {
-            new AJAX({
-                url: URLs.geography,
-                success: function(e) {
-                    var response = JSON.parse(e.target.responseText);
-
-                    // Cache
-                    global.ajaxResponses.geography = response;
-
-                    // Update form
-                    var countryInput = document.querySelector('[name="member[country]"]');
-                    if (
-                        countryInput
-                        &&
-                        response.country
-                        &&
-                        response.country.iso_code
-                    ) {
-                        countryInput.value = response.country.iso_code;
-                    }
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
 
         queue.push(function() {
             new AJAX({
