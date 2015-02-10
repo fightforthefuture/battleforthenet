@@ -3,6 +3,7 @@ body#developer {
 }
 section.widget {
     background-color: #313142;
+    padding-bottom: 40px;
 }
 section.wall-under {
     background-color: #1C1C25;
