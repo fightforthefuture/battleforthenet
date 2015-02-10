@@ -38,6 +38,10 @@ var TeamInternetSection = require('./TeamInternetSection');
             var countdown = new Countdown({
                 date: new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime()
             });
+
+            new LoadingIcon({
+                target: '#battle .spinner'
+            });
         }, countdownDelay);
     }, 128);
 
@@ -294,14 +298,6 @@ var TeamInternetSection = require('./TeamInternetSection');
                         queue.shift()();
                     }
                 }
-            });
-        });
-
-
-        queue.push(function() {
-            // Show the spinner
-            new LoadingIcon({
-                target: '#battle .spinner'
             });
         });
 
