@@ -207,26 +207,28 @@ var YourSenators = require('./YourSenators');
 
         if (
             global.isDesktop
-            &&
-            // Experiment: Remove ActionBar
-            // https://www.optimizely.com/edit?experiment_id=2454680901
-            !global.experiments.removeActionBar
         ) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/ActionBar.html' + buster,
-                    success: function(e) {
-                        new ActionBar({
-                            target: '.actionbar-target',
-                            template: e.target.responseText
-                        });
+            if (
+                // Experiment: Remove ActionBar
+                // https://www.optimizely.com/edit?experiment_id=2454680901
+                !global.experiments.removeActionBar
+            ) {
+                queue.push(function() {
+                    new AJAX({
+                        url: 'templates/ActionBar.html' + buster,
+                        success: function(e) {
+                            new ActionBar({
+                                target: '.actionbar-target',
+                                template: e.target.responseText
+                            });
 
-                        if (queue.length > 0) {
-                            queue.shift()();
+                            if (queue.length > 0) {
+                                queue.shift()();
+                            }
                         }
-                    }
+                    });
                 });
-            });
+            }
 
             queue.push(function() {
                 new AJAX({
