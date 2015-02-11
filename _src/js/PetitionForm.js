@@ -59,10 +59,13 @@ PetitionForm.prototype.addEventListeners = function() {
     //     bindPoliticianEvents(politicians[i]);
     // }
 
-    if (location.href.match(/call_tool=1/)) {
+    if (location.href.match(/call_tool=1/) || location.href.match(/committees=1/)) {
         petitionFormNode.style.display = 'none';
         // politiciansNode.style.display = 'none';
-        phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
+        if (location.href.match(/call_tool=1/))
+            phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
+        else
+            phoneCallFormNode.querySelector('header').textContent = 'Can you call Congress now? Enter your number. We\'ll call you back with the script. (We won\'t use your number for anything else)';
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
     }
@@ -106,7 +109,10 @@ PetitionForm.prototype.addEventListeners = function() {
     phoneCallFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        var campaignId = 'jan14th';
+        if (location.href.match(/committees=1/))
+            var campaignId = 'stop-gop-fcc-investigation';
+        else
+            var campaignId = 'jan14th';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
         var postalCode = petitionFormNode.elements.zip.value || '';
