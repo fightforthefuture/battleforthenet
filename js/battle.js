@@ -634,6 +634,10 @@ Modals.prototype.render = function() {
 
     if (location.href.match(/committees=1/))
         document.getElementById('call_script').textContent = 'Congress shouldn\'t politicize the issue of Net Neutrality in an attempt to score partisan points on an issue so crucial to the future of the Internet, and our country. Millions of people have called on the FCC to adopt strong rules backed by strong legal authority.  Congress should not try to block strong rules by pushing bad legislation, or hauling the FCC into hearings to defend the plan those millions of people called for. Thank you.';
+    if (location.href.match(/pia=1/)) {
+        document.getElementById('call_header').textContent = 'We\'ll connect you with Congress. When they answer, say:';
+        document.getElementById('call_script').textContent = '"Let the FCC do its job and implement net neutrality rules. And do not support the Thune / Upton Proposal, which is just meant to confuse and undermine this process."';
+    }
 };
 
 Modals.prototype.display = function(id) {
@@ -808,7 +812,11 @@ PetitionForm.prototype.addEventListeners = function() {
     //     bindPoliticianEvents(politicians[i]);
     // }
 
-    if (location.href.match(/call_tool=1/) || location.href.match(/committees=1/)) {
+    if (
+        location.href.match(/call_tool=1/)
+        || location.href.match(/committees=1/)
+        || location.href.match(/pia=1/)
+        ) {
         petitionFormNode.style.display = 'none';
         // politiciansNode.style.display = 'none';
         if (location.href.match(/call_tool=1/))
@@ -866,6 +874,8 @@ PetitionForm.prototype.addEventListeners = function() {
             var campaignId = 'stop-gop-fcc-investigation';
             var postalCode = '55419';
         }
+        else if (location.href.match(/pia=1/))
+            var campaignId = 'title-x-committees-pia';
         else
             var campaignId = 'jan14th';
 

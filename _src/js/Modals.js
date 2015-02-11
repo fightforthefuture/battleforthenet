@@ -15,6 +15,10 @@ Modals.prototype.render = function() {
 
     if (location.href.match(/committees=1/))
         document.getElementById('call_script').textContent = 'Congress shouldn\'t politicize the issue of Net Neutrality in an attempt to score partisan points on an issue so crucial to the future of the Internet, and our country. Millions of people have called on the FCC to adopt strong rules backed by strong legal authority.  Congress should not try to block strong rules by pushing bad legislation, or hauling the FCC into hearings to defend the plan those millions of people called for. Thank you.';
+    if (location.href.match(/pia=1/)) {
+        document.getElementById('call_header').textContent = 'We\'ll connect you with Congress. When they answer, say:';
+        document.getElementById('call_script').textContent = '"Let the FCC do its job and implement net neutrality rules. And do not support the Thune / Upton Proposal, which is just meant to confuse and undermine this process."';
+    }
 };
 
 Modals.prototype.display = function(id) {
