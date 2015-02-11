@@ -209,7 +209,7 @@ var YourSenators = require('./YourSenators');
             global.isDesktop
             &&
             // Experiment: Remove ActionBar
-            // https://www.optimizely.com/edit?experiment_id=2445320922
+            // https://www.optimizely.com/edit?experiment_id=2454680901
             !global.experiments.removeActionBar
         ) {
             queue.push(function() {
