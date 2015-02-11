@@ -44,20 +44,10 @@ PetitionForm.prototype.validatePhoneNumber = function(num) {
 PetitionForm.prototype.addEventListeners = function() {
     var petitionFormNode = this.DOMNode.querySelector('#petition');
     var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
-    // var politiciansNode = this.DOMNode.querySelector('.politicians');
+    var senatorsNode = this.DOMNode.querySelector('.your-senators-target');
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
-
-    // var politicians = this.DOMNode.getElementsByClassName('politician');
-    // var bindPoliticianEvents = function(politician) {
-    //     politician.addEventListener('click', function(e) {
-    //         if (ga) ga('send', 'event', 'button', 'click', 'individual_site');
-    //     }, true);
-    // }
-    // for (var i = 0; i < politicians.length; i++) {
-    //     bindPoliticianEvents(politicians[i]);
-    // }
 
     if (
         location.href.match(/call_tool=1/)
@@ -65,12 +55,12 @@ PetitionForm.prototype.addEventListeners = function() {
         || location.href.match(/pia=1/)
         ) {
         petitionFormNode.style.display = 'none';
-        // politiciansNode.style.display = 'none';
+        senatorsNode.style.display = 'none';
         if (location.href.match(/call_tool=1/))
             phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
         else
             phoneCallFormNode.querySelector('header').textContent = 'Can you call Congress now? Enter your number. We\'ll call you back with the script. (We won\'t use your number for anything else)';
-        
+
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
     }
@@ -104,7 +94,7 @@ PetitionForm.prototype.addEventListeners = function() {
         if (ga) ga('send', 'event', 'form', 'submit', 'email');
 
         petitionFormNode.style.display = 'none';
-        // politiciansNode.style.display = 'none';
+        senatorsNode.style.display = 'none';
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
 
@@ -149,7 +139,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
-        // politiciansNode.style.display = 'none';
+        senatorsNode.style.display = 'none';
         thanksNode.style.display = 'block';
     }.bind(this), false);
 };
