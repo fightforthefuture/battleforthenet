@@ -92,6 +92,7 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'email');
+        optimizely.push(['trackEvent', 'form-submit-email']);
 
         petitionFormNode.style.display = 'none';
         senatorsNode.style.display = 'none';
@@ -134,6 +135,7 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'call');
+        optimizely.push(['trackEvent', 'form-submit-call']);
 
         global.modals.display('call_modal');
 

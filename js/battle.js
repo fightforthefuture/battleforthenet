@@ -205,7 +205,13 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        if (global.isDesktop) {
+        if (
+            global.isDesktop
+            &&
+            // Experiment: Remove ActionBar
+            // https://www.optimizely.com/edit?experiment_id=2445320922
+            !global.experiments.removeActionBar
+        ) {
             queue.push(function() {
                 new AJAX({
                     url: 'templates/ActionBar.html' + buster,
@@ -891,6 +897,7 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'email');
+        optimizely.push(['trackEvent', 'form-submit-email']);
 
         petitionFormNode.style.display = 'none';
         senatorsNode.style.display = 'none';
@@ -933,6 +940,7 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'call');
+        optimizely.push(['trackEvent', 'form-submit-call']);
 
         global.modals.display('call_modal');
 

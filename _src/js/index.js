@@ -203,7 +203,13 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        if (global.isDesktop) {
+        if (
+            global.isDesktop
+            &&
+            // Experiment: Remove ActionBar
+            // https://www.optimizely.com/edit?experiment_id=2445320922
+            !global.experiments.removeActionBar
+        ) {
             queue.push(function() {
                 new AJAX({
                     url: 'templates/ActionBar.html' + buster,
