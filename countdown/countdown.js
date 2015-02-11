@@ -274,7 +274,8 @@ for (var i = 0; i < facebooks.length; i++) {
 
             for (var site in data.sites_top) {
                 if (data.sites_top.hasOwnProperty(site)) {
-                    var val = c(data.sites_top[site].replace('.0', ''));
+
+                    var val = c(data.sites_top[site].toString().replace('.0', ''));
                     var site = s(site);
                     var li = document.createElement('li');
                     li.innerHTML = '<a href="http://'+ site +'" target="_blank">'+ site +' ('+val+')</a>';
@@ -284,7 +285,7 @@ for (var i = 0; i < facebooks.length; i++) {
 
             for (var site in data.sites_top_today) {
                 if (data.sites_top_today.hasOwnProperty(site)) {
-                    var val = c(data.sites_top_today[site].replace('.0', ''));
+                    var val = c(data.sites_top_today[site].toString().replace('.0', ''));
                     var site = s(site);
                     var li = document.createElement('li');
                     li.innerHTML = '<a href="http://'+ site +'" target="_blank">'+ site +' ('+val+')</a>';
