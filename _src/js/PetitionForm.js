@@ -66,6 +66,7 @@ PetitionForm.prototype.addEventListeners = function() {
             phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
         else
             phoneCallFormNode.querySelector('header').textContent = 'Can you call Congress now? Enter your number. We\'ll call you back with the script. (We won\'t use your number for anything else)';
+        
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
     }

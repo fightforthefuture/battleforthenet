@@ -631,6 +631,9 @@ function Modals(params) {
 
 Modals.prototype.render = function() {
     this.DOMNode.innerHTML = Template(this.template, {});
+
+    if (location.href.match(/committees=1/))
+        document.getElementById('call_script').textContent = 'Congress shouldn\'t politicize the issue of Net Neutrality in an attempt to score partisan points on an issue so crucial to the future of the Internet, and our country. Millions of people have called on the FCC to adopt strong rules backed by strong legal authority.  Congress should not try to block strong rules by pushing bad legislation or hauling the FCC into hearings to defend the plan those millions of people called for. Thank you.';
 };
 
 Modals.prototype.display = function(id) {
@@ -812,6 +815,7 @@ PetitionForm.prototype.addEventListeners = function() {
             phoneCallFormNode.querySelector('header').textContent = 'Call Congress and the FCC!';
         else
             phoneCallFormNode.querySelector('header').textContent = 'Can you call Congress now? Enter your number. We\'ll call you back with the script. (We won\'t use your number for anything else)';
+        
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
     }
