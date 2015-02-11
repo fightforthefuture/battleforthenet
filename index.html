@@ -365,11 +365,14 @@ header nav a {
 <script>
 var global = {};
 global.ajaxResponses = {};
+global.experiments = {};
 global.fontsAreReady = false;
 global.isDesktop = !navigator.userAgent.match(/mobile/i);
 global.modals = null;
 
 var GLOBAL_TWEET_TEXT = 'The clock is ticking for net neutrality—join the #InternetCountdown and help win this fight! https://www.battleforthenet.com https://pic.twitter.com/ekfHaoBSCV';
+
+window.optimizely || (window.optimizely = []);
 
 // Let's selectively bust browser caches
 var buster = '?buster=' + Date.now();
@@ -385,13 +388,9 @@ if (navigator.userAgent.match(/MSIE [5-9]/)) {
 function loadAdditionalResources() {
     innerHeight; // Paint before fetching new assets
 
+    loadJS('./js/typekit.js');
     loadCSS('./css/battle.css' + buster);
     loadJS('./js/battle.js' + buster);
-    loadJS('./js/typekit.js');
-
-    if (global.isDesktop) {
-        loadJS('//cdn.optimizely.com/js/1886210014.js');
-    }
 }
 
 function loadCSS(href) {
@@ -410,6 +409,8 @@ function loadJS(src, blocking) {
     document.body.appendChild(script);
 }
 </script>
+
+<script src="//cdn.optimizely.com/js/1886210014.js"></script>
 
 </body>
 </html>
