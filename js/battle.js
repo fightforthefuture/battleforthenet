@@ -855,13 +855,17 @@ PetitionForm.prototype.addEventListeners = function() {
     phoneCallFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        var postalCode = petitionFormNode.elements.zip.value || '';
+
         if (location.href.match(/committees=1/))
+        {
             var campaignId = 'stop-gop-fcc-investigation';
+            var postalCode = '55419';
+        }
         else
             var campaignId = 'jan14th';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
-        var postalCode = petitionFormNode.elements.zip.value || '';
 
         phoneNumber = this.validatePhoneNumber(phoneNumber);
         if (!phoneNumber) {
