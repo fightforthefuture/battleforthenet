@@ -261,6 +261,7 @@ section.political .isotope .politician .twitter .more_link {
     transition: margin-top .3s;
 }
 section.political .isotope .politician .twitter img {
+    border: none;
     width: 24px;
     height: 24px;
     vertical-align: middle;
