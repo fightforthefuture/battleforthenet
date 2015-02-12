@@ -165,6 +165,19 @@ body.loaded header nav a {
     opacity: 1;
 }
 
+
+
+/* Experiment: Remove Navigation */
+body.experiment-remove-navigation {
+    padding: 20px 0 0;
+}
+
+body.experiment-remove-navigation header {
+    display: none;
+}
+
+
+
 #battle .timer .card {
     -webkit-transition: background-color 0.6s ease-out;
             transition: background-color 0.6s ease-out;
@@ -212,6 +225,19 @@ body.svg #battle .timer .card .number {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+
+
+/* Experiment: Remove Timer */
+#battle.experiment-remove-timer .timer {
+    display: none;
+}
+
+#battle.experiment-remove-timer .spinner {
+    display: none;
+}
+
+
 
 body.slow .tk-bebas-neue,
 body.slow .tk-proxima-nova {
@@ -284,6 +310,10 @@ body.typekit #battle .timer .card .type {
             transition-delay: 0.4s;
 }
 
+/* Experiment: Alternate Headline 1 */
+#battle.experiment-alternate-headline-1 .timer .tagline {
+    display: none;
+}
 
 
 /* Politicians */
@@ -509,20 +539,26 @@ body #battle #petition .right:hover .edit {
 
 
 /* Experiment: Remove Letter Preview */
-body #battle .form-wrapper.remove-letter-preview {
+body #battle.experiment-remove-letter-preview .form-wrapper {
     width: 320px;
 }
 
-body #battle .form-wrapper.remove-letter-preview #petition {
+body #battle.experiment-remove-letter-preview .form-wrapper #petition {
     width: 270px;
 }
 
-body #battle .form-wrapper.remove-letter-preview #petition .right {
+body #battle.experiment-remove-letter-preview .form-wrapper #petition .right {
     display: none;
 }
 
+@media screen and (min-width: 500px) {
+    body #battle.experiment-remove-letter-preview .phone-call-form {
+        margin-left: -75px;
+    }
+}
+
 @media screen and (min-width: 520px) {
-    body #battle .form-wrapper.remove-letter-preview .politicians .politician:last-child {
+    body #battle.experiment-remove-letter-preview .form-wrapper .politicians .politician:last-child {
         left: 270px;
         top: 24px;
     }
