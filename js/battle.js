@@ -10,6 +10,7 @@ var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
 var Modals = require('./Modals');
+var MotherShip = require('./MotherShip');
 var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
 var Polyfills = require('./Polyfills');
@@ -24,6 +25,7 @@ var YourSenators = require('./YourSenators');
     new DetectFeatures();
     new Polyfills();
 })();
+
 
 
 // Design enhancements
@@ -72,6 +74,7 @@ var YourSenators = require('./YourSenators');
     setTimeout(function() {
         new Chartbeat();
         new GoogleAnalytics();
+        new MotherShip();
     }, 1200);
 })();
 
@@ -307,13 +310,14 @@ var YourSenators = require('./YourSenators');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./ActionBar":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ActionBar.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js","./Modals":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Modals.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js","./TeamInternetSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\TeamInternetSection.js","./YourSenators":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\YourSenators.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./ActionBar":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ActionBar.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js","./Modals":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Modals.js","./MotherShip":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MotherShip.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js","./TeamInternetSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\TeamInternetSection.js","./YourSenators":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\YourSenators.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
+    this.data = params.data;
     this.error = params.error;
+    this.form = params.form;
     this.method = params.method || 'GET';
     this.success = params.success;
-    this.form = params.form;
     this.url = params.url;
 
     this.request = new XMLHttpRequest();
@@ -327,8 +331,22 @@ function AJAX(params) {
         this.request.onerror = this.error;
     }
 
-    if (this.form) {
+    if (this.data) {
+        var params = '';
+        for (var key in this.data) {
+            if (params.length !== 0) {
+                params += '&';
+            }
+
+            params += key + '=' + this.data[key];
+        }
+
+        this.request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        this.request.send(params);
+    } else if (this.form) {
         var params = this.serializeForm(this.form);
+
         this.request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         this.request.send(params);
@@ -592,6 +610,18 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 
 module.exports = DetectFeatures;
 
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GUID.js":[function(require,module,exports){
+function GUID() {
+    return _p8() + _p8(true) + _p8(true) + _p8();
+}
+
+function _p8(s) {
+    var p = (Math.random().toString(16)+"000000000").substr(2,8);
+    return s ? "-" + p.substr(0,4) + "-" + p.substr(4,4) : p ;
+}
+
+module.exports = GUID;
+
 },{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js":[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
@@ -753,7 +783,64 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
+},{"./Template":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Template.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MotherShip.js":[function(require,module,exports){
+var AJAX = require('./AJAX');
+var GUID = require('./GUID');
+
+function MotherShip() {
+    this.referrer = document.referrer;
+    this.referrerHost = null;
+
+    if (this.hasValidReferrer()) {
+        this.sendRequest();
+    }
+}
+
+MotherShip.prototype.campaign = 'internetcountdown';
+MotherShip.prototype.method = 'POST';
+MotherShip.prototype.stat = 'click';
+MotherShip.prototype.url = 'https://fftf-host-counter.herokuapp.com/log';
+
+MotherShip.prototype.hasValidReferrer = function hasValidReferrer() {
+    if (!this.referrer) {
+        return false;
+    }
+
+    if (document.referrer.match('^' + location.href)) {
+        return false;
+    }
+
+    if (document.referrer.match('^' + 'https://fightforthefuture.github.io/')) {
+        return false;
+    }
+
+    this.referrerHost = this.getHostName(this.referrer);
+
+    return true;
+};
+
+MotherShip.prototype.getHostName = function getHostName(url) {
+    var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+    return url.match(re)[1].toString();
+}
+
+MotherShip.prototype.sendRequest = function sendRequest() {
+    new AJAX({
+        data: {
+            campaign: this.campaign,
+            data: location.href,
+            host: this.referrerHost,
+            session: GUID(),
+            stat: this.stat,
+        },
+        method: this.method,
+        url: this.url
+    });
+};
+
+module.exports = MotherShip;
+
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./GUID":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GUID.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js":[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -899,7 +986,9 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'email');
-        optimizely.push(['trackEvent', 'form-submit-email']);
+        if (optimizely.push) {
+            optimizely.push(['trackEvent', 'form-submit-email']);
+        }
 
         petitionFormNode.style.display = 'none';
         senatorsNode.style.display = 'none';
@@ -942,7 +1031,9 @@ PetitionForm.prototype.addEventListeners = function() {
             success: function(e) {}
         });
         if (ga) ga('send', 'event', 'form', 'submit', 'call');
-        optimizely.push(['trackEvent', 'form-submit-call']);
+        if (optimizely.push) {
+            optimizely.push(['trackEvent', 'form-submit-call']);
+        }
 
         global.modals.display('call_modal');
 
