@@ -35,7 +35,8 @@ MotherShip.prototype.hasValidReferrer = function hasValidReferrer() {
 
 MotherShip.prototype.getHostName = function getHostName(url) {
     var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
-    return url.match(re)[1].toString();
+    var host = url.match(re)[1].toString();
+    return host.replace(/^www\./, '');
 }
 
 MotherShip.prototype.sendRequest = function sendRequest() {
@@ -43,7 +44,7 @@ MotherShip.prototype.sendRequest = function sendRequest() {
         data: {
             campaign: this.campaign,
             data: location.href,
-            host: this.referrerHost.replace('www.', ''),
+            host: this.referrerHost,
             session: GUID(),
             stat: this.stat,
         },
