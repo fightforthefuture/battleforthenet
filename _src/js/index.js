@@ -8,6 +8,7 @@ var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
 var MobileMenu = require('./MobileMenu');
 var Modals = require('./Modals');
+var MotherShip = require('./MotherShip');
 var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
 var Polyfills = require('./Polyfills');
@@ -22,6 +23,7 @@ var YourSenators = require('./YourSenators');
     new DetectFeatures();
     new Polyfills();
 })();
+
 
 
 // Design enhancements
@@ -70,6 +72,7 @@ var YourSenators = require('./YourSenators');
     setTimeout(function() {
         new Chartbeat();
         new GoogleAnalytics();
+        new MotherShip();
     }, 1200);
 })();
 

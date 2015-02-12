@@ -1,9 +1,10 @@
 function AJAX(params) {
     this.async = params.async || true;
+    this.data = params.data;
     this.error = params.error;
+    this.form = params.form;
     this.method = params.method || 'GET';
     this.success = params.success;
-    this.form = params.form;
     this.url = params.url;
 
     this.request = new XMLHttpRequest();
@@ -17,8 +18,22 @@ function AJAX(params) {
         this.request.onerror = this.error;
     }
 
-    if (this.form) {
+    if (this.data) {
+        var params = '';
+        for (var key in this.data) {
+            if (params.length !== 0) {
+                params += '&';
+            }
+
+            params += key + '=' + this.data[key];
+        }
+
+        this.request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        this.request.send(params);
+    } else if (this.form) {
         var params = this.serializeForm(this.form);
+
         this.request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         this.request.send(params);
