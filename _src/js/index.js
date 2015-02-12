@@ -112,6 +112,11 @@ var YourSenators = require('./YourSenators');
                 target: '#battle .form-wrapper'
             });
 
+            // Experiment: Remove Letter Preview
+            if (global.experiments.removeLetterPreview) {
+                petitionForm.DOMNode.className += ' remove-letter-preview ';
+            }
+
             // Rotate organizations
             new OrganizationRotation();
 
@@ -211,7 +216,6 @@ var YourSenators = require('./YourSenators');
         ) {
             if (
                 // Experiment: Remove ActionBar
-                // https://www.optimizely.com/edit?experiment_id=2454680901
                 !global.experiments.removeActionBar
             ) {
                 queue.push(function() {

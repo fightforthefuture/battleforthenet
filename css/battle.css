@@ -506,6 +506,31 @@ body #battle #petition .right:hover .edit {
     text-decoration:underline
 }
 
+
+
+/* Experiment: Remove Letter Preview */
+body #battle .form-wrapper.remove-letter-preview {
+    width: 320px;
+}
+
+body #battle .form-wrapper.remove-letter-preview #petition {
+    width: 270px;
+}
+
+body #battle .form-wrapper.remove-letter-preview #petition .right {
+    display: none;
+}
+
+@media screen and (min-width: 520px) {
+    body #battle .form-wrapper.remove-letter-preview .politicians .politician:last-child {
+        left: 270px;
+        top: 24px;
+    }
+}
+
+
+
+/* Media Queries */
 @media screen and (min-width: 900px) {
     body #battle #petition {
         width: 540px;
