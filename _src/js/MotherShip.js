@@ -43,7 +43,7 @@ MotherShip.prototype.sendRequest = function sendRequest() {
         data: {
             campaign: this.campaign,
             data: location.href,
-            host: this.referrerHost,
+            host: this.referrerHost.replace('www.', ''),
             session: GUID(),
             stat: this.stat,
         },
