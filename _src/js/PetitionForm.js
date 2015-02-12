@@ -150,4 +150,8 @@ PetitionForm.prototype.addEventListeners = function() {
     }.bind(this), false);
 };
 
+PetitionForm.prototype.updateCTA = function updateCTA(cta) {
+    this.DOMNode.querySelector('button[type="submit"]').textContent = cta;
+};
+
 module.exports = PetitionForm;
