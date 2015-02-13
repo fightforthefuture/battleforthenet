@@ -195,6 +195,14 @@ var YourSenators = require('./YourSenators');
 
     function loadMoreSections() {
         var queue = [];
+        function loadNextSection() {
+            if (queue.length > 0) {
+                queue.shift()();
+            }
+        }
+        function loadNextSectionAfterDelay(delay) {
+            setTimeout(loadNextSection, delay || 100);
+        }
 
         queue.push(function() {
             new AJAX({
@@ -205,9 +213,7 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
+                    loadNextSectionAfterDelay();
                 }
             });
         });
@@ -221,9 +227,7 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
+                    loadNextSectionAfterDelay();
                 }
             });
         });
@@ -237,9 +241,21 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
+                    loadNextSectionAfterDelay();
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/ExtraReading.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.extra-reading-target',
+                        template: e.target.responseText
+                    });
+
+                    loadNextSectionAfterDelay();
                 }
             });
         });
@@ -253,9 +269,7 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
+                    loadNextSectionAfterDelay();
                 }
             });
         });
@@ -276,9 +290,7 @@ var YourSenators = require('./YourSenators');
                                 template: e.target.responseText
                             });
 
-                            if (queue.length > 0) {
-                                queue.shift()();
-                            }
+                            loadNextSectionAfterDelay();
                         }
                     });
                 });
@@ -295,9 +307,7 @@ var YourSenators = require('./YourSenators');
 
                         loadJS('js/scoreboard.js' + buster, true);
 
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
+                        loadNextSectionAfterDelay();
                     }
                 });
             });
@@ -321,9 +331,7 @@ var YourSenators = require('./YourSenators');
                             if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
                         }, false);
 
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
+                        loadNextSectionAfterDelay();
                     }
                 });
             });
@@ -348,14 +356,12 @@ var YourSenators = require('./YourSenators');
                     if (document.referrer.indexOf('//t.co') != -1)
                         global.modals.display('twitter_modal');
 
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
+                    loadNextSectionAfterDelay();
                 }
             });
         });
 
         // Start queue
-        queue.shift()();
+        loadNextSection();
     }
 })();
