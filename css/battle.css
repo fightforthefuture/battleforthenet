@@ -168,8 +168,8 @@ body.loaded header nav a {
 
 
 /* Experiment: Remove Navigation */
-body.experiment-remove-navigation {
-    padding: 20px 0 0;
+body.experiment-remove-navigation #battle {
+    padding-top: 20px;
 }
 
 body.experiment-remove-navigation header {
