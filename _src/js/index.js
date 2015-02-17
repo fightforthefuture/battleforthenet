@@ -13,6 +13,7 @@ var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
+var ScrollDetection = require('./ScrollDetection');
 var SimpleSection = require('./SimpleSection');
 var TeamInternetSection = require('./TeamInternetSection');
 var YourSenators = require('./YourSenators');
@@ -112,23 +113,11 @@ var YourSenators = require('./YourSenators');
     // Let's selectively bust browser caches
     var buster = '?buster=' + Date.now();
 
-    // allPoliticians: global.ajaxResponses.politicians,
-    // geography: global.ajaxResponses.geography,
-
-    var LiveURLs = {
+    var URLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
         politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json',
         politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
     };
-    var DebugURLs = {
-        geography: 'debug/geography.json',
-        politicians: 'debug/politicians.json'
-    };
-
-    var URLs = LiveURLs;
-    // if (location.href.match(/localhost/)) {
-    //     URLs = DebugURLs;
-    // }
 
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
@@ -194,43 +183,81 @@ var YourSenators = require('./YourSenators');
     });
 
     function loadMoreSections() {
-        var queue = [];
-        function loadNextSection() {
-            if (queue.length > 0) {
-                queue.shift()();
+        new AJAX({
+            url: 'templates/TeamCableSection.html' + buster,
+            success: function(e) {
+                new SimpleSection({
+                    target: '.team-cable-target',
+                    template: e.target.responseText
+                });
             }
-        }
-        function loadNextSectionAfterDelay(delay) {
-            setTimeout(loadNextSection, delay || 100);
-        }
-
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/TeamCableSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.team-cable-target',
-                        template: e.target.responseText
-                    });
-
-                    loadNextSectionAfterDelay();
-                }
-            });
         });
 
-        queue.push(function() {
+        new AJAX({
+            url: 'templates/TeamInternetSection.html' + buster,
+            success: function(e) {
+                new TeamInternetSection({
+                    target: '.team-internet-target',
+                    template: e.target.responseText
+                });
+            }
+        });
+
+        if (
+            // Experiment: Remove ActionBar
+            !global.experiments.removeActionBar
+        ) {
             new AJAX({
-                url: 'templates/TeamInternetSection.html' + buster,
+                url: 'templates/ActionBar.html' + buster,
                 success: function(e) {
-                    new TeamInternetSection({
-                        target: '.team-internet-target',
+                    new ActionBar({
+                        target: '.actionbar-target',
                         template: e.target.responseText
                     });
-
-                    loadNextSectionAfterDelay();
                 }
             });
+        }
+
+        new AJAX({
+            url: 'templates/ShareButtons.html' + buster,
+            success: function(e) {
+                new SimpleSection({
+                    target: '.share-buttons-target',
+                    template: e.target.responseText
+                });
+
+                document.querySelector('.sharing-buttons').querySelector('.twitter').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
+                    if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
+                }, false);
+
+                document.querySelector('.sharing-buttons').querySelector('.facebook').addEventListener('click', function(e) {
+                    if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
+                }, false);
+            }
         });
+
+
+        new AJAX({
+            url: 'templates/Modals.html' + buster,
+            success: function(e) {
+                global.modals = new Modals({
+                    target: '.modals-target',
+                    template: e.target.responseText
+                });
+
+                if (location.href.match(/sharing_modal=1/)) {
+                    global.modals.display('call_modal');
+                } else if (location.href.match(/twitter_modal=1/)) {
+                    global.modals.display('twitter_modal');
+                } else if (document.referrer.indexOf('//t.co') != -1) {
+                    global.modals.display('twitter_modal');
+                }
+            }
+        });
+
+        var queue = [];
 
         queue.push(function() {
             new AJAX({
@@ -241,7 +268,9 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    loadNextSectionAfterDelay();
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
                 }
             });
         });
@@ -255,7 +284,9 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    loadNextSectionAfterDelay();
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
                 }
             });
         });
@@ -269,33 +300,14 @@ var YourSenators = require('./YourSenators');
                         template: e.target.responseText
                     });
 
-                    loadNextSectionAfterDelay();
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
                 }
             });
         });
 
-        if (
-            global.isDesktop
-        ) {
-            if (
-                // Experiment: Remove ActionBar
-                !global.experiments.removeActionBar
-            ) {
-                queue.push(function() {
-                    new AJAX({
-                        url: 'templates/ActionBar.html' + buster,
-                        success: function(e) {
-                            new ActionBar({
-                                target: '.actionbar-target',
-                                template: e.target.responseText
-                            });
-
-                            loadNextSectionAfterDelay();
-                        }
-                    });
-                });
-            }
-
+        if (global.isDesktop) {
             queue.push(function() {
                 new AJAX({
                     url: 'templates/PoliticalScoreboardSection.html' + buster,
@@ -307,61 +319,16 @@ var YourSenators = require('./YourSenators');
 
                         loadJS('js/scoreboard.js' + buster, true);
 
-                        loadNextSectionAfterDelay();
-                    }
-                });
-            });
-
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/ShareButtons.html' + buster,
-                    success: function(e) {
-                        new SimpleSection({
-                            target: '.share-buttons-target',
-                            template: e.target.responseText
-                        });
-
-                        document.querySelector('.sharing-buttons').querySelector('.twitter').addEventListener('click', function(e) {
-                            e.preventDefault();
-                            window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
-                            if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
-                        }, false);
-
-                        document.querySelector('.sharing-buttons').querySelector('.facebook').addEventListener('click', function(e) {
-                            if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
-                        }, false);
-
-                        loadNextSectionAfterDelay();
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
                     }
                 });
             });
         }
 
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/Modals.html' + buster,
-                success: function(e) {
-                    global.modals = new Modals({
-                        target: '.modals-target',
-                        template: e.target.responseText
-                    });
-
-                    if (location.href.match(/sharing_modal=1/)) {
-                        global.modals.display('call_modal');
-                    }
-                    if (location.href.match(/twitter_modal=1/)) {
-                        global.modals.display('twitter_modal');
-                    }
-
-                    if (document.referrer.indexOf('//t.co') != -1)
-                        global.modals.display('twitter_modal');
-
-                    loadNextSectionAfterDelay();
-                }
-            });
+        new ScrollDetection({
+            queue: queue
         });
-
-        // Start queue
-        loadNextSection();
     }
 })();
