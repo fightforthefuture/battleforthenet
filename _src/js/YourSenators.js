@@ -27,7 +27,7 @@ YourSenators.prototype.fetchTemplate = function() {
 
 YourSenators.prototype.fetchPoliticians = function() {
     new AJAX({
-        url: this.URLs.politiciansOnGoogle,
+        url: this.URLs.politicians,
         success: function(e) {
             try {
                 var json = JSON.parse(e.target.responseText);
@@ -55,7 +55,7 @@ YourSenators.prototype.fetchPoliticians = function() {
 
 YourSenators.prototype.fetchPoliticiansFromBackup = function() {
     new AJAX({
-        url: this.URLs.politicians,
+        url: this.URLs.politiciansOnGoogle,
         success: function(e) {
             var json = JSON.parse(e.target.responseText);
 
