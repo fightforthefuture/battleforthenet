@@ -277,6 +277,16 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
     });
 
     this.loadFilteredImages();
+    this.showAllPlayersOptionIfDesktop();
+};
+
+PoliticalScoreboard.prototype.showAllPlayersOptionIfDesktop = function showAllPlayersOptionIfDesktop() {
+    if (!global.isDesktop) {
+        return;
+    }
+
+    var allOption = this.politicalSelect.querySelector('[value=all]');
+    allOption.style.display = 'block';
 };
 
 PoliticalScoreboard.prototype.loadFilteredImages = function loadFilteredImages() {
@@ -343,10 +353,15 @@ PoliticalScoreboard.prototype.onPoliticiansAvailable = function onPoliticiansAva
         if (ga) ga('send', 'event', 'dropdown', 'change', 'scoreboard');
 
         switch (selection) {
+            case 'all':
+                filter = function() {
+                    return true;
+                };
+                break;
             case 'key':
                 filter = function(el) {
                     return el.querySelector('.frontpage').textContent == 1;
-                }
+                };
                 break;
 
             case 'team-internet':
