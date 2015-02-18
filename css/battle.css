@@ -1017,20 +1017,6 @@ body #battle .thanks h2 {
   display: inline-block;
   padding: 32px;
 }
-.footer-target footer .socials {
-  padding: 10px 0px 20px 0px;
-}
-.footer-target footer .socials img {
-  margin: 0px 7px;
-  width: 24px;
-  height: 24px;
-}
-.footer-target footer .socials a {
-  opacity: .5;
-}
-.footer-target footer .socials a:hover {
-  opacity: 1;
-}
 .footer-target footer .blurb {
   font-size: 23px;
   font-weight: 100;
@@ -1060,6 +1046,60 @@ body #battle .thanks h2 {
 .footer-target footer hr.narrow {
   width: 200px;
 }
+
+.footer-target footer .socials {
+  padding: 10px 0px 20px 0px;
+}
+.footer-target footer .socials img {
+  margin: 0px 7px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+}
+
+.footer-target .shares-container{
+    border-radius: 50px;
+    background-color: #39394D;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 490px;
+    margin: 0px auto;
+}
+
+.footer-target .share-container a:hover{
+    color: blue !important;
+}
+.footer-target .share-container a:visited{
+    color: #FFF !important;
+}
+.footer-target .share-container a:link {
+    color: #FFF !important;
+}
+.footer-target .fb-share-container{
+    background-color: #3B5999;
+    padding-left:20px;
+}
+.footer-target .twitter-share-container{
+    background-color: #4099FF;
+    padding-left:15px;
+}
+.footer-target .share-container{
+    position:relative;
+    display:inline-block;
+    width: 220px;
+    border-radius: 25px;
+    text-align:center;
+    font-family: "proxima-nova",sans-serif;
+    font-size: 11px;
+    font-weight:bold;
+    line-height: 40px;
+    margin: 6px 6px 6px;
+    padding-top:3px;
+    text-transform: uppercase;
+}
+
 #supporters {
   background: #ffffff;
 }
