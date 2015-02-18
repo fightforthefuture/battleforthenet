@@ -54,10 +54,6 @@ var YourSenators = require('./YourSenators');
         document.querySelector('#battle h1').textContent = '';
     }
 
-    if (global.experiments.removeNavigation) {
-        document.body.className += ' experiment-remove-navigation ';
-    }
-
     // Start the countdown
     setTimeout(function() {
         var countdownDelay = 0;
