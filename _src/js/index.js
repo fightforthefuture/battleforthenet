@@ -111,7 +111,7 @@ var YourSenators = require('./YourSenators');
 
     var URLs = {
         geography: 'https://fftf-geocoder.herokuapp.com',
-        politicians: 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json',
+        politicians: 'https://cache.battleforthenet.com/politicians.json',
         politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
     };
 

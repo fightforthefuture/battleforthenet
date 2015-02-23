@@ -14,7 +14,7 @@ function PoliticalScoreboard() {
     this.politicalSelect = document.querySelector('.political select');
     this.spreadsheetData = [];
     this.spreadsheetKey = this.isotopeNode.getAttribute('data-spreadsheet-key');
-    this.spreadsheetUrl = 'https://s3.amazonaws.com/battleforthenet/scoreboard/current.json';
+    this.spreadsheetUrl = 'https://cache.battleforthenet.com/politicians.json';
     this.state = location.href.match(/state=([\w-_\s\+]+)/i);
     this.isMobile = navigator.userAgent.match(/mobile/i);
 
