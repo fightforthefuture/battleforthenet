@@ -109,13 +109,16 @@ PetitionForm.prototype.addEventListeners = function() {
 
         var postalCode = petitionFormNode.elements.zip.value || '';
 
-        if (location.href.match(/committees=1/))
+        if (location.href.match(/title-x-committees=1/))
+        {
+            var campaignId = 'title-x-committees';
+            var postalCode = '55419';
+        }
+        else if (location.href.match(/committees=1/))
         {
             var campaignId = 'stop-gop-fcc-investigation';
             var postalCode = '55419';
         }
-        else if (location.href.match(/title-x-committees=1/))
-            var campaignId = 'title-x-committees';
         else
             var campaignId = 'jan14th';
 
