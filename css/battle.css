@@ -619,10 +619,12 @@ body #battle .phone-call-form header {
     font-size: 16px;
     font-weight: bold;
     padding: 26px 30px;
+    display: none; /* JL NOTE ~ explicitly added */
 }
 
 body #battle .phone-call-form section {
     background-color: #fff;
+    border-radius: 6px 6px 0 0;
     color: #7d7d97;
     line-height: 40px;
     font-size: 15px;
