@@ -52,7 +52,7 @@ PetitionForm.prototype.addEventListeners = function() {
     if (
         location.href.match(/call_tool=1/)
         || location.href.match(/committees=1/)
-        || location.href.match(/pia=1/)
+        || location.href.match(/title-x-committees=1/)
         ) {
         petitionFormNode.style.display = 'none';
         senatorsNode.style.display = 'none';
@@ -114,8 +114,8 @@ PetitionForm.prototype.addEventListeners = function() {
             var campaignId = 'stop-gop-fcc-investigation';
             var postalCode = '55419';
         }
-        else if (location.href.match(/pia=1/))
-            var campaignId = 'title-x-committees-pia';
+        else if (location.href.match(/title-x-committees=1/))
+            var campaignId = 'title-x-committees';
         else
             var campaignId = 'jan14th';
 
