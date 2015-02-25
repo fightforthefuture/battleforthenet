@@ -1583,14 +1583,14 @@ a.shareBtn.twitter {
 }
 @media screen and (min-width: 460px) {
   .share-buttons-target .sharing-buttons {
-    width: auto;
-    text-align: auto;
+    background: none;
+    bottom: auto;
     left: 0;
     position: fixed;
-    top: 40%;
-    bottom: auto;
+    text-align: auto;
+    top: calc((100% - 234px) / 2);
+    width: auto;
     z-index: 99;
-    background: none;
   }
 }
 .sharing-buttons li {
@@ -1636,6 +1636,7 @@ a.shareBtn.twitter {
   }
 }
 .sharing-buttons li a img {
+  border: none;
   width: 16px;
   height: 16px;
   opacity: 0;
