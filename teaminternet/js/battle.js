@@ -187,6 +187,13 @@ var photoCloud = {
     }.bind(this);
   },
 
+  backupAvatars: [
+    'batman',
+    'cloud',
+    'goku',
+    'spiderman'
+  ],
+
   insertNodeElement: function(id, data, offsets) {
     var url = this.sanitize(data.avatar.replace('http:', ''));
     var a = $('<a/>', {
@@ -202,9 +209,11 @@ var photoCloud = {
     var img = $('<img/>', {
       src: url
     });
+
+    var avatar =  this.backupAvatars[Math.floor(Math.random() * this.backupAvatars.length)];
     img.on('error', function(e) {
       a.css({
-        'background-image': 'url(/images/cloud/neutralitrooper.png)'
+        'background-image': 'url(/images/cloud/' + avatar + '.png)'
       });
     });
 
