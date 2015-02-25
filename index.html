@@ -101,6 +101,11 @@ a {
             transition: opacity 1s;
 }
 
+#battle p .victory {
+    margin: 16px 0 12px;
+    max-width: 90%;
+}
+
 #background {
     background-position: top center;
     background-repeat: no-repeat;
@@ -108,49 +113,6 @@ a {
     min-height: 729px;
     position: absolute;
     width: 100%;
-}
-
-#battle .spinner {
-    height: 100px;
-    margin: -50px auto 0;
-    overflow: hidden;
-    width: 200px;
-}
-
-#battle .timer {
-    position: relative;
-}
-
-#battle .timer .tagline {
-    color: #8888b9;
-    font-size: 17px;
-    line-height: 22px;
-    opacity: 0;
-
-    -webkit-transition: opacity 0.8s;
-            transition: opacity 0.8s;
-}
-
-#battle .timer .card {
-    border-radius: 8px;
-    background-color: rgba(93, 93, 122, 0.2);
-    display: inline-block;
-    height: 85px;
-    margin-bottom: 4px;
-    padding: 0 4px;
-    position: relative;
-    width: 80px;
-
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-#battle .timer .card > div {
-    opacity: 0;
-
-    -webkit-transition: opacity 0.8s;
-            transition: opacity 0.8s;
 }
 
 .light {
@@ -298,56 +260,15 @@ header nav a {
 </header>
 
 <section id="battle" class="fadeIn">
-    <div class="spinner"></div>
-
-    <div class="timer">
-        <div class="card days">
-            <div class="number tk-bebas-neue">-</div>
-
-            <div class="type tk-proxima-nova">
-                days
-            </div>
-        </div>
-
-        <div class="card hours">
-            <div class="number tk-bebas-neue">-</div>
-
-            <div class="type tk-proxima-nova">
-                hours
-            </div>
-        </div>
-
-        <div class="card minutes">
-            <div class="number tk-bebas-neue">-</div>
-
-            <div class="type tk-proxima-nova">
-                minutes
-            </div>
-        </div>
-
-        <div class="card seconds">
-            <div class="number tk-bebas-neue">-</div>
-
-            <div class="type tk-proxima-nova">
-                seconds
-            </div>
-        </div>
-
-        <div class="clear"></div>
-
-        <div class="tagline padded-900 tk-proxima-nova light">
-            Until we win net neutrality, or risk losing it forever
-        </div>
-    </div>
-
-    <div class="clear"></div>
-
-    <h1 class="padded-900 tk-proxima-nova">
-        The most important FCC vote of our lifetime is about to happen.
-    </h1>
+    <p class="padded-900 tk-proxima-nova light">
+        <img class="victory" src="images/epic-victory.png">
+    </p>
 
     <p class="padded-900 tk-proxima-nova light">
-        On Feb 26 the FCC will vote to save net neutrality or let Comcast and other ISPs create Internet slow lanes. Some members of Congress, on behalf of their Cable donors, are trying to stop the FCC from protecting the Internet we love. There isn't much time to stop them, contact them now.
+        DC insiders said it couldn't be done. But the public got <strong>loud</strong> in protest, FCC resistance buckled, and we won <strong>strong Title II net neutrality rules</strong>. Now Comcast is furious. Their plan is to <strong>destroy</strong> our victory with their power in Congress.
+        <br>
+        <br>
+        You won net neutrality. Now, are you ready to defend it from Comcast's friends in Congress?
     </p>
 
     <p class="please-wait padded-900 pulse">
