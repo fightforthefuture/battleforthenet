@@ -188,6 +188,7 @@ var photoCloud = {
   },
 
   insertNodeElement: function(id, data, offsets) {
+    var url = this.sanitize(data.avatar.replace('http:', ''));
     var a = $('<a/>', {
       id: 'avatar_'+id,
       class: data.link ? /*'link'*/ '' : '',
@@ -195,9 +196,18 @@ var photoCloud = {
               top:'+offsets.top+'px; \
               width:'+this.thumbSize+'px; \
               height:'+this.thumbSize+'px; \
-              background-image: url('+this.sanitize(data.avatar.replace('http:', ''))+'); \
+              background-image: url('+url+'); \
               background-size: '+this.thumbSize+'px auto;'
     });
+    var img = $('<img/>', {
+      src: url
+    });
+    img.on('error', function(e) {
+      a.css({
+        'background-image': 'url(/images/cloud/neutralitrooper.png)'
+      });
+    });
+
     a.attr({
       href: '#',
       target: '_blank'
