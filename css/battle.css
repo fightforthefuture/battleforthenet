@@ -970,8 +970,12 @@ body #battle .thanks h2 {
 #battle section#extra-reading h2 {
     margin-bottom: 0;
 }
+#battle section#extra-reading p {
+    margin-top: 0;
+}
 #battle section#extra-reading p a {
     color: #20cba1;
+    font-size: 16px;
 
     -webkit-transition: color 0.3s;
             transition: color 0.3s;
@@ -981,8 +985,7 @@ body #battle .thanks h2 {
 }
 #battle section#extra-reading p .publication {
     color: #ccd;
-    display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-style: italic;
 }
 
