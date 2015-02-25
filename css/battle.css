@@ -666,6 +666,58 @@ body #battle .thanks h2 {
             transition: opacity 0.3s;
 }
 
+/* Team Cable */
+#battle section#fcc-commissioners {
+    background-color: #5d5d88;
+    background-color: black;
+    font-family: "proxima-nova", sans-serif;
+    margin: 64px 0 0;
+    padding: 16px 25px 64px;
+}
+#battle section#fcc-commissioners h2 {
+
+}
+#battle section#fcc-commissioners p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#fcc-commissioners img {
+    height: 184px;
+    width: 184px;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+
+#battle section#fcc-commissioners .key h3 {
+    border-left: solid 10px #fff;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29px;
+    margin: 0 24px 12px;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+
+#battle section#fcc-commissioners .key h3.cable {
+    border-color: #ee4b4c;
+}
+
+#battle section#fcc-commissioners .key h3.unknown {
+    border-color: #343444;
+}
+
+#battle section#fcc-commissioners .key h3.internet {
+    border-color: #2dbb9b;
+}
+
 /* Team Internet */
 #battle section#team-internet {
     background-color: #313142;
