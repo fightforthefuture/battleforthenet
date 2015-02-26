@@ -1,28 +1,36 @@
 @-webkit-keyframes hueRotate {
-    from {
+    0% {
         -webkit-filter: hue-rotate(0deg);
     }
 
-    to {
-        -webkit-filter: hue-rotate(359deg);
+    50% {
+        -webkit-filter: hue-rotate(90deg);
+    }
+
+    100% {
+        -webkit-filter: hue-rotate(0deg);
     }
 }
 
 @keyframes hueRotate {
-    from {
+    0% {
         filter: hue-rotate(0deg);
     }
 
-    to {
-        filter: hue-rotate(359deg);
+    50% {
+        filter: hue-rotate(90deg);
+    }
+
+    100% {
+        -webkit-filter: hue-rotate(1deg);
     }
 }
 
-#background.hueRotate {
-    animation-duration: 3s;
+#background {
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-name: hueRotate;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 4s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-name: hueRotate;
 }
