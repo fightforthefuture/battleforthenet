@@ -668,8 +668,7 @@ body #battle .thanks h2 {
 
 /* Team Cable */
 #battle section#fcc-commissioners {
-    background-color: #5d5d88;
-    background-color: black;
+    background-color: #27273a;
     font-family: "proxima-nova", sans-serif;
     font-weight: bold;
     margin: 64px 0 0;
@@ -744,7 +743,7 @@ body #battle .thanks h2 {
 
 /* Team Internet */
 #battle section#team-internet {
-    background-color: #313142;
+    background-color: #1f1f2d;
     font-family: "proxima-nova", sans-serif;
     margin: 0px 0 0;
     padding: 16px 25px 64px;
