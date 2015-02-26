@@ -13,7 +13,7 @@ function Fish() {
 Fish.prototype.spawn = function() {
     this.element = document.createElement('div');
     this.element.id = 'fish';
-    this.element.title = 'You won net neutrality!';
+    this.element.title = 'We won!';
     this.element.style.top = '-100px';
     this.element.style.right = (((outerWidth - 860) / 2) + (Math.random() * 64)) + 'px';
 
