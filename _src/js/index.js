@@ -28,23 +28,10 @@ var YourSenators = require('./YourSenators');
 
 // Design enhancements
 (function(){
-    // Start the countdown
-    setTimeout(function() {
-        var countdownDelay = 0;
-        if (!global.fontsAreReady) {
-            countdownDelay = 128;
-        }
-
-        setTimeout(function() {
-            var countdown = new Countdown({
-                date: new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime()
-            });
-
-            new LoadingIcon({
-                target: '#battle .spinner'
-            });
-        }, countdownDelay);
-    }, 128);
+    // Cause baby you're a firework...
+    if (global.isDesktop) {
+        require('./Fireworks');
+    }
 
     // Preload the background
     setTimeout(function() {
@@ -61,9 +48,6 @@ var YourSenators = require('./YourSenators');
             document.body.className += ' loaded slow ';
         }
     }, 256);
-
-    // Enable mobile menu
-    new MobileMenu();
 
     // Let's bust the bfcache
     window.addEventListener('unload', function() {});
