@@ -55,7 +55,7 @@ function launchFrom(x) {
 
 
 function checkIfCanvasIsVisible() {
-    if (scrollY > SCREEN_HEIGHT) {
+    if ((window.scrollY || document.body.scrollTop) > SCREEN_HEIGHT) {
         return false;
     }
 
