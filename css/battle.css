@@ -308,7 +308,7 @@ body #battle #petition {
     background-color: #fff;
     border-radius: 6px;
     color: #505073;
-    margin: 0 auto;
+    margin: 28px auto 0;
     width: 270px;
 }
 
@@ -671,6 +671,7 @@ body #battle .thanks h2 {
     background-color: #5d5d88;
     background-color: black;
     font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
     margin: 64px 0 0;
     padding: 16px 25px 64px;
 }
@@ -685,13 +686,36 @@ body #battle .thanks h2 {
     margin: 36px auto 0;
     max-width: 768px;
 }
-#battle section#fcc-commissioners img {
-    height: 184px;
-    width: 184px;
+#battle section#fcc-commissioners .commissioner {
+    display: inline-block;
     opacity: 0;
+    position: relative;
 
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s;
+}
+#battle section#fcc-commissioners .commissioner .name {
+    bottom: 12px;
+    left: 12px;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+}
+#battle section#fcc-commissioners .commissioner .name .first {
+    font-size: 16px;
+    padding: 0 0 2px;
+}
+#battle section#fcc-commissioners .commissioner .name .last {
+    font-size: 20px;
+}
+#battle section#fcc-commissioners .commissioner img {
+    height: 184px;
+    width: 184px;
+    vertical-align: bottom;
+}
+
+#battle section#fcc-commissioners .key {
+    margin: 0 0 16px;
 }
 
 #battle section#fcc-commissioners .key h3 {

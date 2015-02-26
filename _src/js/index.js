@@ -1,4 +1,3 @@
-var ActionBar = require('./ActionBar');
 var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
@@ -29,31 +28,6 @@ var YourSenators = require('./YourSenators');
 
 // Design enhancements
 (function(){
-    if (global.experiments.alternateHeadline1) {
-        document.getElementById('battle').className += ' experiment-alternate-headline-1 ';
-        document.querySelector('#battle h1').textContent = '...Until the most important FCC vote of our lifetime.';
-    }
-
-    if (global.experiments.alternateExplanation1) {
-        document.querySelector('#battle p').textContent = 'The FCC votes February 26th. They\'re planning to *prohibit* ISPs like Comcast from messing with the sites you love. But Comcast\'s friends in Congress want to block the FCC, with fake legislation written... by Comcast. Tell Congress: "Back off, and let the FCC do net neutrality right."';
-    }
-
-    if (global.experiments.alternateExplanation2) {
-        document.querySelector('#battle p').textContent = 'The FCC is about to listen to the voices of over 4 million Americans and pass strong net neutrality. But Comcast\'s friends in Congress are threatening to block it. Can you contact Congress now?';
-    }
-
-    if (global.experiments.removeExplanation) {
-        document.querySelector('#battle p').textContent = '';
-    }
-
-    if (global.experiments.removeTimer) {
-        document.getElementById('battle').className += ' experiment-remove-timer ';
-    }
-
-    if (global.experiments.removeHeadline) {
-        document.querySelector('#battle h1').textContent = '';
-    }
-
     // Start the countdown
     setTimeout(function() {
         var countdownDelay = 0;
@@ -146,11 +120,6 @@ var YourSenators = require('./YourSenators');
                 petitionForm.updateCTA('WRITE YOUR SENATORS');
             }
 
-            // Experiment: Remove Letter Preview
-            if (global.experiments.removeLetterPreview) {
-                document.getElementById('battle').className += ' experiment-remove-letter-preview ';
-            }
-
             // Rotate organizations
             new OrganizationRotation();
 
@@ -198,21 +167,6 @@ var YourSenators = require('./YourSenators');
                 });
             }
         });
-
-        if (
-            // Experiment: Remove ActionBar
-            !global.experiments.removeActionBar
-        ) {
-            new AJAX({
-                url: 'templates/ActionBar.html' + buster,
-                success: function(e) {
-                    new ActionBar({
-                        target: '.actionbar-target',
-                        template: e.target.responseText
-                    });
-                }
-            });
-        }
 
         new AJAX({
             url: 'templates/ShareButtons.html' + buster,

@@ -153,13 +153,21 @@ section.political .cash .spending.internet {
     width: 30%;
 }
 
-section.political select {
-    font-size: 30px;
-    color: #000;
-    padding: 10px;
-    cursor: pointer;
-    background: #c7bdd5;
+section.political h3 {
+    display: inline-block;
+    padding: 0 12px 0;
 }
+
+section.political select {
+    background: #c7bdd5;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 12px 0 0;
+    padding: 10px;
+}
+
+/*
 
 section.political select:hover {
     background: #eee;
@@ -167,7 +175,7 @@ section.political select:hover {
 
 section.political select option {
     color: #000;
-}
+}*/
 
 section.political .isotope {
     margin: 28px auto 0;
