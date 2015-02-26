@@ -33,6 +33,10 @@ var YourSenators = require('./YourSenators');
         require('./Fireworks');
     }
 
+    if (location.href.match('hue_rotate=1')) {
+        document.querySelector('#background').className += 'hueRotate';
+    }
+
     // Preload the background
     setTimeout(function() {
         new ImagePreloader('./images/Imagesmall.jpg', function() {
