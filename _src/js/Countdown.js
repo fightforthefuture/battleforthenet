@@ -72,7 +72,7 @@ Countdown.prototype.tick = function() {
     }
 
     if (difference === 0) {
-        document.querySelector('#battle h1').textContent = 'The most important FCC vote of our lifetime just happened.';
+        document.querySelector('#battle h1').textContent = 'The most important FCC vote of our lifetime is happening now.';
         this.destroy();
         return;
     }
