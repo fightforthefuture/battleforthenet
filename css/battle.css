@@ -1,3 +1,32 @@
+@-webkit-keyframes hueRotate {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(359deg);
+    }
+}
+
+@keyframes hueRotate {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(359deg);
+    }
+}
+
+#background.hueRotate {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: hueRotate;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: hueRotate;
+}
+
 body.loaded .mobile-navigation {
     opacity: 1;
 }
@@ -167,67 +196,6 @@ body.loaded header nav a {
 
 
 
-#battle .timer .card {
-    -webkit-transition: background-color 0.6s ease-out;
-            transition: background-color 0.6s ease-out;
-}
-
-#battle .timer .card > div {
-    -webkit-transition: opacity 0.4s ease-out;
-            transition: opacity 0.4s ease-out;
-}
-
-#battle .timer .card::after,
-#battle .timer .card::before {
-    background-color: #201b25;
-    border-radius: 6px;
-    content: '';
-    height: 12px;
-    position: absolute;
-    top: 38px;
-    width: 12px;
-}
-
-#battle .timer .card::after {
-    right: -8px;
-}
-
-#battle .timer .card::before {
-    left: -8px;
-}
-
-#battle .timer .card .number {
-    font-size: 52px;
-    font-weight: bold;
-    line-height: 52px;
-    padding-top: 14px;
-}
-
-body.svg #battle .timer .card .number {
-    background: -webkit-linear-gradient(#fff 64%, #c9c9e6 66%, #dedef0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-#battle .timer .card .type {
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-
-
-/* Experiment: Remove Timer */
-#battle.experiment-remove-timer .timer {
-    display: none;
-}
-
-#battle.experiment-remove-timer .spinner {
-    display: none;
-}
-
-
-
 body.slow .tk-bebas-neue,
 body.slow .tk-proxima-nova {
     font-family: arial, sans-serif !important;
@@ -253,55 +221,6 @@ body.loaded #battle p.form-wrapper {
 
 body.loaded #battle p.form-wrapper.loading {
     opacity: 0;
-}
-
-body.typekit #battle .timer .card .number {
-    font-size: 70px;
-    font-weight: normal;
-    line-height: 60px;
-    padding-top: 8px;
-}
-
-body.typekit #battle .timer .card .type {
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-#battle .timer.loaded .tagline {
-    opacity: 1;
-}
-
-
-#battle .timer.loaded .card {
-    background-color: rgba(93, 93, 122, 1);
-}
-
-#battle .timer.loaded .card > div {
-    opacity: 1;
-
-    -webkit-transition-delay: 0.1s;
-            transition-delay: 0.1s;
-}
-
-#battle .timer .card.hours > div {
-    -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
-}
-
-#battle .timer .card.minutes > div {
-    -webkit-transition-delay: 0.3s;
-            transition-delay: 0.3s;
-}
-
-#battle .timer .card.seconds > div {
-    -webkit-transition-delay: 0.4s;
-            transition-delay: 0.4s;
-}
-
-/* Experiment: Alternate Headline 1 */
-#battle.experiment-alternate-headline-1 .timer .tagline {
-    display: none;
 }
 
 
@@ -418,7 +337,7 @@ body #battle #petition {
     background-color: #fff;
     border-radius: 6px;
     color: #505073;
-    margin: 0 auto;
+    margin: 28px auto 0;
     width: 270px;
 }
 
@@ -461,7 +380,7 @@ body #battle #petition button {
     color: #fff;
     cursor: pointer;
     font-family: "proxima-nova", sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 43px;
     margin: 6px 0 8px;
@@ -745,7 +664,7 @@ body #battle .thanks h2 {
     font-weight: 300;
     line-height: 32px;
     margin: 36px auto 0;
-    max-width: 768px;
+    max-width: 780px;
 }
 
 /* Team Cable */
@@ -776,9 +695,84 @@ body #battle .thanks h2 {
             transition: opacity 0.3s;
 }
 
+/* Team Cable */
+#battle section#fcc-commissioners {
+    background-color: #27273a;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+    margin: 64px 0 0;
+    padding: 16px 25px 64px;
+}
+#battle section#fcc-commissioners h2 {
+
+}
+#battle section#fcc-commissioners p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#fcc-commissioners .commissioner {
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+
+    -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+}
+#battle section#fcc-commissioners .commissioner .name {
+    bottom: 12px;
+    left: 12px;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+}
+#battle section#fcc-commissioners .commissioner .name .first {
+    font-size: 16px;
+    padding: 0 0 2px;
+}
+#battle section#fcc-commissioners .commissioner .name .last {
+    font-size: 20px;
+}
+#battle section#fcc-commissioners .commissioner img {
+    height: 184px;
+    width: 184px;
+    vertical-align: bottom;
+}
+
+#battle section#fcc-commissioners .key {
+    margin: 0 0 16px;
+}
+
+#battle section#fcc-commissioners .key h3 {
+    border-left: solid 10px #fff;
+    color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29px;
+    margin: 0 24px 12px;
+    padding-left: 10px;
+    text-transform: uppercase;
+}
+
+#battle section#fcc-commissioners .key h3.cable {
+    border-color: #ee4b4c;
+}
+
+#battle section#fcc-commissioners .key h3.unknown {
+    border-color: #343444;
+}
+
+#battle section#fcc-commissioners .key h3.internet {
+    border-color: #2dbb9b;
+}
+
 /* Team Internet */
 #battle section#team-internet {
-    background-color: #313142;
+    background-color: #1f1f2d;
     font-family: "proxima-nova", sans-serif;
     margin: 0px 0 0;
     padding: 16px 25px 64px;
@@ -1138,102 +1132,6 @@ body.privacy section.team-internet p {
 body.privacy section.team-internet.fight-for-the-future {
   background-color: #1c1c25;
 }
-
-
-
-
-
-/* Spinner */
-@-webkit-keyframes timer-spinner {
-    0% {
-        -webkit-transform: rotate(0deg) scale(0.6);
-                transform: rotate(0deg) scale(0.6);
-    }
-    100% {
-        -webkit-transform: rotate(360deg) scale(0.6);
-                transform: rotate(360deg) scale(0.6);
-    }
-}
-@keyframes timer-spinner {
-    0% {
-        -webkit-transform: rotate(0deg) scale(0.6);
-                transform: rotate(0deg) scale(0.6);
-    }
-    100% {
-        -webkit-transform: rotate(360deg) scale(0.6);
-                transform: rotate(360deg) scale(0.6);
-    }
-}
-#battle .timer-spinner {
-    height: 200px;
-    margin: 0 auto;
-    width: 200px;
-    -webkit-animation: timer-spinner 3s infinite linear;
-            animation: timer-spinner 3s infinite linear;
-
-    -webkit-transform: scale(0.6);
-            transform: scale(0.6);
-}
-#battle .timer-spinner > div {
-    background: #747499;
-    border-radius: 6px;
-    height: 40px;
-    left: 94px;
-    position: absolute;
-    top: 80px;
-    width: 12px;
-}
-#battle .timer-spinner > div:nth-of-type(1) {
-    opacity: 0.1;
-    -webkit-transform:rotate(0deg) translate(0,-60px);
-            transform:rotate(0deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(2) {
-    opacity: 0.2;
-    -webkit-transform:rotate(30deg) translate(0,-60px);
-            transform:rotate(30deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(3) {
-    opacity: 0.3;
-    -webkit-transform:rotate(60deg) translate(0,-60px);
-            transform:rotate(60deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(4) {
-    opacity: 0.4;
-    -webkit-transform:rotate(90deg) translate(0,-60px);
-            transform:rotate(90deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(5) {
-    opacity: 0.5;
-    -webkit-transform:rotate(120deg) translate(0,-60px);
-            transform:rotate(120deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(6) {
-    opacity: 0.6;
-    -webkit-transform:rotate(150deg) translate(0,-60px);
-            transform:rotate(150deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(7) {
-    opacity: 0.7;
-    -webkit-transform:rotate(180deg) translate(0,-60px);
-            transform:rotate(180deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(8) {
-    opacity: 0.8;
-    -webkit-transform:rotate(210deg) translate(0,-60px);
-            transform:rotate(210deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(9) {
-    opacity: 0.9;
-    -webkit-transform:rotate(240deg) translate(0,-60px);
-            transform:rotate(240deg) translate(0,-60px);
-}
-#battle .timer-spinner > div:nth-of-type(10) {
-    opacity: 1.0;
-    -webkit-transform:rotate(270deg) translate(0,-60px);
-            transform:rotate(270deg) translate(0,-60px);
-}
-
 
 .overlay {
     position: fixed;
@@ -1668,3 +1566,36 @@ a.shareBtn.twitter {
   opacity: 0.9;
 }
 
+/* Fish */
+#fish {
+    position: absolute;
+    -webkit-transition: all 3s;
+            transition: all 3s;
+
+    -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+            transform: scale(0.5);
+}
+
+#fish .body {
+    background-image: url(../images/fish/body.png);
+    height: 95px;
+    position: absolute;
+    width: 79px;
+    z-index: 1;
+}
+
+#fish .tail {
+    background-image: url(../images/fish/tail.png);
+    height: 36px;
+    position: absolute;
+    left: 76px;
+    top: 44px;
+    width: 17px;
+}
+
+@media screen and (max-width: 859px) {
+    #fish {
+        opacity: 0;
+    }
+}
