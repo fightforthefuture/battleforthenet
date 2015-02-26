@@ -1566,3 +1566,36 @@ a.shareBtn.twitter {
   opacity: 0.9;
 }
 
+/* Fish */
+#fish {
+    position: absolute;
+    -webkit-transition: all 3s;
+            transition: all 3s;
+
+    -webkit-transform: scale(0.5);
+        -ms-transform: scale(0.5);
+            transform: scale(0.5);
+}
+
+#fish .body {
+    background-image: url(../images/fish/body.png);
+    height: 95px;
+    position: absolute;
+    width: 79px;
+    z-index: 1;
+}
+
+#fish .tail {
+    background-image: url(../images/fish/tail.png);
+    height: 36px;
+    position: absolute;
+    left: 76px;
+    top: 44px;
+    width: 17px;
+}
+
+@media screen and (max-width: 859px) {
+    #fish {
+        opacity: 0;
+    }
+}

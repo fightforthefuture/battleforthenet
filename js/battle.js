@@ -4,6 +4,7 @@ var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var DetectFeatures = require('./DetectFeatures');
+var Fish = require('./Fish');
 var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -33,6 +34,7 @@ var YourSenators = require('./YourSenators');
     // Cause baby you're a firework...
     if (global.isDesktop) {
         require('./Fireworks');
+        new Fish();
     }
 
     if (location.href.match('hue_rotate=1')) {
@@ -274,7 +276,7 @@ var YourSenators = require('./YourSenators');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js","./Fireworks":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Fireworks.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js","./Modals":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Modals.js","./MotherShip":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MotherShip.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js","./ScrollDetection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ScrollDetection.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js","./TeamInternetSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\TeamInternetSection.js","./YourSenators":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\YourSenators.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
+},{"./AJAX":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js","./Chartbeat":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Chartbeat.js","./Countdown":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Countdown.js","./DetectFeatures":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\DetectFeatures.js","./Fireworks":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Fireworks.js","./Fish":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Fish.js","./GoogleAnalytics":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GoogleAnalytics.js","./ImagePreloader":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ImagePreloader.js","./LoadingIcon":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\LoadingIcon.js","./MobileMenu":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MobileMenu.js","./Modals":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Modals.js","./MotherShip":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\MotherShip.js","./OrganizationRotation":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\OrganizationRotation.js","./PetitionForm":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\PetitionForm.js","./Polyfills":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Polyfills.js","./Queue":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Queue.js","./ScrollDetection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\ScrollDetection.js","./SimpleSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\SimpleSection.js","./TeamInternetSection":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\TeamInternetSection.js","./YourSenators":"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\YourSenators.js"}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\AJAX.js":[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -586,7 +588,7 @@ function launchFrom(x) {
 
 
 function checkIfCanvasIsVisible() {
-    if (scrollY > SCREEN_HEIGHT) {
+    if ((window.scrollY || document.body.scrollTop) > SCREEN_HEIGHT) {
         return false;
     }
 
@@ -821,6 +823,53 @@ Rocket.prototype.render = function(c) {
 
     c.restore();
 };
+
+},{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\Fish.js":[function(require,module,exports){
+function Fish() {
+    this.spawn();
+
+    this.moveTail = this.moveTail.bind(this);
+    this.moveTailDelay = 160;
+    this.moveTailPhase = 0;
+    this.moveTailInterval = setInterval(this.moveTail, this.moveTailDelay);
+
+    this.moveFishRandomly = this.moveFishRandomly.bind(this);
+    this.moveFishRandomlyInterval = setInterval(this.moveFishRandomly, 6400);
+}
+
+Fish.prototype.spawn = function() {
+    this.element = document.createElement('div');
+    this.element.id = 'fish';
+    this.element.title = 'You won net neutrality!';
+    this.element.style.top = '-100px';
+    this.element.style.right = (((outerWidth - 860) / 2) + (Math.random() * 64)) + 'px';
+
+    this.body = document.createElement('div');
+    this.body.className = 'body';
+    this.element.appendChild(this.body);
+
+    this.tail = document.createElement('div');
+    this.tail.className = 'tail';
+    this.element.appendChild(this.tail);
+
+    document.body.appendChild(this.element);
+};
+
+Fish.prototype.moveFishRandomly = function() {
+    this.element.style.right = (((outerWidth - 860) / 2) + (Math.random() * 64)).toFixed(4) + 'px';
+    this.element.style.top = (94 + (Math.random() * 32)).toFixed(4) + 'px';
+};
+
+Fish.prototype.moveTail = function() {
+    this.moveTailPhase++;
+    if (this.moveTailPhase > 2) {
+        this.moveTailPhase = 0;
+    }
+
+    this.tail.style.left = (76 - (this.moveTailPhase * 2)) + 'px';
+};
+
+module.exports = Fish;
 
 },{}],"c:\\Users\\Chris\\projects\\battleforthenet-www\\_src\\js\\GUID.js":[function(require,module,exports){
 function GUID() {

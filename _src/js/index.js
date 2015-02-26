@@ -2,6 +2,7 @@ var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var DetectFeatures = require('./DetectFeatures');
+var Fish = require('./Fish');
 var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -31,6 +32,7 @@ var YourSenators = require('./YourSenators');
     // Cause baby you're a firework...
     if (global.isDesktop) {
         require('./Fireworks');
+        new Fish();
     }
 
     if (location.href.match('hue_rotate=1')) {
