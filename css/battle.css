@@ -217,11 +217,6 @@ body.typekit #battle p {
     font-size: 20px;
 }
 
-body.typekit #battle a {
-    color: yellow;
-    text-decoration: underline;
-}
-
 body.loaded #battle h1,
 body.loaded #battle p {
     opacity: 1;
