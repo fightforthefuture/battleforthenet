@@ -4,8 +4,8 @@ jQuery(document).ready(function($){
 		//change scaleSpeed if you want to change the speed of the scale effect
 		scaleSpeed = 0.0,
 		//change opacitySpeed if you want to change the speed of opacity reduction effect
-		opacitySpeed = 1; 
-	
+		opacitySpeed = 1;
+
 	//update this value if you change this breakpoint in the style.css file (or _layout.scss if you use SASS)
 	var MQ = 1170;
 
@@ -15,14 +15,31 @@ jQuery(document).ready(function($){
 	});
 
 	//bind the scale event to window scroll if window width > $MQ (unbind it otherwise)
+	var listening = false;
 	function triggerAnimation(){
-		if($(window).width()>= MQ) {
+		if($(window).width() >= MQ) {
+			if (listening) {
+				return;
+			}
+
 			$(window).on('scroll', function(){
 				//The window.requestAnimationFrame() method tells the browser that you wish to perform an animation- the browser can optimize it so animations will be smoother
 				window.requestAnimationFrame(animateIntro);
 			});
+
+			listening = true;
 		} else {
+			if (!listening) {
+				return;
+			}
+
 			$(window).off('scroll');
+
+			introSection.css({
+				opacity: 1
+			});
+
+			listening = false;
 		}
 	}
 	//assign a scale transformation to the introSection element and reduce its opacity
@@ -56,8 +73,8 @@ jQuery(document).ready(function($){
 		//change scaleSpeed if you want to change the speed of the scale effect
 		scaleSpeed = 0.1,
 		//change opacitySpeed if you want to change the speed of opacity reduction effect
-		opacitySpeed = 1; 
-	
+		opacitySpeed = 1;
+
 	//update this value if you change this breakpoint in the style.css file (or _layout.scss if you use SASS)
 	var MQ = 1170;
 
@@ -67,14 +84,31 @@ jQuery(document).ready(function($){
 	});
 
 	//bind the scale event to window scroll if window width > $MQ (unbind it otherwise)
+	var listening = false;
 	function triggerAnimation(){
-		if($(window).width()>= MQ) {
+		if($(window).width() >= MQ) {
+			if (listening) {
+				return;
+			}
+
 			$(window).on('scroll', function(){
 				//The window.requestAnimationFrame() method tells the browser that you wish to perform an animation- the browser can optimize it so animations will be smoother
 				window.requestAnimationFrame(animateIntro);
 			});
+
+			listening = true;
 		} else {
+			if (!listening) {
+				return;
+			}
+
 			$(window).off('scroll');
+
+			introSection.css({
+				opacity: 1
+			});
+
+			listening = false;
 		}
 	}
 	//assign a scale transformation to the introSection element and reduce its opacity
@@ -108,8 +142,8 @@ jQuery(document).ready(function($){
 		//change scaleSpeed if you want to change the speed of the scale effect
 		scaleSpeed = 0.3,
 		//change opacitySpeed if you want to change the speed of opacity reduction effect
-		opacitySpeed = 0.0; 
-	
+		opacitySpeed = 0.0;
+
 	//update this value if you change this breakpoint in the style.css file (or _layout.scss if you use SASS)
 	var MQ = 1170;
 
@@ -119,14 +153,31 @@ jQuery(document).ready(function($){
 	});
 
 	//bind the scale event to window scroll if window width > $MQ (unbind it otherwise)
+	var listening = false;
 	function triggerAnimation(){
-		if($(window).width()>= MQ) {
+		if($(window).width() >= MQ) {
+			if (listening) {
+				return;
+			}
+
 			$(window).on('scroll', function(){
 				//The window.requestAnimationFrame() method tells the browser that you wish to perform an animation- the browser can optimize it so animations will be smoother
 				window.requestAnimationFrame(animateIntro);
 			});
+
+			listening = true;
 		} else {
+			if (!listening) {
+				return;
+			}
+
 			$(window).off('scroll');
+
+			introSection.css({
+				opacity: 1
+			});
+
+			listening = false;
 		}
 	}
 	//assign a scale transformation to the introSection element and reduce its opacity
