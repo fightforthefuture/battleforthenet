@@ -1,0 +1,53 @@
+
+
+body{
+
+  background-color:#2e2e40;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  
+}
+
+
+.header{
+height: auto 100%;
+background: transparent;
+}
+
+.container{
+margin: 0px auto;
+width: 70%;
+	
+}
+
+.containerone{
+margin: 0px auto;
+width: 70%;
+}
+
+.containerone img{
+width: 100%;
+margin-top: 5%;	
+}
+
+
+.containertwo{
+margin: 0px auto;
+width: 70%;
+
+}
+.container img{
+width: 100%;
+
+}
+
+.containertwo img{
+width: 100%;
+margin-bottom: -40%;
+margin-top: 5%;
+}
+
+.parallax-window {
+    background: transparent;
+    padding-bottom: 350px;
+}
