@@ -703,7 +703,7 @@ body #battle .thanks h2 {
             transition: opacity 0.3s;
 }
 
-/* Team Cable */
+/* FCC Section */
 #battle section#fcc-commissioners {
     background-color: #27273a;
     font-family: "proxima-nova", sans-serif;
@@ -776,6 +776,27 @@ body #battle .thanks h2 {
 
 #battle section#fcc-commissioners .key h3.internet {
     border-color: #2dbb9b;
+}
+
+
+/* Grumpy Cat Section */
+#battle section#grumpy-cat {
+    background-color: #1b1b24;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+    padding: 16px 25px 64px;
+}
+#battle section#grumpy-cat h2 {}
+#battle section#grumpy-cat p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#grumpy-cat img {
+    max-width: 100%;
 }
 
 /* Team Internet */
