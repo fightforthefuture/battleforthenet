@@ -211,21 +211,25 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/TeamInternetSection.html' + buster,
-                success: function(e) {
-                    new TeamInternetSection({
-                        target: '.team-internet-target',
-                        template: e.target.responseText
-                    });
+        if (global.isDesktop) {
+            queue.push(function() {
+                new AJAX({
+                    url: 'templates/PoliticalScoreboardSection.html' + buster,
+                    success: function(e) {
+                        new SimpleSection({
+                            target: '.scoreboard-target',
+                            template: e.target.responseText
+                        });
 
-                    if (queue.length > 0) {
-                        queue.shift()();
+                        loadJS('js/scoreboard.js' + buster, true);
+
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
                     }
-                }
+                });
             });
-        });
+        }
 
         queue.push(function() {
             new AJAX({
@@ -274,26 +278,6 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
-
-        if (global.isDesktop) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/PoliticalScoreboardSection.html' + buster,
-                    success: function(e) {
-                        new SimpleSection({
-                            target: '.scoreboard-target',
-                            template: e.target.responseText
-                        });
-
-                        loadJS('js/scoreboard.js' + buster, true);
-
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
-                    }
-                });
-            });
-        }
 
         new ScrollDetection({
             queue: queue
