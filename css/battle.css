@@ -799,6 +799,27 @@ body #battle .thanks h2 {
     max-width: 100%;
 }
 
+
+/* How We Won Section */
+#battle section#how-we-won {
+    background-color: #1b1b24;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+    padding: 16px 25px 64px;
+}
+#battle section#how-we-won h2 {}
+#battle section#how-we-won p {
+    color: #eee;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    margin: 36px auto 0;
+    max-width: 768px;
+}
+#battle section#how-we-won img {
+    max-width: 100%;
+}
+
 /* Team Internet */
 #battle section#team-internet {
     background-color: #1f1f2d;

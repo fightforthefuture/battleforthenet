@@ -197,10 +197,10 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/GrumpyCatSection.html' + buster,
+                url: 'templates/HowWeWonSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
-                        target: '.grumpy-cat-target',
+                        target: '.how-we-won-target',
                         template: e.target.responseText
                     });
 
