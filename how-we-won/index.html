@@ -1,67 +1,217 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="author" content="name" />
-  <meta name="publisher" content="name" />
-  <meta name="distribution" content="global" />
-  <meta name="language" content="en-us" />
-  <meta name="revisit-after" content="5 days" />
-  	<script src="js/modernizr.js"></script> <!-- Modernizr -->
-<script src="" type="text/javascript">
+    <title>HOW WE WON &lt;3</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta property="og:title" content="The people beat Comcast and won net neutrality."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.battleforthenet.com/how-we-won/"/>
+    <meta property="og:image" content="https://www.battleforthenet.com/images/share/wewon.png"/>
+    <meta property="og:site_name" content="Battle For The Net"/>
+    <meta property="og:description" content="Learn how."/>
 
-$( document ).ready(function() {
- 
-	$('.parallax-window').parallax({
-	naturalWidth: '100%'
-	
-	}
-	);
- 
-});
-</script>
+    <style type="text/css">
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+           v2.0 | 20110126
+           License: none (public domain)
+        */
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+        body { line-height: 1; }
+        ol, ul { list-style: none; }
+        blockquote, q { quotes: none; }
+        blockquote:before, blockquote:after,
+        q:before, q:after { content: ''; content: none; }
+        table { border-collapse: collapse; border-spacing: 0; }
+        /* --- end public domain code --- */
+        .clearMe {display: block; height: 0; clear: both; font-size: 0;}
+        .clear:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+        .clear {display: inline-block;}
+        /* hide IE mac \*/
+        * html .clear {height: 1%;}
+        .clear {display: block;}
+        /* */
+        header {
+            text-align: center;
+            background: url(images/avatars.jpg);
+            background-size: 2000px auto;
+            padding: 40px 0px;
+        }
+        header img {
+            max-width: 100%;
+        }
+        body {
+            background: url(images/stars.jpg);
+            background-attachment: fixed;
+        }
+        section {
+            text-align: center;
+            padding: 40px 0px;
+        }
+        section img {
+            max-width: 100%;
+        }
+        div.logos {
+            text-align: center;
+            background: white;
+        }
+        div.logos img {
+            max-width: 100%;
+        }
+        footer {
+            background: #12121c;
+            padding: 145px 0px;
+            text-align: center;
+        }
+        footer img {
+            max-width: 100%;
+        }
+        .sharing-buttons {
+          margin: 0;
+          padding: 0;
+        }
 
-  <title>We Won Net Neutrality!</title>
+        @media screen and (max-width: 459px) {
+            .sharing-buttons {
+              display: none;
+            }
+        }
 
+        .sharing-buttons li a span {
+            display: none;
+        }
 
-  <style type="text/css" media="screen">
-	@import url( css/reset.css );
-  @import url( css/style.css );
-  </style>
-</head> <!-- close head -->
+        .share-buttons-target .sharing-buttons {
+          left: 0px;
+          bottom: 0px;
+          position: fixed;
+          z-index: 99;
+          width: 300px;
+          text-align: center;
+          background: rgba(0, 0, 0, 0);
+          /* Old browsers */
+          background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+          /* FF3.6+ */
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, #000000));
+          /* Chrome,Safari4+ */
+          background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+          /* Chrome10+,Safari5.1+ */
+          background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+          /* Opera 11.10+ */
+          background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 100%);
+          /* IE10+ */
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
+          /* W3C */
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+          /* IE6-9 */
+        }
+        @media screen and (min-width: 460px) {
+          .share-buttons-target .sharing-buttons {
+            background: none;
+            bottom: auto;
+            left: 0;
+            position: fixed;
+            text-align: auto;
+            top: calc((100% - 234px) / 2);
+            width: auto;
+            z-index: 99;
+          }
+        }
+        .sharing-buttons li {
+          font-weight: bold;
+          font-size: 0.8em;
+          list-style-type: none;
+          margin: 0;
+          text-align: left;
+          padding: 0px 5px 0px 5px;
+          display: inline-block;
+        }
+        @media screen and (min-width: 460px) {
+          .sharing-buttons li {
+            display: block;
+            padding: 5px 5px 5px 0;
+          }
+        }
+        .sharing-buttons li a {
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          color: white;
+          display: inline-block;
+          height: 100%;
+          padding: 7px 7px 3px;
+          position: relative;
+          text-decoration: none;
+          -webkit-transition: opacity 0.3s;
+                  transition: opacity 0.3s;
+          width: 100%;
+        }
+        .sharing-buttons li a span {
+            position: absolute;
+            top: 7px;
+        }
+        @media screen and (min-width: 460px) {
+          .sharing-buttons li a {
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+        }
+        .sharing-buttons li a img {
+          border: none;
+          width: 16px;
+          height: 16px;
+          opacity: 0;
+          -webkit-transition: opacity 0.6s;
+                  transition: opacity 0.6s;
+        }
+        .sharing-buttons li a.facebook {
+          background: #3C5A96;
+        }
+        .sharing-buttons li a.googleplus {
+          background: #DB585A;
+        }
+        .sharing-buttons li a.reddit {
+          background: #FF4500;
+        }
+        .sharing-buttons li a.pressthis {
+          background: #1e8cbe;
+        }
+        .sharing-buttons li a.tumblr {
+          background: #32506E;
+        }
+        .sharing-buttons li a.twitter {
+          background: #59ADEB;
+        }
+        .sharing-buttons li a:hover {
+          opacity: 0.9;
+        }
+    </style>
+</head>
 <body>
-
-<div class="parallax-window" data-parallax="scroll" data-image-src="images/para.jpg">
-<div class="header" id="header">
-
-		<div class="containerone" >
-			
-			<img src="images/header.png" id="image"  align="middle" alt="" />
-		
-		
-		</div>
-
-</div>
-
-
-<div class="containertwo" >
-	
-	<img src="images/numberss.png" class="numbers" align="middle" alt="" />
-	
-</div>
-
-
-</div>
-<!--<div class="container" >
-
-	<img src="images/1.jpg" align="middle" alt="" />
-	
-</div>-->
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
-<script src="js/parallax.js"></script>
-</body> <!-- close body -->
-</html> <!-- close html -->
+<div class="share-buttons-target">
+    <ul class="sharing-buttons">
+        <li>
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/how-we-won" target="_blank"><img style="opacity: 1;" onload="this.style.opacity=1;" alt="" src="../images/share/facebook.png">
+                <span class="text">&nbsp; Share on Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a class="twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&amp;text=The%20people%20beat%20Comcast%20and%20won%20net%20neutrality!%20Learn%20how%3A%20battleforthenet.com%2Fhow-we-won" target="_blank">
+                <img style="opacity: 1;" onload="this.style.opacity=1;" alt="" src="../images/share/twitter.png"> <span class="text">&nbsp; Share on Twitter</span>
+            </a>
+        </li>     <li>         <a class="tumblr" href="http://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.battleforthenet.com" target="_blank">             <img style="opacity: 1;" onload="this.style.opacity=1;" alt="" src="../images/share/tumblr.png"> <span class="text">&nbsp; Share on Tumblr</span>         </a>     </li>     <li>         <a class="reddit" href="http://www.reddit.com/r/blog/comments/2sjkf0/join_us_in_a_final_push_for_net_neutrality_its_as/?submit_url=http%3A%2F%2Fwww.redditblog.com%2F2015%2F01%2Fjoin-us-in-final-push-for-net.html&amp;already_submitted=true" target="_blank">             <img style="opacity: 1;" onload="this.style.opacity=1;" alt="" src="../images/share/reddit.png"> <span class="text">&nbsp; Share on Reddit</span>         </a>     </li>     <li>         <a class="pressthis" href="http://www.addtoany.com/add_to/wordpress?linkurl=https%3A%2F%2Fbattleforthenet.com%2F&amp;linkname=Battle%20For%20The%20Net&amp;linknote=If%20you%20woke%20up%20tomorrow%2C%20and%20your%20internet%20looked%20like%20this%2C%20what%20would%20you%20do%3F%20%0AImagine%20all%20your%20favorite%20websites%20taking%20forever%20to%20load%2C%20while%20you%20get%20annoying%20notifications%20from%20your%20ISP%20suggesting%20you%20switch%20to%20one%20of%20their%20approved%20%E2%80%9CFast%20Lane%E2%80%9D%20sites.%0AThink%20about%20what%20we%20would%20lose%3A%20all%20the%20weird%2C%20alternative%2C%20interesting%2C%20and%20enlightening%20stuff%20that%20makes%20the%20Internet%20so%20much%20cooler%20than%20mainstream%20Cable%20TV.%20What%20if%20the%20only%20news%20sites%20you%20could%20reliably%20connect%20to%20were%20the%20ones%20that%20had%20deals%20with%20companies%20like%20Comcast%20and%20Verizon%3F%0AOn%20September%2010th%2C%20just%20a%20few%20days%20before%20the%20FCC%E2%80%99s%20comment%20deadline%2C%20public%20interest%20organizations%20are%20issuing%20an%20open%2C%20international%20call%20for%20websites%20and%20internet%20users%20to%20unite%20for%20an%20%E2%80%9CInternet%20Slowdown%E2%80%9D%20to%20show%20the%20world%20what%20the%20web%20would%20be%20like%20if%20Team%20Cable%20gets%20their%20way%20and%20trashes%20net%20neutrality.%20Net%20neutrality%20is%20hard%20to%20explain%2C%20so%20our%20hope%20is%20that%20this%20action%20will%20help%20SHOW%20the%20world%20what%E2%80%99s%20really%20at%20stake%20if%20we%20lose%20the%20open%20Internet.%0AIf%20you%E2%80%99ve%20got%20a%20website%2C%20blog%20or%20tumblr%2C%20get%20the%20code%20to%20join%20the%20%23InternetSlowdown%20here%3A%20https%3A%2F%2Fbattleforthenet.com%2Fsept10th%0AEveryone%20else%2C%20here%E2%80%99s%20a%20quick%20list%20of%20things%20you%20can%20do%20to%20help%20spread%20the%20word%20about%20the%20slowdown%3A%20http%3A%2F%2Ftumblr.fightforthefuture.org%2Fpost%2F96020972118%2Fbe-a-part-of-the-great-internet-slowdown%20%20%0A%0AGet%20creative!%20Don%E2%80%99t%20let%20us%20tell%20you%20what%20to%20do.%20See%20you%20on%20the%20net%20September%2010th!" target="_blank">             <img style="opacity: 1;" onload="this.style.opacity=1;" alt="" src="../images/share/pressthis.png"> <span class="text">&nbsp; Press This</span>         </a>     </li>     <li>         <a class="googleplus" href="https://plus.google.com/share?url=https%3A%2F%2Fbattleforthenet.com" target="_blank">             <img style="opacity: 1;" onload="this.style.opacity=1;" alt="" src="../images/share/google-plus.png"> <span class="text">&nbsp; Share on Google+</span>         </a>     </li> </ul>
+    </div>
+    <header><img src="images/header.png"></header>
+    <section><img src="images/numberss.png"><br/><img src="images/timeline.png"></section>
+    <div class="logos"><img src="images/logos.png"></div>
+    <footer><a href="/"><img src="images/thankyou.png"></a></footer>
+</body>
+</html>

@@ -2,7 +2,6 @@ var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var DetectFeatures = require('./DetectFeatures');
-var Fish = require('./Fish');
 var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -29,12 +28,6 @@ var YourSenators = require('./YourSenators');
 
 // Design enhancements
 (function(){
-    // Cause baby you're a firework...
-    if (global.isDesktop) {
-        require('./Fireworks');
-        new Fish();
-    }
-
     // Preload the background
     setTimeout(function() {
         new ImagePreloader('./images/Imagesmall.jpg', function() {
@@ -135,10 +128,10 @@ var YourSenators = require('./YourSenators');
 
     function loadMoreSections() {
         new AJAX({
-            url: 'templates/FCCSection.html' + buster,
+            url: 'templates/TeamCableSection.html' + buster,
             success: function(e) {
                 new SimpleSection({
-                    target: '.fcc-target',
+                    target: '.team-cable-target',
                     template: e.target.responseText
                 });
             }
@@ -197,6 +190,42 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
+                url: 'templates/HowWeWonSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.how-we-won-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        if (global.isDesktop) {
+            queue.push(function() {
+                new AJAX({
+                    url: 'templates/PoliticalScoreboardSection.html' + buster,
+                    success: function(e) {
+                        new SimpleSection({
+                            target: '.scoreboard-target',
+                            template: e.target.responseText
+                        });
+
+                        loadJS('js/scoreboard.js' + buster, true);
+
+                        if (queue.length > 0) {
+                            queue.shift()();
+                        }
+                    }
+                });
+            });
+        }
+
+        queue.push(function() {
+            new AJAX({
                 url: 'templates/LearnMoreSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
@@ -242,26 +271,6 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
-
-        if (global.isDesktop) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/PoliticalScoreboardSection.html' + buster,
-                    success: function(e) {
-                        new SimpleSection({
-                            target: '.scoreboard-target',
-                            template: e.target.responseText
-                        });
-
-                        loadJS('js/scoreboard.js' + buster, true);
-
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
-                    }
-                });
-            });
-        }
 
         new ScrollDetection({
             queue: queue

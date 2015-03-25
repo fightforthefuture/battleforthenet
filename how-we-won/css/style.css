@@ -5,7 +5,7 @@ body{
   background-color:#2e2e40;
   padding-bottom: 0px;
   margin-bottom: 0px;
-  
+
 }
 
 
@@ -17,7 +17,7 @@ background: transparent;
 .container{
 margin: 0px auto;
 width: 70%;
-	
+
 }
 
 .containerone{
@@ -27,7 +27,7 @@ width: 70%;
 
 .containerone img{
 width: 100%;
-margin-top: 5%;	
+margin-top: 5%;
 }
 
 
@@ -43,11 +43,10 @@ width: 100%;
 
 .containertwo img{
 width: 100%;
-margin-bottom: -40%;
 margin-top: 5%;
 }
 
 .parallax-window {
     background: transparent;
-    padding-bottom: 350px;
+    padding-bottom: 64px;
 }
