@@ -118,7 +118,7 @@
           <iframe src="//www.youtube-nocookie.com/embed/KMcny_pixDw" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="clearfix" />
-        <a href="#_bftn_iframe_embed" class="btn btn-success understand-take-action">Take Action!</a>
+        <a href="#main" class="btn btn-success understand-take-action">Take Action!</a>
         
         <!--OTHER RESOURCES BELOW 
         <div class="other-resources">
@@ -221,9 +221,9 @@
       <section id="wall-under" class="whos-in wall-under">
 
         <div class="container">
-          <div class="row columns obscured">
+          <div class="row columns obscured" id="columns">
             <div class="gradient"></div>
-            <div class="show_all">&#9660; <a href="#">Read More</a></div>
+            <div class="show_all" id="show_all">&#9660; <a href="javascript:read_more();">Read More</a></div>
             <div class="col-sm-8 col-sm-offset-2 listing">
               <h2>Who’s against the takeover</h2>
               <p>
@@ -759,17 +759,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../js/vendor/jquery.js"></script>
-    <script src="../js/vendor/jquery.velocity.js"></script>
-    <script src="../js/vendor/isotope.pkgd.js"></script>
-    <script src="../js/vendor/underscore.js"></script>
-    <script src="../js/vendor/waypoints.js"></script>
-    <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--[if lt IE 10]>
       <script src="js/vendor/jquery.placeholder.js"></script>
     <![endif]-->
-    <script src="../js/battle.js"></script>
-    <script src="../js/scoreboard.js"></script>
-    <script src="../js/waypoints.js"></script>
     <script type="text/javascript">
       var _sf_async_config = { uid: 47331, domain: 'battleforthenet.com', useCanonical: true };
       (function() {
@@ -786,6 +778,12 @@
           loadChartbeat : function() { oldonload(); loadChartbeat(); };
       })();
     </script> 
-    
+    <script type="text/javascript">
+      function read_more() {
+        $('#columns').removeClass('obscured');
+        $('#columns').css('height', 'auto');
+        $('#read_more').hide();
+      }
+    </script>
   </body>
 </html>
