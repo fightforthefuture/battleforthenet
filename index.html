@@ -85,8 +85,8 @@ a {
 }
 
 #battle h1 {
-    font-size: 45px;
-    font-weight: normal;
+    font-size: 30px;
+    font-weight: 100;
 }
 
 #battle p {
@@ -107,6 +107,13 @@ a {
 
     -webkit-transition: opacity 1s;
             transition: opacity 1s;
+}
+
+#battle p .headline-image {
+    margin: 30px 0 12px;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
 }
 
 #background {
@@ -263,10 +270,13 @@ header nav a {
 </header>
 
 <section id="battle" class="fadeIn">
-    <h1 class="padded-900 tk-proxima-nova light">Team Cable is attacking <br> net neutrality <strong>again.</strong></h1>
 
     <p class="please-wait padded-900 pulse">
         Please wait...
+    </p>
+
+    <p class="padded-900 nomargin tk-proxima-nova light">
+        <img class="headline-image" src="images/battle-rages-on.png">
     </p>
 
     <p class="padded-900 tk-proxima-nova light">
