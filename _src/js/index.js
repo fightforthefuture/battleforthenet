@@ -29,12 +29,6 @@ var YourSenators = require('./YourSenators');
 
 // Design enhancements
 (function(){
-    // Cause baby you're a firework...
-    if (global.isDesktop) {
-        require('./Fireworks');
-        new Fish();
-    }
-
     // Preload the background
     setTimeout(function() {
         new ImagePreloader('./images/Imagesmall.jpg', function() {
