@@ -135,10 +135,10 @@ var YourSenators = require('./YourSenators');
 
     function loadMoreSections() {
         new AJAX({
-            url: 'templates/FCCSection.html' + buster,
+            url: 'templates/TeamCableSection.html' + buster,
             success: function(e) {
                 new SimpleSection({
-                    target: '.fcc-target',
+                    target: '.team-cable-target',
                     template: e.target.responseText
                 });
             }
