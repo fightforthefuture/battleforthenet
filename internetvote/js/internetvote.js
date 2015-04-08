@@ -133,6 +133,11 @@ var form = $('#signup');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
+    if (!document.getElementById('email').value) {
+        alert('Please enter an email address :)');
+        return document.getElementById('email').focus();
+    }
+
     $('.signup-thanks').style.display = 'block';
     $('.form-fields').style.opacity = 0;
     setTimeout(function() {
