@@ -1,0 +1,363 @@
+.clear:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clear {display: inline-block;}
+/* hide IE mac \*/
+* html .clear {height: 1%;}
+.clear {display: block;}
+/* */
+
+body {
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+    background: #2a2a3f;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+a {
+    color: white;
+}
+a:hover {
+    color: pink;
+}
+section.cta {
+    padding: 100px 0px 72px 0px;
+    margin-bottom: 45px;
+    text-align: center;
+    background: #3d4060; /* Old browsers */
+    background: -moz-linear-gradient(top, #3d4060 0%, #473362 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d4060), color-stop(100%,#473362)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #3d4060 0%,#473362 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #3d4060 0%,#473362 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #3d4060 0%,#473362 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #3d4060 0%,#473362 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d4060', endColorstr='#473362',GradientType=0 ); /* IE6-9 */
+}
+section.cta form {
+    margin: 45px auto 10px auto;
+    width: 790px;
+    position: relative;
+}
+section.cta form .form-fields {
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    transition: opacity .3s;
+}
+section.cta form .signup-thanks {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    text-align: center;
+    font-size: 30px;
+    height: 66px;
+    line-height: 66px;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+section.cta form input {
+    border: 0px;
+    border-radius: 5px;
+    width: 551px;
+    height: 66px;
+    box-sizing: border-box;
+    padding: 0px 30px;
+    line-height: 66px;
+    font-size: 18px;
+    float: left;
+}
+section.cta form button {
+    background: #2dbc8f;
+    border: 0px;
+    border-radius: 5px;
+    height: 66px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    float: right;
+    font-weight: 300;
+    font-size: 18px;
+    width: 230px;
+}
+section.cta form button:hover {
+    background: #1dac7f;
+}
+section.cta span.disclaimer {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+section.cta img.logo {
+    display: block;
+    margin: 0px auto 42px auto;
+}
+a.button {
+    display: inline-block;
+    margin: 0px 5px;
+    border-radius: 5px;
+    background: #9085a1;
+    text-align: center;
+    width: 202px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+a.button.twitter {
+    background: #37c5d6;
+}
+a.button:hover {
+    color: white;
+    background: #807591;
+}
+a.button.twitter:hover {
+    background: #27b5c6;
+}
+p {
+    font-size: 19px;
+    line-height: 25px;
+    max-width: 850px;
+    margin: 0px auto 25px auto;
+    text-align: center;
+    color: #eaebf6;
+}
+
+h2 {
+    margin: 0px auto 0px auto;
+    width: 785px;
+    padding: 0px 0px 19px 0px;
+    font-size: 50px;
+    font-weight: 300;
+    text-align: center;
+    border-bottom: 1px solid #424263;
+}
+h3 {
+    padding: 0px;
+    margin: 0px auto 25px auto;
+    width: 785px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+}
+pre {
+    display: block;
+    padding: 9.5px;
+    width: 850px;
+    font-size: 14px;
+    line-height: 1.42857;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    background-color: #F5F5F5;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+
+    margin: 0px auto;
+    text-align: left;
+    color: #827495;
+    background: #000 none repeat scroll 0% 0%;
+    border-radius: 10px;
+    border: 0px none;
+}
+img.content {
+    display: block;
+    margin: 0px auto;
+}
+section {
+    padding: 50px 0px;
+    text-align: center;
+}
+section:nth-child(even) {
+    background-color: #202030;
+} 
+section.code {
+    background-image: url(../images/modal.png);
+    background-position: center 70px;
+    background-repeat: no-repeat;
+}
+section.code h3 {
+    margin-bottom: 390px;
+}
+section.notification {
+    background-image: url(../images/notification.png);
+    background-position: center 120px;
+    background-repeat: no-repeat;
+}
+section.notification h3 {
+    margin-bottom: 220px;
+}
+section.hope {
+    background: #ddd;
+    padding-bottom: 20px;
+}
+section.hope h3 {
+    color: #000;
+}
+section.hope p {
+    font-weight: 400;
+    color: #333;
+}
+section.hope a {
+    color: #333;
+    font-weight: 600;
+}
+section.hope img {
+    display: block;
+    margin: 60px auto;
+}
+
+
+
+
+
+
+.overlay {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: table;
+    display: none;
+    z-index: 9001;
+
+    -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+            transition: opacity 0.4s ease-out 0s, left 0s linear 0s;
+}
+.overlay.invisible {
+    pointer-events: none;
+    opacity: 0;
+    left: 99999px;
+
+    -webkit-transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
+            transition: opacity 0.4s ease-out 0s, left 0s linear 0.5s;
+}
+.overlay .gutter {
+    display: table-cell;
+    vertical-align: middle;
+}
+.overlay .gutter .modal {
+    max-width: 550px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    margin: 0px auto;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+}
+.overlay .modal a.close {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    color: black;
+    opacity: .4;
+    text-decoration: none;
+    font-size: 30px;
+}
+.overlay .modal a.close:hover {
+    opacity: .6;
+}
+.overlay .modal h1 {
+    background: #20cba1;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.overlay .modal h2 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0px 25px;
+    margin: 0px auto;
+}
+.overlay .modal p {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #333;
+    margin-bottom: 0px;
+}
+.overlay .modal label {
+    font-size: 13px;
+    display: inline-block;
+    width: 130px;
+    text-align: left;
+}
+.overlay .modal label span {
+    color: gray;
+}
+.overlay .modal input {
+    width: 280px;
+    font-size: 20px;
+}
+.overlay .modal select {
+    width: 280px;
+    font-size: 20px;
+}
+.overlay .modal hr {
+    border: 0px;
+}
+.overlay .modal button {
+    display: inline-block;
+    margin: 25px auto 20px auto;
+    outline: medium none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
+    padding: 0.5em 2em 0.55em;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5em;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #12A1D6;
+
+    background: #32c0f2; /* Old browsers */
+    background: -moz-linear-gradient(top, #32c0f2 0%, #028bbb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#32c0f2), color-stop(100%,#028bbb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #32c0f2 0%,#028bbb 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32c0f2', endColorstr='#028bbb',GradientType=0 ); /* IE6-9 */
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+
+    color: white;
+}
+.overlay .modal .no_thanks {
+    display: inline-block;
+    margin: 0px 10px;
+    font-size: 16px;
+}
+#battle .overlay .modal p {
+    color: #444;
+    max-width: 500px;
+    margin: 0px auto;
+    padding: 30px 25px;
+    font-size: 18px;
+}
+#battle .overlay .modal p.nopad {
+    padding: 0px 25px;
+}
+#battle .overlay .modal p.small {
+    padding: 20px 25px 20px 25px;
+    font-size: 14px;
+}
