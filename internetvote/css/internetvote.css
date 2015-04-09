@@ -169,9 +169,11 @@ p {
 ul {
     margin: 0px;
     padding: 0px;
+    text-align: center;
 }
 li {
     font-size: 19px;
+    display: inline-block;
     line-height: 25px;
     color: #eaebf6;
     margin-bottom: 25px;
@@ -236,6 +238,24 @@ section.code {
 }
 section.code img {
     max-width: 100%;
+}
+section.code .idl {
+    margin-top: 25px;
+    font-size: 13px;
+}
+section.code .idl a {
+    text-decoration: none;
+    opacity: .7;
+}
+section.code .idl a:hover {
+    color: white;
+    opacity: 1;
+}
+section.code .idl img {
+    display: inline-block;
+    width: 300px;
+    height: auto;
+    margin: 5px auto 0px auto;
 }
 
 section.notification {
