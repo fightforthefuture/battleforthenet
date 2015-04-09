@@ -239,6 +239,10 @@ section.code {
 section.code img {
     max-width: 100%;
 }
+section.code img.banner {
+    display: block;
+    margin: 25px auto;
+}
 section.code .idl {
     margin-top: 25px;
     font-size: 13px;
