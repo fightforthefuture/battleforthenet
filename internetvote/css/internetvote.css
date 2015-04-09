@@ -261,6 +261,13 @@ section.code .idl img {
     height: auto;
     margin: 5px auto 0px auto;
 }
+section.code hr {
+    border: 0px;
+    border-bottom: 1px solid #424263;
+    display: block;
+    margin: 40px auto;
+    width: 70px;
+}
 
 section.notification {
     background-image: url(../images/notification.png);
