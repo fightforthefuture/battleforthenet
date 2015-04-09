@@ -257,10 +257,23 @@ section.hope img {
     margin: 60px auto;
     max-width: 100%;
 }
+section.share .buttons {
+    margin-bottom: 25px;
+}
+section.share .buttons > div {
+    display: inline-block;
+    margin: 0px 5px;
+}
 
 
-
-
+#sharing {
+    position: fixed;
+    top: 50%;
+    margin-top: -100px;
+}
+#sharing > div {
+    margin: 5px 0px;
+}
 
 
 .overlay {
