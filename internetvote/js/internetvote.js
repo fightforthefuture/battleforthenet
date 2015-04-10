@@ -174,5 +174,5 @@ modal.querySelector('.modal .close').addEventListener('click', function(e) {
     modal_hide(modal.id);
 }.bind(this), false);
 
-if (document.referrer.indexOf('//t.co') != -1)
+if (document.referrer.indexOf('//t.co') != -1 || window.location.href.indexOf('?twitter'))
     modal_show('twitter_modal');
