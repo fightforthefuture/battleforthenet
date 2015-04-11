@@ -124,6 +124,7 @@ section.cta img.logo {
     }
 
     section.cta form button {
+        clear: both;
         float: none;
         width: 100%;
     }
