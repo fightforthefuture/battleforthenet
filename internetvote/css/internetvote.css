@@ -23,14 +23,19 @@ section.cta {
     padding: 25px 32px 72px;
     margin-bottom: 45px;
     text-align: center;
-    background: #3d4060; /* Old browsers */
-    background: -moz-linear-gradient(top, #3d4060 0%, #473362 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d4060), color-stop(100%,#473362)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #3d4060 0%,#473362 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #3d4060 0%,#473362 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #3d4060 0%,#473362 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #3d4060 0%,#473362 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d4060', endColorstr='#473362',GradientType=0 ); /* IE6-9 */
+    background: #3d4060;
+    /*
+    background: -moz-linear-gradient(top, #3d4060 0%, #473362 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3d4060), color-stop(100%,#473362));
+    background: -webkit-linear-gradient(top, #3d4060 0%,#473362 100%);
+    background: -o-linear-gradient(top, #3d4060 0%,#473362 100%);
+    background: -ms-linear-gradient(top, #3d4060 0%,#473362 100%);
+    background: linear-gradient(to bottom, #3d4060 0%,#473362 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d4060', endColorstr='#473362',GradientType=0 );
+    */
+    background: url(../images/background.jpg);
+    background-position: center;
+    background-size: auto 100%;
 }
 section.cta form {
     margin: 45px auto 10px auto;
@@ -41,6 +46,7 @@ section.cta form .form-fields {
     -webkit-transition: opacity .3s;
     -moz-transition: opacity .3s;
     transition: opacity .3s;
+    opacity: 1;
 }
 section.cta form .signup-thanks {
     position: absolute;
@@ -48,9 +54,8 @@ section.cta form .signup-thanks {
     width: 100%;
     top: 0px;
     text-align: center;
+    padding-top: 10px;
     font-size: 30px;
-    height: 66px;
-    line-height: 66px;
     opacity: 0;
     display: none;
     -webkit-transition: opacity .3s;
@@ -98,6 +103,10 @@ section.cta span.disclaimer {
     font-size: 13px;
     font-weight: 300;
     margin-bottom: 25px;
+    opacity: 1;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    transition: opacity .3s;
 }
 section.cta img.wifi {
     display: block;
@@ -128,6 +137,14 @@ section.cta img.logo {
         float: none;
         width: 100%;
     }
+}
+
+.button_caption {
+    display: inline-block;
+    width: 202px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 14px;
 }
 
 a.button {
@@ -168,9 +185,10 @@ p {
     color: #eaebf6;
 }
 ul {
-    margin: 0px;
+    margin: 0px auto;
     padding: 0px;
     text-align: center;
+    max-width: 750px;
 }
 li {
     font-size: 19px;
@@ -178,6 +196,8 @@ li {
     line-height: 25px;
     color: #eaebf6;
     margin-bottom: 25px;
+    width: 100%;
+    text-align: left;
 }
 h2 {
     margin: 0px auto 0px auto;
