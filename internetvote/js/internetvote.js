@@ -140,6 +140,7 @@ form.addEventListener('submit', function(e) {
 
     $('.signup-thanks').style.display = 'block';
     $('.form-fields').style.opacity = 0;
+    $('.disclaimer').style.opacity = 0;
     setTimeout(function() {
         $('.signup-thanks').style.opacity = 1;
     }, 50);
@@ -156,6 +157,13 @@ form.addEventListener('submit', function(e) {
 }, false);
 
 document.getElementById('twitter-button').addEventListener('click', function(e) {
+    e.preventDefault();
+    modal_show('twitter_modal');
+    if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
+}, false);
+
+document.getElementById('twitter-button2').addEventListener('click', function(e) {
+    e.preventDefault();
     modal_show('twitter_modal');
     if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
 }, false);
