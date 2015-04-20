@@ -139,6 +139,13 @@ section.cta img.logo {
     margin: 0px auto 42px auto;
     max-width: 100%;
 }
+section.shareimages img {
+    display: inline-block;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    margin: 5px 5px;
+}
 
 @media screen and (max-width: 859px) {
     section.cta {
