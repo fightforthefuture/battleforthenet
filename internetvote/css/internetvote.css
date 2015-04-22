@@ -61,7 +61,7 @@ section.cta {
 }
 section.cta form {
     margin: 45px auto 10px auto;
-    width: 790px;
+    width: 589px;
     position: relative;
 }
 section.cta form .form-fields {
@@ -88,13 +88,17 @@ section.cta form .signup-thanks {
 section.cta form input {
     border: 0px;
     border-radius: 5px;
-    width: 551px;
+    width: 351px;
     height: 66px;
     box-sizing: border-box;
     padding: 0px 30px;
     line-height: 66px;
     font-size: 18px;
     float: left;
+}
+section.cta form p {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 section.cta form button, a.btn {
     display: block;
@@ -370,10 +374,10 @@ section.hope img {
     margin: 60px auto;
     max-width: 100%;
 }
-section.share .buttons {
+.buttons {
     margin-bottom: 25px;
 }
-section.share .buttons > div {
+.buttons > div {
     display: inline-block;
     margin: 0px 5px;
 }
@@ -443,6 +447,9 @@ section.share .buttons > div {
     position: relative;
     text-align: center;
 }
+.overlay .gutter .modal .buttons {
+    margin-top: 25px;
+}
 .overlay .modal a.close {
     position: absolute;
     right: 10px;
@@ -466,18 +473,36 @@ section.share .buttons > div {
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin: 0px auto 20px auto;
 }
 .overlay .modal h2 {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 27px;
+    border-bottom: 0px;
     padding: 0px 25px;
-    margin: 0px auto;
+    margin: 0px auto 25px auto;
 }
 .overlay .modal p {
     padding-left: 30px;
     padding-right: 30px;
     color: #333;
     margin-bottom: 0px;
+}
+@media screen and (max-width: 767px) {
+    .overlay .modal h1 {
+        font-size:  18px;
+    }
+    .overlay .modal h2 {
+        font-size: 16px;
+        line-height: 21px;
+        padding: 0px 15px;
+    }
+    .overlay .modal p {
+        padding: 0px 12px;
+        font-size: 15px;
+        line-height: 21px;
+    }
 }
 .overlay .modal label {
     font-size: 13px;
@@ -557,4 +582,35 @@ section.share .buttons > div {
     .visible-on-mobile {
         display: block;
     }
+}
+.col-sm-4 {
+    display: inline-block;
+    width: 300px;
+    border-right: 1px solid #4E4E66;
+    text-align: left;
+    font-size: 14px;
+    min-height: 300px;
+    margin-top: 15px;
+    vertical-align: top;
+    overflow: hidden;
+}
+.col-sm-4.hidden {
+    max-height: 300px;
+}
+.col-sm-4.last {
+    border-right: 0px;
+}
+.col-sm-4 h5 {
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 0px 10px 0px;
+    border-bottom: 1px solid #4E4E66;
+    margin: 0px;
+}
+.col-sm-4 li {
+    font-size: 14px;
+    margin: 0px 0px 0px 10px;
+}
+.show_all {
+    margin-top: 10px;
 }

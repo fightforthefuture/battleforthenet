@@ -42,6 +42,7 @@
         </p>
         <form name="billy" action="https://queue.fightforthefuture.org/action" method="POST" id="signup" class="clear">
             <div class="form-fields">
+                <!--
                 <div style="display: none;">
                     <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" />
                     <input type="checkbox" id="hp_disabled" name="hp_disabled" />
@@ -57,8 +58,12 @@
                 <input type="hidden" name="org" id="org" value="fftf" />
                 <input type="text" name="guard" style="display: none;">
                 <input type="hidden" name="action" value="1" />
-                <input type="text" name="member[email]" id="email" placeholder="Email Address" />
-                <button type="submit" id="subscribe">Join the action</button>
+                -->
+                <p>
+                    Enter your phone number and we'll connect you with Congress:
+                </p>
+                <input type="text" name="phone" id="phone" placeholder="555-555-5555" />
+                <button type="submit" id="subscribe">Call Congress!</button>
             </div>
             <div class="signup-thanks">
                 Thanks for signing up &mdash; now spread the word!
@@ -71,12 +76,14 @@
             </div>
 
         </form>
+        <!--
         <span class="disclaimer">
             <a href="https://www.fightforthefuture.org" target="_blank">
                 Fight for the Future
             </a>
             will contact you with campaign updates.
         </span>
+        -->
     </section>
 
     <h2>How to join</h2>
@@ -146,6 +153,51 @@
             <div class="idl">
                 <a href="https://www.internetdefenseleague.org" target="_blank">To participate in future actions, join<br/><img src="images/idl.png"></a>
             </div>
+        </section>
+
+        <section class="leaderboard">
+            <h3>#InternetVote Leaderboards</h3>
+            <p>
+                These sites are driving the most emails and calls to lawmakers. Want to join
+                their ranks, as a hero? <a href="#code">Get the code for your site.</a>
+                Points are assigned from how much traffic you send to
+                Internet Vote, but you can get extra
+                credit for miscellaneous acts of heroism that you
+                <a href="mailto:team@fightforthefuture.org">tell us about.</a>
+            </p>
+            <div class="gradient"></div>
+            <div class="col-sm-4 hidden listing company">
+                <h5>Stats</h5>
+                <table>
+                    <tr>
+                        <td><strong>Sites participating:</strong></td>
+                        <td><em id="sites_participating">-</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total actions from all sites:</strong></td>
+                        <td><em id="sites_total_actions">-</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total calls to Congress:</strong></td>
+                        <td><em id="total_calls">-</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calls to Congress (today):</strong></td>
+                        <td><em id="total_calls_last_24">-</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total emails:</strong></td>
+                        <td><em id="total_emails">-</em></td>
+                    </tr>
+                </table>
+            </div><div class="col-sm-4 hidden listing organization">
+                <h5>Top Sites (Today)</h5>
+                <ul id="sites_top_today"></ul>
+            </div><div class="col-sm-4 hidden listing last person">
+                <h5>Top Sites (All Time)</h5>
+                <ul id="sites_top"></ul>
+            </div>
+            <div class="show_all" id="show_all">&#9660; <a href="#">Show More</a></div>
         </section>
 
 
@@ -277,6 +329,26 @@
                     <hr/>
                     <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay call invisible" id="call_modal">
+        <div class="gutter">
+            <div class="modal">
+                <a class="close" href="#">×</a>
+                <h1>We're calling you now!</h1>
+                <h2>We'll connect you with Congress. When they answer, be polite and say:</h2>
+                <p>
+                    “Hello, I'm calling to urge my representative to oppose Fast Track for
+                    the Trans-Pacific Partnership agreement. Congress needs time to debate
+                    and amend trade agreements that affect all of us. Fast Track is
+                    undemocratic, and I expect my lawmakers to oppose it now and into the future.”
+                </p>
+                <div class="buttons">
+                    <div class='sp_12463 sp_fb_large' ></div>
+                    <div class='sp_12463 sp_tw_large' ></div>
+                </div>
             </div>
         </div>
     </div>
