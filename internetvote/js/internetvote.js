@@ -1,4 +1,4 @@
-var CALL_CAMPAIGN = 'stop-fast-track';
+var CALL_CAMPAIGN = 'internet-vote';
 
 function AJAX(params) {
     this.async = params.async || true;
@@ -191,17 +191,15 @@ form.addEventListener('submit', function(e) {
     modal_show('call_modal');
 }, false);
 
-document.getElementById('twitter-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    modal_show('twitter_modal');
-    if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
-}, false);
+var twitter_buttons = ['twitter-button', 'twitter-button2', 'twitter-button3'];
 
-document.getElementById('twitter-button2').addEventListener('click', function(e) {
-    e.preventDefault();
-    modal_show('twitter_modal');
-    if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
-}, false);
+for (var i = 0; i < twitter_buttons.length; i++) {
+    document.getElementById(twitter_buttons[i]).addEventListener('click', function(e) {
+        e.preventDefault();
+        modal_show('twitter_modal');
+        if (ga) ga('send', 'event', 'button', 'click', 'connect_twitter');
+    }, false);
+}
 
 var bindModal = function(modal) {
     modal.querySelector('.gutter').addEventListener('click', function(e) {
@@ -302,3 +300,27 @@ document.querySelector('#show_all a').addEventListener('click', function(e) {
         columns[i].className = columns[i].className.replace('hidden', '');
     }
 }, false);
+
+var fb = document.querySelectorAll('.facebook');
+for (var i = 0; i < fb.length; i++) {
+    fb[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.battleforthenet.com%2Finternetvote%2F');
+    }, false);
+}
+
+var tws = document.querySelectorAll('.twitter.share');
+for (var i = 0; i < tws.length; i++) {
+    tws[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(TWEET_TEXT));
+    }, false);
+}
+
+var ems = document.querySelectorAll('.email');
+for (var i = 0; i < ems.length; i++) {
+    ems[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open('mailto:?subject=Call+to+stop+censorship&body=https%3A%2F%2Fwww.battleforthenet.com%2Finternetvote%2F');
+    }, false);
+}
