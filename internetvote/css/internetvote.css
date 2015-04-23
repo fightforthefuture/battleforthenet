@@ -42,8 +42,7 @@ a:hover {
     color: pink;
 }
 section.cta {
-    padding: 25px 32px 72px;
-    margin-bottom: 45px;
+    padding: 25px 32px 12px;
     text-align: center;
     background: #3d4060;
     /*
@@ -61,7 +60,7 @@ section.cta {
 }
 section.cta form {
     margin: 45px auto 10px auto;
-    width: 790px;
+    width: 589px;
     position: relative;
 }
 section.cta form .form-fields {
@@ -88,13 +87,17 @@ section.cta form .signup-thanks {
 section.cta form input {
     border: 0px;
     border-radius: 5px;
-    width: 551px;
+    width: 351px;
     height: 66px;
     box-sizing: border-box;
     padding: 0px 30px;
     line-height: 66px;
     font-size: 18px;
     float: left;
+}
+section.cta form p {
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 section.cta form button, a.btn {
     display: block;
@@ -139,6 +142,14 @@ section.cta img.logo {
     margin: 0px auto 42px auto;
     max-width: 100%;
 }
+section.cta p.alternative {
+    clear: both;
+    padding-top: 35px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+
 section.shareimages img {
     display: inline-block;
     width: 300px;
@@ -194,16 +205,27 @@ a.button {
 a.button:nth-of-type(1) {
     margin-bottom: 8px;
 }
-
+a.button.facebook {
+    background: #3B5999;
+}
 a.button.twitter {
     background: #37c5d6;
+}
+a.button.email {
+    background: #14AC2B;
 }
 a.button:hover {
     color: white;
     background: #807591;
 }
+a.button.facebook:hover {
+    background: #2B4989;
+}
 a.button.twitter:hover {
     background: #27b5c6;
+}
+a.button.email:hover {
+    background: #049C1B;
 }
 p {
     font-size: 19px;
@@ -370,10 +392,10 @@ section.hope img {
     margin: 60px auto;
     max-width: 100%;
 }
-section.share .buttons {
+.buttons {
     margin-bottom: 25px;
 }
-section.share .buttons > div {
+.buttons > div {
     display: inline-block;
     margin: 0px 5px;
 }
@@ -389,17 +411,17 @@ section.share .buttons > div {
     margin: 5px 0px;
 }
 
-#learn .embed {
+.video .embed {
     max-width: 768px;
     margin: 0px auto;
 }
-#learn .embed .wrapper {
+.video .embed .wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     padding-top: 25px;
     height: 0;
 }
-#learn .embed .wrapper iframe {
+.video .embed .wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -443,6 +465,9 @@ section.share .buttons > div {
     position: relative;
     text-align: center;
 }
+.overlay .gutter .modal .buttons {
+    margin-top: 25px;
+}
 .overlay .modal a.close {
     position: absolute;
     right: 10px;
@@ -466,18 +491,36 @@ section.share .buttons > div {
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    margin: 0px auto 20px auto;
 }
 .overlay .modal h2 {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 27px;
+    border-bottom: 0px;
     padding: 0px 25px;
-    margin: 0px auto;
+    margin: 0px auto 25px auto;
 }
 .overlay .modal p {
     padding-left: 30px;
     padding-right: 30px;
     color: #333;
     margin-bottom: 0px;
+}
+@media screen and (max-width: 767px) {
+    .overlay .modal h1 {
+        font-size:  18px;
+    }
+    .overlay .modal h2 {
+        font-size: 16px;
+        line-height: 21px;
+        padding: 0px 15px;
+    }
+    .overlay .modal p {
+        padding: 0px 12px;
+        font-size: 15px;
+        line-height: 21px;
+    }
 }
 .overlay .modal label {
     font-size: 13px;
@@ -576,4 +619,83 @@ section.share .buttons > div {
     .visible-on-mobile {
         display: block;
     }
+}
+.col-sm-4 {
+    display: inline-block;
+    width: 300px;
+    border-right: 1px solid #4E4E66;
+    text-align: left;
+    font-size: 14px;
+    min-height: 300px;
+    margin-top: 15px;
+    vertical-align: top;
+    overflow: hidden;
+}
+.col-sm-4.hidden {
+    max-height: 300px;
+}
+.col-sm-4.last {
+    border-right: 0px;
+}
+.col-sm-4 h5 {
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 0px 10px 0px;
+    border-bottom: 1px solid #4E4E66;
+    margin: 0px;
+}
+.col-sm-4 li {
+    font-size: 14px;
+    margin: 0px 0px 0px 10px;
+}
+.show_all {
+    margin-top: 10px;
+}
+
+div.social-buttons {
+    height: 115px;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: calc((100% - 115px) / 2);
+    width: 110px;
+}
+
+@media screen and (max-width: 1200px) {
+    div.social-buttons {
+        width: 33px;
+    }
+}
+@media screen and (max-width: 480px) {
+    div.social-buttons {
+        display: none;
+    }
+}
+
+div.social-buttons a {
+    background-repeat: no-repeat;
+    display: block;
+    height: 33px;
+    font-family: Arial, sans-serif;
+    color: white;
+    line-height: 33px;
+    margin: 0 0 8px;
+    padding: 0 0 0 42px;
+    text-decoration: none;
+    width: 100%;
+}
+
+div.social-buttons a.facebook {
+    background-color: #39579a;
+    background-image: url(../images/social/icon-fb.gif);
+}
+
+div.social-buttons a.twitter {
+    background-color: #02aced;
+    background-image: url(../images/social/icon-twitter.gif);
+}
+
+div.social-buttons a.email {
+    background-color: #14ac2b;
+    background-image: url(../images/social/icon-email.gif);
 }
