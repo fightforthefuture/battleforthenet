@@ -146,11 +146,12 @@ var form = $('#signup');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    /*
+    
     if (!document.getElementById('email').value) {
         alert('Please enter an email address :)');
         return document.getElementById('email').focus();
     }
+    $('#action_comment').value = $('#petition_text').textContent;
 
     $('.signup-thanks').style.display = 'block';
     $('.form-fields').style.opacity = 0;
@@ -168,7 +169,9 @@ form.addEventListener('submit', function(e) {
         url: form.getAttribute('action')
     });
     if (ga) ga('send', 'event', 'form', 'submit', 'internetvote_email');
-    */
+    modal_show('plz_call_modal');
+    
+    /*
     var phone = document.getElementById('phone').value;
 
     if (!validate_phone(phone))
@@ -189,9 +192,40 @@ form.addEventListener('submit', function(e) {
     xhr.open("post", url, true);
     xhr.send(data);
     modal_show('call_modal');
+    */
 }, false);
 
-var twitter_buttons = ['twitter-button', 'twitter-button2', 'twitter-button3'];
+var form2 = $('#plz_call_modal form');
+form2.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var phone = document.getElementById('phone').value;
+
+    if (!validate_phone(phone))
+        return alert('Please enter a valid US phone number!');
+
+    modal_hide('plz_call_modal');
+
+    var data = new FormData();
+    data.append('campaignId', CALL_CAMPAIGN);
+    data.append('userPhone', validate_phone(phone));
+
+    var url = 'https://call-congress.fightforthefuture.org/create';
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            console.log('sent!', xhr.response);
+        }
+    }.bind(this);
+    xhr.open("post", url, true);
+    xhr.send(data);
+
+    modal_show('call_modal');
+
+}, false);
+
+var twitter_buttons = ['twitter-button', 'twitter-button2'];
 
 for (var i = 0; i < twitter_buttons.length; i++) {
     document.getElementById(twitter_buttons[i]).addEventListener('click', function(e) {
@@ -215,7 +249,7 @@ var bindModal = function(modal) {
     }.bind(this), false);
 };
 
-var modals = ['twitter_modal', 'call_modal'];
+var modals = ['twitter_modal', 'call_modal', 'plz_call_modal', 'petition_modal'];
 
 for (var i = 0; i < modals.length; i++) {
     bindModal(document.getElementById(modals[i]));
@@ -299,6 +333,11 @@ document.querySelector('#show_all a').addEventListener('click', function(e) {
     for (var i = 0; i < columns.length; i++) {
         columns[i].className = columns[i].className.replace('hidden', '');
     }
+}, false);
+
+document.querySelector('#petition_link').addEventListener('click', function(e) {
+    e.preventDefault();
+    modal_show('petition_modal');
 }, false);
 
 var fb = document.querySelectorAll('.facebook');

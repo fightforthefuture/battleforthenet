@@ -43,13 +43,13 @@
     </div>
     <section class="cta" id="top">
         <img src="images/wifi.png" class="wifi"/>
-        <img src="images/header3.png" class="logo"/>
+        <img src="images/header4.png" class="logo"/>
         <p>
-           Congress just introduced legislation to “Fast Track” the Trans-Pacific Partnership, or TPP. It’s a secretive deal, negotiated behind closed doors by government bureaucrats and corporate lobbyists, containing dangerous provisions (like SOPA) that threaten Internet freedom everywhere. Internet users deserve a say in decisions that affect us. Call now.
+           Congress just introduced legislation to “Fast Track” the Trans-Pacific Partnership, or TPP. It’s a secretive deal, negotiated behind closed doors by government bureaucrats and corporate lobbyists, containing dangerous provisions (like SOPA) that threaten Internet freedom everywhere. Internet users deserve a say in decisions that affect us. Email Congress now.
         </p>
         <form name="billy" action="https://queue.fightforthefuture.org/action" method="POST" id="signup" class="clear">
             <div class="form-fields">
-                <!--
+                
                 <div style="display: none;">
                     <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" />
                     <input type="checkbox" id="hp_disabled" name="hp_disabled" />
@@ -65,36 +65,44 @@
                 <input type="hidden" name="org" id="org" value="fftf" />
                 <input type="text" name="guard" style="display: none;">
                 <input type="hidden" name="action" value="1" />
-                -->
+                <input type="text" name="member[first_name]" id="first_name" placeholder="Your name" />
+                <input type="text" name="member[email]" id="email" placeholder="Email" />
+                <input type="text" name="member[street_address]" id="address" placeholder="Street Address" />
+                <input type="text" name="member[postcode]" id="zip" placeholder="Zip Code" />
+                <input type="hidden" name="action_comment" id="action_comment" value=""/>
+                <input type="hidden" name="subject" id="subject" value="Please oppose fast tracking the Trans-Pacific Partnership"/>
+                <button type="submit" id="subscribe">Email Congress</button>
+                <!--
                 <p>
                     Enter your phone number and we'll connect you with Congress:
                 </p>
                 <input type="text" name="phone" id="phone" placeholder="555-555-5555" />
                 <button type="submit" id="subscribe">Call Congress!</button>
+                -->
             </div>
             <div class="signup-thanks">
-                Thanks for signing up &mdash; now spread the word!
-                <br/>
+                Thanks &mdash; now spread the word!<br/>
                 <span class="button_caption">Twitter users:</span>
                 <span class="button_caption">Website / blog owners:</span>
                 <br/>
                 <a class="button twitter" href="#" id="twitter-button">Join with Twitter</a>
                 <a class="button" href="#code">Get the Code</a>
             </div>
+            <!--
             <p class="alternative">
                 Can't call? Spread the word!
             </p>
             <a class="button facebook" href="#">Share on Facebook</a>
             <a class="button twitter" href="#" id="twitter-button3">Join with Twitter</a>
+            -->
         </form>
-        <!--
+        
         <span class="disclaimer">
-            <a href="https://www.fightforthefuture.org" target="_blank">
-                Fight for the Future
-            </a>
-            will contact you with campaign updates.
+            We will submit <strong><a href="#" id="petition_link">this petition</a></strong> to Congress on your behalf.
+            <a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a>
+            will email you with campaign updates.
         </span>
-        -->
+        
     </section>
 
     <div class="sections">
@@ -337,6 +345,41 @@
                     <hr/>
                     <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay petition_modal invisible" id="petition_modal">
+        <div class="gutter">
+            <div class="modal">
+                <a class="close" href="#">×</a>
+                <h1>Petition to Congress</h1>
+                <h2>We'll send this to Congress on your behalf:</h2>
+                <p id="petition_text">I'm writing to urge you to oppose Fast Track for the Trans-Pacific Partnership. Decisions like this affect everyone and need to be debated transparently so that people can have a voice on the issues that they care about. Fast Track Trade Promotion Authority is undemocratic, and I expect the representative to oppose it now and in the future.</p>
+                <div class="buttons">
+                    <a class="button facebook" href="#">Share on Facebook</a>
+                    <a class="button twitter share" href="#">Share on Twitter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay plz_call invisible" id="plz_call_modal">
+        <div class="gutter">
+            <div class="modal">
+                <a class="close" href="#">×</a>
+                <h1>Thanks! Now can you call Congress?</h1>
+                <h2 class="nopad">Enter your phone number and we'll call your phone and connect you to Congress.</h2>
+                <form action="https://call-congress.fightforthefuture.org">
+                    <input type="text" id="phone" value="" placeholder="555-555-5555"/>
+                    <button type="submit">Call Congress</button>
+                </form>
+                <br/>
+                <p><strong>Can't call? Please share this action!</strong></p>
+                <div class="buttons">
+                    <a class="button facebook" href="#">Share on Facebook</a>
+                    <a class="button twitter share" href="#">Share on Twitter</a>
+                </div>
             </div>
         </div>
     </div>

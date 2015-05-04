@@ -42,7 +42,7 @@ a:hover {
     color: pink;
 }
 section.cta {
-    padding: 25px 32px 12px;
+    padding: 25px 32px 40px;
     text-align: center;
     background: #3d4060;
     /*
@@ -60,7 +60,7 @@ section.cta {
 }
 section.cta form {
     margin: 45px auto 10px auto;
-    width: 589px;
+    width: 767px;
     position: relative;
 }
 section.cta form .form-fields {
@@ -87,13 +87,15 @@ section.cta form .signup-thanks {
 section.cta form input {
     border: 0px;
     border-radius: 5px;
-    width: 351px;
+    width: 180px;
     height: 66px;
     box-sizing: border-box;
     padding: 0px 30px;
     line-height: 66px;
     font-size: 18px;
-    float: left;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 section.cta form p {
     font-weight: bold;
@@ -118,14 +120,14 @@ section.cta form button, a.btn {
     text-decoration: none;
 }
 section.cta form button {
-    float: right;
+    display: block;
 }
 section.cta form button:hover, a.btn:hover {
     background: #1dac7f;
 }
 section.cta span.disclaimer {
     display: block;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
     margin-bottom: 25px;
     opacity: 1;
@@ -501,6 +503,10 @@ section.hope img {
     padding: 0px 25px;
     margin: 0px auto 25px auto;
 }
+.overlay .modal h2.nopad {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
 .overlay .modal p {
     padding-left: 30px;
     padding-right: 30px;
@@ -534,6 +540,12 @@ section.hope img {
 .overlay .modal input {
     width: 280px;
     font-size: 20px;
+}
+.overlay .modal input#phone {
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    border: 1px solid #999;
 }
 .overlay .modal select {
     width: 280px;
