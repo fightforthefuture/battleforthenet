@@ -1,4 +1,4 @@
-var CALL_CAMPAIGN = 'internet-vote';
+var CALL_CAMPAIGN = 'stop-tpp';
 
 function AJAX(params) {
     this.async = params.async || true;
