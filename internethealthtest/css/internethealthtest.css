@@ -200,7 +200,7 @@ a.button.facebook {
 
 }
 a.button.facebook:hover {
-    background: #8b9dc3;
+    opacity: .8;
 }
 
 a.button.twitter {
@@ -208,7 +208,7 @@ a.button.twitter {
 }
 a.button:hover {
     color: white;
-    background: #807591;
+    opacity: .8;
 }
 a.button.twitter:hover {
     background: #27b5c6;
