@@ -203,6 +203,18 @@ a.button.facebook:hover {
     opacity: .8;
 }
 
+a.button.healthtest {
+    background: #20B020;
+    margin-bottom:25px;
+    font-weight:bold;
+    font-size:20px;
+    width:250px;
+}
+
+a.button.healthtest:hover {
+    opacity: .8;
+}
+
 a.button.twitter {
     background: #37c5d6;
 }
