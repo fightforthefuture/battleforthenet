@@ -44,7 +44,7 @@ section.cta .form-fields {
     transition: opacity .3s;
     opacity: 1;
 }
-section.cta .signup-thanks {
+.thankyoubuttons {
     position: absolute;
     left: 0px;
     width: 100%;
@@ -380,6 +380,7 @@ a.button.healthtest {
     font-weight:bold;
     font-size:20px;
     width:250px;
+    margin-top:35px;
 }
 
 a.button.healthtest:hover {
@@ -422,8 +423,8 @@ li {
 h1 {
     font-size:75px;
     text-align:center;
-    margin-bottom:20px;
-    margin-top:20px;
+    margin-bottom:50px;
+    margin-top:50px;
 }
 h2 {
     margin: 0px auto 0px auto;
