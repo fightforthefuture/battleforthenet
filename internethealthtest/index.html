@@ -20,7 +20,9 @@
     <title>The Internet Health Test</title>
     <link href="css/internethealthtest.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <script src="//c.shpg.org/103/sp.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/internethistory.js"></script>
+    <script src="js/url.min.js"></script>
 </head>
 <body>
     <section class="cta" id="top">
@@ -29,10 +31,34 @@
            In February, we won strong Net Neutrality protections, banning Internet Service providers from blocking or throttling any website. But how do we know they're behaving? The Internet Health Test checks your connection for signs of any degradation at all. With enough people taking part around the country every day, we can make sure that ISPs don't get away with breaking the rules.
             <a href="#learn">(Learn More)</a>
         </p>
+        <div id="historicalData">
+            <div class="resultsHeader">
+                <h3>Shared Test Results</h3>
+                <button class="button healthtest" onclick="window.open('http://internethealthtest.org/?start=true', 'targetWindow','toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=600, height=400'); return false;">Test Your Connection</button>
+            </div>
+            <div class="resultsTable">
+                <div class="resultsRow">
+                    <div class="left">
+                        <ul>
+                            <li id="consistency"><span>Consistency</span><span class="result ui-li-count ui-body-inherit"></span></li>
+                            <li id="high">Fastest Test<span class="result ui-li-count ui-body-inherit"></span></li>
+                            <li id="low">Slowest Test<span class="result ui-li-count ui-body-inherit"></span></li>
+                            <li id="slow_links"><text class="result"></text></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                      <p>Measurements</p>
+                      <canvas id="test_series_chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
         <p style="font-weight:bold;">
             Click the start button to run the test on your computer, and then share it with your friends.
         </p>
-          <a class ="button healthtest" href="http://internethealthtest.org/?start=true" onclick="window.open(this.href, 'targetWindow','toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=600, height=400'); return false;">START THE TEST</a>
+        <p style="font-weight:bold;">
+              <a class ="button healthtest" href="http://internethealthtest.org/?start=true" onclick="window.open(this.href, 'targetWindow','toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=600, height=400'); return false;">START THE TEST</a>
+        </p>
         <div class="buttons">
             <a class="button facebook" href="http://facebook.com/sharer/sharer.php?u=http://battleforthenet.com/internethealthtest/" target="_blank">Share on Facebook</a>  
             <a class="button twitter" href="http://twitter.com/intent/tweet?text=Is%20your%20ISP%20is%20slowing%20down%20your%20Internet%3F%20Find%20out%20now.%20Help%20protect%20%23netneutrality.%20%20http%3A%2F%2Fbattleforthenet.com%2Finternethealthtest" target="_blank">Share on Twitter</a>
@@ -82,6 +108,14 @@
       ga('create', 'UA-26576645-20', 'auto');
       ga('send', 'pageview');
 
+    </script>
+    <script>
+      (function() {
+        var urlParam = url('?t');
+        if (urlParam !== null && urlParam !== false) {
+            new InternetHealthTest(urlParam);
+        }
+      })();
     </script>
 </body>
 </html>

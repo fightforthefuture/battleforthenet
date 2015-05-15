@@ -25,6 +25,177 @@
 .shareprogress_hack .sp_fb_small a {
     width: 110px;
 }
+
+#historicalData {
+    margin: 45px auto 10px auto;
+    position: relative;
+    display: none;
+    border-radius: 5px;
+    background-color: #39394D;
+    width: 790px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+section.cta .form-fields {
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    transition: opacity .3s;
+    opacity: 1;
+}
+section.cta .signup-thanks {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    top: 0px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+#historicalData .resultsHeader {
+    position: relative;
+    height: 50px;
+    margin-top: 20px;
+}
+#historicalData .resultsHeader h3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#historicalData .resultsHeader button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#historicalData .resultsTable {
+    margin: 45px 0px 10px 0px;
+    width: 100%;
+    display: table;
+}
+
+#historicalData .resultsTable .resultsRow {
+    display: table-row;
+}
+
+#historicalData .resultsTable .right, #historicalData .resultsTable .left {
+    padding: 0px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+#historicalData .resultsTable .left {
+    text-align: left;
+    width: 440px;
+}
+
+#historicalData .resultsTable .right {
+    text-align: left;
+    width: 320px;
+    padding-left: 30px;
+}
+
+#historicalData ul {
+    width: 100%;
+}
+
+#slow_links, #slow_links .result {
+    float: none;
+    text-align: center;
+}
+
+#historicalData ul li {
+    width: 100%;
+    color: rgb(30, 30, 30);
+    background-color: rgb(184, 177, 203);
+    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(80, 80, 115);
+    border-left-style: none;
+    border-left-width: 0px;
+    border-right-color: rgb(204, 204, 204);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(80, 80, 115);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+section.cta li .result {
+    border: none;
+    background: none;
+    text-transform: capitalize;
+    float: right;
+    font-weight: bold;
+}
+
+#historicalData .button.healthtest {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 1em;
+    margin: 0px;
+    display: block;
+    background: rgb(224, 58, 94);
+    border: 0px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    float: none;
+}
+
+section.cta button, a.btn {
+    display: block;
+    background: #2dbc8f;
+    border: 0px;
+    border-radius: 5px;
+    line-height: 66px;
+    text-transform: uppercase;
+    color: white;
+    padding: 0px 0px;
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0px auto;
+    text-decoration: none;
+}
+section.cta button {
+    float: right;
+}
+section.cta button:hover, a.btn:hover {
+    background: #1dac7f;
+}
+
+
 /* --- */
 
 body {
