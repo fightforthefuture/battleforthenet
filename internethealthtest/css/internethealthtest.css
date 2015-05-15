@@ -44,19 +44,16 @@ section.cta .form-fields {
     transition: opacity .3s;
     opacity: 1;
 }
-.thankyoubuttons {
-    position: absolute;
-    left: 0px;
+.thankyoubutton {
     width: 100%;
-    top: 0px;
     text-align: center;
     padding-top: 10px;
     font-size: 30px;
     opacity: 0;
     display: none;
-    -webkit-transition: opacity .3s;
-    -moz-transition: opacity .3s;
-    transition: opacity .3s;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    transition: opacity 1s;
 }
 
 #historicalData .resultsHeader {
