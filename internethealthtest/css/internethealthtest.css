@@ -142,6 +142,13 @@ section.cta .form-fields {
     padding-bottom: 10px;
 }
 
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 section.cta li .result {
     border: none;
     background: none;
@@ -402,6 +409,17 @@ p {
     text-align: center;
     color: #eaebf6;
 }
+
+p.faqheader {
+    font-weight:bold;
+    margin-top:40px;
+}
+
+p.faqanswer {
+    font-size:15px;
+    text-align:left;
+}
+
 ul {
     margin: 0px auto;
     padding: 0px;

@@ -134,7 +134,84 @@
           If you're having trouble with the test, please contact <a href="mailto:help@internethealthtest.org" target="_blank">help@internethealthtest.org</a>.
         </p>
     </section>
-
+    <section>
+      <h3>Frequently Asked Questions</h3>
+      <p class="faqheader">What is the test doing and how does it work?</p>
+      <p class="faqanswer">
+        Pressing "start test" runs a series of individual measurement tests, each to a different place on the Internet. These individual tests are named "steps" in the current interface. 
+      </p>
+      <p class="faqanswer">
+        Each test (step) sends traffic to and from your device (laptop, phone, etc.) to a measurement point that is located outside of your ISP's network. 
+      </p>
+      <p class="faqanswer">
+        This tests helps determine whether there is congestion at the connection between your ISP and another network that your ISP connects with. As more Internet users run tests from different locations, the more the source of a problem becomes clear.
+      </p>
+      <p class="faqanswer">
+        These other networks, where the measurement points are located, are chosen because they represent locations where content and services that users like you would frequently access are hosted. 
+      </p>
+      <p class="faqanswer">
+        A test to a given location begins to indicate  whether you can quickly get to content hosted in that location (or, whether your bank's site (etc.) would load forever). 
+      </p>
+      <p class="faqanswer">
+        Depending on what region you're in, the test will run against a different set of locations (so, varying number of "steps"). Note that locations outside of the United States are not as well covered as those within, and may be further away and show only one step.
+      </p>
+      <p class="faqanswer">
+        Consistent results across all tests indicates that there is likely little congestion at the interconnection between your ISP and these varying "other networks" at the time you ran the test. Note, however, that congestion varies over the course of a day, so we encourage you to run tests multiple times over the course of a day. 
+      </p>
+      <p class="faqanswer">
+        Large differences between test results indicate that there are issues between your ISP and at least one other network. One test once won't say anything conclusive (the problem could be local to your home connection, or a brief issue, etc.). But many tests taken together produce a lot of data, which over time begins to expose systemic problems and Net Neutrality violations. 
+      </p>
+      <p class="faqheader">How is this different than other speedtests?</p>
+      <p class="faqanswer">
+        Many speedtests run a test against measurement points located within your ISP’s network, or to a limited set of measurement points. Those tests measure the speed within your ISP, but not your performance to “the rest of the Internet.” 
+      </p>
+      <p class="faqanswer">
+        This test uses open-source code and M-Lab infrastructure, and tests against measurement points located at representative locations outside of your ISP’s network. In effect, this test measures whether you get adequate performance to The Internet, looking at various locations as representative of The Internet. Many speedtests measure only whether you get adequate performance within your ISP’s network.
+      </p>
+      <p  class="faqheader">How does this detect net neutrality violations?</p>
+      <p class="faqanswer">
+        This test focuses on showing whether your ISP’s interconnections with other networks are congested. 
+      </p>
+      <p class="faqanswer">
+        These “other networks” are those on which popular content and services are hosted. Interconnection congestion has become an important issue for the Open Internet, as intentional throttling of interconnection on the part of large ISPs is a tactic that has been used to demand payment from popular content and service providers. This practice results in users not having access to content and services that don’t pay -- which results in a non-neutral network and an Internet in which speech and access to content is controlled by the economic interest of big ISPs. 
+      </p>
+      <p class="faqanswer">
+        The more data is gathered from these tests (the more times you and your friends run the test) the more Battle For the Net and other Net Neutrality advocates will be able to identify interconnection congestion, and work to stop your ISP from throttling your access to content and services hosted off of their network. 
+      </p>
+      <p  class="faqheader">Where does the data go?</p>
+      <p class="faqanswer">
+        This test was built by Battle for the Net, and uses M-Lab code and infrastructure. All of the data goes into the public domain, and is hosted by M-Lab, which is a global network measurement platform dedicated to open and reproducible Internet science. 
+      </p>
+      <p class="faqanswer">
+        Net Neutrality advocates will be accessing the data from M-Lab, and using it as evidence in the fight for strong, enforceable Net Neutrality. 
+      </p>
+      <p class="faqanswer">
+        You can learn more about M-Lab and its data at <a href="http://measurementlab.net" target="_blank">measurementlab.net</a>.
+      </p>
+      <p  class="faqheader">What am I supposed to do if it says my connection is slow or inconsistent?</p>
+      <p class="faqanswer">
+        By contributing performance information through the Internet Health Test, you have already helped call attention to how interconnection affects broadband access. While this doesn’t fix problems immediately, this is a big step toward real accountability and change. 
+      </p>
+      <p class="faqanswer">
+        A single test may not definitely prove that a specific interconnection issue or business dispute exists, but the more data collected from different Internet users and different locations, the more advocates can demonstrate disruptions of broadband access, call attention to negative  behavior, and push for change. To do this, we need data from many users over a long time period during different hours of the day. This is how you help hold ISPs accountable.
+      </p>
+      <p class="faqanswer">
+        If you’d like to follow the data, you can see M-Lab’s aggregations at <a href="http://measurementlab.net/observatory" target="_blank">http://www.measurementlab.net/observatory</a> (site is US-only, for now).
+      </p>
+      <p class="faqanswer">
+        You can also sign up for our alerts and follow us as we use your data and others’ to push for change: <a href="http://www.fightforthefuture.org/" target="_blank">www.fightforthefuture.org</a> and <a href="http://www.freepress.net" target="_blank">www.freepress.net</a>.  
+      </p>
+      <p class="faqanswer">
+        (You can, of course, also call your ISP and complain. But one of the reasons we’re here is that that tactic hasn’t worked so well for consumers in the past.)
+      </p>
+      <p  class="faqheader">The test says I’m somewhere I’m not. What’s going on?</p>
+      <p class="faqanswer">
+        The test detects your location based on your IP address, using a combination of AppEngine’s geolocation service and the freely-available GeoIP database from Maxmind. If you are using a VPN or proxy, it may identify your location incorrectly. There are other cases in which the data sources we use may not have accurate geolocation information for your IP address.  This happens for multiple complex reasons, and is difficult to remedy.
+      </p>
+      <p class="faqanswer">
+        If you experience repeated problems, we encourage you to report them here: <a href="mailto:help@internethealthtest.org" target="_blank">help@internethealthtest.org</a> 
+      </p>
+    </section>
     <section class="hope">
         <h3><a href="/" style="text-decoration:none;">Back to Battle for the Net</a></h3>
     </section>
