@@ -65,6 +65,53 @@
             <p style="font-weight:bold;">Thanks for running the test! Now share it with your friends.</p>
             <a class="button facebook" href="http://facebook.com/sharer/sharer.php?u=http://battleforthenet.com/internethealthtest/" target="_blank">Share on Facebook</a>  
             <a class="button twitter" href="http://twitter.com/intent/tweet?text=Is%20your%20ISP%20is%20slowing%20down%20your%20Internet%3F%20Find%20out%20now.%20Help%20protect%20%23netneutrality.%20%20http%3A%2F%2Fbattleforthenet.com%2Finternethealthtest" target="_blank">Share on Twitter</a>
+            <br/><br/>
+            <p>Want more awesome stuff from Fight for the Future? Subcribe to our newsletter!</p>
+            <form style="margin-top: 0px;" name="billy" action="https://queue.fightforthefuture.org/action" method="POST" id="signup" class="clear">
+                <div class="form-fields">
+                    
+                    <div style="display: none;">
+                        <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" />
+                        <input type="checkbox" id="hp_disabled" name="hp_disabled" />
+                    </div>
+                    <input type="hidden" name="member[language]" value="en">
+                    <input type="hidden" name="member[country]" value="US" id="country">
+                    <input type="hidden" name="salsa" value="true">
+                    <input type="hidden" name="language_id" value="en">
+                    <input type="hidden" name="member[movement_id]" value="1">
+                    <input type="hidden" name="member[user_agent]" value="">
+                    <input type="hidden" name="member[ip_address]" value="">
+                    <input type="hidden" name="tag" value="internet-health-test" />
+                    <input type="hidden" name="org" id="org" value="fftf" />
+                    <input type="text" name="guard" style="display: none;">
+                    <input type="hidden" name="action" value="1" />
+                    <input type="text" name="member[email]" id="email" placeholder="Your Email Address" />
+                    <button type="submit" id="subscribe">Subscribe</button>
+                    <!--
+                    <p>
+                        Enter your phone number and we'll connect you with Congress:
+                    </p>
+                    <input type="text" name="phone" id="phone" placeholder="555-555-5555" />
+                    <button type="submit" id="subscribe">Call Congress!</button>
+                    -->
+                </div>
+                <div class="signup-thanks">
+                    Thanks &mdash; we'll be in touch!<br/>
+                </div>
+                <!--
+                <p class="alternative">
+                    Can't call? Spread the word!
+                </p>
+                <a class="button facebook" href="#">Share on Facebook</a>
+                <a class="button twitter" href="#" id="twitter-button3">Join with Twitter</a>
+                -->
+            </form>
+            <span class="disclaimer">
+                <a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a>
+                will email you with campaign updates.
+                <a href="https://www.fightforthefuture.org/privacy" target="_blank">Privacy Policy</a>
+            </span>
+
         </div>
     </section>
     <section id="learn">
@@ -126,7 +173,7 @@
         }
       })();
     </script>
-    <script>
+    <script type="text/javascript">
     $(function() {
       $("#test").click(function() {
           $('.thankyoubutton').css('display', 'block');
@@ -136,6 +183,127 @@
           }, 50);
       });
     });
+    function AJAX(params) {
+        this.async = params.async || true;
+        this.error = params.error;
+        this.method = params.method || 'GET';
+        this.success = params.success;
+        this.form = params.form;
+        this.url = params.url;
+
+        this.request = new XMLHttpRequest();
+        this.request.open(this.method, this.url, this.async);
+
+        if (this.success) {
+            this.request.onload = this.success;
+        }
+
+        if (this.error) {
+            this.request.onerror = this.error;
+        }
+
+        if (this.form) {
+            var params = this.serializeForm(this.form);
+            this.request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            this.request.send(params);
+        } else {
+            this.request.send();
+        }
+
+    }
+
+    AJAX.prototype.serializeForm = function(form) {
+        if (!form || form.nodeName !== "FORM") {
+            return;
+        }
+
+        var i, j, q = [];
+        for (i = form.elements.length - 1; i >= 0; i = i - 1) {
+            if (form.elements[i].name === "") {
+                continue;
+            }
+            switch (form.elements[i].nodeName) {
+            case 'INPUT':
+                switch (form.elements[i].type) {
+                case 'text':
+                case 'hidden':
+                case 'password':
+                case 'button':
+                case 'reset':
+                case 'submit':
+                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    break;
+                case 'checkbox':
+                case 'radio':
+                    if (form.elements[i].checked) {
+                        q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    }
+                    break;
+                case 'file':
+                    break;
+                }
+                break;
+            case 'TEXTAREA':
+                q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                break;
+            case 'SELECT':
+                switch (form.elements[i].type) {
+                case 'select-one':
+                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    break;
+                case 'select-multiple':
+                    for (j = form.elements[i].options.length - 1; j >= 0; j = j - 1) {
+                        if (form.elements[i].options[j].selected) {
+                            q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].options[j].value));
+                        }
+                    }
+                    break;
+                }
+                break;
+            case 'BUTTON':
+                switch (form.elements[i].type) {
+                case 'reset':
+                case 'submit':
+                case 'button':
+                    q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value));
+                    break;
+                }
+                break;
+            }
+        }
+
+        return q.join("&");
+    };
+
+
+    var form = document.querySelector('#signup');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        
+        if (!document.getElementById('email').value) {
+            alert('Please enter an email address :)');
+            return document.getElementById('email').focus();
+        }
+
+        document.querySelector('.signup-thanks').style.display = 'block';
+        document.querySelector('.form-fields').style.opacity = 0;
+        document.querySelector('.disclaimer').style.opacity = 0;
+        setTimeout(function() {
+            document.querySelector('.signup-thanks').style.opacity = 1;
+        }, 50);
+
+        new AJAX({
+            form: form,
+            method: 'POST',
+            success: function(res) {
+                console.log(res);
+            },
+            url: form.getAttribute('action')
+        });
+
+    }, false);
     </script>
     
 
