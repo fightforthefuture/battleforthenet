@@ -940,7 +940,7 @@ PetitionForm.prototype.addEventListeners = function() {
             var postalCode = '55419';
         }
         else
-            var campaignId = 'jan14th';
+            var campaignId = 'sneak-attack';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
 
