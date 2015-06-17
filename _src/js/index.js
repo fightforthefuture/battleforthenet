@@ -179,9 +179,10 @@ var YourSenators = require('./YourSenators');
                 if (location.href.match(/sharing_modal=1/)) {
                     global.modals.display('call_modal');
                 } else if (location.href.match(/twitter_modal=1/)) {
-                    // global.modals.display('twitter_modal');
+                    global.modals.display('twitter_modal'); 
                 } else if (document.referrer.indexOf('//t.co') != -1) {
                     // global.modals.display('twitter_modal');
+                    console.log('from twitter!');
                 }
             }
         });
