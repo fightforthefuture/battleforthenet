@@ -775,9 +775,10 @@ OrganizationRotation.prototype.addEventListeners = function() {
     var chosenOrg = null;
     if (loc.indexOf('org=') == -1) {
         var coin_toss = Math.random();
-        if (coin_toss < .20) {
-            randomOrg = 'fp';
-        } else if (coin_toss < .60) {
+        //if (coin_toss < .20) {
+        //    randomOrg = 'fp';
+        //} else if (coin_toss < .60) {
+        if (coin_toss < .50) {
             randomOrg = 'dp';
         } else {
             randomOrg = 'fftf';
