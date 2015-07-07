@@ -178,10 +178,12 @@ var YourSenators = require('./YourSenators');
                     template: e.target.responseText
                 });
 
-                if (location.href.match(/sharing_modal=1/)) {
+                if (location.href.match(/call_tool=1/)) {
+                    global.modals.display('plz_call_modal');
+                } else if (location.href.match(/sharing_modal=1/)) {
                     global.modals.display('call_modal');
                 } else if (location.href.match(/twitter_modal=1/)) {
-                    global.modals.display('twitter_modal'); 
+                    global.modals.display('twitter_modal');
                 }
             }
         });
