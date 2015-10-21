@@ -355,7 +355,6 @@ body #battle #petition button {
     font-weight: bold;
     line-height: 43px;
     margin: 6px 0 8px;
-    text-transform: uppercase;
     width: 250px;
 
     -webkit-transition: opacity 0.3s;

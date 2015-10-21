@@ -12,6 +12,7 @@ var Modals = require('./Modals');
 var MotherShip = require('./MotherShip');
 var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
+var EuropeEmailPetition = require('./EuropeEmailPetition');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var ScrollDetection = require('./ScrollDetection');
@@ -71,6 +72,22 @@ var YourSenators = require('./YourSenators');
     };
 
     new AJAX({
+        url: 'templates/EuropeEmailPetition.html' + buster,
+        success: function(e) {
+            var pleaseWaitNode = document.querySelector('#battle .please-wait');
+            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
+            loadMoreSections();
+
+            var petitionForm = new EuropeEmailPetition({
+                formTemplate: e.target.responseText,
+                target: '#battle .form-wrapper'
+            });
+
+        }
+    });
+
+    /*
+    new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
             var pleaseWaitNode = document.querySelector('#battle .please-wait');
@@ -127,6 +144,7 @@ var YourSenators = require('./YourSenators');
             });
         }
     });
+    */
 
     function loadMoreSections() {
         new AJAX({
@@ -279,7 +297,7 @@ var YourSenators = require('./YourSenators');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./OrganizationRotation":13,"./PetitionForm":14,"./Polyfills":15,"./Queue":16,"./ScrollDetection":17,"./SimpleSection":18,"./TeamInternetSection":19,"./YourSenators":21}],2:[function(require,module,exports){
+},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./EuropeEmailPetition":6,"./GoogleAnalytics":8,"./ImagePreloader":9,"./LoadingIcon":10,"./MobileMenu":11,"./Modals":12,"./MotherShip":13,"./OrganizationRotation":14,"./PetitionForm":15,"./Polyfills":16,"./Queue":17,"./ScrollDetection":18,"./SimpleSection":19,"./TeamInternetSection":20,"./YourSenators":22}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -534,6 +552,89 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 module.exports = DetectFeatures;
 
 },{}],6:[function(require,module,exports){
+var AJAX = require('./AJAX');
+var Template = require('./Template');
+
+
+function EuropeEmailPetition(params) {
+    // Params
+    this.formTemplate = params.formTemplate;
+    this.target = params.target;
+
+    this.DOMNode = document.querySelector(this.target);
+
+    this.render();
+    this.addEventListeners();
+
+    document.getElementById('fftf_disclosure').style.display = 'block';
+}
+
+EuropeEmailPetition.prototype.render = function() {
+    this.DOMNode.innerHTML = Template(this.formTemplate, {});
+    this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
+
+};
+
+EuropeEmailPetition.prototype.setCountryCode = function(countryCode) {
+    this.DOMNode.querySelector('[name="member[country]"]').value = countryCode;
+};
+
+EuropeEmailPetition.prototype.validateEmail = function(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+};
+
+EuropeEmailPetition.prototype.validatePhoneNumber = function(num) {
+   num = num.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
+   num = num.replace("+", "").replace(/\-/g, '');
+
+   if (num.charAt(0) == "1")
+       num = num.substr(1);
+
+   if (num.length != 10)
+       return false;
+
+   return num;
+};
+
+EuropeEmailPetition.prototype.addEventListeners = function() {
+    var petitionFormNode = this.DOMNode.querySelector('#petition');
+    var thanksNode = this.DOMNode.querySelector('.thanks');
+    var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
+
+    // Petition Form: Submit event listener
+    petitionFormNode.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var url = petitionFormNode.getAttribute('action');
+
+        new AJAX({
+            url: url,
+            method: 'POST',
+            form: petitionFormNode,
+            success: function(e) {}
+        });
+        if (ga) ga('send', 'event', 'form', 'submit', 'email');
+        if (optimizely.push) {
+            optimizely.push(['trackEvent', 'form-submit-email']);
+        }
+
+        petitionFormNode.style.display = 'none';
+        disclaimerNode.style.display = 'none';
+        thanksNode.style.display = 'block';
+
+    }, false);
+
+    
+};
+
+EuropeEmailPetition.prototype.updateCTA = function updateCTA(cta) {
+    this.DOMNode.querySelector('button[type="submit"]').textContent = cta;
+};
+
+module.exports = EuropeEmailPetition;
+
+},{"./AJAX":2,"./Template":21}],7:[function(require,module,exports){
 function GUID() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }
@@ -545,7 +646,7 @@ function _p8(s) {
 
 module.exports = GUID;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -562,7 +663,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -578,7 +679,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -589,7 +690,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -623,7 +724,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var Template = require('./Template');
 
 function Modals(params) {
@@ -706,7 +807,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":20}],12:[function(require,module,exports){
+},{"./Template":21}],13:[function(require,module,exports){
 var AJAX = require('./AJAX');
 var GUID = require('./GUID');
 
@@ -764,7 +865,7 @@ MotherShip.prototype.sendRequest = function sendRequest() {
 
 module.exports = MotherShip;
 
-},{"./AJAX":2,"./GUID":6}],13:[function(require,module,exports){
+},{"./AJAX":2,"./GUID":7}],14:[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -815,7 +916,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (global){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
@@ -979,7 +1080,7 @@ PetitionForm.prototype.updateCTA = function updateCTA(cta) {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Template":20}],15:[function(require,module,exports){
+},{"./AJAX":2,"./Template":21}],16:[function(require,module,exports){
 function Polyfills() {
     this.bind();
 }
@@ -1011,7 +1112,7 @@ Polyfills.prototype.bind = function() {
 
 module.exports = Polyfills;
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 function Queue(params) {
     this.callback = params.callback;
     this.context = params.context || this;
@@ -1034,7 +1135,7 @@ Queue.prototype.destroy = function() {
 
 module.exports = Queue;
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 function ScrollDetection(params) {
     this.onScroll = this.onScroll.bind(this);
     this.padding = 900;
@@ -1073,7 +1174,7 @@ ScrollDetection.prototype.onScroll = function onScroll(e) {
 
 module.exports = ScrollDetection;
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -1091,7 +1192,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":20}],19:[function(require,module,exports){
+},{"./Template":21}],20:[function(require,module,exports){
 (function (global){
 var SimpleSection = require('./SimpleSection');
 
@@ -1207,7 +1308,7 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 module.exports = TeamInternetSection;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SimpleSection":18}],20:[function(require,module,exports){
+},{"./SimpleSection":19}],21:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
@@ -1245,7 +1346,7 @@ var Template = function template(str, data){
 
 module.exports = Template;
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 (function (global){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
@@ -1397,4 +1498,4 @@ YourSenators.prototype.render = function() {
 module.exports = YourSenators;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Template":20}]},{},[1]);
+},{"./AJAX":2,"./Template":21}]},{},[1]);
