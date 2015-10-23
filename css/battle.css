@@ -344,6 +344,15 @@ body #battle #petition input.input-zip {
     width: 120px;
 }
 
+body #battle #petition select {
+    max-width: 260px;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    font-family: "proxima-nova", sans-serif;
+    font-size: 15px;
+}
+
 body #battle #petition button {
     background-color: #20cba1;
     border-radius: 6px;
