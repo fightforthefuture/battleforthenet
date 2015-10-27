@@ -10,7 +10,7 @@ var Modals = require('./Modals');
 var MotherShip = require('./MotherShip');
 var OrganizationRotation = require('./OrganizationRotation');
 var PetitionForm = require('./PetitionForm');
-var EuropeEmailPetition = require('./EuropeEmailPetition');
+//var EuropeEmailPetition = require('./EuropeEmailPetition');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var ScrollDetection = require('./ScrollDetection');
@@ -70,22 +70,6 @@ var YourSenators = require('./YourSenators');
     };
 
     new AJAX({
-        url: 'templates/EuropeEmailPetition.html' + buster,
-        success: function(e) {
-            var pleaseWaitNode = document.querySelector('#battle .please-wait');
-            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
-            loadMoreSections();
-
-            var petitionForm = new EuropeEmailPetition({
-                formTemplate: e.target.responseText,
-                target: '#battle .form-wrapper'
-            });
-
-        }
-    });
-
-    /*
-    new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
             var pleaseWaitNode = document.querySelector('#battle .please-wait');
@@ -142,7 +126,6 @@ var YourSenators = require('./YourSenators');
             });
         }
     });
-    */
 
     function loadMoreSections() {
         new AJAX({
