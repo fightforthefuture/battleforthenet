@@ -53,6 +53,7 @@ PetitionForm.prototype.addEventListeners = function() {
         location.href.match(/call_tool=1/)
         || location.href.match(/committees=1/)
         || location.href.match(/title-x-committees=1/)
+        || location.href.match(/whitehouse_call=1/)
         ) {
         petitionFormNode.style.display = 'none';
         senatorsNode.style.display = 'none';
@@ -118,6 +119,13 @@ PetitionForm.prototype.addEventListeners = function() {
         {
             var campaignId = 'stop-gop-fcc-investigation';
             var postalCode = '55419';
+        }
+        else if (location.href.match(/whitehouse_call=1/))
+        {
+            var campaignId = 'sneak-attack-3';
+            var postalCode = '55419';
+            document.getElementById('call_header').textContent = 'We\'ll connect you with key Senate offices and White House staffers. After each call, you can press * to move to the next office. When they answer, please be polite and say:'
+            document.getElementById('call_script').textContent = '"Please do all in your power to make sure that anti-Net Neutrality language is not included in the budget.  To include it would undermine the Internet, the will of millions of Americans, and your political legacy."';
         }
         else
             var campaignId = 'sneak-attack-2';
