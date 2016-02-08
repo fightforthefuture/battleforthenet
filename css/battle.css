@@ -595,7 +595,8 @@ body #battle .thanks {
     display: block;
     margin: 0 auto;
     padding: 15px 20px 10px;
-    width: 280px;
+    min-width: 280px;
+    max-width: 550px;
 }
 
 body #battle .thanks h2 {
@@ -887,7 +888,7 @@ body #battle .thanks h2 {
     width: 60px;
 }
 
-#battle section#team-internet .btn {
+#battle section .btn {
     background: #4dbca1;
     border-radius: 3px;
     color: white;
@@ -906,7 +907,7 @@ body #battle .thanks h2 {
             transition: background-color 0.3s;
 }
 
-#battle section#team-internet .btn:hover {
+#battle section .btn:hover {
     background-color: #64d0b6;
 }
 
@@ -977,8 +978,22 @@ body #battle .thanks h2 {
 }
 
 /* Extra Reading */
-#battle section#extra-reading {
+#battle section#zero-rating {
     background-color: #313142;
+    font-family: "proxima-nova", sans-serif;
+    padding: 16px 25px 64px;
+}
+#battle section#zero-rating h3 {
+    font-size: 175%;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+
+/* Extra Reading */
+#battle section#extra-reading {
+    /* background-color: #313142; */
+    background-color: #1b1b24;
     font-family: "proxima-nova", sans-serif;
     padding: 16px 25px 64px;
 }
@@ -1238,6 +1253,11 @@ body.privacy section.team-internet.fight-for-the-future {
 }
 .overlay .modal hr {
     border: 0px;
+}
+.overlay .modal textarea {
+    width: 90%;
+    height: 250px;
+    border: 1px solid #999;
 }
 .overlay .modal button {
     display: inline-block;

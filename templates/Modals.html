@@ -61,3 +61,35 @@
         </div>
     </div>
 </div>
+<div class="overlay twitter invisible" id="edit_modal">
+    <div class="gutter">
+        <div class="modal">
+            <a class="close" href="#">×</a>
+            <h1>Edit your FCC complaint:</h1>
+            <form>
+                <!--
+                <label for="email">Your email
+                    <span>(Optional)</span>
+                </label>
+                <input type="text" name="email" id="emaildudez">
+                <hr/>
+                -->
+                <!--
+                <br/>
+                <label>Maximum frequency:</label>
+                -->
+                <!--
+                <select name="frequency">
+                    <option value="1" selected>Tweet once a day</option>
+                    <option value="2">Tweet once a week</option>
+                    <option value="3">Tweet once a month</option>
+                    <option value="4">Tweet three times a year</option>
+                </select>
+                -->
+                <textarea id="editComplaint"></textarea>
+                <hr/>
+                <button type="button" onclick="document.getElementById('comment').value = document.getElementById('editComplaint').value; global.modals.hide('edit_modal');">SAVE</button>
+            </form>
+        </div>
+    </div>
+</div>

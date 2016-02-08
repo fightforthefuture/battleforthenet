@@ -243,6 +243,22 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
+                url: 'templates/ZeroRatingSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.zero-rating-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
                 url: 'templates/ExtraReading.html' + buster,
                 success: function(e) {
                     new SimpleSection({
@@ -896,9 +912,10 @@ PetitionForm.prototype.addEventListeners = function() {
 
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
         e.preventDefault();
-
-        window.open('./letter/');
+        document.getElementById('editComplaint').value = document.getElementById('comment').value;
+        global.modals.display('edit_modal');
     }, false);
+
 
     // Petition Form: Submit event listener
     petitionFormNode.addEventListener('submit', function(e) {
@@ -1052,13 +1069,18 @@ function ScrollDetection(params) {
     this.timeout = null;
 
     window.addEventListener('scroll', this.onScroll, false);
+
+    this.showQueuedSections(); // # JL HACK ~ disabled scroll detection
 }
 
 ScrollDetection.prototype.showQueuedSections = function showQueuedSections() {
     // Has the user scrolled down enough?
+    // JL HACK ~ disabled 2016-02-08 because we need inline links to work
+    /*
     if ((innerHeight + scrollY + this.padding) < this.getDocumentHeight()) {
         return;
     }
+    */
 
     window.removeEventListener('scroll', this.onScroll, false);
 

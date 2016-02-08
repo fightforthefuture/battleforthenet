@@ -76,9 +76,10 @@ PetitionForm.prototype.addEventListeners = function() {
 
     petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
         e.preventDefault();
-
-        window.open('./letter/');
+        document.getElementById('editComplaint').value = document.getElementById('comment').value;
+        global.modals.display('edit_modal');
     }, false);
+
 
     // Petition Form: Submit event listener
     petitionFormNode.addEventListener('submit', function(e) {

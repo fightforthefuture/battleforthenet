@@ -6,13 +6,18 @@ function ScrollDetection(params) {
     this.timeout = null;
 
     window.addEventListener('scroll', this.onScroll, false);
+
+    this.showQueuedSections(); // # JL HACK ~ disabled scroll detection
 }
 
 ScrollDetection.prototype.showQueuedSections = function showQueuedSections() {
     // Has the user scrolled down enough?
+    // JL HACK ~ disabled 2016-02-08 because we need inline links to work
+    /*
     if ((innerHeight + scrollY + this.padding) < this.getDocumentHeight()) {
         return;
     }
+    */
 
     window.removeEventListener('scroll', this.onScroll, false);
 
