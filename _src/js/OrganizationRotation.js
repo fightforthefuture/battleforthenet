@@ -11,11 +11,11 @@ OrganizationRotation.prototype.addEventListeners = function() {
         //if (coin_toss < .20) {
         //    randomOrg = 'fp';
         //} else if (coin_toss < .60) {
-        if (coin_toss < .50) {
-            randomOrg = 'dp';
-        } else {
+        //if (coin_toss < .50) {
+        //    randomOrg = 'dp';
+        //} else {
             randomOrg = 'fftf';
-        }
+        //}
     }
 
     if (loc.indexOf('org=fp') != -1 || randomOrg == 'fp') {
