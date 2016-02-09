@@ -923,6 +923,8 @@ PetitionForm.prototype.addEventListeners = function() {
 
         var url = petitionFormNode.getAttribute('action');
 
+        document.getElementById('subject').value = document.getElementById('name').value + "'s " + document.getElementById('subject').value
+
         new AJAX({
             url: url,
             method: 'POST',
