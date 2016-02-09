@@ -989,6 +989,9 @@ body #battle .thanks h2 {
     margin-bottom: 0px;
     font-weight: 400;
 }
+#battle section#zero-rating p {
+    text-align: justify;
+}
 
 /* Extra Reading */
 #battle section#extra-reading {
