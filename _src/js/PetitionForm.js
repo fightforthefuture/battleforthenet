@@ -102,8 +102,9 @@ PetitionForm.prototype.addEventListeners = function() {
 
         petitionFormNode.style.display = 'none';
         senatorsNode.style.display = 'none';
-        phoneCallFormNode.style.display = 'block';
+        phoneCallFormNode.style.display = 'none';
         disclaimerNode.style.display = 'none';
+        thanksNode.style.display = 'block';
 
 
     }, false);
