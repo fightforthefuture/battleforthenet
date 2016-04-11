@@ -1,6 +1,12 @@
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 
+var presetComplaints = {
+    verizon: 'Verizon is the worst company ever.',
+    att:     'AT&T is terrible.',
+    tmobile: 'T-Mobile is censoring the Internet.',
+    comcast: 'Comcast is the worst.'
+}
 
 function PetitionForm(params) {
     // Params
@@ -48,6 +54,8 @@ PetitionForm.prototype.addEventListeners = function() {
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
+    var textareaNode = this.DOMNode.querySelector('textarea');
+    var tabs = this.DOMNode.querySelectorAll('ul.tabs li a');
 
     if (
         location.href.match(/call_tool=1/)
@@ -74,11 +82,47 @@ PetitionForm.prototype.addEventListeners = function() {
         global.modals.display('share_modal');
     }, false);
 
-    petitionFormNode.querySelector('.right').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('editComplaint').value = document.getElementById('comment').value;
-        global.modals.display('edit_modal');
+    textareaNode.addEventListener('click', function(e) {
+        textareaNode.classList.add('expanded');
     }, false);
+
+    var formChanged = false;
+
+    textareaNode.addEventListener('change', function(e) {
+        formChanged = true;
+    });
+
+    var clickTab = function(tab) {
+        if (formChanged)
+            if (!confirm('You\'ve already started editing your complaint. Are you sure you want to switch companies and start over?'))
+                return;
+
+        formChanged = false;
+
+        for (var i = 0; i < tabs.length; i++)
+            tabs[i].classList.remove('sel');
+        
+        var company = tab.className.trim();
+
+        textareaNode.value = presetComplaints[company];
+        document.getElementById('contact_fcc_company').value = company;
+
+        tab.classList.add('sel');
+    };
+
+    var bindTabListener = function(tab) {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            clickTab(tab);
+        });
+    };
+
+    for (var i = 0; i < tabs.length; i++) {
+        bindTabListener(tabs[i]);
+    }
+
+    clickTab(tabs[Math.round(Math.random()*tabs.length)]);
 
 
     // Petition Form: Submit event listener

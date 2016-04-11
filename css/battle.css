@@ -185,9 +185,10 @@ body.loaded #battle p {
     opacity: 1;
 }
 
-body.loaded #battle p.form-wrapper {
+body.loaded #battle div.form-wrapper {
     -webkit-transition-delay: 0s;
             transition-delay: 0s;
+    padding: 10px 10px 30px 10px;
 }
 
 body.loaded #battle p.form-wrapper.loading {
@@ -196,294 +197,136 @@ body.loaded #battle p.form-wrapper.loading {
 
 
 /* Politicians */
-body #battle .form-wrapper .politicians {
-    display: none;
-    margin: 0 auto;
-    position: relative;
-    width: 270px;
-}
-
-body #battle .form-wrapper .politicians .politician {
-    cursor: pointer;
-    display: inline-block;
-    height: 150px;
-    margin: 0 0 12px;
-    position: relative;
-    width: 115px;
-}
-
-body #battle .form-wrapper .politicians .politician p.name {
-    bottom: 2px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    position: absolute;
-    text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
-    width: 100%;
-    z-index: 1;
-}
-
-body #battle .form-wrapper .politicians .politician p.stance {
-    background: #2e2e3f;
-    border-radius: 7px;
-    bottom: 0;
-    color: #ccc;
-    font-size: 8px;
-    font-weight: bold;
-    line-height: 17px;
-    margin: 0 0 0 5px;
-    position: absolute;
-    text-align: center;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    width: 105px;
-    z-index: 1;
-}
-
-/* body #battle .form-wrapper .politicians .politician.team-cable p.name, */
-body #battle .form-wrapper .politicians .politician.team-cable p.stance {
-    color: #fc3d41;
-}
-
-/* body #battle .form-wrapper .politicians .politician.team-internet p.name, */
-body #battle .form-wrapper .politicians .politician.team-internet p.stance {
-    color: #20cba1;
-}
-
-body #battle .form-wrapper .politicians .politician img {
-    border: none;
-    border-radius: 7px;
-    display: block;
-    opacity: 0;
-    width: 115px;
-
-    -webkit-transition: opacity 0.3s;
-            transition: opacity 0.3s;
-}
-
-@media screen and (min-width: 520px) {
-    body #battle .form-wrapper .politicians {
-        display: block;
-    }
-
-    body #battle .form-wrapper .politicians .politician {
-        display: block;
-        position: absolute;
-    }
-
-    body #battle .form-wrapper .politicians .politician:first-child {
-        left: -115px;
-        top: 24px;
-    }
-
-    body #battle .form-wrapper .politicians .politician:last-child {
-        left: 270px;
-        top: 24px;
-    }
-
-    body #battle .form-wrapper .politicians .politician:first-child img {
-        border-radius: 7px 0 0 7px;
-    }
-
-    body #battle .form-wrapper .politicians .politician:last-child img {
-        border-radius: 0 7px 7px 0;
-    }
-}
-
-@media screen and (min-width: 900px) {
-    body #battle .form-wrapper .politicians {
-        width: 540px;
-    }
-
-    body #battle .form-wrapper .politicians .politician:last-child {
-        left: 540px;
-        top: 24px;
-    }
-}
 
 /* Form */
 body #battle #petition {
+    color: #505073;
+    margin: 0px auto 0;
+    width: 100%;
+    max-width: 700px;
+
+}
+
+body #battle #petition ul.tabs {
+    width: 100%;
+    list-style-type: none;
+    font-size: 0px;
+    padding: 0px;
+    line-height: 0px;
+}
+
+body #battle #petition .tabs li {
+    width: 25%;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+
+body #battle #petition .tabs li a {
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    background-color: #d2d2de;
+    border-left: 1px solid #999;
+    -webkit-border-top-left-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    outline: 0;
+}
+body #battle #petition .tabs li a:hover {
+    background-color: #e2e2ee;
+}
+@media screen and (min-width: 500px) {
+    body #battle #petition .tabs li a {
+        background-size: auto 60%;
+    }
+}
+body #battle #petition .tabs li a.sel {
     background-color: #fff;
+}
+body #battle #petition .tabs li a.verizon {
+    border-left: 0px;
+    background-image: url(/images/petition/verizon.png);   
+}
+body #battle #petition .tabs li a.att {
+    background-image: url(/images/petition/att.png);   
+}
+body #battle #petition .tabs li a.tmobile {
+    background-image: url(/images/petition/tmobile.png);   
+}
+body #battle #petition .tabs li a.comcast {
+    background-image: url(/images/petition/comcast.png);   
+}
+
+
+body #battle #petition .fields {
+    background-color: #fff;
+    padding: 10px;
+}
+body #battle #petition .fields div {
+    display: inline-block;
+    padding: 5px;
+    width: 50%;
+}
+body #battle #petition .fields div.wide {
+    width: 100%;
+}
+body #battle #petition .fields input[type="text"], body #battle #petition .fields textarea {
+    width: 100%;
+    height: 45px;
     border-radius: 6px;
-    color: #505073;
-    margin: 28px auto 0;
-    width: 270px;
+    border: 1px solid #c1c0ea;
+    padding: 0px 15px;
+    -webkit-box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.1);
+    font-size: 16px;
 }
-
-body #battle #petition input:first-child {
-    border-radius: 6px 6px 0 0;
+body #battle #petition .fields textarea {
+    padding: 15px 15px 0px 15px;
+    height: 85px;
+    transition: height .3s ease-in;
+    -moz-transition: height .3s ease-in;
+    -ms-transition: height .3s ease-in;
+    -webkit-transition: height .3s ease-in;
 }
-
-body #battle #petition input {
-    border: none;
-    border-bottom: 1px solid #ccc;
-    border-radius: 0;
-    color: #505073;
-    display: block;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    height: 43px;
-    line-height: 19px;
-    margin: 0;
-    padding: 12px 14px;
-    width: 100%;
-    -webkit-appearance: none;
+body #battle #petition .fields textarea.expanded {
+    height: 150px;
 }
-
-body #battle #petition input.input-address {
-    border-right: 1px solid #ccc;
-    float: left;
-    width: 150px;
-}
-
-body #battle #petition input.input-zip {
-    float: left;
-    width: 120px;
-}
-
-body #battle #petition select {
-    max-width: 260px;
-    height: 40px;
-    line-height: 40px;
-    width: 100%;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 15px;
+body #battle #petition .fields p {
+    text-align: left;
+    margin: 0px 0px 0px 5px;
+    font-size: 16px;
+    color: #393863;
 }
 
 body #battle #petition button {
-    background-color: #20cba1;
-    border-radius: 6px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 43px;
-    margin: 6px 0 8px;
-    width: 250px;
-
-    -webkit-transition: opacity 0.3s;
-            transition: opacity 0.3s;
-}
-
-body #battle #petition button:hover {
-    opacity: 0.9;
-}
-
-body #battle #petition button:active {
-    opacity: 0.7;
-}
-
-body #battle #petition .right {
-    border-bottom: 1px solid #ccc;
-    clear: both;
-    cursor: pointer;
-    height: 92px;
-    position: relative;
-}
-
-body #battle #petition .right #comment {
-    border: none;
-    border-radius: 0 6px 0 0;
-    color: #ccc;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 15px;
-    height: 90px;
-    overflow: hidden;
-    padding: 12px;
+    background: #23d19d;
+    color: white;
+    border: 0px;
+    height: 60px;
+    line-height: 60px;
     width: 100%;
-}
-
-body #battle #petition .right .textarea-fade {
-    background-image: url(../images/textarea-fade.png);
-    background-image: linear-gradient(to 95%, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1));
-    background-position: center bottom;
-    background-repeat: repeat-x;
-    height: 90px;
-    position: absolute;
-    width: 100%
-}
-
-body #battle #petition .right .edit {
-    bottom: 10px;
-    color: #2dbb9b;
-    font-size: 10px;
-    font-weight: 700;
-    left: 15px;
-    position: absolute;
+    font-size: 22px;
     text-transform: uppercase;
-    /*width: 100%;*/
+    font-weight: bold;
+    -webkit-border-bottom-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    cursor: pointer;
 }
-
-body #battle #petition .right:hover .edit {
-    text-decoration:underline
+body #battle #petition button:hover {
+    background: #13c18d;
 }
-
-
-
-/* Experiment: Remove Letter Preview */
-body #battle.experiment-remove-letter-preview .form-wrapper {
-    width: 320px;
-}
-
-body #battle.experiment-remove-letter-preview .form-wrapper #petition {
-    width: 270px;
-}
-
-body #battle.experiment-remove-letter-preview .form-wrapper #petition .right {
-    display: none;
-}
-
-@media screen and (min-width: 500px) {
-    body #battle.experiment-remove-letter-preview .phone-call-form {
-        margin-left: -75px;
-    }
-}
-
-@media screen and (min-width: 520px) {
-    body #battle.experiment-remove-letter-preview .form-wrapper .politicians .politician:last-child {
-        left: 270px;
-        top: 24px;
-    }
-}
-
-
-
-/* Media Queries */
-@media screen and (min-width: 900px) {
-    body #battle #petition {
-        width: 540px;
-    }
-
-    body #battle #petition .left {
-        float: left;
-    }
-
-    body #battle #petition .right {
-        border-left: 1px solid #ccc;
-        clear: none;
-        float: left;
-        height: 129px;
-        width: 270px;
-    }
-
-    body #battle #petition .right .textarea-fade {
-        background-image: linear-gradient(to 90%, rgba(255, 255, 255, 0),  rgba(255, 255, 255, 1));
-    }
-
-    body #battle #petition .right #comment,
-    body #battle #petition .right .textarea-fade {
-        height: 127px;
-    }
-}
-
-
-
-
 
 
 body #battle div.disclaimer_container {
@@ -652,7 +495,7 @@ body #battle .thanks h2 {
     background-color: #1c1c25;
     background-color: black;
     font-family: "proxima-nova", sans-serif;
-    margin: 64px 0 0;
+    margin: 0px 0 0;
     padding: 16px 25px 64px;
 }
 #battle section#team-cable h2 {
