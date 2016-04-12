@@ -116,12 +116,16 @@ var YourSenators = require('./YourSenators');
                     // Update country field
                     petitionForm.setCountryCode(response.country.iso_code);
 
+                    loadMoreSections();
+                    /*
+                    JL NOTE ~ disabled senators for now
                     new YourSenators({
                         callback: loadMoreSections,
                         geography: response,
                         target: '.your-senators-target',
                         URLs: URLs
                     });
+                    */
                 }
             });
         }
