@@ -243,22 +243,6 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/ZeroRatingSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.zero-rating-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
                 url: 'templates/ExtraReading.html' + buster,
                 success: function(e) {
                     new SimpleSection({
@@ -906,6 +890,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         petitionFormNode.style.display = 'none';
         phoneCallFormNode.style.display = 'none';
+        senatorsNode.style.display = 'none';
         thanksNode.style.display = 'block';
         global.modals.display('share_modal');
     }, false);
@@ -968,7 +953,7 @@ PetitionForm.prototype.addEventListeners = function() {
             document.getElementById('call_script').textContent = '"Please do all in your power to make sure that anti-Net Neutrality language is not included in the budget.  To include it would undermine the Internet, the will of millions of Americans, and your political legacy."';
         }
         else
-            var campaignId = 'sneak-attack-2';
+            var campaignId = 'sneak-attack-3';
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
 

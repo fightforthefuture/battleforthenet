@@ -241,22 +241,6 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/ZeroRatingSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.zero-rating-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
                 url: 'templates/ExtraReading.html' + buster,
                 success: function(e) {
                     new SimpleSection({

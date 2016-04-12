@@ -191,9 +191,9 @@ PoliticalScoreboard.prototype.showPlayers = function showPlayers(data, showGener
                     shareText = encodeURIComponent(player.sharetext);
                 } else if (player.team == 'team-internet') {
                     // shareText = encodeURIComponent(GLOBAL_TWEET_TEXT);
-                    shareText = encodeURIComponent('Can @'+player.twitter+' save the Internet? See '+subdomain.toLowerCase()+' and battleforthe.net right now! https://pic.twitter.com/r6V33Ileya');
+                    shareText = encodeURIComponent('Can @'+player.twitter+' save Net Neutrality? Stop HR 2666! See '+subdomain.toLowerCase()+' and battleforthe.net. https://pic.twitter.com/r6V33Ileya');
                 } else {
-                    shareText = encodeURIComponent('Will @'+player.twitter+' kill the Internet? See '+subdomain.toLowerCase()+' and battleforthe.net right now! https://pic.twitter.com/r6V33Ileya');
+                    shareText = encodeURIComponent('Don\'t let @'+player.twitter+' gut Net Neutrality! Stop HR 2666! See '+subdomain.toLowerCase()+' and battleforthe.net. https://pic.twitter.com/r6V33Ileya');
                 }
 
                 var url = 'https://twitter.com/intent/tweet?text=' + shareText + '&related=fightfortheftr';
