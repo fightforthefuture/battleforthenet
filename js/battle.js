@@ -134,25 +134,7 @@ var YourSenators = require('./YourSenators');
     });
 
     function loadMoreSections() {
-        new AJAX({
-            url: 'templates/TeamCableSection.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.team-cable-target',
-                    template: e.target.responseText
-                });
-            }
-        });
 
-        new AJAX({
-            url: 'templates/TeamInternetSection.html' + buster,
-            success: function(e) {
-                new TeamInternetSection({
-                    target: '.team-internet-target',
-                    template: e.target.responseText
-                });
-            }
-        });
 
         new AJAX({
             url: 'templates/ShareButtons.html' + buster,
@@ -191,23 +173,7 @@ var YourSenators = require('./YourSenators');
             }
         });
 
-        var queue = [];
-
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/HowWeWonSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.how-we-won-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
+        var queue = []; console.log('lol');
 
         if (global.isDesktop) {
             queue.push(function() {
