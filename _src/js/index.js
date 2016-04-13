@@ -239,6 +239,7 @@ var YourSenators = require('./YourSenators');
             });
         });
 
+        /*
         queue.push(function() {
             new AJAX({
                 url: 'templates/ZeroRatingSection.html' + buster,
@@ -254,6 +255,7 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
+        */
 
         queue.push(function() {
             new AJAX({
@@ -291,4 +293,14 @@ var YourSenators = require('./YourSenators');
             queue: queue
         });
     }
+    // JL HACK ~ make political scoreboard jump link work ----------------------
+    if (window.location.hash == '#political')
+        var stupidHackInterval = setInterval(function() {
+            if (document.getElementById('political')) {
+                clearInterval(stupidHackInterval);
+                window.location.hash = '#';
+                window.location.hash = '#political';
+            }
+        }, 100);
+    // -------------------------------------------------------------------------
 })();
