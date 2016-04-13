@@ -116,23 +116,37 @@ var YourSenators = require('./YourSenators');
                     // Update country field
                     petitionForm.setCountryCode(response.country.iso_code);
 
-                    loadMoreSections();
-                    /*
-                    JL NOTE ~ disabled senators for now
                     new YourSenators({
                         callback: loadMoreSections,
                         geography: response,
                         target: '.your-senators-target',
                         URLs: URLs
                     });
-                    */
                 }
             });
         }
     });
 
     function loadMoreSections() {
+        new AJAX({
+            url: 'templates/TeamCableSection.html' + buster,
+            success: function(e) {
+                new SimpleSection({
+                    target: '.team-cable-target',
+                    template: e.target.responseText
+                });
+            }
+        });
 
+        new AJAX({
+            url: 'templates/TeamInternetSection.html' + buster,
+            success: function(e) {
+                new TeamInternetSection({
+                    target: '.team-internet-target',
+                    template: e.target.responseText
+                });
+            }
+        });
 
         new AJAX({
             url: 'templates/ShareButtons.html' + buster,
@@ -171,7 +185,23 @@ var YourSenators = require('./YourSenators');
             }
         });
 
-        var queue = []; console.log('lol');
+        var queue = [];
+
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/HowWeWonSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.how-we-won-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
 
         if (global.isDesktop) {
             queue.push(function() {
@@ -199,6 +229,22 @@ var YourSenators = require('./YourSenators');
                 success: function(e) {
                     new SimpleSection({
                         target: '.learn-more-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/ZeroRatingSection.html' + buster,
+                success: function(e) {
+                    new SimpleSection({
+                        target: '.zero-rating-target',
                         template: e.target.responseText
                     });
 
