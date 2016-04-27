@@ -241,7 +241,7 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        /*
+        
         queue.push(function() {
             new AJAX({
                 url: 'templates/ZeroRatingSection.html' + buster,
@@ -257,7 +257,7 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
-        */
+        
 
         queue.push(function() {
             new AJAX({
@@ -897,6 +897,8 @@ PetitionForm.prototype.addEventListeners = function() {
     var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
     var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
 
+    senatorsNode.style.display = 'none'; // JL HACK ~
+
     if (
         location.href.match(/call_tool=1/)
         || location.href.match(/committees=1/)
@@ -980,8 +982,10 @@ PetitionForm.prototype.addEventListeners = function() {
             document.getElementById('call_header').textContent = 'We\'ll connect you with key Senate offices and White House staffers. After each call, you can press * to move to the next office. When they answer, please be polite and say:'
             document.getElementById('call_script').textContent = '"Please do all in your power to make sure that anti-Net Neutrality language is not included in the budget.  To include it would undermine the Internet, the will of millions of Americans, and your political legacy."';
         }
-        else
-            var campaignId = 'sneak-attack-3';
+        else {
+            var campaignId = 'zero-rating';
+            var postalCode = '55419';
+        }
 
         var phoneNumber = phoneCallFormNode.elements.phone.value;
 

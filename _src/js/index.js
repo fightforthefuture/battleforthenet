@@ -239,7 +239,7 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        /*
+        
         queue.push(function() {
             new AJAX({
                 url: 'templates/ZeroRatingSection.html' + buster,
@@ -255,7 +255,7 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
-        */
+        
 
         queue.push(function() {
             new AJAX({
