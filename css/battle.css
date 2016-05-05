@@ -204,7 +204,8 @@ body #battle #petition {
     margin: 0px auto 0;
     width: 100%;
     max-width: 700px;
-
+    -webkit-transition: opacity 0.8s;
+        transition: opacity 0.8s;
 }
 
 body #battle #petition ul.tabs {
@@ -297,13 +298,17 @@ body #battle #petition .fields textarea {
     -webkit-transition: height .3s ease-in;
 }
 body #battle #petition .fields textarea.expanded {
-    height: 150px;
+    height: 275px;
 }
 body #battle #petition .fields p {
     text-align: left;
     margin: 0px 0px 0px 5px;
     font-size: 16px;
     color: #393863;
+}
+body #battle #petition .fields span {
+    color: #999;
+    font-style: italic;
 }
 
 body #battle #petition button {
@@ -352,15 +357,16 @@ body #battle .phone-call-form {
     display: none;
     margin: 0 auto;
     width: 270px;
+    -webkit-transition: opacity 0.8s;
+        transition: opacity 0.8s;
 }
 
 body #battle .phone-call-form header {
     background-color: #5d5d7a;
     border-radius: 6px 6px 0 0;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     padding: 26px 30px;
-    display: none; /* JL NOTE ~ explicitly added */
 }
 
 body #battle .phone-call-form section {
