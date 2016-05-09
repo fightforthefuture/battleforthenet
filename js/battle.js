@@ -978,6 +978,9 @@ PetitionForm.prototype.addEventListeners = function() {
     petitionFormNode.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        if (document.getElementById('name').value.indexOf(' ') === -1)
+            return alert('Please enter a first and last name.');
+
         var url = petitionFormNode.getAttribute('action');
 
         document.getElementById('subject').value = document.getElementById('name').value + "'s " + document.getElementById('subject').value
