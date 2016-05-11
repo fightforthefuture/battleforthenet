@@ -832,6 +832,12 @@ OrganizationRotation.prototype.addEventListeners = function() {
         document.getElementById('fftf_disclosure').style.display = 'block';
 
         chosenOrg = 'fftf';
+    } else if (loc.indexOf('org=18mr') != -1 || randomOrg == '18mr') {
+        document.getElementById('org').value = '18mr';
+        document.getElementById('randomize_disclosure').style.display = 'none';
+        document.getElementById('a18mr_disclosure').style.display = 'block';
+
+        chosenOrg = '18mr';
     }
 
     if (!randomOrg) {
