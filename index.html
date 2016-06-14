@@ -27,6 +27,17 @@ if (window.location.href.indexOf('cisa=1') !== -1)
     window.location.replace('https://www.obamadecides.org/?bftn=1');
 </script>
 <style>
+#battle p .fireworks {
+    position: absolute;
+    z-index: 0;
+}
+#battle p .victory {
+    margin: 64px 0 12px;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+}
+/* -------------- */
 html {
     background-color: #1b1b24;
     font-family: arial, sans-serif;
@@ -294,17 +305,23 @@ header nav a {
     </p>
     -->
 
-    <h1 class="tk-proxima-nova light">NET NEUTRALITY IS UNDER ATTACK.</h1>
+    <!-- <h1 class="tk-proxima-nova light">NET NEUTRALITY IS UNDER ATTACK.</h1> -->
 
     <p class="please-wait padded-900 pulse">
         Please wait...
     </p>
 
-    <p class="padded-900 tk-proxima-nova light">
-        AT&amp;T, T-Mobile, Verizon and Comcast are trying to <a href="#zero-rating">sneak past</a> Net Neutrality rules. They're imposing bogus data caps (with throttling & fees if you hit the cap) and exempting some services from those caps... but not others. It's just as bad as the <a href="#learn-more">fast lanes</a> we fought to stop.
+    <p class="padded-900 no-margin tk-proxima-nova light">
+        <canvas class="fireworks desktop"></canvas>
+        <img class="victory" src="images/epic-victory.png">
     </p>
 
-    <h2 class="tk-proxima-nova">Fight back! Choose your ISP and submit a complaint to the FCC! Your complaint will be filed and the FCC will follow up directly.</h2>
+    <p class="padded-900 tk-proxima-nova light">
+        When we won net neutrality, ISPs sued to strike down the rules. But on Tuesday June 14th, courts dismissed their lawsuits, agreeing that the FCC rules were on solid footing. That is huge. What's left to win? FCC action against zero-rating plans that privilege some sites over others. And real net neutrality rules in Europe.
+
+    </p>
+
+    <h2 class="tk-proxima-nova">Let's win on zero-rating, too. Choose your ISP and submit a complaint to the FCC (the FCC will follow up directly!)</h2>
 
     <div class="form-wrapper loading tk-proxima-nova"></div>
 
