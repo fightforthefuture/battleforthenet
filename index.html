@@ -313,14 +313,14 @@ header nav a {
     </p>
 
     <p class="padded-900 tk-proxima-nova ">
-        The FCC is about to vote on rules that make it harder for Comcast and the other big cable companies to exploit and profit off of our personal data—information about where we are located, what websites we have visited, and other critical info. 
-
-
-But the outcome is still uncertain because Commissioner Jessica Rosenworcel is the deciding vote.  Tell her to side with Internet users—not with Cable lobbyists.
+        The FCC is about to vote on rules that make it harder for Comcast and other big cable companies to exploit and profit off our personal data&mdash;information about our location, what websites we have visited, and other critical info.
+    </p>
+    <p class="padded-900 tk-proxima-nova ">
+But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn't decided if she's going to stand with Internet users or with the Cable lobbyists.
 
     </p>
 
-    <h2 class="tk-proxima-nova">Contact FCC Commissioner Rosenworcel and ask her to support Internet Privacy!</h2>
+    <h2 class="tk-proxima-nova">Contact FCC Commissioner Rosenworcel and ask her to support privacy for Internet users!</h2>
 
     <!-- /////////////////////////////////////// -->
     <!-- /////////////////////////////////////// -->
@@ -413,6 +413,7 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel is t
             opacity: .7;
             display: inline-block;
             margin-bottom: 25px;
+            font-size: 1.25em;
         }
         a.call:hover {
             opacity: 1;
@@ -454,7 +455,7 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel is t
         var handleRemainingTweetText = function() {
             if (!document.getElementById('tweet_text'))
               return;
-            var remaining = 105 - document.getElementById('tweet_text').value.length;
+            var remaining = 140 - document.getElementById('tweet_text').value.length;
             document.getElementById('remaining').textContent = remaining;
             if (remaining <= 10)
                 document.getElementById('remaining').className = 'danger';
@@ -471,7 +472,19 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel is t
           });
 
           var possibleTweets = [
-            '.@jrosenworcel please protect Internet Privacy! Don\'t let ISPs monetize my data battleforthenet.com'
+            '.@JRosenworcel please protect Internet Privacy! Don\'t let ISPs monetize my data battleforthenet.com',
+            '.@JRosenworcel, now is the time to act for Americans’ privacy. Vote for the #FCCPrivacy protections next week! battleforthenet.com',
+            '.@JRosenworcel, vote for the #FCCPrivacy protections on October 27!',
+            '.@JRosenworcel now is the time to protect Americans privacy. Vote for the #FCCPrivacy rules! battleforthenet.com',
+            '.@JRosenworcel: Time is of the essence. Please vote for #FCCPrivacy rules next week. battleforthenet.com',
+            '.@JRosenworcel, you have a chance to protect Americans privacy. Vote for the #FCCPrivacy rules! battleforthenet.com',
+            '.@JRosenworcel, your support for #FCCPrivacy rules is really important to me. battleforthenet.com',
+            '.@JRosenworcel, put our privacy ahead of politics. #FCCPrivacy battleforthenet.com',
+            '.@JRosenworcel, my privacy should mean more than #BigCable’s bottom line. Vote YES on the #FCCPrivacy rules! battleforthenet.com',
+            '.@JRosenworcel: My privacy is more important than Comcast’s profits. Please vote for #FCCPrivacy rules! battleforthenet.com',
+            '.@JRosenworcel: Don’t put Verizon’s profits ahead of my privacy. Vote for the #FCCPrivacy rules on 10/27! battleforthenet.com',
+            '.@JRosenworcel, ISPs selling my data without my consent is not right. Please vote for the #FCCPrivacy rules. battleforthenet.com',
+            '.@JRosenworcel, I should get to decide if Comcast sells my data. Vote YES on the #FCCPrivacy rules next week! battleforthenet.com',
           ];
           var random = possibleTweets[Math.floor(Math.random() * possibleTweets.length)]
           document.getElementById('tweet_text').value = random;
