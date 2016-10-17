@@ -33,8 +33,8 @@ var YourSenators = require('./YourSenators');
 // Design enhancements
 (function(){
     if (global.isDesktop) {
-        require('./Fireworks');
-        new Fish();
+        // require('./Fireworks');
+        // new Fish();
         document.querySelector('#background').className += 'hueRotate';
     }
     // Preload the background
@@ -247,7 +247,7 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        
+        /*
         queue.push(function() {
             new AJAX({
                 url: 'templates/ZeroRatingSection.html' + buster,
@@ -263,6 +263,7 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
+        */
         
 
         queue.push(function() {
@@ -314,7 +315,7 @@ var YourSenators = require('./YourSenators');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./Fireworks":6,"./Fish":7,"./GoogleAnalytics":9,"./ImagePreloader":10,"./LoadingIcon":11,"./MobileMenu":12,"./Modals":13,"./MotherShip":14,"./OrganizationRotation":15,"./PetitionForm":16,"./Polyfills":17,"./Queue":18,"./ScrollDetection":19,"./SimpleSection":20,"./TeamInternetSection":21,"./YourSenators":23}],2:[function(require,module,exports){
+},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./Fish":6,"./GoogleAnalytics":8,"./ImagePreloader":9,"./LoadingIcon":10,"./MobileMenu":11,"./Modals":12,"./MotherShip":13,"./OrganizationRotation":14,"./PetitionForm":15,"./Polyfills":16,"./Queue":17,"./ScrollDetection":18,"./SimpleSection":19,"./TeamInternetSection":20,"./YourSenators":22}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -569,300 +570,6 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 module.exports = DetectFeatures;
 
 },{}],6:[function(require,module,exports){
-var victoryImage = document.querySelector('img.victory');
-
-var SCREEN_WIDTH = victoryImage.offsetWidth,
-    SCREEN_HEIGHT = victoryImage.offsetHeight + 64,
-    mousePos = {
-        x: SCREEN_WIDTH / 2,
-        y: SCREEN_HEIGHT / 8
-    },
-
-    // create canvas
-    // canvas = document.createElement('canvas'),
-    canvas = document.querySelector('canvas'),
-    context = canvas.getContext('2d'),
-    particles = [],
-    rockets = [],
-    MAX_PARTICLES = 80,
-    colorCode = 0;
-
-var canvasIsVisible = checkIfCanvasIsVisible();
-
-
-// init
-// document.body.appendChild(canvas);
-canvas.width = SCREEN_WIDTH;
-canvas.height = SCREEN_HEIGHT;
-setInterval(launch, 1400);
-setInterval(loop, 1000 / 60);
-
-// canvas.addEventListener('mousedown', function(e) {
-//     for (var i = 0; i < 5; i++) {
-//         launchFrom(Math.random() * SCREEN_WIDTH * 2 / 3 + SCREEN_WIDTH / 6);
-//     }
-// }, false);
-
-function launch() {
-    if (!canvasIsVisible) {
-        return;
-    }
-
-    launchFrom(mousePos.x);
-}
-
-function launchFrom(x) {
-    if (rockets.length < 10) {
-        var rocket = new Rocket(x);
-        rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
-        rocket.vel.y = Math.random() * -3 - 4;
-        rocket.vel.x = Math.random() * 6 - 3;
-        rocket.size = 8;
-        rocket.shrink = 0.999;
-        rocket.gravity = 0.01;
-        rockets.push(rocket);
-    }
-}
-
-
-function checkIfCanvasIsVisible() {
-    if ((window.scrollY || document.body.scrollTop) > SCREEN_HEIGHT) {
-        return false;
-    }
-
-    var display =
-        canvas.currentStyle ?
-        canvas.currentStyle.display :
-        getComputedStyle(canvas, null).display;
-
-    return display === 'block';
-}
-
-window.addEventListener('scroll', onScroll, false);
-function onScroll(e) {
-    canvasIsVisible = checkIfCanvasIsVisible();
-}
-
-window.addEventListener('resize', onResize, false);
-function onResize() {
-    canvasIsVisible = checkIfCanvasIsVisible();
-
-    // update screen size
-    if (SCREEN_WIDTH != victoryImage.offsetWidth) {
-        canvas.width = SCREEN_WIDTH = victoryImage.offsetWidth;
-
-        mousePos = {
-            x: SCREEN_WIDTH / 2,
-            y: SCREEN_HEIGHT / 8
-        };
-    }
-
-    if (SCREEN_HEIGHT != victoryImage.offsetHeight + 64) {
-        canvas.height = SCREEN_HEIGHT = victoryImage.offsetHeight + 64;
-
-        mousePos = {
-            x: SCREEN_WIDTH / 2,
-            y: SCREEN_HEIGHT / 8
-        };
-    }
-}
-
-function loop() {
-    if (!canvasIsVisible) {
-        return;
-    }
-
-    // clear canvas
-    // context.fillStyle = "rgba(23, 22, 30, 0.05)";
-    context.fillStyle = "rgba(23, 22, 30, 0.3)";
-    context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    var existingRockets = [];
-
-    for (var i = 0; i < rockets.length; i++) {
-        // update and render
-        rockets[i].update();
-        rockets[i].render(context);
-
-        // calculate distance with Pythagoras
-        var distance = Math.sqrt(Math.pow(mousePos.x - rockets[i].pos.x, 2) + Math.pow(mousePos.y - rockets[i].pos.y, 2));
-
-        // random chance of 1% if rockets is above the middle
-        var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
-
-/* Explosion rules
-             - 80% of screen
-            - going down
-            - close to the mouse
-            - 1% chance of random explosion
-        */
-        if (rockets[i].pos.y < SCREEN_HEIGHT / 5 || rockets[i].vel.y >= 0 || distance < 50 || randomChance) {
-            rockets[i].explode();
-        } else {
-            existingRockets.push(rockets[i]);
-        }
-    }
-
-    rockets = existingRockets;
-
-    var existingParticles = [];
-
-    for (var i = 0; i < particles.length; i++) {
-        particles[i].update();
-
-        // render and save particles that can be rendered
-        if (particles[i].exists()) {
-            particles[i].render(context);
-            existingParticles.push(particles[i]);
-        }
-    }
-
-    // update array with existing particles - old particles should be garbage collected
-    particles = existingParticles;
-
-    while (particles.length > MAX_PARTICLES) {
-        particles.shift();
-    }
-}
-
-function Particle(pos) {
-    this.pos = {
-        x: pos ? pos.x : 0,
-        y: pos ? pos.y : 0
-    };
-    this.vel = {
-        x: 0,
-        y: 0
-    };
-    this.shrink = .97;
-    this.size = 2;
-
-    this.resistance = 1;
-    this.gravity = 0;
-
-    this.flick = false;
-
-    this.alpha = 1;
-    this.fade = 0;
-    this.color = 0;
-}
-
-Particle.prototype.update = function() {
-    // apply resistance
-    this.vel.x *= this.resistance;
-    this.vel.y *= this.resistance;
-
-    // gravity down
-    this.vel.y += this.gravity;
-
-    // update position based on speed
-    this.pos.x += this.vel.x;
-    this.pos.y += this.vel.y;
-
-    // shrink
-    this.size *= this.shrink;
-
-    // fade out
-    this.alpha -= this.fade;
-};
-
-Particle.prototype.render = function(c) {
-    if (!this.exists()) {
-        return;
-    }
-
-    c.save();
-
-    c.globalCompositeOperation = 'lighter';
-
-    var x = this.pos.x,
-        y = this.pos.y,
-        r = this.size / 2;
-
-    var gradient = c.createRadialGradient(x, y, 0.1, x, y, r);
-    gradient.addColorStop(0.1, "rgba(255,255,255," + this.alpha + ")");
-    gradient.addColorStop(0.8, "hsla(" + this.color + ", 100%, 50%, " + this.alpha + ")");
-    gradient.addColorStop(1, "hsla(" + this.color + ", 100%, 50%, 0.1)");
-
-    c.fillStyle = gradient;
-
-    c.beginPath();
-    c.arc(this.pos.x, this.pos.y, this.flick ? Math.random() * this.size : this.size, 0, Math.PI * 2, true);
-    c.closePath();
-    c.fill();
-
-    c.restore();
-};
-
-Particle.prototype.exists = function() {
-    return this.alpha >= 0.1 && this.size >= 1;
-};
-
-function Rocket(x) {
-    Particle.apply(this, [{
-        x: x,
-        y: SCREEN_HEIGHT}]);
-
-    this.explosionColor = 0;
-}
-
-Rocket.prototype = new Particle();
-Rocket.prototype.constructor = Rocket;
-
-Rocket.prototype.explode = function() {
-    var count = Math.random() * 10 + 80;
-
-    for (var i = 0; i < count; i++) {
-        var particle = new Particle(this.pos);
-        var angle = Math.random() * Math.PI * 2;
-
-        // emulate 3D effect by using cosine and put more particles in the middle
-        var speed = Math.cos(Math.random() * Math.PI / 2) * 11;
-
-        particle.vel.x = Math.cos(angle) * speed;
-        particle.vel.y = Math.sin(angle) * speed;
-
-        particle.size = 10;
-
-        particle.gravity = 0.03;
-        particle.resistance = 0.92;
-        particle.shrink = Math.random() * 0.05 + 0.93;
-
-        particle.flick = true;
-        particle.color = this.explosionColor;
-
-        particles.push(particle);
-    }
-};
-
-Rocket.prototype.render = function(c) {
-    if (!this.exists()) {
-        return;
-    }
-
-    c.save();
-
-    c.globalCompositeOperation = 'lighter';
-
-    var x = this.pos.x,
-        y = this.pos.y,
-        r = this.size / 2;
-
-    var gradient = c.createRadialGradient(x, y, 0.1, x, y, r);
-    gradient.addColorStop(0.1, "rgba(255, 255, 255 ," + this.alpha + ")");
-    gradient.addColorStop(1, "rgba(0, 0, 0, " + this.alpha + ")");
-
-    c.fillStyle = gradient;
-
-    c.beginPath();
-    c.arc(this.pos.x, this.pos.y, this.flick ? Math.random() * this.size / 2 + this.size / 2 : this.size, 0, Math.PI * 2, true);
-    c.closePath();
-    c.fill();
-
-    c.restore();
-};
-
-},{}],7:[function(require,module,exports){
 function Fish() {
     this.spawn();
 
@@ -909,7 +616,7 @@ Fish.prototype.moveTail = function() {
 
 module.exports = Fish;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 function GUID() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }
@@ -921,7 +628,7 @@ function _p8(s) {
 
 module.exports = GUID;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -938,7 +645,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -954,7 +661,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -965,7 +672,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -999,7 +706,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var Template = require('./Template');
 
 function Modals(params) {
@@ -1082,7 +789,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":22}],14:[function(require,module,exports){
+},{"./Template":21}],13:[function(require,module,exports){
 var AJAX = require('./AJAX');
 var GUID = require('./GUID');
 
@@ -1140,7 +847,7 @@ MotherShip.prototype.sendRequest = function sendRequest() {
 
 module.exports = MotherShip;
 
-},{"./AJAX":2,"./GUID":8}],15:[function(require,module,exports){
+},{"./AJAX":2,"./GUID":7}],14:[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -1197,7 +904,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (global){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
@@ -1435,7 +1142,7 @@ PetitionForm.prototype.updateCTA = function updateCTA(cta) {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Template":22}],17:[function(require,module,exports){
+},{"./AJAX":2,"./Template":21}],16:[function(require,module,exports){
 function Polyfills() {
     this.bind();
 }
@@ -1467,7 +1174,7 @@ Polyfills.prototype.bind = function() {
 
 module.exports = Polyfills;
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 function Queue(params) {
     this.callback = params.callback;
     this.context = params.context || this;
@@ -1490,7 +1197,7 @@ Queue.prototype.destroy = function() {
 
 module.exports = Queue;
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 function ScrollDetection(params) {
     this.onScroll = this.onScroll.bind(this);
     this.padding = 900;
@@ -1534,7 +1241,7 @@ ScrollDetection.prototype.onScroll = function onScroll(e) {
 
 module.exports = ScrollDetection;
 
-},{}],20:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -1552,7 +1259,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":22}],21:[function(require,module,exports){
+},{"./Template":21}],20:[function(require,module,exports){
 (function (global){
 var SimpleSection = require('./SimpleSection');
 
@@ -1668,7 +1375,7 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 module.exports = TeamInternetSection;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SimpleSection":20}],22:[function(require,module,exports){
+},{"./SimpleSection":19}],21:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
@@ -1706,7 +1413,7 @@ var Template = function template(str, data){
 
 module.exports = Template;
 
-},{}],23:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 function YourSenators(params) {
     params.callback();
 }

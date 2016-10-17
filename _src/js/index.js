@@ -31,8 +31,8 @@ var YourSenators = require('./YourSenators');
 // Design enhancements
 (function(){
     if (global.isDesktop) {
-        require('./Fireworks');
-        new Fish();
+        // require('./Fireworks');
+        // new Fish();
         document.querySelector('#background').className += 'hueRotate';
     }
     // Preload the background
@@ -245,7 +245,7 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        
+        /*
         queue.push(function() {
             new AJAX({
                 url: 'templates/ZeroRatingSection.html' + buster,
@@ -261,6 +261,7 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
+        */
         
 
         queue.push(function() {
