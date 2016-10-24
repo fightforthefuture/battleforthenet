@@ -312,6 +312,8 @@ header nav a {
         <canvas class="fireworks desktop"></canvas>
     </p>
 
+    <!--
+
     <p class="padded-900 tk-proxima-nova ">
         The FCC is about to vote on rules that make it harder for Comcast and other big cable companies to exploit and profit off our personal data&mdash;information about our location, what websites we have visited, and other critical info.
     </p>
@@ -319,8 +321,9 @@ header nav a {
 But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn't decided if she's going to stand with Internet users or with the Cable lobbyists.
 
     </p>
+    -->
 
-    <!--<h2 class="tk-proxima-nova">Contact FCC Commissioner Rosenworcel and ask her to support privacy for Internet users!</h2>-->
+    <h2 class="tk-proxima-nova">This week, the FCC is voting on rules to protect your online privacy and make it harder for the cable companies to abuse sensitive information about you.</h2>
 
     <!-- /////////////////////////////////////// -->
     <!-- /////////////////////////////////////// -->
@@ -431,12 +434,12 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn
 
         }
     </style>
-    <div id="tweet_box" style="display: none;">
+    <div id="tweet_box" style="display: block;">
         <div id="tweet_text_container">
             <textarea id="tweet_text" maxlength="105"></textarea>
             <div id="remaining">0</div>
         </div>
-        <a class="tweet_big_button" href="#" id="tweet_your_state"><img src="/images/share/tw_white.png"/>Tweet the FCC</a>
+        <a class="tweet_big_button" href="#" id="tweet_your_state"><img src="/images/share/tw_white.png"/>Tweet the FCC!</a>
         <!--<a class="call" href="#" id="call_fcc">Can't tweet? Call the FCC...</a>-->
     </div>
     <div id="call_box" style="display: none;">
@@ -475,18 +478,7 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn
           });
 
           var possibleTweets = [
-            '.@JRosenworcel, now is the time to act for Americans’ privacy. Vote for the #FCCPrivacy protections next week! battleforthenet.com',
-            '.@JRosenworcel, vote for the #FCCPrivacy protections on October 27!',
-            '.@JRosenworcel now is the time to protect Americans privacy. Vote for the #FCCPrivacy rules! battleforthenet.com',
-            '.@JRosenworcel: Time is of the essence. Please vote for #FCCPrivacy rules next week. battleforthenet.com',
-            '.@JRosenworcel, you have a chance to protect Americans privacy. Vote for the #FCCPrivacy rules! battleforthenet.com',
-            '.@JRosenworcel, your support for #FCCPrivacy rules is really important to me. battleforthenet.com',
-            '.@JRosenworcel, put our privacy ahead of politics. #FCCPrivacy battleforthenet.com',
-            '.@JRosenworcel, my privacy should mean more than #BigCable’s bottom line. Vote YES on the #FCCPrivacy rules! battleforthenet.com',
-            '.@JRosenworcel: My privacy is more important than Comcast’s profits. Please vote for #FCCPrivacy rules! battleforthenet.com',
-            '.@JRosenworcel: Don’t put Verizon’s profits ahead of my privacy. Vote for the #FCCPrivacy rules on 10/27! battleforthenet.com',
-            '.@JRosenworcel, ISPs selling my data without my consent is not right. Please vote for the #FCCPrivacy rules. battleforthenet.com',
-            '.@JRosenworcel, I should get to decide if Comcast sells my data. Vote YES on the #FCCPrivacy rules next week! battleforthenet.com',
+            'I want the FCC to pass ISP privacy rules this week! #FCCPrivacy battleforthenet.com',
           ];
           var random = possibleTweets[Math.floor(Math.random() * possibleTweets.length)]
           document.getElementById('tweet_text').value = random;
