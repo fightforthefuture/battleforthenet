@@ -1017,7 +1017,7 @@ body #battle .thanks p a {
 .footer-target footer .socials {
   padding: 10px 0px 20px 0px;
 }
-.footer-target footer .socials img {
+.shares-container img {
   margin: 0px 7px;
   width: 24px;
   height: 24px;
@@ -1042,24 +1042,24 @@ body #battle .thanks p a {
    }
 }
 
-.footer-target .share-container a:hover{
+.shares-container .share-container a:hover{
     color: blue !important;
 }
-.footer-target .share-container a:visited{
+.shares-container .share-container a:visited{
     color: #FFF !important;
 }
-.footer-target .share-container a:link {
+.shares-container .share-container a:link {
     color: #FFF !important;
 }
-.footer-target .fb-share-container{
+.shares-container .fb-share-container{
     background-color: #3B5999;
     padding-left:20px;
 }
-.footer-target .twitter-share-container{
+.shares-container .twitter-share-container{
     background-color: #4099FF;
     padding-left:15px;
 }
-.footer-target .share-container{
+.shares-container .share-container{
     position:relative;
     display:inline-block;
     width: 220px;

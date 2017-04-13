@@ -312,7 +312,7 @@ header nav a {
         <canvas class="fireworks desktop"></canvas>
     </p>
 
-    <h2 class="tk-proxima-nova">Cable & wireless companies still want the power to censor, block, or slow websites to a crawl. To stop them, we need to get Congress on our side first. Step one? Show up in force at "town hall meeting" near you.</h2>
+    <h2 class="tk-proxima-nova">Cable & wireless companies still want the power to censor, block, or slow websites to a crawl. To stop them, we need to get Congress on our side first. Step one? Show up in force at "town hall meetings" near you.</h2>
 
     <!-- Action Network Townhall Event Campaign Widget -->
     <link href='https://actionnetwork.org/css/style-embed-whitelabel.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/v2/event_campaign/stand-up-for-net-neutrality-at-town-hall-events?format=js&source=widget&style=full'></script><div id='can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events' style='width: 600px'><!-- this div is the target for our HTML insertion --></div>
@@ -375,13 +375,29 @@ header nav a {
         border: none;
         box-shadow: none;
       }
+
+      .can_embed .shares-container img {
+        width: 24px;
+      }
     </style>
 
     <script type="text/javascript">
-       document.addEventListener('can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events_loaded', function(e) {
+       document.addEventListener('can_embed_loaded', function(e) {
          var zipSubmit = document.getElementById('form-zip_code-submit');
-         zipSubmit.value = 'Find a Town Hall';
-         zipSubmit.classList.add('text-visible');
+
+         if (zipSubmit) {
+           zipSubmit.value = 'Find a Town Hall';
+           zipSubmit.classList.add('text-visible');
+         }
+       });
+
+       document.addEventListener('can_embed_submitted', function(e) {
+         var thanksEl = document.getElementById('can_thank_you');
+
+         if (thanksEl) {
+           var share = document.querySelector('.shares-container').cloneNode(true);
+           thanksEl.appendChild(share);
+         }
        });
     </script>
 
