@@ -302,7 +302,7 @@ header nav a {
     </p>
     -->
 
-    <h1 class="tk-proxima-nova light">Stop letting Big Cable abuse our privacy!</h1>
+    <h1 class="tk-proxima-nova light">Don't let the new FCC kill net neutrality.</h1>
 
     <p class="please-wait padded-900 pulse">
         Please wait...
@@ -312,55 +312,9 @@ header nav a {
         <canvas class="fireworks desktop"></canvas>
     </p>
 
-    <!--
-
-    <p class="padded-900 tk-proxima-nova ">
-        The FCC is about to vote on rules that make it harder for Comcast and other big cable companies to exploit and profit off our personal data&mdash;information about our location, what websites we have visited, and other critical info.
-    </p>
-    <p class="padded-900 tk-proxima-nova ">
-But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn't decided if she's going to stand with Internet users or with the Cable lobbyists.
-
-    </p>
-    -->
-
-    <h2 class="tk-proxima-nova">This week, the FCC is voting on rules to protect your online privacy and make it harder for the cable companies to abuse sensitive information about you.</h2>
-
-    <!-- /////////////////////////////////////// -->
-    <!-- /////////////////////////////////////// -->
-    <!-- BEGIN THROWAWAY NEW TWEET ACTION THINGY -->
-    <!-- /////////////////////////////////////// -->
-    <!-- /////////////////////////////////////// -->
+    <h2 class="tk-proxima-nova">Cable & wireless companies still want the power to censor, block, or slow websites to a crawl. To stop them, we need to get Congress on our side first. Step one? Show up in force at "townhall meeting" near you.</h2>
 
     <style type="text/css">
-        #tweet_text_container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0px auto;
-        }
-
-        #tweet_text_container textarea {
-            width: 100%;
-            max-width: 500px;
-            height: 112px;
-            font-family: 'Courier New';
-            font-size: 1.2rem;
-            padding: 5px 10px;
-            margin-bottom: 0px;
-            resize: none;
-
-        }
-        #tweet_text_container #remaining {
-            position: absolute;
-            right: 20px;
-            bottom: 7px;
-            font-size: 2rem;
-            color: gray;
-            opacity: .7;
-        }
-        #tweet_text_container #remaining.danger {
-            color: red;
-        }
         a.tweet_big_button {
             display: block;
             margin: 10px auto 40px auto;
@@ -387,12 +341,6 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn
             background: linear-gradient(to bottom, #1bbaee 0%,#17a1ce 100%); /* W3C */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1bbaee', endColorstr='#17a1ce',GradientType=0 ); /* IE6-9 */
         }
-        a.tweet_big_button img {
-            width: 24px;
-            height: auto;
-            vertical-align: middle;
-            margin: 0px 5px 3px 0px;
-        }
         @media screen and (min-width: 400px) {
             a.tweet_big_button {
                 width: 390px;
@@ -400,125 +348,22 @@ But the outcome is still uncertain because Commissioner Jessica Rosenworcel hasn
                 line-height: 75px;
                 font-size: 23px;
             }
-            a.tweet_big_button img {
-                width: 38px;
-                height: auto;
-            }
         }
         a.tweet_big_button:hover {
             background: #17A1CE;
             box-shadow: 0px 1px 5px rgba(0, 0, 0, .5);
             text-shadow: 0px;
         }
-        a.call {
-            color: white;
-            text-decoration: underline;
-            opacity: .7;
-            display: inline-block;
-            margin-bottom: 25px;
-            font-size: 1.25em;
-        }
-        a.call:hover {
-            opacity: 1;
-        }
-        div.call_box_script {
-            margin: 25px auto 40px auto;
-            display: block;
-            max-width: 500px;
-            background: #ffc;
-            padding: 15px;
-            font-size: 20px;
-            line-height: 1.6em;
-            color: black;
-            font-family: 'Georgia', serif;
-
-        }
     </style>
-    <div id="tweet_box" style="display: block;">
-        <div id="tweet_text_container">
-            <textarea id="tweet_text" maxlength="105"></textarea>
-            <div id="remaining">0</div>
-        </div>
-        <a class="tweet_big_button" href="#" id="tweet_your_state"><img src="/images/share/tw_white.png"/>Tweet the FCC!</a>
-        <!--<a class="call" href="#" id="call_fcc">Can't tweet? Call the FCC...</a>-->
-    </div>
-    <div id="call_box" style="display: none;">
-        <!--
-        <p class="padded-900 no-margin tk-proxima-nova">
-            <strong>Call <a href="tel://12024182400">202-418-2400</a> to talk to Rosenworcel's office.</strong>
-        </p>
-        <p class="padded-900 no-margin tk-proxima-nova light">
-            When they answer, please be polite and say:
-        </p>
-        <div class="call_box_script">
-            Hi, I’m calling because it’s important to me that the cable companies not be able to use my personal data to fatten their bottom lines.  Please side with Internet users when the FCC votes later this month — not with Big Cable, and their lobbyists.
-        </div>
-        -->
-    </div>
+    <a class="tweet_big_button" href="https://actionnetwork.org/event_campaigns/stand-up-for-net-neutrality-at-town-hall-events">Find a Meeting Near You!</a>
 
     <script type="text/javascript">
-        var hasTweeted = false;
-        var handleRemainingTweetText = function() {
-            if (!document.getElementById('tweet_text'))
-              return;
-            var remaining = 140 - document.getElementById('tweet_text').value.length;
-            document.getElementById('remaining').textContent = remaining;
-            if (remaining <= 10)
-                document.getElementById('remaining').className = 'danger';
-            else
-                document.getElementById('remaining').className = '';
-        }
-
-        if (document.getElementById('tweet_text')) {
-          document.getElementById('tweet_text').addEventListener('change', function() {
-              handleRemainingTweetText();
-          });
-          document.getElementById('tweet_text').addEventListener('keyup', function() {
-              handleRemainingTweetText();
-          });
-
-          var possibleTweets = [
-            'I want the FCC to pass ISP privacy rules this week! #FCCPrivacy battleforthenet.com',
-          ];
-          var random = possibleTweets[Math.floor(Math.random() * possibleTweets.length)]
-          document.getElementById('tweet_text').value = random;
-          handleRemainingTweetText();
-        }
-        if (document.querySelector('a.tweet_big_button')) {
-            document.querySelector('a.tweet_big_button').addEventListener('click', function(e){
-              e.preventDefault();
-
-              var tweetText = document.getElementById('tweet_text').value;
-              
-              var win = window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(tweetText), 'zetsubou_billy', 'width=500, height=300, toolbar=no, status=no, menubar=no');
-
-              var pollTimer = window.setInterval(function() {
-                  if (win.closed !== false) { // !== is required for compatibility with Opera
-                      window.clearInterval(pollTimer);
-                      if (hasTweeted == false) {
-                          popCallTool();
-                      }
-                      hasTweeted = true;
-                  }
-              }, 200);
-            });
-            document.querySelector('#call_fcc').addEventListener('click', function(e){
-                e.preventDefault();
-                popCallTool();
-            });
-        }
-        var popCallTool = function() {
-            document.getElementById('tweet_box').style.display = 'none';
-            document.getElementById('call_box').style.display = 'block';
-        }
+      /*
+      document.querySelector('a.tweet_big_button').addEventListener('click', function(e){
+        e.preventDefault();
+      });
+      */
     </script>
-
-    <!-- /////////////////////////////////////// -->
-    <!-- /////////////////////////////////////// -->
-    <!-- /////////////////////////////////////// -->
-    <!-- /////////////////////////////////////// -->
-    <!-- /////////////////////////////////////// -->
-
 
     <div class="form-wrapper loading tk-proxima-nova" style="display: none;"></div>
 
