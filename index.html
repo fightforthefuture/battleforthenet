@@ -377,6 +377,14 @@ header nav a {
       .can_embed .shares-container img {
         width: 24px;
       }
+
+      #can_embed_form .international_link {
+        color: transparent;
+      }
+
+      #can_embed_form .international_link.text-visible {
+        color: white;
+      }
     </style>
 
     <script type="text/javascript">
@@ -387,6 +395,20 @@ header nav a {
            zipSubmit.value = 'Find a Town Hall';
            zipSubmit.classList.add('text-visible');
          }
+
+         var international = document.querySelector('.international_link-wrap');
+
+         // Remove "Not in the US?" link
+         while (international.firstChild) {
+          international.removeChild(international.firstChild);
+         }
+
+         var meeting = document.createElement('a');
+         meeting.classList.add('international_link', 'text-visible');
+         meeting.textContent = "Can't attend a town hall this week or don't see a town hall near you? Click here to request a meeting with your lawmakers.";
+         meeting.href = "https://actionnetwork.org/forms/request-a-meeting-with-your-lawmakers-to-defend-net-neutrality";
+         meeting.target = "_blank";
+         international.appendChild(meeting);
        });
 
        document.addEventListener('can_embed_submitted', function(e) {
