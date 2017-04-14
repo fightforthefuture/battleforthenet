@@ -211,26 +211,6 @@ var YourSenators = require('./YourSenators');
             });
         });
 
-        if (global.isDesktop) {
-            queue.push(function() {
-                new AJAX({
-                    url: 'templates/PoliticalScoreboardSection.html' + buster,
-                    success: function(e) {
-                        new SimpleSection({
-                            target: '.scoreboard-target',
-                            template: e.target.responseText
-                        });
-
-                        loadJS('js/scoreboard.js' + buster, true);
-
-                        if (queue.length > 0) {
-                            queue.shift()();
-                        }
-                    }
-                });
-            });
-        }
-
         queue.push(function() {
             new AJAX({
                 url: 'templates/LearnMoreSection.html' + buster,
@@ -302,16 +282,6 @@ var YourSenators = require('./YourSenators');
             queue: queue
         });
     }
-    // JL HACK ~ make political scoreboard jump link work ----------------------
-    if (window.location.hash == '#political')
-        var stupidHackInterval = setInterval(function() {
-            if (document.getElementById('political')) {
-                clearInterval(stupidHackInterval);
-                window.location.hash = '#';
-                window.location.hash = '#political';
-            }
-        }, 100);
-    // -------------------------------------------------------------------------
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})

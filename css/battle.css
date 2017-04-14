@@ -259,10 +259,6 @@ body.loaded #battle p.form-wrapper.loading {
     opacity: 0;
 }
 
-
-/* Politicians */
-
-
 /* Form */
 body #battle #petition {
     color: #505073;
@@ -838,22 +834,6 @@ body #battle .thanks p a {
 
 #battle section .btn:hover {
     background-color: #64d0b6;
-}
-
-/* Political Scoreboard */
-#battle section#political {
-    background-color: #111;
-    font-family: "proxima-nova", sans-serif;
-    padding: 64px 25px 64px;
-}
-#battle section#political h2 {
-
-}
-#battle section#political p {
-
-}
-#battle section#political .supporter {
-    display: inline-block;
 }
 
 /* Learn More */
