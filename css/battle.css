@@ -395,12 +395,9 @@ body #battle #petition button:hover {
 }
 
 
-body #battle div.disclaimer_container {
-}
 body #battle p.disclaimer {
     color: #5d5d7a;
     font-size: 13px;
-    display: none;
 }
 
 body #battle p.disclaimer a {
@@ -414,15 +411,22 @@ body #battle p.disclaimer a:hover {
 
 
 /* Phone call form */
-body #battle .phone-call-form {
-    display: none;
-    margin: 0 auto;
-    width: 270px;
-    -webkit-transition: opacity 0.8s;
-        transition: opacity 0.8s;
+form {
+  width: 480px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
 }
 
-body #battle .phone-call-form header {
+form.email section {
+  min-height: 300px;
+}
+
+form header {
     background-color: #5d5d7a;
     border-radius: 6px 6px 0 0;
     font-size: 20px;
@@ -430,35 +434,50 @@ body #battle .phone-call-form header {
     padding: 26px 30px;
 }
 
-body #battle .phone-call-form section {
-    background-color: #fff;
-    border-radius: 6px 6px 0 0;
-    color: #7d7d97;
-    
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 20px 20px;
+form section {
+  width: 50%;
+  padding: 10px;
 }
 
-body #battle .phone-call-form section label {
-    display: inline-block;
-    padding-bottom: 5px;
-    color: #333;
+form label {
+  display: inline-block;
+  padding-bottom: 5px;
+  color: #333;
 }
 
-body #battle .phone-call-form section input {
-    border: 1px solid #ccc;
-    color: #505073;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 6px 12px;
-    width: 200px;
+form input, form textarea {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #505073;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 15px;
+  padding: 6px 12px;
 }
 
-body #battle .phone-call-form section .policy {
-    line-height: 22px;
-    font-weight: normal;
+form input {
+  width: 200px;
+  height: 35px;
+  margin-bottom: 10px;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+form textarea {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+form section input, form section button {
+  width: 100%;
+}
+
+form button {
+  margin: 0;
+}
+
+form .disclaimer {
+  line-height: 22px;
+  font-weight: normal;
 }
 
 body #battle .phone-call-form footer {
@@ -813,8 +832,9 @@ body #battle .thanks p a {
     width: 60px;
 }
 
-#battle section .btn {
+#battle section .btn, button {
     background: #4dbca1;
+    border: none;
     border-radius: 3px;
     color: white;
     display: inline-block;
@@ -832,8 +852,9 @@ body #battle .thanks p a {
             transition: background-color 0.3s;
 }
 
-#battle section .btn:hover {
+#battle section .btn:hover, button:hover {
     background-color: #64d0b6;
+    cursor: pointer;
 }
 
 /* Learn More */
@@ -1206,35 +1227,35 @@ body.privacy section.team-internet.fight-for-the-future {
     margin: 0px 10px;
     font-size: 16px;
 }
-#battle .overlay .modal p {
+.overlay .modal p {
     color: #888888;
     max-width: 500px;
     margin: 0px auto;
     padding: 30px 25px;
 }
-#battle .overlay .modal p.nopad {
+.overlay .modal p.nopad {
     padding: 0px 25px;
 }
-#battle .overlay .modal p.small {
+.overlay .modal p.small {
     padding: 20px 25px 20px 25px;
     font-size: 14px;
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
-    #battle .overlay .modal h1 {
+    .overlay .modal h1 {
         font-size: 18px;
         padding: 15px 10px;
     }
-    #battle .overlay .modal h2 {
+    .overlay .modal h2 {
         font-size: 14px;
         padding: 0px 10px;
     }
-    #battle .overlay .modal p, #battle .overlay .modal p.small {
+    .overlay .modal p, .overlay .modal p.small {
         font-size: 12px;
         line-height: 1.7;
         padding: 10px 10px;
     }
-    #battle .overlay .modal a.shareBtn {
+    .overlay .modal a.shareBtn {
         font-size: 0.7em;
         line-height: 40px;
         margin: 10px 7px 10px 7px;
