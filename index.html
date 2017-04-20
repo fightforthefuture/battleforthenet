@@ -315,157 +315,72 @@ header nav a {
         </section>
         <p class="disclaimer">Your phone number will only be used to make this call. <a href="https://www.fightforthefuture.org/privacy" target="_blank">Privacy Policy</a></p>
       </form>
-      <script type="text/javascript">
-        var TAG                 = "stop-fast-track"; // for purpose and donation tracking
-        var CALL_CAMPAIGN       = "stop-tpp"; // used for call tool
-        var SITE_URL            = "https://www.stopfasttrack.com"; // used for sharing
-        var TWEET_TEXT          = "Stop Fast Track for the #TPP!";
-        
-        var CALL_MODAL_TITLE    = "We are calling you now!";
-        var CALL_MODAL_SUBTITLE = "We'll connect you with Congress. When they answer, be polite and say:";
-        var CALL_MODAL_SCRIPT   = "Hello, I'm calling to urge my representative to oppose Fast Track for the Trans-Pacific Partnership agreement. Congress needs time to debate and amend trade agreements that affect all of us. Fast Track is undemocratic, and I expect my lawmakers to oppose it now and into the future.";
+    </section>
+    <script type="text/javascript">
+      var TAG                 = "stop-fast-track"; // for purpose and donation tracking
+      var CALL_CAMPAIGN       = "stop-tpp"; // used for call tool
+      var SITE_URL            = "https://www.stopfasttrack.com"; // used for sharing
+      var TWEET_TEXT          = "Stop Fast Track for the #TPP!";
+      
+      var CALL_MODAL_TITLE    = "We are calling you now!";
+      var CALL_MODAL_SUBTITLE = "We'll connect you with Congress. When they answer, be polite and say:";
+      var CALL_MODAL_SCRIPT   = "Hello, I'm calling to urge my representative to oppose Fast Track for the Trans-Pacific Partnership agreement. Congress needs time to debate and amend trade agreements that affect all of us. Fast Track is undemocratic, and I expect my lawmakers to oppose it now and into the future.";
 
-        var POST_CALL_TITLE     = "Thanks for calling! Now can you email Congress?";
-        var POST_CALL_BLURB     = "Enter your info below and we'll send an email to your congresspeople on your behalf, asking them to oppose Fast Track for TPP.";
+      var POST_CALL_TITLE     = "Thanks for calling! Now can you email Congress?";
+      var POST_CALL_BLURB     = "Enter your info below and we'll send an email to your congresspeople on your behalf, asking them to oppose Fast Track for TPP.";
 
-        (function() {
-          function validatePhoneNumber(phone) {
-            // Remove spaces, parentheses, dashes
-            phone = phone.replace(/\s/g, '')
-              .replace(/\(/g, '')
-              .replace(/\)/g, '')
-              .replace(/\-/g, '');
+      (function() {
+        function validatePhoneNumber(phone) {
+          // Remove spaces, parentheses, dashes
+          phone = phone.replace(/\s/g, '')
+            .replace(/\(/g, '')
+            .replace(/\)/g, '')
+            .replace(/\-/g, '');
 
-            // Remove country code
-            // TODO: Add support for non-US country codes on backend?
-            phone = phone.replace('+', '')
-            if (phone.charAt(0) == '1') phone = phone.substr(1);
+          // Remove country code
+          // TODO: Add support for non-US country codes on backend?
+          phone = phone.replace('+', '')
+          if (phone.charAt(0) == '1') phone = phone.substr(1);
 
-            // Return formatted phone number if valid
-            return phone.length == 10 ? phone : false;
-          }
+          // Return formatted phone number if valid
+          return phone.length == 10 ? phone : false;
+        }
 
-          var callCongress = document.getElementById('fftf-call-congress');
+        var callCongress = document.getElementById('fftf-call-congress');
 
-          callCongress.addEventListener('submit', function(e) {
-            e.preventDefault();
+        callCongress.addEventListener('submit', function(e) {
+          e.preventDefault();
 
-            var phone = validatePhoneNumber(e.currentTarget.querySelector('input[type=text]').value);
+          var phone = validatePhoneNumber(e.currentTarget.querySelector('input[type=text]').value);
 
-            if (!phone) return alert('Please enter a valid US phone number!');
+          if (!phone) return alert('Please enter a valid US phone number!');
 
-            var data = new FormData();
-            data.append('campaignId', 'battleforthenet');
-            data.append('userPhone', phone);
+          var data = new FormData();
+          data.append('campaignId', 'battleforthenet');
+          data.append('userPhone', phone);
 
-            var xhr = new XMLHttpRequest();
+          var xhr = new XMLHttpRequest();
 
-            function logStatus(e) {
-              if (e.type == 'error') {
-                alert('If you are using Privacy Badger or another ad blocker, please allow requests to https://call-congress.fightforthefuture.org and try again.')
-              }
-
-              if (xhr.status) console.log(xhr.status, xhr.statusText);
+          function logStatus(e) {
+            if (e.type == 'error') {
+              alert('If you are using Privacy Badger or another ad blocker, please allow requests to https://call-congress.fightforthefuture.org and try again.')
             }
 
-            xhr.addEventListener('load', logStatus);
-            xhr.addEventListener('error', logStatus);
-
-            xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
-            xhr.send(data);
-
-            // new CallActionModal();
-          });
-        })();
-      </script>
-    </section>
-
-    <!-- Email Congress -->
-    <section id="fftf-email-congress">
-      <form class="email">
-        <section>
-          <textarea>"I'm writing to urge my representatives to oppose Fast Track for the Trans-Pacific Partnership agreement. Congress needs time to debate and amend trade agreements that affect all of us. Fast Tracking the TPP is undemocratic, and I expect my lawmakers to oppose it. I'll be watching this issue closely in 2015."</textarea>
-        </section>
-        <section>
-          <input type="text" name="first_name" placeholder="Full Name"/>
-          <input type="text" name="email" placeholder="Email"/>
-          <input type="text" name="address1" placeholder="Address"/>
-          <input type="text" name="zip" placeholder="Zip Code"/>
-          <input type="hidden" name="subject" value="Please oppose Fast Track for the Trans-Pacific Partnership"/>
-          <button>Write Congress</button>
-        </section>
-        <footer>
-          <p class="disclaimer"><a href="https://www.fightforthefuture.org">Fight for the Future</a> will contact you about future campaigns. <a href="https://www.fightforthefuture.org/privacy" target="_blank">Privacy Policy</a></p>
-        </footer>
-      </form>
-    </section>
-    <!--
-    <div class="thanks">
-      <img src="images/site/heart.png" width="40" height="40"/>
-      <h1>Awesome! You rock!</h1>
-      <p>Help us spread the word! Share this page with your friends!</p>
-      <a class="social twitter" href="#">Tweet this</a>
-      <a class="social facebook" href="#">Share this</a>
-    </div>
-    -->
-    <section id="fftf-twitter-brigade">
-      <p>Twitter is one of our most powerful platforms for making sure decision makers know we’re paying attention. Join our campaign on Twitter and help keep the Internet free of censorship.</p>
-      <button>Join with Twitter</button>
-      <script>
-        (function() {
-          function closeModal(e) {
-            var modal = e.currentTarget;
-            var gutter = modal.querySelector('.gutter');
-            var close = modal.querySelector('.close');
-
-            if (e.target == gutter || e.target == close) {
-              e.preventDefault();
-
-              modal.classList.add('invisible');
-
-              setTimeout(function() {
-                modal.style.display = 'none';
-                document.body.removeChild(modal);
-              }, 400);
-            }
+            if (xhr.status) console.log(xhr.status, xhr.statusText);
           }
 
-          function createModal() {
-            var modal = document.getElementById('fftf-modal-template')
-              .cloneNode(true);
+          xhr.addEventListener('load', logStatus);
+          xhr.addEventListener('error', logStatus);
 
-            modal.addEventListener('click', closeModal);
+          xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
+          xhr.send(data);
 
-            modal.style.display = 'table';
-            document.body.appendChild(modal);
+          // new CallActionModal();
+        });
+      })();
+    </script>
 
-            // Defer class modification until after Node has been appended to DOM
-            setTimeout(function() {
-              modal.classList.remove('invisible');
-            });
-          }
-
-          document.getElementById('fftf-twitter-brigade').querySelector('button')
-            .addEventListener('click', createModal);
-        })();
-      </script>
-    </section>
-
-    <section id="fftf-modal-template" class="overlay invisible">
-      <div class="gutter">
-        <div class="modal">
-          <a class="close" href="#">×</a>
-          <h1>Join the Internet Vote and help stop censorship!</h1>
-          <p class="nopad">There are countless battles that need to be won to keep the Internet open. From protecting net neutrality to stopping secret deals that could censor the net, we need your help. Will you let us automatically post urgent alerts to your twitter, about once a week? (You can disable at any time, of course.)</p>
-          <form action="//radiant-earth-4575.herokuapp.com/auth/twitter_prep" method="POST" id="tweez">
-            <input type="hidden" name="frequency" value="1" />
-            <hr/>
-            <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <section class="form" id="what-to-do">
+    <section id="fftf-email" class="form">
       <div class="shadow">
         <header>
           <h3>Take action now!</h3>
@@ -517,15 +432,46 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
       </div>
     </section>
     <script type="text/javascript">
-      var modal = document.getElementById('editModal');
-      document.querySelector('#editModal .modal-footer button').addEventListener('click', function(e) {
-        e.preventDefault();
+      (function() {
+        function closeModal(e) {
+          var modal = e.currentTarget;
+          var gutter = modal.querySelector('.gutter');
+          var close = modal.querySelector('.close');
 
-        var comment = $('#editModal textarea').val();
-        $('#what-to-do form textarea').val(comment);
+          if (e.target == gutter || e.target == close) {
+            e.preventDefault();
 
-        $('#editModal').modal('hide');
-      });
+            // Update comment from modal
+            document.getElementById('fftf-email').querySelector('form textarea')
+              .val(modal.querySelector('form textarea').val());
+
+            modal.classList.add('invisible');
+
+            setTimeout(function() {
+              modal.style.display = 'none';
+              document.body.removeChild(modal);
+            }, 400);
+          }
+        }
+
+        function createModal() {
+          var modal = document.getElementById('fftf-modal-template')
+            .cloneNode(true);
+
+          modal.addEventListener('click', closeModal);
+
+          modal.style.display = 'table';
+          document.body.appendChild(modal);
+
+          // Defer class modification until after Node has been appended to DOM
+          setTimeout(function() {
+            modal.classList.remove('invisible');
+          });
+        }
+
+        document.getElementById('fftf-email').querySelector('.edit')
+          .addEventListener('click', createModal);
+      })();
     </script>
     <style>
       section.form {
@@ -792,6 +738,117 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
 
       .form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.428571429;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#777;opacity:1}.form-control:-ms-input-placeholder{color:#777}.form-control::-webkit-input-placeholder{color:#777}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{cursor:not-allowed;background-color:#eee;opacity:1}textarea.form-control{height:auto}
     </style>
+
+    <!-- Email Congress -->
+    <section id="fftf-email-congress">
+      <form class="email">
+        <section>
+          <textarea>"I'm writing to urge my representatives to oppose Fast Track for the Trans-Pacific Partnership agreement. Congress needs time to debate and amend trade agreements that affect all of us. Fast Tracking the TPP is undemocratic, and I expect my lawmakers to oppose it. I'll be watching this issue closely in 2015."</textarea>
+        </section>
+        <section>
+          <input type="text" name="first_name" placeholder="Full Name"/>
+          <input type="text" name="email" placeholder="Email"/>
+          <input type="text" name="address1" placeholder="Address"/>
+          <input type="text" name="zip" placeholder="Zip Code"/>
+          <input type="hidden" name="subject" value="Please oppose Fast Track for the Trans-Pacific Partnership"/>
+          <button>Write Congress</button>
+        </section>
+        <footer>
+          <p class="disclaimer"><a href="https://www.fightforthefuture.org">Fight for the Future</a> will contact you about future campaigns. <a href="https://www.fightforthefuture.org/privacy" target="_blank">Privacy Policy</a></p>
+        </footer>
+      </form>
+    </section>
+    <!--
+    <div class="thanks">
+      <img src="images/site/heart.png" width="40" height="40"/>
+      <h1>Awesome! You rock!</h1>
+      <p>Help us spread the word! Share this page with your friends!</p>
+      <a class="social twitter" href="#">Tweet this</a>
+      <a class="social facebook" href="#">Share this</a>
+    </div>
+    -->
+    <section id="fftf-twitter-brigade">
+      <p>Twitter is one of our most powerful platforms for making sure decision makers know we’re paying attention. Join our campaign on Twitter and help keep the Internet free of censorship.</p>
+      <button>Join with Twitter</button>
+          <!--
+          <h1>Join the Internet Vote and help stop censorship!</h1>
+          <p class="nopad">There are countless battles that need to be won to keep the Internet open. From protecting net neutrality to stopping secret deals that could censor the net, we need your help. Will you let us automatically post urgent alerts to your twitter, about once a week? (You can disable at any time, of course.)</p>
+          <form action="//radiant-earth-4575.herokuapp.com/auth/twitter_prep" method="POST" id="tweez">
+            <input type="hidden" name="frequency" value="1" />
+            <hr/>
+            <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
+          </form>
+          -->
+      <script>
+        (function() {
+          function closeModal(e) {
+            var modal = e.currentTarget;
+            var gutter = modal.querySelector('.gutter');
+            var close = modal.querySelector('.close');
+
+            if (e.target == gutter || e.target == close) {
+              e.preventDefault();
+
+              modal.classList.add('invisible');
+
+              setTimeout(function() {
+                modal.style.display = 'none';
+                document.body.removeChild(modal);
+              }, 400);
+            }
+          }
+
+          function createModal() {
+            var modal = document.getElementById('fftf-modal-template')
+              .cloneNode(true);
+
+            modal.addEventListener('click', closeModal);
+
+            modal.style.display = 'table';
+            document.body.appendChild(modal);
+
+            // Defer class modification until after Node has been appended to DOM
+            setTimeout(function() {
+              modal.classList.remove('invisible');
+            });
+          }
+
+          document.getElementById('fftf-twitter-brigade').querySelector('button')
+            .addEventListener('click', createModal);
+        })();
+      </script>
+    </section>
+
+    <section id="fftf-modal-template" class="overlay invisible">
+      <div class="gutter">
+        <aside>
+          <h4 class="modal-title">Tell your story</h4>
+          <p>
+            How would a slower, unequal<br>
+            Internet hurt you and your work?<br>
+            Build on our letter, and<br>
+            be sure to mention Title II<br>
+            reclassification.<br>
+            <br>
+            <span class="grey">
+            Note: All information submitted
+            <br>
+            will be publicly available
+            <br>
+            via the web.
+            </span>
+          </p>
+        </aside>
+        <div class="modal">
+          <a class="close" href="#">×</a>
+          <header><h1>Header</h1></header>
+          <div class="content"></div>
+          <footer>
+            <p class="disclaimer">Note: All information submitted will be publicly available via the web.</p>
+          </footer>
+        </div>
+      </div>
+    </section>
 
     <!-- Action Network Townhall Event Campaign Widget -->
     <link href='https://actionnetwork.org/css/style-embed-whitelabel.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/v2/event_campaign/stand-up-for-net-neutrality-at-town-hall-events?format=js&source=widget&style=full'></script><div id='can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events' style='width: 600px'><!-- this div is the target for our HTML insertion --></div>
