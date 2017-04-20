@@ -142,18 +142,6 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
       </form>
     </section>
     <script type="text/javascript">
-      var TAG                 = "stop-fast-track"; // for purpose and donation tracking
-      var CALL_CAMPAIGN       = "stop-tpp"; // used for call tool
-      var SITE_URL            = "https://www.stopfasttrack.com"; // used for sharing
-      var TWEET_TEXT          = "Stop Fast Track for the #TPP!";
-      
-      var CALL_MODAL_TITLE    = "We are calling you now!";
-      var CALL_MODAL_SUBTITLE = "We'll connect you with Congress. When they answer, be polite and say:";
-      var CALL_MODAL_SCRIPT   = "Hello, I'm calling to urge my representative to oppose Fast Track for the Trans-Pacific Partnership agreement. Congress needs time to debate and amend trade agreements that affect all of us. Fast Track is undemocratic, and I expect my lawmakers to oppose it now and into the future.";
-
-      var POST_CALL_TITLE     = "Thanks for calling! Now can you email Congress?";
-      var POST_CALL_BLURB     = "Enter your info below and we'll send an email to your congresspeople on your behalf, asking them to oppose Fast Track for TPP.";
-
       (function() {
         function validatePhoneNumber(phone) {
           // Remove spaces, parentheses, dashes
@@ -217,7 +205,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
             <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
           </form>
           -->
-      <script>
+      <script type="text/javascript">
         (function() {
           function closeModal(e) {
             var modal = e.currentTarget;
@@ -418,7 +406,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
   </ul>
 </div>
 
-<script>
+<script type="text/javascript">
   var global = {};
   global.ajaxResponses = {};
   global.experiments = {};
@@ -443,6 +431,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
   function loadJS(src, blocking) {
     var script = document.createElement('script');
     script.setAttribute('src', src);
+    script.setAttribute('type', 'text/javascript');
     if (blocking) script.setAttribute('async', false);
     document.body.appendChild(script);
   }
@@ -456,8 +445,8 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
   }, false);
 </script>
 
-<script src="//cdn.optimizely.com/js/1886210014.js" />
-<script src='https://actionnetwork.org/widgets/v2/event_campaign/stand-up-for-net-neutrality-at-town-hall-events?format=js&source=widget&style=full' />
+<script src="//cdn.optimizely.com/js/1886210014.js" type="text/javascript"></script>
+<script src='https://actionnetwork.org/widgets/v2/event_campaign/stand-up-for-net-neutrality-at-town-hall-events?format=js&source=widget&style=full'></script>
 
 <!-- Free Progress A/B testing -->
 <script src="https://fftf.io/js/client.js" type="text/javascript"></script>
