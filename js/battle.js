@@ -4,7 +4,6 @@ var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var DetectFeatures = require('./DetectFeatures');
-var Fish = require('./Fish');
 var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -34,7 +33,6 @@ var YourSenators = require('./YourSenators');
 (function(){
     if (global.isDesktop) {
         // require('./Fireworks');
-        // new Fish();
         document.querySelector('#background').className += 'hueRotate';
     }
     // Preload the background
@@ -248,7 +246,7 @@ var YourSenators = require('./YourSenators');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./Fish":6,"./GoogleAnalytics":8,"./ImagePreloader":9,"./LoadingIcon":10,"./MobileMenu":11,"./Modals":12,"./MotherShip":13,"./OrganizationRotation":14,"./PetitionForm":15,"./Polyfills":16,"./Queue":17,"./ScrollDetection":18,"./SimpleSection":19,"./TeamInternetSection":20,"./YourSenators":22}],2:[function(require,module,exports){
+},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./OrganizationRotation":13,"./PetitionForm":14,"./Polyfills":15,"./Queue":16,"./ScrollDetection":17,"./SimpleSection":18,"./TeamInternetSection":19,"./YourSenators":21}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -503,53 +501,6 @@ DetectFeatures.prototype.detectSVG = function detectSVG() {
 module.exports = DetectFeatures;
 
 },{}],6:[function(require,module,exports){
-function Fish() {
-    this.spawn();
-
-    this.moveTail = this.moveTail.bind(this);
-    this.moveTailDelay = 160;
-    this.moveTailPhase = 0;
-    this.moveTailInterval = setInterval(this.moveTail, this.moveTailDelay);
-
-    this.moveFishRandomly = this.moveFishRandomly.bind(this);
-    this.moveFishRandomlyInterval = setInterval(this.moveFishRandomly, 6400);
-}
-
-Fish.prototype.spawn = function() {
-    this.element = document.createElement('div');
-    this.element.id = 'fish';
-    this.element.title = 'We won!';
-    this.element.style.top = '-100px';
-    this.element.style.right = (((outerWidth - 860) / 2) + (Math.random() * 64)) + 'px';
-
-    this.body = document.createElement('div');
-    this.body.className = 'body';
-    this.element.appendChild(this.body);
-
-    this.tail = document.createElement('div');
-    this.tail.className = 'tail';
-    this.element.appendChild(this.tail);
-
-    document.body.appendChild(this.element);
-};
-
-Fish.prototype.moveFishRandomly = function() {
-    this.element.style.right = (((outerWidth - 860) / 2) + (Math.random() * 64)).toFixed(4) + 'px';
-    this.element.style.top = (94 + (Math.random() * 32)).toFixed(4) + 'px';
-};
-
-Fish.prototype.moveTail = function() {
-    this.moveTailPhase++;
-    if (this.moveTailPhase > 2) {
-        this.moveTailPhase = 0;
-    }
-
-    this.tail.style.left = (76 - (this.moveTailPhase * 2)) + 'px';
-};
-
-module.exports = Fish;
-
-},{}],7:[function(require,module,exports){
 function GUID() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }
@@ -561,7 +512,7 @@ function _p8(s) {
 
 module.exports = GUID;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -578,7 +529,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -594,7 +545,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -605,7 +556,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -639,7 +590,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var Template = require('./Template');
 
 function Modals(params) {
@@ -720,7 +671,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":21}],13:[function(require,module,exports){
+},{"./Template":20}],12:[function(require,module,exports){
 var AJAX = require('./AJAX');
 var GUID = require('./GUID');
 
@@ -778,7 +729,7 @@ MotherShip.prototype.sendRequest = function sendRequest() {
 
 module.exports = MotherShip;
 
-},{"./AJAX":2,"./GUID":7}],14:[function(require,module,exports){
+},{"./AJAX":2,"./GUID":6}],13:[function(require,module,exports){
 function OrganizationRotation() {
     this.addEventListeners();
 }
@@ -835,7 +786,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (global){
 var AJAX = require('./AJAX');
 var Template = require('./Template');
@@ -1073,7 +1024,7 @@ PetitionForm.prototype.updateCTA = function updateCTA(cta) {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Template":21}],16:[function(require,module,exports){
+},{"./AJAX":2,"./Template":20}],15:[function(require,module,exports){
 function Polyfills() {
     this.bind();
 }
@@ -1105,7 +1056,7 @@ Polyfills.prototype.bind = function() {
 
 module.exports = Polyfills;
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 function Queue(params) {
     this.callback = params.callback;
     this.context = params.context || this;
@@ -1128,7 +1079,7 @@ Queue.prototype.destroy = function() {
 
 module.exports = Queue;
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 function ScrollDetection(params) {
     this.onScroll = this.onScroll.bind(this);
     this.padding = 900;
@@ -1172,7 +1123,7 @@ ScrollDetection.prototype.onScroll = function onScroll(e) {
 
 module.exports = ScrollDetection;
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -1190,7 +1141,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":21}],20:[function(require,module,exports){
+},{"./Template":20}],19:[function(require,module,exports){
 (function (global){
 var SimpleSection = require('./SimpleSection');
 
@@ -1306,7 +1257,7 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 module.exports = TeamInternetSection;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SimpleSection":19}],21:[function(require,module,exports){
+},{"./SimpleSection":18}],20:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
@@ -1344,7 +1295,7 @@ var Template = function template(str, data){
 
 module.exports = Template;
 
-},{}],22:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 function YourSenators(params) {
     params.callback();
 }

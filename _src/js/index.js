@@ -2,7 +2,6 @@ var AJAX = require('./AJAX');
 var Chartbeat = require('./Chartbeat');
 var Countdown = require('./Countdown');
 var DetectFeatures = require('./DetectFeatures');
-var Fish = require('./Fish');
 var GoogleAnalytics = require('./GoogleAnalytics');
 var ImagePreloader = require('./ImagePreloader');
 var LoadingIcon = require('./LoadingIcon');
@@ -32,7 +31,6 @@ var YourSenators = require('./YourSenators');
 (function(){
     if (global.isDesktop) {
         // require('./Fireworks');
-        // new Fish();
         document.querySelector('#background').className += 'hueRotate';
     }
     // Preload the background
