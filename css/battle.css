@@ -455,7 +455,6 @@ form input, form textarea {
 form input {
   width: 200px;
   height: 35px;
-  margin-bottom: 10px;
   line-height: 35px;
   font-weight: bold;
 }
@@ -1148,15 +1147,11 @@ body.privacy section.team-internet.fight-for-the-future {
 .overlay .modal a.close:hover {
     opacity: .6;
 }
-.overlay .modal h1 {
+.overlay .modal header {
     background: #20cba1;
     color: white;
     text-align: center;
     padding: 30px 10px;
-    -webkit-border-top-left-radius: 10px;
-    -webkit-border-top-right-radius: 10px;
-    -moz-border-radius-topleft: 10px;
-    -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -1241,7 +1236,7 @@ body.privacy section.team-internet.fight-for-the-future {
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
-    .overlay .modal h1 {
+    .overlay .modal header {
         font-size: 18px;
         padding: 15px 10px;
     }
