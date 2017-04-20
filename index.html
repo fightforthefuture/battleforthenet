@@ -516,6 +516,17 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
         </form>
       </div>
     </section>
+    <script type="text/javascript">
+      var modal = document.getElementById('editModal');
+      document.querySelector('#editModal .modal-footer button').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var comment = $('#editModal textarea').val();
+        $('#what-to-do form textarea').val(comment);
+
+        $('#editModal').modal('hide');
+      });
+    </script>
     <style>
       section.form {
         font-family: 'Proxima Nova',sans-serif;
@@ -996,6 +1007,49 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           </a>
       </li>
   </ul>
+</div>
+
+<div class="modal fade editModal" id="editModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="editModalLabel">Tell the story</h4>
+        <p>
+          How would a slower, unequal<br>
+          Internet hurt you and your work?<br>
+          Build on our letter, and<br>
+          be sure to mention Title II<br>
+          reclassification.<br>
+          <br>
+          <span class="grey">
+          Note: All information submitted
+          <br>
+          will be publicly available
+          <br>
+          via the web.
+          </span>
+        </p>
+      </div>
+      <div class="modal-body">
+        <textarea placeholder="Dear FCC: ...">Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
+
+Most Americans have only one choice for truly high speed Internet: their local cable company. This is a political failure, and it is an embarrassment. America deserves competition and choice.
+
+Without net neutrality, a bad situation gets even worse. These ISPs will now be able to manipulate our Internet experience by speeding up some services and slowing down others. That kills choice, diversity, and quality.
+
+It also causes tremendous economic harm. If ISPs can speed up favored services and slow others, new businesses will no longer be able to rely on a level playing field. When ISPs can slow your site and destroy your business at will, how can any startup attract investors?
+
+My friends, family, and I use the Internet for conversation and fun, but also for work and business. When you let ISPs mess with our Internet experience, you are attacking our social lives, our entertainment, and our economic well being. We won't stand for it.
+
+ISPs are opposing Title II so that they can destroy the FCC's net neutrality rules in court. This is the same trick they pulled last time. Please, let's not be fooled again. Title II is the strong, legally sound way to enforce net neutrality. Use it.</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Continue</button>
+      </div>
+      <div class="modal-disclosure">Note: All information submitted will be publicly available via the web.</div>
+    </div>
+  </div>
 </div>
 
 <script>
