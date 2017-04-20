@@ -394,7 +394,6 @@ body #battle #petition button:hover {
     background: #13c18d;
 }
 
-
 body #battle p.disclaimer {
     color: #5d5d7a;
     font-size: 13px;
@@ -412,7 +411,6 @@ body #battle p.disclaimer a:hover {
 
 /* Phone call form */
 form {
-  width: 480px;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -582,7 +580,8 @@ body #battle .thanks p a {
     font-size: 45px;
     font-weight: 300;
 }
-#battle section p {
+
+section p {
     color: #eee;
     font-size: 22px;
     font-weight: 300;
@@ -832,7 +831,7 @@ body #battle .thanks p a {
     width: 60px;
 }
 
-#battle section .btn, button {
+section .btn, button {
     background: #4dbca1;
     border: none;
     border-radius: 3px;
