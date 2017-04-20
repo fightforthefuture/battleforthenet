@@ -32,7 +32,6 @@ var YourSenators = require('./YourSenators');
 // Design enhancements
 (function(){
     if (global.isDesktop) {
-        // require('./Fireworks');
         document.querySelector('#background').className += 'hueRotate';
     }
     // Preload the background
