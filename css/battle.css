@@ -716,31 +716,6 @@ body #battle .thanks p a {
 
 /* Modal */
 
-/* Livestream */
-#battle section#livestream {
-    margin-top: 42px;
-}
-
-#battle section#livestream a {
-    color: #20cba1;
-}
-
-#battle section#livestream .video_wrapper {
-    height: auto;
-    margin: 30px auto;
-    padding-bottom: 25px;
-    padding-top: 25px;
-    position: relative;
-}
-
-#battle section#livestream .video_wrapper img {
-    max-width: 100%;
-}
-
-#battle section#livestream .twitter-timeline {
-    padding: 0 25px;
-}
-
 /*270 x 175
 420 x 273*/
 
@@ -759,17 +734,17 @@ p {
 }
 
 /* Team Cable */
-#battle section#team-cable {
+#team-cable {
     background-color: #1c1c25;
     background-color: black;
     font-family: "proxima-nova", sans-serif;
     margin: 0px 0 0;
     padding: 16px 25px 64px;
 }
-#battle section#team-cable h2 {
+#team-cable h2 {
 
 }
-#battle section#team-cable p {
+#team-cable p {
     color: #eee;
     font-size: 22px;
     font-weight: 300;
@@ -777,7 +752,7 @@ p {
     margin: 36px auto 0;
     max-width: 768px;
 }
-#battle section#team-cable img {
+#team-cable img {
     height: 72px;
     min-width: 126px;
     opacity: 0;
@@ -787,17 +762,17 @@ p {
 }
 
 /* FCC Section */
-#battle section#fcc-commissioners {
+#fcc-commissioners {
     background-color: #27273a;
     font-family: "proxima-nova", sans-serif;
     font-weight: bold;
     margin: 64px 0 0;
     padding: 16px 25px 64px;
 }
-#battle section#fcc-commissioners h2 {
+#fcc-commissioners h2 {
 
 }
-#battle section#fcc-commissioners p {
+#fcc-commissioners p {
     color: #eee;
     font-size: 22px;
     font-weight: 300;
@@ -805,7 +780,7 @@ p {
     margin: 36px auto 0;
     max-width: 768px;
 }
-#battle section#fcc-commissioners .commissioner {
+#fcc-commissioners .commissioner {
     display: inline-block;
     opacity: 0;
     position: relative;
@@ -813,31 +788,31 @@ p {
     -webkit-transition: opacity 0.3s;
             transition: opacity 0.3s;
 }
-#battle section#fcc-commissioners .commissioner .name {
+#fcc-commissioners .commissioner .name {
     bottom: 12px;
     left: 12px;
     position: absolute;
     text-align: left;
     text-transform: uppercase;
 }
-#battle section#fcc-commissioners .commissioner .name .first {
+#fcc-commissioners .commissioner .name .first {
     font-size: 16px;
     padding: 0 0 2px;
 }
-#battle section#fcc-commissioners .commissioner .name .last {
+#fcc-commissioners .commissioner .name .last {
     font-size: 20px;
 }
-#battle section#fcc-commissioners .commissioner img {
+#fcc-commissioners .commissioner img {
     height: 184px;
     width: 184px;
     vertical-align: bottom;
 }
 
-#battle section#fcc-commissioners .key {
+#fcc-commissioners .key {
     margin: 0 0 16px;
 }
 
-#battle section#fcc-commissioners .key h3 {
+#fcc-commissioners .key h3 {
     border-left: solid 10px #fff;
     color: #fff;
     display: inline-block;
@@ -849,28 +824,28 @@ p {
     text-transform: uppercase;
 }
 
-#battle section#fcc-commissioners .key h3.cable {
+#fcc-commissioners .key h3.cable {
     border-color: #ee4b4c;
 }
 
-#battle section#fcc-commissioners .key h3.unknown {
+#fcc-commissioners .key h3.unknown {
     border-color: #343444;
 }
 
-#battle section#fcc-commissioners .key h3.internet {
+#fcc-commissioners .key h3.internet {
     border-color: #2dbb9b;
 }
 
 
 /* Grumpy Cat Section */
-#battle section#grumpy-cat {
+#grumpy-cat {
     background-color: #1b1b24;
     font-family: "proxima-nova", sans-serif;
     font-weight: bold;
     padding: 16px 25px 64px;
 }
-#battle section#grumpy-cat h2 {}
-#battle section#grumpy-cat p {
+#grumpy-cat h2 {}
+#grumpy-cat p {
     color: #eee;
     font-size: 22px;
     font-weight: 300;
@@ -878,20 +853,20 @@ p {
     margin: 36px auto 0;
     max-width: 768px;
 }
-#battle section#grumpy-cat img {
+#grumpy-cat img {
     max-width: 100%;
 }
 
 
 /* How We Won Section */
-#battle section#how-we-won {
+#how-we-won {
     background-color: #1b1b24;
     font-family: "proxima-nova", sans-serif;
     font-weight: bold;
     padding: 16px 25px 64px;
 }
-#battle section#how-we-won h2 {}
-#battle section#how-we-won p {
+#how-we-won h2 {}
+#how-we-won p {
     color: #eee;
     font-size: 22px;
     font-weight: 300;
@@ -899,25 +874,25 @@ p {
     margin: 36px auto 0;
     max-width: 768px;
 }
-#battle section#how-we-won img {
+#how-we-won img {
     max-width: 100%;
 }
 
 /* Team Internet */
-#battle section#team-internet {
+#team-internet {
     background-color: #1f1f2d;
     font-family: "proxima-nova", sans-serif;
     margin: 0px 0 0;
     padding: 16px 25px 64px;
 }
-#battle section#team-internet h2 {
+#team-internet h2 {
 
 }
-#battle section#team-internet p {
+#team-internet p {
 
 }
 
-#battle section#team-internet .quote-bubble {
+#team-internet .quote-bubble {
     background-color: white;
     box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.9);
     color: black;
@@ -933,31 +908,31 @@ p {
     top: 0;
 }
 
-#battle section#team-internet .quote-bubble .name {
+#team-internet .quote-bubble .name {
     color: rgba(49, 49, 66, 1);
     font-weight: bold;
     margin: 0 0 8px;
 }
 
-#battle section#team-internet .quote-bubble .quote {
+#team-internet .quote-bubble .quote {
     color: rgba(49, 49, 66, 1);
 }
 
-#battle section#team-internet .quote-bubble .quote:after,
-#battle section#team-internet .quote-bubble .quote:before {
+#team-internet .quote-bubble .quote:after,
+#team-internet .quote-bubble .quote:before {
     color: rgba(49, 49, 66, 0.2);
     content: '"';
     font-weight: bold;
     padding: 0 2px;
 }
 
-#battle section#team-internet .quote-bubble .arrow-wrapper {
+#team-internet .quote-bubble .arrow-wrapper {
     height: 4px;
     margin: 0 auto;
     width: 30px;
 }
 
-#battle section#team-internet .quote-bubble .arrow-wrapper .arrow {
+#team-internet .quote-bubble .arrow-wrapper .arrow {
     background-color: white;
     height: 30px;
     width: 30px;
@@ -965,31 +940,31 @@ p {
             transform: rotate(45deg);
 }
 
-#battle section#team-internet .supporters {
+#team-internet .supporters {
     margin: 0 auto;
     max-width: 960px;
     overflow: hidden;
 }
 
 @media only screen and (max-width: 1100px) {
-    #battle section#team-internet .supporters {
+    #team-internet .supporters {
         max-width: 720px;
     }
 }
 
 @media only screen and (max-width: 790px) {
-    #battle section#team-internet .supporters {
+    #team-internet .supporters {
         max-width: 480px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    #battle section#team-internet .supporters {
+    #team-internet .supporters {
         max-width: 240px;
     }
 }
 
-#battle section#team-internet .supporters li {
+#team-internet .supporters li {
     background-image: url(../images/team-internet-logos.jpg?rev3);
     float: left;
     height: 60px;
@@ -1019,37 +994,37 @@ section .btn, button {
             transition: background-color 0.3s;
 }
 
-#battle section .btn:hover, button:hover {
+section .btn:hover, button:hover {
     background-color: #64d0b6;
     cursor: pointer;
 }
 
 /* Learn More */
-#battle section#learn-more {
+#learn-more {
     background-color: #1b1b24;
     font-family: "proxima-nova", sans-serif;
     padding: 16px 25px 64px;
 }
-#battle section#learn-more h2 {
+#learn-more h2 {
     margin-bottom: 0;
 }
-#battle section#learn-more p {
+#learn-more p {
 
 }
-#battle section#learn-more .break {
+#learn-more .break {
     background-color: red;
     height: 3px;
     margin: 15px auto 30px;
     width: 8%;
 }
-#battle section#learn-more .video_wrapper {
+#learn-more .video_wrapper {
     height: 0;
     margin: 30px auto;
     padding-bottom: 56.25%;
     padding-top: 25px;
     position: relative;
 }
-#battle section#learn-more .video_wrapper iframe {
+#learn-more .video_wrapper iframe {
     border-radius: 5px;
     border: 0;
     height: 100%;
@@ -1062,58 +1037,58 @@ section .btn, button {
             box-sizing: border-box;
 }
 @media only screen and (min-width: 768px) {
-    #battle section#learn-more .video_wrapper {
+    #learn-more .video_wrapper {
         height: 399px;
         padding-bottom: 0;
         padding-top: 0;
         width: 640px;
     }
 
-    #battle section#learn-more .video_wrapper iframe {
+    #learn-more .video_wrapper iframe {
         border: 10px solid #4c4c64;
     }
 }
 
 /* Extra Reading */
-#battle section#zero-rating {
+#zero-rating {
     background-color: #313142;
     font-family: "proxima-nova", sans-serif;
     padding: 16px 25px 64px;
 }
-#battle section#zero-rating h3 {
+#zero-rating h3 {
     font-size: 175%;
     margin-top: 50px;
     margin-bottom: 0px;
     font-weight: 400;
 }
-#battle section#zero-rating p {
+#zero-rating p {
     text-align: justify;
 }
 
 /* Extra Reading */
-#battle section#extra-reading {
+#extra-reading {
     /* background-color: #313142; */
     background-color: #313142;
     font-family: "proxima-nova", sans-serif;
     padding: 16px 25px 64px;
 }
-#battle section#extra-reading h2 {
+#extra-reading h2 {
     margin-bottom: 36px;
 }
-#battle section#extra-reading p {
+#extra-reading p {
     margin-top: 0;
 }
-#battle section#extra-reading p a {
+#extra-reading p a {
     color: #20cba1;
     font-size: 16px;
 
     -webkit-transition: color 0.3s;
             transition: color 0.3s;
 }
-#battle section#extra-reading p a:hover {
+#extra-reading p a:hover {
     color: #2aedbd;
 }
-#battle section#extra-reading p .publication {
+#extra-reading p .publication {
     color: #ccd;
     font-size: 16px;
     font-style: italic;
