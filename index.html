@@ -380,6 +380,7 @@ header nav a {
       })();
     </script>
 
+    <!-- Email Congress and FCC -->
     <section id="fftf-email" class="form">
       <div class="shadow">
         <header>
@@ -390,22 +391,22 @@ header nav a {
         </header>
         <form role="form" name="petition">
           <div class="left">
-            <label class="sr-only" for="name">Full Name</label>
+            <label for="name">Full Name</label>
             <input type="text" id="name" name="name" class="form-control" placeholder="Name" title="FULL NAME" required>
-            <label class="sr-only" for="email_addr">Email Address</label>
+            <label for="email_addr">Email Address</label>
             <input type="email" id="email_addr" name="email" class="form-control" placeholder="Email" title="EMAIL" required>
             <div class="flex">
-              <label class="sr-only" for="addr">Address</label>
+              <label for="addr">Address</label>
               <input type="text" id="addr" name="address1" class="form-control input-address" placeholder="Address" title="ADDRESS" required>
-              <label class="sr-only" for="zip">Zip Code</label>
+              <label for="zip">Zip Code</label>
               <input type="text" id="zip" name="zip" class="form-control input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
             </div>
           </div>
-          <div class="right" data-toggle="modal" data-target="#editModal">
-            <label class="sr-only" for="comment">Comment</label>
+          <div class="right">
+            <label for="comment">Comment</label>
             <div class="textarea-fade"></div>
             <div class="edit">Edit</div>
-            <textarea id="comment" name="action_comment" class="form-control" title="COMMENT" required>Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
+            <textarea id="comment" name="action_comment" class="form-control" title="COMMENT" placeholder="Dear FCC: ..." required>Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
 
 Most Americans have only one choice for truly high speed Internet: their local cable company. This is a political failure, and it is an embarrassment. America deserves competition and choice.
 
@@ -418,14 +419,9 @@ My friends, family, and I use the Internet for conversation and fun, but also fo
 ISPs are opposing Title II so that they can destroy the FCC's net neutrality rules in court. This is the same trick they pulled last time. Please, let's not be fooled again. Title II is the strong, legally sound way to enforce net neutrality. Use it.</textarea>
           </div>
           <div class="row call-to-action">
-            <button type="submit" class="btn btn-default">Submit Your Comment</button>
-
-            <p class="disclaimer copy">
+            <button type="submit" class="btn">Submit Your Comment</button>
+            <p class="disclaimer">
               <a href="http://www.demandprogress.org/" target="_blank">Demand Progress</a> and <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a>
-            </p>
-
-            <p class="disclaimer copy fp-copy">
-              <a href="http://www.freepress.net/">Free Press</a> will contact you about future campaigns. <a href="http://www.freepress.net/privacy-copyright">Privacy Policy</a>
             </p>
           </div>
         </form>
@@ -734,39 +730,73 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
       section.form form .bottom-strip a:hover {
         text-decoration: underline
       }
-      .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
 
-      .form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.428571429;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#777;opacity:1}.form-control:-ms-input-placeholder{color:#777}.form-control::-webkit-input-placeholder{color:#777}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{cursor:not-allowed;background-color:#eee;opacity:1}textarea.form-control{height:auto}
+      label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+      }
+
+      input, textarea {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.428571429;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      }
+      
+      textarea {
+        height: auto;
+      }
+      
+      textarea:focus,
+      input:focus {
+        border-color: #66afe9;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+      }
+
+      input::-webkit-input-placeholder,
+      input::-moz-placeholder,
+      input:-ms-input-placeholder,
+      textarea::-webkit-input-placeholder,
+      textarea::-moz-placeholder,
+      textarea:-ms-input-placeholder {
+        color: #777;
+        opacity: 1;
+      }
+
+      input[disabled],
+      input[readonly],
+      fieldset[disabled] input,
+      textarea[disabled],
+      textarea[readonly],
+      fieldset[disabled] textarea {
+        cursor: not-allowed;
+        background-color: #eee;
+        opacity: 1;
+      }
+      
+      /*
+      .modal-open{overflow:hidden}.modal{display:none;overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;-webkit-overflow-scrolling:touch;outline:0}.modal.fade .modal-dialog{-webkit-transform:translate3d(0,-25%,0);transform:translate3d(0,-25%,0);-webkit-transition:-webkit-transform .3s ease-out;-moz-transition:-moz-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;transition:transform .3s ease-out}.modal.in .modal-dialog{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.modal-open .modal{overflow-x:hidden;overflow-y:auto}.modal-dialog{position:relative;width:auto;margin:10px}.modal-content{position:relative;background-color:#fff;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:6px;-webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);box-shadow:0 3px 9px rgba(0,0,0,.5);background-clip:padding-box;outline:0}.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000}.modal-backdrop.fade{opacity:0;filter:alpha(opacity=0)}.modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}.modal-header{padding:15px;border-bottom:1px solid #e5e5e5;min-height:16.428571429px}.modal-header .close{margin-top:-2px}.modal-title{margin:0;line-height:1.428571429}.modal-body{position:relative;padding:15px}.modal-footer{padding:15px;text-align:right;border-top:1px solid #e5e5e5}.modal-footer .btn+.btn{margin-left:5px;margin-bottom:0}.modal-footer .btn-group .btn+.btn{margin-left:-1px}.modal-footer .btn-block+.btn-block{margin-left:0}.modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}@media (min-width:768px){.modal-dialog{width:600px;margin:30px auto}.modal-content{-webkit-box-shadow:0 5px 15px rgba(0,0,0,.5);box-shadow:0 5px 15px rgba(0,0,0,.5)}.modal-sm{width:300px}}@media (min-width:992px){.modal-lg{width:900px}}
+
+      .editModal .modal-content{background-color:transparent;border:0;box-shadow:none}.editModal .modal-content .modal-header{border:0;border-radius:5px 5px 0 0;color:#fff}.editModal .modal-content .modal-header h4{font-weight:700}.editModal .modal-content .modal-header .grey{color:#999;font-size:12px}.editModal .modal-content .modal-header .close{color:#fff;opacity:.7}@media only screen and (min-width:768px){.editModal .modal-content .modal-header .close{margin-left:330px;position:absolute}}@media only screen and (min-width:768px){.editModal .modal-content .modal-header{margin-left:-230px;position:absolute;text-align:right}}.editModal .modal-content .modal-body{background-color:#fff;border-radius:5px 5px 0 0}.editModal .modal-content .modal-body textarea{background-color:#fff;border:0;border-radius:5px;height:200px;padding:5px;resize:none;width:100%}.editModal .modal-content .modal-footer{background-color:#fff;border:0;border-radius:0 0 5px 5px;padding:0}.editModal .modal-content .modal-footer .btn{background-color:#2dbb9b;border:0;border-radius:5px;height:56px;font-size:16px;font-weight:700;text-transform:uppercase;width:100%}.editModal .modal-content .modal-footer .btn:hover,.editModal .modal-content .modal-footer .btn:focus{opacity:.9}.editModal .modal-content .modal-disclosure{display:none}
+      */
     </style>
 
-    <!-- Email Congress -->
-    <section id="fftf-email-congress">
-      <form class="email">
-        <section>
-          <textarea>"I'm writing to urge my representatives to oppose Fast Track for the Trans-Pacific Partnership agreement. Congress needs time to debate and amend trade agreements that affect all of us. Fast Tracking the TPP is undemocratic, and I expect my lawmakers to oppose it. I'll be watching this issue closely in 2015."</textarea>
-        </section>
-        <section>
-          <input type="text" name="first_name" placeholder="Full Name"/>
-          <input type="text" name="email" placeholder="Email"/>
-          <input type="text" name="address1" placeholder="Address"/>
-          <input type="text" name="zip" placeholder="Zip Code"/>
-          <input type="hidden" name="subject" value="Please oppose Fast Track for the Trans-Pacific Partnership"/>
-          <button>Write Congress</button>
-        </section>
-        <footer>
-          <p class="disclaimer"><a href="https://www.fightforthefuture.org">Fight for the Future</a> will contact you about future campaigns. <a href="https://www.fightforthefuture.org/privacy" target="_blank">Privacy Policy</a></p>
-        </footer>
-      </form>
-    </section>
-    <!--
-    <div class="thanks">
-      <img src="images/site/heart.png" width="40" height="40"/>
-      <h1>Awesome! You rock!</h1>
-      <p>Help us spread the word! Share this page with your friends!</p>
-      <a class="social twitter" href="#">Tweet this</a>
-      <a class="social facebook" href="#">Share this</a>
-    </div>
-    -->
     <section id="fftf-twitter-brigade">
       <p>Twitter is one of our most powerful platforms for making sure decision makers know we’re paying attention. Join our campaign on Twitter and help keep the Internet free of censorship.</p>
       <button>Join with Twitter</button>
@@ -830,7 +860,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
             be sure to mention Title II<br>
             reclassification.<br>
             <br>
-            <span class="grey">
+            <span class="disclaimer grey">
             Note: All information submitted
             <br>
             will be publicly available
@@ -843,9 +873,7 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           <a class="close" href="#">×</a>
           <header><h1>Header</h1></header>
           <div class="content"></div>
-          <footer>
-            <p class="disclaimer">Note: All information submitted will be publicly available via the web.</p>
-          </footer>
+          <footer>Continue</footer>
         </div>
       </div>
     </section>
@@ -1064,49 +1092,6 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           </a>
       </li>
   </ul>
-</div>
-
-<div class="modal fade editModal" id="editModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="editModalLabel">Tell the story</h4>
-        <p>
-          How would a slower, unequal<br>
-          Internet hurt you and your work?<br>
-          Build on our letter, and<br>
-          be sure to mention Title II<br>
-          reclassification.<br>
-          <br>
-          <span class="grey">
-          Note: All information submitted
-          <br>
-          will be publicly available
-          <br>
-          via the web.
-          </span>
-        </p>
-      </div>
-      <div class="modal-body">
-        <textarea placeholder="Dear FCC: ...">Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
-
-Most Americans have only one choice for truly high speed Internet: their local cable company. This is a political failure, and it is an embarrassment. America deserves competition and choice.
-
-Without net neutrality, a bad situation gets even worse. These ISPs will now be able to manipulate our Internet experience by speeding up some services and slowing down others. That kills choice, diversity, and quality.
-
-It also causes tremendous economic harm. If ISPs can speed up favored services and slow others, new businesses will no longer be able to rely on a level playing field. When ISPs can slow your site and destroy your business at will, how can any startup attract investors?
-
-My friends, family, and I use the Internet for conversation and fun, but also for work and business. When you let ISPs mess with our Internet experience, you are attacking our social lives, our entertainment, and our economic well being. We won't stand for it.
-
-ISPs are opposing Title II so that they can destroy the FCC's net neutrality rules in court. This is the same trick they pulled last time. Please, let's not be fooled again. Title II is the strong, legally sound way to enforce net neutrality. Use it.</textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Continue</button>
-      </div>
-      <div class="modal-disclosure">Note: All information submitted will be publicly available via the web.</div>
-    </div>
-  </div>
 </div>
 
 <script>

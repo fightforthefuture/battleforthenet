@@ -453,7 +453,6 @@ form input, form textarea {
 }
 
 form input {
-  width: 200px;
   height: 35px;
   line-height: 35px;
   font-weight: bold;
