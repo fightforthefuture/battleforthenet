@@ -1,14 +1,3 @@
-#battle p .fireworks {
-    position: absolute;
-    z-index: 0;
-}
-#battle p .victory {
-    margin: 64px 0 12px;
-    max-width: 90%;
-    position: relative;
-    z-index: 1;
-}
-/* -------------- */
 html {
     background-color: #1b1b24;
     font-family: arial, sans-serif;
