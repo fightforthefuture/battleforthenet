@@ -62,8 +62,6 @@ Modals.prototype.addEventListeners = function() {
 
         if (modal.querySelector('.shareBtn.twitter'))
             modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
-                e.preventDefault();
-                window.open('https://twitter.com/intent/tweet?text='+ encodeURIComponent(GLOBAL_TWEET_TEXT) +'&related=fightfortheftr');
                 if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
             }, false);
 
