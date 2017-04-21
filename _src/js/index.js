@@ -155,25 +155,6 @@ var YourSenators = require('./YourSenators');
         });
 
         new AJAX({
-            url: 'templates/ShareButtons.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.share-buttons-target',
-                    template: e.target.responseText
-                });
-
-                document.querySelector('.sharing-buttons').querySelector('.twitter').addEventListener('click', function(e) {
-                    if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
-                }, false);
-
-                document.querySelector('.sharing-buttons').querySelector('.facebook').addEventListener('click', function(e) {
-                    if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
-                }, false);
-            }
-        });
-
-
-        new AJAX({
             url: 'templates/Modals.html' + buster,
             success: function(e) {
                 global.modals = new Modals({
@@ -248,22 +229,6 @@ var YourSenators = require('./YourSenators');
                 success: function(e) {
                     new SimpleSection({
                         target: '.extra-reading-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: 'templates/Footer.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.footer-target',
                         template: e.target.responseText
                     });
 
