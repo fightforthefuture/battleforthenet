@@ -1618,7 +1618,7 @@ section.form form textarea {
   color: #9797aa;
   font-size: 14px;
   height: 90px;
-  overflow: hidden;
+  overflow: scroll;
   padding: 12px 15px 0;
   resize: none
 }
