@@ -75,9 +75,6 @@ var YourSenators = require('./YourSenators');
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
-            var pleaseWaitNode = document.querySelector('#battle .please-wait');
-            pleaseWaitNode.parentNode.removeChild(pleaseWaitNode);
-
             var petitionForm = new PetitionForm({
                 formTemplate: e.target.responseText,
                 target: '#battle .form-wrapper'
