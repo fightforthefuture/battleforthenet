@@ -39,7 +39,7 @@
     <h2 class="tk-proxima-nova">Cable & wireless companies still want the power to censor, block, or slow websites to a crawl. To stop them, we need to get Congress on our side first. Step one? Show up in force at town hall meetings near you.</h2>
 
     <!-- Email Congress and FCC -->
-    <section id="fftf-email" class="form">
+    <section id="fftf-petition" class="form">
       <div class="shadow">
         <header>
           <h3>Take action now!</h3>
@@ -47,20 +47,21 @@
             Congress &amp; the FCC must hear from <strong>all of us</strong>!
           </p>
         </header>
-        <form method="post" action="https://actionnetwork.org/petitions/urgent-tell-tech-companies-to-stand-strong-for-net-neutrality" accept-charset="UTF-8" data-petition-id="action_network:a6b12b4f-9ba2-45c8-8ee7-1f07b8100964" data-mothership-tag="fcc">
+        <form method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
           <div class="left">
             <label for="name">Full Name</label>
-            <input type="text" name="name" placeholder="Name" title="Full Name" required>
+            <input type="text" name="member[first_name]" placeholder="Name" title="Full Name" required>
             <label for="email_addr">Email Address</label>
-            <input type="email" name="email" placeholder="Email" title="Email" required>
+            <input type="email" name="member[email]" placeholder="Email" title="Email" required>
             <div class="flex">
               <label for="addr">Address</label>
-              <input type="text" name="address1" class="input-address" placeholder="Address" title="Address" required>
+              <input type="text" name="member[street_address]" class="input-address" placeholder="Address" title="Address" required>
               <label for="zip">Zip Code</label>
-              <input type="text" name="zip" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
+              <input type="text" name="member[postcode]" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
             </div>
           </div>
           <div class="right">
+            <input type="hidden" name="subject" value="Protect Net Neutrality!"/>
             <label for="comment">Comment</label>
             <textarea name="action_comment" title="Comment" placeholder="Dear FCC: ..." required>Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
 
@@ -80,11 +81,75 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
               <a href="https://demandprogress.org/" target="_blank">Demand Progress</a> and <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a>
             </p>
           </div>
+
+          <!-- Mothership Honeypot Bot Defense -->
+          <input type="hidden" name="guard" value=""/>
+          <input type="hidden" name="hp_enabled" value="true"/>
+
+          <!-- Mothership -->
+          <input type="hidden" name="contact_congress" value="1"/>
+          <input type="hidden" name="contact_fcc" value="1"/>
+
+          <!-- Action Network -->
+          <input type="hidden" name="an_tags" value='["net-neutrality"]'/>
+          <!-- <input type="hidden" name="an_petition" value="https://actionnetwork.org/petitions/urgent-tell-tech-companies-to-stand-strong-for-net-neutrality"/> -->
+          <input type="hidden" name="an_petition_id" value="089eb650-5d39-4651-bf55-0f2c0ea5bc53"/>
         </form>
       </div>
     </section>
     <script type="text/javascript">
       (function() {
+        "use strict";
+
+        var form = document.getElementById('fftf-petition').querySelector('form');
+        var submitted = false;
+        
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          var xhr = new XMLHttpRequest();
+          var formData = new FormData(form);
+
+          // Prevent duplicate submissions
+          submitted = true;
+
+          function handleHelperSuccess() {
+            var header = document.createElement('h1');
+            header.textContent = 'Thanks!';
+
+            var body = document.createElement('p');
+            body.textContent = 'Your support will help save Net Neutrality!';
+
+            createModal({
+              header: header,
+              body: body
+            });
+          }
+
+          function handleHelperError(e) {
+            /**
+             * @param {event|XMLHttpRequest} e - Might be an event, might be a 
+             * failed XMLHttpRequest
+             * */
+
+            // Submission failed, allow retry
+            submitted = false;
+          }
+
+          function loadHelperResponse() {
+            if (200 <= xhr.status < 400) {
+              handleHelperSuccess();
+            } else {
+              handleHelperError(xhr);
+            }
+          }
+
+          xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
+          xhr.addEventListener('error', handleHelperError);
+          xhr.addEventListener('load', loadHelperResponse);
+          xhr.send(formData);
+        });
+
         function closeModal(e) {
           var modal = e.currentTarget;
           var gutter = modal.querySelector('.gutter');
@@ -92,10 +157,6 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
 
           if (e.target == gutter || e.target == close) {
             e.preventDefault();
-
-            // Update comment from modal
-            document.getElementById('fftf-email').querySelector('form textarea')
-              .val(modal.querySelector('form textarea').val());
 
             modal.classList.add('invisible');
 
@@ -106,11 +167,17 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
           }
         }
 
-        function createModal() {
-          var modal = document.getElementById('fftf-modal-template')
-            .cloneNode(true);
-
+        function createModal(options) {
+          var modal = document.getElementById('fftf-modal-template').cloneNode(true);
           modal.addEventListener('click', closeModal);
+
+          if (options.header) {
+            modal.querySelector('header').appendChild(options.header);
+          }
+
+          if (options.body) {
+            modal.querySelector('.body').appendChild(options.body);
+          }
 
           modal.style.display = 'table';
           document.body.appendChild(modal);
@@ -127,14 +194,10 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
       <div class="gutter">
         <div class="modal">
           <a class="close" href="#">×</a>
-          <aside>
-            <h4>Tell your story</h4>
-            <p>How would a slower, unequal Internet hurt you and your work? Build on our letter, and be sure to mention Title II reclassification.</p>
-            <p class="disclaimer">Note: All information submitted will be publicly available via the web.</p>
-          </aside>
-          <header><h1>Header</h1></header>
-          <div class="content"></div>
-          <footer><h3>Continue</h3></footer>
+          <aside></aside>
+          <header></header>
+          <div class="body"></div>
+          <footer></footer>
         </div>
       </div>
     </section>
