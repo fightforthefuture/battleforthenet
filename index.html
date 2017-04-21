@@ -47,24 +47,22 @@
             Congress &amp; the FCC must hear from <strong>all of us</strong>!
           </p>
         </header>
-        <form name="petition">
+        <form method="post" action="https://actionnetwork.org/petitions/urgent-tell-tech-companies-to-stand-strong-for-net-neutrality" accept-charset="UTF-8" data-petition-id="action_network:a6b12b4f-9ba2-45c8-8ee7-1f07b8100964" data-mothership-tag="fcc">
           <div class="left">
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Name" title="Full Name" required>
+            <input type="text" name="name" placeholder="Name" title="Full Name" required>
             <label for="email_addr">Email Address</label>
-            <input type="email" id="email_addr" name="email" placeholder="Email" title="Email" required>
+            <input type="email" name="email" placeholder="Email" title="Email" required>
             <div class="flex">
               <label for="addr">Address</label>
-              <input type="text" id="addr" name="address1" class="input-address" placeholder="Address" title="Address" required>
+              <input type="text" name="address1" class="input-address" placeholder="Address" title="Address" required>
               <label for="zip">Zip Code</label>
-              <input type="text" id="zip" name="zip" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
+              <input type="text" name="zip" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
             </div>
           </div>
           <div class="right">
             <label for="comment">Comment</label>
-            <div class="textarea-fade"></div>
-            <div class="edit">Edit</div>
-            <textarea id="comment" name="action_comment" title="Comment" placeholder="Dear FCC: ..." required>Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
+            <textarea name="action_comment" title="Comment" placeholder="Dear FCC: ..." required>Net neutrality is the First Amendment of the Internet, the principle that Internet service providers (ISPs) treat all data equally. As an Internet user, net neutrality is vitally important to me. The FCC should use its Title II authority to protect it.
 
 Most Americans have only one choice for truly high speed Internet: their local cable company. This is a political failure, and it is an embarrassment. America deserves competition and choice.
 
@@ -122,9 +120,6 @@ ISPs are opposing Title II so that they can destroy the FCC's net neutrality rul
             modal.classList.remove('invisible');
           });
         }
-
-        document.getElementById('fftf-email').querySelector('.edit')
-          .addEventListener('click', createModal);
       })();
     </script>
 
