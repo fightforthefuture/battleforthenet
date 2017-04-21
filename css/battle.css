@@ -46,25 +46,24 @@ p a {
   text-decoration: underline;
 }
 
-#battle > h1 {
-    padding-top: 00px;
-    font-size: 40px;
-    font-weight: 700;
+h1 {
+  font-size: 40px;
+  font-weight: 700;
 }
 
-#battle > h2 {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 700px;
+h2 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
 }
 
 p {
-    color: #e0e0e0;
-    font-size: 19px;
-    line-height: 26px;
+  color: #e0e0e0;
+  font-size: 19px;
+  line-height: 26px;
 
-    -webkit-transition-delay: 0.2s;
-            transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
 
 #battle p.please-wait {
@@ -967,19 +966,21 @@ section .btn:hover, button:hover {
   left: 12px;
 }
 
-.footer-target .shares-container{
-    border-radius: 50px;
-    background-color: #39394D;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 490px;
-    margin: 0px auto;
+.shares-container {
+  border-radius: 50px;
+  padding: 5px 10px;
+  width: 490px;
+  margin: 0px auto;
 }
 
-@media screen and (max-width: 520px){
-   .footer-target .shares-container{
-       border-radius: 25px;
-       width: 240px;
+.footer-target .shares-container {
+  background-color: #39394D;
+}
+
+@media screen and (max-width: 520px) {
+   .shares-container {
+     border-radius: 25px;
+     width: 240px;
    }
 }
 
@@ -1069,7 +1070,7 @@ body.privacy section.team-internet.fight-for-the-future {
     vertical-align: middle;
 }
 .overlay .gutter .modal {
-    max-width: 400px;
+    max-width: 540px;
     border-radius: 10px;
     background: white;
     color: black;
@@ -1093,7 +1094,7 @@ body.privacy section.team-internet.fight-for-the-future {
     background: #20cba1;
     color: white;
     text-align: center;
-    padding: 30px 10px;
+    padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -1483,7 +1484,7 @@ section.form {
   padding: 16px 30px 64px;
 }
 
-section.form .shadow {
+.shadow {
   box-shadow: 0 5px 13px rgba(0,0,0,.7);
 }
 
@@ -1585,8 +1586,8 @@ section.form form {
   border-top: 1px solid #ededed
 }
 
-section.form form input,
-section.form form textarea {
+section.form input,
+section.form textarea {
   border: 0;
   border-bottom: 1px solid #d1d1e9;
   border-radius: 0;
@@ -1599,21 +1600,21 @@ section.form form textarea {
   transition: background-color .15s
 }
 
-section.form form input::-moz-placeholder,
-section.form form textarea::-moz-placeholder,
-section.form form input::-webkit-input-placeholder,
-section.form form textarea::-webkit-input-placeholder {
+section.form input::-moz-placeholder,
+section.form textarea::-moz-placeholder,
+section.form input::-webkit-input-placeholder,
+section.form textarea::-webkit-input-placeholder {
   color: #9797aa
 }
 
-section.form form input:focus,
-section.form form textarea:focus {
+section.form input:focus,
+section.form textarea:focus {
   background-color: #eef;
   border-bottom: 1px solid #d1d1e9;
   box-shadow: none
 }
 
-section.form form textarea {
+section.form textarea {
   border-bottom: 0;
   color: #9797aa;
   font-size: 14px;
@@ -1624,57 +1625,57 @@ section.form form textarea {
 }
 
 @media only screen and (min-width: 768px) {
-  section.form form textarea {
+  section.form textarea {
     height: 132px
   }
 }
 
-section.form form .left {
+form .left {
   height: 132px;
   width: 100%;
 }
 
-section.form form .left .flex {
+form .left .flex {
   display: flex;
 }
 
-section.form form .left .flex input {
+form .left .flex input {
   border-bottom: 0;
 }
 
-section.form form .left .flex .input-address {
+form .left .flex .input-address {
   border-right: 1px solid #d8d8e9;
   width: 20%;
   flex: 1;
 }
 
-section.form form .left .flex .input-zip {
+form .left .flex .input-zip {
   width: 110px;
 }
 
 @media only screen and (min-width: 768px) {
-  section.form form .left {
+  form .left {
     border-right: 1px solid #d1d1e9;
     float: left;
     width: 250px
   }
 }
 
-section.form form .right {
+form .right {
   border-top: 1px solid #d1d1e9;
   cursor: pointer;
   position: relative
 }
 
 @media only screen and (min-width: 768px) {
-  section.form form .right {
+  form .right {
     border-top: 0;
     float: left;
     width: 250px
   }
 }
 
-section.form form .right .textarea-fade {
+form .right .textarea-fade {
   background-image: url(../images/textarea-fade.png);
   background-position: center bottom;
   background-repeat: repeat-x;
@@ -1684,12 +1685,12 @@ section.form form .right .textarea-fade {
 }
 
 @media only screen and (min-width: 768px) {
-  section.form form .right .textarea-fade {
+  form .right .textarea-fade {
     height: 100%
   }
 }
 
-section.form form .right .edit {
+form .right .edit {
   bottom: 10px;
   color: #2dbb9b;
   font-size: 10px;
@@ -1699,23 +1700,20 @@ section.form form .right .edit {
   text-transform: uppercase
 }
 
-section.form form .right:hover .edit {
+form .right:hover .edit {
   text-decoration: underline
 }
 
-section.form form .call-to-action {
-  clear: both
-}
-
-section.form form .call-to-action {
+form .call-to-action {
   width: 100%;
   background-color: #d0ede7;
   border-radius: 0 0 5px 5px;
   border-top: 1px solid #badad3;
-  padding: 10px
+  padding: 10px;
+  clear: both;
 }
 
-section.form form .call-to-action button {
+form .call-to-action button {
   border: 0;
   box-shadow: 0 2px 1px rgba(36,95,82,.7);
   color: #fff;
@@ -1735,33 +1733,34 @@ section.form form .call-to-action button {
 }
 
 @media only screen and (min-width: 480px) {
-  section.form form .call-to-action button {
+  form .call-to-action button {
     font-size: 22px
   }
 }
 
-section.form form .call-to-action button:hover,section.form form .call-to-action button:focus {
+form .call-to-action button:hover,
+form .call-to-action button:focus {
   box-shadow: 0 2px 4px rgba(36,95,82,.8);
   opacity: .92
 }
 
-section.form form .call-to-action .disclaimer {
+form .call-to-action .disclaimer {
   color: #1c1c25;
   font-size: 11px;
   margin: 8px 0 0;
   text-align: center
 }
 
-section.form form .call-to-action .disclaimer a {
+form .call-to-action .disclaimer a {
   color: #2dbb9b;
   text-decoration: none;
 }
 
-section.form form .call-to-action .disclaimer a:hover {
+form .call-to-action .disclaimer a:hover {
   text-decoration: underline;
 }
 
-section.form form .bottom-strip {
+form .bottom-strip {
   background: rgba(42,176,145,.8);
   text-align: center;
   font-weight: 700;
@@ -1769,11 +1768,11 @@ section.form form .bottom-strip {
   padding: 2px 0 0
 }
 
-section.form form .bottom-strip a {
+form .bottom-strip a {
   color: #fff
 }
 
-section.form form .bottom-strip a:hover {
+form .bottom-strip a:hover {
   text-decoration: underline
 }
 
