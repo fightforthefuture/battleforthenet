@@ -1480,25 +1480,25 @@ section.form {
   font-family: 'Proxima Nova',sans-serif;
   margin: 0 auto;
   max-width: 560px;
-  padding: 10px 30px 0
+  padding: 16px 30px 64px;
 }
 
 section.form .shadow {
-  box-shadow: 0 5px 13px rgba(0,0,0,.7)
+  box-shadow: 0 5px 13px rgba(0,0,0,.7);
 }
 
 section.form header {
   background-color: #7573bc;
   border-radius: 5px 5px 0 0;
   color: #fff;
-  text-align: center
+  text-align: center;
 }
 
 section.form header h3 {
   font-size: 24px;
   font-weight: 700;
   margin: 0;
-  padding: 10px 0 0
+  padding: 10px 0 0;
 }
 
 .modal aside {
@@ -1708,6 +1708,7 @@ section.form form .call-to-action {
 }
 
 section.form form .call-to-action {
+  width: 100%;
   background-color: #d0ede7;
   border-radius: 0 0 5px 5px;
   border-top: 1px solid #badad3;
