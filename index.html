@@ -444,8 +444,6 @@ global.fontsAreReady = false;
 global.isDesktop = !navigator.userAgent.match(/mobile/i);
 global.modals = null;
 
-var GLOBAL_TWEET_TEXT = 'ACTION ALERT: #NetNeutrality is at risk. Tell Congress to stand up to Big Cable by attending a town hall near you: https://www.battleforthenet.com/';
-
 window.optimizely || (window.optimizely = []);
 
 // Let's selectively bust browser caches
@@ -485,6 +483,9 @@ function loadJS(src, blocking) {
 </script>
 
 <script src="//cdn.optimizely.com/js/1886210014.js"></script>
+
+<!-- Free Progress A/B testing -->
+<script src="https://fftf.io/js/client.js" type="text/javascript"></script>
 
 </body>
 </html>
