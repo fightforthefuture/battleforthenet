@@ -1644,7 +1644,7 @@ form .left .flex input {
 
 form .left .flex .input-address {
   border-right: 1px solid #d8d8e9;
-  width: 20%;
+  min-width: 20%;
   flex: 1;
 }
 
