@@ -169,34 +169,6 @@ header nav a {
         display: none !important;
     }
 }
-@-webkit-keyframes hueRotate {
-    from {
-        -webkit-filter: hue-rotate(0deg);
-    }
-
-    to {
-        -webkit-filter: hue-rotate(359deg);
-    }
-}
-
-@keyframes hueRotate {
-    from {
-        filter: hue-rotate(0deg);
-    }
-
-    to {
-        filter: hue-rotate(359deg);
-    }
-}
-
-#background.hueRotate {
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-name: hueRotate;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-name: hueRotate;
-}
 
 body.slow .tk-bebas-neue,
 body.slow .tk-proxima-nova {
