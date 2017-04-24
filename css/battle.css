@@ -1835,10 +1835,6 @@ fieldset[disabled] textarea {
 }
 
 /* Custom styling for Action Network Widget */
-.an-widget-wrapper {
-  margin-bottom: 64px;
-}
-
 #can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events {
   margin: 0 auto;
 }
@@ -1846,18 +1842,20 @@ fieldset[disabled] textarea {
 #can_embed_form h2,
 #can_embed_form h4,
 #custom_html.mt20,
+#can_embed_form form#can_zip_search,
 #search_location_list,
 #event_desc,
 #action_info,
 #can_main_col .last_line,
+#can_sidebar.mb40,
 #can_embed_form .can_thank_you-block,
 #can_embed_form .discussion-board,
 #can_embed_form .thank-you-message .event_map_wrap {
   display: none;
 }
 
-#can_sidebar.mb40 {
-  margin-bottom: 20px;
+.can_embed {
+  margin: 30px auto;
 }
 
 #can_embed_form input[type='submit'] {

@@ -18,6 +18,7 @@ var Queue = require('./Queue');
 var ScrollDetection = require('./ScrollDetection');
 var SimpleSection = require('./SimpleSection');
 var TeamInternetSection = require('./TeamInternetSection');
+var TownHallSection = require('./TownHallSection');
 var YourSenators = require('./YourSenators');
 
 
@@ -186,6 +187,22 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
+                url: 'templates/TownHallSection.html' + buster,
+                success: function(e) {
+                    new TownHallSection({
+                        target: '.town-hall-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
                 url: 'templates/LearnMoreSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
@@ -242,7 +259,7 @@ var YourSenators = require('./YourSenators');
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./OrganizationRotation":13,"./PetitionForm":14,"./Polyfills":15,"./Queue":16,"./ScrollDetection":17,"./SimpleSection":18,"./TeamInternetSection":19,"./YourSenators":21}],2:[function(require,module,exports){
+},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./OrganizationRotation":13,"./PetitionForm":14,"./Polyfills":15,"./Queue":16,"./ScrollDetection":17,"./SimpleSection":18,"./TeamInternetSection":19,"./TownHallSection":21,"./YourSenators":22}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -1292,6 +1309,71 @@ var Template = function template(str, data){
 module.exports = Template;
 
 },{}],21:[function(require,module,exports){
+var SimpleSection = require('./SimpleSection');
+
+function TownHallSection(params) {
+  this.target = params.target;
+  this.template = params.template;
+
+  this.render();
+  this.addListeners();
+}
+
+TownHallSection.prototype.render = function render() {
+  new SimpleSection({
+    target: this.target,
+    template: this.template
+  });
+
+  this.loadWidget();
+};
+
+TownHallSection.prototype.addListeners = function addListeners() {
+   document.addEventListener('can_embed_loaded', function(e) {
+     var zipSubmit = document.getElementById('form-zip_code-submit');
+
+     if (zipSubmit) {
+       zipSubmit.value = 'Find a Town Hall';
+       zipSubmit.classList.add('text-visible');
+     }
+
+     var international = document.querySelector('.international_link-wrap');
+
+     // Remove "Not in the US?" link
+     while (international.firstChild) {
+      international.removeChild(international.firstChild);
+     }
+
+     var meeting = document.createElement('a');
+     meeting.classList.add('international_link', 'text-visible');
+     meeting.textContent = "Can't attend a town hall this week or don't see a town hall near you? Click here to request a meeting with your lawmakers.";
+     meeting.href = "https://actionnetwork.org/forms/request-a-meeting-with-your-lawmakers-to-defend-net-neutrality";
+     meeting.target = "_blank";
+     international.appendChild(meeting);
+   });
+
+   document.addEventListener('can_embed_submitted', function(e) {
+     var thanksEl = document.getElementById('can_thank_you');
+
+     if (thanksEl) {
+       var share = document.querySelector('.shares-container').cloneNode(true);
+       thanksEl.appendChild(share);
+     }
+   });
+};
+
+TownHallSection.prototype.loadWidget = function loadWidget() {
+  var script = document.createElement('script');
+
+  script.type = 'text/javascript';
+  script.src = 'https://actionnetwork.org/widgets/v2/event_campaign/stand-up-for-net-neutrality-at-town-hall-events?format=js&source=widget&style=full';
+
+  document.body.appendChild(script);
+};
+
+module.exports = TownHallSection;
+
+},{"./SimpleSection":18}],22:[function(require,module,exports){
 function YourSenators(params) {
     params.callback();
 }

@@ -16,6 +16,7 @@ var Queue = require('./Queue');
 var ScrollDetection = require('./ScrollDetection');
 var SimpleSection = require('./SimpleSection');
 var TeamInternetSection = require('./TeamInternetSection');
+var TownHallSection = require('./TownHallSection');
 var YourSenators = require('./YourSenators');
 
 
@@ -172,6 +173,22 @@ var YourSenators = require('./YourSenators');
                 success: function(e) {
                     new SimpleSection({
                         target: '.how-we-won-target',
+                        template: e.target.responseText
+                    });
+
+                    if (queue.length > 0) {
+                        queue.shift()();
+                    }
+                }
+            });
+        });
+
+        queue.push(function() {
+            new AJAX({
+                url: 'templates/TownHallSection.html' + buster,
+                success: function(e) {
+                    new TownHallSection({
+                        target: '.town-hall-target',
                         template: e.target.responseText
                     });
 
