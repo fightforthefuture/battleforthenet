@@ -1835,6 +1835,11 @@ fieldset[disabled] textarea {
 }
 
 /* Custom styling for Action Network Widget */
+#town-hall {
+  background-color: #313142;
+  padding: 16px 25px 64px;
+}
+
 #can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events {
   margin: 0 auto;
 }
