@@ -30,9 +30,6 @@ var YourSenators = require('./YourSenators');
 
 // Design enhancements
 (function(){
-    if (global.isDesktop) {
-        document.querySelector('#background').className += 'hueRotate';
-    }
     // Preload the background
     setTimeout(function() {
         new ImagePreloader('./images/Imagesmall.jpg', function() {
