@@ -984,24 +984,19 @@ section .btn:hover, button:hover {
    }
 }
 
-.shares-container .share-container a:hover{
-    color: blue !important;
+.shares-container .share-container span {
+    color: #fff;
 }
-.shares-container .share-container a:visited{
-    color: #FFF !important;
-}
-.shares-container .share-container a:link {
-    color: #FFF !important;
-}
-.shares-container .fb-share-container{
+
+.shares-container .fb-share-container {
     background-color: #3B5999;
     padding-left:20px;
 }
-.shares-container .twitter-share-container{
+.shares-container .twitter-share-container {
     background-color: #4099FF;
     padding-left:15px;
 }
-.shares-container .share-container{
+.shares-container .share-container {
     position:relative;
     display:inline-block;
     width: 220px;

@@ -130,10 +130,12 @@ I would be happy to speak more with anyone on your staff about the rules and why
             var body = document.createElement('p');
             body.textContent = 'We need as many people as possible to take action this week!';
 
+            var sharesContainer = document.querySelector('.shares-container');
+
             createModal({
               header: header,
               body: body,
-              footer: document.querySelector('.shares-container').cloneNode(true)
+              footer: sharesContainer.parentNode.removeChild(sharesContainer)
             });
           }
 
@@ -242,14 +244,18 @@ I would be happy to speak more with anyone on your staff about the rules and why
           <div class="row">
             <div class="col-xs-12 socials">
               <div class="shares-container">
-                  <div class="share-container fb-share-container">
+                  <a href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/" target="_blank" class="facebook">
+                    <div class="share-container fb-share-container">
                       <img data-cfsrc="images/share/fb_white.png" src="https://www.battleforthenet.com/images/share/fb_white.png">
-                      <a href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/" target="_blank" class="facebook">Share on Facebook</a>
-                  </div>
-                  <div class="share-container twitter-share-container">
+                      <span>Share on Facebook</span>
+                    </div>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The FCC is trying to kill the Internet again. This time, it’s even worse. Here’s how to stop them... https://www.battleforthenet.com" target="_blank" class="twitter">
+                    <div class="share-container twitter-share-container">
                       <img data-cfsrc="images/share/tw_white.png" src="https://www.battleforthenet.com/images/share/tw_white.png">
-                      <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The FCC is trying to kill the Internet again. This time, it’s even worse. Here’s how to stop them... https://www.battleforthenet.com" target="_blank" class="twitter">Share on Twitter</a>
-                  </div>
+                      <span>Share on Twitter</span>
+                    </div>
+                  </a>
               </div>
             </div>
           </div>
