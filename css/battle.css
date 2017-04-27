@@ -21,7 +21,11 @@ html, body {
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+img {
+  border: none;
 }
 
 #battle {
