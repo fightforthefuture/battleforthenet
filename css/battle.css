@@ -1883,5 +1883,5 @@ fieldset[disabled] textarea {
 }
 
 #can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events {
-  width: 600px;
+  max-width: 600px;
 }
