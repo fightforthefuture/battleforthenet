@@ -28,43 +28,76 @@
         </div>
     </div>
 </div>
-<div class="overlay twitter invisible" id="twitter_modal">
-    <div class="gutter">
-        <div class="modal">
-            <a class="close" href="#">×</a>
-            <h1>The FCC votes on net neutrality Feb 26. Join the countdown!</h1>
-            <p class="nopad">Comcast wants to destroy net neutrality to slow & break the sites you love. We have a once-in-a-lifetime chance to stop them, in just days! Will you let us automatically post the countdown to the vote–and future urgent alerts–to your Twitter? (You can <a href="https://support.twitter.com/articles/76052-connecting-or-revoking-third-party-applications#revokeaccess">disable</a> at any time, of course.)</p>
-            <form action="//radiant-earth-4575.herokuapp.com/auth/twitter_prep" method="POST" id="tweez">
-                <!--
-                <label for="email">Your email
-                    <span>(Optional)</span>
-                </label>
-                <input type="text" name="email" id="emaildudez">
-                <hr/>
-                -->
-                <!--
-                <br/>
-                <label>Maximum frequency:</label>
-                -->
-                <!--
-                <select name="frequency">
-                    <option value="1" selected>Tweet once a day</option>
-                    <option value="2">Tweet once a week</option>
-                    <option value="3">Tweet once a month</option>
-                    <option value="4">Tweet three times a year</option>
-                </select>
-                -->
-                <input type="hidden" name="frequency" value="1" />
-                <hr/>
-                <button id="twitter_submit_button" type="submit">Authorize with Twitter</button>
-            </form>
+<div class="overlay invisible" id="thanks_modal">
+  <div class="gutter">
+    <div class="modal">
+      <a class="close" href="#">×</a>
+      <header>
+        <h2>Thanks!</h2>
+        <h2>Now, can you share?</h2>
+      </header>
+      <div class="body">
+        <p>We need as many people as possible to take action this week!</p>
+      </div>
+      <footer>
+        <div class="shares-container">
+          <a href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/" target="_blank" class="facebook">
+            <div class="share-container fb-share-container">
+              <img data-cfsrc="images/share/fb_white.png" src="https://www.battleforthenet.com/images/share/fb_white.png">
+              <span>Share on Facebook</span>
+            </div>
+          </a>
+          <div class="share-container twitter-share-container twitter-brigade">
+            <img data-cfsrc="images/share/tw_white.png" src="https://www.battleforthenet.com/images/share/tw_white.png">
+            <span>Share on Twitter</span>
+          </div>
         </div>
+      </footer>
     </div>
+  </div>
+</div>
+<div class="overlay twitter invisible" id="twitter_modal">
+  <div class="gutter">
+    <div class="modal">
+      <a class="close" href="#">×</a>
+      <header>
+        <h2>Join with Twitter to defend the Internet!</h2>
+      </header>
+      <div class="body">
+        <p>There are countless battles that need to be won to keep the Internet open. From protecting net neutrality to stopping secret deals that could censor the net, we need your help. Will you let us automatically post urgent alerts from your Twitter account, about once a week? (You can <a href="https://support.twitter.com/articles/76052-connecting-or-revoking-third-party-applications#revokeaccess">opt out</a> at any time, of course.)</p>
+      </div>
+      <footer>
+        <div class="shares-container">
+          <form action="//radiant-earth-4575.herokuapp.com/auth/twitter_prep" method="POST" id="tweez">
+            <!--
+            <label for="email">Your email <span>(Optional)</span></label>
+            <input type="text" name="email" id="emaildudez">
+            <hr/>
+            <label>Maximum frequency:</label>
+            <select name="frequency">
+                <option value="1" selected>Tweet once a day</option>
+                <option value="2">Tweet once a week</option>
+                <option value="3">Tweet once a month</option>
+                <option value="4">Tweet three times a year</option>
+            </select>
+            -->
+            <input type="hidden" name="frequency" value="1" />
+            <button id="twitter_submit_button" class="share-container twitter-share-container" type="submit">
+              <img data-cfsrc="images/share/tw_white.png" src="https://www.battleforthenet.com/images/share/tw_white.png">
+              <span>Join with Twitter</span>
+            </button>
+          </form>
+          <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The FCC is trying to kill the Internet again. This time, it’s even worse. Here’s how to stop them... https://www.battleforthenet.com" target="_blank" class="twitter">Nope, just tweet once</a>
+        </div>
+      </footer>
+    </div>
+  </div>
 </div>
 <div class="overlay twitter invisible" id="edit_modal">
     <div class="gutter">
         <div class="modal">
             <a class="close" href="#">×</a>
+            <aside></aside>
             <h1>Edit your FCC complaint:</h1>
             <form>
                 <!--

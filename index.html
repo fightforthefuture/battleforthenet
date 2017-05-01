@@ -41,7 +41,7 @@
 <section id="battle" class="fadeIn">
     <h1 class="tk-proxima-nova">Don't let the new FCC kill net neutrality.</h1>
 
-    <p class="tk-proxima-nova light">FCC chair Ajit Pai, a former Verizon employee, is poised to destroy America's net neutrality rules. Unless we stop him, Verizon, Comcast and every other monopoly ISP will soon win the power to block apps, censor websites, slow services to a crawl, and extort a hefty cut of every dollar we spend online.</p>
+    <p class="tk-proxima-nova light">Cable & wireless companies still want the power to censor, block, or slow websites to a crawl. To stop them, we need to get Congress on our side first. Step one? Show up in force at town hall meetings near you.</p>
 
     <!-- Email Congress and FCC -->
     <section id="fftf-petition" class="form shadow">
@@ -123,22 +123,6 @@ I would be happy to speak more with anyone on your staff about the rules and why
           // Prevent duplicate submissions
           submitted = true;
 
-          function handleHelperSuccess() {
-            var header = document.createElement('h1');
-            header.textContent = 'Thanks! Now, can you share?';
-
-            var body = document.createElement('p');
-            body.textContent = 'We need as many people as possible to take action this week!';
-
-            var sharesContainer = document.querySelector('.shares-container');
-
-            createModal({
-              header: header,
-              body: body,
-              footer: sharesContainer.parentNode.removeChild(sharesContainer)
-            });
-          }
-
           function handleHelperError(e) {
             /**
              * @param {event|XMLHttpRequest} e - Might be an event, might be a 
@@ -151,7 +135,7 @@ I would be happy to speak more with anyone on your staff about the rules and why
 
           function loadHelperResponse() {
             if (200 <= xhr.status < 400) {
-              handleHelperSuccess();
+              global.modals.display('thanks_modal');
             } else {
               handleHelperError(xhr);
             }
@@ -162,62 +146,8 @@ I would be happy to speak more with anyone on your staff about the rules and why
           xhr.addEventListener('load', loadHelperResponse);
           xhr.send(formData);
         });
-
-        function closeModal(e) {
-          var modal = e.currentTarget;
-          var gutter = modal.querySelector('.gutter');
-          var close = modal.querySelector('.close');
-
-          if (e.target == gutter || e.target == close) {
-            e.preventDefault();
-
-            modal.classList.add('invisible');
-
-            setTimeout(function() {
-              modal.style.display = 'none';
-              document.body.removeChild(modal);
-            }, 400);
-          }
-        }
-
-        function createModal(options) {
-          var modal = document.getElementById('fftf-modal-template').cloneNode(true);
-          modal.addEventListener('click', closeModal);
-
-          if (options.header) {
-            modal.querySelector('header').appendChild(options.header);
-          }
-
-          if (options.body) {
-            modal.querySelector('.body').appendChild(options.body);
-          }
-
-          if (options.footer) {
-            modal.querySelector('footer').appendChild(options.footer);
-          }
-
-          modal.style.display = 'table';
-          document.body.appendChild(modal);
-
-          // Defer class modification until after Node has been appended to DOM
-          setTimeout(function() {
-            modal.classList.remove('invisible');
-          });
-        }
       })();
     </script>
-
-    <section id="fftf-modal-template" class="overlay invisible">
-      <div class="gutter">
-        <div class="modal">
-          <a class="close" href="#">×</a>
-          <aside></aside>
-          <header></header>
-          <div class="body"></div>
-          <footer></footer>
-        </div>
-      </div>
-    </section>
 
     <!-- FCC Complaint form is loaded into here -->
     <div class="form-wrapper loading tk-proxima-nova" style="display: none;"></div>

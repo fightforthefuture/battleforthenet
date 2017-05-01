@@ -60,15 +60,21 @@ Modals.prototype.addEventListeners = function() {
                 if (ga) ga('send', 'event', 'button', 'click', 'dismiss_twitter');
             }.bind(this), false);
 
-        if (modal.querySelector('.shareBtn.twitter'))
-            modal.querySelector('.shareBtn.twitter').addEventListener('click', function(e) {
+        if (modal.querySelector('.twitter'))
+            modal.querySelector('.twitter').addEventListener('click', function(e) {
                 if (ga) ga('send', 'event', 'button', 'click', 'share_twitter');
             }, false);
 
-        if (modal.querySelector('.shareBtn.facebook'))
-            modal.querySelector('.shareBtn.facebook').addEventListener('click', function(e) {
+        if (modal.querySelector('.facebook'))
+            modal.querySelector('.facebook').addEventListener('click', function(e) {
                 if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
             }, false);
+
+        if (modal.querySelector('.twitter-brigade'))
+            modal.querySelector('.twitter-brigade').addEventListener('click', function(e) {
+                this.hide(modal.id);
+                this.display('twitter_modal');
+            }.bind(this), false);
     }.bind(this);
 
     for (var i = 0; i < modals.length; i++) {
