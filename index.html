@@ -89,9 +89,11 @@ I would be happy to speak more with anyone on your staff about the rules and why
         </div>
         <div class="row call-to-action">
           <button type="submit" class="btn">Submit Your Comment</button>
-          <p class="disclaimer">
-            <a href="https://demandprogress.org/" target="_blank">Demand Progress</a> and <a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a>
-          </p>
+          <div class="disclaimer">
+            <div class="org fp hidden"><a href="https://www.freepress.net/" target="_blank">Free Press</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
+            <div class="org dp hidden"><a href="https://demandprogress.org/" target="_blank">Demand Progress</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
+            <div class="org fftf"><a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
+          </div>
         </div>
 
         <!-- Mothership Honeypot Bot Defense -->
@@ -101,6 +103,7 @@ I would be happy to speak more with anyone on your staff about the rules and why
         <!-- Mothership -->
         <input type="hidden" name="contact_congress" value="1"/>
         <input type="hidden" name="fcc_ecfs_docket" value="17-108"/>
+        <input type="hidden" name="org" id="org" value="fftf"/>
 
         <!-- Action Network -->
         <input type="hidden" name="an_tags" value='["net-neutrality"]'/>

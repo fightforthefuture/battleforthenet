@@ -20,6 +20,10 @@ html, body {
             box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 a {
   text-decoration: none;
 }
