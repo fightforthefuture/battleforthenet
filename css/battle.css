@@ -505,7 +505,7 @@ p {
   color: #eee;
   font-size: 21px;
   font-weight: 300;
-  line-height: 32px;
+  line-height: 26px;
   margin: 36px auto 0;
   max-width: 780px;
 }
@@ -1459,7 +1459,9 @@ section.form {
 }
 
 .shadow {
-  box-shadow: 0 5px 13px rgba(0,0,0,.7);
+  -webkit-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
+-moz-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
+box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
 }
 
 section.form header {
@@ -1559,7 +1561,7 @@ section.form textarea {
   border-bottom: 1px solid #d1d1e9;
   border-radius: 5px;
   box-shadow: none;
-  color: #645fa2;
+  color: #645fa2 !important; 
   font-size: 15px;
   font-weight: 700;
   height: 44px;
@@ -1678,7 +1680,7 @@ form footer button {
   border: 0;
   box-shadow: 0 2px 1px rgba(36,95,82,.7);
   color: #fff;
-  height: 48px;
+  height: 64px;
   background-color: #41ddb9;
   background: -webkit-gradient(linear,left top,left bottom,from(#41ddb9),to(#2fd19f));
   background: -webkit-linear-gradient(top,#41ddb9,#2fd19f);
@@ -1692,11 +1694,12 @@ form footer button {
   width: 100%;
   margin: 0;
   border-radius: 5px;
+  text-shadow: rgb(68, 148, 107) 0px 2px 3px;
 }
 
 @media only screen and (min-width: 480px) {
   form footer button {
-    font-size: 22px
+    font-size: 26px
   }
 }
 
@@ -1740,7 +1743,7 @@ input, textarea {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #555;
+  color: #645fa2;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -1860,4 +1863,8 @@ fieldset[disabled] textarea {
 
 #can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events {
   max-width: 600px;
+}
+
+input{
+	 color: #645fa2 !important; 
 }
