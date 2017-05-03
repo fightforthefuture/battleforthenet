@@ -1556,7 +1556,7 @@ section.form header p {
 
 section.form input,
 section.form textarea {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: 0;
   border-bottom: 1px solid #d1d1e9;
   border-radius: 5px;
@@ -1566,6 +1566,13 @@ section.form textarea {
   height: 44px;
   padding: 0 18px;
   transition: background-color .15s
+}
+
+@media only screen and (min-width: 768px) {
+  section.form input,
+  section.form textarea {
+    margin-bottom: 10px;
+  }
 }
 
 /* These selectors only work when declared separately for some buggy reason */
@@ -1597,7 +1604,7 @@ section.form textarea {
   border-bottom: 0;
   color: #645fa2;
   font-size: 14px;
-  height: 90px;
+  height: 142px;
   overflow: scroll;
   padding: 12px 15px 10px;
   resize: none;
@@ -1605,7 +1612,6 @@ section.form textarea {
 
 @media only screen and (min-width: 768px) {
   section.form textarea {
-    height: 142px
   }
 }
 
@@ -1660,16 +1666,17 @@ form .left .flex .input-zip {
 }
 
 form .right {
+  width: 100%;
   cursor: pointer;
   position: relative;
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 
 @media only screen and (min-width: 768px) {
   form .right {
     float: left;
     width: 50%;
-    padding-left: 0px;
+    padding: 15px 0px 15px 15px;
   }
 }
 
