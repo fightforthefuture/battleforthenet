@@ -68,7 +68,7 @@
           <input type="hidden" name="subject" value="Protect Net Neutrality!"/>
           <label for="comment">Comment</label>
           <div class="textarea-wrapper">
-            <textarea name="action_comment" title="Comment" placeholder="Dear FCC: ..." required>The FCC Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
+            <textarea name="action_comment" title="Comment" required>The FCC Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
 
   Most Americans only have one choice for true high speed Internet access: our local cable company. Cable companies (and wireless carriers) are actively lobbying Congress and the FCC for the power to:
 
@@ -125,11 +125,13 @@
         form.addEventListener('submit', function(e) {
           e.preventDefault();
 
+          // Prevent duplicate submissions
+          if (submitted) return;
+
+          submitted = true;
+
           var xhr = new XMLHttpRequest();
           var formData = new FormData(form);
-
-          // Prevent duplicate submissions
-          submitted = true;
 
           function handleHelperError(e) {
             /**
@@ -137,11 +139,13 @@
              * failed XMLHttpRequest
              * */
 
-            // Submission failed, allow retry
-            submitted = false;
+            // global.modals.display('error_modal');
           }
 
           function loadHelperResponse() {
+            // Submission complete, allow retry
+            submitted = false;
+
             if (200 <= xhr.status < 400) {
               global.modals.display('thanks_modal');
             } else {
@@ -153,6 +157,24 @@
           xhr.addEventListener('error', handleHelperError);
           xhr.addEventListener('load', loadHelperResponse);
           xhr.send(formData);
+        });
+
+        var textarea = form.querySelector('textarea');
+        var placeholder = 'Dear FCC,\n\n';
+        textarea.placeholder = textarea.value;
+
+        form.querySelector('.edit').addEventListener('click', function(e) {
+          e.preventDefault();
+
+          textarea.value = placeholder;
+          textarea.focus();
+        });
+
+        textarea.addEventListener('blur', function(e) {
+          var val = textarea.value.trim();
+          if (val == placeholder.trim() || val == '') {
+            textarea.value = textarea.placeholder;
+          }
         });
       })();
     </script>
