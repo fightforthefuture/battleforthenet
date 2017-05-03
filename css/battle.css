@@ -55,7 +55,7 @@ p a {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 54px;
   font-weight: 700;
 }
 
@@ -503,9 +503,9 @@ body #battle .thanks p a {
 
 p {
   color: #eee;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 300;
-  line-height: 32px;
+  line-height: 26px;
   margin: 36px auto 0;
   max-width: 780px;
 }
@@ -1453,25 +1453,28 @@ a.shareBtn.twitter {
 section.form {
   font-family: 'Proxima Nova',sans-serif;
   margin: 48px auto 64px;
-  max-width: 500px;
+  max-width: 620px;
+  background-color: #645fa2;
+  border-radius: 5px;
 }
 
 .shadow {
-  box-shadow: 0 5px 13px rgba(0,0,0,.7);
+  -webkit-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
+-moz-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
+box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
 }
 
 section.form header {
-  background-color: #7573bc;
   border-radius: 5px 5px 0 0;
   color: #fff;
   text-align: center;
+  padding: 30px 30px 10px 30px;
 }
 
 section.form header h3 {
   font-size: 24px;
   font-weight: 700;
-  margin: 0;
-  padding: 10px 0 0;
+  margin: 0 0 10px 0;
 }
 
 .modal aside {
@@ -1536,8 +1539,7 @@ section.form header h3 {
 
 section.form header p {
   font-size: 16px;
-  margin: 0;
-  padding: 0 12px 12px
+  margin: 0 40px;
 }
 
 @media only screen and (min-width: 480px) {
@@ -1552,31 +1554,43 @@ section.form header p {
   }
 }
 
-section.form form {
-  background-color: #fff;
-  border-radius: 0 0 5px 5px;
-  border-top: 1px solid #ededed
-}
-
 section.form input,
 section.form textarea {
+  margin-bottom: 15px;
   border: 0;
   border-bottom: 1px solid #d1d1e9;
-  border-radius: 0;
+  border-radius: 5px;
   box-shadow: none;
-  color: #1c1c25;
+  color: #645fa2; 
   font-size: 15px;
-  font-weight: 700;
   height: 44px;
   padding: 0 18px;
   transition: background-color .15s
 }
 
-section.form input::-moz-placeholder,
-section.form textarea::-moz-placeholder,
-section.form input::-webkit-input-placeholder,
-section.form textarea::-webkit-input-placeholder {
-  color: #9797aa
+@media only screen and (min-width: 768px) {
+  section.form input,
+  section.form textarea {
+    margin-bottom: 10px;
+  }
+}
+
+/* These selectors only work when declared separately for some buggy reason */
+section.form ::-webkit-input-placeholder {
+  color: #645fa2;
+}
+
+section.form ::-moz-placeholder {
+  color: #645fa2;
+  opacity: 1;
+}
+
+section.form :-ms-input-placeholder {
+  color: #645fa2;
+}
+
+section.form ::placeholder {
+  color: #645fa2;
 }
 
 section.form input:focus,
@@ -1588,23 +1602,42 @@ section.form textarea:focus {
 
 section.form textarea {
   border-bottom: 0;
-  color: #9797aa;
+  color: #645fa2;
   font-size: 14px;
-  height: 90px;
+  height: 142px;
   overflow: scroll;
-  padding: 12px 15px 0;
-  resize: none
+  padding: 12px 15px 10px;
+  resize: none;
 }
 
 @media only screen and (min-width: 768px) {
   section.form textarea {
-    height: 132px
   }
 }
 
+section.form textarea::-webkit-scrollbar {
+  width: 11px;
+}
+
+section.form textarea::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+section.form textarea::-webkit-scrollbar-thumb {
+  min-height: 28px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.5);
+}
+
+section.form textarea::-webkit-scrollbar:hover {
+  background: rgba(0,0,0,0.05);
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+
 form .left {
-  height: 132px;
   width: 100%;
+  padding: 15px 15px 0 15px;
 }
 
 form .left .flex {
@@ -1616,8 +1649,8 @@ form .left .flex input {
 }
 
 form .left .flex .input-address {
-  border-right: 1px solid #d8d8e9;
   min-width: 20%;
+  margin-right: 10px;
   flex: 1;
 }
 
@@ -1627,125 +1660,111 @@ form .left .flex .input-zip {
 
 @media only screen and (min-width: 768px) {
   form .left {
-    border-right: 1px solid #d1d1e9;
     float: left;
-    width: 250px
+    width: 50%;
   }
 }
 
 form .right {
-  border-top: 1px solid #d1d1e9;
+  width: 100%;
   cursor: pointer;
-  position: relative
+  position: relative;
+  padding: 0 15px 15px;
 }
 
 @media only screen and (min-width: 768px) {
   form .right {
-    border-top: 0;
     float: left;
-    width: 250px
+    width: 50%;
+    padding: 15px 0px 15px 15px;
   }
+}
+
+form .right .textarea-wrapper {
+  height: 100%;
+  position: relative;
 }
 
 form .right .textarea-fade {
-  background-image: url(../images/textarea-fade.png);
-  background-position: center bottom;
-  background-repeat: repeat-x;
-  height: 90px;
+  background-color: #fff;
+  width: 100%;
   position: absolute;
-  width: 100%
-}
-
-@media only screen and (min-width: 768px) {
-  form .right .textarea-fade {
-    height: 100%
-  }
+  bottom: 0;
+  text-align: left;
+  padding: 5px 15px;
+  border-top: 1px solid #edecf7;
+  border-radius: 0 0 5px 5px;
 }
 
 form .right .edit {
-  bottom: 10px;
-  color: #2dbb9b;
+  display: block;
+  color: #645fa2;
   font-size: 10px;
   font-weight: 700;
-  left: 15px;
-  position: absolute;
-  text-transform: uppercase
+  text-transform: uppercase;
+  padding-left: 20px;
+  background: url('/images/pencil.png') no-repeat;
 }
 
 form .right:hover .edit {
   text-decoration: underline
 }
 
-form .call-to-action {
+form footer {
   width: 100%;
-  background-color: #d0ede7;
+  background-color: #2a2750;
   border-radius: 0 0 5px 5px;
-  border-top: 1px solid #badad3;
   padding: 10px;
   clear: both;
 }
 
-form .call-to-action button {
+form footer button {
   border: 0;
   box-shadow: 0 2px 1px rgba(36,95,82,.7);
   color: #fff;
-  height: 48px;
-  background-color: #2dbb9b;
-  background: -webkit-gradient(linear,left top,left bottom,from(#2dbb9b),to(#28a588));
-  background: -webkit-linear-gradient(top,#2dbb9b,#28a588);
-  background: -moz-linear-gradient(top,#2dbb9b,#28a588);
-  background: -ms-linear-gradient(top,#2dbb9b,#28a588);
-  background: -o-linear-gradient(top,#2dbb9b,#28a588);
+  height: 64px;
+  background-color: #41ddb9;
+  background: -webkit-gradient(linear,left top,left bottom,from(#41ddb9),to(#2fd19f));
+  background: -webkit-linear-gradient(top,#41ddb9,#2fd19f);
+  background: -moz-linear-gradient(top,#41ddb9,#2fd19f);
+  background: -ms-linear-gradient(top,#41ddb9,#2fd19f);
+  background: -o-linear-gradient(top,#41ddb9,#2fd19f);
   font-size: 14px;
   font-weight: 700;
   line-height: 40px;
   text-transform: uppercase;
   width: 100%;
   margin: 0;
+  border-radius: 5px;
+  text-shadow: rgb(68, 148, 107) 0px 2px 3px;
 }
 
 @media only screen and (min-width: 480px) {
-  form .call-to-action button {
-    font-size: 22px
+  form footer button {
+    font-size: 26px
   }
 }
 
-form .call-to-action button:hover,
-form .call-to-action button:focus {
+form footer button:hover,
+form footer button:focus {
   box-shadow: 0 2px 4px rgba(36,95,82,.8);
   opacity: .92
 }
 
-form .call-to-action .disclaimer {
-  color: #1c1c25;
+form footer .disclaimer {
+  color: #9793bd;
   font-size: 11px;
   margin: 8px 0 0;
   text-align: center
 }
 
-form .call-to-action .disclaimer a {
-  color: #2dbb9b;
+form footer .disclaimer a {
+  color: #bbb9dd;
   text-decoration: none;
 }
 
-form .call-to-action .disclaimer a:hover {
+form footer .disclaimer a:hover {
   text-decoration: underline;
-}
-
-form .bottom-strip {
-  background: rgba(42,176,145,.8);
-  text-align: center;
-  font-weight: 700;
-  border-radius: 0 0 5px 5px;
-  padding: 2px 0 0
-}
-
-form .bottom-strip a {
-  color: #fff
-}
-
-form .bottom-strip a:hover {
-  text-decoration: underline
 }
 
 label {
@@ -1766,7 +1785,7 @@ input, textarea {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #555;
+  color: #645fa2;
   background-color: #fff;
   background-image: none;
   border: 1px solid #ccc;
@@ -1886,4 +1905,8 @@ fieldset[disabled] textarea {
 
 #can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events {
   max-width: 600px;
+}
+
+input{
+	 color: #645fa2 !important; 
 }
