@@ -1,55 +1,47 @@
 function OrganizationRotation() {
-    this.addEventListeners();
+  this.addEventListeners();
 }
 
 OrganizationRotation.prototype.addEventListeners = function() {
-    var loc = window.location.href;
-    var randomOrg = null;
-    var chosenOrg = null;
-    if (loc.indexOf('org=') == -1) {
-        var coin_toss = Math.random();
-        //if (coin_toss < .20) {
-        //    randomOrg = 'fp';
-        //} else if (coin_toss < .60) {
-        //if (coin_toss < .50) {
-        //    randomOrg = 'dp';
-        //} else {
-            randomOrg = 'fftf';
-        //}
+  var params = window.location.search.substring(1).split('&')
+    .reduce(function(res, val) {
+      var parts = val.split('=');
+      res[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+      return res;
+    }, {});
+
+  var org;
+
+  if (params.hasOwnProperty('org')) {
+    org = params['org'] || 'fftf';
+
+    // Don't show donate links for non-referral visits
+    var donationLinks = document.querySelectorAll('header a.donate');
+    for (var i = 0; i < donationLinks.length; i++) {
+      donationLinks[i].href = donationLinks[i].getAttribute('href-' + org);
     }
+  } else {
+    var coinToss = Math.random();
 
-    if (loc.indexOf('org=fp') != -1 || randomOrg == 'fp') {
-        document.getElementById('org').value = 'fp';
-        document.getElementById('randomize_disclosure').style.display = 'none';
-        document.getElementById('fp_disclosure').style.display = 'block';
-
-        chosenOrg = 'fp';
-    } else if (loc.indexOf('org=dp') != -1 || randomOrg == 'dp') {
-        document.getElementById('org').value = 'dp';
-        document.getElementById('randomize_disclosure').style.display = 'none';
-        document.getElementById('dp_disclosure').style.display = 'block';
-
-        chosenOrg = 'dp';
-    } else if (loc.indexOf('org=fftf') != -1 || randomOrg == 'fftf') {
-        document.getElementById('org').value = 'fftf';
-        document.getElementById('randomize_disclosure').style.display = 'none';
-        document.getElementById('fftf_disclosure').style.display = 'block';
-
-        chosenOrg = 'fftf';
-    } else if (loc.indexOf('org=18mr') != -1 || randomOrg == '18mr') {
-        document.getElementById('org').value = '18mr';
-        document.getElementById('randomize_disclosure').style.display = 'none';
-        document.getElementById('a18mr_disclosure').style.display = 'block';
-
-        chosenOrg = '18mr';
+    if (coinToss < .20) {
+      org = 'fp';
+    } else if (coinToss < .60) {
+      org = 'dp';
+    } else {
+      org = 'fftf';
     }
+  }
 
-    if (!randomOrg) {
-        var donationLinks = document.querySelectorAll('header a.donate');
-        for (var i = 0; i < donationLinks.length; i++) {
-            donationLinks[i].href = donationLinks[i].getAttribute('href-' + chosenOrg);
-        }
-    }
+  document.getElementById('org').value = org;
+
+  // Show org disclaimer
+  var disclaimers = document.querySelector('.call-to-action .disclaimer')
+    .querySelectorAll('.org')
+
+  for (var i = 0; i < disclaimers.length; i++) {
+    var classList = disclaimers[i].classList;
+    classList.contains(org) ? classList.remove('hidden') : classList.add('hidden');
+  }
 };
 
 module.exports = OrganizationRotation;
