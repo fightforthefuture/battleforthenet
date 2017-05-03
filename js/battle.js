@@ -784,7 +784,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
   document.getElementById('org').value = org;
 
   // Show org disclaimer
-  var disclaimers = document.querySelector('.call-to-action .disclaimer')
+  var disclaimers = document.querySelector('.disclaimer')
     .querySelectorAll('.org')
 
   for (var i = 0; i < disclaimers.length; i++) {
