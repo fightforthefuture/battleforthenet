@@ -24,7 +24,8 @@ OrganizationRotation.prototype.addEventListeners = function() {
     var coinToss = Math.random();
 
     if (coinToss < .20) {
-      org = 'fp';
+      // org = 'fp';
+      org = 'fftf';
     } else if (coinToss < .60) {
       org = 'dp';
     } else {
