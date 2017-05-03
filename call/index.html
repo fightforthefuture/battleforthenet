@@ -39,6 +39,8 @@
 <div id="background"></div>
 
 <section id="battle" class="fadeIn">
+    <h1 class="tk-proxima-nova">Don't let the new FCC kill net neutrality.</h1>
+
     <p class="tk-proxima-nova light">
       Thank you for submitting a comment.  We need to make sure every policymaker in DC understands that they need to stand up for net neutrality.  Making phone calls is the best way to do that, and our tool (below) makes calls quick and easy to complete.
       Please enter your phone number below — we will call you, provide you with a short script, and connect you with relevant policymakers.
@@ -46,7 +48,7 @@
 
     <!-- Call Congress -->
     <section id="fftf-call-congress" class="form">
-      <form class="call">
+      <form class="call" id="call-congress-form">
         <p>Enter your phone number below. You'll get a call from us. We'll tell you what to say and connect you to your reps!</p>
         <section>
           <input type="text" id="userPhone" placeholder="555-555-5555"/>
@@ -56,6 +58,16 @@
         </section>
         <p class="disclaimer">Your phone number will only be used to make this call. <a href="https://www.fightforthefuture.org/privacy" target="_blank">Privacy Policy</a></p>
       </form>
+      <!-- Phone script -->
+      <div id="phone-script" style="display: none;">
+        <p>We are calling you now.  We are going to connect you with your own lawmakers first, and then with other lawmakers who have a say over net neutrality.
+        You can press * to move from one call to the next, and can hang up whenever you like — but each call you complete will make our movement more powerful.
+        You can say:</p>
+        </br>
+        In 2015 -- after millions of us spoke out -- the Federal Communications Commission put strong net neutrality rules in place.  They protect the internet and make sure that Americans can use it for speech, commerce, and other important functions.
+        </br>
+        Now the FCC is trying to undo those rules and let internet service providers manipulate our data to suit their corporate interests.  I oppose the FCC’s efforts to roll back net neutrality — and I urge you to oppose it as well.
+      </div>
     </section>
 
 
@@ -63,12 +75,170 @@
     <div class="form-wrapper loading tk-proxima-nova" style="display: none;"></div>
 
     <div class="zero-rating-target"></div>
-    <div class="team-cable-target"></div>
-    <div class="team-internet-target"></div>
-    <div class="how-we-won-target"></div>
-    <div class="town-hall-target"></div>
-    <div class="learn-more-target"></div>
-    <div class="extra-reading-target"></div>
+
+    <div class="team-cable-target">
+      <section id="team-cable" class="team-cable fadeIn">
+        <h2> They are <strong>Team Cable.</strong> </h2>
+        <img onload="this.style.opacity=1;" src="./../images/team-cable/comcast.png" style="opacity: 1;">
+        <img onload="this.style.opacity=1;" src="./../images/team-cable/verizon.png" style="opacity: 1;">
+        <img onload="this.style.opacity=1;" src="./../images/team-cable/time-warner.png" style="opacity: 1;">
+        <img onload="this.style.opacity=1;" src="./../images/team-cable/att.png" style="opacity: 1;">
+        <p> Cable companies are famous for high prices and poor service. Several rank as the most hated companies in America. Now, they're attacking the Internet–their one competitor and our only refuge–with plans to charge websites arbitrary fees and slow (to a crawl) any sites that won't pay up. If they win, the Internet will never be the same. </p>
+      </section>
+    </div>
+
+    <div class="team-internet-target">
+      <section id="team-internet" class="team-internet fadeIn">
+        <h2> We are Team Internet, and we support net neutrality. </h2>
+        <p> We believe in the free and open Internet, with no arbitrary fees or slow lanes for sites that can't pay. All of the people, companies, and organizations below have taken a stand for "Title II reclassification," the only option that let the FCC stop Team Cable from breaking the key principles of the Internet we love. And that's what the FCC just voted for. </p>
+        <div class="quote-bubble">
+          <div class="name">AVG</div>
+          <div class="quote">Help us save net neutrality!</div>
+          <div class="arrow-wrapper">
+            <div class="arrow"></div>
+          </div>
+        </div>
+        <p> </p>
+        <div class="supporters">
+          <li pos="2" name="EFF" quote="Title II Net Neutrality is the better way forward for the FCC." style="background-position: 0px -60px;"> </li><li pos="66" name="Mozilla" quote="This is our final stand because the Web is not owned by any one of us; rather, it is shared by all of us. That's why net neutrality is so important." style="background-position: 0px -3900px;"></li>
+          <li pos="36" name="Netflix" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -2100px;"> </li>
+          <li pos="49" name="American Civil Liberties Union (ACLU)" quote="Reclassifying broadband Internet access service under Title II is necessary to protect the Open Internet." style="background-position: 0px -2880px;"> </li>
+          <li pos="27" name="Reddit" quote="Help us save net neutrality!" style="background-position: 0px -1560px;"> </li>
+          <li pos="3" name="Y Combinator" quote="Only reclassifying broadband Title II will protect an open and neutral Internet." style="background-position: 0px -120px;"> </li>
+          <li pos="4" name="Meetup" quote="Title II net neutrality is the obvious legal path for ensuring a free and open Internet." style="background-position: 0px -180px;"> </li>
+          <li pos="55" name="Private Internet Access" quote="Help us save net neutrality!" style="background-position: 0px -3240px;"> </li>
+          <li pos="32" name="Fight for the Future" quote="Help us save net neutrality!" style="background-position: 0px -1860px;"> </li>
+          <li pos="42" name="Demand Progress" quote="Help us save net neutrality!" style="background-position: 0px -2460px;"> </li>
+          <li pos="43" name="Free Press Action Fund" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -2520px;"> </li>
+          <li pos="1" name="AVG" quote="AVG supports real net neutrality through Title 2!" style="background-position: 0px 0px;"> </li><li pos="5" name="Miss Dream" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -240px;"> </li>
+          <li pos="6" name="ShockWired" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -300px;"> </li>
+          <li pos="7" name="iFixit" quote="Help us save net neutrality!" style="background-position: 0px -360px;"> </li>
+          <li pos="8" name="Amicus" quote="Help us save net neutrality!" style="background-position: 0px -420px;"> </li>
+          <li pos="9" name="GSM Nation" quote="Help us save net neutrality!" style="background-position: 0px -480px;"> </li>
+          <li pos="10" name="QWANT" quote="Help us save net neutrality!" style="background-position: 0px -540px;"> </li><li pos="11" name="Bassnectar" quote="Help us save net neutrality!" style="background-position: 0px -600px;"> </li>
+          <li pos="12" name="Gfycat" quote="The only way that the FCC can protect net neutrality is through Title II." style="background-position: 0px -660px;"> </li>
+          <li pos="13" name="MetaFilter" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -720px;"> </li>
+          <li pos="14" name="Mayor Ed Murray" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -780px;"> </li>
+          <li pos="15" name="Imgur" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -840px;"> </li>
+          <li pos="16" name="Grooveshark" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -900px;"> </li>
+          <li pos="17" name="DigitalOcean" quote="DigitalOcean is with you. Title II net neutrality is the only real path for the FCC to move forward with protecting the Open Internet." style="background-position: 0px -960px;"> </li>
+          <li pos="18" name="Bluehost" quote="Broadband Internet is a telecommunications service and should be reclassified under Title II." style="background-position: 0px -1020px;"> </li>
+          <li pos="19" name="Gandi.net" quote="Help us save net neutrality!" style="background-position: 0px -1080px;"> </li>
+          <li pos="20" name="Cheezburger" quote="Help us save net neutrality!" style="background-position: 0px -1140px;"> </li>
+          <li pos="21" name="Tumblr" quote="Help us save net neutrality!" style="background-position: 0px -1200px;"> </li>
+          <li pos="22" name="Color of Change" quote="ColorOfChange.org urges the Commission to classify the transmission component of Internet access service as a Title II telecommunications service, and to adopt rules that make clear that Internet users are able to access, free from discrimination, the content, applications, services and devices of their choice; and that require ISPs to clearly disclose how and when they are engaging in network management practices." style="background-position: 0px -1260px;"> </li><li pos="23" name="New Media Rights" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -1320px;"> </li>
+          <li pos="24" name="Wikia" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -1380px;"> </li>
+          <li pos="25" name="Kickstarter" quote="Help us save net neutrality!" style="background-position: 0px -1440px;"> </li>
+          <li pos="26" name="Etsy" quote="Help us save net neutrality!" style="background-position: 0px -1500px;"> </li>
+          <li pos="28" name="Chess.com" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -1620px;"> </li>
+          <li pos="29" name="Urban Dictionary" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -1680px;"> </li><li pos="30" name="Stellar" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -1740px;"> </li>
+          <li pos="31" name="Lesbians Who Tech" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -1800px;"> </li>
+          <li pos="33" name="CREDO Mobile" quote="Help us save net neutrality!" style="background-position: 0px -1920px;"> </li>
+          <li pos="34" name="MoveOn.org" quote="We need Title II net neutrality!" style="background-position: 0px -1980px;"> </li>
+          <li pos="35" name="Center for Media Justice" quote="Title II reclassification is necessary to protect net neutrality!" style="background-position: 0px -2040px;"> </li>
+          <li pos="37" name="Consumers Union" quote="Title II net neutrality is the best way to protect consumers." style="background-position: 0px -2160px;"> </li>
+          <li pos="38" name="Automattic" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -2220px;"> </li>
+          <li pos="39" name="Access" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -2280px;"> </li>
+          <li pos="40" name="Open Technology Institute / New America Foundation" quote="Strong Open Internet protections are needed to ensure that the Internet can continue to serve as a platform for innovation, economic growth, and unfettered communication among users." style="background-position: 0px -2340px;"> </li>
+          <li pos="41" name="Open MIC" quote="Protect the Open Internet." style="background-position: 0px -2400px;"> </li>
+          <li pos="44" name="Voices for Internet Freedom" quote="To achieve rules that adequately protect an Open Internet, the FCC must reclassift Internet access service as a Title II telecommunications service." style="background-position: 0px -2580px;"> </li>
+          <li pos="45" name="Popular Resistance" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -2640px;"> </li><li pos="46" name="Free Software Foundation" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -2700px;"> </li>
+          <li pos="47" name="Benton Foundation" quote="The FCC should recognize broadband access as a Title II telecommunications service to protect the Open Internet." style="background-position: 0px -2760px;"> </li>
+          <li pos="48" name="National Hispanic Media Coalition" quote="The FCC must use Title II to stop the blocking of Internet access." style="background-position: 0px -2820px;"> </li>
+          <li pos="50" name="Public Knowledge" quote="Data caps threaten an Open Internet." style="background-position: 0px -2940px;"> </li>
+          <li pos="51" name="Common Cause" quote="Broadband Internet is a telecommunications service and should be reclassified under Title II." style="background-position: 0px -3000px;"> </li>
+          <li pos="52" name="Computer and Communications Industry Association" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -3060px;"> </li>
+          <li pos="53" name="SendGrid" quote="Reclassifying broadband Internet access service under Title II is necessary to protect the Open Internet." style="background-position: 0px -3120px;"> </li>
+          <li pos="54" name="SumOfUs" quote="Title II reclassification is necessary to protect net neutrality!" style="background-position: 0px -3180px;"> </li><li pos="56" name="StartMail" quote="Help us save net neutrality!" style="background-position: 0px -3300px;"> </li>
+          <li pos="57" name="Pluralsight" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -3360px;"> </li>
+          <li pos="58" name="CheapAir" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -3420px;"> </li>
+          <li pos="59" name="PEN American Center" quote="Title II net neutrality is the only way for the FCC to protect the open Internet." style="background-position: 0px -3480px;"> </li>
+          <li pos="60" name="Free Range Studios" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -3540px;"> </li>
+          <li pos="61" name="DreamHost" quote="The FCC should recognize broadband access as a Title II telecommunications service to protect the Open Internet." style="background-position: 0px -3600px;"> </li>
+          <li pos="62" name="Help.com" quote="The FCC needs to use its authority to reclassify broadband under Title II to protect net neutrality." style="background-position: 0px -3660px;"> </li>
+          <li pos="63" name="VHX" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -3720px;"> </li>
+          <li pos="64" name="Citysearch" quote="The FCC needs to use its authority to reclassify boradband under Title II to protect net neutrality." style="background-position: 0px -3780px;"> </li>
+          <li pos="65" name="Namecheap.com" quote="Help us save net neutrality!" style="background-position: 0px -3840px;"> </li>
+          <li pos="67" name="Tagged" quote="The FCC must act now to preserve an open, accessible Internet." style="background-position: 0px -3960px;"> </li>
+          <li pos="68" name="Disconnect" quote="Help us save net neutrality!" style="background-position: 0px -4020px;"> </li>
+          <li pos="69" name="Boing Boing" quote="Help us save net neutrality!" style="background-position: 0px -4080px;"> </li>
+          <li pos="70" name="Upworthy" quote="Help us save net neutrality!" style="background-position: 0px -4140px;"> </li>
+          <li pos="71" name="Fark" quote="Help us save net neutrality!" style="background-position: 0px -4200px;"> </li>
+          <li pos="72" name="Vimeo" quote="The only way that the FCC can protect net neutrality is through Title II." style="background-position: 0px -4260px;"> </li><li pos="73" name="Foursquare" quote="Help us save net neutrality!" style="background-position: 0px -4320px;"> </li>
+          <li pos="74" name="Amanda Palmer" quote="The only way to protect the open Internet is through Title II net neutrality." style="background-position: 0px -4380px;"> </li><li pos="75" name="Piwik" quote="Help us save net neutrality!" style="background-position: 0px -4440px;"> </li>
+          <li pos="76" name="adafruit" quote="Help us save net neutrality!" style="background-position: 0px -4500px;"> </li>
+          <li pos="77" name="Pocketnow" quote="Help us save net neutrality!" style="background-position: 0px -4560px;"> </li>
+          <li pos="78" name="Thunderclap" quote="Help us save net neutrality!" style="background-position: 0px -4620px;"> </li>
+          <li pos="79" name="Crowdtilt" quote="Help us save net neutrality!" style="background-position: 0px -4680px;"> </li>
+          <li pos="80" name="Greenpeace" quote="Help us save net neutrality!" style="background-position: 0px -4740px;"> </li>
+          <li pos="81" name="Maine State Rep. Diane Russell" quote="Net Neutrality is the last bastion that everyday people have to truly have First Amendment rights that stand up to the &quot;Money is Speech&quot; directive from the US Supreme Court." style="background-position: 0px -4800px;"> </li>
+          <li pos="96" name="Kristen Krasny" quote="Slowing down the internet will cost lives. We people in animal rescue rely on the speed of social media to help save animals all over the country." style="background-position: 0px -5700px;"> </li>
+          <li pos="84" name="Sean Curtis" quote="Net Neutrality is so VITALLY IMPORTANT to maintain FREEDOM." style="background-position: 0px -4980px;"> </li>
+          <li pos="85" name="Jolene Harris" quote="Equality is the key! Internet for the people." style="background-position: 0px -5040px;"> </li>
+          <li pos="90" name="Teri Redders" quote="Please keep the internet accessible and equal for everyone!" style="background-position: 0px -5340px;"> </li><li pos="86" name="Garrick Purdie" quote="The net belongs to all of us." style="background-position: 0px -5100px;"> </li>
+          <li pos="88" name="Kendra Lee" quote="United States citizens have the right to a neutral net!" style="background-position: 0px -5220px;"> </li>
+          <li pos="89" name="Sara Schaub" quote="WE DEMAND FREEDOM TO CONNECT WITH THE WORLD." style="background-position: 0px -5280px;"> </li>
+          <li pos="82" name="Derek Augarten" quote="Net Neutrality is the single most important quality of the internet, and is what has made it ALL possible after just a few short decades. Allowing ISPs to take control of how we consume the internet is a horrific idea, philosophically and economically. No other industry has been given this sort of control, nor should they." style="background-position: 0px -4860px;"> </li>
+          <li pos="87" name="K. Jaihindh Reddy" quote="This has to stop. Net Neutrality FTW!" style="background-position: 0px -5160px;"> </li>
+          <li pos="94" name="Mediafire" quote="Help us save net neutrality!" style="background-position: 0px -5580px;"> </li>
+          <li pos="83" name="ExpressVPN" quote="Help us save net neutrality!" style="background-position: 0px -4920px;"> </li>
+          <li pos="95" name="Michael Williams" quote="The net is the most dynamic force in society today. Please do not limit or create different classes of internet for us." style="background-position: 0px -5640px;"> </li>
+          <li pos="92" name="Jennie Mork" quote="This is an extremely important issue. It is imperative that the net stay neutral." style="background-position: 0px -5460px;"> </li><li pos="93" name="Kevin Starnes" quote="Net neutrality is paramount to the first amendment. Corporate control must not be allowed." style="background-position: 0px -5520px;"> </li>
+          <li pos="91" name="Valentine McKay-Riddell PhD" quote="Net neutrality: absolutely necessary and one of man's AND woman's inalienable rights!" style="background-position: 0px -5400px;"> </li>
+        </div>
+        <p></p>
+        <a href="./teaminternet" class="btn">View All</a>
+      </section>
+    </div>
+
+    <div class="how-we-won-target">
+      <section id="how-we-won" class="how-we-won fadeIn"> <h2> Together, we defeated Team Cable. </h2> <a href="./how-we-won"><img src="/images/how-we-won.jpg" title="Everything You Always Wanted to Know About How We Won (But Were Afraid to Ask)"></a> <p> Cable companies lobbied so hard. But we, the public, sent the FCC a message so loud they couldn't ignore us. The FCC voted to preserve Net Neutrality, with strong Title II rules that prohibit ISPs like Comcast from slowing down and breaking the sites and apps you love. </p> <p> <a href="./how-we-won">Here's how we won.</a> </p>
+      </section>
+    </div>
+
+    <div class="town-hall-target">
+      <section id="town-hall" class="town-hall fadeIn">
+        <h2>But now Team Cable is back. Here's how to stop them.</h2>
+        <p>FCC Chair and former Verizon employee Ajit Pai is determined to gut the net neutrality rules we won. We need to convince our Senators to vote against his reconfirmation as FCC Chair. <a href="#battle">Email them now</a> and then use this map to find a town hall meeting near you!</p>
+        <div id="can-event_campaign-area-stand-up-for-net-neutrality-at-town-hall-events">
+          <div class="can_embed v2 event_campaign event_campaign_full full ">
+            <div id="can_embed_form" class="clearfix can_float"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="learn-more-target">
+      <section id="learn-more" class="learn-more fadeIn">
+        <h2>Learn More</h2>
+        <p> Want to understand net neutrality, and how it protects us from cable company misbehavior? Nobody explains it better than comedian John Oliver. </p>
+        <div class="video_wrapper">
+          <iframe src="//www.youtube-nocookie.com/embed/fpbOEoRrHyU?rel=0" frameborder="0" allowfullscreen=""></iframe>
+        </div>
+      </section>
+    </div>
+
+    <div class="extra-reading-target">
+      <section id="extra-reading" class="extra-reading fadeIn">
+        <h2>Extra Reading</h2>
+        <p> Here are some excellent articles for additional depth. They cover the issue, its political history, the struggles we've overcome, and the fight ahead in Congress. <br> <br> </p>
+        <p>
+          <a href="http://www.wired.com/2015/11/comcast-may-have-found-a-major-net-neutrality-loophole/" target="_blank"> <strong>Comcast May Have Found a Major Net Neutrality Loophole</strong></a> <span class="publication"> Wired </span>
+        </p>
+        <p>
+          <a href="http://arstechnica.com/business/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/" target="_blank"> <strong>Verizon’s mobile video won’t count against data caps—but Netflix does</strong></a> <span class="publication"> Ars Technica </span> </p>
+          <p> <a href="/how-we-won" target="_blank"> <strong>HOW WE WON!</strong></a> <span class="publication"> Battle for the Net </span> </p>
+          <p> <a href="https://medium.com/@freepress/the-fcc-s-net-neutrality-order-protects-internet-freedom-by-restoring-the-law-9092f9f5a99f/" target="_blank"> The FCC's Net Neutrality Order Protects Internet Freedom by Restoring the Law</a> <span class="publication"> Medium </span> </p> <p> <a href="https://www.techdirt.com/blog/netneutrality/articles/20140901/16294128388/everything-youve-wanted-to-know-about-net-neutrality-were-afraid-to-ask.shtml" target="_blank"> Everything You've Wanted To Know About Net Neutrality But Were Afraid To Ask</a> <span class="publication"> Techdirt </span> </p>
+          <p> <a href="http://whatisnetneutrality.org/timeline" target="_blank"> A Timeline of Net Neutrality</a> <span class="publication"> Public Knowledge </span> </p>
+          <p> <a href="http://www.theverge.com/2014/1/15/5311948/net-neutrality-and-the-death-of-the-internet" target="_blank"> The wrong words: how the FCC lost net neutrality and could kill the internet</a> <span class="publication"> The Verge </span> </p> <p> <a href="http://www.businessinsider.com/why-netflix-has-buffering-wheel-today-2014-9#ixzz3CwpuZ2SV" target="_blank"> Here's Why You're Seeing A Big Buffering Wheel On Netflix Today</a> <span class="publication"> Business Insider </span></p>
+          <p> <a href="http://www.theverge.com/2014/9/16/6257887/fcc-net-neutrality-3-7-million-comments-made" target="_blank"> FCC received a total of 3.7 million comments on net neutrality</a> <span class="publication"> The Verge </span> </p>
+          <p> <a href="https://medium.com/@rsingel/how-the-fcc-plans-to-save-the-internet-by-destroying-it-an-explainer-7805f8049503" target="_blank"> How the FCC Plans to Save the Internet By Destroying It: An Explainer</a> <span class="publication"> Ryan Singel </span> </p> <p> <a href="http://www.latimes.com/business/hiltzik/la-fi-mh-why-obamas-statement--20141111-column.html#page=1" target="_blank"> President Obama takes a huge leap forward on net neutrality</a> <span class="publication"> LA Times </span> </p>
+          <p> <a href="http://www.nationaljournal.com/tech/fcc-to-enact-obama-s-plan-for-sweeping-net-neutrality-rules-20150204" target="_blank"> FCC Chief Unveils Sweeping Net-Neutrality Rules</a> <span class="publication"> National Journal </span> </p> <p> <a href="http://www.theguardian.com/technology/2015/feb/02/net-neutrality-activists-fcc-big-cable-republicans" target="_blank"> Net neutrality battle pitches activists and FCC against Big Cable and GOP</a> <span class="publication"> The Guardian </span> </p>
+          <p> <a href="http://www.politico.com/story/2015/02/gop-game-plan-on-net-neutrality-115124.html" target="_blank"> The GOP game plan on net neutrality</a> <span class="publication"> Politico </span> </p> <p> <a href="http://www.washingtonpost.com/blogs/wonkblog/wp/2014/11/12/wonkbook-polling-shows-even-republicans-overwhelmingly-support-net-neutrality/" target="_blank"> New poll: Republicans and Democrats both overwhelmingly support net neutrality</a> <span class="publication"> Washington Post </span> </p> <p> <a href="http://mic.com/articles/90445/5-lies-we-need-to-stop-telling-about-net-neutrality" target="_blank"> 5 Lies We Need to Stop Telling About Net Neutrality</a> <span class="publication"> Mic </span> </p> <p> <a href="http://pitchfork.com/thepitch/604-op-ed-why-independent-music-fans-need-real-net-neutrality/" target="_blank"> Op-Ed: Why Independent Music Fans Need Real Net Neutrality</a> <span class="publication"> Pitchfork </span> </p>
+          <p> <a href="http://feld.com/archives/2015/02/final-thoughts-fcc-title-ii-ahead-tomorrows-vote-net-neutrality.html" target="_blank"> Some Final Thoughts on the FCC and Title II Ahead of Tomorrow’s Vote on Net Neutrality</a> <span class="publication"> Feld </span> </p> <p> <a href="https://www.usv.com/blog/keeping-the-internet-open" target="_blank"> Keeping the Internet Open</a> <span class="publication"> Union Square Ventures </span> </p>
+        </section>
+      </div>
+
     <div class="footer-target">
       <footer>
         <div class="container">

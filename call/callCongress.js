@@ -45,6 +45,9 @@
     xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
     xhr.send(data);
 
+    document.getElementById("call-congress-form").style.display = "none";
+    document.getElementById("phone-script").style.display = "block";
+
     // new CallActionModal();
   });
 })();
