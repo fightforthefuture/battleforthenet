@@ -887,6 +887,7 @@ section .btn:hover, button:hover {
     color: white;
     font-size: 18px;
     font-weight: bold;
+    margin-top: 40px;
 }
 .footer-target footer .built_by img {
     margin-top: 10px;
