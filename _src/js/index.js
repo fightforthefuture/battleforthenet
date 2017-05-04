@@ -9,8 +9,8 @@ var MobileMenu = require('./MobileMenu');
 var Modals = require('./Modals');
 var MotherShip = require('./MotherShip');
 var OrganizationRotation = require('./OrganizationRotation');
-var PetitionForm = require('./PetitionForm');
-//var EuropeEmailPetition = require('./EuropeEmailPetition');
+// var PetitionForm = require('./PetitionForm');
+// var EuropeEmailPetition = require('./EuropeEmailPetition');
 var Polyfills = require('./Polyfills');
 var Queue = require('./Queue');
 var ScrollDetection = require('./ScrollDetection');
@@ -32,7 +32,7 @@ var YourSenators = require('./YourSenators');
 (function(){
     // Preload the background
     setTimeout(function() {
-        new ImagePreloader('./images/Imagesmall.jpg', function() {
+        new ImagePreloader('/images/Imagesmall.jpg', function() {
             var background = document.getElementById('background');
             background.className += ' fadeIn ';
             background.style.backgroundImage = 'url(' + this.src + ')';
