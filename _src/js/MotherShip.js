@@ -34,7 +34,7 @@ MotherShip.prototype.hasValidReferrer = function hasValidReferrer() {
 };
 
 MotherShip.prototype.getHostName = function getHostName(url) {
-    var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+    var re = new RegExp('^.*?\://([^/]+)', 'im');
     var host = url.match(re)[1].toString();
     return host.replace(/^www\./, '');
 }
