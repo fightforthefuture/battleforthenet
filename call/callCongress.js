@@ -25,6 +25,10 @@
 
     if (!phone) return alert('Please enter a valid US phone number!');
 
+    var data = new FormData();
+    data.append('campaignId', 'battleforthenet-2017');
+    data.append('userPhone', phone);
+
     var xhr = new XMLHttpRequest();
 
     function logStatus(e) {
@@ -39,7 +43,7 @@
     xhr.addEventListener('error', logStatus);
 
     xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
-    xhr.send("campaignId=battleforthenet-2017&userPhone=" + phone);
+    xhr.send(data);
 
     document.getElementById("call-congress-form").style.display = "none";
     document.getElementById("phone-script").style.display = "block";
