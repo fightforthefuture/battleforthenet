@@ -372,11 +372,10 @@ form.email section {
 }
 
 form header {
-    background-color: #5d5d7a;
-    border-radius: 6px 6px 0 0;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 26px 30px;
+  border-radius: 6px 6px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 26px 30px;
 }
 
 form section {
