@@ -26,7 +26,7 @@
     if (!phone) return alert('Please enter a valid US phone number!');
 
     var data = new FormData();
-    data.append('campaignId', 'battleforthenet');
+    data.append('campaignId', 'battleforthenet-2017');
     data.append('userPhone', phone);
 
     var xhr = new XMLHttpRequest();
