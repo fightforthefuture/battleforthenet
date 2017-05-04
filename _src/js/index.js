@@ -32,7 +32,7 @@ var YourSenators = require('./YourSenators');
 (function(){
     // Preload the background
     setTimeout(function() {
-        new ImagePreloader('./images/Imagesmall.jpg', function() {
+        new ImagePreloader('/images/Imagesmall.jpg', function() {
             var background = document.getElementById('background');
             background.className += ' fadeIn ';
             background.style.backgroundImage = 'url(' + this.src + ')';
@@ -71,7 +71,7 @@ var YourSenators = require('./YourSenators');
     };
 
     new AJAX({
-        url: 'templates/PetitionForm.html' + buster,
+        url: '/templates/PetitionForm.html' + buster,
         success: function(e) {
             var petitionForm = new PetitionForm({
                 formTemplate: e.target.responseText,
@@ -127,7 +127,7 @@ var YourSenators = require('./YourSenators');
 
     function loadMoreSections() {
         new AJAX({
-            url: 'templates/TeamCableSection.html' + buster,
+            url: '/templates/TeamCableSection.html' + buster,
             success: function(e) {
                 new SimpleSection({
                     target: '.team-cable-target',
@@ -137,7 +137,7 @@ var YourSenators = require('./YourSenators');
         });
 
         new AJAX({
-            url: 'templates/TeamInternetSection.html' + buster,
+            url: '/templates/TeamInternetSection.html' + buster,
             success: function(e) {
                 new TeamInternetSection({
                     target: '.team-internet-target',
@@ -147,7 +147,7 @@ var YourSenators = require('./YourSenators');
         });
 
         new AJAX({
-            url: 'templates/Modals.html' + buster,
+            url: '/templates/Modals.html' + buster,
             success: function(e) {
                 global.modals = new Modals({
                     target: '.modals-target',
@@ -166,7 +166,7 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/HowWeWonSection.html' + buster,
+                url: '/templates/HowWeWonSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
                         target: '.how-we-won-target',
@@ -182,7 +182,7 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/TownHallSection.html' + buster,
+                url: '/templates/TownHallSection.html' + buster,
                 success: function(e) {
                     new TownHallSection({
                         target: '.town-hall-target',
@@ -198,7 +198,7 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/LearnMoreSection.html' + buster,
+                url: '/templates/LearnMoreSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
                         target: '.learn-more-target',
@@ -215,7 +215,7 @@ var YourSenators = require('./YourSenators');
         /*
         queue.push(function() {
             new AJAX({
-                url: 'templates/ZeroRatingSection.html' + buster,
+                url: '/templates/ZeroRatingSection.html' + buster,
                 success: function(e) {
                     new SimpleSection({
                         target: '.zero-rating-target',
@@ -233,7 +233,7 @@ var YourSenators = require('./YourSenators');
 
         queue.push(function() {
             new AJAX({
-                url: 'templates/ExtraReading.html' + buster,
+                url: '/templates/ExtraReading.html' + buster,
                 success: function(e) {
                     new SimpleSection({
                         target: '.extra-reading-target',
