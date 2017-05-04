@@ -72,6 +72,7 @@ var YourSenators = require('./YourSenators');
         politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
     };
 
+    /*
     new AJAX({
         url: 'templates/PetitionForm.html' + buster,
         success: function(e) {
@@ -126,6 +127,7 @@ var YourSenators = require('./YourSenators');
             });
         }
     });
+    */
 
     function loadMoreSections() {
         new AJAX({
