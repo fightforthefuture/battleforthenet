@@ -43,76 +43,6 @@
 
     <p class="tk-proxima-nova light">FCC Chair Ajit Pai&mdash;a former Verizon lawyer&mdash;is about to let Comcast &amp; Verizon slow the Internet to a crawl, and then force sites to pay for special "fast lanes". If he does, giant monopolies will control the Internet, forever. <strong>To stop him, we have to flood the FCC with comments, and get Congress to oppose Pai's plan.</strong></p>
 
-    <!-- Email Congress and FCC -->
-    <section id="fftf-petition" class="form shadow">
-      <header>
-        <h3>Write the FCC & Congress now!</h3>
-        <p class="note">
-          Tell the FCC to protect net neutrality&mdash;and tell Congress to oppose Ajit Pai's plan.
-        </p>
-      </header>
-      <form method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
-        <div class="left">
-          <label for="name">Full Name</label>
-          <input type="text" name="member[first_name]" placeholder="Name" title="Full Name" required>
-          <label for="email_addr">Email Address</label>
-          <input type="email" name="member[email]" placeholder="Email" title="Email" required>
-          <div class="flex">
-            <label for="addr">Address</label>
-            <input type="text" name="member[street_address]" class="input-address" placeholder="Street Address" title="Street Address" required>
-            <label for="zip">Zip Code</label>
-            <input type="text" name="member[postcode]" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
-          </div>
-        </div>
-        <div class="right">
-          <input type="hidden" name="subject" value="Protect Net Neutrality!"/>
-          <label for="comment">Comment</label>
-          <div class="textarea-wrapper">
-            <textarea name="action_comment" title="Comment" required>The FCC Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
-
-I don't want ISPs to have the power to block websites, slow them down, make some more accessible than others, or split the Internet into "fast lanes" for companies that pay and "slow lanes" for the rest.
-
-Now is not the time to let giant ISPs censor what we see and do online.
-
-Censorship by ISPs is a serious problem. Comcast has throttled Netflix, AT&T blocked FaceTime, Time Warner Cable throttled the popular game League of Legends, and Verizon admitted it will introduce fast lanes for sites that pay&mdash;and slow lanes for everyone else&mdash;if the FCC lifts the rules. This hurts consumers and businesses large and small.
-
-Courts have made clear that if the FCC ends Title II classification, the FCC must let ISPs offer fast lanes to websites for a fee, and Chairman Pai has made clear that he intends to do just this.
-
-But if you let ISPs make some websites fast and others artificially slow&mdash;for a fee&mdash;you will kill the open marketplace that has enabled millions of small businesses and created the 5 most valuable companies in America&mdash;just to further enrich a few much less valuable cable giants famous for sky-high prices and abysmal customer service.
-
-I'm sending this to the FCC's open proceeding, but I worry that Chairman Pai, a former Verizon lawyer, has made his plans and will ignore me and millions of other Americans.
-
-So I'm also sending this to my members of Congress. Please publicly support Title II rules and denounce Chairman Pai's plans. Do whatever you can to dissuade him.
-
-Thank you!</textarea>
-            <div class="textarea-fade">
-              <span class="edit">Clear & write your own</span>
-            </div>
-          </div>
-        </div>
-        <footer>
-          <button type="submit">Submit Your Comment</button>
-          <div class="disclaimer">
-            <div class="org fp hidden"><a href="https://www.freepress.net/" target="_blank">Free Press</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
-            <div class="org dp hidden"><a href="https://demandprogress.org/" target="_blank">Demand Progress</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
-            <div class="org fftf"><a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
-          </div>
-        </footer>
-
-        <!-- Mothership Honeypot Bot Defense -->
-        <input type="hidden" name="guard" value=""/>
-        <input type="hidden" name="hp_enabled" value="true"/>
-
-        <!-- Mothership -->
-        <input type="hidden" name="contact_congress" value="1"/>
-        <input type="hidden" name="fcc_ecfs_docket" value="17-108"/>
-        <input type="hidden" name="org" id="org" value="fftf"/>
-
-        <!-- Action Network -->
-        <input type="hidden" name="an_tags" value='["net-neutrality"]'/>
-        <input type="hidden" name="an_petition_id" value="2ddb0663-1282-4b17-bb13-ee89cb92efc1"/>
-      </form>
-    </section>
     <script type="text/javascript">
       (function() {
         "use strict";
@@ -177,10 +107,7 @@ Thank you!</textarea>
       })();
     </script>
 
-    <!-- FCC Complaint form is loaded into here -->
-    <div class="form-wrapper loading tk-proxima-nova" style="display: none;"></div>
-
-    <div class="zero-rating-target"></div>
+    <div class="form-wrapper loading tk-proxima-nova"></div>
     <div class="team-cable-target"></div>
     <div class="team-internet-target"></div>
     <div class="how-we-won-target"></div>
@@ -299,7 +226,6 @@ Thank you!</textarea>
 <script type="text/javascript">
   var global = {};
   global.ajaxResponses = {};
-  global.experiments = {};
   global.fontsAreReady = false;
   global.isDesktop = !navigator.userAgent.match(/mobile/i);
   global.modals = null;

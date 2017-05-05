@@ -78,26 +78,6 @@ var YourSenators = require('./YourSenators');
                 target: '#battle .form-wrapper'
             });
 
-            if (global.experiments.alternatePetitionCTA1) {
-                petitionForm.updateCTA('WRITE CONGRESS');
-            }
-
-            if (global.experiments.alternatePetitionCTA2) {
-                petitionForm.updateCTA('WRITE CONGRESS NOW');
-            }
-
-            if (global.experiments.alternatePetitionCTA3) {
-                petitionForm.updateCTA('WRITE THEM NOW');
-            }
-
-            if (global.experiments.alternatePetitionCTA4) {
-                petitionForm.updateCTA('TAKE ACTION');
-            }
-
-            if (global.experiments.alternatePetitionCTA5) {
-                petitionForm.updateCTA('WRITE YOUR SENATORS');
-            }
-
             // Rotate organizations
             new OrganizationRotation();
 
@@ -211,25 +191,6 @@ var YourSenators = require('./YourSenators');
                 }
             });
         });
-
-        /*
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/ZeroRatingSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.zero-rating-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-        */
-        
 
         queue.push(function() {
             new AJAX({
