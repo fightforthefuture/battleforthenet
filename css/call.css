@@ -1,0 +1,22 @@
+blockquote {
+  position: relative;
+  border-radius: 10px;
+  padding: 5px 15px 5px 35px;
+  background-color: #feefc9;
+}
+
+blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: 3px;
+  top: -10px;
+  color: #7a7a7a;
+}
+
+blockquote p {
+  margin: 20px 0 10px 0;
+  color: #333;
+  font-style: italic;
+}
