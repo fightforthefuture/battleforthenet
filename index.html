@@ -43,70 +43,6 @@
 
     <p class="tk-proxima-nova light">FCC Chair Ajit Pai&mdash;a former Verizon lawyer&mdash;is about to let Comcast &amp; Verizon slow the Internet to a crawl, and then force sites to pay for special "fast lanes". If he does, giant monopolies will control the Internet, forever. <strong>To stop him, we have to flood the FCC with comments, and get Congress to oppose Pai's plan.</strong></p>
 
-    <script type="text/javascript">
-      (function() {
-        "use strict";
-
-        var form = document.getElementById('fftf-petition').querySelector('form');
-        var submitted = false;
-        
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-
-          // Prevent duplicate submissions
-          if (submitted) return;
-
-          submitted = true;
-
-          var xhr = new XMLHttpRequest();
-          var formData = new FormData(form);
-
-          function handleHelperError(e) {
-            /**
-             * @param {event|XMLHttpRequest} e - Might be an event, might be a 
-             * failed XMLHttpRequest
-             * */
-
-            // global.modals.display('error_modal');
-          }
-
-          function loadHelperResponse() {
-            // Submission complete, allow retry
-            submitted = false;
-
-            if (200 <= xhr.status < 400) {
-              global.modals.display('thanks_modal');
-            } else {
-              handleHelperError(xhr);
-            }
-          }
-
-          xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
-          xhr.addEventListener('error', handleHelperError);
-          xhr.addEventListener('load', loadHelperResponse);
-          xhr.send(formData);
-        });
-
-        var textarea = form.querySelector('textarea');
-        var placeholder = 'Dear FCC,\n\n';
-        textarea.placeholder = textarea.value;
-
-        form.querySelector('.edit').addEventListener('click', function(e) {
-          e.preventDefault();
-
-          textarea.value = placeholder;
-          textarea.focus();
-        });
-
-        textarea.addEventListener('blur', function(e) {
-          var val = textarea.value.trim();
-          if (val == placeholder.trim() || val == '') {
-            textarea.value = textarea.placeholder;
-          }
-        });
-      })();
-    </script>
-
     <div class="form-wrapper loading tk-proxima-nova"></div>
     <div class="team-cable-target"></div>
     <div class="team-internet-target"></div>
@@ -225,7 +161,6 @@
 
 <script type="text/javascript">
   var global = {};
-  global.ajaxResponses = {};
   global.fontsAreReady = false;
   global.isDesktop = !navigator.userAgent.match(/mobile/i);
   global.modals = null;

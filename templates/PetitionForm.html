@@ -1,84 +1,75 @@
 <div class="your-senators-target"></div>
 
-<form action="https://queue.fightforthefuture.org/action" method="POST" class="group" name="petition" id="petition">
-<!--<form action="http://localhost:9001/action" method="POST" class="group" name="petition" id="petition">-->
-
-    <ul class="tabs"><li><a href="#" class="verizon"></a></li><li><a href="#" class="att"></a></li><li><a href="#" class="tmobile"></a></li><li><a href="#" class="comcast"></a></li></ul>
-
-
-
-    <div style="display: none;">
-        <label for="hp_enabled">
-            <input type="checkbox" checked="checked" id="hp_enabled" name="hp_enabled" /> Do not uncheck this box</label>
-        <label for="hp_disabled">
-            <input type="checkbox" id="hp_disabled" name="hp_disabled" /> Do not check this box</label>
+<section id="fftf-petition" class="form shadow">
+  <header>
+    <h3>Write the FCC & Congress now!</h3>
+    <p class="note">
+      Tell the FCC to protect net neutrality&mdash;and tell Congress to oppose Ajit Pai's plan.
+    </p>
+  </header>
+  <form method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
+    <div class="left">
+      <label for="name">Full Name</label>
+      <input type="text" name="member[first_name]" placeholder="Name" title="Full Name" required>
+      <label for="email_addr">Email Address</label>
+      <input type="email" name="member[email]" placeholder="Email" title="Email" required>
+      <div class="flex">
+        <label for="addr">Address</label>
+        <input type="text" name="member[street_address]" class="input-address" placeholder="Street Address" title="Street Address" required>
+        <label for="zip">Zip Code</label>
+        <input type="text" name="member[postcode]" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
+      </div>
     </div>
-    <input type="hidden" name="member[language]" value="en">
-    <input type="hidden" name="member[country]" value="US" id="country">
-    <input type="hidden" name="salsa" value="true">
-    <input type="hidden" name="language_id" value="en">
-    <input type="hidden" name="member[movement_id]" value="1">
-    <input type="hidden" name="member[user_agent]" value="">
-    <input type="hidden" name="member[ip_address]" value="">
+    <div class="right">
+      <input type="hidden" name="subject" value="Protect Net Neutrality!"/>
+      <label for="comment">Comment</label>
+      <div class="textarea-wrapper">
+        <textarea name="action_comment" title="Comment" required>The FCC Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
 
-    <input type="hidden" name="tag" value="battle-for-the-net-rate-regulation" />
-    <input type="hidden" name="contact_fcc" value="1" />
-    <input type="hidden" name="contact_fcc_company" id="contact_fcc_company" value="" />
-    <input type="hidden" name="contact_congress" value="0" />
-    <input type="hidden" name="subject" id="subject" value="complaint re: ISP Zero Rating" />
+I don't want ISPs to have the power to block websites, slow them down, make some more accessible than others, or split the Internet into "fast lanes" for companies that pay and "slow lanes" for the rest.
 
-    <input type="hidden" name="org" id="org" value="randomize" />
-    <input type="text" name="guard" placeholder="Please leave this field blank" style="display: none;">
-    <input type="hidden" name="action" value="1" />
+Now is not the time to let giant ISPs censor what we see and do online.
 
-    <div class="fields"><div><input type="text" id="name" name="member[first_name]" class="form-control input-name" placeholder="Full name" title="FULL NAME" required></div><div><input type="text" id="email_addr" name="member[email]" class="form-control input-email" placeholder="Email" title="EMAIL" required></div><div><input type="text" id="addr" name="member[street_address]" class="form-control input-address" placeholder="Address" title="ADDRESS" required></div><div><input type="text" id="zip" name="member[postcode]" class="form-control input-zip" placeholder="Postal code" title="ZIP" required></div>
-        <p>Your complaint: <span class="gray">(We've prefilled an example complaint, but please customize to make it yours!)</span></p>
-        <div class="wide"><textarea class="form-control" id="comment" name="action_comment" tabindex="-1" title="COMMENT">Last year your agency protected the open Internet by passing strong Net Neutrality rules in response to the millions of people who spoke out. But now the same cable and phone companies that fought so hard to destroy Net Neutrality are creating new schemes that are just as harmful to the open Internet and its users.&#013;&#010;&#013;&#010;The Open Internet rules say that ISPs can’t pick winners and losers online by slowing down some apps while speeding up others, so Comcast found another way to pick winners and losers. Comcast exempts its own video app from customers’ data caps, while counting all competing services toward those caps – a textbook case of an ISP abusing its power for its own competitive advantage. In addition, Comcast’s caps favor its own traditional cable service by discouraging customers from cutting the cord.&#013;&#010;&#013;&#010;The rules say that ISPs can’t charge websites and apps to be in the fast lane, so AT&T and Verizon created a new toll: they’re charging websites and apps to be exempted from customers’ data caps. The lower the caps, the more pressure on websites to pay up. These plans distort user choice, pushing people toward sites with deep pockets and away from those who can’t afford the toll.&#013;&#010;&#013;&#010;Finally, the rules say that ISPs can’t be gatekeepers online. T-Mobile exempts the content of select video providers from customers’ data caps as part of its Binge On program, but only if they meet its substantial technical requirements. This makes it difficult for many start-ups, small players, and non-commercial speakers to join. These exemptions are available for video only, so T-Mobile is favoring some kinds of uses over others. Not only that, T-Mobile is downgrading all video across its network just to pull off the plan, breaking video on the sites of many independent creators and small services by forcing viewers to sit through the infamous “spinning wheel of death” as videos load or buffer.&#013;&#010;&#013;&#010;In every case, sites that have not made special relationships with the ISP now face new barriers to reaching Internet users. These practices distort competition, stifle innovation, limit user choice, and drive up prices.&#013;&#010;&#013;&#010;In many cases, there’s no legitimate reason for data caps to exist at all. Comcast is limiting Internet use with data caps, but allowing its own video app a free pass. But the company has admitted that its caps have nothing to do with managing congestion. They simply discourage broadband Internet use overall, and especially “cord-cutting” by users who’d rather give up their expensive cable TV packages and watch online.&#013;&#010;&#013;&#010;Altogether, these practices prove what we’ve always known: these companies hate the FCC’s Net Neutrality rules and are doing everything they can to get around them. In the long run, everyone on the Internet loses -- except carriers in the middle that get to impose data caps, charge tolls, and act as gatekeepers.&#013;&#010;&#013;&#010;These plans need to be investigated and stopped. It’s the FCC’s job to protect consumers from these kinds of abuses. Meanwhile, Congress should encourage the FCC to do its job.&#013;&#010;&#013;&#010;Note: for privacy reasons, rather than providing my personal phone number, I’m providing the number of an advocacy group. If you’d like to contact me about my complaint, please do so via email.</textarea></div>
+Censorship by ISPs is a serious problem. Comcast has throttled Netflix, AT&T blocked FaceTime, Time Warner Cable throttled the popular game League of Legends, and Verizon admitted it will introduce fast lanes for sites that pay&mdash;and slow lanes for everyone else&mdash;if the FCC lifts the rules. This hurts consumers and businesses large and small.
+
+Courts have made clear that if the FCC ends Title II classification, the FCC must let ISPs offer fast lanes to websites for a fee, and Chairman Pai has made clear that he intends to do just this.
+
+But if you let ISPs make some websites fast and others artificially slow&mdash;for a fee&mdash;you will kill the open marketplace that has enabled millions of small businesses and created the 5 most valuable companies in America&mdash;just to further enrich a few much less valuable cable giants famous for sky-high prices and abysmal customer service.
+
+I'm sending this to the FCC's open proceeding, but I worry that Chairman Pai, a former Verizon lawyer, has made his plans and will ignore me and millions of other Americans.
+
+So I'm also sending this to my members of Congress. Please publicly support Title II rules and denounce Chairman Pai's plans. Do whatever you can to dissuade him.
+
+Thank you!</textarea>
+        <div class="textarea-fade">
+          <span class="edit">Clear & write your own</span>
+        </div>
+      </div>
     </div>
-
-    <button type="submit">FILE YOUR COMPLAINT</button>
-</form>
-
-<form class="phone-call-form" id="phone-call-form">
-    <header>
-        Thank you! Now, can you call the FCC? It's super effective!
-    </header>
-
-    <section>
-        <label for="phone">Enter your phone number to connect:</label>
-        <input class="phone" name="phone" id="phone" placeholder="Phone number" type="tel" />
-    </section>
-
     <footer>
-        <button>get script & call</button>
-        <a class="alternative-cta" href="#">Can't call? Share this page!</a>
+      <button type="submit">Submit Your Comment</button>
+      <div class="disclaimer">
+        <div class="org fp hidden"><a href="https://www.freepress.net/" target="_blank">Free Press</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
+        <div class="org dp hidden"><a href="https://demandprogress.org/" target="_blank">Demand Progress</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
+        <div class="org fftf"><a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a> will contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></div>
+      </div>
     </footer>
-</form>
 
-<section class="thanks" style="display: none;">
-    <h2>
-        Thanks for taking action!
-    </h2>
+    <!-- This field gets updated after geocoding IP address -->
+    <input type="hidden" name="member[country]" value="US"/>
+
+    <!-- Mothership Honeypot Bot Defense -->
+    <input class="hidden" type="checkbox" checked="checked" name="hp_enabled" />
+    <input class="hidden" type="checkbox" name="hp_disabled" />
+    <input class="hidden" type="text" name="guard" />
+
+    <!-- Mothership -->
+    <input type="hidden" name="contact_congress" value="1"/>
+    <input type="hidden" name="fcc_ecfs_docket" value="17-108"/>
+    <input type="hidden" name="org" value="fftf"/>
+
+    <!-- Action Network -->
+    <input type="hidden" name="an_tags" value='["net-neutrality"]'/>
+    <input type="hidden" name="an_petition_id" value="2ddb0663-1282-4b17-bb13-ee89cb92efc1"/>
+  </form>
 </section>
-
-<div class="tk-proxima-nova disclaimer_container">
-    <p class="disclaimer copy" id="randomize_disclosure">
-        <a target="_blank" href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a>, <a target="_blank" href="https://demandprogress.org" target="_blank">Demand Progress</a> or <a target="_blank" href="http://www.freepress.net/" target="_blank">Free Press Action Fund</a> will contact you about future campaigns. <a target="_blank" href="/privacy/" target="_blank">Privacy</a>
-    </p>
-
-    <p class="disclaimer copy" id="fp_disclosure" style="display: none;">
-        <a target="_blank" href="http://www.freepress.net/">Free Press Action Fund</a> will contact you about future campaigns. <a target="_blank" href="/privacy">Privacy Policy</a>
-    </p>
-
-    <p class="disclaimer copy" id="dp_disclosure" style="display: none;">
-        <a target="_blank" href="https://demandprogress.org/">Demand Progress</a> will contact you about future campaigns. <a target="_blank" href="/privacy">Privacy Policy</a>
-    </p>
-
-    <p class="disclaimer copy" id="fftf_disclosure" style="display: none;">
-        <a target="_blank" href="https://www.fightforthefuture.org/">Fight for the Future</a> will send your complaint to the FCC and contact you about future campaigns. <a target="_blank" href="/privacy">Privacy Policy</a>
-    </p>
-
-    <p class="disclaimer copy" id="a18mr_disclosure" style="display: none;">
-        <a target="_blank" href="https://www.fightforthefuture.org/">Fight for the Future</a> will send your complaint to the FCC. <a href="http://18millionrising.org/" target="_blank">18MR</a> will contact you about future campaigns. <a target="_blank" href="/privacy">Privacy Policy</a>
-    </p>
-</div>

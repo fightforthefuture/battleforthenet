@@ -1,30 +1,13 @@
-function Polyfills() {
-    this.bind();
+function URLSearchParams(queryString) {
+  this.queryObj = queryString.split('&').reduce(function(obj, val) {
+    var parts = val.split('=');
+    obj[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+    return obj;
+  }, {});
 }
 
-Polyfills.prototype.bind = function() {
-    if (!Function.prototype.bind) {
-        Function.prototype.bind = function(oThis) {
-            if (typeof this !== 'function') {
-                // closest thing possible to the ECMAScript 5
-                // internal IsCallable function
-                throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
-            }
+URLSearchParams.prototype.get = function get(key) {
+  return this.queryObj[key];
+}
 
-            var aArgs = Array.prototype.slice.call(arguments, 1),
-            fToBind = this,
-            fNOP = function() {},
-            fBound = function() {
-                return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
-                    aArgs.concat(Array.prototype.slice.call(arguments)));
-            };
-
-            fNOP.prototype = this.prototype;
-            fBound.prototype = new fNOP();
-
-            return fBound;
-        };
-    }
-};
-
-module.exports = Polyfills;
+window.URLSearchParams = window.URLSearchParams || URLSearchParams;
