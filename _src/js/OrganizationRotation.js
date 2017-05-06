@@ -1,19 +1,19 @@
-function OrganizationRotation() {
+'use strict';
+
+function OrganizationRotation(params) {
+  this.target = params.target;
+
+  this.DOMNode = document.querySelector(this.target);
+
   this.addEventListeners();
 }
 
 OrganizationRotation.prototype.addEventListeners = function() {
-  var params = window.location.search.substring(1).split('&')
-    .reduce(function(res, val) {
-      var parts = val.split('=');
-      res[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
-      return res;
-    }, {});
-
+  var params = new URLSearchParams(window.location.search.substring(1));
   var org;
 
-  if (params.hasOwnProperty('org')) {
-    org = params['org'] || 'fftf';
+  if (params.get('org')) {
+    org = params.get('org') || 'fftf';
 
     // Don't show donate links for non-referral visits
     var donationLinks = document.querySelectorAll('header a.donate');
@@ -33,10 +33,10 @@ OrganizationRotation.prototype.addEventListeners = function() {
     }
   }
 
-  document.getElementById('org').value = org;
+  this.DOMNode.querySelector('[name="org"]').value = org;
 
   // Show org disclaimer
-  var disclaimers = document.querySelector('.disclaimer')
+  var disclaimers = this.DOMNode.querySelector('.disclaimer')
     .querySelectorAll('.org')
 
   for (var i = 0; i < disclaimers.length; i++) {

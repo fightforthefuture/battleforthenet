@@ -1,223 +1,152 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
-var AJAX = require('./AJAX');
-var Chartbeat = require('./Chartbeat');
-var Countdown = require('./Countdown');
-var DetectFeatures = require('./DetectFeatures');
-var GoogleAnalytics = require('./GoogleAnalytics');
-var ImagePreloader = require('./ImagePreloader');
-var LoadingIcon = require('./LoadingIcon');
-var MobileMenu = require('./MobileMenu');
-var Modals = require('./Modals');
-var MotherShip = require('./MotherShip');
-var OrganizationRotation = require('./OrganizationRotation');
-var PetitionForm = require('./PetitionForm');
-//var EuropeEmailPetition = require('./EuropeEmailPetition');
-var Polyfills = require('./Polyfills');
-var Queue = require('./Queue');
-var ScrollDetection = require('./ScrollDetection');
-var SimpleSection = require('./SimpleSection');
-var TeamInternetSection = require('./TeamInternetSection');
-var TownHallSection = require('./TownHallSection');
-var YourSenators = require('./YourSenators');
+'use strict';
 
-
-// Detect features & apply polyfills
-(function(){
-    new DetectFeatures();
-    new Polyfills();
-})();
-
-
-
-// Design enhancements
-(function(){
-    // Preload the background
-    setTimeout(function() {
-        new ImagePreloader('/images/Imagesmall.jpg', function() {
-            var background = document.getElementById('background');
-            background.className += ' fadeIn ';
-            background.style.backgroundImage = 'url(' + this.src + ')';
-        });
-    }, 128);
-
-    setTimeout(function() {
-        if (!global.fontsAreReady) {
-            global.fontsAreReady = true;
-            document.body.className += ' loaded slow ';
-        }
-    }, 256);
-
-    // Let's bust the bfcache
-    window.addEventListener('unload', function() {});
-
-    // Analytics
-    setTimeout(function() {
-        new Chartbeat();
-        new GoogleAnalytics();
-        new MotherShip();
-    }, 1200);
-})();
-
-
-
-// Load geography & politicians JSON
 (function() {
-    // Let's selectively bust browser caches
-    var buster = '?buster=' + Date.now();
+  var Polyfills = require('./Polyfills');
+  var AJAX = require('./AJAX');
+  var Chartbeat = require('./Chartbeat');
+  var Countdown = require('./Countdown');
+  var GoogleAnalytics = require('./GoogleAnalytics');
+  var ImagePreloader = require('./ImagePreloader');
+  var LoadingIcon = require('./LoadingIcon');
+  var MobileMenu = require('./MobileMenu');
+  var Modals = require('./Modals');
+  var MotherShip = require('./MotherShip');
+  var PetitionForm = require('./PetitionForm');
+  var SimpleSection = require('./SimpleSection');
+  var TeamInternetSection = require('./TeamInternetSection');
+  var TownHallSection = require('./TownHallSection');
 
-    var URLs = {
-        geography: 'https://fftf-geocoder.herokuapp.com',
-        politicians: 'https://cache.battleforthenet.com/politicians.json',
-        politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
-    };
+  // Let's selectively bust browser caches
+  var buster = '?buster=' + Date.now();
 
-    new AJAX({
-        url: '/templates/PetitionForm.html' + buster,
-        success: function(e) {
-            var petitionForm = new PetitionForm({
-                formTemplate: e.target.responseText,
-                target: '#battle .form-wrapper'
-            });
-
-            // Rotate organizations
-            new OrganizationRotation();
-
-            // Get geography
-            new AJAX({
-                url: URLs.geography,
-                success: function(e) {
-                    // Parse JSON
-                    var response = JSON.parse(e.target.responseText);
-
-                    // Save for later
-                    global.ajaxResponses.geography = response;
-
-                    // Update country field
-                    petitionForm.setCountryCode(response.country.iso_code);
-
-                    new YourSenators({
-                        callback: loadMoreSections,
-                        geography: response,
-                        target: '.your-senators-target',
-                        URLs: URLs
-                    });
-                }
-            });
-        }
+  // Preload the background
+  setTimeout(function() {
+    new ImagePreloader('/images/Imagesmall.jpg', function() {
+      var background = document.getElementById('background');
+      background.classList.add('fadeIn');
+      background.style.backgroundImage = 'url(' + this.src + ')';
     });
+  }, 128);
 
-    function loadMoreSections() {
-        new AJAX({
-            url: '/templates/TeamCableSection.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.team-cable-target',
-                    template: e.target.responseText
-                });
-            }
-        });
-
-        new AJAX({
-            url: '/templates/TeamInternetSection.html' + buster,
-            success: function(e) {
-                new TeamInternetSection({
-                    target: '.team-internet-target',
-                    template: e.target.responseText
-                });
-            }
-        });
-
-        new AJAX({
-            url: '/templates/Modals.html' + buster,
-            success: function(e) {
-                global.modals = new Modals({
-                    target: '.modals-target',
-                    template: e.target.responseText
-                });
-
-                if (location.href.match(/sharing_modal=1/)) {
-                    global.modals.display('call_modal');
-                } else if (location.href.match(/twitter_modal=1/)) {
-                    global.modals.display('twitter_modal'); 
-                }
-            }
-        });
-
-        var queue = [];
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/HowWeWonSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.how-we-won-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/TownHallSection.html' + buster,
-                success: function(e) {
-                    new TownHallSection({
-                        target: '.town-hall-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/LearnMoreSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.learn-more-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/ExtraReading.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.extra-reading-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        new ScrollDetection({
-            queue: queue
-        });
+  // Prevent Typekit flash of unstyled content?
+  setTimeout(function() {
+    if (!global.fontsAreReady) {
+      global.fontsAreReady = true;
+      document.body.classList.add('loaded', 'slow');
     }
+  }, 256);
+
+  // Analytics
+  setTimeout(function() {
+    new Chartbeat();
+    new GoogleAnalytics();
+    new MotherShip();
+  }, 1200);
+
+  var params = new URLSearchParams(window.location.search.substring(1));
+  if (params.get('call')) {
+    new AJAX({
+      url: '/templates/CallForm.html' + buster,
+      success: function(e) {
+        new SimpleSection({
+          target: '#battle .form-wrapper',
+          template: e.target.responseText
+        });
+      }
+    });
+  } else {
+    new AJAX({
+      url: '/templates/PetitionForm.html' + buster,
+      success: function(e) {
+        new PetitionForm({
+          target: '#battle .form-wrapper',
+          template: e.target.responseText
+        });
+      }
+    });
+  }
+
+  new AJAX({
+    url: '/templates/TeamCableSection.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.team-cable-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/TeamInternetSection.html' + buster,
+    success: function(e) {
+      new TeamInternetSection({
+        target: '.team-internet-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/Modals.html' + buster,
+    success: function(e) {
+      global.modals = new Modals({
+        target: '.modals-target',
+        template: e.target.responseText
+      });
+
+      if (location.href.match(/sharing_modal=1/)) {
+        global.modals.display('call_modal');
+      } else if (location.href.match(/twitter_modal=1/)) {
+        global.modals.display('twitter_modal'); 
+      }
+    }
+  });
+
+  new AJAX({
+    url: '/templates/HowWeWonSection.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.how-we-won-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/TownHallSection.html' + buster,
+    success: function(e) {
+      new TownHallSection({
+        target: '.town-hall-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/LearnMoreSection.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.learn-more-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/ExtraReading.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.extra-reading-target',
+        template: e.target.responseText
+      });
+    }
+  });
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./DetectFeatures":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./OrganizationRotation":13,"./PetitionForm":14,"./Polyfills":15,"./Queue":16,"./ScrollDetection":17,"./SimpleSection":18,"./TeamInternetSection":19,"./TownHallSection":21,"./YourSenators":22}],2:[function(require,module,exports){
+},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./GoogleAnalytics":6,"./ImagePreloader":7,"./LoadingIcon":8,"./MobileMenu":9,"./Modals":10,"./MotherShip":11,"./PetitionForm":13,"./Polyfills":14,"./SimpleSection":15,"./TeamInternetSection":16,"./TownHallSection":18}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -457,21 +386,6 @@ Countdown.prototype.updateDates = function(difference) {
 module.exports = Countdown;
 
 },{}],5:[function(require,module,exports){
-function DetectFeatures() {
-    this.detectSVG();
-}
-
-DetectFeatures.prototype.detectSVG = function detectSVG() {
-    var feature = 'http://www.w3.org/TR/SVG11/feature#Image';
-    var version = '1.1';
-    if (document.implementation.hasFeature(feature, version)) {
-        document.body.className += ' svg ';
-    }
-};
-
-module.exports = DetectFeatures;
-
-},{}],6:[function(require,module,exports){
 function GUID() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }
@@ -483,7 +397,7 @@ function _p8(s) {
 
 module.exports = GUID;
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -500,7 +414,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -516,7 +430,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],9:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -527,7 +441,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -561,7 +475,7 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var Template = require('./Template');
 
 function Modals(params) {
@@ -648,7 +562,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":20}],12:[function(require,module,exports){
+},{"./Template":17}],11:[function(require,module,exports){
 var AJAX = require('./AJAX');
 var GUID = require('./GUID');
 
@@ -706,23 +620,23 @@ MotherShip.prototype.sendRequest = function sendRequest() {
 
 module.exports = MotherShip;
 
-},{"./AJAX":2,"./GUID":6}],13:[function(require,module,exports){
-function OrganizationRotation() {
+},{"./AJAX":2,"./GUID":5}],12:[function(require,module,exports){
+'use strict';
+
+function OrganizationRotation(params) {
+  this.target = params.target;
+
+  this.DOMNode = document.querySelector(this.target);
+
   this.addEventListeners();
 }
 
 OrganizationRotation.prototype.addEventListeners = function() {
-  var params = window.location.search.substring(1).split('&')
-    .reduce(function(res, val) {
-      var parts = val.split('=');
-      res[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
-      return res;
-    }, {});
-
+  var params = new URLSearchParams(window.location.search.substring(1));
   var org;
 
-  if (params.hasOwnProperty('org')) {
-    org = params['org'] || 'fftf';
+  if (params.get('org')) {
+    org = params.get('org') || 'fftf';
 
     // Don't show donate links for non-referral visits
     var donationLinks = document.querySelectorAll('header a.donate');
@@ -742,10 +656,10 @@ OrganizationRotation.prototype.addEventListeners = function() {
     }
   }
 
-  document.getElementById('org').value = org;
+  this.DOMNode.querySelector('[name="org"]').value = org;
 
   // Show org disclaimer
-  var disclaimers = document.querySelector('.disclaimer')
+  var disclaimers = this.DOMNode.querySelector('.disclaimer')
     .querySelectorAll('.org')
 
   for (var i = 0; i < disclaimers.length; i++) {
@@ -756,66 +670,135 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function (global){
+'use strict';
+
 var AJAX = require('./AJAX');
 var Template = require('./Template');
-
-var presetIntro = 'Last year the FCC protected the open Internet by passing strong Net Neutrality rules in response to the millions of people who spoke out. But now the same cable and phone companies that fought so hard to destroy Net Neutrality are creating harmful new schemes that pose a serious threat to the open Internet.';
-
-var presetComplaints = {
-    comcast: 'Comcast is breaking the rules, and the FCC should put a stop to it. Furthermore, this decision should not be made behind closed doors. The FCC should have an open, public process to decide where and how to enforce these rules.\n\nThe Open Internet rules prevent ISPs from picking winners and losers online by slowing down some websites and applications while speeding up others. But now Comcast has found another way to pick winners and losers: it applies arbitrary data caps, but exempts its own video content while counting all competing video services toward those caps. This is a textbook case of an ISP abusing its power for its own competitive advantage. In addition, Comcast’s caps favor its own traditional cable service by discouraging customers from cutting the cord.\n\nI don’t want Comcast messing with my choice of video services by privileging its own content and punishing the rest. That hurts me, and it hurts the online video services I might use if they compete with Comcast by offering better price, quality and selection.\n\nThere’s no legitimate reason for data caps to exist at all. Comcast has admitted that its caps have nothing to do with managing congestion. Moreover, Comcast is limiting Internet use with data caps while charging a monthly fee for customers to get out from under those caps. This discourages broadband Internet use overall, and especially “cord-cutting” by users who’d rather give up their expensive cable TV packages and watch TV online.\n\nAs a Comcast customer, I should be able to choose freely whether I want to subscribe to Comcast’s traditional cable service or whether I want to watch video online instead— just as I should be able to choose which online video I want to watch. Comcast is interfering with these choices.\n\nAltogether, these practices prove what we’ve always known: Comcast hates the FCC’s Net Neutrality rules and is doing everything it can to get around them. In the long run, everyone on the Internet loses -- except carriers in the middle that get to impose data caps, charge tolls, and act as gatekeepers.\n\nThese plans need to be investigated and stopped. It’s the FCC’s job to protect consumers from these kinds of abuses by Comcast. Meanwhile, Congress should encourage the FCC to do its job and make these companies follow the rules, not interfere with the FCC’s power to regulate.\n\nNote: for privacy reasons, rather than providing my personal phone number, I’m providing the number of an advocacy group. If you’d like to contact me about my complaint, please do so via email.',
-    att:     'AT&T is breaking the rules, and the FCC should put a stop to it. Furthermore, this decision should not be made behind closed doors. The FCC should have an open, public process to decide where and how to enforce these rules.\n\nThe Open Internet rules say that ISPs can’t charge websites and apps to be in the fast lane, so AT&T created another toll: they’re charging websites and apps to be exempted from customers’ data caps. Data shows that users find zero-rated content more attractive than content that counts against their caps. Thus, if web companies want to compete with those who pay, , they’ll need to enroll - for a fee - in AT&T’s sponsored data program. This creates a new toll for data traveling on the Internet and racks up charges for websites, applications, and content providers. Startups, small companies, and non-commercial speakers may face huge barriers if they can’t afford to pay new tolls and no longer have their fair shot at reaching people online. That’s not the kind of Internet I want to have.\n\nThese programs also create perverse incentives for AT&T to keep data caps low: The lower the caps, the more pressure on websites to pay up. Thus, these programs ultimately hurt Internet users like me who have less data to use on the apps they really want to use.\n\nFinally, these plans distort my ability to use the applications of my choice by pushing me and other Internet users toward sites with deep pockets and away from those who can’t afford the toll or don’t want to pay it. They effectively punish me for using sites that don’t pay the toll and unfairly raise the costs of the services that pay AT&T to be zero-rated (who then must pass that cost onto me).\n\nAs an AT&T customer, I don’t want AT&T to turn the Internet into a place where those without a lot of money can no longer compete on an equal footing. That would hurt our economy and our democracy. I request that the FCC investigate AT&T for using this zero rating scheme to skirt the Open Internet rules.\n\nAltogether, these practices prove what we’ve always known: AT&T hates the FCC’s Net Neutrality rules and is doing everything it can to get around them. In the long run, everyone on the Internet loses -- except carriers in the middle that get to impose data caps, charge tolls, and act as gatekeepers.\n\nThese plans need to be investigated and stopped. It’s the FCC’s job to protect consumers from these kinds of abuses by AT&T. Meanwhile, Congress should encourage the FCC to do its job and make these companies follow the rules, not interfere with the FCC’s power to regulate.\n\nNote: for privacy reasons, rather than providing my personal phone number, I’m providing the number of an advocacy group. If you’d like to contact me about my complaint, please do so via email.',
-    verizon: 'Verizon is breaking the rules, and the FCC should put a stop to it. Furthermore, this decision should not be made behind closed doors. The FCC should have an open, public process to decide where and how to enforce these rules.\n\nThe Open Internet rules say that ISPs can’t charge websites and apps to be in the fast lane, so Verizon created another toll: they’re charging websites and apps to be exempted from customers’ data caps. Data shows that users find zero-rated content more attractive than content that counts against their caps. Thus, if web companies want to compete with those who pay, , they’ll need to enroll - for a fee - in Verizon’s sponsored data program. This creates a new toll for data traveling on the Internet and racks up charges for websites, applications, and content providers. Startups, small companies, and non-commercial speakers may face huge barriers if they can’t afford to pay new tolls and no longer have their fair shot at reaching people online. That’s not the kind of Internet I want to have.\n\nThese programs also create perverse incentives for Verizon to keep data caps low: The lower the caps, the more pressure on websites to pay up. Thus, these programs ultimately hurt Internet users like me who have less data to use on the apps they really want to use.\n\nFinally, these plans distort my ability to use the applications of my choice by pushing me and other Internet users toward sites with deep pockets and away from those who can’t afford the toll or don’t want to pay it. They effectively punish me for using sites that don’t pay the toll and unfairly raise the costs of the services that pay Verizon to be zero-rated (who then must pass that cost onto me).\n\nAs an Verizon customer, I don’t want Verizon to turn the Internet into a place where those without a lot of money can no longer compete on an equal footing. That would hurt our economy and our democracy. I request that the FCC investigate Verizon for using this zero rating scheme to skirt the Open Internet rules.\n\nAltogether, these practices prove what we’ve always known: Verizon hates the FCC’s Net Neutrality rules and is doing everything it can to get around them. In the long run, everyone on the Internet loses -- except carriers in the middle that get to impose data caps, charge tolls, and act as gatekeepers.\n\nThese plans need to be investigated and stopped. It’s the FCC’s job to protect consumers from these kinds of abuses by Verizon. Meanwhile, Congress should encourage the FCC to do its job and make these companies follow the rules, not interfere with the FCC’s power to regulate.\n\nNote: for privacy reasons, rather than providing my personal phone number, I’m providing the number of an advocacy group. If you’d like to contact me about my complaint, please do so via email.',
-    tmobile: 'T-Mobile is breaking the rules, and the FCC should put a stop to it. Furthermore, this decision should not be made behind closed doors. The FCC should have an open, public process to decide where and how to enforce these rules.\n\nThe FCC rules say that ISPs can’t be gatekeepers online. T-Mobile exempts the content of select video providers from customers’ data caps as part of its Binge On program, but only if those video providers meet T-Mobile’s substantial technical requirements. This makes it difficult for many start-ups, small players, and non-commercial speakers to join. These exemptions are available for video only, so T-Mobile is favoring some kinds of uses over others.\n\nNot only that, T-Mobile is downgrading all video across its network just to pull off the plan, breaking video on the sites of many independent creators and small services by forcing viewers to sit through the infamous “spinning wheel of death” as videos load or buffer. After coming under fire for this controversy, T-Mobile gave video sites a way to opt out, but they still have to meet specific technical requirements to do that.\n\nThese requirements are a ridiculous and unsustainable burden for small sites, and the idea of requiring special deals to access customers flies in the face of the FCC’s net neutrality rules. Imagine an Internet where small websites had to enter into technical conversations with every single cellphone company in the world, just to make sure their videos were not interfered with!\n\nAltogether, these practices prove what we’ve always known: T-Mobile hates the FCC’s Net Neutrality rules and is doing everything it can to get around them. In the long run, everyone on the Internet loses -- except carriers in the middle that get to impose data caps, charge tolls, and act as gatekeepers.\n\nThese plans need to be investigated and stopped. It’s the FCC’s job to protect consumers from these kinds of abuses by T-Mobile. Meanwhile, Congress should encourage the FCC to do its job and make these companies follow the rules, not interfere with the FCC’s power to regulate.\n\nNote: for privacy reasons, rather than providing my personal phone number, I’m providing the number of an advocacy group. If you’d like to contact me about my complaint, please do so via email.'
-}
+var OrganizationRotation = require('./OrganizationRotation');
+var YourSenators = require('./YourSenators');
 
 function PetitionForm(params) {
-    // Params
-    this.formTemplate = params.formTemplate;
-    this.target = params.target;
+  this.target = params.target;
+  this.template = params.template;
 
-    this.DOMNode = document.querySelector(this.target);
+  this.DOMNode = document.querySelector(this.target);
 
-    this.render();
-    this.addEventListeners();
+  this.render();
+  this.setOrganization();
+  this.addEventListeners();
 }
 
 PetitionForm.prototype.render = function() {
-    this.DOMNode.innerHTML = Template(this.formTemplate, {});
-    this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
+  this.DOMNode.innerHTML = Template(this.template, {});
+  this.DOMNode.className = this.DOMNode.className.replace(/loading/, ' ');
+};
 
+PetitionForm.prototype.setOrganization = function() {
+  new OrganizationRotation({
+    target: this.target
+  });
+};
+
+// Load geography & politicians JSON
+PetitionForm.prototype.geocode = function() {
+  var URLs = {
+      geography: 'https://fftf-geocoder.herokuapp.com',
+      politicians: 'https://cache.battleforthenet.com/politicians.json',
+      politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
+  };
+
+  new AJAX({
+    url: URLs.geography,
+    success: function(e) {
+      var response = JSON.parse(e.target.responseText);
+
+      // Update country field
+      if (response &&
+          response.hasOwnProperty('country') &&
+          response.country.hasOwnProperty('iso_code')) {
+        this.setCountryCode(response.country.iso_code);
+      }
+
+      new YourSenators({
+        callback: loadMoreSections,
+        geography: response,
+        target: '.your-senators-target',
+        URLs: URLs
+      });
+    }
+  });
 };
 
 PetitionForm.prototype.setCountryCode = function(countryCode) {
-    this.DOMNode.querySelector('[name="member[country]"]').value = countryCode;
-};
-
-PetitionForm.prototype.validateEmail = function(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-};
-
-PetitionForm.prototype.validatePhoneNumber = function(num) {
-   num = num.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
-   num = num.replace("+", "").replace(/\-/g, '');
-
-   if (num.charAt(0) == "1")
-       num = num.substr(1);
-
-   if (num.length != 10)
-       return false;
-
-   return num;
+  this.DOMNode.querySelector('[name="member[country]"]').value = countryCode;
 };
 
 PetitionForm.prototype.addEventListeners = function() {
+  var form = document.getElementById('fftf-petition').querySelector('form');
+  var submitted = false;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Prevent duplicate submissions
+    if (submitted) return;
+
+    submitted = true;
+
+    var xhr = new XMLHttpRequest();
+    var formData = new FormData(form);
+
+    function handleHelperError(e) {
+      /**
+       * @param {event|XMLHttpRequest} e - Might be an event, might be a 
+       * failed XMLHttpRequest
+       * */
+
+      // global.modals.display('error_modal');
+    }
+
+    function loadHelperResponse() {
+      // Submission complete, allow retry
+      submitted = false;
+
+      if (200 <= xhr.status < 400) {
+        global.modals.display('thanks_modal');
+      } else {
+        handleHelperError(xhr);
+      }
+    }
+
+    xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
+    xhr.addEventListener('error', handleHelperError);
+    xhr.addEventListener('load', loadHelperResponse);
+    xhr.send(formData);
+  });
+
+  var textarea = form.querySelector('textarea');
+  var placeholder = 'Dear FCC,\n\n';
+  textarea.placeholder = textarea.value;
+
+  form.querySelector('.edit').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    textarea.value = placeholder;
+    textarea.focus();
+  });
+
+  textarea.addEventListener('blur', function(e) {
+    var val = textarea.value.trim();
+    if (val == placeholder.trim() || val == '') {
+      textarea.value = textarea.placeholder;
+    }
+  });
+
+  /*
     var petitionFormNode = this.DOMNode.querySelector('#petition');
-    var phoneCallFormNode = this.DOMNode.querySelector('#phone-call-form');
     var senatorsNode = this.DOMNode.querySelector('.your-senators-target');
     var thanksNode = this.DOMNode.querySelector('.thanks');
     var disclaimerNode = this.DOMNode.querySelector('.disclaimer_container');
-    var alternativeCTA = phoneCallFormNode.querySelector('.alternative-cta');
     var textareaNode = this.DOMNode.querySelector('textarea');
     var tabs = this.DOMNode.querySelectorAll('ul.tabs li a');
 
@@ -833,15 +816,6 @@ PetitionForm.prototype.addEventListeners = function() {
         phoneCallFormNode.style.display = 'block';
         disclaimerNode.style.display = 'none';
     }
-    alternativeCTA.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        petitionFormNode.style.display = 'none';
-        phoneCallFormNode.style.display = 'none';
-        senatorsNode.style.display = 'none';
-        thanksNode.style.display = 'block';
-        global.modals.display('share_modal');
-    }, false);
 
     textareaNode.addEventListener('click', function(e) {
         textareaNode.classList.add('expanded');
@@ -985,115 +959,28 @@ PetitionForm.prototype.addEventListeners = function() {
         senatorsNode.style.display = 'none';
         thanksNode.style.display = 'block';
     }.bind(this), false);
-};
-
-PetitionForm.prototype.updateCTA = function updateCTA(cta) {
-    this.DOMNode.querySelector('button[type="submit"]').textContent = cta;
+    */
 };
 
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Template":20}],15:[function(require,module,exports){
-function Polyfills() {
-    this.bind();
+},{"./AJAX":2,"./OrganizationRotation":12,"./Template":17,"./YourSenators":19}],14:[function(require,module,exports){
+function URLSearchParams(queryString) {
+  this.queryObj = queryString.split('&').reduce(function(obj, val) {
+    var parts = val.split('=');
+    obj[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+    return obj;
+  }, {});
 }
 
-Polyfills.prototype.bind = function() {
-    if (!Function.prototype.bind) {
-        Function.prototype.bind = function(oThis) {
-            if (typeof this !== 'function') {
-                // closest thing possible to the ECMAScript 5
-                // internal IsCallable function
-                throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
-            }
-
-            var aArgs = Array.prototype.slice.call(arguments, 1),
-            fToBind = this,
-            fNOP = function() {},
-            fBound = function() {
-                return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
-                    aArgs.concat(Array.prototype.slice.call(arguments)));
-            };
-
-            fNOP.prototype = this.prototype;
-            fBound.prototype = new fNOP();
-
-            return fBound;
-        };
-    }
-};
-
-module.exports = Polyfills;
-
-},{}],16:[function(require,module,exports){
-function Queue(params) {
-    this.callback = params.callback;
-    this.context = params.context || this;
-    this.remaining = params.remaining;
+URLSearchParams.prototype.get = function get(key) {
+  return this.queryObj[key];
 }
 
-Queue.prototype.tick = function() {
-    this.remaining--;
+window.URLSearchParams = window.URLSearchParams || URLSearchParams;
 
-    if (this.remaining === 0) {
-        this.callback.call(this.context);
-        this.destroy();
-    }
-};
-
-Queue.prototype.destroy = function() {
-    delete this.callback;
-    delete this.context;
-};
-
-module.exports = Queue;
-
-},{}],17:[function(require,module,exports){
-function ScrollDetection(params) {
-    this.onScroll = this.onScroll.bind(this);
-    this.padding = 900;
-    this.queue = params.queue;
-    this.showQueuedSections = this.showQueuedSections.bind(this);
-    this.timeout = null;
-
-    window.addEventListener('scroll', this.onScroll, false);
-
-    this.showQueuedSections(); // # JL HACK ~ disabled scroll detection
-}
-
-ScrollDetection.prototype.showQueuedSections = function showQueuedSections() {
-    // Has the user scrolled down enough?
-    // JL HACK ~ disabled 2016-02-08 because we need inline links to work
-    /*
-    if ((innerHeight + scrollY + this.padding) < this.getDocumentHeight()) {
-        return;
-    }
-    */
-
-    window.removeEventListener('scroll', this.onScroll, false);
-
-    if (this.queue.length > 0) {
-        this.queue.shift()();
-    }
-};
-
-ScrollDetection.prototype.getDocumentHeight = function getDocumentHeight() {
-    return Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
-    );
-};
-
-ScrollDetection.prototype.onScroll = function onScroll(e) {
-    clearTimeout(this.timeout);
-    setTimeout(this.showQueuedSections, 100);
-};
-
-module.exports = ScrollDetection;
-
-},{}],18:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -1111,7 +998,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":20}],19:[function(require,module,exports){
+},{"./Template":17}],16:[function(require,module,exports){
 (function (global){
 var SimpleSection = require('./SimpleSection');
 
@@ -1227,7 +1114,7 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 module.exports = TeamInternetSection;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SimpleSection":18}],20:[function(require,module,exports){
+},{"./SimpleSection":15}],17:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
@@ -1265,7 +1152,7 @@ var Template = function template(str, data){
 
 module.exports = Template;
 
-},{}],21:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 var SimpleSection = require('./SimpleSection');
 
 function TownHallSection(params) {
@@ -1330,7 +1217,7 @@ TownHallSection.prototype.loadWidget = function loadWidget() {
 
 module.exports = TownHallSection;
 
-},{"./SimpleSection":18}],22:[function(require,module,exports){
+},{"./SimpleSection":15}],19:[function(require,module,exports){
 function YourSenators(params) {
     params.callback();
 }

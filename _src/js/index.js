@@ -1,215 +1,144 @@
-var AJAX = require('./AJAX');
-var Chartbeat = require('./Chartbeat');
-var Countdown = require('./Countdown');
-var DetectFeatures = require('./DetectFeatures');
-var GoogleAnalytics = require('./GoogleAnalytics');
-var ImagePreloader = require('./ImagePreloader');
-var LoadingIcon = require('./LoadingIcon');
-var MobileMenu = require('./MobileMenu');
-var Modals = require('./Modals');
-var MotherShip = require('./MotherShip');
-var OrganizationRotation = require('./OrganizationRotation');
-var PetitionForm = require('./PetitionForm');
-//var EuropeEmailPetition = require('./EuropeEmailPetition');
-var Polyfills = require('./Polyfills');
-var Queue = require('./Queue');
-var ScrollDetection = require('./ScrollDetection');
-var SimpleSection = require('./SimpleSection');
-var TeamInternetSection = require('./TeamInternetSection');
-var TownHallSection = require('./TownHallSection');
-var YourSenators = require('./YourSenators');
+'use strict';
 
-
-// Detect features & apply polyfills
-(function(){
-    new DetectFeatures();
-    new Polyfills();
-})();
-
-
-
-// Design enhancements
-(function(){
-    // Preload the background
-    setTimeout(function() {
-        new ImagePreloader('/images/Imagesmall.jpg', function() {
-            var background = document.getElementById('background');
-            background.className += ' fadeIn ';
-            background.style.backgroundImage = 'url(' + this.src + ')';
-        });
-    }, 128);
-
-    setTimeout(function() {
-        if (!global.fontsAreReady) {
-            global.fontsAreReady = true;
-            document.body.className += ' loaded slow ';
-        }
-    }, 256);
-
-    // Let's bust the bfcache
-    window.addEventListener('unload', function() {});
-
-    // Analytics
-    setTimeout(function() {
-        new Chartbeat();
-        new GoogleAnalytics();
-        new MotherShip();
-    }, 1200);
-})();
-
-
-
-// Load geography & politicians JSON
 (function() {
-    // Let's selectively bust browser caches
-    var buster = '?buster=' + Date.now();
+  var Polyfills = require('./Polyfills');
+  var AJAX = require('./AJAX');
+  var Chartbeat = require('./Chartbeat');
+  var Countdown = require('./Countdown');
+  var GoogleAnalytics = require('./GoogleAnalytics');
+  var ImagePreloader = require('./ImagePreloader');
+  var LoadingIcon = require('./LoadingIcon');
+  var MobileMenu = require('./MobileMenu');
+  var Modals = require('./Modals');
+  var MotherShip = require('./MotherShip');
+  var PetitionForm = require('./PetitionForm');
+  var SimpleSection = require('./SimpleSection');
+  var TeamInternetSection = require('./TeamInternetSection');
+  var TownHallSection = require('./TownHallSection');
 
-    var URLs = {
-        geography: 'https://fftf-geocoder.herokuapp.com',
-        politicians: 'https://cache.battleforthenet.com/politicians.json',
-        politiciansOnGoogle: 'https://spreadsheets.google.com/feeds/list/12g70eNkGA2hhRYKSENaeGxsgGyFukLRMHCqrLizdhlw/default/public/values?alt=json'
-    };
+  // Let's selectively bust browser caches
+  var buster = '?buster=' + Date.now();
 
-    new AJAX({
-        url: '/templates/PetitionForm.html' + buster,
-        success: function(e) {
-            var petitionForm = new PetitionForm({
-                formTemplate: e.target.responseText,
-                target: '#battle .form-wrapper'
-            });
-
-            // Rotate organizations
-            new OrganizationRotation();
-
-            // Get geography
-            new AJAX({
-                url: URLs.geography,
-                success: function(e) {
-                    // Parse JSON
-                    var response = JSON.parse(e.target.responseText);
-
-                    // Save for later
-                    global.ajaxResponses.geography = response;
-
-                    // Update country field
-                    petitionForm.setCountryCode(response.country.iso_code);
-
-                    new YourSenators({
-                        callback: loadMoreSections,
-                        geography: response,
-                        target: '.your-senators-target',
-                        URLs: URLs
-                    });
-                }
-            });
-        }
+  // Preload the background
+  setTimeout(function() {
+    new ImagePreloader('/images/Imagesmall.jpg', function() {
+      var background = document.getElementById('background');
+      background.classList.add('fadeIn');
+      background.style.backgroundImage = 'url(' + this.src + ')';
     });
+  }, 128);
 
-    function loadMoreSections() {
-        new AJAX({
-            url: '/templates/TeamCableSection.html' + buster,
-            success: function(e) {
-                new SimpleSection({
-                    target: '.team-cable-target',
-                    template: e.target.responseText
-                });
-            }
-        });
-
-        new AJAX({
-            url: '/templates/TeamInternetSection.html' + buster,
-            success: function(e) {
-                new TeamInternetSection({
-                    target: '.team-internet-target',
-                    template: e.target.responseText
-                });
-            }
-        });
-
-        new AJAX({
-            url: '/templates/Modals.html' + buster,
-            success: function(e) {
-                global.modals = new Modals({
-                    target: '.modals-target',
-                    template: e.target.responseText
-                });
-
-                if (location.href.match(/sharing_modal=1/)) {
-                    global.modals.display('call_modal');
-                } else if (location.href.match(/twitter_modal=1/)) {
-                    global.modals.display('twitter_modal'); 
-                }
-            }
-        });
-
-        var queue = [];
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/HowWeWonSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.how-we-won-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/TownHallSection.html' + buster,
-                success: function(e) {
-                    new TownHallSection({
-                        target: '.town-hall-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/LearnMoreSection.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.learn-more-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        queue.push(function() {
-            new AJAX({
-                url: '/templates/ExtraReading.html' + buster,
-                success: function(e) {
-                    new SimpleSection({
-                        target: '.extra-reading-target',
-                        template: e.target.responseText
-                    });
-
-                    if (queue.length > 0) {
-                        queue.shift()();
-                    }
-                }
-            });
-        });
-
-        new ScrollDetection({
-            queue: queue
-        });
+  // Prevent Typekit flash of unstyled content?
+  setTimeout(function() {
+    if (!global.fontsAreReady) {
+      global.fontsAreReady = true;
+      document.body.classList.add('loaded', 'slow');
     }
+  }, 256);
+
+  // Analytics
+  setTimeout(function() {
+    new Chartbeat();
+    new GoogleAnalytics();
+    new MotherShip();
+  }, 1200);
+
+  var params = new URLSearchParams(window.location.search.substring(1));
+  if (params.get('call')) {
+    new AJAX({
+      url: '/templates/CallForm.html' + buster,
+      success: function(e) {
+        new SimpleSection({
+          target: '#battle .form-wrapper',
+          template: e.target.responseText
+        });
+      }
+    });
+  } else {
+    new AJAX({
+      url: '/templates/PetitionForm.html' + buster,
+      success: function(e) {
+        new PetitionForm({
+          target: '#battle .form-wrapper',
+          template: e.target.responseText
+        });
+      }
+    });
+  }
+
+  new AJAX({
+    url: '/templates/TeamCableSection.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.team-cable-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/TeamInternetSection.html' + buster,
+    success: function(e) {
+      new TeamInternetSection({
+        target: '.team-internet-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/Modals.html' + buster,
+    success: function(e) {
+      global.modals = new Modals({
+        target: '.modals-target',
+        template: e.target.responseText
+      });
+
+      if (location.href.match(/sharing_modal=1/)) {
+        global.modals.display('call_modal');
+      } else if (location.href.match(/twitter_modal=1/)) {
+        global.modals.display('twitter_modal'); 
+      }
+    }
+  });
+
+  new AJAX({
+    url: '/templates/HowWeWonSection.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.how-we-won-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/TownHallSection.html' + buster,
+    success: function(e) {
+      new TownHallSection({
+        target: '.town-hall-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/LearnMoreSection.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.learn-more-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
+    url: '/templates/ExtraReading.html' + buster,
+    success: function(e) {
+      new SimpleSection({
+        target: '.extra-reading-target',
+        template: e.target.responseText
+      });
+    }
+  });
 })();

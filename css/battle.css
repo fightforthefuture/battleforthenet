@@ -422,44 +422,6 @@ form .disclaimer {
   font-weight: normal;
 }
 
-body #battle .phone-call-form footer {
-    background-color: #c6e5dd;
-    border-radius: 0 0 6px 6px;
-}
-
-body #battle .phone-call-form footer button {
-    background-color: #20cba1;
-    border-radius: 6px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-family: "proxima-nova", sans-serif;
-    font-size: 19px;
-    font-weight: bold;
-    line-height: 43px;
-    margin: 6px 0 8px;
-    text-transform: uppercase;
-    width: 250px;
-
-    -webkit-transition: opacity 0.3s;
-            transition: opacity 0.3s;
-}
-
-body #battle .phone-call-form footer button:hover {
-    opacity: 0.9;
-}
-
-body #battle .phone-call-form footer button:active {
-    opacity: 0.7;
-}
-
-body #battle .phone-call-form footer a.alternative-cta {
-    display: block;
-    color: #20cba1;
-    font-size: 14px;
-    padding: 0 0 12px;
-}
-
 @media screen and (min-width: 500px) {
     body #battle .phone-call-form {
         width: 420px;
