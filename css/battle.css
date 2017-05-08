@@ -1872,3 +1872,56 @@ fieldset[disabled] textarea {
 input{
 	 color: #645fa2 !important; 
 }
+
+#video-petition {
+    margin: 48px auto 64px;
+    max-width: 960px;
+    overflow: hidden;
+}
+
+#video-petition .video-embed-target,
+#battle #video-petition .form-wrapper {
+  float: left;
+  width: 50%;
+  padding: 0;
+}
+
+#video-petition .video-embed-target iframe {
+  width: 480px;
+  height: 300px;
+}
+
+#video-petition .form-wrapper .form {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#video-petition .form-wrapper header {
+  display: none;
+}
+
+#video-petition .form-wrapper .left,
+#video-petition .form-wrapper .right {
+  float: none;
+  width: 100%;
+}
+
+#video-petition .form-wrapper .left {
+  padding: 15px 15px 0;
+}
+
+#video-petition .form-wrapper .right {
+  padding: 0 15px 15px;
+}
+
+@media only screen and (max-width: 1100px) {
+    #video-petition {
+        max-width: 100%;
+    }
+
+    #video-petition .video-embed-target,
+    #battle #video-petition .form-wrapper {
+      float: none;
+      width: 100%;
+    }
+}
