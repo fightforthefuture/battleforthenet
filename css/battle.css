@@ -1363,7 +1363,6 @@ a.shareBtn.twitter {
   color: white;
   display: inline-block;
   height: 100%;
-  padding: 7px 7px 3px;
   position: relative;
   text-decoration: none;
   -webkit-transition: opacity 0.3s;
@@ -1384,8 +1383,8 @@ a.shareBtn.twitter {
 }
 .sharing-buttons li a img {
   border: none;
-  width: 16px;
-  height: 16px;
+  width: 64px;
+  height: 64px;
   opacity: 0;
   -webkit-transition: opacity 0.6s;
           transition: opacity 0.6s;
