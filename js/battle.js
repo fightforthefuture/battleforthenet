@@ -71,7 +71,7 @@
   new AJAX({
     url: '/templates/VideoEmbed.html' + buster,
     success: function(e) {
-      new PetitionForm({
+      new SimpleSection({
         target: '.video-embed-target',
         template: e.target.responseText
       });
