@@ -9,21 +9,23 @@ function TeamInternetSection(params) {
     this.render();
     this.wrapper = document.querySelector(this.target + ' .supporters');
 
-    this.setBackgrounds();
+    if (this.wrapper) {
+      this.setBackgrounds();
 
-    if (global.isDesktop) {
-        this.quoteBubble = document.querySelector(this.target + ' .quote-bubble');
-        this.arrowWrapper = this.quoteBubble.querySelector('.arrow-wrapper');
+      if (global.isDesktop) {
+          this.quoteBubble = document.querySelector(this.target + ' .quote-bubble');
+          this.arrowWrapper = this.quoteBubble.querySelector('.arrow-wrapper');
 
-        this.onHoverEnd = this.onHoverEnd.bind(this);
-        this.onHoverStart = this.onHoverStart.bind(this);
-        this.onHoverBubbleStart = this.onHoverBubbleStart.bind(this);
-        this.onHoverBubbleEnd = this.onHoverBubbleEnd.bind(this);
-        this.hideBubble = this.hideBubble.bind(this);
+          this.onHoverEnd = this.onHoverEnd.bind(this);
+          this.onHoverStart = this.onHoverStart.bind(this);
+          this.onHoverBubbleStart = this.onHoverBubbleStart.bind(this);
+          this.onHoverBubbleEnd = this.onHoverBubbleEnd.bind(this);
+          this.hideBubble = this.hideBubble.bind(this);
 
-        this.quoteBubbleIsVisible = false;
+          this.quoteBubbleIsVisible = false;
 
-        this.addQuoteBubble();
+          this.addQuoteBubble();
+      }
     }
 }
 

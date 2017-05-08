@@ -6,7 +6,7 @@ function SimpleSection(params) {
 
     this.DOMNode = document.querySelector(this.target);
 
-    this.render();
+    if (this.DOMNode) this.render();
 }
 
 SimpleSection.prototype.render = function() {

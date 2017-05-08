@@ -4,8 +4,12 @@ function TownHallSection(params) {
   this.target = params.target;
   this.template = params.template;
 
-  this.render();
-  this.addListeners();
+  this.DOMNode = document.querySelector(this.target);
+
+  if (this.DOMNode) {
+    this.render();
+    this.addListeners();
+  }
 }
 
 TownHallSection.prototype.render = function render() {
