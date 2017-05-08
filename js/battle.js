@@ -69,6 +69,16 @@
   }
 
   new AJAX({
+    url: '/templates/VideoEmbed.html' + buster,
+    success: function(e) {
+      new PetitionForm({
+        target: '.video-embed-target',
+        template: e.target.responseText
+      });
+    }
+  });
+
+  new AJAX({
     url: '/templates/TeamCableSection.html' + buster,
     success: function(e) {
       new SimpleSection({
