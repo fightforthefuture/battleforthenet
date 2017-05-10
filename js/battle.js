@@ -14,6 +14,7 @@
   var Modals = require('./Modals');
   var MotherShip = require('./MotherShip');
   var PetitionForm = require('./PetitionForm');
+  var CallForm = require('./CallForm');
   var SimpleSection = require('./SimpleSection');
   var TeamInternetSection = require('./TeamInternetSection');
   var TownHallSection = require('./TownHallSection');
@@ -46,12 +47,12 @@
   }, 1200);
 
   var params = new URLSearchParams(window.location.search.substring(1));
-  if (params.get('call')) {
+  if (params.get('call') || document.querySelector('.form-wrapper').classList.contains('call')) {
     new AJAX({
       url: '/templates/CallForm.html' + buster,
       success: function(e) {
-        new SimpleSection({
-          target: '#battle .form-wrapper',
+        new CallForm({
+          target: '.form-wrapper',
           template: e.target.responseText
         });
       }
@@ -61,7 +62,7 @@
       url: '/templates/PetitionForm.html' + buster,
       success: function(e) {
         new PetitionForm({
-          target: '#battle .form-wrapper',
+          target: '.form-wrapper',
           template: e.target.responseText
         });
       }
@@ -156,7 +157,7 @@
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./Chartbeat":3,"./Countdown":4,"./GoogleAnalytics":6,"./ImagePreloader":7,"./LoadingIcon":8,"./MobileMenu":9,"./Modals":10,"./MotherShip":11,"./PetitionForm":13,"./Polyfills":14,"./SimpleSection":15,"./TeamInternetSection":16,"./TownHallSection":18}],2:[function(require,module,exports){
+},{"./AJAX":2,"./CallForm":3,"./Chartbeat":4,"./Countdown":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./PetitionForm":14,"./Polyfills":15,"./SimpleSection":16,"./TeamInternetSection":17,"./TownHallSection":19}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -268,6 +269,80 @@ AJAX.prototype.serializeForm = function(form) {
 module.exports = AJAX;
 
 },{}],3:[function(require,module,exports){
+(function (global){
+var Template = require('./Template');
+
+function CallForm(params) {
+  this.target = params.target;
+  this.template = params.template;
+
+  this.DOMNode = document.querySelector(this.target);
+
+  this.render();
+  this.addEventListeners();
+}
+
+CallForm.prototype.render = function() {
+  this.DOMNode.innerHTML = Template(this.template, {});
+};
+
+CallForm.prototype.validatePhoneNumber = function(phone) {
+  // Remove spaces, parentheses, dashes
+  phone = phone.replace(/\s/g, '')
+    .replace(/\(/g, '')
+    .replace(/\)/g, '')
+    .replace(/\-/g, '');
+
+  // Remove country code
+  // TODO: Add support for non-US country codes on backend?
+  phone = phone.replace('+', '')
+  if (phone.charAt(0) == '1') phone = phone.substr(1);
+
+  // Return formatted phone number if valid
+  return phone.length == 10 ? phone : false;
+};
+
+CallForm.prototype.logStatus = function(e) {
+  var xhr = e.currentTarget;
+
+  switch (xhr.status) {
+    case 0:
+      // TODO: display error modal here instead
+      alert('If you are using Privacy Badger or another ad blocker, please allow requests to https://call-congress.fightforthefuture.org and try again.')
+    default:
+      console.log(xhr.status, xhr.statusText);
+  }
+};
+
+CallForm.prototype.addEventListeners = function() {
+  this.DOMNode.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var phone = this.validatePhoneNumber(this.DOMNode.querySelector('input[type=tel]').value);
+
+    if (!phone) return alert('Please enter a valid US phone number!');
+
+    var data = new FormData();
+    data.append('campaignId', 'battleforthenet-2017');
+    data.append('userPhone', phone);
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('load', this.logStatus);
+    xhr.addEventListener('error', this.logStatus);
+
+    xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
+    xhr.send(data);
+
+    global.modals.hide('thanks_modal');
+    global.modals.display('call_modal');
+  }.bind(this));
+};
+
+module.exports = CallForm;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./Template":18}],4:[function(require,module,exports){
 function Chartbeat() {
     this.addGlobals();
     this.addScript();
@@ -293,7 +368,7 @@ Chartbeat.prototype.addScript = function addScript() {
 
 module.exports = Chartbeat;
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 function Countdown(params) {
     this.date = params.date;
     this.interval = null;
@@ -395,7 +470,7 @@ Countdown.prototype.updateDates = function(difference) {
 
 module.exports = Countdown;
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 function GUID() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }
@@ -407,7 +482,7 @@ function _p8(s) {
 
 module.exports = GUID;
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 function GoogleAnalytics() {
     this.addScript();
 }
@@ -424,7 +499,7 @@ GoogleAnalytics.prototype.addScript = function addScript() {
 
 module.exports = GoogleAnalytics;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 function ImagePreloader(src, callback) {
     this.callback = callback;
     this.src = src;
@@ -440,7 +515,7 @@ ImagePreloader.prototype.onLoad = function(e) {
 
 module.exports = ImagePreloader;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var html = '<div class="timer-spinner"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div> </div>';
 
 function LoadingIcon(params) {
@@ -451,7 +526,7 @@ function LoadingIcon(params) {
 
 module.exports = LoadingIcon;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 function MobileMenu() {
     this.root = document.getElementById('mobile-navigation');
     this.list = this.root.querySelector('ul');
@@ -485,8 +560,12 @@ MobileMenu.prototype.updateExpansionStyles = function updateExpansionStyles() {
 
 module.exports = MobileMenu;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
+'use strict';
+
+var AJAX = require('./AJAX');
 var Template = require('./Template');
+var CallForm = require('./CallForm');
 
 function Modals(params) {
     this.target = params.target;
@@ -500,6 +579,18 @@ function Modals(params) {
 
 Modals.prototype.render = function() {
     this.DOMNode.innerHTML = Template(this.template, {});
+
+    var buster = '?buster=' + Date.now();
+
+    new AJAX({
+      url: '/templates/CallForm.html' + buster,
+      success: function(e) {
+        new CallForm({
+          target: '#thanks_modal main',
+          template: e.target.responseText
+        });
+      }
+    });
 
     if (location.href.match(/committees=1/))
         document.getElementById('call_script').textContent = 'Congress shouldn\'t politicize the issue of Net Neutrality in an attempt to score partisan points on an issue so crucial to the future of the Internet, and our country. Millions of people have called on the FCC to adopt strong rules backed by strong legal authority.  Congress should not try to block strong rules by pushing bad legislation, or hauling the FCC into hearings to defend the plan those millions of people called for. Thank you.';
@@ -572,7 +663,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./Template":17}],11:[function(require,module,exports){
+},{"./AJAX":2,"./CallForm":3,"./Template":18}],12:[function(require,module,exports){
 var AJAX = require('./AJAX');
 var GUID = require('./GUID');
 
@@ -630,7 +721,7 @@ MotherShip.prototype.sendRequest = function sendRequest() {
 
 module.exports = MotherShip;
 
-},{"./AJAX":2,"./GUID":5}],12:[function(require,module,exports){
+},{"./AJAX":2,"./GUID":6}],13:[function(require,module,exports){
 'use strict';
 
 function OrganizationRotation(params) {
@@ -680,7 +771,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
 
 module.exports = OrganizationRotation;
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -975,7 +1066,7 @@ PetitionForm.prototype.addEventListeners = function() {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./OrganizationRotation":12,"./Template":17,"./YourSenators":19}],14:[function(require,module,exports){
+},{"./AJAX":2,"./OrganizationRotation":13,"./Template":18,"./YourSenators":20}],15:[function(require,module,exports){
 function URLSearchParams(queryString) {
   this.queryObj = queryString.split('&').reduce(function(obj, val) {
     var parts = val.split('=');
@@ -990,7 +1081,7 @@ URLSearchParams.prototype.get = function get(key) {
 
 window.URLSearchParams = window.URLSearchParams || URLSearchParams;
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var Template = require('./Template');
 
 function SimpleSection(params) {
@@ -1008,7 +1099,7 @@ SimpleSection.prototype.render = function() {
 
 module.exports = SimpleSection;
 
-},{"./Template":17}],16:[function(require,module,exports){
+},{"./Template":18}],17:[function(require,module,exports){
 (function (global){
 var SimpleSection = require('./SimpleSection');
 
@@ -1126,7 +1217,7 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 module.exports = TeamInternetSection;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./SimpleSection":15}],17:[function(require,module,exports){
+},{"./SimpleSection":16}],18:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed
 var cache = {};
@@ -1164,7 +1255,7 @@ var Template = function template(str, data){
 
 module.exports = Template;
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 var SimpleSection = require('./SimpleSection');
 
 function TownHallSection(params) {
@@ -1233,7 +1324,7 @@ TownHallSection.prototype.loadWidget = function loadWidget() {
 
 module.exports = TownHallSection;
 
-},{"./SimpleSection":15}],19:[function(require,module,exports){
+},{"./SimpleSection":16}],20:[function(require,module,exports){
 function YourSenators(params) {
     params.callback();
 }

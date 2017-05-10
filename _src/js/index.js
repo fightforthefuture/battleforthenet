@@ -12,6 +12,7 @@
   var Modals = require('./Modals');
   var MotherShip = require('./MotherShip');
   var PetitionForm = require('./PetitionForm');
+  var CallForm = require('./CallForm');
   var SimpleSection = require('./SimpleSection');
   var TeamInternetSection = require('./TeamInternetSection');
   var TownHallSection = require('./TownHallSection');
@@ -44,12 +45,12 @@
   }, 1200);
 
   var params = new URLSearchParams(window.location.search.substring(1));
-  if (params.get('call')) {
+  if (params.get('call') || document.querySelector('.form-wrapper').classList.contains('call')) {
     new AJAX({
       url: '/templates/CallForm.html' + buster,
       success: function(e) {
-        new SimpleSection({
-          target: '#battle .form-wrapper',
+        new CallForm({
+          target: '.form-wrapper',
           template: e.target.responseText
         });
       }
@@ -59,7 +60,7 @@
       url: '/templates/PetitionForm.html' + buster,
       success: function(e) {
         new PetitionForm({
-          target: '#battle .form-wrapper',
+          target: '.form-wrapper',
           template: e.target.responseText
         });
       }
