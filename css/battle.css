@@ -44,7 +44,7 @@ img {
 }
 
 #battle h1,
-#battle p {
+#battle > p {
   opacity: 0;
   transition: opacity 0.8s;
 }
@@ -187,12 +187,12 @@ body.typekit #battle h1 {
     font-size: 40px;
 }
 
-body.typekit #battle p {
+body.typekit #battle > p {
     font-size: 20px;
 }
 
 body.loaded #battle h1,
-body.loaded #battle p {
+body.loaded #battle > p {
     opacity: 1;
 }
 
@@ -371,13 +371,6 @@ form.email section {
   min-height: 300px;
 }
 
-form header {
-  border-radius: 6px 6px 0 0;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 26px 30px;
-}
-
 form section {
   width: 50%;
   padding: 10px;
@@ -415,11 +408,6 @@ form section input, form section button {
 
 form button {
   margin: 0;
-}
-
-form .disclaimer {
-  line-height: 22px;
-  font-weight: normal;
 }
 
 @media screen and (min-width: 500px) {
@@ -899,14 +887,6 @@ section .btn:hover, button:hover {
 .footer-target footer .socials {
   padding: 10px 0px 20px 0px;
 }
-.shares-container img {
-  margin: 0px 7px;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 10px;
-  left: 12px;
-}
 
 .shares-container {
   border-radius: 50px;
@@ -925,6 +905,14 @@ section .btn:hover, button:hover {
      width: 240px;
      padding: 0;
    }
+}
+
+.shares-container .share-container img {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 3px;
+  left: 17px;
 }
 
 .shares-container .share-container span {
@@ -951,7 +939,6 @@ section .btn:hover, button:hover {
     font-weight:bold;
     line-height: 40px;
     margin: 6px;
-    padding-top:3px;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -1021,14 +1008,14 @@ body.privacy section.team-internet.fight-for-the-future {
     vertical-align: middle;
 }
 .overlay .gutter .modal {
-    max-width: 540px;
+    max-width: 720px;
     border-radius: 10px;
-    background: white;
+    background: #645fa2;
     color: black;
     margin: 0px auto;
-    padding-bottom: 20px;
     position: relative;
 }
+
 .modal a.close {
     position: absolute;
     right: 10px;
@@ -1038,96 +1025,14 @@ body.privacy section.team-internet.fight-for-the-future {
     text-decoration: none;
     font-size: 30px;
 }
+
 .modal a.close:hover {
     opacity: .6;
 }
-.modal header {
-    background: #20cba1;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-.modal h2 {
-    font-size: 36px;
-    padding: 0px 25px;
-    margin: 0px auto;
-}
-.modal label {
-    font-size: 13px;
-    display: inline-block;
-    width: 130px;
-    text-align: left;
-}
-.modal label span {
-    color: gray;
-}
-.modal input {
-    width: 280px;
-    font-size: 20px;
-}
-.modal select {
-    width: 280px;
-    font-size: 20px;
-}
-.modal hr {
-    border: 0px;
-}
-.modal textarea {
-    width: 90%;
-    height: 250px;
-    border: 1px solid #999;
-}
-.modal .btn {
-    display: inline-block;
-    margin: 25px auto 20px auto;
-    outline: medium none;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
 
-    padding: 0.5em 2em 0.55em;
-    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-    border-radius: 0.5em;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-    border: 1px solid #12A1D6;
-
-    background: #32c0f2; /* Old browsers */
-    background: -moz-linear-gradient(top, #32c0f2 0%, #028bbb 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#32c0f2), color-stop(100%,#028bbb)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #32c0f2 0%,#028bbb 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #32c0f2 0%,#028bbb 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32c0f2', endColorstr='#028bbb',GradientType=0 ); /* IE6-9 */
-
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-
-
-    color: white;
-}
-.modal .no_thanks {
-    display: inline-block;
-    margin: 0px 10px;
-    font-size: 16px;
-}
-.modal p {
-    color: #888888;
-    max-width: 500px;
-    margin: 0px auto;
-    padding: 30px 25px;
-    font-size: 18px;
-    line-height: 28px;
-}
-.modal p.nopad {
-    padding: 0px 25px;
-}
-.modal p.small {
-    padding: 20px 25px 20px 25px;
-    font-size: 14px;
+.modal footer {
+  background-color: #2a2750;
+  border-radius: 0 0 10px 10px;
 }
 
 @media screen and (max-width: 480px), screen and (max-height: 480px) {
@@ -1389,6 +1294,7 @@ a.shareBtn.twitter {
   opacity: 0;
   -webkit-transition: opacity 0.6s;
           transition: opacity 0.6s;
+  display: block;
 }
 .sharing-buttons li a.facebook {
   background: #3C5A96;
@@ -1412,7 +1318,7 @@ a.shareBtn.twitter {
   opacity: 0.9;
 }
 
-section.form {
+.form-wrapper .form {
   font-family: 'Proxima Nova',sans-serif;
   margin: 48px auto 64px;
   max-width: 620px;
@@ -1422,21 +1328,23 @@ section.form {
 
 .shadow {
   -webkit-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
--moz-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
+  -moz-box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
+  box-shadow: 0px 25px 95px -8px rgba(15,5,31,1);
 }
 
-section.form header {
-  border-radius: 5px 5px 0 0;
-  color: #fff;
-  text-align: center;
-  padding: 30px 30px 10px 30px;
-}
-
-section.form header h3 {
+header h3 {
   font-size: 24px;
   font-weight: 700;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
+}
+
+header h4 {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+header h4:last-child {
+  margin-bottom: 0;
 }
 
 .modal aside {
@@ -1477,6 +1385,19 @@ section.form header h3 {
   color: #fff;
 }
 
+.modal .body {
+  background-color: #4d4882;
+  padding: 20px;
+}
+
+.modal .body p {
+  margin: 0 0 20px;
+}
+
+.modal .body p:last-child {
+  margin-bottom: 0;
+}
+
 .modal .body textarea {
   background-color: #fff;
   border: 0;
@@ -1488,81 +1409,96 @@ section.form header h3 {
 }
 
 @media only screen and (min-width: 480px) {
-  section.form header h3 {
+  header h3 {
     font-size: 32px
   }
 }
 
 @media only screen and (min-width: 768px) {
-  section.form header h3 {
+  header h3 {
     font-size: 36px
   }
 }
 
-section.form header p {
-  font-size: 16px;
-  margin: 0 40px;
+header p {
+  color: #dfddf3;
+  font-size: 18px;
+  margin: 0;
 }
 
-@media only screen and (min-width: 480px) {
-  section.form header p {
-    font-size: 18px
-  }
+header {
+  color: #fff;
+  padding: 20px;
 }
 
-@media only screen and (min-width: 768px) {
-  section.form header p {
-    font-size: 22px
-  }
+.form-wrapper form header,
+#thanks_modal header {
+  padding-bottom: 0;
 }
 
-section.form input,
-section.form textarea {
+#thanks_modal header h3 {
+  margin-bottom: 0;
+}
+
+form main {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+}
+
+.form-wrapper form.call main input {
+  height: 54px;
+  font-size: 20px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+form input,
+form textarea {
   margin-bottom: 15px;
   border: 0;
   border-bottom: 1px solid #d1d1e9;
   border-radius: 5px;
   box-shadow: none;
   color: #645fa2; 
-  font-size: 15px;
   height: 44px;
   padding: 0 18px;
   transition: background-color .15s
 }
 
 @media only screen and (min-width: 768px) {
-  section.form input,
-  section.form textarea {
+  form input,
+  form textarea {
     margin-bottom: 10px;
   }
 }
 
 /* These selectors only work when declared separately for some buggy reason */
-section.form ::-webkit-input-placeholder {
+form ::-webkit-input-placeholder {
   color: #645fa2;
 }
 
-section.form ::-moz-placeholder {
+form ::-moz-placeholder {
   color: #645fa2;
   opacity: 1;
 }
 
-section.form :-ms-input-placeholder {
+form :-ms-input-placeholder {
   color: #645fa2;
 }
 
-section.form ::placeholder {
+form ::placeholder {
   color: #645fa2;
 }
 
-section.form input:focus,
-section.form textarea:focus {
+form input:focus,
+form textarea:focus {
   background-color: #eef;
   border-bottom: 1px solid #d1d1e9;
   box-shadow: none
 }
 
-section.form textarea {
+form textarea {
   border-bottom: 0;
   color: #645fa2;
   font-size: 14px;
@@ -1572,27 +1508,22 @@ section.form textarea {
   resize: none;
 }
 
-@media only screen and (min-width: 768px) {
-  section.form textarea {
-  }
-}
-
-section.form textarea::-webkit-scrollbar {
+form textarea::-webkit-scrollbar {
   width: 11px;
 }
 
-section.form textarea::-webkit-scrollbar-track {
+form textarea::-webkit-scrollbar-track {
   border-radius: 5px;
 }
 
-section.form textarea::-webkit-scrollbar-thumb {
+form textarea::-webkit-scrollbar-thumb {
   min-height: 28px;
   border: 2px solid white;
   border-radius: 5px;
   background: rgba(0,0,0,0.5);
 }
 
-section.form textarea::-webkit-scrollbar:hover {
+form textarea::-webkit-scrollbar:hover {
   background: rgba(0,0,0,0.05);
   border-left: 1px solid rgba(0,0,0,0.1);
 }
@@ -1676,11 +1607,11 @@ form footer {
   width: 100%;
   background-color: #2a2750;
   border-radius: 0 0 5px 5px;
-  padding: 10px;
+  padding: 15px 20px 0;
   clear: both;
 }
 
-form footer button {
+form button {
   border: 0;
   box-shadow: 0 2px 1px rgba(36,95,82,.7);
   color: #fff;
@@ -1702,30 +1633,94 @@ form footer button {
 }
 
 @media only screen and (min-width: 480px) {
-  form footer button {
+  form button {
     font-size: 26px
   }
 }
 
-form footer button:hover,
-form footer button:focus {
+form button:hover,
+form button:focus {
   box-shadow: 0 2px 4px rgba(36,95,82,.8);
   opacity: .92
 }
 
-form footer .disclaimer {
-  color: #9793bd;
-  font-size: 11px;
-  margin: 8px 0 0;
-  text-align: center
+.modal form input {
+  height: 64px;
+  font-size: 18px;
+  flex: 3;
 }
 
-form footer .disclaimer a {
+.modal form button {
+  margin-left: 10px;
+  flex: 2;
+}
+
+.form-wrapper form main button,
+.modal form header h3,
+.modal form footer {
+  display: none;
+}
+
+.modal .shares-container {
+  display: flex;
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+  padding: 12px 20px 0;
+}
+
+#call_modal .shares-container {
+  display: block;
+}
+
+.modal .shares-container h4 {
+  color: #fff;
+  font-size: 26px;
+  flex: 2;
+  line-height: 54px;
+  margin: 6px;
+}
+
+.modal .share-container {
+  background-color: #645fa2;
+  border-radius: 5px;
+  line-height: 54px;
+  flex: 2;
+}
+
+.modal .share-container img {
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 2px;
+  top: 10px;
+}
+
+.modal footer button {
+  margin: 15px 20px 0; 
+}
+
+.modal footer button img {
+  width: 48px;
+  position: absolute;
+  top: 22px;
+  left: 180px;
+}
+
+footer .disclaimer {
+  color: #9793bd;
+  font-size: 11px;
+  margin: 0;
+  padding: 8px 0;
+  line-height: 22px;
+  font-weight: normal;
+}
+
+footer .disclaimer a {
   color: #bbb9dd;
   text-decoration: none;
 }
 
-form footer .disclaimer a:hover {
+footer .disclaimer a:hover {
   text-decoration: underline;
 }
 
