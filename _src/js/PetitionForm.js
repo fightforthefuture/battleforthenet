@@ -62,7 +62,7 @@ PetitionForm.prototype.setCountryCode = function(countryCode) {
 };
 
 PetitionForm.prototype.addEventListeners = function() {
-  var form = document.getElementById('fftf-petition').querySelector('form');
+  var form = this.DOMNode.querySelector('form');
   var submitted = false;
 
   form.addEventListener('submit', function(e) {

@@ -43,7 +43,9 @@ CallForm.prototype.logStatus = function(e) {
 };
 
 CallForm.prototype.addEventListeners = function() {
-  this.DOMNode.addEventListener('submit', function(e) {
+  var form = this.DOMNode.querySelector('form');
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     var phone = this.validatePhoneNumber(this.DOMNode.querySelector('input[type=tel]').value);
