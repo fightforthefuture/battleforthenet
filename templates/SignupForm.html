@@ -1,0 +1,38 @@
+<section class="form">
+  <form method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
+    <main>
+      <input type="text" name="member[first_name]" placeholder="Full Name" title="Full Name" autocomplete="name" required>
+      <input type="email" name="member[email]" placeholder="Email" title="Email" required>
+      <input type="text" name="member[postcode]" class="input-zip" placeholder="ZIP" title="ZIP" required size="5" pattern="[0-9]{5}">
+    </main>
+
+    <footer>
+      <button type="submit">Join the Protest</button>
+      <div class="disclaimer">
+        <span class="hidden opt-in"><input type="checkbox" name="opt_in" checked="checked" /> Allow </span>
+        <span class="org fp hidden"><a href="https://www.freepress.net/" target="_blank">Free Press</a></span>
+        <span class="org dp hidden"><a href="https://demandprogress.org/" target="_blank">Demand Progress</a></span>
+        <span class="org fftf"><a href="https://www.fightforthefuture.org/" target="_blank">Fight for the Future</a></span>
+        <span class="hidden opt-in"> to</span>
+        <span class="no-opt-in"> will</span>
+        <span> contact you about future campaigns. <a href="/privacy/" target="_blank">Privacy Policy</a></span>
+      </div>
+    </footer>
+
+    <!-- This field gets updated after geocoding IP address -->
+    <input type="hidden" name="member[country]" value="US"/>
+
+    <!-- Mothership Honeypot Bot Defense -->
+    <input class="hidden" type="checkbox" checked="checked" name="hp_enabled" />
+    <input class="hidden" type="checkbox" name="hp_disabled" />
+    <input class="hidden" type="text" name="guard" />
+
+    <!-- Mothership -->
+    <input type="hidden" name="contact_congress" value="0"/>
+    <input type="hidden" name="org" value="fftf"/>
+
+    <!-- Action Network -->
+    <input type="hidden" name="an_tags" value="[&quot;net-neutrality&quot;]"/>
+    <input type="hidden" name="an_petition_id" value="1cfc905d-21ab-4210-b417-64248b248d83"/>
+  </form>
+</section>
