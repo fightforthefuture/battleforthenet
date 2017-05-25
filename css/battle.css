@@ -1,15 +1,17 @@
 html {
-    background-color: #1b1b24;
-    font-family: arial, sans-serif;
-    overflow-y: scroll;
-    margin: 0;
-    overflow-x: hidden;
+  background-color: #1b1b24;
+  font-family: arial, sans-serif;
+  overflow-y: scroll;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 html, body {
-    height: 100%;
-    margin: 0;
-    width: 100%;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  color: white;
+  text-align: center;
 }
 
 * {
@@ -32,19 +34,8 @@ img {
   border: none;
 }
 
-#battle {
-    color: white;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-}
-
-#battle .no-margin {
-    margin: 0;
-}
-
-#battle h1,
-#battle > p {
+body > main {
+  position: relative;
   opacity: 0;
   transition: opacity 0.8s;
 }
@@ -55,14 +46,13 @@ p a {
 }
 
 h1 {
+  margin: 0 auto;
   font-size: 54px;
   font-weight: 700;
 }
 
 h2 {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 700px;
+  margin: 0 auto;
 }
 
 p {
@@ -93,12 +83,13 @@ p {
 }
 
 #background {
-    background-position: top center;
-    background-repeat: no-repeat;
-    height: 100%;
-    min-height: 729px;
-    position: absolute;
-    width: 100%;
+  background-image: url('/images/Imagesmall.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 729px;
+  position: absolute;
+  width: 100%;
 }
 
 .light {
@@ -180,30 +171,29 @@ header nav a {
 
 body.slow .tk-bebas-neue,
 body.slow .tk-proxima-nova {
-    font-family: arial, sans-serif !important;
+  font-family: arial, sans-serif !important;
 }
 
-body.typekit #battle h1 {
-    font-size: 40px;
+body.typekit > main h1 {
+  font-size: 40px;
 }
 
-body.typekit #battle > p {
-    font-size: 20px;
+body.typekit > main p {
+  font-size: 20px;
 }
 
-body.loaded #battle h1,
-body.loaded #battle > p {
-    opacity: 1;
+body.loaded > main {
+  opacity: 1;
 }
 
-body.loaded #battle div.form-wrapper {
-    -webkit-transition-delay: 0s;
-            transition-delay: 0s;
-    padding: 10px 10px 30px 10px;
+body.loaded .form-wrapper {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  padding: 10px 10px 30px 10px;
 }
 
-body.loaded #battle p.form-wrapper.loading {
-    opacity: 0;
+body.loaded .form-wrapper.loading {
+  opacity: 0;
 }
 
 /* Form */
@@ -359,7 +349,6 @@ body #battle #petition button:hover {
 /* Phone call form */
 form {
   margin: 0 auto;
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -1952,4 +1941,160 @@ input{
     width: 100%;
     margin: 0 0 15px;
   }
+}
+
+.day-of-action {
+  background-color: #fff;
+}
+
+.day-of-action > main {
+  background: url(/images/background-texture.png);
+  padding: 2em 0;
+}
+
+.day-of-action section {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.day-of-action h1 {
+  padding: 0.5em 0;
+  text-transform: uppercase;
+  border-style: solid;
+  border-image-source: url('/images/line1.png');
+  border-image-slice: 100% 0;
+}
+
+.day-of-action h1 strong {
+  background-color: #ff3434;
+  color: #fff;
+  padding: 0 0.2em;
+}
+
+.day-of-action, .day-of-action p {
+  color: #000;
+}
+
+.day-of-action a {
+  color: #ff3434;
+}
+
+.day-of-action .form {
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.day-of-action .form form main {
+  padding: 0 20px;
+}
+
+.day-of-action .form form input {
+  min-height: 64px;
+  margin: 10px;
+  border: 1px solid #b8b8b8;
+  border-radius: 0;
+  font-size: 18px;
+  font-weight: normal;
+  flex: 2;
+}
+
+.day-of-action .form form input:first-child {
+  margin-left: 0;
+}
+
+.day-of-action .form form input:last-child {
+  margin-right: 0;
+}
+
+.day-of-action .form form input[name="member[postcode]"] {
+  flex: 1;
+}
+
+/* These selectors only work when declared separately for some buggy reason */
+.day-of-action form ::-webkit-input-placeholder {
+  color: #b8b8b8;
+}
+
+.day-of-action form ::-moz-placeholder {
+  color: #b8b8b8;
+  opacity: 1;
+}
+
+.day-of-action form :-ms-input-placeholder {
+  color: #b8b8b8;
+}
+
+.day-of-action form ::placeholder {
+  color: #b8b8b8;
+}
+
+.day-of-action form input:focus {
+  background-color: #fdd;
+}
+
+.day-of-action .form form footer {
+  background-color: transparent;
+}
+
+.day-of-action .form form button {
+  border-radius: 0;
+  background: #ff3434;
+  text-shadow: none;
+  -webkit-box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
+  box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
+}
+
+.day-of-action .form form footer .disclaimer {
+  margin-top: 40px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000;
+}
+
+.day-of-action .form form footer .disclaimer a {
+  color: #ff3434;
+}
+
+.day-of-action .countdown {
+  max-width: 100%;
+  background-color: #4e4e4e;
+}
+
+.countdown p {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.day-of-action .faq {
+  background-color: #fff;
+  padding: 90px 0;
+}
+
+.day-of-action .faq ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.day-of-action .faq li {
+  margin: 0 0 90px;
+}
+
+.day-of-action .faq li:last-child {
+  margin-bottom: 0;
+}
+
+.day-of-action .faq h2 {
+  margin-bottom: 20px;
+  color: #ff3434;
+  text-transform: uppercase;
+}
+
+.day-of-action .faq p {
+  margin: 0 auto;
 }

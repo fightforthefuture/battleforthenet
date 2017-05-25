@@ -159,22 +159,25 @@ PetitionForm.prototype.addEventListeners = function() {
   });
 
   var textarea = form.querySelector('textarea');
-  var placeholder = 'Dear FCC,\n\n';
-  textarea.placeholder = textarea.value;
 
-  form.querySelector('.edit').addEventListener('click', function(e) {
-    e.preventDefault();
+  if (textarea) {
+    var placeholder = 'Dear FCC,\n\n';
+    textarea.placeholder = textarea.value;
 
-    textarea.value = placeholder;
-    textarea.focus();
-  });
+    form.querySelector('.edit').addEventListener('click', function(e) {
+      e.preventDefault();
 
-  textarea.addEventListener('blur', function(e) {
-    var val = textarea.value.trim();
-    if (val == placeholder.trim() || val == '') {
-      textarea.value = textarea.placeholder;
-    }
-  });
+      textarea.value = placeholder;
+      textarea.focus();
+    });
+
+    textarea.addEventListener('blur', function(e) {
+      var val = textarea.value.trim();
+      if (val == placeholder.trim() || val == '') {
+        textarea.value = textarea.placeholder;
+      }
+    });
+  }
 
   /*
     var petitionFormNode = this.DOMNode.querySelector('#petition');
