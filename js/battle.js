@@ -921,19 +921,36 @@ PetitionForm.prototype.addEventListeners = function() {
     submitted = true;
 
     var xhr = new XMLHttpRequest();
-    var formData = new FormData(form);
+    var formData;
 
 	var utmParams = new UTM();
 	if (utmParams.getSource() === 'etsy') {
-      if (formData.get('etsy_shop')) {
-        var etsyLink = 'Etsy Shop ' + formData.get('etsy_shop') + '\n\n';
-        formData.set('action_comment', etsyLink + formData.get('action_comment'));
+      var etsyLink = form.querySelector('input[name="etsy_shop"]').value;
+      var actionCommentEl = form.querySelector('textarea[name="action_comment"]');
+
+      formData = new FormData();
+
+      // Manually build the FormData object because Safari doesn't support 
+      // FormData.set for updating action_comment
+      var inputs = form.querySelectorAll('input');
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type !== 'checkbox') {
+          formData.append(inputs[i].name, form.querySelector('input[name="' + inputs[i].name + '"]').value);
+        }
       }
 
-      if (!formData.has('opt_in')) {
-        formData.set('opt_out', 1);
+      // Append honeypot checkbox values
+      formData.append('hp_enabled', 'on');
+
+      // Prepend Etsy Shop link if field is not blank
+      formData.append('action_comment', (etsyLink ? ('Etsy Shop ' + etsyLink + '\n\n') : '') + actionCommentEl.value);
+
+      if (!form.querySelector('input[name="opt_in"]').checked) {
+        formData.append('opt_out', 1);
       }
-	}
+	} else {
+      formData = new FormData(form);
+    }
 
     function handleHelperError(e) {
       /**
