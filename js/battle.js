@@ -614,6 +614,7 @@ module.exports = MobileMenu;
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 var CallForm = require('./CallForm');
+var UTM = require('./UTM');
 
 function Modals(params) {
     this.target = params.target;
@@ -663,7 +664,20 @@ Modals.prototype.hide = function(id) {
     }, 400);
 }
 
+Modals.prototype.setUTMContent = function() {
+
+}
+
 Modals.prototype.addEventListeners = function() {
+  // Hack to remove twitter-brigade modal from after-action flow
+  if ((new UTM()).getSource() === 'etsy') {
+    var twitterBrigadeEls = document.querySelectorAll('.twitter-brigade');
+
+    for (var i = 0; i < twitterBrigadeEls.length; i++) {
+      twitterBrigadeEls[i].classList.remove('twitter-brigade');
+      twitterBrigadeEls[i].classList.add('twitter');
+    }
+  }
 
     var modals = document.getElementsByClassName('overlay');
 
@@ -711,7 +725,7 @@ Modals.prototype.addEventListeners = function() {
 
 module.exports = Modals;
 
-},{"./AJAX":2,"./CallForm":3,"./Template":18}],12:[function(require,module,exports){
+},{"./AJAX":2,"./CallForm":3,"./Template":18,"./UTM":20}],12:[function(require,module,exports){
 var AJAX = require('./AJAX');
 var GUID = require('./GUID');
 

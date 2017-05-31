@@ -3,6 +3,7 @@
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 var CallForm = require('./CallForm');
+var UTM = require('./UTM');
 
 function Modals(params) {
     this.target = params.target;
@@ -52,7 +53,20 @@ Modals.prototype.hide = function(id) {
     }, 400);
 }
 
+Modals.prototype.setUTMContent = function() {
+
+}
+
 Modals.prototype.addEventListeners = function() {
+  // Hack to remove twitter-brigade modal from after-action flow
+  if ((new UTM()).getSource() === 'etsy') {
+    var twitterBrigadeEls = document.querySelectorAll('.twitter-brigade');
+
+    for (var i = 0; i < twitterBrigadeEls.length; i++) {
+      twitterBrigadeEls[i].classList.remove('twitter-brigade');
+      twitterBrigadeEls[i].classList.add('twitter');
+    }
+  }
 
     var modals = document.getElementsByClassName('overlay');
 
