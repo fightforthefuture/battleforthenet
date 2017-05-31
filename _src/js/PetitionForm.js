@@ -44,9 +44,12 @@ PetitionForm.prototype.setUTMContent = function() {
 
     // Show opt-out checkbox
     var disclaimer = document.querySelector('.disclaimer');
-    disclaimer.querySelectorAll('.opt-in').forEach(function(el) {
-      el.classList.remove('hidden');
-    });
+
+    var optInEls = disclaimer.querySelectorAll('.opt-in');
+    for (var i = 0; i < optInEls.length; i++) {
+      optInEls[i].classList.remove('hidden');
+    }
+
     disclaimer.querySelector('.no-opt-in').classList.add('hidden');
   }
 };
