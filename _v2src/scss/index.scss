@@ -59,7 +59,6 @@ div, p {
 h1 {
 	font-size: 71px;
 	margin: 20px 0;
-	text-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
 }
 
 h2 {
@@ -202,7 +201,7 @@ h2 {
 	}
 }
 
-.loader-container {
+#loader-container {
 	width: 60px;
 	margin-left: 340px;
 	margin-top: 20px;
@@ -219,6 +218,7 @@ h2 {
 		position: absolute;
 		width: 60px;
 		height: 6px;
+		transition: opacity 0.05s;
 	}
 	.ray {
 		display: block;
@@ -227,30 +227,22 @@ h2 {
 		background-color: $HEADER_COLORA;
 		border-radius: 3px;
 	}
-	.chord-1 {
-		transform: rotate(0deg);
-	}
-	.chord-2 {
-		transform: rotate(45deg);
-	}
-	.chord-3 {
-		transform: rotate(90deg);
-	}
-	.chord-4 {
-		transform: rotate(135deg);
-	}
-	.chord-5 {
-		transform: rotate(180deg);
-	}
-	.chord-6 {
-		transform: rotate(225deg);
-	}
-	.chord-7 {
-		transform: rotate(270deg);
-	}
-	.chord-8 {
-		transform: rotate(315deg);
-	}
+	.chord-a { transform: rotate(0deg); }
+	.chord-b { transform: rotate(45deg); }
+	.chord-c { transform: rotate(90deg); }
+	.chord-d { transform: rotate(135deg); }
+	.chord-e { transform: rotate(180deg); }
+	.chord-f { transform: rotate(225deg); }
+	.chord-g { transform: rotate(270deg); }
+	.chord-h { transform: rotate(315deg); }
+	.chord-0 { opacity: 1.0; }
+	.chord-1 { opacity: 0.9; }
+	.chord-2 { opacity: 0.8; }
+	.chord-3 { opacity: 0.7; }
+	.chord-4 { opacity: 0.6; }
+	.chord-5 { opacity: 0.5; }
+	.chord-6 { opacity: 0.4; }
+	.chord-7 { opacity: 0.3; }
 }
 
 .footer {
