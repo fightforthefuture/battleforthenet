@@ -1751,7 +1751,7 @@ input, textarea {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-.optout input[type="checkbox"] {
+.disclaimer input[type="checkbox"] {
   width: auto;
   height: auto;
   display: inline;

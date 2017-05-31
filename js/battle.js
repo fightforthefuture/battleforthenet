@@ -867,8 +867,8 @@ PetitionForm.prototype.setUTMContent = function() {
 
     // Show opt-out checkbox
     var disclaimer = document.querySelector('.disclaimer');
-    disclaimer.querySelector('.optout').classList.remove('hidden');
-    disclaimer.querySelector('.no-optout').classList.add('hidden');
+    disclaimer.querySelector('.opt-in').classList.remove('hidden');
+    disclaimer.querySelector('.no-opt-in').classList.add('hidden');
   }
 };
 
@@ -922,9 +922,15 @@ PetitionForm.prototype.addEventListeners = function() {
     var formData = new FormData(form);
 
 	var utmParams = new UTM();
-	if (utmParams.getSource() === 'etsy' && formData.get('etsy_shop')) {
-	  var etsyLink = 'Etsy Shop ' + formData.get('etsy_shop') + '\n\n';
-	  formData.set('action_comment', etsyLink + formData.get('action_comment'));
+	if (utmParams.getSource() === 'etsy') {
+      if (formData.get('etsy_shop')) {
+        var etsyLink = 'Etsy Shop ' + formData.get('etsy_shop') + '\n\n';
+        formData.set('action_comment', etsyLink + formData.get('action_comment'));
+      }
+
+      if (!formData.has('opt_in')) {
+        formData.set('opt_out', 1);
+      }
 	}
 
     function handleHelperError(e) {
