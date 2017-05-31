@@ -1711,7 +1711,7 @@ footer .disclaimer {
   font-size: 11px;
   margin: 0;
   padding: 8px 0;
-  line-height: 22px;
+  line-height: 16px;
   font-weight: normal;
 }
 
@@ -1749,6 +1749,12 @@ input, textarea {
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.optout input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  display: inline;
 }
 
 textarea {

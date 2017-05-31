@@ -11,6 +11,7 @@
   var MobileMenu = require('./MobileMenu');
   var Modals = require('./Modals');
   var MotherShip = require('./MotherShip');
+  var UTM = require('./UTM');
   var PetitionForm = require('./PetitionForm');
   var CallForm = require('./CallForm');
   var SimpleSection = require('./SimpleSection');
@@ -43,6 +44,42 @@
     new GoogleAnalytics();
     new MotherShip();
   }, 1200);
+
+  var utmParams = new UTM();
+  if (utmParams.getSource() === 'etsy') {
+    var intro = document.createElement('p');
+    intro.textContent = "FCC Chairman Pai wants to repeal existing net neutrality rules that allow Etsy sellers to turn their creative passion into a business. Without these protections, Etsy sellers will be forced to choose between paying for priority access or losing sales in the internet slow lane. ";
+
+    var strong = document.createElement('strong');
+    strong.textContent = "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses.";
+    intro.appendChild(strong);
+
+    // Update intro paragraph copy
+    document.querySelector('#battle > p').innerHTML = intro.innerHTML;
+
+    // Update Facebook og:url tag
+    document.querySelector('meta[property="og:url"]').setAttribute('content', 'https://www.battleforthenet.com/?utm_source=etsy');
+
+    // Override Free Progress with useCapture and stopPropagation
+	document.addEventListener('click', function(e) {
+	  var el = e.target;
+
+	  while (el && el !== document) {
+		if (el.matches('a.twitter, button.twitter')) {
+		  e.preventDefault();
+		  e.stopPropagation();
+
+          var tweet = 'Without #NetNeutrality, my @Etsy shop would lose out on economic opportunities. Tell @FCC to protect microbusinesses';
+          var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet) + '&url=' + encodeURIComponent('https://www.battleforthenet.com/?utm_source=etsy');
+          var properties = 'width=500, height=300, toolbar=no, status=no, menubar=no';
+
+          window.open(url, 'share_tw', properties);
+		}
+
+		el = el.parentNode;
+	  }
+	}, true);
+  }
 
   var params = new URLSearchParams(window.location.search.substring(1));
   if (params.get('call') || document.querySelector('.form-wrapper').classList.contains('call')) {

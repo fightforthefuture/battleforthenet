@@ -3,6 +3,7 @@
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 var OrganizationRotation = require('./OrganizationRotation');
+var UTM = require('./UTM');
 var YourSenators = require('./YourSenators');
 
 function PetitionForm(params) {
@@ -13,6 +14,7 @@ function PetitionForm(params) {
 
   this.render();
   this.setOrganization();
+  this.setUTMContent();
   this.addEventListeners();
 }
 
@@ -25,6 +27,26 @@ PetitionForm.prototype.setOrganization = function() {
   new OrganizationRotation({
     target: this.target
   });
+};
+
+// Adapt petition form for different sources or campaigns depending on UTM params
+PetitionForm.prototype.setUTMContent = function() {
+  var utmParams = new UTM();
+
+  if (utmParams.getSource() === 'etsy') {
+    var shopInput = document.createElement('input');
+    shopInput.setAttribute('name', 'etsy_shop');
+    shopInput.setAttribute('placeholder', 'Etsy Shop Link');
+
+    this.DOMNode.querySelector('form .left').appendChild(shopInput);
+
+    this.DOMNode.querySelector('form textarea').value = "Chairman Pai's proposed plan to repeal net neutrality protections would put a huge burden on microbusinesses like mine.\n\nAs an Etsy seller, net neutrality is essential to the success of my business and my ability to care for myself and my family. The FCC needs to ensure equal opportunities for microbusinesses to compete with larger and more established brands by upholding net neutrality protections.\n\nEtsy has opened the door for me and 1.8 million other sellers to turn our passion into a business by connecting us to a global market of buyers. For 32% of creative entrepreneurs on the platform, our creative business is our sole occupation. A decrease in sales in the internet slow lane or higher cost to participate in Chairman Pai's pay-to-play environment would create significant obstacles for me and other Etsy sellers to care for ourselves and our families.\n\nMoreover, 87% of Etsy sellers in the U.S. are women, and most run their microbusinesses out of their homes. By rolling back the bright line rules that ensure net neutrality, Chairman Pai is not only taking away our livelihood, he is also putting up barriers to entrepreneurship for a whole cohort of Americans.\n\nMy business growth depends on equal access to consumers. Any rule that allows broadband providers to negotiate special deals with some companies would undermine my ability to compete online.\n\nWe need a free and open internet that works for everyone, not just telecom companies that stand to benefit from the FCC's proposed rules.\n\nI'm sending this to the FCC's open proceeding and to my members of Congress. Please publicly support the FCC's existing net neutrality rules based on Title II and microbusinesses like mine.\n\nThank you!";
+
+    // Show opt-out checkbox
+    var disclaimer = document.querySelector('.disclaimer');
+    disclaimer.querySelector('.optout').classList.remove('hidden');
+    disclaimer.querySelector('.no-optout').classList.add('hidden');
+  }
 };
 
 // Load geography & politicians JSON
@@ -75,6 +97,12 @@ PetitionForm.prototype.addEventListeners = function() {
 
     var xhr = new XMLHttpRequest();
     var formData = new FormData(form);
+
+	var utmParams = new UTM();
+	if (utmParams.getSource() === 'etsy' && formData.get('etsy_shop')) {
+	  var etsyLink = 'Etsy Shop ' + formData.get('etsy_shop') + '\n\n';
+	  formData.set('action_comment', etsyLink + formData.get('action_comment'));
+	}
 
     function handleHelperError(e) {
       /**
