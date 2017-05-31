@@ -57,21 +57,30 @@
     // Update intro paragraph copy
     document.querySelector('#battle > p').innerHTML = intro.innerHTML;
 
+    var link = 'https://www.battleforthenet.com/?utm_source=etsy';
+
     // Update Facebook og:url tag
-    document.querySelector('meta[property="og:url"]').setAttribute('content', 'https://www.battleforthenet.com/?utm_source=etsy');
+    document.querySelector('meta[property="og:url"]').setAttribute('content', link);
 
     // Override Free Progress with useCapture and stopPropagation
 	document.addEventListener('click', function(e) {
 	  var el = e.target;
+      var properties = 'width=500, height=300, toolbar=no, status=no, menubar=no';
 
 	  while (el && el !== document) {
-		if (el.matches('a.twitter, button.twitter')) {
+		if (el.matches('a.facebook, button.facebook')) {
+		  e.preventDefault();
+		  e.stopPropagation();
+
+          var url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(link);
+
+          window.open(url, 'share_fb', properties);
+        } else if (el.matches('a.twitter, button.twitter')) {
 		  e.preventDefault();
 		  e.stopPropagation();
 
           var tweet = 'Without #NetNeutrality, my @Etsy shop would lose out on economic opportunities. Tell @FCC to protect microbusinesses';
-          var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet) + '&url=' + encodeURIComponent('https://www.battleforthenet.com/?utm_source=etsy');
-          var properties = 'width=500, height=300, toolbar=no, status=no, menubar=no';
+          var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet) + '&url=' + encodeURIComponent(link);
 
           window.open(url, 'share_tw', properties);
 		}
