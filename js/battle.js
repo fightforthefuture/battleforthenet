@@ -13,6 +13,7 @@
   var MobileMenu = require('./MobileMenu');
   var Modals = require('./Modals');
   var MotherShip = require('./MotherShip');
+  var UTM = require('./UTM');
   var PetitionForm = require('./PetitionForm');
   var CallForm = require('./CallForm');
   var SimpleSection = require('./SimpleSection');
@@ -45,6 +46,42 @@
     new GoogleAnalytics();
     new MotherShip();
   }, 1200);
+
+  var utmParams = new UTM();
+  if (utmParams.getSource() === 'etsy') {
+    var intro = document.createElement('p');
+    intro.textContent = "FCC Chairman Pai wants to repeal existing net neutrality rules that allow Etsy sellers to turn their creative passion into a business. Without these protections, Etsy sellers will be forced to choose between paying for priority access or losing sales in the internet slow lane. ";
+
+    var strong = document.createElement('strong');
+    strong.textContent = "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses.";
+    intro.appendChild(strong);
+
+    // Update intro paragraph copy
+    document.querySelector('#battle > p').innerHTML = intro.innerHTML;
+
+    // Update Facebook og:url tag
+    document.querySelector('meta[property="og:url"]').setAttribute('content', 'https://www.battleforthenet.com/?utm_source=etsy');
+
+    // Override Free Progress with useCapture and stopPropagation
+	document.addEventListener('click', function(e) {
+	  var el = e.target;
+
+	  while (el && el !== document) {
+		if (el.matches('a.twitter, button.twitter')) {
+		  e.preventDefault();
+		  e.stopPropagation();
+
+          var tweet = 'Without #NetNeutrality, my @Etsy shop would lose out on economic opportunities. Tell @FCC to protect microbusinesses';
+          var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet) + '&url=' + encodeURIComponent('https://www.battleforthenet.com/?utm_source=etsy');
+          var properties = 'width=500, height=300, toolbar=no, status=no, menubar=no';
+
+          window.open(url, 'share_tw', properties);
+		}
+
+		el = el.parentNode;
+	  }
+	}, true);
+  }
 
   var params = new URLSearchParams(window.location.search.substring(1));
   if (params.get('call') || document.querySelector('.form-wrapper').classList.contains('call')) {
@@ -157,7 +194,7 @@
 })();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./CallForm":3,"./Chartbeat":4,"./Countdown":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./PetitionForm":14,"./Polyfills":15,"./SimpleSection":16,"./TeamInternetSection":17,"./TownHallSection":19}],2:[function(require,module,exports){
+},{"./AJAX":2,"./CallForm":3,"./Chartbeat":4,"./Countdown":5,"./GoogleAnalytics":7,"./ImagePreloader":8,"./LoadingIcon":9,"./MobileMenu":10,"./Modals":11,"./MotherShip":12,"./PetitionForm":14,"./Polyfills":15,"./SimpleSection":16,"./TeamInternetSection":17,"./TownHallSection":19,"./UTM":20}],2:[function(require,module,exports){
 function AJAX(params) {
     this.async = params.async || true;
     this.data = params.data;
@@ -780,6 +817,7 @@ module.exports = OrganizationRotation;
 var AJAX = require('./AJAX');
 var Template = require('./Template');
 var OrganizationRotation = require('./OrganizationRotation');
+var UTM = require('./UTM');
 var YourSenators = require('./YourSenators');
 
 function PetitionForm(params) {
@@ -790,6 +828,7 @@ function PetitionForm(params) {
 
   this.render();
   this.setOrganization();
+  this.setUTMContent();
   this.addEventListeners();
 }
 
@@ -802,6 +841,26 @@ PetitionForm.prototype.setOrganization = function() {
   new OrganizationRotation({
     target: this.target
   });
+};
+
+// Adapt petition form for different sources or campaigns depending on UTM params
+PetitionForm.prototype.setUTMContent = function() {
+  var utmParams = new UTM();
+
+  if (utmParams.getSource() === 'etsy') {
+    var shopInput = document.createElement('input');
+    shopInput.setAttribute('name', 'etsy_shop');
+    shopInput.setAttribute('placeholder', 'Etsy Shop Link');
+
+    this.DOMNode.querySelector('form .left').appendChild(shopInput);
+
+    this.DOMNode.querySelector('form textarea').value = "Chairman Pai's proposed plan to repeal net neutrality protections would put a huge burden on microbusinesses like mine.\n\nAs an Etsy seller, net neutrality is essential to the success of my business and my ability to care for myself and my family. The FCC needs to ensure equal opportunities for microbusinesses to compete with larger and more established brands by upholding net neutrality protections.\n\nEtsy has opened the door for me and 1.8 million other sellers to turn our passion into a business by connecting us to a global market of buyers. For 32% of creative entrepreneurs on the platform, our creative business is our sole occupation. A decrease in sales in the internet slow lane or higher cost to participate in Chairman Pai's pay-to-play environment would create significant obstacles for me and other Etsy sellers to care for ourselves and our families.\n\nMoreover, 87% of Etsy sellers in the U.S. are women, and most run their microbusinesses out of their homes. By rolling back the bright line rules that ensure net neutrality, Chairman Pai is not only taking away our livelihood, he is also putting up barriers to entrepreneurship for a whole cohort of Americans.\n\nMy business growth depends on equal access to consumers. Any rule that allows broadband providers to negotiate special deals with some companies would undermine my ability to compete online.\n\nWe need a free and open internet that works for everyone, not just telecom companies that stand to benefit from the FCC's proposed rules.\n\nI'm sending this to the FCC's open proceeding and to my members of Congress. Please publicly support the FCC's existing net neutrality rules based on Title II and microbusinesses like mine.\n\nThank you!";
+
+    // Show opt-out checkbox
+    var disclaimer = document.querySelector('.disclaimer');
+    disclaimer.querySelector('.optout').classList.remove('hidden');
+    disclaimer.querySelector('.no-optout').classList.add('hidden');
+  }
 };
 
 // Load geography & politicians JSON
@@ -852,6 +911,12 @@ PetitionForm.prototype.addEventListeners = function() {
 
     var xhr = new XMLHttpRequest();
     var formData = new FormData(form);
+
+	var utmParams = new UTM();
+	if (utmParams.getSource() === 'etsy' && formData.get('etsy_shop')) {
+	  var etsyLink = 'Etsy Shop ' + formData.get('etsy_shop') + '\n\n';
+	  formData.set('action_comment', etsyLink + formData.get('action_comment'));
+	}
 
     function handleHelperError(e) {
       /**
@@ -1068,7 +1133,8 @@ PetitionForm.prototype.addEventListeners = function() {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./OrganizationRotation":13,"./Template":18,"./YourSenators":20}],15:[function(require,module,exports){
+},{"./AJAX":2,"./OrganizationRotation":13,"./Template":18,"./UTM":20,"./YourSenators":21}],15:[function(require,module,exports){
+// Polyfill URLSearchParams
 function URLSearchParams(queryString) {
   this.queryObj = queryString.split('&').reduce(function(obj, val) {
     var parts = val.split('=');
@@ -1077,11 +1143,29 @@ function URLSearchParams(queryString) {
   }, {});
 }
 
+URLSearchParams.prototype.has = function has(key) {
+  return this.queryObj.hasOwnProperty(key);
+}
+
 URLSearchParams.prototype.get = function get(key) {
   return this.queryObj[key];
 }
 
 window.URLSearchParams = window.URLSearchParams || URLSearchParams;
+
+// Polyfill matches selector
+Element.prototype.matches = Element.prototype.matches ||
+  Element.prototype.matchesSelector || 
+  Element.prototype.mozMatchesSelector ||
+  Element.prototype.msMatchesSelector || 
+  Element.prototype.oMatchesSelector || 
+  Element.prototype.webkitMatchesSelector ||
+  function(s) {
+    var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+      i = matches.length;
+    while (--i >= 0 && matches.item(i) !== this) {}
+    return i > -1;            
+  };
 
 },{}],16:[function(require,module,exports){
 var Template = require('./Template');
@@ -1327,6 +1411,23 @@ TownHallSection.prototype.loadWidget = function loadWidget() {
 module.exports = TownHallSection;
 
 },{"./SimpleSection":16}],20:[function(require,module,exports){
+'use strict';
+
+function UTM() {
+  this.params = new URLSearchParams(window.location.search.substring(1));
+}
+
+UTM.prototype.getSource = function() {
+  return this.params.has('utm_source') ? this.params.get('utm_source') : '';
+};
+
+UTM.prototype.getCampaign = function() {
+  return this.params.has('utm_campaign') ? this.params.get('utm_campaign') : '';
+};
+
+module.exports = UTM;
+
+},{}],21:[function(require,module,exports){
 function YourSenators(params) {
     params.callback();
 }
