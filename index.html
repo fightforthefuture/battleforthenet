@@ -63,7 +63,7 @@
 					<div>
 						<textarea name="comments"></textarea>
 					</div>
-					<button>Send Letter</button>
+					<button class="btn">Send Letter</button>
 					<span class="note"><em>Demand Progress</em> and <em>Fight for the Future</em> will contact you about future campaigns. <a>Privacy Policy</a></span>
 				</form>
 			</div>
@@ -160,6 +160,11 @@
 				</p>
 			</div>
 		</div>
+		<div>
+			<div id="persistent-button">
+				<a href="#" class="btn">Send Letter</a>
+			</div>
+		</div>
 	</div>
 <script type="text/javascript" src="v2dist/bundle.js"></script>
 
@@ -175,8 +180,8 @@
 			document.getElementById("loader-container")
 		);
 		ScrollToggler.wrapElement(
-			document.getElementById("action-form"),
-			250
+			document.getElementById("persistent-button"),
+			550
 		);
 		mountComponent(
 			React.createElement(VideoRollComponent, {videos: [

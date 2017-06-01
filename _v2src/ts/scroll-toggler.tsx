@@ -21,7 +21,7 @@ export class ScrollToggler extends React.Component<Props, State> {
 		this.state = {
 			toggle: false
 		}
-		this._handleScroll = _.debounce(this.handleScroll.bind(this), 100);
+		this._handleScroll = _.debounce(this.handleScroll.bind(this), 50);
 	}
 	componentDidMount() {
 		window.addEventListener('scroll', this._handleScroll);
@@ -31,7 +31,7 @@ export class ScrollToggler extends React.Component<Props, State> {
 	}
 	handleScroll() {
 		this.setState({
-			toggle: (document.documentElement.scrollTop > this.props.top)
+			toggle: ((document.documentElement.scrollTop || window.scrollY) > this.props.top)
 		});
 	}
 	render() {
