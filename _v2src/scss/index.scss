@@ -124,6 +124,11 @@ h2 {
 	div {
 		margin-bottom: 5px;
 	}
+	.arrow {
+		position: absolute;
+		top: 235px;
+		left: -140px;
+	}
 	input {
 		font-family: "Montserrat", sans-serif;
 		font-weight: bold;
@@ -302,6 +307,7 @@ h2 {
 		color: $WHITE_BRIGHT;
 		text-decoration: none;
 		display: inline-block;
+		cursor: pointer;
 		padding: 15px 20px;
 		line-height: 30px;
 		border-radius: 5px;
@@ -315,10 +321,16 @@ h2 {
 	}
 	.facebook {
 		background-color: #3b5999;
+		&:hover {
+			background-color: desaturate(#3b5999, 20%);
+		}
 	}
 	.twitter {
 		margin-left: 15px;
 		background-color: #4099ff;
+		&:hover {
+			background-color: desaturate(#4099ff, 20%);
+		}
 	}
 }
 .extra-reading {
@@ -359,6 +371,9 @@ button.btn, a.btn {
 	background-color: $RED;
 	color: $WHITE_BRIGHT;
 	cursor: pointer;
+	&:hover {
+		background-color: desaturate($RED, 20%);
+	}
 }
 .no-overflow {
 	overflow: hidden;
