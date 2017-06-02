@@ -7,6 +7,7 @@ import {TestComponent} from './test';
 import {StatsComponent} from './stats';
 import {VideoRollComponent} from './video-roll';
 import {ScrollToggler} from './scroll-toggler';
+import {SelectOnFocus} from './select-on-focus';
 import {LoaderLogo} from './loader-logo';
 import {mountComponent} from './utils';
 
@@ -18,5 +19,6 @@ window['TestComponent'] = TestComponent;
 window['StatsComponent'] = StatsComponent;
 window['VideoRollComponent'] = VideoRollComponent;
 window['ScrollToggler'] = ScrollToggler;
+window['SelectOnFocus'] = SelectOnFocus;
 window['LoaderLogo'] = LoaderLogo;
 window['mountComponent'] = mountComponent;

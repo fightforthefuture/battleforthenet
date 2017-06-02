@@ -1,7 +1,7 @@
 @import "normalize";
 
-$PAGE_WIDTH: 875px;
-$TEXT_WIDTH: 775px;
+$PAGE_WIDTH: 800px;
+$TEXT_WIDTH: $PAGE_WIDTH;
 $BODY_BGCOLOR: #171629;
 $STATS_BGCOLOR: #111120;
 $STATS_HEIGHT: 52px;
@@ -13,6 +13,8 @@ $HEADER_COLORB: #6d69ff;
 $WHITE: #CCCAEA;
 $WHITE_BRIGHT: #FFF;
 $RED: #f94220;
+
+$VIDEO_WIDTH: 300px;
 
 * {
 	box-sizing: border-box;
@@ -29,6 +31,7 @@ body {
 }
 
 #stats {
+	text-align: center;
 	background-color: $STATS_BGCOLOR;
 	height: $STATS_HEIGHT;
 	line-height: $STATS_HEIGHT;
@@ -57,6 +60,7 @@ div, p {
 }
 
 h1 {
+	text-align: center;
 	font-size: 71px;
 	margin: 20px 0;
 }
@@ -65,7 +69,6 @@ h2 {
 	font-size: 36px;
 	margin-top: 2em;
 	margin-left: -2px;
-	text-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 .unit {
@@ -113,10 +116,10 @@ h2 {
 }
 
 #action-form {
-	width: 235px;
+	width: 265px;
 	position: absolute;
 	top: 190px;
-	left: 525px;
+	left: 535px;
 	div {
 		margin-bottom: 5px;
 	}
@@ -136,13 +139,17 @@ h2 {
 		width: 100%;
 		border-radius: 4px;
 		border: none;
+		padding: 15px 10px;
 	}
 	.address {
 		width: 165px;
 	}
 	.zip {
-		width: 64px;
+		width: 94px;
 		margin-left: 1px;
+	}
+	textarea {
+		height: 100px;
 	}
 	.note {
 		margin-top: 1em;
@@ -186,9 +193,7 @@ h2 {
 #loader-container {
 	width: 60px;
 	height: 60px;
-	margin-left: 340px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px auto;
 	position: relative;
 }
 .loader {
@@ -241,33 +246,33 @@ h2 {
 
 #video-roll {
 	position: relative;
-	width: 600px;
-	height: 400px;
+	width: $VIDEO_WIDTH;
+	height: 200px;
 	.controls {
 		position: absolute;
 		z-index: 9;
 		font-size: 70px;
 		.prev, .next {
 			position: absolute;
-			top: 120px;
+			top: 40px;
 			cursor: pointer;
 		}
 		.prev {
 			left: -60px;
 		}
 		.next {
-			left: 620px;
+			left: $VIDEO_WIDTH + 20px;
 		}
 	}
 	.video {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 600px;
+		width: $VIDEO_WIDTH;
 		transition: left 0.25s, opacity 0.25s ease-in;
 		img {
-			width: 600px;
-			height: 320px;
+			width: $VIDEO_WIDTH;
+			height: 160px;
 			opacity: 1;
 			transition: opacity 0.2s;
 			border-radius: 8px;
@@ -287,7 +292,7 @@ h2 {
 			text-align: center;
 			position: absolute;
 			font-size: 50px;
-			top: 130px;
+			top: 50px;
 			width: 100%;
 			color: white;
 			cursor: pointer;
@@ -299,40 +304,40 @@ h2 {
 		}
 	}
 	.video-prev {
-		left: -610px;
+		left: -10px - $VIDEO_WIDTH;
 		img {
 			opacity: 0.5;
 		}
 	}
 	.video-next {
-		left: 610px;
+		left: 10px + $VIDEO_WIDTH;
 		img {
 			opacity: 0.5;
 		}
 	}
 	.video-prev.fadein-enter {
-		left: -1220px;
+		left: -20px - $VIDEO_WIDTH - $VIDEO_WIDTH;
 	}
 	.video-prev.fadein-enter-active {
-		left: -610px;
+		left: -10px - $VIDEO_WIDTH;
 	}
 	.video-next.fadein-enter {
-		left: 1220px;
+		left: 20px + $VIDEO_WIDTH + $VIDEO_WIDTH;
 	}
 	.video-next.fadein-enter-active {
-		left: 610px;
+		left: 10px + $VIDEO_WIDTH;
 	}
 	.video-prev.fadein-leave {
-		left: -610px;
+		left: -10px - $VIDEO_WIDTH;
 	}
 	.video-prev.fadein-leave-active {
-		left: -1220x;
+		left: -20px - $VIDEO_WIDTH - $VIDEO_WIDTH;
 	}
 	.video-next.fadein-leave {
-		left: 610px;
+		left: 10px + $VIDEO_WIDTH;
 	}
 	.video-next.fadein-leave-active {
-		left: 1220px;
+		left: 20px + $VIDEO_WIDTH + $VIDEO_WIDTH;
 	}
 }
 .the-problem {
