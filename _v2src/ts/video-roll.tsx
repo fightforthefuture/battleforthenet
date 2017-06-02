@@ -79,8 +79,12 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		var l = this.props.active_items * (this.props.width + this.props.padding);
 		return (
 			<div className="controls">
-				<a className="prev" onClick={this.onPrev.bind(this)} style={{left: -50}}>{"\u00AB"}</a>
-				<a className="next" onClick={this.onNext.bind(this)} style={{left: l}}>{"\u00BB"}</a>
+				<a className="prev" onClick={this.onPrev.bind(this)} style={{left: -60}}>
+					<span className="oi" data-glyph="caret-left" title="previous" aria-hidden="true"></span>
+				</a>
+				<a className="next" onClick={this.onNext.bind(this)} style={{left: l}}>
+					<span className="oi" data-glyph="caret-right" title="next" aria-hidden="true"></span>
+				</a>
 			</div>
 		);
 	}
@@ -100,7 +104,9 @@ export class VideoRollComponent extends React.Component<Props, State> {
 			this.setOpen(idx);
 		};
 		return <div className="video" key={"video-" + idx} style={{left: left, width: this.props.width, opacity: opacity}}>
-			<div className="play" onClick={openVideo.bind(this)}>PLAY</div>
+			<div className="play" onClick={openVideo.bind(this)}>
+				<span className="oi" data-glyph="play-circle" title="play" aria-hidden="true"></span>
+			</div>
 			<img src={video.thumb} style={{left: left, width: this.props.width, height: this.props.height }} />
 			<p>
 				<span>{video.heading}</span>
@@ -126,7 +132,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 				<div className="video-modal">
 					<div className="modal-background"></div>
 					<div className="modal-close" onClick={this.closeModal.bind(this)}>
-						X
+						<span className="oi" data-glyph="circle-x" title="close" aria-hidden="true"></span>
 					</div>
 					<div className="modal-content-container">
 						<div className="modal-content">
