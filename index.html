@@ -49,20 +49,21 @@
 			future. <em>Before you do anything else, send a letter to the FCC now</em></p>
 
 			<div>
-				<form id="action-form">
+				<form id="action-form" method="POST" action="https://queue.fightforthefuture.org/action">
+					<input type="hidden" name="subject" value="Protect Net Neutrality!" />
 					<img class="arrow" src="/images/red-arrow.png" />
 					<div>
-						<input name="name" placeholder="Name" />
+						<input name="member[first_name]" placeholder="Name" autocomplete="name" required />
 					</div>
 					<div>
-						<input name="email" placeholder="E-mail" />
+						<input name="member[email]" placeholder="E-mail" required />
 					</div>
 					<div class="address-line">
-						<input class="address" name="address" placeholder="Address" />
-						<input class="zip" name="zip" placeholder="Zip" />
+						<input name="member[street_address]" class="address" placeholder="Address" required />
+						<input name="member[postcode]" class="zip" placeholder="Zip" required />
 					</div>
 					<div>
-						<textarea name="comments">The FCC's Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
+						<textarea name="action_comment" required>The FCC's Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
 
 I don't want ISPs to have the power to block websites, slow them down, give some sites an advantage over others, or split the Internet into "fast lanes" for companies that pay and "slow lanes" for the rest.
 
@@ -220,50 +221,50 @@ Thank you!</textarea>
 				{
 					heading: "John Oliver",
 					subHeading: "Comedian. British.",
-					thumb: "/images/share_images/battle1.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Bernie Sanders",
 					subHeading: "Socialist.",
-					thumb: "/images/share_images/battle2.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Brad Burnham",
 					subHeading: "Investor. Capitalist.",
-					thumb: "/images/share_images/battle3.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Brad Burnham",
 					subHeading: "Investor. Capitalist.",
-					thumb: "/images/share_images/battle3.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Brad Burnham",
 					subHeading: "Investor. Capitalist.",
-					thumb: "/images/share_images/battle3.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Brad Burnham",
 					subHeading: "Investor. Capitalist.",
-					thumb: "/images/share_images/battle3.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Brad Burnham",
 					subHeading: "Investor. Capitalist.",
-					thumb: "/images/share_images/battle3.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					thumb: "/images/share_images/john-oliver.png",
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				},
 				{
 					heading: "Malkia Vyril.",
 					subHeading: "Civil rights activist.",
 					thumb: "/images/share_images/john-oliver.png",
-					video: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					video: "https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
 				}
 			], 
 				width: 250,

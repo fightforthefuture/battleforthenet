@@ -119,18 +119,25 @@ export class VideoRollComponent extends React.Component<Props, State> {
 			this.renderVideo(4)
 		];
 	}
-	renderModalContents(): JSX.Element {
-		return (
-			<div className="video-modal">
-				<div className="modal-background"></div>
-				<div className="modal-close" onClick={this.closeModal.bind(this)}>
-					X
+	renderModalContents(): JSX.Element|null {
+		if (typeof this.state.open === "number") {
+			const video = this.props.videos[this.state.open];
+			return (
+				<div className="video-modal">
+					<div className="modal-background"></div>
+					<div className="modal-close" onClick={this.closeModal.bind(this)}>
+						X
+					</div>
+					<div className="modal-content-container">
+						<div className="modal-content">
+							<iframe width="640" height="360" src={video.video} frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
 				</div>
-				<div className="modal-content-container">
-					<div className="modal-content"></div>
-				</div>
-			</div>
-		);
+			);
+		} else {
+			return null;
+		}
 	}
 	renderModal(): JSX.Element {
 		return <ReactTransitionGroup.CSSTransitionGroup
@@ -141,7 +148,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 			transitionEnter={true}
 			transitionEnterTimeout={500}
 			transitionLeaveTimeout={500}>
-			{ _.isNull(this.state.open) ? null : this.renderModalContents() }
+			{ this.renderModalContents() }
 		</ReactTransitionGroup.CSSTransitionGroup>
 	}
 	render() {
