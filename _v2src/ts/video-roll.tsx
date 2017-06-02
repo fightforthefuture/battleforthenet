@@ -4,16 +4,11 @@ import * as React from 'react';
 import * as ReactTransitionGroup from 'react-transition-group';
 import * as _ from 'lodash';
 
-function incr(v: number, l: number): number {
-	return (v + 1) % l;
-}
-
-function decr(v: number, l: number): number {
-	var ret = v - 1;
-	if (ret < 0) {
-		return ret + l;
+function clamp(v: number, l: number): number {
+	if (v < 0) {
+		return v + l;
 	}
-	return ret;
+	return v % l;
 }
 
 interface VideoSpec {
@@ -25,45 +20,88 @@ interface VideoSpec {
 
 interface Props {
 	videos: VideoSpec[]
+	width: number
+	height: number
+	padding: number
+	active_items: number
 }
 
 interface State {
 	active: number
+	open: number | null
 }
 
 export class VideoRollComponent extends React.Component<Props, State> {
 	constructor(props:Props) {
 		super(props);
 		this.state = {
-			active: 0
+			active: 0,
+			open: null
 		};
 	}
 	onPrev(evt: Event): void {
+		evt.preventDefault();
+		evt.stopPropagation();
 		this.setState((prevState) => {
 			return {
-				active: incr(prevState.active, this.props.videos.length)
+				active: clamp(prevState.active - 1, this.props.videos.length),
+				open: prevState.open
 			}
 		});
 	}
 	onNext(evt: Event): void {
+		evt.preventDefault();
+		evt.stopPropagation();
 		this.setState((prevState) => {
 			return {
-				active: decr(prevState.active, this.props.videos.length)
-			}
+				active: clamp(prevState.active + 1, this.props.videos.length),
+				open: prevState.open
+			};
+		});
+	}
+	closeModal(evt: Event): void {
+		this.setState((prevState) => {
+			return {
+				active: prevState.active,
+				open: null
+			};
+		});
+	}
+	setOpen(i: number): void {
+		this.setState((prevState) => {
+			return {
+				active: prevState.active,
+				open: i
+			};
 		});
 	}
 	renderControls(): JSX.Element {
+		var l = this.props.active_items * (this.props.width + this.props.padding);
 		return (
 			<div className="controls">
-				<a className="prev" onClick={this.onPrev.bind(this)}>{"\u00AB"}</a>
-				<a className="next" onClick={this.onNext.bind(this)}>{"\u00BB"}</a>
+				<a className="prev" onClick={this.onPrev.bind(this)} style={{left: -50}}>{"\u00AB"}</a>
+				<a className="next" onClick={this.onNext.bind(this)} style={{left: l}}>{"\u00BB"}</a>
 			</div>
 		);
 	}
-	renderVideo(video: VideoSpec, idx: number, className: string): JSX.Element {
-		return <div className={"video " + className} key={"video-" + idx}>
-			<div className="play">PLAY</div>
-			<img src={video.thumb} />
+	renderVideo(offset: number): JSX.Element {
+		var n = this.props.videos.length;
+		var idx = clamp(this.state.active + offset, n)
+		var video = this.props.videos[idx];
+		var left = offset * (this.props.width + this.props.padding);
+		var opacity = 1.0;
+		if (offset < 0) {
+			opacity = Math.max(0, 1.0 + (offset * 0.75));
+		} else if (offset > 2) {
+			opacity = Math.min(1.0, 1.0 - ((offset - 2) * 0.75));
+		}
+		var openVideo = function(evt: Event) {
+			evt.preventDefault();
+			this.setOpen(idx);
+		};
+		return <div className="video" key={"video-" + idx} style={{left: left, width: this.props.width, opacity: opacity}}>
+			<div className="play" onClick={openVideo.bind(this)}>PLAY</div>
+			<img src={video.thumb} style={{left: left, width: this.props.width, height: this.props.height }} />
 			<p>
 				<span>{video.heading}</span>
 				{video.subHeading}
@@ -71,30 +109,47 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		</div>;
 	}
 	renderVideos(): JSX.Element[] {
-		const l = this.props.videos.length;
-		const i = this.state.active;
-		const next = incr(i, l);
-		const prev = decr(i, l);
 		return [
-			this.renderVideo(this.props.videos[prev], prev, "video-prev"),
-			this.renderVideo(this.props.videos[i], i, "video-active"),
-			this.renderVideo(this.props.videos[next], next, "video-next"),
+			this.renderVideo(-2),
+			this.renderVideo(-1),
+			this.renderVideo(0),
+			this.renderVideo(1),
+			this.renderVideo(2),
+			this.renderVideo(3),
+			this.renderVideo(4)
 		];
+	}
+	renderModalContents(): JSX.Element {
+		return (
+			<div className="video-modal">
+				<div className="modal-background"></div>
+				<div className="modal-close" onClick={this.closeModal.bind(this)}>
+					X
+				</div>
+				<div className="modal-content-container">
+					<div className="modal-content"></div>
+				</div>
+			</div>
+		);
+	}
+	renderModal(): JSX.Element {
+		return <ReactTransitionGroup.CSSTransitionGroup
+			component="div"
+			transitionName="fadein"
+			transitionAppear={true}
+			transitionAppearTimeout={500}
+			transitionEnter={true}
+			transitionEnterTimeout={500}
+			transitionLeaveTimeout={500}>
+			{ _.isNull(this.state.open) ? null : this.renderModalContents() }
+		</ReactTransitionGroup.CSSTransitionGroup>
 	}
 	render() {
 		return (
 			<div>
 				{this.renderControls()}
-				<ReactTransitionGroup.CSSTransitionGroup
-					component="div"
-					transitionName="fadein"
-					transitionAppear={true}
-					transitionAppearTimeout={500}
-					transitionEnter={true}
-					transitionEnterTimeout={500}
-					transitionLeaveTimeout={500}>
-					{this.renderVideos()}
-				</ReactTransitionGroup.CSSTransitionGroup>
+				{this.renderVideos()}
+				{this.renderModal()}
 			</div>
 		);
 	}

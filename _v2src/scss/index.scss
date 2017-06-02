@@ -15,6 +15,7 @@ $WHITE_BRIGHT: #FFF;
 $RED: #f94220;
 
 $VIDEO_WIDTH: 300px;
+$VIDEO_PADD: 10px;
 
 * {
 	box-sizing: border-box;
@@ -246,8 +247,7 @@ h2 {
 
 #video-roll {
 	position: relative;
-	width: $VIDEO_WIDTH;
-	height: 200px;
+	height: 240px;
 	.controls {
 		position: absolute;
 		z-index: 9;
@@ -257,24 +257,13 @@ h2 {
 			top: 40px;
 			cursor: pointer;
 		}
-		.prev {
-			left: -60px;
-		}
-		.next {
-			left: $VIDEO_WIDTH + 20px;
-		}
 	}
 	.video {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: $VIDEO_WIDTH;
-		transition: left 0.25s, opacity 0.25s ease-in;
+		transition: left 0.25s ease-in, opacity 0.25s ease-in;
 		img {
-			width: $VIDEO_WIDTH;
-			height: 160px;
-			opacity: 1;
-			transition: opacity 0.2s;
 			border-radius: 8px;
 			box-shadow:
 				0 -1px 5px rgba(0, 0, 0, 0.4),
@@ -297,47 +286,9 @@ h2 {
 			color: white;
 			cursor: pointer;
 		}
-	}
-	.video-active {
 		&:hover .play {
 			display: block;
 		}
-	}
-	.video-prev {
-		left: -10px - $VIDEO_WIDTH;
-		img {
-			opacity: 0.5;
-		}
-	}
-	.video-next {
-		left: 10px + $VIDEO_WIDTH;
-		img {
-			opacity: 0.5;
-		}
-	}
-	.video-prev.fadein-enter {
-		left: -20px - $VIDEO_WIDTH - $VIDEO_WIDTH;
-	}
-	.video-prev.fadein-enter-active {
-		left: -10px - $VIDEO_WIDTH;
-	}
-	.video-next.fadein-enter {
-		left: 20px + $VIDEO_WIDTH + $VIDEO_WIDTH;
-	}
-	.video-next.fadein-enter-active {
-		left: 10px + $VIDEO_WIDTH;
-	}
-	.video-prev.fadein-leave {
-		left: -10px - $VIDEO_WIDTH;
-	}
-	.video-prev.fadein-leave-active {
-		left: -20px - $VIDEO_WIDTH - $VIDEO_WIDTH;
-	}
-	.video-next.fadein-leave {
-		left: 10px + $VIDEO_WIDTH;
-	}
-	.video-next.fadein-leave-active {
-		left: 20px + $VIDEO_WIDTH + $VIDEO_WIDTH;
 	}
 }
 .the-problem {
@@ -411,4 +362,43 @@ button.btn, a.btn {
 }
 .no-overflow {
 	overflow: hidden;
+}
+.video-modal {
+	position: fixed;
+	z-index: 20;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	.modal-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		opacity: 0.6;
+	}
+	.modal-close {
+		position: absolute;
+		font-size: 30px;
+		top: 10px;
+		right: 10px;
+		cursor: pointer;
+	}
+	.modal-content-container {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		top: 50%;
+	}
+	.modal-content {
+		position: relative;
+		width: 500px;
+		height: 500px;
+		max-width: 100%;
+		max-height: 100%;
+		background-color: white;
+		margin: -250px auto 0;
+	}
 }
