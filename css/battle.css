@@ -371,7 +371,7 @@ form label {
   color: #333;
 }
 
-form input, form textarea {
+input, textarea {
   border: 1px solid #ccc;
   border-radius: 3px;
   color: #505073;
@@ -380,23 +380,19 @@ form input, form textarea {
   padding: 6px 12px;
 }
 
-form input {
+input {
   height: 35px;
   line-height: 35px;
   font-weight: bold;
 }
 
-form textarea {
+textarea {
   min-width: 100%;
   min-height: 100%;
 }
 
 form section input, form section button {
   width: 100%;
-}
-
-form button {
-  margin: 0;
 }
 
 @media screen and (min-width: 500px) {
@@ -1453,8 +1449,7 @@ form main {
   text-align: center;
 }
 
-form input,
-form textarea {
+input, textarea {
   margin-bottom: 15px;
   border: 0;
   border-bottom: 1px solid #d1d1e9;
@@ -1467,8 +1462,7 @@ form textarea {
 }
 
 @media only screen and (min-width: 768px) {
-  form input,
-  form textarea {
+  input, textarea {
     margin-bottom: 10px;
   }
 }
@@ -1491,14 +1485,13 @@ form ::placeholder {
   color: #645fa2;
 }
 
-form input:focus,
-form textarea:focus {
+input:focus, textarea:focus {
   background-color: #eef;
   border-bottom: 1px solid #d1d1e9;
   box-shadow: none
 }
 
-form textarea {
+textarea {
   border-bottom: 0;
   color: #645fa2;
   font-size: 14px;
@@ -1508,22 +1501,22 @@ form textarea {
   resize: none;
 }
 
-form textarea::-webkit-scrollbar {
+textarea::-webkit-scrollbar {
   width: 11px;
 }
 
-form textarea::-webkit-scrollbar-track {
+textarea::-webkit-scrollbar-track {
   border-radius: 5px;
 }
 
-form textarea::-webkit-scrollbar-thumb {
+textarea::-webkit-scrollbar-thumb {
   min-height: 28px;
   border: 2px solid white;
   border-radius: 5px;
   background: rgba(0,0,0,0.5);
 }
 
-form textarea::-webkit-scrollbar:hover {
+textarea::-webkit-scrollbar:hover {
   background: rgba(0,0,0,0.05);
   border-left: 1px solid rgba(0,0,0,0.1);
 }
@@ -1611,7 +1604,7 @@ form footer {
   clear: both;
 }
 
-form button {
+button {
   border: 0;
   box-shadow: 0 2px 1px rgba(36,95,82,.7);
   color: #fff;
@@ -1633,24 +1626,24 @@ form button {
 }
 
 @media only screen and (min-width: 480px) {
-  form button {
+  button {
     font-size: 26px
   }
 }
 
-form button:hover,
-form button:focus {
+button:hover,
+button:focus {
   box-shadow: 0 2px 4px rgba(36,95,82,.8);
   opacity: .92
 }
 
-.modal form input {
+.modal input {
   height: 64px;
   font-size: 18px;
   flex: 3;
 }
 
-.modal form button {
+.modal button {
   margin-left: 10px;
   flex: 2;
 }
@@ -1697,13 +1690,14 @@ form button:focus {
 
 .modal footer button {
   margin: 15px 20px 0; 
+  position: relative;
 }
 
 .modal footer button img {
   width: 48px;
   position: absolute;
-  top: 22px;
-  left: 180px;
+  top: 8px;
+  left: 170px;
 }
 
 footer .disclaimer {
@@ -1984,13 +1978,33 @@ input{
   background-color: transparent;
 }
 
-.day-of-action .form form main {
+.day-of-action form main {
   padding: 0 20px;
+  display: block;
 }
 
-.day-of-action .form form input {
+.day-of-action form section {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0;
+  display: flex;
+}
+
+.day-of-action form section.comment {
+  display: block;
+}
+
+.day-of-action form section.comment.hidden {
+  display: none;
+}
+
+.day-of-action form section.comment label {
+  margin-bottom: 10px;
+}
+
+.day-of-action input {
   min-height: 64px;
-  margin: 10px;
+  margin: 0 10px;
   border: 1px solid #b8b8b8;
   border-radius: 0;
   font-size: 18px;
@@ -1998,16 +2012,26 @@ input{
   flex: 2;
 }
 
-.day-of-action .form form input:first-child {
+.day-of-action input:first-child {
   margin-left: 0;
 }
 
-.day-of-action .form form input:last-child {
+.day-of-action input:last-child {
   margin-right: 0;
 }
 
-.day-of-action .form form input[name="member[postcode]"] {
+.day-of-action input[name="member[postcode]"] {
   flex: 1;
+}
+
+.day-of-action input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  flex: none;
+}
+
+.day-of-action input:focus, .day-of-action textarea:focus {
+  background-color: #fdd;
 }
 
 /* These selectors only work when declared separately for some buggy reason */
@@ -2028,15 +2052,24 @@ input{
   color: #b8b8b8;
 }
 
-.day-of-action form input:focus {
-  background-color: #fdd;
+.day-of-action label {
+  width: initial;
+  height: initial;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: initial;
+  color: inherit;
+  clip: initial;
+  overflow: initial;
+  text-align: left;
 }
 
-.day-of-action .form form footer {
+.day-of-action form footer {
   background-color: transparent;
 }
 
-.day-of-action .form form button {
+.day-of-action button {
   border-radius: 0;
   background: #ff3434;
   text-shadow: none;
@@ -2045,26 +2078,26 @@ input{
   box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
 }
 
-.day-of-action .form form footer .disclaimer {
+.day-of-action form footer .disclaimer {
   margin-top: 40px;
   font-size: 12px;
   line-height: 18px;
   color: #000;
 }
 
-.day-of-action .form form footer .disclaimer a {
+.day-of-action form footer .disclaimer a {
   color: #ff3434;
 }
 
 .day-of-action .countdown {
   max-width: 100%;
+  padding: 20px;
   background-color: #4e4e4e;
 }
 
 .countdown p {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
   color: #fff;
   font-size: 16px;
   line-height: 20px;

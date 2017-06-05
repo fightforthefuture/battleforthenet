@@ -1006,9 +1006,10 @@ PetitionForm.prototype.addEventListeners = function() {
     xhr.send(formData);
   });
 
-  var textarea = form.querySelector('textarea');
+  var textarea;
 
-  if (textarea) {
+  if (form.querySelector('textarea[name="action_comment"]')) {
+    textarea = form.querySelector('textarea[name="action_comment"]');
     var placeholder = 'Dear FCC,\n\n';
     textarea.placeholder = textarea.value;
 
@@ -1023,6 +1024,14 @@ PetitionForm.prototype.addEventListeners = function() {
       var val = textarea.value.trim();
       if (val == placeholder.trim() || val == '') {
         textarea.value = textarea.placeholder;
+      }
+    });
+  } else if (form.querySelector('textarea[name="comment"]')) {
+    form.querySelector('input[name="volunteer"]').addEventListener('click', function(e) {
+      if (e.currentTarget.checked) {
+        form.querySelector('.comment').classList.remove('hidden');
+      } else {
+        form.querySelector('.comment').classList.add('hidden');
       }
     });
   }
