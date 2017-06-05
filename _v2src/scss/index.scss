@@ -417,3 +417,57 @@ button.btn, a.btn {
 		margin: -180px auto 0;
 	}
 }
+
+@media screen and (max-width: $PAGE_WIDTH) {
+	.unit {
+		width: 90%;
+		p {
+			width: auto;
+		}
+	}
+	h1 {
+		font-size: 40px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	#stats {
+		padding: 5px 0;
+		line-height: 1.2em;
+		height: auto;
+	}
+	#hero {
+		p {
+			width: auto;
+			font-size: 20px;
+		}
+	}
+	#action-form {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		.address {
+			width: 60%;
+		}
+		.zip {
+			float: right;
+			width: 39%;
+		}
+		textarea {
+			clear: left;
+		}
+		.arrow {
+			display: none;
+		}
+	}
+	.spread-the-message {
+		a {
+			display: block;
+		}
+		.twitter {
+			margin-top: 10px;
+			margin-left: 0;
+		}
+	}
+}
