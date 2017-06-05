@@ -2027,6 +2027,7 @@ input{
   height: auto;
   min-height: 0;
   flex: none;
+  margin-right: 10px;
 }
 
 .day-of-action input:focus, .day-of-action textarea:focus {
