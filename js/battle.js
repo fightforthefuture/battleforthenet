@@ -867,7 +867,11 @@ function PetitionForm(params) {
   this.DOMNode = document.querySelector(this.target);
 
   this.render();
-  this.setOrganization();
+
+  if (!document.body.classList.contains('day-of-action')) {
+    this.setOrganization();
+  }
+
   this.setUTMContent();
   this.addEventListeners();
 }
