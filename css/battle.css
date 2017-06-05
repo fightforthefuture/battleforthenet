@@ -12,6 +12,7 @@ html, body {
   margin: 0;
   color: white;
   text-align: center;
+  background-color: white;
 }
 
 * {
@@ -190,6 +191,7 @@ body.loaded .form-wrapper {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
   padding: 10px 10px 30px 10px;
+  margin-top:20px;
 }
 
 /* Form */
@@ -370,7 +372,7 @@ form label {
 input, textarea {
   border: 1px solid #ccc;
   border-radius: 3px;
-  color: #505073;
+  color: red;
   font-family: "proxima-nova", sans-serif;
   font-size: 15px;
   padding: 6px 12px;
@@ -1859,7 +1861,7 @@ fieldset[disabled] textarea {
 }
 
 input{
-	 color: #645fa2 !important; 
+	 color: red !important; 
 }
 
 .video-embed-target .video_wrapper {
@@ -1999,12 +2001,13 @@ input{
 .day-of-action input {
   min-width: 0;
   min-height: 64px;
-  margin: 0 10px;
+  margin: 0 2px;
   border: 1px solid #b8b8b8;
-  border-radius: 0;
+  border-radius: 5px;
   font-size: 18px;
   font-weight: normal;
   flex: 2;
+
 }
 
 .day-of-action input:first-child {
@@ -2027,7 +2030,12 @@ input{
 }
 
 .day-of-action input:focus, .day-of-action textarea:focus {
-  background-color: #fdd;
+  background-color: #fff;
+  border: 1px solid red;
+-webkit-box-shadow: 0px 0px 25px -8px rgba(255,0,0,1);
+-moz-box-shadow: 0px 0px 25px -8px rgba(255,0,0,1);
+box-shadow: 0px 0px 25px -8px rgba(255,0,0,1);
+color: red;
 }
 
 /* These selectors only work when declared separately for some buggy reason */
@@ -2066,7 +2074,7 @@ input{
 }
 
 .day-of-action button {
-  border-radius: 0;
+  border-radius: 5px;
   background: #ff3434;
   text-shadow: none;
   -webkit-box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
@@ -2120,7 +2128,7 @@ input{
 
 .day-of-action .supporters {
   max-width: 100%;
-  padding: 20px 0;
+  padding: 40px 0;
   background-color: #f7f7f7;
 }
 
@@ -2138,12 +2146,15 @@ input{
   min-width: 165px;
   max-width: 165px;
   max-height: 70px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   padding: 15px;
   background-color: #fff;
-  border: 1px solid #c8c8c8;
   flex: 1;
   display: flex;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
+-moz-box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
+box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
 }
 
 .day-of-action .supporters ul li img {
@@ -2155,6 +2166,7 @@ input{
   margin-bottom: 20px;
   color: #ff3434;
   text-transform: uppercase;
+  font-size: 30px;
 }
 
 .day-of-action .faq p {
