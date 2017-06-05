@@ -2080,6 +2080,27 @@ color: red;
   -webkit-box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
   box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
+
+      -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);  
+}
+
+.day-of-action button:hover {
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.05);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.05);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.05);
+    transition: all 200ms ease-in;
+    transform: scale(1.05); 
 }
 
 .day-of-action form footer .disclaimer {
