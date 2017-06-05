@@ -1997,6 +1997,7 @@ input{
 }
 
 .day-of-action input {
+  min-width: 0;
   min-height: 64px;
   margin: 0 10px;
   border: 1px solid #b8b8b8;
@@ -2021,6 +2022,7 @@ input{
 .day-of-action input[type="checkbox"] {
   width: auto;
   height: auto;
+  min-height: 0;
   flex: none;
 }
 
@@ -2116,7 +2118,40 @@ input{
   margin-bottom: 0;
 }
 
-.day-of-action .faq h2 {
+.day-of-action .supporters {
+  max-width: 100%;
+  padding: 20px 0;
+  background-color: #f7f7f7;
+}
+
+.day-of-action .supporters ul {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.day-of-action .supporters ul li {
+  min-width: 165px;
+  max-width: 165px;
+  max-height: 70px;
+  margin-bottom: 5px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  flex: 1;
+  display: flex;
+}
+
+.day-of-action .supporters ul li img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.day-of-action h2 {
   margin-bottom: 20px;
   color: #ff3434;
   text-transform: uppercase;
