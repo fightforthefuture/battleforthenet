@@ -37,8 +37,7 @@ img {
 
 body > main {
   position: relative;
-  opacity: 0;
-  transition: opacity 0.8s;
+  padding: 2em 0;
 }
 
 p a {
@@ -170,24 +169,27 @@ header nav a {
     }
 }
 
-body.slow .tk-bebas-neue,
-body.slow .tk-proxima-nova {
-  font-family: arial, sans-serif !important;
+.wf-loading body {
+  opacity: 0;
 }
 
-body.typekit > main h1 {
-  font-size: 40px;
-}
-
-body.typekit > main p {
-  font-size: 20px;
-}
-
-body.loaded > main {
+.wf-active body {
+  transition: opacity 0.2s;
   opacity: 1;
 }
 
-body.loaded .form-wrapper {
+.wf-active body > main h1 {
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 40px;
+}
+
+.wf-active body > main p {
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.form-wrapper {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
   padding: 10px 10px 30px 10px;
@@ -1939,7 +1941,6 @@ input{
 
 .day-of-action > main {
   background: url(/images/background-texture.png);
-  padding: 2em 0;
 }
 
 .day-of-action section {

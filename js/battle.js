@@ -23,14 +23,6 @@
   // Let's selectively bust browser caches
   var buster = '?buster=' + Date.now();
 
-  // Prevent Typekit flash of unstyled content?
-  setTimeout(function() {
-    if (!global.fontsAreReady) {
-      global.fontsAreReady = true;
-      document.body.classList.add('loaded', 'slow');
-    }
-  }, 256);
-
   // Analytics
   setTimeout(function() {
     new Chartbeat();

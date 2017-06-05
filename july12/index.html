@@ -31,16 +31,21 @@
 
   <link href="/css/battle.css" rel="stylesheet" type="text/css" />
   <link href="https://actionnetwork.org/css/style-embed-whitelabel.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+    // Avoid flash of unstyled content if JavaScript is enabled
+    document.documentElement.className += ' wf-loading';
+  </script>
 </head>
 
 <body class="day-of-action">
   <main>
     <section class="cta">
-      <h1 class="tk-proxima-nova"><strong>July 12th:</strong> Internet-Wide Day of Action to Save Net Neutrality</h1>
+      <h1><strong>July 12th:</strong> Internet-Wide Day of Action to Save Net Neutrality</h1>
 
-      <p class="tk-proxima-nova light">The FCC wants to destroy net neutrality and give big cable companies control over what we see and do online. If they get their way, they’ll allow widespread throttling, blocking, censorship, and extra fees. <strong>On July 12th, the Internet will come together to stop them.</strong></p>
+      <p>The FCC wants to destroy net neutrality and give big cable companies control over what we see and do online. If they get their way, they’ll allow widespread throttling, blocking, censorship, and extra fees. <strong>On July 12th, the Internet will come together to stop them.</strong></p>
 
-      <div class="form-wrapper loading tk-proxima-nova"></div>
+      <div class="form-wrapper"></div>
     </section>
   </main>
 
@@ -146,7 +151,6 @@
 
     function loadAdditionalResources() {
       innerHeight; // Paint before fetching new assets
-      loadJS('/js/typekit.js');
       loadJS('/js/battle.js');
     }
 
@@ -165,6 +169,18 @@
     document.querySelector('.sharing-buttons').querySelector('.facebook').addEventListener('click', function(e) {
         if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
     }, false);
+  </script>
+
+  <!-- Typekit -->
+  <script type="text/javascript">
+    (function(d) {
+      var config = {
+        kitId: 'tgb5wiv',
+        scriptTimeout: 1000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
   </script>
 
   <script src="//cdn.optimizely.com/js/1886210014.js" type="text/javascript"></script>

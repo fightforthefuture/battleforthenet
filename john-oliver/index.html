@@ -31,6 +31,11 @@
 
 <link href="/css/battle.css" rel="stylesheet" type="text/css" />
 <link href="https://actionnetwork.org/css/style-embed-whitelabel.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+  // Avoid flash of unstyled content if JavaScript is enabled
+  document.documentElement.className += ' wf-loading';
+</script>
 </head>
 <body>
 
@@ -39,13 +44,13 @@
 <div id="background"></div>
 
 <section id="battle" class="fadeIn">
-    <h1 class="tk-proxima-nova">This is a battle for the Internet's future.</h1>
+    <h1>This is a battle for the Internet's future.</h1>
 
-    <p class="tk-proxima-nova light">The FCC is planning to gut rules that stop ISPs from messing with what we see, do, and say online. John Oliver made a great video about it&mdash;which everyone needs to see!&mdash;but he points people to the FCC's site, which makes commenting difficult even when it's working properly (and it crashes all the time). So watch &amp; share the John Oliver video, but share this page, not the Youtube link!</p>
+    <p>The FCC is planning to gut rules that stop ISPs from messing with what we see, do, and say online. John Oliver made a great video about it&mdash;which everyone needs to see!&mdash;but he points people to the FCC's site, which makes commenting difficult even when it's working properly (and it crashes all the time). So watch &amp; share the John Oliver video, but share this page, not the Youtube link!</p>
 
     <section id="video-petition">
       <div class="video-embed-target"></div>
-      <div class="form-wrapper loading tk-proxima-nova"></div>
+      <div class="form-wrapper"></div>
     </section>
 
     <div class="footer-target">
@@ -153,7 +158,6 @@
 
   function loadAdditionalResources() {
     innerHeight; // Paint before fetching new assets
-    loadJS('/js/typekit.js');
     loadJS('/js/battle.js');
   }
 
@@ -173,6 +177,17 @@
       if (ga) ga('send', 'event', 'button', 'click', 'share_facebook');
   }, false);
 </script>
+
+  <script type="text/javascript">
+    (function(d) {
+      var config = {
+        kitId: 'tgb5wiv',
+        scriptTimeout: 1000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 
 <script src="//cdn.optimizely.com/js/1886210014.js" type="text/javascript"></script>
 
