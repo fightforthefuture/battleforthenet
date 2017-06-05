@@ -174,13 +174,13 @@ header nav a {
 }
 
 .wf-active body {
-  transition: opacity 0.2s;
+  transition: opacity 0.4s;
   opacity: 1;
 }
 
 .wf-active body > main h1 {
   font-family: 'Proxima Nova', sans-serif;
-  font-size: 40px;
+  font-size: 37px;
 }
 
 .wf-active body > main p {
@@ -1949,6 +1949,7 @@ input{
 }
 
 .day-of-action h1 {
+  font-family: 'Proxima Nova', sans-serif;
   padding: 0.5em 0;
   text-transform: uppercase;
   border-style: solid;
@@ -1960,6 +1961,14 @@ input{
   background-color: #ff3434;
   color: #fff;
   padding: 0 0.2em;
+}
+
+.day-of-action h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #ff3434;
+  text-transform: uppercase;
 }
 
 .day-of-action, .day-of-action p {
@@ -2183,13 +2192,6 @@ box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
 .day-of-action .supporters ul li img {
   max-width: 100%;
   object-fit: contain;
-}
-
-.day-of-action h2 {
-  margin-bottom: 20px;
-  color: #ff3434;
-  text-transform: uppercase;
-  font-size: 30px;
 }
 
 .day-of-action .faq p {
