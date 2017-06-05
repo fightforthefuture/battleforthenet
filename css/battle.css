@@ -179,12 +179,12 @@ header nav a {
 }
 
 .wf-active body > main h1 {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'proxima-nova';
   font-size: 37px;
 }
 
 .wf-active body > main p {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'proxima-nova';
   font-size: 20px;
   font-weight: lighter;
 }
@@ -375,7 +375,7 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 3px;
   color: red;
-  font-family: "proxima-nova", sans-serif;
+  font-family: 'proxima-nova', sans-serif;
   font-size: 15px;
   padding: 6px 12px;
 }
@@ -448,7 +448,7 @@ p {
 #team-cable {
     background-color: #1c1c25;
     background-color: #29293c;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     margin: 0px 0 0;
     padding: 16px 25px 64px;
 }
@@ -475,7 +475,7 @@ p {
 /* FCC Section */
 #fcc-commissioners {
     background-color: #27273a;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     font-weight: bold;
     margin: 64px 0 0;
     padding: 16px 25px 64px;
@@ -572,7 +572,7 @@ p {
 /* How We Won Section */
 #how-we-won {
     background-color: #1b1b24;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     font-weight: bold;
     padding: 16px 25px 64px;
 }
@@ -592,7 +592,7 @@ p {
 /* Team Internet */
 #team-internet {
     background-color: #1f1f2d;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     margin: 0px 0 0;
     padding: 16px 25px 64px;
 }
@@ -691,7 +691,7 @@ section .btn {
     border-radius: 3px;
     color: white;
     display: inline-block;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     font-size: 15px;
     font-weight: bold;
     height: 35px;
@@ -713,7 +713,7 @@ section .btn:hover, button:hover {
 /* Learn More */
 #learn-more {
     background-color: #1b1b24;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     padding: 16px 25px 64px;
 }
 #learn-more h2 {
@@ -763,7 +763,7 @@ section .btn:hover, button:hover {
 /* Extra Reading */
 #zero-rating {
     background-color: #313142;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     padding: 16px 25px 64px;
 }
 #zero-rating h3 {
@@ -780,7 +780,7 @@ section .btn:hover, button:hover {
 #extra-reading {
     /* background-color: #313142; */
     background-color: #313142;
-    font-family: "proxima-nova", sans-serif;
+    font-family: 'proxima-nova', sans-serif;
     padding: 16px 25px 64px;
 }
 #extra-reading h2 {
@@ -814,7 +814,7 @@ section .btn:hover, button:hover {
   color: #c6c6e3;
   padding: 40px 0px 145px 0px;
   text-align: center;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'proxima-nova', sans-serif;
 }
 .footer-target footer .built_by {
     text-transform: uppercase;
@@ -918,7 +918,7 @@ section .btn:hover, button:hover {
     width: 220px;
     border-radius: 25px;
     text-align:center;
-    font-family: "proxima-nova",sans-serif;
+    font-family: 'proxima-nova',sans-serif;
     font-size: 11px;
     font-weight:bold;
     line-height: 40px;
@@ -1316,7 +1316,7 @@ a.shareBtn.twitter {
 }
 
 .form-wrapper .form {
-  font-family: 'Proxima Nova',sans-serif;
+  font-family: 'proxima-nova',sans-serif;
   margin: 48px auto 64px;
   max-width: 620px;
   background-color: #645fa2;
@@ -1949,7 +1949,7 @@ input{
 }
 
 .day-of-action h1 {
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'proxima-nova', sans-serif;
   padding: 0.5em 0;
   text-transform: uppercase;
   border-style: solid;
@@ -1964,7 +1964,7 @@ input{
 }
 
 .day-of-action h2 {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'bebas-neue', sans-serif;
   font-size: 30px;
   margin-bottom: 20px;
   color: #ff3434;
