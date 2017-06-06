@@ -1708,10 +1708,12 @@ button:focus {
 }
 
 .modal footer button img {
-  width: 48px;
-  position: absolute;
-  top: 8px;
-  left: 150px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.modal footer button span {
+  vertical-align: middle;
 }
 
 footer .disclaimer {
@@ -2131,6 +2133,10 @@ color: red;
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
     transform: scale(1);  
+}
+
+.day-of-action button:first-child {
+  margin-left: 0;
 }
 
 .day-of-action button:hover {
