@@ -298,8 +298,9 @@ h2 {
 }
 .the-problem {
 	text-align: center;
-	img { position: relative;
-		left: -40px;
+	img {
+		height: 100px;
+		margin: 0 20px;
 	}
 }
 .spread-the-message {
@@ -468,6 +469,20 @@ button.btn, a.btn {
 		.twitter {
 			margin-top: 10px;
 			margin-left: 0;
+		}
+	}
+}
+@media screen and (max-width: 930px) {
+	.the-problem {
+		width: 600px;
+		margin: 0px auto;
+	}
+}
+@media screen and (max-width: 600px) {
+	.the-problem {
+		width: auto;
+		img {
+			display: block;
 		}
 	}
 }
