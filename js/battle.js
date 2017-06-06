@@ -197,9 +197,10 @@
   new AJAX({
     url: '/templates/Countdown.html' + buster,
     success: function(e) {
-      new SimpleSection({
+      new Countdown({
         target: '.countdown-target',
-        template: e.target.responseText
+        template: e.target.responseText,
+        date: new Date('July 17, 2017')
       });
     }
   });
@@ -420,108 +421,93 @@ Chartbeat.prototype.addScript = function addScript() {
 module.exports = Chartbeat;
 
 },{}],5:[function(require,module,exports){
-function Countdown(params) {
-    this.date = params.date;
-    this.interval = null;
-    this.introWasShown = false;
-    this.requestAnimationFrame = this.requestAnimationFrame.bind(this);
-    this.targets = {};
-    this.tick = this.tick.bind(this);
+var Template = require('./Template');
 
-    this.gatherTargets();
-    this.start();
+// Constants
+var DAY = (1000 * 60 * 60 * 24);
+var HOUR = (1000 * 60 * 60);
+var MINUTE = (1000 * 60);
+var SECOND = (1000);
+
+function Countdown(params) {
+  this.target = params.target;
+  this.template = params.template;
+
+  this.DOMNode = document.querySelector(this.target);
+
+  this.date = params.date;
+  this.interval = null;
+  this.requestAnimationFrame = this.requestAnimationFrame.bind(this);
+  this.tick = this.tick.bind(this);
+
+  this.render();
+  this.start();
 }
 
-Countdown.prototype.constants = {
-    day: (1000 * 60 * 60 * 24),
-    hour: (1000 * 60 * 60),
-    minute: (1000 * 60),
-    second: (1000)
+Countdown.prototype.render = function() {
+  this.DOMNode.innerHTML = Template(this.template, {});
 };
 
 Countdown.prototype.destroy = function() {
-    this.stop();
+  this.stop();
 
-    delete this.date;
-    delete this.targets;
-    delete this.tick;
+  delete this.date;
+  delete this.tick;
 };
 
-Countdown.prototype.gatherTargets = function() {
-    this.targets.timer = document.querySelector('#battle .timer');
-    this.targets.days = this.targets.timer.querySelector('.days .number');
-    this.targets.hours = this.targets.timer.querySelector('.hours .number');
-    this.targets.minutes = this.targets.timer.querySelector('.minutes .number');
-    this.targets.seconds = this.targets.timer.querySelector('.seconds .number');
-};
-
-Countdown.prototype.padNumber = function(number) {
-    if (number > 9) {
-        return number;
-    } else {
-        return '0' + number;
-    }
+Countdown.prototype.pad = function(num) {
+  return num > 9 ? num : '0' + num;
 };
 
 Countdown.prototype.requestAnimationFrame = function() {
-    var request = window.requestAnimationFrame || setTimeout;
-    request(this.tick);
+  var request = window.requestAnimationFrame || setTimeout;
+  request(this.tick);
 };
 
 Countdown.prototype.start = function() {
-    this.stop();
-    this.requestAnimationFrame();
-    this.interval = setInterval(this.requestAnimationFrame, 1000);
+  this.stop();
+  this.requestAnimationFrame();
+  this.interval = setInterval(this.requestAnimationFrame, 1000);
 };
 
 Countdown.prototype.stop = function() {
-    clearInterval(this.interval);
-};
-
-Countdown.prototype.showIntro = function() {
-    this.targets.timer.className += ' loaded ';
-    this.introWasShown = true;
+  clearInterval(this.interval);
 };
 
 Countdown.prototype.tick = function() {
-    var now = Date.now();
-    var difference = Math.max(0, this.date - now);
+  var now = Date.now();
+  var diff = Math.max(0, this.date - now);
 
-    this.updateDates(difference);
+  this.updateDates(diff);
 
-    if (!this.introWasShown) {
-        this.showIntro();
-    }
-
-    if (difference === 0) {
-        document.querySelector('#battle h1').textContent = 'The most important FCC vote of our lifetime is happening now.';
-        this.destroy();
-        return;
-    }
+  if (diff === 0) {
+    this.destroy();
+    return;
+  }
 };
 
-Countdown.prototype.updateDates = function(difference) {
-    var days = Math.floor(difference / this.constants.day);
-    difference -= days * this.constants.day;
+Countdown.prototype.updateDates = function(diff) {
+  var days = Math.floor(diff / DAY);
+  diff -= days * DAY;
 
-    var hours = Math.floor(difference / this.constants.hour);
-    difference -= hours * this.constants.hour;
+  var hours = Math.floor(diff / HOUR);
+  diff -= hours * HOUR;
 
-    var minutes = Math.floor(difference / this.constants.minute);
-    difference -= minutes * this.constants.minute;
+  var minutes = Math.floor(diff / MINUTE);
+  diff -= minutes * MINUTE;
 
-    var seconds = Math.floor(difference / this.constants.second);
-    difference -= seconds * this.constants.second;
+  var seconds = Math.floor(diff / SECOND);
+  diff -= seconds * SECOND;
 
-    this.targets.days.textContent = this.padNumber(days);
-    this.targets.hours.textContent = this.padNumber(hours);
-    this.targets.minutes.textContent = this.padNumber(minutes);
-    this.targets.seconds.textContent = this.padNumber(seconds);
+  this.DOMNode.querySelector('.days').textContent = this.pad(days);
+  this.DOMNode.querySelector('.hours').textContent = this.pad(hours);
+  this.DOMNode.querySelector('.minutes').textContent = this.pad(minutes);
+  this.DOMNode.querySelector('.seconds').textContent = this.pad(seconds);
 };
 
 module.exports = Countdown;
 
-},{}],6:[function(require,module,exports){
+},{"./Template":18}],6:[function(require,module,exports){
 function GUID() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }

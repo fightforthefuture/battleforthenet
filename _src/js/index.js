@@ -195,9 +195,10 @@
   new AJAX({
     url: '/templates/Countdown.html' + buster,
     success: function(e) {
-      new SimpleSection({
+      new Countdown({
         target: '.countdown-target',
-        template: e.target.responseText
+        template: e.target.responseText,
+        date: new Date('July 17, 2017')
       });
     }
   });
