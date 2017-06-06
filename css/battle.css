@@ -2158,13 +2158,13 @@ color: red;
   margin-bottom: 0;
 }
 
-.day-of-action .supporters {
+.day-of-action .participants {
   max-width: 100%;
   padding: 40px 0;
   background-color: #f7f7f7;
 }
 
-.day-of-action .supporters ul {
+.day-of-action .participants ul {
   max-width: 680px;
   margin: 0 auto;
   padding: 0;
@@ -2174,7 +2174,7 @@ color: red;
   justify-content: space-between;
 }
 
-.day-of-action .supporters ul li {
+.day-of-action .participants ul li {
   min-width: 165px;
   max-width: 165px;
   max-height: 70px;
@@ -2189,7 +2189,7 @@ color: red;
 box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
 }
 
-.day-of-action .supporters ul li img {
+.day-of-action .participants ul li img {
   max-width: 100%;
   object-fit: contain;
 }
