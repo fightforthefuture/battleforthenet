@@ -44,7 +44,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		evt.stopPropagation();
 		this.setState((prevState) => {
 			return {
-				active: clamp(prevState.active - 1, this.props.videos.length),
+				active: Math.max(prevState.active - 1, 0),
 				open: prevState.open
 			}
 		});
@@ -54,7 +54,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		evt.stopPropagation();
 		this.setState((prevState) => {
 			return {
-				active: clamp(prevState.active + 1, this.props.videos.length),
+				active: Math.min(prevState.active + 1, this.props.videos.length),
 				open: prevState.open
 			};
 		});
@@ -76,54 +76,51 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		});
 	}
 	renderControls(): JSX.Element {
-		var l = this.props.active_items * (this.props.width + this.props.padding);
+		var chunk = 100 / this.props.videos.length;
+		var width = chunk + "%";
+		var left = (chunk * this.state.active) + "%";
 		return (
 			<div className="controls">
-				<a className="prev" onClick={this.onPrev.bind(this)} style={{left: -60}}>
-					<span className="oi" data-glyph="caret-left" title="previous" aria-hidden="true"></span>
+				<div className="bar">
+					<div className="section" style={{width: width, left: left}}></div>
+				</div>
+				<a className="prev" onClick={this.onPrev.bind(this)}>
+					<span className="oi" data-glyph="chevron-left" title="previous" aria-hidden="true"></span>
 				</a>
-				<a className="next" onClick={this.onNext.bind(this)} style={{left: l}}>
-					<span className="oi" data-glyph="caret-right" title="next" aria-hidden="true"></span>
+				<a className="next" onClick={this.onNext.bind(this)}>
+					<span className="oi" data-glyph="chevron-right" title="next" aria-hidden="true"></span>
 				</a>
 			</div>
 		);
 	}
-	renderVideo(offset: number): JSX.Element {
-		var n = this.props.videos.length;
-		var idx = clamp(this.state.active + offset, n)
-		var video = this.props.videos[idx];
-		var left = offset * (this.props.width + this.props.padding);
-		var opacity = 1.0;
-		if (offset < 0) {
-			opacity = Math.max(0, 1.0 + (offset * 0.75));
-		} else if (offset > 2) {
-			opacity = Math.min(1.0, 1.0 - ((offset - 2) * 0.75));
-		}
+	renderVideo(video: VideoSpec, n: number): JSX.Element {
+		var left = n * (this.props.width + this.props.padding);
 		var openVideo = function(evt: Event) {
 			evt.preventDefault();
-			this.setOpen(idx);
+			this.setOpen(n);
 		};
-		return <div className="video" key={"video-" + idx} style={{left: left, width: this.props.width, opacity: opacity}}>
-			<div className="play" onClick={openVideo.bind(this)}>
-				<span className="oi" data-glyph="play-circle" title="play" aria-hidden="true"></span>
+		return (
+			<div className="video" key={"video-" + n} style={{left: left, width: this.props.width}}>
+				<div className="play" onClick={openVideo.bind(this)}>
+					<span className="oi" data-glyph="media-play" title="play" aria-hidden="true"></span>
+				</div>
+				<img src={video.thumb} style={{width: this.props.width, height: this.props.height }} />
+				<p>
+					<span>{video.heading}</span>
+					{video.subHeading}
+				</p>
 			</div>
-			<img src={video.thumb} style={{left: left, width: this.props.width, height: this.props.height }} />
-			<p>
-				<span>{video.heading}</span>
-				{video.subHeading}
-			</p>
-		</div>;
+		);
 	}
-	renderVideos(): JSX.Element[] {
-		return [
-			this.renderVideo(-2),
-			this.renderVideo(-1),
-			this.renderVideo(0),
-			this.renderVideo(1),
-			this.renderVideo(2),
-			this.renderVideo(3),
-			this.renderVideo(4)
-		];
+	renderVideos(): JSX.Element {
+		var left = this.state.active * (this.props.width + this.props.padding);
+		return (
+			<div className="video-container">
+				<div className="video-scroller" style={{left: -left}}>
+					{_.map(this.props.videos, this.renderVideo.bind(this))}
+				</div>
+			</div>
+		);
 	}
 	renderModalContents(): JSX.Element|null {
 		if (typeof this.state.open === "number") {
@@ -160,8 +157,8 @@ export class VideoRollComponent extends React.Component<Props, State> {
 	render() {
 		return (
 			<div>
-				{this.renderControls()}
 				{this.renderVideos()}
+				{this.renderControls()}
 				{this.renderModal()}
 			</div>
 		);

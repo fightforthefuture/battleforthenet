@@ -14,9 +14,6 @@ $WHITE: #CCCAEA;
 $WHITE_BRIGHT: #FFF;
 $RED: #f94220;
 
-$VIDEO_WIDTH: 300px;
-$VIDEO_PADD: 10px;
-
 * {
 	box-sizing: border-box;
 }
@@ -252,22 +249,62 @@ h2 {
 
 #video-roll {
 	position: relative;
-	height: 240px;
 	.controls {
-		position: absolute;
-		z-index: 9;
-		font-size: 50px;
-		.prev, .next {
-			position: absolute;
-			top: 50px;
-			cursor: pointer;
+		position: relative;
+		margin-top: 50px;
+		height: 50px;
+		.bar {
+			position: relative;
+			background-color: #2a2749;
+			height: 3px;
+			width: 100%;
 		}
+		.section {
+			height: 100%;
+			position: absolute;
+			background-color: #5f88ff;
+			transition: left 0.3s ease-in;
+		}
+		.prev, .next {
+			top: 10px;
+			position: absolute;
+			font-size: 10px;
+			cursor: pointer;
+			background-color: #494476;
+			color: #17152a;
+			height: 24px;
+			width: 24px;
+			line-height: 24px;
+			border-radius: 12px;
+			text-align: center;
+			span {
+				position: relative;
+				top: 1px;
+			}
+			&:hover {
+				background-color: #5f88ff;
+			}
+		}
+		.prev {
+			left: 0px;
+		}
+		.next {
+			right: 0px;
+			span {
+				left: 1px;
+			}
+		}
+	}
+	.video-container {
+		height: 250px;
+	}
+	.video-scroller {
+		position: absolute;
+		top: 0px;
+		transition: left 0.3s ease-in;
 	}
 	.video {
 		position: absolute;
-		top: 0;
-		left: 0;
-		transition: left 0.25s ease-in, opacity 0.25s ease-in;
 		img {
 			border-radius: 8px;
 			box-shadow:
@@ -285,11 +322,21 @@ h2 {
 			display: none;
 			text-align: center;
 			position: absolute;
-			font-size: 50px;
+			font-size: 40px;
 			top: 50px;
-			width: 100%;
+			left: 150px;
 			color: white;
 			cursor: pointer;
+			width: 75px;
+			height: 75px;
+			line-height: 75px;
+			border-radius: 50px;
+			border: 3px solid white;
+			background-color: #515470;
+			span {
+				position: relative;
+				left: 5px;
+			}
 		}
 		&:hover .play {
 			display: block;
