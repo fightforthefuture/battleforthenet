@@ -435,13 +435,15 @@ function Countdown(params) {
 
   this.DOMNode = document.querySelector(this.target);
 
-  this.date = params.date;
-  this.interval = null;
-  this.requestAnimationFrame = this.requestAnimationFrame.bind(this);
-  this.tick = this.tick.bind(this);
+  if (this.DOMNode) {
+    this.date = params.date;
+    this.interval = null;
+    this.requestAnimationFrame = this.requestAnimationFrame.bind(this);
+    this.tick = this.tick.bind(this);
 
-  this.render();
-  this.start();
+    this.render();
+    this.start();
+  }
 }
 
 Countdown.prototype.render = function() {
