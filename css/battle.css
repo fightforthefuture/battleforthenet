@@ -179,8 +179,10 @@ header nav a {
 }
 
 .wf-active body > main h1 {
-  font-family: 'proxima-nova';
-  font-size: 37px;
+  font-family: 'bebas';
+  font-size: 46px;
+  word-spacing: 5px;
+
 }
 
 .wf-active body > main p {
