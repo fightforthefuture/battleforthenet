@@ -51,17 +51,14 @@ Modals.prototype.display = function(id) {
         overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
     }, 50);
 };
+
 Modals.prototype.hide = function(id) {
     var overlayNode = document.getElementById(id);
     overlayNode.className += 'invisible';
     setTimeout(function() {
         overlayNode.style.display = 'none';
     }, 400);
-}
-
-Modals.prototype.setUTMContent = function() {
-
-}
+};
 
 Modals.prototype.addEventListeners = function() {
   // Hack to remove twitter-brigade modal from after-action flow
@@ -116,6 +113,6 @@ Modals.prototype.addEventListeners = function() {
     for (var i = 0; i < modals.length; i++) {
         reallyBindEvents(modals[i]);
     }
-}
+};
 
 module.exports = Modals;

@@ -6,8 +6,10 @@ function CallForm(params) {
 
   this.DOMNode = document.querySelector(this.target);
 
-  this.render();
-  this.addEventListeners();
+  if (this.DOMNode) {
+    this.render();
+    this.addEventListeners();
+  }
 }
 
 CallForm.prototype.render = function() {

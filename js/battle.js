@@ -328,8 +328,10 @@ function CallForm(params) {
 
   this.DOMNode = document.querySelector(this.target);
 
-  this.render();
-  this.addEventListeners();
+  if (this.DOMNode) {
+    this.render();
+    this.addEventListeners();
+  }
 }
 
 CallForm.prototype.render = function() {
@@ -655,17 +657,14 @@ Modals.prototype.display = function(id) {
         overlayNode.className = overlayNode.className.replace(/ ?invisible ?/, ' ');
     }, 50);
 };
+
 Modals.prototype.hide = function(id) {
     var overlayNode = document.getElementById(id);
     overlayNode.className += 'invisible';
     setTimeout(function() {
         overlayNode.style.display = 'none';
     }, 400);
-}
-
-Modals.prototype.setUTMContent = function() {
-
-}
+};
 
 Modals.prototype.addEventListeners = function() {
   // Hack to remove twitter-brigade modal from after-action flow
@@ -720,7 +719,7 @@ Modals.prototype.addEventListeners = function() {
     for (var i = 0; i < modals.length; i++) {
         reallyBindEvents(modals[i]);
     }
-}
+};
 
 module.exports = Modals;
 
@@ -848,14 +847,16 @@ function PetitionForm(params) {
 
   this.DOMNode = document.querySelector(this.target);
 
-  this.render();
+  if (this.DOMNode) {
+    this.render();
 
-  if (!document.body.classList.contains('day-of-action')) {
-    this.setOrganization();
+    if (!document.body.classList.contains('day-of-action')) {
+      this.setOrganization();
+    }
+
+    this.setUTMContent();
+    this.addEventListeners();
   }
-
-  this.setUTMContent();
-  this.addEventListeners();
 }
 
 PetitionForm.prototype.render = function() {

@@ -12,14 +12,16 @@ function PetitionForm(params) {
 
   this.DOMNode = document.querySelector(this.target);
 
-  this.render();
+  if (this.DOMNode) {
+    this.render();
 
-  if (!document.body.classList.contains('day-of-action')) {
-    this.setOrganization();
+    if (!document.body.classList.contains('day-of-action')) {
+      this.setOrganization();
+    }
+
+    this.setUTMContent();
+    this.addEventListeners();
   }
-
-  this.setUTMContent();
-  this.addEventListeners();
 }
 
 PetitionForm.prototype.render = function() {
