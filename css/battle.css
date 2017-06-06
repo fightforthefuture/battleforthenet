@@ -1547,13 +1547,13 @@ form .left .flex input {
   border-bottom: 0;
 }
 
-form .left .flex .input-address {
+form .left .flex input[name="member[street_address]"] {
   min-width: 20%;
   margin-right: 10px;
   flex: 1;
 }
 
-form .left .flex .input-zip {
+form .left .flex input[name="member[postcode]"] {
   width: 110px;
 }
 
@@ -2062,6 +2062,7 @@ input{
 }
 
 .day-of-action input[type="checkbox"] {
+  width: initial;
   min-width: initial;
   min-height: initial;
   height: auto;
