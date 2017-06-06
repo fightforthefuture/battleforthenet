@@ -635,7 +635,7 @@ Modals.prototype.render = function() {
     }
 
     if (document.body.classList.contains('day-of-action')) {
-      this.DOMNode.querySelector('.modal > header > h3').textContent = "Thanks! We'll be in touch. For now, can you help spread the word?";
+      this.DOMNode.querySelector('#thanks_modal header > h3').textContent = "Thanks! We'll be in touch. For now, can you help spread the word?";
     }
 
     if (location.href.match(/committees=1/))
