@@ -37,7 +37,7 @@ img {
 
 body > main {
   position: relative;
-  padding: 2em 0;
+  padding-top: 2em;
 }
 
 p a {
@@ -192,8 +192,6 @@ header nav a {
 .form-wrapper {
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
-  padding: 10px 10px 30px 10px;
-  margin-top:20px;
 }
 
 /* Form */
@@ -440,7 +438,7 @@ p {
   font-size: 21px;
   font-weight: 300;
   line-height: 26px;
-  margin: 36px auto 0;
+  margin: 36px auto;
   max-width: 780px;
 }
 
@@ -1982,6 +1980,7 @@ input{
 
 .day-of-action .form {
   margin: 0 auto;
+  padding-bottom: 40px;
   background-color: transparent;
 }
 
