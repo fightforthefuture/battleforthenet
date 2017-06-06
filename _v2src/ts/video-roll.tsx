@@ -4,13 +4,6 @@ import * as React from 'react';
 import * as ReactTransitionGroup from 'react-transition-group';
 import * as _ from 'lodash';
 
-function clamp(v: number, l: number): number {
-	if (v < 0) {
-		return v + l;
-	}
-	return v % l;
-}
-
 interface VideoSpec {
 	video: string,
 	thumb: string,
@@ -76,7 +69,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		});
 	}
 	renderControls(): JSX.Element {
-		var chunk = 100 / this.props.videos.length;
+		var chunk = 100 / (this.props.videos.length + 1);
 		var width = chunk + "%";
 		var left = (chunk * this.state.active) + "%";
 		return (
