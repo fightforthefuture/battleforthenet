@@ -47,8 +47,26 @@ p a {
 
 h1 {
   margin: 0 auto;
-  font-size: 54px;
+  font-size: 40px;
   font-weight: 700;
+}
+
+@media screen and (min-width: 380px) {
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  h1 {
+    font-size: 52px;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  h1 {
+    font-size: 54px;
+  }
 }
 
 h2 {
@@ -180,9 +198,7 @@ header nav a {
 
 .wf-active body > main h1 {
   font-family: 'bebas-neue';
-  font-size: 60px;
   word-spacing: 5px;
-
 }
 
 .wf-active body > main p {
@@ -437,7 +453,7 @@ body #battle .thanks p a {
 
 p {
   color: #eee;
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 26px;
   margin: 36px auto;
@@ -1947,10 +1963,10 @@ input{
 .day-of-action section {
   max-width: 680px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .day-of-action h1 {
-  font-family: 'proxima-nova', sans-serif;
   padding: 0.5em 0;
   text-transform: uppercase;
   border-style: solid;
@@ -1982,12 +1998,12 @@ input{
 
 .day-of-action .form {
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding: 0 0 40px;
   background-color: transparent;
 }
 
 .day-of-action form main {
-  padding: 0 20px;
+  padding: 0;
   display: block;
 }
 
@@ -1996,6 +2012,10 @@ input{
   margin-bottom: 20px;
   padding: 0;
   display: flex;
+}
+
+.day-of-action form section.wrap {
+  flex-wrap: wrap;
 }
 
 .day-of-action form section.comment {
@@ -2011,15 +2031,22 @@ input{
 }
 
 .day-of-action input {
-  min-width: 0;
+  min-width: 100%;
   min-height: 64px;
-  margin: 0 2px;
+  margin: 0 0 10px;
   border: 1px solid #b8b8b8;
   border-radius: 5px;
   font-size: 18px;
   font-weight: normal;
   flex: 2;
+}
 
+@media screen and (min-width: 480px) {
+  .day-of-action input[type="text"],
+  .day-of-action input[type="email"] {
+    min-width: 0;
+    margin: 0 2px;
+  }
 }
 
 .day-of-action input:first-child {
@@ -2084,6 +2111,7 @@ color: red;
 
 .day-of-action form footer {
   background-color: transparent;
+  padding: 15px 0 0;
 }
 
 .day-of-action button {
@@ -2117,7 +2145,7 @@ color: red;
 }
 
 .day-of-action form footer .disclaimer {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 12px;
   line-height: 18px;
   color: #000;
@@ -2142,8 +2170,7 @@ color: red;
 }
 
 .day-of-action .faq {
-  background-color: #fff;
-  padding: 90px 0;
+  padding: 60px 20px;
 }
 
 .day-of-action .faq ul {
@@ -2153,16 +2180,26 @@ color: red;
 }
 
 .day-of-action .faq li {
-  margin: 0 0 90px;
+  margin: 0 0 60px;
 }
 
 .day-of-action .faq li:last-child {
   margin-bottom: 0;
 }
 
+@media screen and (min-width: 480px) {
+  .day-of-action .faq {
+    padding: 90px 20px;
+  }
+
+  .day-of-action .faq li {
+    margin: 0 0 90px;
+  }
+}
+
 .day-of-action .participants {
   max-width: 100%;
-  padding: 40px 0;
+  padding: 40px 20px;
   background-color: #f7f7f7;
 }
 
@@ -2178,8 +2215,8 @@ color: red;
 }
 
 .day-of-action .participants ul li {
-  min-width: 165px;
-  max-width: 165px;
+  min-width: 130px;
+  max-width: 130px;
   max-height: 70px;
   margin-bottom: 6px;
   padding: 15px;
@@ -2192,6 +2229,12 @@ color: red;
   box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
 }
 
+@media screen and (min-width: 380px) {
+  .day-of-action .participants ul li {
+    min-width: 165px;
+    max-width: 165px;
+  }
+}
 
 .day-of-action .participants ul li img,
 .day-of-action > footer ul li img {
@@ -2204,14 +2247,20 @@ color: red;
 }
 
 .day-of-action > footer {
-  padding-bottom: 40px;
+  padding: 0 20px 40px;
 }
 
 .day-of-action > footer ul li {
   max-height: 120px;
-  padding: 15px;
+  padding: 5px;
   flex: 1;
   display: flex;
+}
+
+@media screen and (min-width: 480px) {
+  .day-of-action > footer ul li {
+    padding: 15px;
+  }
 }
 
 .day-of-action > footer ul li a {
