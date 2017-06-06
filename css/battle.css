@@ -194,17 +194,14 @@ header nav a {
 .wf-active body {
   transition: opacity 0.4s;
   opacity: 1;
+  font-family: 'proxima-nova';
+  font-size: 20px;
+  font-weight: lighter;
 }
 
 .wf-active body > main h1 {
   font-family: 'bebas-neue';
   word-spacing: 5px;
-}
-
-.wf-active body > main p {
-  font-family: 'proxima-nova';
-  font-size: 20px;
-  font-weight: lighter;
 }
 
 .form-wrapper {
