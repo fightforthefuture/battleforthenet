@@ -2191,7 +2191,7 @@ color: red;
 }
 
 .day-of-action .participants ul li img,
-.day-of-action footer ul li img {
+.day-of-action > footer ul li img {
   max-width: 100%;
   object-fit: contain;
 }
@@ -2208,6 +2208,10 @@ color: red;
   max-height: 120px;
   padding: 15px;
   flex: 1;
+  display: flex;
+}
+
+.day-of-action > footer ul li a {
   display: flex;
 }
 
