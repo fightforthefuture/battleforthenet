@@ -2192,9 +2192,6 @@ color: red;
   box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
 }
 
-.day-of-action .participants ul li:first-child {
-  padding: 4px;
-}
 
 .day-of-action .participants ul li img,
 .day-of-action > footer ul li img {
