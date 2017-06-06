@@ -1937,6 +1937,7 @@ input{
 
 .day-of-action {
   background-color: #fff;
+  font-family: 'proxima-nova', sans-serif;
 }
 
 .day-of-action > main {
@@ -2164,14 +2165,15 @@ color: red;
   background-color: #f7f7f7;
 }
 
-.day-of-action .participants ul {
+.day-of-action .participants ul,
+.day-of-action footer ul {
   max-width: 680px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .day-of-action .participants ul li {
@@ -2185,17 +2187,35 @@ color: red;
   display: flex;
   border-radius: 5px;
   -webkit-box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
--moz-box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
-box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
+  box-shadow: 0px 1px 4px 0px rgba(224,224,224,1);
 }
 
-.day-of-action .participants ul li img {
+.day-of-action .participants ul li img,
+.day-of-action footer ul li img {
   max-width: 100%;
   object-fit: contain;
 }
 
 .day-of-action .faq p {
   margin: 0 auto;
+}
+
+.day-of-action > footer {
+  padding-bottom: 40px;
+}
+
+.day-of-action > footer ul li {
+  max-height: 120px;
+  padding: 15px;
+  flex: 1;
+  display: flex;
+}
+
+.day-of-action > footer hr {
+  max-width: 680px;
+  padding: 0 15px;
+  border: 1px solid #f6f6f6;
 }
 
 .day-of-action .modal {
