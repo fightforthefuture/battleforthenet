@@ -942,7 +942,6 @@ PetitionForm.prototype.addEventListeners = function() {
 	var utmParams = new UTM();
 	if (utmParams.getSource() === 'etsy') {
       var etsyLink = form.querySelector('input[name="etsy_shop"]').value;
-      var actionCommentEl = form.querySelector('textarea[name="action_comment"]');
 
       formData = new FormData();
 
@@ -959,7 +958,7 @@ PetitionForm.prototype.addEventListeners = function() {
       formData.append('hp_enabled', 'on');
 
       // Prepend Etsy Shop link if field is not blank
-      formData.append('action_comment', (etsyLink ? ('Etsy Shop ' + etsyLink + '\n\n') : '') + actionCommentEl.value);
+      formData.append('action_comment', (etsyLink ? ('Etsy Shop ' + etsyLink + '\n\n') : '') + form.querySelector('textarea[name="action_comment"]').value);
 
       if (!form.querySelector('input[name="opt_in"]').checked) {
         formData.append('opt_out', 1);
@@ -996,7 +995,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
   var textarea;
 
-  if (form.querySelector('textarea[name="action_comment"]')) {
+  if (document.body.classList.contains('battle')) {
     textarea = form.querySelector('textarea[name="action_comment"]');
     var placeholder = 'Dear FCC,\n\n';
     textarea.placeholder = textarea.value;
@@ -1014,7 +1013,7 @@ PetitionForm.prototype.addEventListeners = function() {
         textarea.value = textarea.placeholder;
       }
     });
-  } else if (form.querySelector('textarea[name="comment"]')) {
+  } else if (document.body.classList.contains('day-of-action')) {
     form.querySelector('input[name="volunteer"]').addEventListener('click', function(e) {
       if (e.currentTarget.checked) {
         form.querySelector('.comment').classList.remove('hidden');
