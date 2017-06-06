@@ -2062,9 +2062,9 @@ input{
 }
 
 .day-of-action input[type="checkbox"] {
-  width: auto;
+  min-width: initial;
+  min-height: initial;
   height: auto;
-  min-height: 0;
   flex: none;
   margin-right: 10px;
 }
