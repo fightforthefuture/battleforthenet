@@ -47,7 +47,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		evt.stopPropagation();
 		this.setState((prevState) => {
 			return {
-				active: Math.min(prevState.active + 1, this.props.videos.length),
+				active: Math.min(prevState.active + 1, this.props.videos.length - 1),
 				open: prevState.open
 			};
 		});
@@ -69,7 +69,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		});
 	}
 	renderControls(): JSX.Element {
-		var chunk = 100 / (this.props.videos.length + 1);
+		var chunk = 100 / this.props.videos.length;
 		var width = chunk + "%";
 		var left = (chunk * this.state.active) + "%";
 		return (
