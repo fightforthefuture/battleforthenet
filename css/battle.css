@@ -910,14 +910,12 @@ section .btn:hover, button:hover {
 
 .shares-container .share-container img {
   width: 32px;
-  height: 32px;
-  position: absolute;
-  top: 3px;
-  left: 17px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .shares-container .share-container span {
-    color: #fff;
+  color: #fff;
 }
 
 .fb-share-container {
