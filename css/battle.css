@@ -2054,10 +2054,6 @@ input{
   margin-right: 0;
 }
 
-.day-of-action input[name="member[postcode]"] {
-  flex: 1;
-}
-
 .day-of-action input[type="checkbox"] {
   width: initial;
   min-width: initial;
