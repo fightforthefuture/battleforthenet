@@ -5,7 +5,9 @@ function OrganizationRotation(params) {
 
   this.DOMNode = document.querySelector(this.target);
 
-  this.addEventListeners();
+  if (this.DOMNode) {
+    this.addEventListeners();
+  }
 }
 
 OrganizationRotation.prototype.addEventListeners = function() {
