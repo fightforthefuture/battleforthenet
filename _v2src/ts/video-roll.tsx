@@ -28,7 +28,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 	constructor(props:Props) {
 		super(props);
 		this.state = {
-			active: 0,
+			active: Math.floor(props.videos.length / 2),
 			open: null
 		};
 	}
