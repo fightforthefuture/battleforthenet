@@ -810,8 +810,7 @@ OrganizationRotation.prototype.addEventListeners = function() {
     var coinToss = Math.random();
 
     if (coinToss < .20) {
-      // org = 'fp';
-      org = 'fftf';
+      org = 'fp';
     } else if (coinToss < .60) {
       org = 'dp';
     } else {
@@ -819,7 +818,11 @@ OrganizationRotation.prototype.addEventListeners = function() {
     }
   }
 
-  this.DOMNode.querySelector('[name="org"]').value = org;
+  var orgInputEl = this.DOMNode.querySelector('[name="org"]');
+
+  if (orgInputEl) {
+    orgInputEl.value = org;
+  }
 
   // Show org disclaimer
   var disclaimers = this.DOMNode.querySelector('.disclaimer')

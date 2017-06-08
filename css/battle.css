@@ -1423,12 +1423,6 @@ header h4:last-child {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  header h3 {
-    font-size: 36px
-  }
-}
-
 header p {
   color: #dfddf3;
   font-size: 18px;
