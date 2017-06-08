@@ -4,10 +4,13 @@ import * as React from 'react';
 import * as ReactTransitionGroup from 'react-transition-group';
 import * as _ from 'lodash';
 
-interface VideoSpec {
-	video: string,
-	thumb: string,
-	heading: string,
+import {EventEmitter} from './event-emitter';
+import {ModalVideo} from './modal-video';
+
+export interface VideoSpec {
+	video: string
+	thumb: string
+	heading: string
 	subHeading: string
 }
 
@@ -16,12 +19,13 @@ interface Props {
 	width: number
 	height: number
 	padding: number
-	active_items: number
+	eventEmitter: EventEmitter
 }
 
 interface State {
 	active: number
 	open: number | null
+	modalSize: number | null
 }
 
 export class VideoRollComponent extends React.Component<Props, State> {
@@ -29,43 +33,36 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			active: Math.floor(props.videos.length / 2),
-			open: null
+			open: null,
+			modalSize: null
 		};
 	}
 	onPrev(evt: Event): void {
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.setState((prevState) => {
-			return {
-				active: Math.max(prevState.active - 1, 0),
-				open: prevState.open
-			}
+			return _.defaults({
+				active: Math.max(prevState.active - 1, 0)
+			}, prevState) as State;
 		});
 	}
 	onNext(evt: Event): void {
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.setState((prevState) => {
-			return {
-				active: Math.min(prevState.active + 1, this.props.videos.length - 1),
-				open: prevState.open
-			};
+			return _.defaults({
+				active: Math.min(prevState.active + 1, this.props.videos.length - 1)
+			}, prevState) as State;
 		});
 	}
 	closeModal(evt: Event): void {
 		this.setState((prevState) => {
-			return {
-				active: prevState.active,
-				open: null
-			};
+			return _.defaults({open: null}, prevState) as State;
 		});
 	}
 	setOpen(i: number): void {
 		this.setState((prevState) => {
-			return {
-				active: prevState.active,
-				open: i
-			};
+			return _.defaults({open: i}, prevState) as State;
 		});
 	}
 	renderControls(): JSX.Element {
@@ -118,19 +115,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 	renderModalContents(): JSX.Element|null {
 		if (typeof this.state.open === "number") {
 			const video = this.props.videos[this.state.open];
-			return (
-				<div className="video-modal">
-					<div className="modal-background"></div>
-					<div className="modal-close" onClick={this.closeModal.bind(this)}>
-						<span className="oi" data-glyph="circle-x" title="close" aria-hidden="true"></span>
-					</div>
-					<div className="modal-content-container">
-						<div className="modal-content">
-							<iframe width="640" height="360" src={video.video} frameborder="0" allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-			);
+			return <ModalVideo video={video} eventEmitter={this.props.eventEmitter} onClose={this.closeModal.bind(this)} />
 		} else {
 			return null;
 		}

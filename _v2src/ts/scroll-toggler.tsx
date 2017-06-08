@@ -3,11 +3,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
+import * as $ from 'jquery';
 import {DOMWrapper} from './dom-wrapper';
+import {EventEmitter} from './event-emitter';
 
 interface Props {
 	top: number,
-	element: Node 
+	element: Node,
+	eventEmitter: EventEmitter
 }
 
 interface State {
@@ -16,6 +19,7 @@ interface State {
 
 export class ScrollToggler extends React.Component<Props, State> {
 	_handleScroll: ()=>void;
+	_unsub: ()=>void;
 	constructor(props:Props) {
 		super(props);
 		this.state = {
@@ -24,14 +28,15 @@ export class ScrollToggler extends React.Component<Props, State> {
 		this._handleScroll = _.debounce(this.handleScroll.bind(this), 25);
 	}
 	componentDidMount() {
-		window.addEventListener('scroll', this._handleScroll);
+		this._unsub = this.props.eventEmitter.on("scroll", this._handleScroll);
 	}
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this._handleScroll);
+		this._unsub();
 	}
-	handleScroll() {
+	handleScroll(evt:Event) {
+		var scrollTop = $(evt.currentTarget).scrollTop();
 		this.setState({
-			toggle: ((document.documentElement.scrollTop || window.scrollY) > this.props.top)
+			toggle: scrollTop > this.props.top
 		});
 	}
 	render() {
@@ -40,13 +45,14 @@ export class ScrollToggler extends React.Component<Props, State> {
 		</div>;
 	}
 
-	static wrapElement(target: HTMLElement, top: number) {
+	static wrapElement(target: HTMLElement, top: number, eventEmitter: EventEmitter) {
 		if (target.parentElement instanceof HTMLElement) {
 			const parent = target.parentElement;
 			const child = parent.removeChild(target);
 			var props = {
 				top: top,
-				element: child
+				element: child,
+				eventEmitter: eventEmitter
 			};
 			const c = React.createElement(ScrollToggler, props);
 			ReactDOM.render(c, parent);

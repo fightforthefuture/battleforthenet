@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/50387d40462301d54cda62e24d3b2ee46540f24a/baconjs/index.d.ts",
+    "raw": "registry:dt/baconjs#0.7.0+20160510010627",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/50387d40462301d54cda62e24d3b2ee46540f24a/baconjs/index.d.ts"
+  }
+}

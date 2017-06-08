@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-				"target": "es5",
+        "target": "es5",
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": false,
-				"allowJs": true,
-				"strictNullChecks": true,
-				"jsx": "React",
+        "allowJs": true,
+        "strictNullChecks": true,
+        "jsx": "React",
         "sourceMap": false
     },
     "exclude": [

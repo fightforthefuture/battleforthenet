@@ -206,6 +206,7 @@ Thank you!</textarea>
 <script type="text/javascript">
 	(function() {
 		"use strict";
+		var eventEmitter = new EventEmitter();
 		mountComponent(
 			React.createElement(StatsComponent, {deadline: new Date(2017, 8, 9)}), 
 			document.getElementById("stats")
@@ -219,7 +220,8 @@ Thank you!</textarea>
 		);
 		ScrollToggler.wrapElement(
 			document.getElementById("persistent-button"),
-			550
+			550,
+			eventEmitter
 		);
 		mountComponent(
 			React.createElement(VideoRollComponent, {videos: [
@@ -275,7 +277,7 @@ Thank you!</textarea>
 				width: 350,
 				height: 190,
 				padding: 10,
-				active_items: 3
+				eventEmitter: eventEmitter
 			}),
 			document.getElementById("video-roll")
 		);
