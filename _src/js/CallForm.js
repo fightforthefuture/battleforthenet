@@ -46,6 +46,7 @@ CallForm.prototype.logStatus = function(e) {
 
 CallForm.prototype.addEventListeners = function() {
   var form = this.DOMNode.querySelector('form');
+  var campaignId = form.querySelector('input[name=campaignId]').value;
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -55,7 +56,7 @@ CallForm.prototype.addEventListeners = function() {
     if (!phone) return alert('Please enter a valid US phone number!');
 
     var data = new FormData();
-    data.append('campaignId', 'battleforthenet-2017');
+    data.append('campaignId', campaignId);
     data.append('userPhone', phone);
 
     var xhr = new XMLHttpRequest();
@@ -63,7 +64,7 @@ CallForm.prototype.addEventListeners = function() {
     xhr.addEventListener('load', this.logStatus);
     xhr.addEventListener('error', this.logStatus);
 
-    xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
+    xhr.open('post', form.action, true);
     xhr.send(data);
 
     global.modals.hide('thanks_modal');
