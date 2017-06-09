@@ -372,20 +372,20 @@ CallForm.prototype.addEventListeners = function() {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var phone = this.validatePhoneNumber(this.DOMNode.querySelector('input[type=tel]').value);
+    var phone = this.validatePhoneNumber(form.querySelector('input[type=tel]').value);
 
     if (!phone) return alert('Please enter a valid US phone number!');
 
     var data = new FormData();
-    data.append('campaignId', 'battleforthenet-2017');
     data.append('userPhone', phone);
+    data.append('campaignId', form.querySelector('input[name="campaignId"]').value);
 
     var xhr = new XMLHttpRequest();
 
     xhr.addEventListener('load', this.logStatus);
     xhr.addEventListener('error', this.logStatus);
 
-    xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
+    xhr.open('post', form.action, true);
     xhr.send(data);
 
     global.modals.hide('thanks_modal');
