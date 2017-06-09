@@ -46,18 +46,17 @@ CallForm.prototype.logStatus = function(e) {
 
 CallForm.prototype.addEventListeners = function() {
   var form = this.DOMNode.querySelector('form');
-  var campaignId = form.querySelector('input[name=campaignId]').value;
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var phone = this.validatePhoneNumber(this.DOMNode.querySelector('input[type=tel]').value);
+    var phone = this.validatePhoneNumber(form.querySelector('input[type=tel]').value);
 
     if (!phone) return alert('Please enter a valid US phone number!');
 
     var data = new FormData();
-    data.append('campaignId', campaignId);
     data.append('userPhone', phone);
+    data.append('campaignId', form.querySelector('input[name="campaignId"]').value);
 
     var xhr = new XMLHttpRequest();
 

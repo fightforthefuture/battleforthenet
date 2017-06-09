@@ -1,17 +1,18 @@
 <section class="form">
   <form class="call" action="https://call-congress.fightforthefuture.org/create">
-    <input type="hidden" name="campaignId" value="battleforthenet-2017" />
     <header>
       <h3>Call to defend net neutrality!</h3>
       <p>Enter your number and we'll connect you to Congress and the FCC.</p>
     </header>
     <main>
-      <input type="tel" id="userPhone" placeholder="555-555-5555"/>
+      <input type="tel" id="userPhone" name="userPhone" placeholder="555-555-5555"/>
       <button>Call</button>
     </main>
     <footer>
       <button>Call Congress</button>
       <p class="disclaimer">Your phone number will only be used to make this call. <a href="/privacy" target="_blank">Privacy Policy</a></p>
     </footer>
+
+    <input type="hidden" name="campaignId" value="battleforthenet-2017" />
   </form>
 </section>
