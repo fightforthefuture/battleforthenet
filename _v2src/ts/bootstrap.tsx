@@ -10,6 +10,7 @@ import {ScrollToggler} from './scroll-toggler';
 import {SelectOnFocus} from './select-on-focus';
 import {LoaderLogo} from './loader-logo';
 import {EventEmitter} from './event-emitter';
+import {FFTFActionFormFlow} from './fftf-action-form';
 import {mountComponent} from './utils';
 
 declare var window: any;
@@ -23,4 +24,5 @@ window['ScrollToggler'] = ScrollToggler;
 window['SelectOnFocus'] = SelectOnFocus;
 window['LoaderLogo'] = LoaderLogo;
 window['EventEmitter'] = EventEmitter;
+window['FFTFActionFormFlow'] = FFTFActionFormFlow;
 window['mountComponent'] = mountComponent;

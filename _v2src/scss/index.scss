@@ -167,6 +167,34 @@ h2 {
 		}
 	}
 }
+#call-form {
+	padding: 20px;
+	text-align: center;
+	p {
+		width: 100%;
+		font-size: 16px;
+	}
+	h3 {
+		font-size: 32px;
+		margin: 0;
+	}
+	input {
+		font-family: "Montserrat", sans-serif;
+		font-weight: bold;
+		font-size: 17px;
+		width: 100%;
+		padding: 15px 10px;
+		border-radius: 4px;
+		border: none;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.disclaimer {
+		font-size: 10px;
+	}
+}
+
+
 .toggle-true #persistent-button {
 	bottom: 15px;
 }
@@ -426,7 +454,7 @@ button.btn, a.btn {
 .no-overflow {
 	overflow: hidden;
 }
-.video-modal {
+.modal {
 	position: fixed;
 	z-index: 20;
 	top: 0px;
@@ -458,6 +486,22 @@ button.btn, a.btn {
 	.modal-content {
 		position: relative;
 		margin: 0 auto;
+	}
+}
+.loading-modal {
+	.modal-content {
+		position: relative;
+		height: 60px;
+		width: 60px;
+		margin: -30px auto 0;
+	}
+}
+.callform-modal {
+	.modal-content {
+		height: 300px;
+		width: 600px;
+		background-color: $BODY_BGCOLOR;
+		margin: -150px auto 0;
 	}
 }
 
@@ -530,4 +574,7 @@ button.btn, a.btn {
 }
 .no-scroll {
 	overflow: hidden;
+}
+.hidden {
+	display: none;
 }

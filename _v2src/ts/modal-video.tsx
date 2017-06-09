@@ -74,7 +74,7 @@ export class ModalVideo extends React.Component<Props, State> {
 			marginTop: 0 - (this.state.height / 2)
 		};
 		return (
-			<div className="video-modal">
+			<div className="modal video-modal">
 				<div className="modal-background"></div>
 				<div className="modal-close" onClick={this.props.onClose}>
 					<span className="oi" data-glyph="circle-x" title="close" aria-hidden="true"></span>
