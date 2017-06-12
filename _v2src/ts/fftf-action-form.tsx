@@ -58,13 +58,6 @@ class ActionForm extends React.Component<ActionProps, ActionState> {
 			input_zip: "",
 			input_comment: r.defaultFormText
 		};
-		this.state = {
-			input_name: "name",
-			input_email: "email",
-			input_address: "address",
-			input_zip: "89138",
-			input_comment: r.defaultFormText
-		};
 	}
 	onSubmit(evt: Event) {
 		evt.preventDefault();
