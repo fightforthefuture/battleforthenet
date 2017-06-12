@@ -126,15 +126,6 @@ h2 {
 		top: 235px;
 		left: -140px;
 	}
-	input {
-		font-family: "Montserrat", sans-serif;
-		font-weight: bold;
-		font-size: 17px;
-		width: 100%;
-		padding: 15px 10px;
-		border-radius: 4px;
-		border: none;
-	}
 	textarea {
 		font-family: "Montserrat", sans-serif;
 		font-weight: bold;
@@ -179,13 +170,6 @@ h2 {
 		margin: 0;
 	}
 	input {
-		font-family: "Montserrat", sans-serif;
-		font-weight: bold;
-		font-size: 17px;
-		width: 100%;
-		padding: 15px 10px;
-		border-radius: 4px;
-		border: none;
 		margin-bottom: 10px;
 		text-align: center;
 	}
@@ -461,6 +445,9 @@ button.btn, a.btn {
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
+	p {
+		width: 100%;
+	}
 	.modal-background {
 		position: absolute;
 		top: 0;
@@ -502,6 +489,22 @@ button.btn, a.btn {
 		width: 600px;
 		background-color: $BODY_BGCOLOR;
 		margin: -150px auto 0;
+	}
+}
+.callsuccess-modal {
+	.modal-content {
+		height: 300px;
+		width: 600px;
+		background-color: $BODY_BGCOLOR;
+		margin: -150px auto 0;
+		padding: 20px;
+		h4 {
+			font-size: 24px;
+			margin: 0 0 10px;
+		}
+		p {
+			font-size: 12px;
+		}
 	}
 }
 
@@ -577,4 +580,18 @@ button.btn, a.btn {
 }
 .hidden {
 	display: none;
+}
+
+input {
+	font-family: "Montserrat", sans-serif;
+	border-radius: 4px;
+	border: none;
+	box-shadow: none;
+	font-weight: bold;
+	font-size: 17px;
+	width: 100%;
+	padding: 15px 10px;
+	&.error {
+		border: 1px solid red;
+	}
 }
