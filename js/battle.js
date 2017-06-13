@@ -40,7 +40,7 @@
     intro.appendChild(strong);
 
     // Update intro paragraph copy
-    document.querySelector('#battle > p').innerHTML = intro.innerHTML;
+    document.querySelector('.battle > main > p').innerHTML = intro.innerHTML;
 
     var link = 'https://www.battleforthenet.com/?utm_source=etsy';
 
@@ -372,20 +372,20 @@ CallForm.prototype.addEventListeners = function() {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var phone = this.validatePhoneNumber(this.DOMNode.querySelector('input[type=tel]').value);
+    var phone = this.validatePhoneNumber(form.querySelector('input[type=tel]').value);
 
     if (!phone) return alert('Please enter a valid US phone number!');
 
     var data = new FormData();
-    data.append('campaignId', 'battleforthenet-2017');
     data.append('userPhone', phone);
+    data.append('campaignId', form.querySelector('input[name="campaignId"]').value);
 
     var xhr = new XMLHttpRequest();
 
     xhr.addEventListener('load', this.logStatus);
     xhr.addEventListener('error', this.logStatus);
 
-    xhr.open('post', 'https://call-congress.fightforthefuture.org/create', true);
+    xhr.open('post', form.action, true);
     xhr.send(data);
 
     global.modals.hide('thanks_modal');
@@ -1257,7 +1257,6 @@ SimpleSection.prototype.render = function() {
 module.exports = SimpleSection;
 
 },{"./Template":18}],17:[function(require,module,exports){
-(function (global){
 var SimpleSection = require('./SimpleSection');
 
 function TeamInternetSection(params) {
@@ -1272,7 +1271,7 @@ function TeamInternetSection(params) {
     if (this.wrapper) {
       this.setBackgrounds();
 
-      if (global.isDesktop) {
+      if (!window.navigator.userAgent.match(/mobile/i)) {
           this.quoteBubble = document.querySelector(this.target + ' .quote-bubble');
           this.arrowWrapper = this.quoteBubble.querySelector('.arrow-wrapper');
 
@@ -1373,7 +1372,6 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 
 module.exports = TeamInternetSection;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./SimpleSection":16}],18:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed

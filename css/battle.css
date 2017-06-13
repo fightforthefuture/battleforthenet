@@ -82,7 +82,14 @@ p {
           transition-delay: 0.2s;
 }
 
-#battle p.please-wait {
+.battle > main {
+  background-image: url('/images/Imagesmall.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-color: #1c1c25;
+}
+
+.battle p.please-wait {
     color: #5d5d7a;
     opacity: 0 !important;
 
@@ -93,21 +100,11 @@ p {
             transition: opacity 1s;
 }
 
-#battle p .headline-image {
+.battle p .headline-image {
     margin: 40px 0 12px;
     max-width: 90%;
     position: relative;
     z-index: 1;
-}
-
-#background {
-  background-image: url('/images/Imagesmall.jpg');
-  background-position: top center;
-  background-repeat: no-repeat;
-  height: 100%;
-  min-height: 729px;
-  position: absolute;
-  width: 100%;
 }
 
 .light {
@@ -210,7 +207,7 @@ header nav a {
 }
 
 /* Form */
-body #battle #petition {
+.battle #petition {
     color: #505073;
     margin: 0px auto 0;
     width: 100%;
@@ -219,7 +216,7 @@ body #battle #petition {
         transition: opacity 0.8s;
 }
 
-body #battle #petition ul.tabs {
+.battle #petition ul.tabs {
     width: 100%;
     list-style-type: none;
     font-size: 0px;
@@ -227,14 +224,14 @@ body #battle #petition ul.tabs {
     line-height: 0px;
 }
 
-body #battle #petition .tabs li {
+.battle #petition .tabs li {
     width: 25%;
     display: inline-block;
     padding: 0px;
     margin: 0px;
 }
 
-body #battle #petition .tabs li a {
+.battle #petition .tabs li a {
     display: inline-block;
     width: 100%;
     height: 45px;
@@ -251,45 +248,45 @@ body #battle #petition .tabs li a {
     background-size: 60% auto;
     outline: 0;
 }
-body #battle #petition .tabs li a:hover {
+.battle #petition .tabs li a:hover {
     background-color: #e2e2ee;
 }
 @media screen and (min-width: 500px) {
-    body #battle #petition .tabs li a {
+    .battle #petition .tabs li a {
         background-size: auto 60%;
     }
 }
-body #battle #petition .tabs li a.sel {
+.battle #petition .tabs li a.sel {
     background-color: #fff;
 }
-body #battle #petition .tabs li a.verizon {
+.battle #petition .tabs li a.verizon {
     border-left: 0px;
     background-image: url(/images/petition/verizon.png);   
 }
-body #battle #petition .tabs li a.att {
+.battle #petition .tabs li a.att {
     background-image: url(/images/petition/att.png);   
 }
-body #battle #petition .tabs li a.tmobile {
+.battle #petition .tabs li a.tmobile {
     background-image: url(/images/petition/tmobile.png);   
 }
-body #battle #petition .tabs li a.comcast {
+.battle #petition .tabs li a.comcast {
     background-image: url(/images/petition/comcast.png);   
 }
 
 
-body #battle #petition .fields {
+.battle #petition .fields {
     background-color: #fff;
     padding: 10px;
 }
-body #battle #petition .fields div {
+.battle #petition .fields div {
     display: inline-block;
     padding: 5px;
     width: 50%;
 }
-body #battle #petition .fields div.wide {
+.battle #petition .fields div.wide {
     width: 100%;
 }
-body #battle #petition .fields input[type="text"], body #battle #petition .fields textarea {
+.battle #petition .fields input[type="text"], .battle #petition .fields textarea {
     width: 100%;
     height: 45px;
     border-radius: 6px;
@@ -300,7 +297,7 @@ body #battle #petition .fields input[type="text"], body #battle #petition .field
     box-shadow: inset 0px 2px 5px 0px rgba(0,0,0,0.1);
     font-size: 16px;
 }
-body #battle #petition .fields textarea {
+.battle #petition .fields textarea {
     padding: 15px 15px 0px 15px;
     height: 85px;
     transition: height .3s ease-in;
@@ -308,21 +305,21 @@ body #battle #petition .fields textarea {
     -ms-transition: height .3s ease-in;
     -webkit-transition: height .3s ease-in;
 }
-body #battle #petition .fields textarea.expanded {
+.battle #petition .fields textarea.expanded {
     height: 275px;
 }
-body #battle #petition .fields p {
+.battle #petition .fields p {
     text-align: left;
     margin: 0px 0px 0px 5px;
     font-size: 16px;
     color: #393863;
 }
-body #battle #petition .fields span {
+.battle #petition .fields span {
     color: #999;
     font-style: italic;
 }
 
-body #battle #petition button {
+.battle #petition button {
     background: #23d19d;
     color: white;
     border: 0px;
@@ -340,7 +337,7 @@ body #battle #petition button {
     border-bottom-left-radius: 6px;
     cursor: pointer;
 }
-body #battle #petition button:hover {
+.battle #petition button:hover {
     background: #13c18d;
 }
 
@@ -409,12 +406,12 @@ form section input, form section button {
 }
 
 @media screen and (min-width: 500px) {
-    body #battle .phone-call-form {
+    .battle .phone-call-form {
         width: 420px;
     }
 }
 
-body #battle .thanks {
+.battle .thanks {
     background-color: #c6e5dd;
     border-radius: 7px;
     display: block;
@@ -424,17 +421,17 @@ body #battle .thanks {
     max-width: 550px;
 }
 
-body #battle .thanks h2 {
+.battle .thanks h2 {
     color: #20cba1;
     line-height: 1;
     margin: 0px;
 }
-body #battle .thanks p {
+.battle .thanks p {
     color: rgba(0, 0, 0, .7);
     padding: 0px 10px;
     margin: 10px 0px 10px 0px;
 }
-body #battle .thanks p a {
+.battle .thanks p a {
     color: black;
 }
 
@@ -443,9 +440,9 @@ body #battle .thanks p a {
 /*270 x 175
 420 x 273*/
 
-#battle section h2 {
-    font-size: 45px;
-    font-weight: 300;
+.battle section h2 {
+  font-size: 45px;
+  font-weight: 300;
 }
 
 p {
@@ -1897,12 +1894,12 @@ input{
 }
 
 #video-petition .video-embed-target,
-#battle #video-petition .form-wrapper {
+#video-petition .form-wrapper {
   margin: 0 10px;
   flex: 1;
 }
 
-#battle #video-petition .form-wrapper {
+#video-petition .form-wrapper {
   padding: 0;
 }
 
@@ -1936,7 +1933,7 @@ input{
   }
 
   #video-petition .video-embed-target,
-  #battle #video-petition .form-wrapper {
+  #video-petition .form-wrapper {
     width: 100%;
     margin: 0 0 15px;
   }

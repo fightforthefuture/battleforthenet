@@ -14,14 +14,14 @@ var uglify = require('gulp-uglify');
 gulp.task('sass', function() {
     return gulp.src("scss/index.scss")
         .pipe(sass())
-        .pipe(gulp.dest("../v2dist/"))
+        .pipe(gulp.dest('dist'))
         .pipe(browserSync.reload({ stream: true }))
 })
 
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: "../"
+            baseDir: "."
         },
         open: false
     })  
@@ -48,7 +48,7 @@ gulp.task('typescript', function() {
 		})
 		.pipe(source('bundle.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest('../v2dist/'));
+		.pipe(gulp.dest('dist'));
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'typescript'], function() {

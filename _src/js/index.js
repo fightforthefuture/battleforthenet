@@ -38,7 +38,7 @@
     intro.appendChild(strong);
 
     // Update intro paragraph copy
-    document.querySelector('#battle > p').innerHTML = intro.innerHTML;
+    document.querySelector('.battle > main > p').innerHTML = intro.innerHTML;
 
     var link = 'https://www.battleforthenet.com/?utm_source=etsy';
 
