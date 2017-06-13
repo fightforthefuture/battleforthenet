@@ -3,6 +3,7 @@ var Template = require('./Template');
 function CallForm(params) {
   this.target = params.target;
   this.template = params.template;
+  this.campaign = params.campaign;
 
   this.DOMNode = document.querySelector(this.target);
 
@@ -13,7 +14,23 @@ function CallForm(params) {
 }
 
 CallForm.prototype.render = function() {
-  this.DOMNode.innerHTML = Template(this.template, {});
+  var data;
+
+  switch (this.campaign) {
+    case 'daily':
+      data = {
+        action: 'https://demandprogress.callpower.org/call/create',
+        campaignId: '1'
+      }
+      break;
+    default:
+      data = {
+        action: 'https://call-congress.fightforthefuture.org/create',
+        campaignId: 'battleforthenet-2017'
+      }
+  }
+
+  this.DOMNode.innerHTML = Template(this.template, data);
 };
 
 CallForm.prototype.validatePhoneNumber = function(phone) {
