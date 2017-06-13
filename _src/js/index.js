@@ -75,16 +75,13 @@
 
   var params = new URLSearchParams(window.location.search.substring(1));
   if (params.get('call') || document.querySelector('.form-wrapper').classList.contains('call')) {
-    var callTemplate = '/templates/CallForm.html';
-    if (params.get('call').toLowerCase() === 'daily') {
-      callTemplate = '/templates/CallFormDaily.html';
-    }
     new AJAX({
-      url: callTemplate + buster,
+      url: '/templates/CallForm.html' + buster,
       success: function(e) {
         new CallForm({
           target: '.form-wrapper',
-          template: e.target.responseText
+          template: e.target.responseText,
+          campaign: params.get('call').toLowerCase()
         });
       }
     });
