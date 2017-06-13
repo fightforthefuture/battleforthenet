@@ -89,6 +89,10 @@ p {
   background-color: #1c1c25;
 }
 
+.battle strong {
+  font-weight: 800;
+}
+
 .battle p.please-wait {
     color: #5d5d7a;
     opacity: 0 !important;
