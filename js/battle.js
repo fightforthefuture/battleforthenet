@@ -1257,7 +1257,6 @@ SimpleSection.prototype.render = function() {
 module.exports = SimpleSection;
 
 },{"./Template":18}],17:[function(require,module,exports){
-(function (global){
 var SimpleSection = require('./SimpleSection');
 
 function TeamInternetSection(params) {
@@ -1272,7 +1271,7 @@ function TeamInternetSection(params) {
     if (this.wrapper) {
       this.setBackgrounds();
 
-      if (global.isDesktop) {
+      if (!window.navigator.userAgent.match(/mobile/i)) {
           this.quoteBubble = document.querySelector(this.target + ' .quote-bubble');
           this.arrowWrapper = this.quoteBubble.querySelector('.arrow-wrapper');
 
@@ -1373,7 +1372,6 @@ TeamInternetSection.prototype.hideBubble = function hideBubble() {
 
 module.exports = TeamInternetSection;
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./SimpleSection":16}],18:[function(require,module,exports){
 // Simple JavaScript Templating
 // John Resig - http://ejohn.org/ - MIT Licensed

@@ -12,7 +12,7 @@ function TeamInternetSection(params) {
     if (this.wrapper) {
       this.setBackgrounds();
 
-      if (global.isDesktop) {
+      if (!window.navigator.userAgent.match(/mobile/i)) {
           this.quoteBubble = document.querySelector(this.target + ' .quote-bubble');
           this.arrowWrapper = this.quoteBubble.querySelector('.arrow-wrapper');
 

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/337587de8c13868283993bfacdcdd1a0f3291e7f/nanoajax/index.d.ts",
+    "raw": "registry:dt/nanoajax#0.2.4+20160428043022",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/337587de8c13868283993bfacdcdd1a0f3291e7f/nanoajax/index.d.ts"
+  }
+}
