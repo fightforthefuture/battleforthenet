@@ -805,8 +805,10 @@ section .btn:hover, button:hover {
     margin-bottom: 36px;
 }
 #extra-reading p {
-    margin-top: 0;
+    margin: 7px auto;
+    padding: 0;
 }
+
 #extra-reading p a {
     color: #20cba1;
     font-size: 16px;
