@@ -463,8 +463,9 @@ p {
     padding: 16px 25px 64px;
 }
 #team-cable h2 {
-
+padding-bottom: 24px;
 }
+
 #team-cable p {
     color: #eee;
     font-size: 22px;
@@ -586,7 +587,10 @@ p {
     font-weight: bold;
     padding: 16px 25px 64px;
 }
-#how-we-won h2 {}
+#how-we-won h2 {
+  padding-bottom: 24px;
+}
+
 #how-we-won p {
     color: #eee;
     font-size: 22px;
