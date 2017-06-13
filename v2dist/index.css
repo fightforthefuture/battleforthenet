@@ -597,11 +597,11 @@ h2 {
   .loader .chord-7 {
     opacity: 0.3; }
 
-.footer {
+footer {
   background-color: #2c2a4d;
   padding: 30px;
   margin-top: 100px; }
-  .footer .logo img {
+  footer .logo img {
     height: 27px; }
 
 #video-roll {
