@@ -2296,3 +2296,9 @@ color: red;
 .day-of-action .modal a {
   color: #fff;
 }
+
+.participants h4{
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 10px 10px 40px 10px;
+}
