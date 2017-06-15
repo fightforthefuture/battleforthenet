@@ -17,7 +17,7 @@ export class EventEmitter {
 	}
 	on(event: string, cb: (evt:any)=>void)  {
 		var unsub = this.bus.onValue(function(evt) {
-			if (evt.type === event) {
+			if (event === "all" || evt.type === event) {
 				cb(evt);
 			}
 		});
