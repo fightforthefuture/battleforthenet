@@ -34,6 +34,7 @@
   "dependencies": {
     "@types/es6-promise": "0.0.32",
     "baconjs": "^0.7.93",
+    "classlist-polyfill": "^1.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "nanoajax": "^0.4.3",

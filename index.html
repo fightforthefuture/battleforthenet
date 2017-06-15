@@ -163,7 +163,12 @@
         var eventEmitter = new EventEmitter();
 
         mountComponent(
-          React.createElement(FFTFActionFormFlow),
+          React.createElement(FFTFActionFormFlow, {
+            //actionUrl: "https://queue.fightforthefuture.org/action",
+            //callUrl: "https://call-congress.fightforthefuture.org/create"
+            actionUrl: "http://localhost:8000/action",
+            callUrl: "http://localhost:8000/create",
+          }),
           document.getElementById("fftf-action-form")
         );
 

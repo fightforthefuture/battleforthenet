@@ -14,7 +14,7 @@ import {r} from './r';
 
 
 // Mock submit:
-function mockSubmitActionForm(data: any): Promise<ajaxResult> {
+function mockSubmitActionForm(url: string, data: any): Promise<ajaxResult> {
 	return mockAjaxPromise({
 		code: 200,
 		response: data,
@@ -24,20 +24,21 @@ function mockSubmitActionForm(data: any): Promise<ajaxResult> {
 
 
 // Production submit:
-function submitActionForm(data: any): Promise<ajaxResult> {
+function submitActionForm(url: string, data: any): Promise<ajaxResult> {
 	return ajaxPromise({
- 		url: "https://queue.fightforthefuture.org/action",
+ 		url: url,
 		method: "post",
-		data: data
+		obj: data,
+		json: true
 	});
 }
 
-interface EmptyProps {
-}
 
 interface ActionProps {
+	url: string
 	setModal: (modal: string | null)=>any
 }
+
 
 interface ActionState {
 	input_name: string | string[] | undefined
@@ -79,7 +80,7 @@ class ActionForm extends React.Component<ActionProps, ActionState> {
 			"member[postcode]": this.state.input_zip,
 			"action_comment": this.state.input_comment
 		};
-		mockSubmitActionForm(data)
+		submitActionForm(this.props.url, data)
 			.then((result: ajaxResult) => {
 				console.log("DONE");
 				this.props.setModal("callform");
@@ -116,7 +117,7 @@ class ActionForm extends React.Component<ActionProps, ActionState> {
 
 
 // Mock submit:
-function mockSubmitCallForm(data: any): Promise<ajaxResult> {
+function mockSubmitCallForm(url: string, data: any): Promise<ajaxResult> {
 	console.log(data);
 	return mockAjaxPromise({
 		code: 200,
@@ -127,20 +128,29 @@ function mockSubmitCallForm(data: any): Promise<ajaxResult> {
 
 
 // Production submit:
-function submitCallForm(data: any): Promise<ajaxResult> {
+function submitCallForm(url: string, data: any): Promise<ajaxResult> {
 	return ajaxPromise({
- 		url: "https://call-congress.fightforthefuture.org/create",
+		url: url,
 		method: "post",
-		data: data
+		obj: data,
+		json: true
 	});
 }
+
+
+interface CallProps {
+	url: string
+	setModal: (modal: string | null)=>any
+}
+
 
 interface CallState {
 	input_phone: string | string[] | undefined
 	error_phone: boolean
 }
 
-class CallForm extends React.Component<ActionProps, CallState> {
+
+class CallForm extends React.Component<CallProps, CallState> {
 	formElement: HTMLElement
 	constructor(props: ActionProps) {
 		super(props);
@@ -181,7 +191,7 @@ class CallForm extends React.Component<ActionProps, CallState> {
 				"campaignId": "battleforthenet-2017",
 				"userPhone": phone
 			};
-			mockSubmitCallForm(data)
+			submitCallForm(this.props.url, data)
 				.then((result: ajaxResult) => {
 					console.log("DONE");
 					this.props.setModal("success");
@@ -205,10 +215,15 @@ class CallForm extends React.Component<ActionProps, CallState> {
 	}
 }
 
+
+interface SuccessProps {
+	setModal: (modal: string | null)=>any
+}
+
 interface SuccessState {
 }
 
-class CallSuccess extends React.Component<ActionProps, SuccessState> {
+class CallSuccess extends React.Component<SuccessProps, SuccessState> {
 	render() {
 		return (
 			<div>
@@ -222,12 +237,18 @@ class CallSuccess extends React.Component<ActionProps, SuccessState> {
 	}
 }
 
+
+interface FlowProps {
+	actionUrl: string
+	callUrl: string
+}
+
 interface FlowState {
 	modal: string | null
 }
 
-export class FFTFActionFormFlow extends React.Component<EmptyProps, FlowState> {
-	constructor(props: EmptyProps) {
+export class FFTFActionFormFlow extends React.Component<FlowProps, FlowState> {
+	constructor(props: FlowProps) {
 		super(props);
 		this.state = {
 			modal: null
@@ -250,7 +271,7 @@ export class FFTFActionFormFlow extends React.Component<EmptyProps, FlowState> {
 			case "callform":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallForm setModal={this.setModal.bind(this)} />
+						<CallForm url={this.props.callUrl} setModal={this.setModal.bind(this)} />
 					</Modal>
 				);
 				break;
@@ -264,7 +285,7 @@ export class FFTFActionFormFlow extends React.Component<EmptyProps, FlowState> {
 		}
 		return (
 			<div>
-				<ActionForm setModal={this.setModal.bind(this)} />
+				<ActionForm url={this.props.actionUrl} setModal={this.setModal.bind(this)} />
 				<ReactTransitionGroup.CSSTransitionGroup
 					component="div"
 					transitionName="fadein"
