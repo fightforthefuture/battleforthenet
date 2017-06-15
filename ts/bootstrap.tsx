@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import * as Promise from 'native-promise-only';
 
 import {TestComponent} from './test';
 import {StatsComponent} from './stats';
@@ -15,6 +16,7 @@ import {mountComponent} from './utils';
 
 declare var window: any;
 
+window['_promise'] = Promise;
 window['React'] = React;
 window['ReactDOM'] = ReactDOM;
 window['TestComponent'] = TestComponent;

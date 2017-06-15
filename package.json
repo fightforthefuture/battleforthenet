@@ -32,11 +32,12 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "@types/es6-promise": "0.0.32",
     "baconjs": "^0.7.93",
-    "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "nanoajax": "^0.4.3",
+    "native-promise-only": "^0.8.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-transition-group": "^1.1.3"

@@ -1,16 +1,17 @@
 /// <reference path="../typings/index.d.ts" />
 
-import * as $ from 'jquery';
+
 import * as Bacon from 'baconjs';
+
 
 export class EventEmitter {
 	bus: Bacon.Bus<any, any>;
 	constructor() {
 		this.bus = new Bacon.Bus();
-		$(window).on("scroll", (evt) => {
+		window.addEventListener("scroll", (evt) => {
 			this.bus.push(evt);
 		});
-		$(window).on("resize", (evt) => {
+		window.addEventListener("resize", (evt) => {
 			this.bus.push(evt);
 		});
 	}

@@ -3,29 +3,29 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as ReactTransitionGroup from 'react-transition-group';
-import * as $ from 'jquery';
 import * as _ from 'lodash';
 
 import {LoaderLogo} from './loader-logo';
+import {Modal} from './modal';
 import {handleInputChange} from './utils';
+import {ajaxResult, ajaxPromise} from './utils';
+import {mockAjaxPromise} from './utils';
 import {r} from './r';
 
 
 // Mock submit:
-import {MockDeferred} from './mock-jq-deferred';
-function mockSubmitActionForm(data: any) {
-	console.log(data);
-	// success case:
-	return new MockDeferred({data: {}}, true, 2000);
-
-	// error case:
-	// return new MockDeferred({oops: true}, false, 2000);
+function mockSubmitActionForm(data: any): Promise<ajaxResult> {
+	return mockAjaxPromise({
+		code: 200,
+		response: data,
+		xhr: null
+	}, 2000);
 }
 
 
 // Production submit:
-function submitActionForm(data: any) {
-	return $.ajax({
+function submitActionForm(data: any): Promise<ajaxResult> {
+	return ajaxPromise({
  		url: "https://queue.fightforthefuture.org/action",
 		method: "post",
 		data: data
@@ -80,11 +80,11 @@ class ActionForm extends React.Component<ActionProps, ActionState> {
 			"action_comment": this.state.input_comment
 		};
 		mockSubmitActionForm(data)
-			.done((data: any, status: string, xhr: JQueryXHR) => {
+			.then((result: ajaxResult) => {
 				console.log("DONE");
 				this.props.setModal("callform");
 			})
-			.fail((xhr: JQueryXHR, status: string, err: Error) => {
+			.catch((result: ajaxResult) => {
 				console.log("FAIL");
 				this.props.setModal(null);
 			});
@@ -116,21 +116,19 @@ class ActionForm extends React.Component<ActionProps, ActionState> {
 
 
 // Mock submit:
-// import {MockDeferred} from './mock-jq-deferred';
-function mockSubmitCallForm(data: any) {
+function mockSubmitCallForm(data: any): Promise<ajaxResult> {
 	console.log(data);
-
-	// success case:
-	return new MockDeferred({data: {}}, true, 2000);
-
-	// error case:
-	// return new MockDeferred({oops: true}, false, 2000);
+	return mockAjaxPromise({
+		code: 200,
+		response: data,
+		xhr: null
+	}, 2000);
 }
 
 
 // Production submit:
-function submitCallForm(data: any) {
-	return $.ajax({
+function submitCallForm(data: any): Promise<ajaxResult> {
+	return ajaxPromise({
  		url: "https://call-congress.fightforthefuture.org/create",
 		method: "post",
 		data: data
@@ -184,11 +182,11 @@ class CallForm extends React.Component<ActionProps, CallState> {
 				"userPhone": phone
 			};
 			mockSubmitCallForm(data)
-				.done((data: any, status: string, xhr: JQueryXHR) => {
+				.then((result: ajaxResult) => {
 					console.log("DONE");
 					this.props.setModal("success");
 				})
-				.fail((xhr: JQueryXHR, status: string, err: Error) => {
+				.catch((result: ajaxResult) => {
 					console.log("FAIL");
 					this.props.setModal("callform");
 				});
@@ -238,38 +236,30 @@ export class FFTFActionFormFlow extends React.Component<EmptyProps, FlowState> {
 	setModal(modal: string | null): any {
 		this.setState({modal: modal} as FlowState);
 	}
-	createModal(el: JSX.Element, extraClass: string, showClose: boolean) {
-		var closeModal = null;
-		if (showClose) {
-			closeModal = (
-				<div className="modal-close" onClick={() => {this.setModal(null);}}>
-					<span className="oi" data-glyph="circle-x" title="close" aria-hidden="true"></span>
-				</div>
-			);
-		}
-		return (
-			<div className={"modal " + extraClass}>
-				<div className="modal-background"></div>
-				{ closeModal }
-				<div className="modal-content-container">
-					<div className="modal-content">
-						{ el }
-					</div>
-				</div>
-			</div>
-		);
-	}
 	render() {
 		var modal: JSX.Element | null = null;
+		var onClose = () => {this.setModal(null)};
 		switch (this.state.modal) {
 			case "loading":
-				modal = this.createModal(<LoaderLogo />, "loading-modal", false);
+				modal = (
+					<Modal modalClass="loading-modal">
+						<LoaderLogo />
+					</Modal>
+				);
 				break;
 			case "callform":
-				modal = this.createModal(<CallForm setModal={this.setModal.bind(this)} />, "callform-modal", true);
+				modal = (
+					<Modal modalClass="callform-modal" onClose={onClose}>
+						<CallForm setModal={this.setModal.bind(this)} />
+					</Modal>
+				);
 				break;
 			case "success":
-				modal = this.createModal(<CallSuccess setModal={this.setModal.bind(this)} />, "callsuccess-modal", true);
+				modal = (
+					<Modal modalClass="callsuccess-modal" onClose={onClose}>
+						<CallSuccess setModal={this.setModal.bind(this)} />
+					</Modal>
+				);
 				break;
 		}
 		return (

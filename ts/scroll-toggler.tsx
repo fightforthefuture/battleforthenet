@@ -3,9 +3,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
-import * as $ from 'jquery';
 import {DOMWrapper} from './dom-wrapper';
 import {EventEmitter} from './event-emitter';
+import {getScrollTop} from './utils';
 
 interface Props {
 	top: number,
@@ -34,7 +34,7 @@ export class ScrollToggler extends React.Component<Props, State> {
 		this._unsub();
 	}
 	handleScroll(evt:Event) {
-		var scrollTop = $(evt.currentTarget).scrollTop();
+		var scrollTop = getScrollTop();
 		this.setState({
 			toggle: scrollTop > this.props.top
 		});
