@@ -85,9 +85,3 @@ export function handleInputChange(evt: React.FormEvent) {
 export function mountComponent(el: React.ReactElement<any>, target: any) {
 	ReactDOM.render(el, target);
 };
-
-
-export function hasFlag(flag: string) {
-	var params = new URLSearchParams(window.location.search.substring(1));
-	return params.get(flag);
-};

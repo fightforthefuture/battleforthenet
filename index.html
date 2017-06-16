@@ -155,16 +155,17 @@
         'use strict';
 
         var eventEmitter = new EventEmitter();
+        var externalFlags = new ExternalFlags();
 
-        var hasCallFlag = hasFlag("call");
-        var initialForm = hasCallFlag ? "call" : "action";
-        var persistentButtonText = hasCallFlag ? "Call Congress" : "Send Letter";
+        var initialForm = externalFlags.hasFlag("call") ? "call" : "action";
+        var persistentButtonText = externalFlags.hasFlag("call") ? "Call Congress" : "Send Letter";
 
         mountComponent(
           React.createElement(BFTNFormFlow, {
             //actionUrl: "https://queue.fightforthefuture.org/action",
             //callUrl: "https://call-congress.fightforthefuture.org/create"
             initialForm: initialForm,
+            org: externalFlags.getFlag("org", "fftf"),
             actionUrl: "http://localhost:8000/action",
             callUrl: "http://localhost:8000/create",
           }),

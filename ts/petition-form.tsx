@@ -31,6 +31,7 @@ function submitForm(url: string, data: any) {
 
 interface Props {
 	url: string
+	org: string
 	setModal: (modal: string | null)=>any
 }
 
@@ -67,7 +68,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			"guard": "",
 			"contact_congress": "1",
 			"fcc_ecfs_docket": "17-108",
-			"org": "fftf",
+			"org": this.props.org,
 			"an_tags": "[\"net-neutrality\"]",
 			"an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
 			"member[first_name]": this.state.input_name,

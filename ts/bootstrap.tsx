@@ -14,7 +14,8 @@ import {SelectOnFocus} from './select-on-focus';
 import {LoaderLogo} from './loader-logo';
 import {EventEmitter} from './event-emitter';
 import {BFTNFormFlow} from './bftn-form-flow';
-import {hasFlag, mountComponent} from './utils';
+import {mountComponent} from './utils';
+import {ExternalFlags} from './external-flags';
 
 declare var window: any;
 
@@ -32,4 +33,4 @@ window['LoaderLogo'] = LoaderLogo;
 window['EventEmitter'] = EventEmitter;
 window['BFTNFormFlow'] = BFTNFormFlow;
 window['mountComponent'] = mountComponent;
-window['hasFlag'] = hasFlag;
+window['ExternalFlags'] = ExternalFlags;

@@ -20,6 +20,7 @@ import {r} from './r';
 
 interface Props {
 	initialForm: string
+	org: string
 	actionUrl: string
 	callUrl: string
 }
@@ -52,7 +53,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 			case "petition":
 			default:
-				form = <PetitionForm url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
+				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
 				copy = <PetitionCopy />
 				break;
 		}
