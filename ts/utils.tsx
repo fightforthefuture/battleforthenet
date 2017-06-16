@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as nanoajax from 'nanoajax';
 import * as _ from 'lodash';
 
 
@@ -41,30 +40,29 @@ function encodeObject(obj: {[key: string]: any}): string {
 };
 
 
-export function ajaxPromise(opts: any): Promise<ajaxResult> {
-	var cors = _.isUndefined(opts.cords) ? opts.cors : true;
-	var json = _.isUndefined(opts.json) ? opts.json : false;
-	var body: string;
-	if (opts.obj) {
-		body = encodeObject(opts.obj);
-	} else {
-		body = opts.body;
+export function ajaxPromise(opts: any)  {
+	var cors = !_.isUndefined(opts.cors) ? opts.cors : true;
+	var json = !_.isUndefined(opts.json) ? opts.json : false;
+	var spec: any = {
+		url: opts.url,
+		method: opts.method.toUpperCase()
+	};
+	if (cors) {
+		spec['mode'] = 'cors';
 	}
-	return new Promise((resolve, reject) => {
-		nanoajax.ajax({
-			url: opts.url,
-			body: body,
-			method: opts.method,
-			cors: cors
-		}, function(code, response, xhr) {
-			console.log(code, response);
-			var result = {code, response, xhr};
-			if (code === 200) {
-				resolve(result);
-			} else {
-				reject(result);
-			}
-		});
+	if (opts.obj) {
+		spec['body'] = encodeObject(opts.obj);
+		spec['headers'] = {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		};
+	} else {
+		spec['body'] = opts.body;
+	}
+	return fetch(
+		opts.url, spec
+	).then(function(response) {
+		console.log(response);
+		return response;
 	});
 };
 
@@ -86,4 +84,10 @@ export function handleInputChange(evt: React.FormEvent) {
 
 export function mountComponent(el: React.ReactElement<any>, target: any) {
 	ReactDOM.render(el, target);
+};
+
+
+export function hasFlag(flag: string) {
+	var params = new URLSearchParams(window.location.search.substring(1));
+	return params.get(flag);
 };

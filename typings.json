@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "lodash": "registry:npm/lodash#4.0.0+20161015015725",
-    "nanoajax": "registry:dt/nanoajax#0.2.4+20160428043022",
     "react": "registry:npm/react#15.0.1+20170104200836",
     "react-dom": "registry:npm/react-dom#15.0.1+20160826174104"
   },

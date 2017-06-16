@@ -34,22 +34,18 @@
     <link href="/dist/index.css" rel="stylesheet" type="text/css" />
   </head>
 
-  <body class="overlord">
-    <div id="stats"></div>
+  <body class="bftn-homepage">
+    <div class="stats" id="stats"></div>
 
     <div id="foobar"></div>
 
     <div class="unit">
-      <div id="loader-container"></div>
+      <div class="loader-container" id="loader-container"></div>
     </div>
 
     <div class="unit">
-      <div id="hero">
-        <h1>This is a battle for the future of the internet</h1>
-
-        <p>Comcast &amp; Verizon want the power to control what we see &amp; do online. The FCC will let them, unless we stop it. This is a battle for the Internet's future. <em>Before you do anything else, send a letter to the FCC now</em></p>
-      </div>
-      <div id="fftf-action-form"></div>
+      <h1>This is a battle for the future of the internet</h1>
+      <div class="hero" id="bftn-action-form"></div>
     </div>
 
     <div class="unit">
@@ -58,7 +54,7 @@
 
     <div class="no-overflow">
       <div class="unit">
-        <div id="video-roll"></div>
+        <div class="video-roll" id="video-roll"></div>
       </div>
     </div>
 
@@ -142,10 +138,8 @@
       </div>
     </footer>
 
-    <div>
-      <div id="persistent-button">
-        <a href="#" class="btn">Send Letter</a>
-      </div>
+    <div id="persistent-button">
+      <a href="#" class="btn">Send Letter</a>
     </div>
 
     <!-- Senty Error Reporting -->
@@ -162,14 +156,19 @@
 
         var eventEmitter = new EventEmitter();
 
+        var hasCallFlag = hasFlag("call");
+        var initialForm = hasCallFlag ? "call" : "action";
+        var persistentButtonText = hasCallFlag ? "Call Congress" : "Send Letter";
+
         mountComponent(
-          React.createElement(FFTFActionFormFlow, {
+          React.createElement(BFTNFormFlow, {
             //actionUrl: "https://queue.fightforthefuture.org/action",
             //callUrl: "https://call-congress.fightforthefuture.org/create"
+            initialForm: initialForm,
             actionUrl: "http://localhost:8000/action",
             callUrl: "http://localhost:8000/create",
           }),
-          document.getElementById("fftf-action-form")
+          document.getElementById("bftn-action-form")
         );
 
         mountComponent(
@@ -182,11 +181,14 @@
           document.getElementById("loader-container")
         );
 
-        ScrollToggler.wrapElement(
-          document.getElementById("persistent-button"),
-          550,
-          800,
-          eventEmitter
+        mountComponent(
+          React.createElement(PersistentButton, {
+            text: persistentButtonText,
+            desktopTop: 550,
+            mobileTop: 800,
+            eventEmitter: eventEmitter
+          }),
+          document.getElementById("persistent-button")
         );
 
         mountComponent(

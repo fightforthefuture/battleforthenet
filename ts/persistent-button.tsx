@@ -8,9 +8,9 @@ import {EventEmitter} from './event-emitter';
 import {getScrollTop} from './utils';
 
 interface Props {
-	desktopTop: number,
-	mobileTop: number,
-	element: Node,
+	text: string
+	desktopTop: number
+	mobileTop: number
 	eventEmitter: EventEmitter
 }
 
@@ -18,7 +18,7 @@ interface State {
 	toggle: boolean
 }
 
-export class ScrollToggler extends React.Component<Props, State> {
+export class PersistentButton extends React.Component<Props, State> {
 	_handleScroll: ()=>void;
 	_unsub: ()=>void;
 	constructor(props:Props) {
@@ -49,22 +49,9 @@ export class ScrollToggler extends React.Component<Props, State> {
 	}
 	render() {
 		return <div className={"toggle-" + (this.state.toggle ? "true" : "false")}>
-			<DOMWrapper element={this.props.element} />
+			<div className="persistent-button">
+				<a className="btn" href="#">{ this.props.text }</a>
+			</div>
 		</div>;
-	}
-
-	static wrapElement(target: HTMLElement, desktopTop: number, mobileTop: number, eventEmitter: EventEmitter) {
-		if (target.parentElement instanceof HTMLElement) {
-			const parent = target.parentElement;
-			const child = parent.removeChild(target);
-			var props = {
-				desktopTop: desktopTop,
-				mobileTop: mobileTop,
-				element: child,
-				eventEmitter: eventEmitter
-			};
-			const c = React.createElement(ScrollToggler, props);
-			ReactDOM.render(c, parent);
-		}
 	}
 }
