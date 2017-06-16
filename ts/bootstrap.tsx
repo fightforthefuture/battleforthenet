@@ -16,6 +16,7 @@ import {EventEmitter} from './event-emitter';
 import {BFTNFormFlow} from './bftn-form-flow';
 import {mountComponent} from './utils';
 import {ExternalFlags} from './external-flags';
+import {GoogleAnalytics} from './google-analytics';
 
 declare var window: any;
 
@@ -34,3 +35,4 @@ window['EventEmitter'] = EventEmitter;
 window['BFTNFormFlow'] = BFTNFormFlow;
 window['mountComponent'] = mountComponent;
 window['ExternalFlags'] = ExternalFlags;
+window['GoogleAnalytics'] = GoogleAnalytics;
