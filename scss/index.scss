@@ -35,7 +35,7 @@ $RED: #f94220;
 	}
 
 	div, p {
-		font-family: "Open Sans", sans-serif;	
+		font-family: "Open Sans", sans-serif;
 	}
 
 	h1 {
@@ -110,8 +110,9 @@ $RED: #f94220;
 	}
 
 	.hero {
+		min-height: 375px;
 		.petition-copy {
-			margin-bottom: 140px;
+			padding-bottom: 100px;
 			p {
 				width: 490px;
 				font-size: 26px;
@@ -540,6 +541,53 @@ $RED: #f94220;
 			p {
 				font-size: 16px;
 			}
+		}
+	}
+
+	.social-media-buttons {
+		position: absolute;
+		left: 0;
+		top: 500px;
+		.share-bar {
+			display: block;
+			position: relative;
+			height: 60px;
+			width: 80px;
+			border-radius: 0 30px 30px 0;
+			margin-bottom: 10px;
+			transition: width 0.2s ease-in;
+			span {
+				font-family: "Open Sans", sans-serif;
+				font-weight: bold;
+				color: white;
+				text-transform: uppercase;
+				display: block;
+				line-height: 60px;
+				width: 200px;
+				text-align: right;
+				opacity: 0;
+				position: absolute;
+				right: 60px;
+				transition: opacity 0.4s ease-in;
+			}
+			img {
+				position: absolute;
+				height: 50px;
+				right: 15px;
+				top: 5px;
+			}
+		}
+		.share-bar:hover {
+			width: 250px;
+			span {
+				opacity: 1.0;
+			}
+		}
+		.twitter {
+			background-color: #2ecbf8;
+		}
+		.facebook {
+			background-color: #234769;
 		}
 	}
 
