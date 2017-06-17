@@ -460,11 +460,23 @@ $LT_BORDER: #393558;
 			&.video-active {
 				opacity: 1.0;
 			}
-			img {
-				border-radius: 8px;
+			.thumb {
+				position: relative;
+				overflow: hidden;
+				border-radius: 2px;
 				box-shadow:
 					0 -1px 5px rgba(0, 0, 0, 0.4),
 					inset 0 2px 0px white;
+				.veneer {
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					background-color: rgba(0, 0, 140, 0.2);
+				}
+				img {
+					width: 100%;
+					height: 100%;
+				}
 			}
 			p {
 				margin: 10px 0;
@@ -478,6 +490,8 @@ $LT_BORDER: #393558;
 				text-align: center;
 				position: absolute;
 				cursor: pointer;
+				top: 0;
+				left: 0;
 				width: 100%;
 				height: 100%;
 				div {

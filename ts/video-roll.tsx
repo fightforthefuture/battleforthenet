@@ -151,16 +151,19 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		};
 		return (
 			<div className={classes("video", vp.isEndCap && "video-end", vp.active && "video-active") } key={"video-" + idx} style={{left: left, width: this.props.width}}>
+				<div className="thumb" style={{width: this.props.width, height: this.props.height}}>
+					<div className="veneer"></div>
+					<img src={video.thumb} />
+				</div>
+				<p>
+					<span>{video.heading}</span>
+					{video.subHeading}
+				</p>
 				<div className="play" onClick={openVideo.bind(this)}>
 					<div>
 						<span className="oi" data-glyph="media-play" title="play" aria-hidden="true"></span>
 					</div>
 				</div>
-				<img src={video.thumb} style={{width: this.props.width, height: this.props.height }} />
-				<p>
-					<span>{video.heading}</span>
-					{video.subHeading}
-				</p>
 			</div>
 		);
 	}
