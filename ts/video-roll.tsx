@@ -6,6 +6,7 @@ import * as _ from 'lodash';
 
 import {EventEmitter} from './event-emitter';
 import {ModalVideo} from './modal-video';
+import {clamp} from './utils';
 
 export interface VideoSpec {
 	video: string
@@ -25,24 +26,68 @@ interface Props {
 interface State {
 	active: number
 	open: number | null
-	modalSize: number | null
+	visibleVideos: number
+}
+
+interface VideoPosition {
+	idx: number
+	spec: VideoSpec
+	left: number
+	isEndCap: boolean
+}
+
+function getVisibleVideos(props:Props): number {
+	var ww = window.innerWidth;
+	var ret = Math.floor(ww / (props.width + props.padding));
+	return Math.max(1, ret);
+}
+
+function getVideoPositions(props:Props, state:State): VideoPosition[] {
+	var l = props.videos.length;
+	var s = Math.floor((l - state.visibleVideos) / 2);
+	var i = clamp(state.active - s, l);
+	var left = -s;
+	console.log(l, s, i, left);
+	return _.sortBy(_.map(_.range(0, l), function(j) {
+		var idx = clamp(i + j, l);
+		return {
+			idx: idx,
+			spec: props.videos[idx],
+			left: left + j,
+			isEndCap: (j === 0 || j === (l - 1))
+		}
+	}), "idx");
 }
 
 export class VideoRollComponent extends React.Component<Props, State> {
+	_handleResize: ()=>void;
+	_unsub: ()=>void;
 	constructor(props:Props) {
 		super(props);
 		this.state = {
-			active: Math.floor(props.videos.length / 2),
+			active: 0,
 			open: null,
-			modalSize: null
+			visibleVideos: getVisibleVideos(props)
 		};
+		this._handleResize = _.debounce(this.handleResize.bind(this), 25);
+	}
+	componentDidMount() {
+		this._unsub = this.props.eventEmitter.on("resize", this._handleResize);
+	}
+	componentWillUnmount() {
+		this._unsub();
+	}
+	handleResize(evt:Event) {
+		this.setState({
+			visibleVideos: getVisibleVideos(this.props)
+		} as State);
 	}
 	onPrev(evt: Event): void {
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.setState((prevState) => {
 			return _.defaults({
-				active: Math.max(prevState.active - 1, 0)
+				active: clamp(prevState.active - 1, this.props.videos.length)
 			}, prevState) as State;
 		});
 	}
@@ -51,7 +96,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		evt.stopPropagation();
 		this.setState((prevState) => {
 			return _.defaults({
-				active: Math.min(prevState.active + 1, this.props.videos.length - 1)
+				active: clamp(prevState.active + 1, this.props.videos.length)
 			}, prevState) as State;
 		});
 	}
@@ -83,14 +128,16 @@ export class VideoRollComponent extends React.Component<Props, State> {
 			</div>
 		);
 	}
-	renderVideo(video: VideoSpec, n: number): JSX.Element {
-		var left = n * (this.props.width + this.props.padding);
+	renderVideo(videoPosition: VideoPosition): JSX.Element {
+		var idx = videoPosition.idx;
+		var video = videoPosition.spec;
+		var left = videoPosition.left * (this.props.width + this.props.padding);
 		var openVideo = function(evt: Event) {
 			evt.preventDefault();
-			this.setOpen(n);
+			this.setOpen(idx);
 		};
 		return (
-			<div className="video" key={"video-" + n} style={{left: left, width: this.props.width}}>
+			<div className={"video" + (videoPosition.isEndCap ? " video-end" : "") } key={"video-" + idx} style={{left: left, width: this.props.width}}>
 				<div className="play" onClick={openVideo.bind(this)}>
 					<span className="oi" data-glyph="media-play" title="play" aria-hidden="true"></span>
 				</div>
@@ -103,11 +150,12 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		);
 	}
 	renderVideos(): JSX.Element {
-		var left = this.state.active * (this.props.width + this.props.padding);
+		var videoPositions = getVideoPositions(this.props, this.state);
+		console.log(videoPositions);
 		return (
 			<div className="video-container">
-				<div className="video-scroller" style={{left: -left}}>
-					{_.map(this.props.videos, this.renderVideo.bind(this))}
+				<div className="video-scroller">
+					{_.map(videoPositions, this.renderVideo.bind(this))}
 				</div>
 			</div>
 		);

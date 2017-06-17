@@ -389,6 +389,8 @@ $LT_BORDER: #393558;
 
 	.video-roll {
 		position: relative;
+		padding-left: 60px;
+		padding-right: 60px;
 		.controls {
 			position: relative;
 			margin-top: 50px;
@@ -441,10 +443,13 @@ $LT_BORDER: #393558;
 		.video-scroller {
 			position: absolute;
 			top: 0px;
-			transition: left 0.3s ease-in;
 		}
 		.video {
 			position: absolute;
+			transition: left 0.3s ease-in;
+			&.video-end {
+				transition: none;
+			}
 			img {
 				border-radius: 8px;
 				box-shadow:

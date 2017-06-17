@@ -85,3 +85,11 @@ export function handleInputChange(evt: React.FormEvent) {
 export function mountComponent(el: React.ReactElement<any>, target: any) {
 	ReactDOM.render(el, target);
 };
+
+
+export function clamp(v: number, l: number): number {
+	while (v < 0) {
+		v = v + l;
+	}
+	return v % l;
+};
