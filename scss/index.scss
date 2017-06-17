@@ -389,17 +389,18 @@ $LT_BORDER: #393558;
 
 	.video-roll {
 		position: relative;
-		padding-left: 60px;
-		padding-right: 60px;
+		height: 400px;
 		.controls {
-			position: relative;
-			margin-top: 50px;
-			height: 50px;
+			position: absolute;
+			width: 100%;
+			top: 0;
 			.bar {
-				position: relative;
+				position: absolute;
 				background-color: #2a2749;
+				top: 290px;
 				height: 3px;
-				width: 100%;
+				width: 90%;
+				margin: 0 5%;
 			}
 			.section {
 				height: 100%;
@@ -408,30 +409,35 @@ $LT_BORDER: #393558;
 				transition: left 0.3s ease-in;
 			}
 			.prev, .next {
-				top: 10px;
+				top: 0px;
+				height: 250px;
 				position: absolute;
-				font-size: 10px;
 				cursor: pointer;
-				background-color: #494476;
-				color: #17152a;
-				height: 24px;
-				width: 24px;
-				line-height: 24px;
-				border-radius: 12px;
 				text-align: center;
-				span {
-					position: relative;
-					top: 1px;
+				div {
+					display: inline-block;
+					background-color: #494476;
+					color: #17152a;
+					font-size: 18px;
+					height: 42px;
+					width: 42px;
+					line-height: 42px;
+					margin-top: 80px;
+					border-radius: 21px;
+					span {
+						position: relative;
+						top: 2px;
+					}
 				}
-				&:hover {
+				&:hover div {
 					background-color: #5f88ff;
 				}
 			}
 			.prev {
-				left: 0px;
+				left: 0;
 			}
 			.next {
-				right: 0px;
+				right: 0;
 				span {
 					left: 1px;
 				}
@@ -446,9 +452,13 @@ $LT_BORDER: #393558;
 		}
 		.video {
 			position: absolute;
-			transition: left 0.3s ease-in;
+			transition: left 0.3s ease-in, opacity 0.3s ease-in;
+			opacity: 0.2;
 			&.video-end {
 				transition: none;
+			}
+			&.video-active {
+				opacity: 1.0;
 			}
 			img {
 				border-radius: 8px;
@@ -467,23 +477,30 @@ $LT_BORDER: #393558;
 				display: none;
 				text-align: center;
 				position: absolute;
-				font-size: 40px;
-				top: 50px;
-				left: 150px;
-				color: white;
 				cursor: pointer;
-				width: 75px;
-				height: 75px;
-				line-height: 75px;
-				border-radius: 50px;
-				border: 3px solid white;
-				background-color: #515470;
-				span {
-					position: relative;
-					left: 5px;
+				width: 100%;
+				height: 100%;
+				div {
+					position: absolute;
+					display: block;
+					font-size: 40px;
+					top: 50px;
+					left: 150px;
+					color: white;
+					cursor: pointer;
+					width: 75px;
+					height: 75px;
+					line-height: 75px;
+					border-radius: 50px;
+					border: 3px solid white;
+					background-color: #515470;
+					span {
+						position: relative;
+						left: 5px;
+					}
 				}
 			}
-			&:hover .play {
+			&.video-active:hover .play {
 				display: block;
 			}
 		}

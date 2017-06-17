@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 
 import {EventEmitter} from './event-emitter';
 import {ModalVideo} from './modal-video';
-import {clamp} from './utils';
+import {clamp, classes} from './utils';
 
 export interface VideoSpec {
 	video: string
@@ -20,6 +20,7 @@ interface Props {
 	width: number
 	height: number
 	padding: number
+	pagePadding: number
 	eventEmitter: EventEmitter
 }
 
@@ -33,13 +34,19 @@ interface VideoPosition {
 	idx: number
 	spec: VideoSpec
 	left: number
+	active: boolean
 	isEndCap: boolean
 }
 
 function getVisibleVideos(props:Props): number {
-	var ww = window.innerWidth;
+	var ww = window.innerWidth - (props.pagePadding * 2);
 	var ret = Math.floor(ww / (props.width + props.padding));
 	return Math.max(1, ret);
+}
+
+function getContainerPadding(props:Props, state:State): number {
+	var ww = window.innerWidth;
+	return Math.floor((ww - (state.visibleVideos * (props.width + props.padding))) / 2);
 }
 
 function getVideoPositions(props:Props, state:State): VideoPosition[] {
@@ -47,13 +54,14 @@ function getVideoPositions(props:Props, state:State): VideoPosition[] {
 	var s = Math.floor((l - state.visibleVideos) / 2);
 	var i = clamp(state.active - s, l);
 	var left = -s;
-	console.log(l, s, i, left);
 	return _.sortBy(_.map(_.range(0, l), function(j) {
 		var idx = clamp(i + j, l);
+		var offset = left + j;
 		return {
 			idx: idx,
 			spec: props.videos[idx],
-			left: left + j,
+			left: offset,
+			active: (offset < state.visibleVideos) && (offset >= 0),
 			isEndCap: (j === 0 || j === (l - 1))
 		}
 	}), "idx");
@@ -114,32 +122,39 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		var chunk = 100 / this.props.videos.length;
 		var width = chunk + "%";
 		var left = (chunk * this.state.active) + "%";
+		var padding = getContainerPadding(this.props, this.state);
 		return (
 			<div className="controls">
 				<div className="bar">
 					<div className="section" style={{width: width, left: left}}></div>
 				</div>
-				<a className="prev" onClick={this.onPrev.bind(this)}>
-					<span className="oi" data-glyph="chevron-left" title="previous" aria-hidden="true"></span>
-				</a>
-				<a className="next" onClick={this.onNext.bind(this)}>
-					<span className="oi" data-glyph="chevron-right" title="next" aria-hidden="true"></span>
-				</a>
+				<div className="prev" onClick={this.onPrev.bind(this)} style={{width: padding}}>
+					<div>
+						<span className="oi" data-glyph="chevron-left" title="previous" aria-hidden="true"></span>
+					</div>
+				</div>
+				<div className="next" onClick={this.onNext.bind(this)} style={{width: padding}}>
+					<div>
+						<span className="oi" data-glyph="chevron-right" title="next" aria-hidden="true"></span>
+					</div>
+				</div>
 			</div>
 		);
 	}
-	renderVideo(videoPosition: VideoPosition): JSX.Element {
-		var idx = videoPosition.idx;
-		var video = videoPosition.spec;
-		var left = videoPosition.left * (this.props.width + this.props.padding);
+	renderVideo(vp: VideoPosition): JSX.Element {
+		var idx = vp.idx;
+		var video = vp.spec;
+		var left = vp.left * (this.props.width + this.props.padding);
 		var openVideo = function(evt: Event) {
 			evt.preventDefault();
 			this.setOpen(idx);
 		};
 		return (
-			<div className={"video" + (videoPosition.isEndCap ? " video-end" : "") } key={"video-" + idx} style={{left: left, width: this.props.width}}>
+			<div className={classes("video", vp.isEndCap && "video-end", vp.active && "video-active") } key={"video-" + idx} style={{left: left, width: this.props.width}}>
 				<div className="play" onClick={openVideo.bind(this)}>
-					<span className="oi" data-glyph="media-play" title="play" aria-hidden="true"></span>
+					<div>
+						<span className="oi" data-glyph="media-play" title="play" aria-hidden="true"></span>
+					</div>
 				</div>
 				<img src={video.thumb} style={{width: this.props.width, height: this.props.height }} />
 				<p>
@@ -151,10 +166,10 @@ export class VideoRollComponent extends React.Component<Props, State> {
 	}
 	renderVideos(): JSX.Element {
 		var videoPositions = getVideoPositions(this.props, this.state);
-		console.log(videoPositions);
+		var left = getContainerPadding(this.props, this.state);
 		return (
 			<div className="video-container">
-				<div className="video-scroller">
+				<div className="video-scroller" style={{left: left}}>
 					{_.map(videoPositions, this.renderVideo.bind(this))}
 				</div>
 			</div>

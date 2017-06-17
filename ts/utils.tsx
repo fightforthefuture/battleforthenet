@@ -93,3 +93,8 @@ export function clamp(v: number, l: number): number {
 	}
 	return v % l;
 };
+
+
+export function classes(...c: (string|boolean|null)[]): string {
+	return _.filter(c).join(" ");
+};
