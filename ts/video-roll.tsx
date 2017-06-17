@@ -15,6 +15,7 @@ export interface VideoSpec {
 	subHeading: string
 }
 
+
 interface Props {
 	videos: VideoSpec[]
 	width: number
@@ -24,11 +25,13 @@ interface Props {
 	eventEmitter: EventEmitter
 }
 
+
 interface State {
 	active: number
 	open: number | null
 	visibleVideos: number
 }
+
 
 interface VideoPosition {
 	idx: number
@@ -38,34 +41,40 @@ interface VideoPosition {
 	isEndCap: boolean
 }
 
+
 function getVisibleVideos(props:Props): number {
 	var ww = window.innerWidth - (props.pagePadding * 2);
 	var ret = Math.floor(ww / (props.width + props.padding));
 	return Math.max(1, ret);
 }
 
+
 function getContainerPadding(props:Props, state:State): number {
 	var ww = window.innerWidth;
 	return Math.floor((ww - (state.visibleVideos * (props.width + props.padding))) / 2);
 }
+
 
 function getVideoPositions(props:Props, state:State): VideoPosition[] {
 	var l = props.videos.length;
 	var s = Math.floor((l - state.visibleVideos) / 2);
 	var i = clamp(state.active - s, l);
 	var left = -s;
-	return _.sortBy(_.map(_.range(0, l), function(j) {
+	var ret: VideoPosition[] = [];
+	_.each(_.range(0, l), function(j) {
 		var idx = clamp(i + j, l);
 		var offset = left + j;
-		return {
+		ret[idx] = {
 			idx: idx,
 			spec: props.videos[idx],
 			left: offset,
 			active: (offset < state.visibleVideos) && (offset >= 0),
 			isEndCap: (j === 0 || j === (l - 1))
-		}
-	}), "idx");
+		};
+	});
+	return ret;
 }
+
 
 export class VideoRollComponent extends React.Component<Props, State> {
 	_handleResize: ()=>void;
