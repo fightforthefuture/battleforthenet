@@ -286,11 +286,17 @@ $LT_BORDER: #393558;
 			padding: 20px 0 0 0;
 			border-right: 2px solid $LT_BORDER;
 			border-bottom: 2px solid $LT_BORDER;
-			img {
-				height: 30px;
-			}
 			a {
-				margin-right: 10px;
+				display: inline-block;
+				line-height: 57px;
+				float: left;
+			}
+			.fftf {
+				margin-right: 20px;
+			}
+			.demandprogress {
+				position: relative;
+				top: -8px;
 			}
 		}
 		.social-media {
@@ -382,7 +388,6 @@ $LT_BORDER: #393558;
 			img {
 				margin-top: 5px;
 				margin-left: 5px;
-				height: 30px;
 			}
 		}
 	}
@@ -540,6 +545,15 @@ $LT_BORDER: #393558;
 			font-style: normal;
 			color: #46c9ff;
 		}
+	}
+	.backers {
+		img {
+			margin: 20px 10px;
+		}
+		.shuttleworth {
+			position: relative;
+			top: -14px;
+		}	
 	}
 	.persistent-button {
 		width: 250px;
