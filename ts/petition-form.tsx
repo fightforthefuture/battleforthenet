@@ -121,7 +121,7 @@ export class PetitionForm extends React.Component<Props, State> {
 					</div>
 					<button className="btn">Send Letter</button>
 				</div>
-				<span className="note"><a href="https://demandprogress.org/">Demand Progress</a> and <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will contact you about future campaigns. <a href="#" className="privacy-policy-link">Privacy Policy</a></span>
+				<span className="note"><a href="https://demandprogress.org/">Demand Progress</a> and <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will contact you about future campaigns. <a href="https://www.battleforthenet.com/privacy/" className="privacy-policy-link">Privacy Policy</a></span>
 			</form>
 		);
 	}
