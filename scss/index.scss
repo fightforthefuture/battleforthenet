@@ -73,6 +73,7 @@ $GRAY_LIGHT: #b1aedc;
 		position: relative;
 		p {
 			width: $TEXT_WIDTH;
+			line-height: 1.5em;
 			em {
 				font-weight: bold;
 				font-style: normal;
@@ -113,9 +114,9 @@ $GRAY_LIGHT: #b1aedc;
 	}
 
 	.hero {
-		min-height: 375px;
+		min-height: 435px;
 		.petition-copy {
-			padding-bottom: 100px;
+			padding-bottom: 160px;
 			p {
 				width: 490px;
 				font-size: 26px;
@@ -710,6 +711,7 @@ $GRAY_LIGHT: #b1aedc;
 		position: absolute;
 		left: 0;
 		top: 500px;
+		z-index: 100;
 		.share-bar {
 			display: block;
 			position: relative;
