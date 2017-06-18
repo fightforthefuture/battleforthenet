@@ -103,23 +103,25 @@ export class PetitionForm extends React.Component<Props, State> {
 		return (
 			<form className="bftn-form petition-form" onSubmit={this.onSubmit.bind(this)}>
 				<img className="arrow" src="/images/red-arrow.png" />
-				<div>
-					<input name="input_name" placeholder="Name" autoComplete="name" required value={this.state.input_name} onChange={handleInputChange.bind(this)} />
+				<div className="form-wrapper">
+					<div>
+						<input name="input_name" placeholder="Name" autoComplete="name" required value={this.state.input_name} onChange={handleInputChange.bind(this)} />
+					</div>
+					<div>
+						<input name="input_email" placeholder="E-mail" required value={this.state.input_email} onChange={handleInputChange.bind(this)} />
+					</div>
+					<div className="address-line">
+						<input name="input_address" className="address" placeholder="Address" required value={this.state.input_address} onChange={handleInputChange.bind(this)} />
+						{" "}
+						<input name="input_zip" className="zip" placeholder="Zip" required value={this.state.input_zip} onChange={handleInputChange.bind(this)} />
+					</div>
+					<div className="letter">
+						<textarea ref={(textarea)=>{this.textareaInput=textarea;}} name="input_comment" required value={this.state.input_comment} onChange={handleInputChange.bind(this)} onFocus={this.onTextareaFocus.bind(this)} ></textarea>
+						<button onClick={this.onResetClick.bind(this)} className="reset">Clear and write your own</button>
+					</div>
+					<button className="btn">Send Letter</button>
 				</div>
-				<div>
-					<input name="input_email" placeholder="E-mail" required value={this.state.input_email} onChange={handleInputChange.bind(this)} />
-				</div>
-				<div className="address-line">
-					<input name="input_address" className="address" placeholder="Address" required value={this.state.input_address} onChange={handleInputChange.bind(this)} />
-					{" "}
-					<input name="input_zip" className="zip" placeholder="Zip" required value={this.state.input_zip} onChange={handleInputChange.bind(this)} />
-				</div>
-				<div>
-					<textarea ref={(textarea)=>{this.textareaInput=textarea;}} name="input_comment" required value={this.state.input_comment} onChange={handleInputChange.bind(this)} onFocus={this.onTextareaFocus.bind(this)} ></textarea>
-					<button onClick={this.onResetClick.bind(this)} className="reset">Clear and write your own</button>
-				</div>
-				<button className="btn">Send Letter</button>
-				<span className="note"><em>Demand Progress</em> and <em>Fight for the Future</em> will contact you about future campaigns. <a>Privacy Policy</a></span>
+				<span className="note"><a href="https://demandprogress.org/">Demand Progress</a> and <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will contact you about future campaigns. <a href="#" className="privacy-policy-link">Privacy Policy</a></span>
 			</form>
 		);
 	}
