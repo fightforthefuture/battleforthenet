@@ -46,7 +46,7 @@ interface State {
 
 
 export class PetitionForm extends React.Component<Props, State> {
-	formElement: HTMLElement
+	textareaInput: HTMLTextAreaElement;
 	constructor(props: Props) {
 		super(props);
 		this.state = {
@@ -56,6 +56,18 @@ export class PetitionForm extends React.Component<Props, State> {
 			input_zip: "",
 			input_comment: r.defaultFormText
 		};
+	}
+	onTextareaFocus(evt: Event) {
+		var target = evt.target as HTMLTextAreaElement;
+		target.select();
+	}
+	onResetClick(evt: Event) {
+		evt.preventDefault();
+		evt.stopPropagation();
+		this.textareaInput.focus();
+		this.setState({
+			input_comment: ""
+		} as State);
 	}
 	onSubmit(evt: Event) {
 		evt.preventDefault();
@@ -89,7 +101,7 @@ export class PetitionForm extends React.Component<Props, State> {
 	}
 	render() {
 		return (
-			<form className="bftn-form petition-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
+			<form className="bftn-form petition-form" onSubmit={this.onSubmit.bind(this)}>
 				<img className="arrow" src="/images/red-arrow.png" />
 				<div>
 					<input name="input_name" placeholder="Name" autoComplete="name" required value={this.state.input_name} onChange={handleInputChange.bind(this)} />
@@ -103,7 +115,8 @@ export class PetitionForm extends React.Component<Props, State> {
 					<input name="input_zip" className="zip" placeholder="Zip" required value={this.state.input_zip} onChange={handleInputChange.bind(this)} />
 				</div>
 				<div>
-					<textarea name="input_comment" required value={this.state.input_comment} onChange={handleInputChange.bind(this)} ></textarea>
+					<textarea ref={(textarea)=>{this.textareaInput=textarea;}} name="input_comment" required value={this.state.input_comment} onChange={handleInputChange.bind(this)} onFocus={this.onTextareaFocus.bind(this)} ></textarea>
+					<button onClick={this.onResetClick.bind(this)} className="reset">Clear and write your own</button>
 				</div>
 				<button className="btn">Send Letter</button>
 				<span className="note"><em>Demand Progress</em> and <em>Fight for the Future</em> will contact you about future campaigns. <a>Privacy Policy</a></span>
