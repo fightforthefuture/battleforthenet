@@ -20,7 +20,7 @@ export class PetitionCopy extends React.Component<Props, State> {
 					The FCC will let them, unless we stop it.
 					This is a battle for the Internet's future.
 					{" "}
-					<em>Before you do anything else,send a letter to the FCC now</em>
+					<em>Before you do anything else, send a letter to the FCC now!</em>
 				</p>
 			</div>
 		);
