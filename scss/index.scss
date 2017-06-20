@@ -321,76 +321,35 @@ $GRAY_LIGHT: #b1aedc;
 
 	footer {
 		background-color: #2c2a4d;
-		padding: 30px 30px 100px 30px;
+		padding: 30px 30px 0px 30px;
 		margin-top: 100px;
 		.logos {
-			float: left;
-			height: 90px;
-			width: 60%;
-			padding: 20px 0 0 0;
-			border-right: 2px solid $LT_BORDER;
+			padding: 20px 0;
 			border-bottom: 2px solid $LT_BORDER;
+			text-align: center;
 			a {
 				display: inline-block;
-				line-height: 57px;
-				float: left;
+				line-height: 62px;
 			}
 			.fftf {
-				margin-right: 20px;
+				margin-right: 40px;
+				position: relative;
+				top: -6px;
 			}
 			.demandprogress {
 				position: relative;
-				top: -8px;
+				top: 8px;
+				margin-right: 40px;
 			}
-		}
-		.social-media {
-			float: left;
-			height: 90px;
-			width: 40%;
-			border-bottom: 2px solid $LT_BORDER;
-			padding: 20px 0 20px 20px;
-			a {
-				font-family: "Open Sans", sans-serif;
-				font-weight: bold;
-				font-size: 13px;
-				position: relative;
-				color: $WHITE_BRIGHT;
-				text-decoration: none;
-				display: inline-block;
-				cursor: pointer;
-				padding: 8px 15px 8px 28px;
-				line-height: 20px;
-				border-radius: 5px;
-				text-transform: uppercase;
-				span {
-					margin-left: 5px;
-				}
-			}
-			img {
-				position: absolute;
-				height: 25px;
-				top: 5px;
-				left: 6px;
-			}
-			.facebook {
-				background-color: #3b5999;
-				&:hover {
-					background-color: desaturate(#3b5999, 20%);
-				}
-			}
-			.twitter {
-				margin-left: 10px;
-				background-color: #4099ff;
-				&:hover {
-					background-color: desaturate(#4099ff, 20%);
-				}
+			.freepress {
 			}
 		}
 		.press-inquiries {
-			clear: left;
-			float: left;
 			width: 65%;
+			float: left;
 			padding-top: 10px;
+			font-weight: bold;
+			color: $GRAY_DARK;
 			a {
 				color: $WHITE_BRIGHT;
 			}
@@ -410,28 +369,66 @@ $GRAY_LIGHT: #b1aedc;
 				}
 			}
 		}
-		.other-inquiries {
+		.social-media {
 			float: left;
-			padding-top: 15px;
-			width: 35%;
-			text-align: right;
+			height: 90px;
+			width: 30%;
+			margin-left: 5%;
 			a {
-				color: $WHITE_BRIGHT;
-			}
-			dl {
+				display: block;
+				width: 100%;
 				font-family: "Open Sans", sans-serif;
 				font-weight: bold;
-				dt {
-					text-decoration: none;
-					color: $WHITE;
-					margin-top: 15px;
-				}
-				dd {
+				font-size: 14px;
+				position: relative;
+				color: $WHITE_BRIGHT;
+				text-decoration: none;
+				cursor: pointer;
+				height: 50px;
+				padding: 0 45px 0 15px;
+				line-height: 50px;
+				border-radius: 25px;
+				text-transform: uppercase;
+				text-align: center;
+				span {
+					margin-left: 5px;
 				}
 			}
 			img {
-				margin-top: 5px;
-				margin-left: 5px;
+				position: absolute;
+				height: 40px;
+				top: 5px;
+				right: 15px;
+			}
+			.twitter {
+				background-color: #2ecaf8;
+				margin-top: 70px;
+				margin-bottom: 10px;
+				&:hover {
+					background-color: desaturate(#2ecaf8, 20%);
+				}
+			}
+			.facebook {
+				background-color: #224769;
+				&:hover {
+					background-color: desaturate(#224769, 20%);
+				}
+			}
+		}
+		.built-by {
+			clear: both;
+			font-weight: bold;
+			text-align: center;
+			width: 300px;
+			margin: 40px auto 0;
+			background-color: $BODY_BGCOLOR;
+			padding: 20px 0 40px;
+			line-height: 1em;
+			color: $GRAY_DARK;
+			border-radius: 3px 3px 0 0;
+			img {
+				position: relative;
+				top: 2px;
 			}
 		}
 	}
