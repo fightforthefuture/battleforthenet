@@ -6,11 +6,12 @@ export class ExternalFlags {
 		this.params = new URLSearchParams(window.location.search.substring(1));
 	}
 
-	hasFlag(flag: string) {
+	has(flag: string) {
 		return !!this.params.get(flag);
 	}
 
-	getFlag(flag: string, defaultValue: any) {
-		return this.params.get(flag) || defaultValue;
+	get(flag: string) {
+        // TODO: This should probably return undefined if the param does not exist?
+		return this.params.get(flag) || '';
 	}
 }

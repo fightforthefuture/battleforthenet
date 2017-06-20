@@ -16,11 +16,11 @@ import {CallActionForm} from './call-action-form';
 import {PetitionCopy} from './petition-copy';
 import {PetitionForm} from './petition-form';
 import {r} from './r';
-
+import {Organization} from './organization';
 
 interface Props {
 	initialForm: string
-	org: string
+	org: Organization
 	actionUrl: string
 	callUrl: string
 	deadline: Date
@@ -29,6 +29,7 @@ interface Props {
 
 interface State {
 	modal: string | null
+	org: Organization
 }
 
 
@@ -36,7 +37,8 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 	constructor(props: Props) {
 		super(props);
 		this.state = {
-			modal: null
+			modal: null,
+            org: props.org
 		};
 	}
 	setModal(modal: string | null): any {
@@ -54,7 +56,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 			case "petition":
 			default:
-				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
+				form = <PetitionForm org={this.state.org.getOrg()} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
 				copy = <PetitionCopy deadline={this.props.deadline} />
 				break;
 		}

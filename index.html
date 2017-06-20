@@ -183,10 +183,11 @@
 
         var eventEmitter = new EventEmitter();
         var externalFlags = new ExternalFlags();
+        var org = new Organization();
         var deadline = new Date(2017, 8, 9);
 
-        var initialForm = externalFlags.hasFlag("call") ? "call" : "action";
-        var persistentButtonText = externalFlags.hasFlag("call") ? "Call Congress" : "Send Letter";
+        var initialForm = externalFlags.has('call') ? 'call' : 'action';
+        var persistentButtonText = externalFlags.has('call') ? 'Call Congress' : "Send Letter";
 
         mountComponent(
           React.createElement(BFTNFormFlow, {
@@ -195,7 +196,7 @@
             actionUrl: "http://localhost:8000/action",
             callUrl: "http://localhost:8000/create",
             initialForm: initialForm,
-            org: externalFlags.getFlag("org", "fftf"),
+            org: org,
             deadline: deadline
           }),
           document.getElementById("bftn-action-form")
