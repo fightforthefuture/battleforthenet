@@ -38,13 +38,14 @@ export class ModalVideo extends React.Component<Props, State> {
 	}
 	componentDidMount() {
 		this._unsub = this.props.eventEmitter.on("resize", this._handleResize);
+		this._handleResize();
 	}
 	componentWillUnmount() {
 		this._unsub();
 	}
 	handleResize(evt:Event) {
-		var ww = window.innerWidth;
-		var wh = window.innerHeight;
+		var ww = document.documentElement.clientWidth;
+		var wh = document.documentElement.clientHeight;
 		if (ww > WIDTH && wh > HEIGHT) {
 			this.setState({
 				height: HEIGHT,

@@ -635,8 +635,8 @@ $GRAY_LIGHT: #b1aedc;
 		z-index: 20;
 		top: 0px;
 		left: 0px;
-		right: 0px;
-		bottom: 0px;
+		width: 100%;
+		height: 100%;
 		p {
 			width: 100%;
 		}
@@ -661,6 +661,7 @@ $GRAY_LIGHT: #b1aedc;
 			}
 		}
 		.modal-content-container {
+			pointer-events: none;
 			position: relative;
 			height: 100%;
 			width: 100%;
@@ -859,6 +860,7 @@ $GRAY_LIGHT: #b1aedc;
 	}
 	.no-scroll {
 		overflow: hidden;
+		-webkit-overflow-scrolling: touch;
 	}
 	.hidden {
 		display: none;

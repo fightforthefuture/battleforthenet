@@ -160,7 +160,7 @@ export class VideoRollComponent extends React.Component<Props, State> {
 		};
 		return (
 			<div className={classes("video", vp.isEndCap && "video-end", vp.active && "video-active") } key={"video-" + idx} style={{left: left, width: this.props.width}}>
-				<div className="thumb" style={{width: this.props.width, height: this.props.height}}>
+				<div className="thumb" style={{width: this.props.width, height: this.props.height}} onClick={vp.active ? openVideo.bind(this) : void(0)}>
 					<div className="veneer"></div>
 					<img src={video.thumb} />
 				</div>
