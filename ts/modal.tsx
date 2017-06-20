@@ -35,11 +35,11 @@ export class Modal extends React.Component<Props, State> {
 		}
 		return (
 			<div className={className}>
-				<div className="modal-background"></div>
-				{ this.props.onClose ? this.renderModalClose() : null }
+				<div className="modal-background" onClick={this.props.onClose || void(0)}></div>
 				<div className="modal-content-container">
 					<div className="modal-content" style={this.props.contentStyle}>
 						{ this.props.children }
+						{ this.props.onClose ? this.renderModalClose() : null }
 					</div>
 				</div>
 			</div>

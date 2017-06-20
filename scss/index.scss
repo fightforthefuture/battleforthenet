@@ -649,11 +649,15 @@ $GRAY_LIGHT: #b1aedc;
 			opacity: 0.6;
 		}
 		.modal-close {
+			color: rgba(100, 100, 100, 0.8);
 			position: absolute;
 			font-size: 30px;
-			top: 10px;
-			right: 10px;
+			top: -20px;
+			right: -20px;
 			cursor: pointer;
+			&:hover {
+				color: rgba(100, 100, 100, 0.9);
+			}
 		}
 		.modal-content-container {
 			position: relative;
