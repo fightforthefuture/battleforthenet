@@ -23,6 +23,7 @@ interface Props {
 	org: string
 	actionUrl: string
 	callUrl: string
+	deadline: Date
 }
 
 
@@ -54,7 +55,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "petition":
 			default:
 				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
-				copy = <PetitionCopy />
+				copy = <PetitionCopy deadline={this.props.deadline} />
 				break;
 		}
 		switch (this.state.modal) {

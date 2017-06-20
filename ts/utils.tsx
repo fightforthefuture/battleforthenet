@@ -3,6 +3,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
+import * as moment from 'moment';
 
 
 export interface ajaxRequest {
@@ -97,4 +98,16 @@ export function clamp(v: number, l: number): number {
 
 export function classes(...c: (string|boolean|null)[]): string {
 	return _.filter(c).join(" ");
+};
+
+
+function dateToArray(d: Date): [number, number, number] {
+	return [d.getFullYear(), d.getMonth(), d.getDate()];
+}
+
+
+export function daysUntil(d: Date): number {
+	const momentd = moment(dateToArray(d));
+	const now = moment(dateToArray(new Date()));
+	return momentd.diff(now, 'days');
 };

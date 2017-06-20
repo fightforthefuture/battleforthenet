@@ -184,6 +184,7 @@
 
         var eventEmitter = new EventEmitter();
         var externalFlags = new ExternalFlags();
+        var deadline = new Date(2017, 8, 9);
 
         var initialForm = externalFlags.hasFlag("call") ? "call" : "action";
         var persistentButtonText = externalFlags.hasFlag("call") ? "Call Congress" : "Send Letter";
@@ -192,16 +193,17 @@
           React.createElement(BFTNFormFlow, {
             //actionUrl: "https://queue.fightforthefuture.org/action",
             //callUrl: "https://call-congress.fightforthefuture.org/create"
-            initialForm: initialForm,
-            org: externalFlags.getFlag("org", "fftf"),
             actionUrl: "http://localhost:8000/action",
             callUrl: "http://localhost:8000/create",
+            initialForm: initialForm,
+            org: externalFlags.getFlag("org", "fftf"),
+            deadline: deadline
           }),
           document.getElementById("bftn-action-form")
         );
 
         mountComponent(
-          React.createElement(StatsComponent, {deadline: new Date(2017, 8, 9)}), 
+          React.createElement(StatsComponent, {deadline: deadline}),
           document.getElementById("stats")
         );
 

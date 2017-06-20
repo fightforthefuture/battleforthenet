@@ -7,6 +7,8 @@ import * as ReactTransitionGroup from 'react-transition-group';
 import * as _ from 'lodash';
 import * as moment from 'moment';
 
+import {daysUntil} from './utils';
+
 
 interface Props {
 	deadline: Date
@@ -23,10 +25,6 @@ interface LoadedState {
 }
 interface UnloadedState {
 	loaded: false,
-}
-
-function dateToArray(d: Date): [number, number, number] {
-	return [d.getFullYear(), d.getMonth(), d.getDate()];
 }
 
 export class StatsComponent extends React.Component<Props, LoadedState | UnloadedState> {
@@ -46,9 +44,7 @@ export class StatsComponent extends React.Component<Props, LoadedState | Unloade
 		this.loadStats();
 	}
 	loadStats() {
-		const deadline = moment(dateToArray(this.props.deadline));
-		const now = moment(dateToArray(new Date()));
-		const daysLeft = deadline.diff(now, 'days');
+		const daysLeft = daysUntil(this.props.deadline);
 		let newState = _.clone(this.state) as LoadedState;
 		newState.loaded = true;
 		newState.comments = 432023;
@@ -61,7 +57,7 @@ export class StatsComponent extends React.Component<Props, LoadedState | Unloade
 		function format(n:number): string {
 			return n.toLocaleString();
 		}
-		const day_label = (stats.days > 1) ? "days" : "day";
+		const dayLabel = (stats.days > 1) ? "days" : "day";
 		return (
 			<div className="unit">
 				<span>{ format(stats.comments) }</span> comments.{" "}
@@ -69,7 +65,7 @@ export class StatsComponent extends React.Component<Props, LoadedState | Unloade
 				<span>{ format(stats.emails) }</span> emails to Congress.{" "}
 				<span>{ stats.startups }+</span> startups.{" "}
 				<span>{ format(stats.internets) } Internet to save.</span>{" "}
-				<span>{ stats.days } { day_label } left.</span>
+				<span>{ stats.days } { dayLabel } left.</span>
 			</div>
 		);
 	}
