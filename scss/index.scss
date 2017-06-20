@@ -541,12 +541,17 @@ $GRAY_LIGHT: #b1aedc;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				div {
+				.wrapper {
 					position: absolute;
+					top: 50%;
+					left: 50%;
+				}
+				.circle {
+					position: relative;
+					top: -32px;
+					left: -32px;
 					display: block;
 					font-size: 40px;
-					top: 50px;
-					left: 150px;
 					color: white;
 					cursor: pointer;
 					width: 75px;
@@ -672,6 +677,7 @@ $GRAY_LIGHT: #b1aedc;
 			top: 50%;
 		}
 		.modal-content {
+			pointer-events: all;
 			position: relative;
 			margin: 0 auto;
 		}
@@ -866,6 +872,9 @@ $GRAY_LIGHT: #b1aedc;
 			li {
 				display: block;
 			}
+		}
+		.video-roll .controls {
+			display: none;
 		}
 	}
 	.no-scroll {
