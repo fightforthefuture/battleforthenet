@@ -568,6 +568,13 @@ $GRAY_LIGHT: #b1aedc;
 	}
 	.the-problem {
 		text-align: center;
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+		li {
+			display: inline-block;
+		}
 		img {
 			height: 100px;
 			margin: 0 20px;
@@ -778,6 +785,9 @@ $GRAY_LIGHT: #b1aedc;
 			line-height: 1.2em;
 			height: auto;
 		}
+		.social-media-buttons {
+			display: none;
+		}
 		.hero {
 			.petition-copy {
 				padding-bottom: 20px;
@@ -816,6 +826,8 @@ $GRAY_LIGHT: #b1aedc;
 				float: none;
 				a {
 					display: block;
+				}
+				.fftf, .demandprogress, .freepress {
 					margin: 0;
 				}
 			}
@@ -825,18 +837,16 @@ $GRAY_LIGHT: #b1aedc;
 				border: none;
 				text-align: center;
 				float: none;
+				.twitter {
+					margin-top: 20px;
+				}
 			}
 			.press-inquiries {
 				width: 100%;
 				float: none;
 			}
-			.other-inquiries {
-				text-align: left;
-				width: 100%;
-				float: none;
-				img {
-					margin: 0;
-				}
+			.built-by {
+				padding-bottom: 80px;
 			}
 		}
 	}
@@ -852,7 +862,8 @@ $GRAY_LIGHT: #b1aedc;
 	@media screen and (max-width: 600px) {
 		.the-problem {
 			width: auto;
-			img {
+			text-align: center;
+			li {
 				display: block;
 			}
 		}
