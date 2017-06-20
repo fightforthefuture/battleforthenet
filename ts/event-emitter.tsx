@@ -1,13 +1,13 @@
 /// <reference path="../typings/index.d.ts" />
 
 
-import * as Bacon from 'baconjs';
+import {Bus} from './bus';
 
 
 export class EventEmitter {
-	bus: Bacon.Bus<any, any>;
+	bus: Bus;
 	constructor() {
-		this.bus = new Bacon.Bus();
+		this.bus = new Bus();
 		window.addEventListener("scroll", (evt) => {
 			this.bus.push(evt);
 		});
@@ -16,7 +16,7 @@ export class EventEmitter {
 		});
 	}
 	on(event: string, cb: (evt:any)=>void)  {
-		var unsub = this.bus.onValue(function(evt) {
+		var unsub = this.bus.subscribe(function(evt) {
 			if (event === "all" || evt.type === event) {
 				cb(evt);
 			}

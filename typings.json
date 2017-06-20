@@ -5,7 +5,6 @@
     "react-dom": "registry:npm/react-dom#15.0.1+20160826174104"
   },
   "globalDependencies": {
-    "baconjs": "registry:dt/baconjs#0.7.0+20160510010627",
     "node": "registry:dt/node#7.0.0+20170322231424"
   }
 }
