@@ -5,6 +5,8 @@ import * as React from 'react';
 import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
 import {handleInputChange} from './utils';
+import {Organization} from './organization';
+import {Disclaimer} from './disclaimer';
 
 import {r} from './r';
 
@@ -31,7 +33,7 @@ function submitForm(url: string, data: any) {
 
 interface Props {
 	url: string
-	org: string
+	org: Organization
 	setModal: (modal: string | null)=>any
 }
 
@@ -80,7 +82,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			"guard": "",
 			"contact_congress": "1",
 			"fcc_ecfs_docket": "17-108",
-			"org": this.props.org,
+			"org": this.props.org.code,
 			"an_tags": "[\"net-neutrality\"]",
 			"an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
 			"member[first_name]": this.state.input_name,
@@ -121,7 +123,7 @@ export class PetitionForm extends React.Component<Props, State> {
 					</div>
 					<button className="btn">Send Letter</button>
 				</div>
-				<span className="note"><a href="https://demandprogress.org/">Demand Progress</a> and <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will contact you about future campaigns. <a href="https://www.battleforthenet.com/privacy/" className="privacy-policy-link">Privacy Policy</a></span>
+				<Disclaimer org={this.props.org} />
 			</form>
 		);
 	}

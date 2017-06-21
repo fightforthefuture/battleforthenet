@@ -16,7 +16,7 @@ import {BFTNFormFlow} from './bftn-form-flow';
 import {mountComponent} from './utils';
 import {ExternalFlags} from './external-flags';
 import {GoogleAnalytics} from './google-analytics';
-import {Organization} from './organization';
+import {getOrganization} from './organization';
 
 declare var window: any;
 
@@ -35,4 +35,4 @@ window['BFTNFormFlow'] = BFTNFormFlow;
 window['mountComponent'] = mountComponent;
 window['ExternalFlags'] = ExternalFlags;
 window['GoogleAnalytics'] = GoogleAnalytics;
-window['Organization'] = Organization;
+window['getOrganization'] = getOrganization;

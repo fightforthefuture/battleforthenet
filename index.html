@@ -190,7 +190,7 @@
 
         var eventEmitter = new EventEmitter();
         var externalFlags = new ExternalFlags();
-        var org = new Organization();
+        var org = getOrganization(externalFlags);
         var deadline = new Date(2017, 8, 9);
 
         var initialForm = externalFlags.has('call') ? 'call' : 'action';

@@ -29,7 +29,6 @@ interface Props {
 
 interface State {
 	modal: string | null
-	org: Organization
 }
 
 
@@ -38,7 +37,6 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			modal: null,
-            org: props.org
 		};
 	}
 	setModal(modal: string | null): any {
@@ -56,7 +54,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 			case "petition":
 			default:
-				form = <PetitionForm org={this.state.org.getOrg()} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
+				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
 				copy = <PetitionCopy deadline={this.props.deadline} />
 				break;
 		}

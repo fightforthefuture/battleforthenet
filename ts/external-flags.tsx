@@ -10,8 +10,7 @@ export class ExternalFlags {
 		return !!this.params.get(flag);
 	}
 
-	get(flag: string) {
-        // TODO: This should probably return undefined if the param does not exist?
-		return this.params.get(flag) || '';
+	get(flag: string, defaultVal: string|undefined) {
+		return this.params.get(flag) || defaultVal;
 	}
 }
