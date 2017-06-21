@@ -919,6 +919,11 @@ $GRAY_LIGHT: #b1aedc;
 			display: none;
 		}
 	}
+	@media screen and (max-width: 370px) {
+		footer .built-by {
+			width: auto;
+		}
+	}
 	.no-scroll {
 		overflow: hidden;
 		-webkit-overflow-scrolling: touch;
