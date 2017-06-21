@@ -739,6 +739,35 @@ $GRAY_LIGHT: #b1aedc;
 			}
 		}
 	}
+	.twitter-modal {
+		.modal-content {
+			max-width: 600px;
+			background-color: $BODY_BGCOLOR;
+			margin: -180px auto 0;
+			padding: 20px;
+			a {
+				color: $WHITE_BRIGHT;
+			}
+			h2 {
+				text-align: center;
+				font-size: 40px;
+				margin: 0 0 10px;
+			}
+			.btn {
+				span {
+					position: relative;
+					top: -6px;
+				}
+			}
+			img {
+				display: inline-block;
+				height: 30px;
+			}
+			.notice {
+				text-align: center;
+			}
+		}
+	}
 
 	.social-media-buttons {
 		position: absolute;
@@ -917,6 +946,35 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.video-roll .controls {
 			display: none;
+		}
+		.twitter-modal .modal-content {
+			h2 {
+				font-size: 25px;
+			}
+			p {
+				font-size: 16px;
+				line-height: 1.4em;
+			}
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.twitter-modal .modal-content {
+			h2 {
+				font-size: 20px;
+			}
+			p {
+				font-size: 15px;
+				line-height: 1.2em;
+			}
+			.btn {
+				img {
+					height: 18px;
+				}
+				span {
+					font-size: 12px;
+					top: -2px;
+				}
+			}
 		}
 	}
 	@media screen and (max-width: 370px) {
