@@ -43,9 +43,10 @@ $GRAY_LIGHT: #b1aedc;
 
 	h1 {
 		text-align: center;
-		font-size: 71px;
+		font-size: 70px;
 		margin: 20px 0;
 		letter-spacing: 1px;
+		white-space: pre;
 	}
 
 	h2 {
@@ -147,7 +148,7 @@ $GRAY_LIGHT: #b1aedc;
 	.petition-form {
 		width: 265px;
 		position: absolute;
-		top: 190px;
+		top: 0px;
 		left: 535px;
 		div {
 			margin-bottom: 5px;
