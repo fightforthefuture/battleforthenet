@@ -694,7 +694,7 @@ $GRAY_LIGHT: #b1aedc;
 	.callform-modal {
 		.modal-content {
 			height: 300px;
-			width: 600px;
+			max-width: 600px;
 			background-color: $BODY_BGCOLOR;
 			margin: -150px auto 0;
 		}
@@ -702,7 +702,7 @@ $GRAY_LIGHT: #b1aedc;
 	.callsuccess-modal {
 		.modal-content {
 			height: 400px;
-			width: 600px;
+			max-width: 600px;
 			background-color: $BODY_BGCOLOR;
 			margin: -200px auto 0;
 			padding: 20px;
@@ -721,7 +721,7 @@ $GRAY_LIGHT: #b1aedc;
 				}
 			}
 			p {
-				font-size: 16px;
+				font-size: 14px;
 			}
 		}
 	}
@@ -821,6 +821,25 @@ $GRAY_LIGHT: #b1aedc;
 			}
 			.arrow {
 				display: none;
+			}
+		}
+		.modal .call-action-form {
+			h3 {
+				font-size: 20px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+		.callsuccess-modal .modal-content {
+			h2 {
+				font-size: 20px;
+			}
+			h4 {
+				font-size: 16px;
+			}
+			p {
+				font-size: 12px;
 			}
 		}
 		footer {
