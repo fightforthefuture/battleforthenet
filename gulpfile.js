@@ -11,6 +11,8 @@ var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 //var sourcemaps = require('gulp-sourcemaps');
 
+var prodBuild = (process.env.NODE_ENV === "production");
+
 gulp.task('sass', function() {
     return gulp.src("scss/index.scss")
         .pipe(sass())
@@ -32,8 +34,7 @@ gulp.task('clean:dist', function() {
 })
 
 gulp.task('typescript', function() {
-		//process.env.NODE_ENV = 'production';
-		return browserify({
+		var ret = browserify({
 				entries: ['ts/bootstrap.tsx'],
 				debug: false,
 				extensions: ['tsx'],
@@ -47,8 +48,13 @@ gulp.task('typescript', function() {
 			this.emit('end');
 		})
 		.pipe(source('bundle.js'))
-		.pipe(buffer())
-		.pipe(gulp.dest('dist'));
+		.pipe(buffer());
+
+		if (prodBuild) {
+			ret = ret.pipe(uglify())
+		}
+
+		return ret.pipe(gulp.dest('dist'));
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'typescript'], function() {
