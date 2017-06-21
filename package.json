@@ -1,0 +1,47 @@
+{
+  "name": "battleforthenet",
+  "version": "2.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.12",
+    "browserify": "^14.4.0",
+    "del": "^2.2.2",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.7",
+    "gulp-uglify": "^3.0.0",
+    "merge2": "^1.0.3",
+    "run-sequence": "^1.2.2",
+    "tsify": "^3.0.1",
+    "typescript": "^2.3.3",
+    "typings": "^2.1.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "@types/es6-promise": "0.0.32",
+    "classlist-polyfill": "^1.2.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "native-promise-only": "^0.8.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hammerjs": "^0.5.0",
+    "react-transition-group": "^1.1.3",
+    "url-polyfill": "^1.0.6",
+    "whatwg-fetch": "^2.0.3"
+  }
+}
