@@ -47,6 +47,9 @@ $GRAY_LIGHT: #b1aedc;
 		margin: 20px 0;
 		letter-spacing: 1px;
 		white-space: pre;
+		span {
+			display: block;
+		}
 	}
 
 	h2 {
@@ -783,6 +786,10 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		h1 {
 			font-size: 40px;
+			white-space: normal;
+			span {
+				display: none;
+			}
 		}
 		h2 {
 			font-size: 24px;
@@ -822,6 +829,10 @@ $GRAY_LIGHT: #b1aedc;
 			.arrow {
 				display: none;
 			}
+		}
+		.modal .modal-close {
+			right: 4px;
+			top: 4px;
 		}
 		.modal .call-action-form {
 			h3 {

@@ -52,7 +52,7 @@
       </a>
     </div>
 
-    <h1>This is a battle for the<br /> future of the internet</h1>
+    <h1>This is a battle for the<span></span> future of the internet</h1>
     <div class="unit">
       <div class="hero" id="bftn-action-form"></div>
     </div>
@@ -198,10 +198,8 @@
 
         mountComponent(
           React.createElement(BFTNFormFlow, {
-            //actionUrl: "https://queue.fightforthefuture.org/action",
-            //callUrl: "https://call-congress.fightforthefuture.org/create"
-            actionUrl: "http://localhost:8000/action",
-            callUrl: "http://localhost:8000/create",
+            actionUrl: "https://queue.fightforthefuture.org/action",
+            callUrl: "https://call-congress.fightforthefuture.org/create",
             initialForm: initialForm,
             org: org,
             deadline: deadline
