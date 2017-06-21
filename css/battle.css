@@ -2260,6 +2260,7 @@ color: red;
   .day-of-action > footer ul li {
     padding: 15px;
   }
+
 }
 
 .day-of-action > footer ul li a {
@@ -2301,4 +2302,12 @@ color: red;
   max-width: 680px;
   margin: 0 auto;
   padding: 10px 10px 40px 10px;
+}
+
+.faq li img.widget-image{
+  max-width: 300px;
+  margin-top: 20px;
+-webkit-box-shadow: 2px 14px 26px -9px rgba(21,14,110,1);
+-moz-box-shadow: 2px 14px 26px -9px rgba(21,14,110,1);
+box-shadow: 2px 14px 26px -9px rgba(21,14,110,1);
 }
