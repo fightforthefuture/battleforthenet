@@ -44,6 +44,7 @@ interface State {
 	input_address: string | string[] | undefined
 	input_zip: string | string[] | undefined
 	input_comment: string | string[] | undefined
+	error: string | null
 }
 
 
@@ -56,7 +57,8 @@ export class PetitionForm extends React.Component<Props, State> {
 			input_email: "",
 			input_address: "",
 			input_zip: "",
-			input_comment: r.defaultFormText
+			input_comment: r.defaultFormText,
+			error: null
 		};
 	}
 	onTextareaFocus(evt: Event) {
@@ -91,6 +93,9 @@ export class PetitionForm extends React.Component<Props, State> {
 			"member[postcode]": this.state.input_zip,
 			"action_comment": this.state.input_comment
 		};
+		this.setState({
+			error: null
+		} as State);
 		submitForm(this.props.url, data)
 			.then((result) => {
 				console.log("DONE");
@@ -98,8 +103,19 @@ export class PetitionForm extends React.Component<Props, State> {
 			})
 			.catch((result) => {
 				console.log("FAIL");
+				this.setState({
+					error: "There was an error submitting the form, please try again"
+				} as State);
 				this.props.setModal(null);
 			});
+	}
+	renderError() {
+		return (
+			<div className="form-error">
+				<span className="oi" data-glyph="warning" title="previous" aria-hidden="true"></span>
+				{" "}{this.state.error}
+			</div>
+		);
 	}
 	render() {
 		return (
@@ -123,6 +139,7 @@ export class PetitionForm extends React.Component<Props, State> {
 					</div>
 					<button className="btn">Send Letter</button>
 				</div>
+				{ this.state.error ? this.renderError() : null }
 				<Disclaimer org={this.props.org} />
 			</form>
 		);

@@ -147,6 +147,17 @@ $GRAY_LIGHT: #b1aedc;
 			text-align: center;
 		}
 	}
+	.form-error {
+		font-size: 11px;
+		color: $RED;
+		span {
+			font-size: 14px;
+			float: left;
+			position: relative;
+			top: 4px;
+			margin-right: 5px;
+		}
+	}
 
 	.petition-form {
 		width: 265px;
@@ -696,10 +707,10 @@ $GRAY_LIGHT: #b1aedc;
 	}
 	.callform-modal {
 		.modal-content {
-			height: 300px;
+			height: 350px;
 			max-width: 600px;
 			background-color: $BODY_BGCOLOR;
-			margin: -150px auto 0;
+			margin: -175px auto 0;
 		}
 	}
 	.callsuccess-modal {

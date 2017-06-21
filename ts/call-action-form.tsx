@@ -30,6 +30,7 @@ function submitForm(url: string, data: any) {
 
 
 interface Props {
+	header: string
 	url: string
 	isModal: boolean
 	setModal: (modal: string | null)=>any
@@ -38,7 +39,7 @@ interface Props {
 
 interface State {
 	input_phone: string | string[] | undefined
-	error_phone: boolean
+	error: boolean
 }
 
 
@@ -48,7 +49,7 @@ export class CallActionForm extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			input_phone: "",
-			error_phone: false
+			error: false
 		};
 	}
 	validatePhoneNumber(v: any): string | false {
@@ -72,11 +73,11 @@ export class CallActionForm extends React.Component<Props, State> {
 		var phone = this.validatePhoneNumber(this.state.input_phone);
 		if (phone === false) {
 			this.setState({
-				error_phone: true
+				error: true
 			} as State);
 		} else {
 			this.setState({
-				error_phone: false
+				error: false
 			} as State);
 			this.props.setModal("loading");
 			var data = {
@@ -99,10 +100,13 @@ export class CallActionForm extends React.Component<Props, State> {
 	render() {
 		return (
 			<form className="bftn-form call-action-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
-				<h3>Call to defend net neutrality!</h3>
-				<p>Enter your number and we'll connect you to Congress and the FCC.</p>
+				<h3>{ this.props.header }</h3>
+				<p>
+					Enter your number and we'll connect you to Congress and the FCC.<br />
+					(We'll also give you suggestions on what to say)
+				</p>
 				<div>
-					<input className={this.state.error_phone ? "error": ""} name="input_phone" type="tel" placeholder="555-555-5555" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
+					<input className={this.state.error? "error": ""} name="input_phone" type="tel" placeholder="555-555-5555" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
 				</div>
 				<div>
 					<button className="btn">Call Congress</button>

@@ -198,8 +198,10 @@
 
         mountComponent(
           React.createElement(BFTNFormFlow, {
-            actionUrl: "https://queue.fightforthefuture.org/action",
-            callUrl: "https://call-congress.fightforthefuture.org/create",
+            //actionUrl: "https://queue.fightforthefuture.org/action",
+            //callUrl: "https://call-congress.fightforthefuture.org/create",
+            actionUrl: "http://localhost:8000/action",
+            callUrl: "http://localhost:8000/create",
             initialForm: initialForm,
             org: org,
             deadline: deadline
