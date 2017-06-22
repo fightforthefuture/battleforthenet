@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom';
 import * as Promise from 'native-promise-only';
 import * as ClassList from 'classlist-polyfill';
 import * as URL from 'url-polyfill';
+import * as fetch from 'whatwg-fetch';
 
 import {TestComponent} from './test';
 import {StatsComponent} from './stats';
@@ -24,6 +25,7 @@ declare var window: any;
 window['_promise'] = Promise;
 window['_classlist'] = ClassList;
 window['_url'] = URL;
+window['_fetch'] = fetch;
 window['React'] = React;
 window['ReactDOM'] = ReactDOM;
 window['TestComponent'] = TestComponent;
