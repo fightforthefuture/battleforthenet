@@ -4,6 +4,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 import * as moment from 'moment';
+import 'whatwg-fetch'
 
 
 export interface ajaxRequest {
