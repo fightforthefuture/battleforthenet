@@ -265,16 +265,16 @@ header nav a {
 }
 .battle #petition .tabs li a.verizon {
     border-left: 0px;
-    background-image: url(/images/petition/verizon.png);   
+    background-image: url(/images/petition/verizon.png);
 }
 .battle #petition .tabs li a.att {
-    background-image: url(/images/petition/att.png);   
+    background-image: url(/images/petition/att.png);
 }
 .battle #petition .tabs li a.tmobile {
-    background-image: url(/images/petition/tmobile.png);   
+    background-image: url(/images/petition/tmobile.png);
 }
 .battle #petition .tabs li a.comcast {
-    background-image: url(/images/petition/comcast.png);   
+    background-image: url(/images/petition/comcast.png);
 }
 
 
@@ -1464,7 +1464,7 @@ input, textarea {
   border-bottom: 1px solid #d1d1e9;
   border-radius: 5px;
   box-shadow: none;
-  color: #645fa2; 
+  color: #645fa2;
   height: 44px;
   padding: 0 18px;
   transition: background-color .15s
@@ -1696,7 +1696,7 @@ button:focus {
 }
 
 .modal footer {
-  padding: 20px; 
+  padding: 20px;
 }
 
 .modal footer button {
@@ -1877,7 +1877,7 @@ fieldset[disabled] textarea {
 }
 
 input{
-	 color: red !important; 
+	 color: red !important;
 }
 
 .video-embed-target .video_wrapper {
@@ -2118,13 +2118,13 @@ color: red;
   box-shadow: 0px 25px 95px -8px rgba(0,0,0,0.3);
 
       -webkit-transition: all 200ms ease-in;
-    -webkit-transform: scale(1); 
+    -webkit-transform: scale(1);
     -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1); 
+    -ms-transform: scale(1);
     -moz-transition: all 200ms ease-in;
     -moz-transform: scale(1);
     transition: all 200ms ease-in;
-    transform: scale(1);  
+    transform: scale(1);
 }
 
 .day-of-action button:first-child {
@@ -2136,11 +2136,11 @@ color: red;
     -webkit-transition: all 200ms ease-in;
     -webkit-transform: scale(1.05);
     -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1.05);   
+    -ms-transform: scale(1.05);
     -moz-transition: all 200ms ease-in;
     -moz-transform: scale(1.05);
     transition: all 200ms ease-in;
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .day-of-action form footer .disclaimer {
@@ -2310,4 +2310,11 @@ color: red;
 -webkit-box-shadow: 2px 14px 26px -9px rgba(21,14,110,1);
 -moz-box-shadow: 2px 14px 26px -9px rgba(21,14,110,1);
 box-shadow: 2px 14px 26px -9px rgba(21,14,110,1);
+}
+
+body.demand-progress .dp {
+  display: initial;
+}
+body.demand-progress .fftf {
+  display: none;
 }
