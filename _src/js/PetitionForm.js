@@ -97,71 +97,75 @@ PetitionForm.prototype.setCountryCode = function(countryCode) {
 PetitionForm.prototype.addEventListeners = function() {
   var form = this.DOMNode.querySelector('form');
   var submitted = false;
+  var params = new URLSearchParams(window.location.search.substring(1));
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+  // Submit form by AJAX, unless on the Demand progress day of action page in which case the form is handled by ActionKit, not us
+  if (!(document.body.classList.contains('day-of-action') && params.get('org') == 'dp')) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    // Prevent duplicate submissions
-    if (submitted) return;
+      // Prevent duplicate submissions
+      if (submitted) return;
 
-    submitted = true;
+      submitted = true;
 
-    var xhr = new XMLHttpRequest();
-    var formData;
+      var xhr = new XMLHttpRequest();
+      var formData;
 
-	var utmParams = new UTM();
-	if (utmParams.getSource() === 'etsy') {
-      var etsyLink = form.querySelector('input[name="etsy_shop"]').value;
+  	  var utmParams = new UTM();
+  	  if (utmParams.getSource() === 'etsy') {
+        var etsyLink = form.querySelector('input[name="etsy_shop"]').value;
 
-      formData = new FormData();
+        formData = new FormData();
 
-      // Manually build the FormData object because Safari doesn't support 
-      // FormData.set for updating action_comment
-      var inputs = form.querySelectorAll('input');
-      for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].type !== 'checkbox') {
-          formData.append(inputs[i].name, form.querySelector('input[name="' + inputs[i].name + '"]').value);
+        // Manually build the FormData object because Safari doesn't support
+        // FormData.set for updating action_comment
+        var inputs = form.querySelectorAll('input');
+        for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].type !== 'checkbox') {
+            formData.append(inputs[i].name, form.querySelector('input[name="' + inputs[i].name + '"]').value);
+          }
+        }
+
+        // Append honeypot checkbox values
+        formData.append('hp_enabled', 'on');
+
+        // Prepend Etsy Shop link if field is not blank
+        formData.append('action_comment', (etsyLink ? ('Etsy Shop ' + etsyLink + '\n\n') : '') + form.querySelector('textarea[name="action_comment"]').value);
+
+        if (!form.querySelector('input[name="opt_in"]').checked) {
+          formData.append('opt_out', 1);
+        }
+    	} else {
+        formData = new FormData(form);
+      }
+
+      function handleHelperError(e) {
+        /**
+         * @param {event|XMLHttpRequest} e - Might be an event, might be a
+         * failed XMLHttpRequest
+         * */
+
+        // global.modals.display('error_modal');
+      }
+
+      function loadHelperResponse() {
+        // Submission complete, allow retry
+        submitted = false;
+
+        if (200 <= xhr.status < 400) {
+          global.modals.display('thanks_modal');
+        } else {
+          handleHelperError(xhr);
         }
       }
 
-      // Append honeypot checkbox values
-      formData.append('hp_enabled', 'on');
-
-      // Prepend Etsy Shop link if field is not blank
-      formData.append('action_comment', (etsyLink ? ('Etsy Shop ' + etsyLink + '\n\n') : '') + form.querySelector('textarea[name="action_comment"]').value);
-
-      if (!form.querySelector('input[name="opt_in"]').checked) {
-        formData.append('opt_out', 1);
-      }
-	} else {
-      formData = new FormData(form);
-    }
-
-    function handleHelperError(e) {
-      /**
-       * @param {event|XMLHttpRequest} e - Might be an event, might be a 
-       * failed XMLHttpRequest
-       * */
-
-      // global.modals.display('error_modal');
-    }
-
-    function loadHelperResponse() {
-      // Submission complete, allow retry
-      submitted = false;
-
-      if (200 <= xhr.status < 400) {
-        global.modals.display('thanks_modal');
-      } else {
-        handleHelperError(xhr);
-      }
-    }
-
-    xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
-    xhr.addEventListener('error', handleHelperError);
-    xhr.addEventListener('load', loadHelperResponse);
-    xhr.send(formData);
-  });
+      xhr.open(form.getAttribute('method'), form.getAttribute('action'), true);
+      xhr.addEventListener('error', handleHelperError);
+      xhr.addEventListener('load', loadHelperResponse);
+      xhr.send(formData);
+    });
+  }
 
   var textarea;
 
@@ -235,7 +239,7 @@ PetitionForm.prototype.addEventListeners = function() {
 
         for (var i = 0; i < tabs.length; i++)
             tabs[i].classList.remove('sel');
-        
+
         var company = tab.className.trim();
 
         textareaNode.value = presetIntro + '\n\n' + presetComplaints[company];
@@ -247,7 +251,7 @@ PetitionForm.prototype.addEventListeners = function() {
     var bindTabListener = function(tab) {
         tab.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             clickTab(tab);
         });
     };
@@ -292,7 +296,7 @@ PetitionForm.prototype.addEventListeners = function() {
                 phoneCallFormNode.style.opacity = 1;
             }, 50);
         }, 800);
-        
+
 
 
 

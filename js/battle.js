@@ -981,8 +981,8 @@ PetitionForm.prototype.addEventListeners = function() {
       var xhr = new XMLHttpRequest();
       var formData;
 
-    	var utmParams = new UTM();
-    	if (utmParams.getSource() === 'etsy') {
+  	  var utmParams = new UTM();
+  	  if (utmParams.getSource() === 'etsy') {
         var etsyLink = form.querySelector('input[name="etsy_shop"]').value;
 
         formData = new FormData();
@@ -1259,16 +1259,16 @@ window.URLSearchParams = window.URLSearchParams || URLSearchParams;
 
 // Polyfill matches selector
 Element.prototype.matches = Element.prototype.matches ||
-  Element.prototype.matchesSelector ||
+  Element.prototype.matchesSelector || 
   Element.prototype.mozMatchesSelector ||
-  Element.prototype.msMatchesSelector ||
-  Element.prototype.oMatchesSelector ||
+  Element.prototype.msMatchesSelector || 
+  Element.prototype.oMatchesSelector || 
   Element.prototype.webkitMatchesSelector ||
   function(s) {
     var matches = (this.document || this.ownerDocument).querySelectorAll(s),
       i = matches.length;
     while (--i >= 0 && matches.item(i) !== this) {}
-    return i > -1;
+    return i > -1;            
   };
 
 },{}],16:[function(require,module,exports){
