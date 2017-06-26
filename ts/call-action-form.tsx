@@ -32,6 +32,7 @@ function submitForm(url: string, data: any) {
 interface CampaignSpec {
 	url: string
 	id: string
+	disclaimer: string
 }
 type Campaigns = {[key:string]: CampaignSpec};
 
@@ -39,11 +40,13 @@ type Campaigns = {[key:string]: CampaignSpec};
 const campaigns:Campaigns = {
 	"daily": {
 		"url": "https://demandprogress.callpower.org/call/create",
-		"id": "1"
+		"id": "1",
+		"disclaimer": "Your phone number will only be used for Battle for the Net to connect you with Congress and the FCC."
 	},
 	"fftf": {
 		"url": "https://call-congress.fightforthefuture.org/create",
-		"id": "battleforthenet-2017"
+		"id": "battleforthenet-2017",
+		"disclaimer": "Your phone number will only be used to make this call."
 	}
 };
 
@@ -87,7 +90,6 @@ export class CallActionForm extends React.Component<Props, State> {
 		return phone.length == 10 ? phone : false;
 	}
 	getCampaign(campaignId: string): CampaignSpec {
-		console.log(campaignId);
 		return campaigns[campaignId] || campaigns["fftf"];
 	}
 	onSubmit(evt: Event) {
@@ -122,6 +124,7 @@ export class CallActionForm extends React.Component<Props, State> {
 		};
 	}
 	render() {
+		var campaign = this.getCampaign(this.props.campaignId);
 		return (
 			<form className="bftn-form call-action-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
 				<h3>{ this.props.header }</h3>
@@ -135,7 +138,7 @@ export class CallActionForm extends React.Component<Props, State> {
 				<div>
 					<button className="btn">Call Congress</button>
 				</div>
-				<p className="disclaimer">Your phone number will only be used to make this call. <a href="/privacy" target="_blank">Privacy Policy</a></p>
+				<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
 			</form>
 		);
 	}
