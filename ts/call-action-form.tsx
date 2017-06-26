@@ -9,7 +9,7 @@ import {handleInputChange} from './utils';
 
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
-	console.log(data);
+	console.log(url, data);
 	return mockAjaxPromise({
 		code: 200,
 		response: data,
@@ -29,9 +29,28 @@ function submitForm(url: string, data: any) {
 }
 
 
+interface CampaignSpec {
+	url: string
+	id: string
+}
+type Campaigns = {[key:string]: CampaignSpec};
+
+
+const campaigns:Campaigns = {
+	"daily": {
+		"url": "https://demandprogress.callpower.org/call/create",
+		"id": "1"
+	},
+	"fftf": {
+		"url": "https://call-congress.fightforthefuture.org/create",
+		"id": "battleforthenet-2017"
+	}
+};
+
+
 interface Props {
 	header: string
-	url: string
+	campaignId: string
 	isModal: boolean
 	setModal: (modal: string | null)=>any
 }
@@ -67,6 +86,10 @@ export class CallActionForm extends React.Component<Props, State> {
 		// Return formatted phone number if valid
 		return phone.length == 10 ? phone : false;
 	}
+	getCampaign(campaignId: string): CampaignSpec {
+		console.log(campaignId);
+		return campaigns[campaignId] || campaigns["fftf"];
+	}
 	onSubmit(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
@@ -80,11 +103,12 @@ export class CallActionForm extends React.Component<Props, State> {
 				error: false
 			} as State);
 			this.props.setModal("loading");
+			var campaign = this.getCampaign(this.props.campaignId);
 			var data = {
-				"campaignId": "battleforthenet-2017",
+				"campaignId": campaign.id,
 				"userPhone": phone
 			};
-			submitForm(this.props.url, data)
+			submitForm(campaign.url, data)
 				.then((result) => {
 					console.log("DONE");
 					this.props.setModal("success");
