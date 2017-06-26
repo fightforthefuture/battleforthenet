@@ -22,7 +22,7 @@ interface Props {
 	initialForm: string
 	org: Organization
 	actionUrl: string
-	callUrl: string
+	campaignId: string
 	deadline: Date
 }
 
@@ -49,7 +49,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm header="Call to defend net neutrality!" url={this.props.callUrl} setModal={this.setModal.bind(this)} isModal={false} />
+				form = <CallActionForm header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} />
 				copy = <CallActionCopy />
 				break;
 			case "petition":
@@ -69,7 +69,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm header="Thanks for emailing them! Now, can you call?" url={this.props.callUrl} setModal={this.setModal.bind(this)} isModal={true} />
+						<CallActionForm header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={true} />
 					</Modal>
 				);
 				break;

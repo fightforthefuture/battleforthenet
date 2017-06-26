@@ -9,7 +9,7 @@ import {handleInputChange} from './utils';
 
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
-	console.log(data);
+	console.log(url, data);
 	return mockAjaxPromise({
 		code: 200,
 		response: data,
@@ -29,9 +29,31 @@ function submitForm(url: string, data: any) {
 }
 
 
+interface CampaignSpec {
+	url: string
+	id: string
+	disclaimer: string
+}
+type Campaigns = {[key:string]: CampaignSpec};
+
+
+const campaigns:Campaigns = {
+	"daily": {
+		"url": "https://demandprogress.callpower.org/call/create",
+		"id": "1",
+		"disclaimer": "Your phone number will only be used for Battle for the Net to connect you with Congress and the FCC."
+	},
+	"fftf": {
+		"url": "https://call-congress.fightforthefuture.org/create",
+		"id": "battleforthenet-2017",
+		"disclaimer": "Your phone number will only be used to make this call."
+	}
+};
+
+
 interface Props {
 	header: string
-	url: string
+	campaignId: string
 	isModal: boolean
 	setModal: (modal: string | null)=>any
 }
@@ -67,6 +89,9 @@ export class CallActionForm extends React.Component<Props, State> {
 		// Return formatted phone number if valid
 		return phone.length == 10 ? phone : false;
 	}
+	getCampaign(campaignId: string): CampaignSpec {
+		return campaigns[campaignId] || campaigns["fftf"];
+	}
 	onSubmit(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
@@ -80,11 +105,12 @@ export class CallActionForm extends React.Component<Props, State> {
 				error: false
 			} as State);
 			this.props.setModal("loading");
+			var campaign = this.getCampaign(this.props.campaignId);
 			var data = {
-				"campaignId": "battleforthenet-2017",
+				"campaignId": campaign.id,
 				"userPhone": phone
 			};
-			submitForm(this.props.url, data)
+			submitForm(campaign.url, data)
 				.then((result) => {
 					console.log("DONE");
 					this.props.setModal("success");
@@ -98,6 +124,7 @@ export class CallActionForm extends React.Component<Props, State> {
 		};
 	}
 	render() {
+		var campaign = this.getCampaign(this.props.campaignId);
 		return (
 			<form className="bftn-form call-action-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
 				<h3>{ this.props.header }</h3>
@@ -111,7 +138,7 @@ export class CallActionForm extends React.Component<Props, State> {
 				<div>
 					<button className="btn">Call Congress</button>
 				</div>
-				<p className="disclaimer">Your phone number will only be used to make this call. <a href="/privacy" target="_blank">Privacy Policy</a></p>
+				<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
 			</form>
 		);
 	}

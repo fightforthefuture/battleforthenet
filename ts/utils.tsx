@@ -3,7 +3,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
-import * as moment from 'moment';
 
 
 export interface ajaxRequest {
@@ -101,13 +100,12 @@ export function classes(...c: (string|boolean|null)[]): string {
 };
 
 
-function dateToArray(d: Date): [number, number, number] {
-	return [d.getFullYear(), d.getMonth(), d.getDate()];
+function normalizeToDay(d: Date): Date {
+	return new Date(d.getFullYear(), d.getMonth(), d.getDate());
 }
 
 
 export function daysUntil(d: Date): number {
-	const momentd = moment(dateToArray(d));
-	const now = moment(dateToArray(new Date()));
-	return momentd.diff(now, 'days');
+	const delta = (normalizeToDay(d).valueOf() - normalizeToDay(new Date()).valueOf());
+	return Math.floor(delta / 864e5);
 };
