@@ -1,0 +1,33 @@
+<section class="form">
+  <form class="actionkit-widget" name="signup" action="http://act.demandprogress.org/act/" onsubmit="this.submitted=1;return false">
+    <input type="hidden" name="page" value="battleforthenet_2017_july12">
+
+    <main>
+      <section class="wrap">
+        <input type="text" name="name" placeholder="Full Name*" title="Full Name (Required)" autocomplete="name" required>
+        <input type="email" name="email" placeholder="Email*" title="Email (Required)" required>
+        <input type="text" name="zip" placeholder="Postcode" title="Postcode">
+        <input type="text" name="phone" placeholder="Phone" title="Phone">
+      </section>
+      <section>
+        <input type="checkbox" name="volunteer">
+        <label for="volunteer">I have a large online audience, or a friend or employer who does.</label>
+      </section>
+      <section class="comment hidden">
+        <label for="action_comment">Explain:</label>
+        <textarea name="action_comment"></textarea>
+      </section>
+    </main>
+
+    <!-- This field gets updated after geocoding IP address -->
+    <input type="hidden" name="country" value="US"/>
+
+    <footer>
+      <button type="submit">Join the Protest</button>
+      <div class="disclaimer">
+        We’ll send you everything you need to participate. <a href="https://demandprogress.org/" target="_blank">Demand Progress</a></span> will email you about work related to this, and you can unsubscribe at any time. If you enter your number (it's optional) Demand Progress may follow up by SMS, at which point message &amp; data rates apply. You can always text STOP to stop receiving messages. Here’s our <a href="https://demandprogress.org/privacy-policy/" target="_blank">Privacy Policy</a>.
+      </div>
+    </footer>
+  </form>
+  <div id="signup-replacement" style="display: none; font-size: 16px;">Thank you for signing up! Together we will work to stop the FCC from giving big cable companies control over what we see and do online.</div>
+</section>

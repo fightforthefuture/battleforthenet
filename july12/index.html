@@ -242,8 +242,8 @@
         <img src="/images/change_avatar/avatar-red.gif"/>
         <img src="/images/change_avatar/avatar-white-red.gif"/>
         <img src="/images/change_avatar/avatar-cat.gif"/>
-      </li> 
-      
+      </li>
+
       <li>
         <h2>HELP US GET CREATIVE!</h2>
         <p>We're just getting started with organizing this massive day of action, so sign up and we’ll get in touch soon with more information. If you have ideas or want to help, let us know. If you run a high-traffic website, startup, or small business, <a href="team@fightforthefuture.org">get in touch</a>. We need you!</p>
@@ -263,7 +263,8 @@
       <li><a href="https://demandprogress.org/" target="_blank"><img src="/images/logos/demandprogress.png" alt="Demand Progress"></a></li>
     </ul>
     <hr>
-    <p>Press inquiries email <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a> or call <a href="tel:978-852-6457">978-852-6457</a>.</p>
+    <p class='org fftf'>Press inquiries email <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a> or call <a href="tel:978-852-6457">978-852-6457</a>.</p>
+    <p class='org dp'>Press inquiries email <a href="mailto:press@demandprogress.org">press@demandprogress.org</a> or call <a href="tel:202-681-7582 ">202-681-7582</a>.</p>
   </footer>
 
   <div class="modals-target"></div>
@@ -296,6 +297,11 @@
     global.modals = null;
 
     window.optimizely || (window.optimizely = []);
+
+    var params = new URLSearchParams(window.location.search.substring(1));
+    if (params.get('org') == 'dp') {
+      document.body.className = document.body.className + ' demand-progress';
+    }
 
     if (document.readyState === "complete") {
       loadAdditionalResources();
