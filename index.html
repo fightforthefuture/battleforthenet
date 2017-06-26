@@ -196,6 +196,7 @@
         var deadline = new Date(2017, 8, 9);
 
         var initialForm = externalFlags.has('call') ? 'call' : 'action';
+        var campaign = externalFlags.get('campaign', 'fftf');
         var persistentButtonText = externalFlags.has('call') ? 'Call Congress' : "Send Letter";
 
         mountComponent(
@@ -208,7 +209,7 @@
         mountComponent(
           React.createElement(BFTNFormFlow, {
             actionUrl: "https://queue.fightforthefuture.org/action",
-            callUrl: "https://call-congress.fightforthefuture.org/create",
+            campaignId: campaign,
             initialForm: initialForm,
             org: org,
             deadline: deadline
