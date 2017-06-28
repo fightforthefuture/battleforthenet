@@ -20,7 +20,10 @@ Modals.prototype.render = function() {
 
     var buster = '?buster=' + Date.now();
 
-    if (document.body.classList.contains('battle')) {
+    var urlParams = new URLSearchParams(window.location.search.substring(1));
+    var showCallForm = document.body.classList.contains('battle') || (document.body.classList.contains('day-of-action') && params.get('org') == 'dp');
+
+    if (showCallForm) {
       new AJAX({
         url: '/templates/CallForm.html' + buster,
         success: function(e) {
@@ -32,8 +35,14 @@ Modals.prototype.render = function() {
       });
     }
 
-    if (document.body.classList.contains('day-of-action')) {
+    if (!showCallForm) {
       this.DOMNode.querySelector('#thanks_modal header > h3').textContent = "Thanks! We'll be in touch. For now, can you help spread the word?";
+    }
+
+    // Update facebook share link to point to current URL
+    var facebookShareLinks = document.querySelectorAll('.fb-share-container');
+    for (var i = 0; i < facebookShareLinks.length; i++) {
+      facebookShareLinks[i].setAttribute("href", "https://www.facebook.com/sharer.php?u=" + window.location);
     }
 
     if (location.href.match(/committees=1/))
