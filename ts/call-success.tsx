@@ -19,8 +19,8 @@ export class CallSuccess extends React.Component<Props, State> {
 					<em>more calls = more impact.</em>
 				</h4>
 
-				<p><em>If it's helpful you can also say:</em></p>
-				<p>Hi, my name is _____ and I’m concerned about net neutrality. Millions of people spoke out for the strong net neutrality rules we currently have because they protect us from Internet service providers like Comcast and Verizon that want to block, throttle, and charge us extra fees to access information equally online. These rules protect innovation, free speech, and creativity online.</p>
+				<p><em>You can introduce yourself and say,</em></p>
+				<p>I’m concerned about net neutrality. Millions of people spoke out for the strong net neutrality rules we currently have because they protect us from Internet service providers like Comcast and Verizon that want to block, throttle, and charge us extra fees to access information equally online.</p>
 				<p>I support Title II net neutrality rules and I urge you to oppose the FCC’s plan to repeal them.</p>
 			</div>
 		);
