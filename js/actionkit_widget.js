@@ -50,9 +50,10 @@ function defaultWidgetSuccess(f, response) {
             jQuery(replacement).slideDown('fast');
     }
     else {
-        f.style.display='none';
-        if ( replacement )
+        if ( replacement ) {
+            f.style.display='none';
             replacement.style.display='block';
+        }
     }
 };
 
