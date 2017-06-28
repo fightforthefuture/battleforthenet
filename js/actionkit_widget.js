@@ -30,7 +30,7 @@ You can add custom behavior by defining one of these functions:
 
 (function() {
 var w=window,d=document;
-console.log("load");
+
 function err(e) { if (window.console && console.error) console.error(e) }
 
 function defaultWidgetSuccess(f, response) {
@@ -77,7 +77,6 @@ function defaultWidgetError(f, response) {
 
 // Best not to change after this point
 function processWidgetSubmit() {
-    console.log("yoyo");
     var f = w.currentlySubmittingWidget = this;
     if ( w.onWidgetSubmit ) {
         try {
@@ -176,9 +175,7 @@ else
     style.appendChild(document.createTextNode(styleText));
 document.getElementsByTagName('head')[0].appendChild(style);
 
-    console.log("load2");
 for ( var i = 0; i < d.forms.length; ++i ) {
-    console.log("form", i);
     var f = d.forms[i];
     if (!/actionkit-widget/.test(f.className)) continue;
     f.onsubmit = processWidgetSubmit;
