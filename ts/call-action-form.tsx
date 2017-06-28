@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as React from 'react';
 
 import {ajaxResult, ajaxPromise} from './utils';
@@ -66,7 +64,7 @@ interface State {
 
 
 export class CallActionForm extends React.Component<Props, State> {
-	formElement: HTMLElement
+	formElement: HTMLElement | null
 	constructor(props: Props) {
 		super(props);
 		this.state = {
