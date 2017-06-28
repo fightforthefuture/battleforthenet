@@ -116,6 +116,14 @@ $GRAY_LIGHT: #b1aedc;
 		span {
 			color: $STATS_HLCOLOR;
 		}
+		a {
+			color: $STATS_COLOR;
+			text-decoration: none;
+			&:hover {
+			    color: $STATS_HLCOLOR;
+				text-decoration: underline;
+            }
+		}
 	}
 
 	.hero {
