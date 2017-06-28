@@ -1,6 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
-
 export class MockDeferred {
 	result: any
 	success: boolean

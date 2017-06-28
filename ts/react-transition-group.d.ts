@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 declare module 'react-transition-group' {
 	import * as React from 'react';
 
