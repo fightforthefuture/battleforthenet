@@ -1,15 +1,14 @@
-### Running this site locally
-
-Necessary to avoid the CORS errors that are present when just opening `index.html` in a browser.
+### Developing locally
 
 ```sh
-python -m SimpleHTTPServer
+npm install
+npm run watch
 ```
 
-### Compiling battle.js!
+### Publishing for production
+
+Commit any changes to non-generated files separately, then update the generated `dist` files in a separate commit to facilitate easier rebasing. This step will eventually be handled automatically by a CI script.
 
 ```sh
-cd _src
-npm install
-npm start
+NODE_ENV=production npm run build
 ```
