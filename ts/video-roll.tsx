@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as React from 'react';
 import * as ReactTransitionGroup from 'react-transition-group';
 import * as _ from 'lodash';

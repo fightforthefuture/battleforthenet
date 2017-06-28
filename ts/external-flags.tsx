@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 export class ExternalFlags {
 	params: URLSearchParams
 	constructor() {

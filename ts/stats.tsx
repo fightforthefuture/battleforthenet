@@ -1,6 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-/// <reference path="./react-transition-group.d.ts" />
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as ReactTransitionGroup from 'react-transition-group';

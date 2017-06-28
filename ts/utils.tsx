@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
@@ -72,7 +70,7 @@ export function getScrollTop() {
 };
 
 
-export function handleInputChange(evt: React.FormEvent) {
+export function handleInputChange(evt: React.FormEvent<any>) {
 	const target = evt.target as HTMLInputElement;
 	const val = target.type === 'checkbox' ? target.checked : target.value;
 	const name = target.name;

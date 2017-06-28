@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as React from 'react';
 
 import {ajaxResult, ajaxPromise} from './utils';
@@ -49,7 +47,7 @@ interface State {
 
 
 export class PetitionForm extends React.Component<Props, State> {
-	textareaInput: HTMLTextAreaElement;
+	textareaInput: HTMLTextAreaElement | null;
 	constructor(props: Props) {
 		super(props);
 		this.state = {
@@ -68,7 +66,9 @@ export class PetitionForm extends React.Component<Props, State> {
 	onResetClick(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
-		this.textareaInput.focus();
+		if (this.textareaInput) {
+			this.textareaInput.focus();
+		}
 		this.setState({
 			input_comment: ""
 		} as State);
