@@ -15,11 +15,10 @@ export class CallActionCopy extends React.Component<Props, State> {
 			<div className="call-action-copy">
 				<p>
 					The FCC wants to destroy net neutrality and give big cable companies
-					control over what we see and do online. If they get their way, they’ll
-					allow widespread throttling, blocking, censorship, and extra fees.
+					control over what we see and do online. Their plan would allow widespread
+					throttling, blocking, censorship, and extra fees.
 					{" "}
-					<em>To protect free speech and keep the Internet awesome, we need to reach
-					decision makers with comments, emails, and phone calls right now.</em>
+					<em>To keep the Internet awesome, we need to reach decision makers with phone calls right now.</em>
 				</p>
 			</div>
 		);
