@@ -88,6 +88,11 @@
       }
     });
   } else if (document.body.classList.contains('day-of-action') && params.get('org') == 'dp') {
+    // Define success callback of action kit form to display the share modal
+    window.onWidgetSuccess = function(form, serverResponse) {
+      global.modals.display('thanks_modal');
+    }
+
     new AJAX({
       url: '/templates/SignupFormDP.html' + buster,
       success: function(e) {
