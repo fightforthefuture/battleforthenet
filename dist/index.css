@@ -582,6 +582,40 @@ template {
       text-align: center; }
     .bftn-homepage .call-action-form .disclaimer {
       font-size: 10px; }
+  .bftn-homepage .participants ul {
+    max-width: 680px;
+    margin: 0px auto;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .bftn-homepage .participants ul li {
+      display: inline-block;
+      min-width: 165px;
+      max-width: 165px;
+      max-height: 70px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      flex: 1;
+      box-shadow: 0px 1px 4px 0px #040404; }
+      .bftn-homepage .participants ul li img {
+        max-width: 100%;
+        object-fit: contain; }
+  .bftn-homepage .participants p {
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 40px; }
+    .bftn-homepage .participants p a {
+      color: #717093; }
+  .bftn-homepage .participants a.btn {
+    max-width: 500px;
+    font-size: 30px;
+    margin: 0px auto;
+    box-shadow: 0px 1px 4px 0px #040404; }
   .bftn-homepage .fadein-appear {
     opacity: 0.01; }
     .bftn-homepage .fadein-appear.fadein-appear-active {
