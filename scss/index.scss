@@ -265,10 +265,6 @@ $GRAY_LIGHT: #b1aedc;
 	}
 
 
-	.toggle-true .persistent-button {
-		bottom: 15px;
-	}
-
 	.fadein-appear {
 		opacity: 0.01;
 		&.fadein-appear-active {
@@ -625,11 +621,23 @@ $GRAY_LIGHT: #b1aedc;
 		}	
 	}
 	.persistent-button {
-		width: 250px;
+		width: 350px;
 		position: fixed;
-		bottom: -55px;
-		right: 5px;
+		bottom: -85px;
+		right: 25px;
 		transition: bottom 0.2s ease-in;
+		a.btn {
+			font-size: 40px;
+			padding: 15px 0;
+			box-shadow: 5px 5px 35px rgba(0, 0, 0, 1.0);
+			transition: box-shadow 0.3s ease-in;
+		}
+		a.btn:hover {
+			box-shadow: 10px 10px 35px rgba(0, 0, 0, 1.0);
+		}
+	}
+	.toggle-true .persistent-button {
+		bottom: 25px;
 	}
 
 	button.btn, a.btn {
@@ -974,6 +982,13 @@ $GRAY_LIGHT: #b1aedc;
 					font-size: 12px;
 					top: -2px;
 				}
+			}
+		}
+		.persistent-button {
+			width: 250px;
+			a.btn {
+				font-size: 20px;
+				padding: 10px 0;
 			}
 		}
 	}
