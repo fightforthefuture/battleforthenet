@@ -463,6 +463,12 @@ template {
       font-weight: normal; }
     .bftn-homepage .stats span {
       color: #46b8ff; }
+    .bftn-homepage .stats a {
+      color: #83839e;
+      text-decoration: none; }
+      .bftn-homepage .stats a:hover {
+        color: #46b8ff;
+        text-decoration: underline; }
   .bftn-homepage .hero {
     min-height: 435px; }
     .bftn-homepage .hero .petition-copy {
