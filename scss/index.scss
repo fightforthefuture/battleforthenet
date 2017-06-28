@@ -1026,11 +1026,16 @@ $GRAY_LIGHT: #b1aedc;
 			}
 		}
 		.persistent-button {
-			width: 250px;
+			width: 100%;
+			right: 0;
 			a.btn {
+				border-radius: 0;
 				font-size: 20px;
 				padding: 10px 0;
 			}
+		}
+		.toggle-true .persistent-button {
+			bottom: 0;
 		}
 	}
 	@media screen and (max-width: 370px) {

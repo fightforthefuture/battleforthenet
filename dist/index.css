@@ -1167,10 +1167,14 @@ template {
       font-size: 12px;
       top: -2px; }
     .bftn-homepage .persistent-button {
-      width: 250px; }
+      width: 100%;
+      right: 0; }
       .bftn-homepage .persistent-button a.btn {
+        border-radius: 0;
         font-size: 20px;
-        padding: 10px 0; } }
+        padding: 10px 0; }
+    .bftn-homepage .toggle-true .persistent-button {
+      bottom: 0; } }
   @media screen and (max-width: 370px) {
     .bftn-homepage footer .built-by {
       width: auto; } }
