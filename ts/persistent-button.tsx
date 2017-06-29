@@ -48,7 +48,7 @@ export class PersistentButton extends React.Component<Props, State> {
 	render() {
 		return <div className={"toggle-" + (this.state.toggle ? "true" : "false")}>
 			<div className="persistent-button">
-				<a className="btn" href="#">{ this.props.text }</a>
+				<a className="btn" href="#bftn-action-form">{ this.props.text }</a>
 			</div>
 		</div>;
 	}
