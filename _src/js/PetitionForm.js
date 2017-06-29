@@ -5,6 +5,7 @@ var Template = require('./Template');
 var OrganizationRotation = require('./OrganizationRotation');
 var UTM = require('./UTM');
 var YourSenators = require('./YourSenators');
+var Polyfills = require('./Polyfills');
 
 function PetitionForm(params) {
   this.target = params.target;
