@@ -1,0 +1,155 @@
+.political-scoreboard {
+	.state-selector {
+		font-size: 20px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: #6b63ff;
+		select {
+			margin-left: 40px;
+			padding: 5px;
+			text-transform: uppercase;
+		}
+	}
+	.psb-section {
+		position: relative;
+		.unit {
+			h4 {
+				font-size: 20px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-top: 40px;
+				margin-bottom: 0;
+			}
+			p {
+				margin-top: 0;
+				font-size: 14px;
+			}
+		}
+	}
+	.psb-unknown {
+		h4 {
+			color: #7067a4;
+		}
+		div.cover {
+			background-color: rgba(55,53,82,0.5);
+		}
+		.politician:hover div.cover {
+			background-color: rgba(55,53,82,0.9);
+		}
+	}
+	.psb-cable {
+		h4 {
+			color: #ff1a09;
+		}
+		div.cover {
+			background-color: rgba(255,26,9,0.5);
+		}
+		.politician:hover div.cover {
+			background-color: rgba(255,26,9,0.7);
+		}
+	}
+	.psb-internet {
+		h4 {
+			color: #45bcc0;
+		}
+		div.cover {
+			background-color: rgba(75,205,207,0.5);
+		}
+		.politician:hover div.cover {
+			background-color: rgba(75,205,207,0.7);
+		}
+	}
+	.politician {
+		width: 100px;
+		height: 122px;
+		position: relative;
+		img {
+			width: 100px;
+			height: 122px;
+		}
+		div.cover {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			span {
+				color: $WHITE_BRIGHT;
+				position: absolute;
+				bottom: 6px;
+				left: 0px;
+				text-align: center;
+				width: 100%;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 14px;
+				text-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+			}
+		}
+		div.cover-long {
+			span {
+				font-size: 10px;
+				bottom: 9px;
+			}
+		}
+		div.actions {
+			position: absolute;
+			bottom: 20px;
+			left: 0px;
+			width: 100%;
+			display: none;
+			.btn {
+				font-size: 10px;
+				padding: 7px 5px;
+				width: 90%;
+				margin: 10px auto 0;
+			}
+			.tweet {
+				background-color: #2ecaf8;
+			}
+			.tweet:hover {
+				background-color: darken(#2ecaf8, 20%);
+			}
+			.site {
+				background-color: #224769;
+			}
+			.site:hover {
+				background-color: darken(#224769, 10%);
+			}
+		}
+		div.actions.no-site {
+			bottom: 45px;
+			.site {
+				display: none;
+			}
+		}
+	}
+	.carousel-item-active:hover {
+		div.actions {
+			display: block;
+		}
+		div.cover span {
+			opacity: 0.1;
+		}
+	}
+	.carousel {
+		height: 122px;
+		.bar {
+			display: none;
+		}
+		.controls {
+			.prev, .next {
+				div {
+					height: 32px;
+					width: 32px;
+					line-height: 32px;
+					border-radius: 16px;
+					margin-top: 40px;
+				}
+			}
+		}
+		.carousel-item {
+			transition: left 0.1s ease-in, opacity 0.1s ease-in;
+		}
+	}
+}

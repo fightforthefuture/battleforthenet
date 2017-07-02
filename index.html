@@ -131,6 +131,21 @@
 			<a href="/july12/" class="btn">Join the Protest</a>
 		</div>
 
+		<div class="unit">
+			<a id="scoreboard" />
+			<h2>Where do your members of Congress stand on net neutrality?</h2>
+			
+			<p>Congress is split into two sides as well. On the one side, there's
+			Team Cable: the members of Congress who will side with the cable
+			companies and oppose net neutrality no matter what their constituents
+			think. On the other, there's Team Internet: the ones who understand the
+			Internet and have spoken out against the FCC's plan to gut net neutrality
+			rules. Then there are some unkowns who just haven't taken a stand yet. We
+			need to hold Team Cable accountable, and pressure the unknowns to join
+			Team Internet. Use the tool below to contact them.</p>
+		</div>
+		<div id="political-scoreboard"></div>
+
     <div class="unit">
       <h2>Extra Reading</h2>
 
@@ -260,6 +275,13 @@
             eventEmitter: eventEmitter
           }),
           document.getElementById("persistent-button")
+        );
+
+        mountComponent(
+          React.createElement(PoliticalScoreboard, {
+            eventEmitter: eventEmitter
+          }),
+          document.getElementById("political-scoreboard")
         );
 
         mountComponent(

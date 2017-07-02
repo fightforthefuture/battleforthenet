@@ -4,3 +4,4 @@ npm-debug.log
 css/john-oliver.css
 dist/bundle.js
 dist/index.css
+tmp/

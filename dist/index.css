@@ -405,6 +405,10 @@ template {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #279cff; }
+  .bftn-homepage h4 {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    color: #279cff; }
   .bftn-homepage div, .bftn-homepage p {
     font-family: "Open Sans", sans-serif; }
   .bftn-homepage h1 {
@@ -436,6 +440,9 @@ template {
     width: 800px;
     margin: 0px auto;
     position: relative; }
+    .bftn-homepage .unit hr {
+      margin: 60px 0;
+      border: 1px solid #2a284a; }
     .bftn-homepage .unit p {
       width: 800px;
       line-height: 1.5em; }
@@ -1124,6 +1131,159 @@ template {
       background-color: #2ecbf8; }
     .bftn-homepage .social-media-buttons .facebook {
       background-color: #234769; }
+  .bftn-homepage .carousel {
+    position: relative; }
+    .bftn-homepage .carousel .controls {
+      position: absolute;
+      width: 100%;
+      top: 0; }
+      .bftn-homepage .carousel .controls .bar {
+        position: absolute;
+        background-color: #2a2749;
+        top: 290px;
+        height: 3px;
+        width: 90%;
+        margin: 0 5%; }
+      .bftn-homepage .carousel .controls .section {
+        height: 100%;
+        position: absolute;
+        background-color: #5f88ff;
+        transition: left 0.3s ease-in; }
+      .bftn-homepage .carousel .controls .prev, .bftn-homepage .carousel .controls .next {
+        top: 0px;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+        text-align: center; }
+        .bftn-homepage .carousel .controls .prev div, .bftn-homepage .carousel .controls .next div {
+          display: inline-block;
+          background-color: #494476;
+          color: #17152a;
+          font-size: 18px;
+          height: 42px;
+          width: 42px;
+          line-height: 42px;
+          margin-top: 50%;
+          position: relative;
+          border-radius: 21px; }
+          .bftn-homepage .carousel .controls .prev div span, .bftn-homepage .carousel .controls .next div span {
+            position: relative;
+            top: 2px; }
+        .bftn-homepage .carousel .controls .prev:hover div, .bftn-homepage .carousel .controls .next:hover div {
+          background-color: #5f88ff; }
+      .bftn-homepage .carousel .controls .prev {
+        left: 0; }
+      .bftn-homepage .carousel .controls .next {
+        right: 0; }
+        .bftn-homepage .carousel .controls .next span {
+          left: 1px; }
+    .bftn-homepage .carousel .carousel-scroller {
+      position: absolute;
+      top: 0px; }
+    .bftn-homepage .carousel .carousel-item {
+      position: absolute;
+      transition: left 0.3s ease-in, opacity 0.3s ease-in;
+      opacity: 0.2; }
+      .bftn-homepage .carousel .carousel-item.carousel-item-end {
+        transition: none; }
+      .bftn-homepage .carousel .carousel-item.carousel-item-active {
+        opacity: 1.0; }
+  .bftn-homepage .political-scoreboard .state-selector {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #6b63ff; }
+    .bftn-homepage .political-scoreboard .state-selector select {
+      margin-left: 40px;
+      padding: 5px;
+      text-transform: uppercase; }
+  .bftn-homepage .political-scoreboard .psb-section {
+    position: relative; }
+    .bftn-homepage .political-scoreboard .psb-section .unit h4 {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 40px;
+      margin-bottom: 0; }
+    .bftn-homepage .political-scoreboard .psb-section .unit p {
+      margin-top: 0;
+      font-size: 14px; }
+  .bftn-homepage .political-scoreboard .psb-unknown h4 {
+    color: #7067a4; }
+  .bftn-homepage .political-scoreboard .psb-unknown div.cover {
+    background-color: rgba(55, 53, 82, 0.5); }
+  .bftn-homepage .political-scoreboard .psb-unknown .politician:hover div.cover {
+    background-color: rgba(55, 53, 82, 0.9); }
+  .bftn-homepage .political-scoreboard .psb-cable h4 {
+    color: #ff1a09; }
+  .bftn-homepage .political-scoreboard .psb-cable div.cover {
+    background-color: rgba(255, 26, 9, 0.5); }
+  .bftn-homepage .political-scoreboard .psb-cable .politician:hover div.cover {
+    background-color: rgba(255, 26, 9, 0.7); }
+  .bftn-homepage .political-scoreboard .psb-internet h4 {
+    color: #45bcc0; }
+  .bftn-homepage .political-scoreboard .psb-internet div.cover {
+    background-color: rgba(75, 205, 207, 0.5); }
+  .bftn-homepage .political-scoreboard .psb-internet .politician:hover div.cover {
+    background-color: rgba(75, 205, 207, 0.7); }
+  .bftn-homepage .political-scoreboard .politician {
+    width: 100px;
+    height: 122px;
+    position: relative; }
+    .bftn-homepage .political-scoreboard .politician img {
+      width: 100px;
+      height: 122px; }
+    .bftn-homepage .political-scoreboard .politician div.cover {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%; }
+      .bftn-homepage .political-scoreboard .politician div.cover span {
+        color: #FFF;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        text-align: center;
+        width: 100%;
+        line-height: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        text-shadow: 0 0 5px black; }
+    .bftn-homepage .political-scoreboard .politician div.actions {
+      position: absolute;
+      bottom: 20px;
+      left: 0px;
+      width: 100%;
+      display: none; }
+      .bftn-homepage .political-scoreboard .politician div.actions .btn {
+        font-size: 10px;
+        padding: 7px 5px;
+        width: 90%;
+        margin: 10px auto 0; }
+      .bftn-homepage .political-scoreboard .politician div.actions .tweet {
+        background-color: #2ecaf8; }
+      .bftn-homepage .political-scoreboard .politician div.actions .tweet:hover {
+        background-color: #0691ba; }
+      .bftn-homepage .political-scoreboard .politician div.actions .site {
+        background-color: #224769; }
+      .bftn-homepage .political-scoreboard .politician div.actions .site:hover {
+        background-color: #162d42; }
+  .bftn-homepage .political-scoreboard .carousel-item-active:hover div.actions {
+    display: block; }
+  .bftn-homepage .political-scoreboard .carousel {
+    height: 122px; }
+    .bftn-homepage .political-scoreboard .carousel .bar {
+      display: none; }
+    .bftn-homepage .political-scoreboard .carousel .controls .prev div, .bftn-homepage .political-scoreboard .carousel .controls .next div {
+      height: 32px;
+      width: 32px;
+      line-height: 32px;
+      border-radius: 16px;
+      margin-top: 40px; }
+    .bftn-homepage .political-scoreboard .carousel .carousel-item {
+      transition: left 0.1s ease-in, opacity 0.1s ease-in; }
   @media screen and (max-width: 800px) {
     .bftn-homepage .unit {
       width: 90%; }

@@ -59,7 +59,6 @@ export function ajaxPromise(opts: any)  {
 	return fetch(
 		opts.url, spec
 	).then(function(response) {
-		console.log(response);
 		return response;
 	});
 };
@@ -106,4 +105,9 @@ function normalizeToDay(d: Date): Date {
 export function daysUntil(d: Date): number {
 	const delta = (normalizeToDay(d).valueOf() - normalizeToDay(new Date()).valueOf());
 	return Math.floor(delta / 864e5);
+};
+
+
+export function noop(evt:Event): void {
+	evt.preventDefault();
 };
