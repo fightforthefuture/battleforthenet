@@ -1,0 +1,74 @@
+.carousel {
+	position: relative;
+	.controls {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		.bar {
+			position: absolute;
+			background-color: #2a2749;
+			top: 290px;
+			height: 3px;
+			width: 90%;
+			margin: 0 5%;
+		}
+		.section {
+			height: 100%;
+			position: absolute;
+			background-color: #5f88ff;
+			transition: left 0.3s ease-in;
+		}
+		.prev, .next {
+			top: 0px;
+			height: 100%;
+			position: absolute;
+			cursor: pointer;
+			text-align: center;
+			div {
+				display: inline-block;
+				background-color: #494476;
+				color: #17152a;
+				font-size: 18px;
+				height: 42px;
+				width: 42px;
+				line-height: 42px;
+				margin-top: 50%;
+				position: relative;
+				border-radius: 21px;
+				span {
+					position: relative;
+					top: 2px;
+				}
+			}
+			&:hover div {
+				background-color: #5f88ff;
+			}
+		}
+		.prev {
+			left: 0;
+		}
+		.next {
+			right: 0;
+			span {
+				left: 1px;
+			}
+		}
+	}
+	.carousel-container {
+	}
+	.carousel-scroller {
+		position: absolute;
+		top: 0px;
+	}
+	.carousel-item {
+		position: absolute;
+		transition: left 0.3s ease-in, opacity 0.3s ease-in;
+		opacity: 0.2;
+		&.carousel-item-end {
+			transition: none;
+		}
+		&.carousel-item-active {
+			opacity: 1.0;
+		}
+	}
+}

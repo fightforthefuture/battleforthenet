@@ -15,6 +15,7 @@ import {mountComponent} from './utils';
 import {ExternalFlags} from './external-flags';
 import {GoogleAnalytics} from './google-analytics';
 import {TwitterBrigade} from './twitter-brigade';
+import {PoliticalScoreboard} from './political-scoreboard';
 import {getOrganization} from './organization';
 
 declare var window: any;
@@ -35,4 +36,5 @@ window['mountComponent'] = mountComponent;
 window['ExternalFlags'] = ExternalFlags;
 window['GoogleAnalytics'] = GoogleAnalytics;
 window['TwitterBrigade'] = TwitterBrigade;
+window['PoliticalScoreboard'] = PoliticalScoreboard;
 window['getOrganization'] = getOrganization;
