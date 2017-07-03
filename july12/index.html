@@ -347,6 +347,8 @@
     if (typeof Raven !== 'undefined') Raven.config('https://1a4b59d92e894725acb1d5f4ac65df91@sentry.io/165029').install();
   </script>
 
+  <script type="text/javascript" src="/js/battle.js"></script>
+
   <script type="text/javascript">
     var global = {};
     global.fontsAreReady = false;
@@ -358,25 +360,6 @@
     var params = new URLSearchParams(window.location.search.substring(1));
     if (params.get('org') == 'dp') {
       document.body.className = document.body.className + ' demand-progress';
-    }
-
-    if (document.readyState === "complete") {
-      loadAdditionalResources();
-    } else {
-      window.addEventListener('load', loadAdditionalResources);
-    }
-
-    function loadAdditionalResources() {
-      innerHeight; // Paint before fetching new assets
-      loadJS('/js/battle.js');
-    }
-
-    function loadJS(src, blocking) {
-      var script = document.createElement('script');
-      script.setAttribute('src', src);
-      script.setAttribute('type', 'text/javascript');
-      if (blocking) script.setAttribute('async', false);
-      document.body.appendChild(script);
     }
 
     document.querySelector('.sharing-buttons').querySelector('.twitter').addEventListener('click', function(e) {

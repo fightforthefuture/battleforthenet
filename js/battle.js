@@ -100,7 +100,12 @@
           target: '.form-wrapper',
           template: e.target.responseText
         });
-        loadJS('/js/actionkit_widget.js');
+
+        // FIXME: Remove this ugly hack for injecting ActionKit JS form handler
+        var script = document.createElement('script');
+        script.setAttribute('src', '/js/actionkit_widget.js');
+        script.setAttribute('type', 'text/javascript');
+        document.body.appendChild(script);
       }
     });
   } else if (document.body.classList.contains('day-of-action')) {
