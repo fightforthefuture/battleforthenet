@@ -28,6 +28,19 @@ function submitForm(url: string, data: any) {
 	});
 }
 
+// Use JSONP to submit the form, used for submitting directly to ActionKit
+function jsonpSubmit(url: string, data: any) {
+    var scriptTag = document.createElement('script');
+    var queryString;
+    if ( typeof(jQuery) != "undefined" && jQuery.fn.serialize ) {
+        queryString = jQuery(form).serialize();
+    } else {
+        queryString = serialize(form);
+    }
+    scriptTag.src = url + '?' + queryString;
+    var otherTag = document.getElementsByTagName('script')[0];
+    otherTag.parentNode.insertBefore(scriptTag, otherTag)
+}
 
 interface Props {
 	url: string
@@ -48,6 +61,7 @@ interface State {
 
 export class PetitionForm extends React.Component<Props, State> {
 	textareaInput: HTMLTextAreaElement | null;
+
 	constructor(props: Props) {
 		super(props);
 		this.state = {
@@ -59,10 +73,12 @@ export class PetitionForm extends React.Component<Props, State> {
 			error: null
 		};
 	}
+
 	onTextareaFocus(evt: Event) {
 		var target = evt.target as HTMLTextAreaElement;
 		target.select();
 	}
+
 	onResetClick(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
@@ -73,42 +89,49 @@ export class PetitionForm extends React.Component<Props, State> {
 			input_comment: ""
 		} as State);
 	}
+
 	onSubmit(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.props.setModal("loading");
-		var data = {
-			"subject": "Protect Net Neutrality!",
-			"member[country]": "US",
-			"hp_enabled": "on",
-			"guard": "",
-			"contact_congress": "1",
-			"fcc_ecfs_docket": "17-108",
-			"org": this.props.org.code,
-			"an_tags": "[\"net-neutrality\"]",
-			"an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
-			"member[first_name]": this.state.input_name,
-			"member[email]": this.state.input_email,
-			"member[street_address]": this.state.input_address,
-			"member[postcode]": this.state.input_zip,
-			"action_comment": this.state.input_comment
-		};
 		this.setState({
 			error: null
 		} as State);
-		submitForm(this.props.url, data)
-			.then((result) => {
-				console.log("DONE");
-				this.props.setModal("call");
-			})
-			.catch((result) => {
-				console.log("FAIL");
-				this.setState({
-					error: "There was an error submitting the form, please try again"
-				} as State);
-				this.props.setModal(null);
-			});
+
+		if (this.props.jsonp) {
+
+		} else {
+			var data = {
+				"subject": "Protect Net Neutrality!",
+				"member[country]": "US",
+				"hp_enabled": "on",
+				"guard": "",
+				"contact_congress": "1",
+				"fcc_ecfs_docket": "17-108",
+				"org": this.props.org.code,
+				"an_tags": "[\"net-neutrality\"]",
+				"an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
+				"member[first_name]": this.state.input_name,
+				"member[email]": this.state.input_email,
+				"member[street_address]": this.state.input_address,
+				"member[postcode]": this.state.input_zip,
+				"action_comment": this.state.input_comment
+			};
+			submitForm(this.props.url, data)
+				.then((result) => {
+					console.log("DONE");
+					this.props.setModal("call");
+				})
+				.catch((result) => {
+					console.log("FAIL");
+					this.setState({
+						error: "There was an error submitting the form, please try again"
+					} as State);
+					this.props.setModal(null);
+				});
+		}
 	}
+
 	renderError() {
 		return (
 			<div className="form-error">
@@ -117,6 +140,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			</div>
 		);
 	}
+
 	render() {
 		return (
 			<form className="bftn-form petition-form" onSubmit={this.onSubmit.bind(this)}>
