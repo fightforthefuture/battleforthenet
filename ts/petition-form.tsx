@@ -5,6 +5,7 @@ import {mockAjaxPromise} from './utils';
 import {handleInputChange} from './utils';
 import {Organization} from './organization';
 import {Disclaimer} from './disclaimer';
+import {ExternalFlags} from './external-flags';
 
 import {r} from './r';
 
@@ -30,21 +31,30 @@ function submitForm(url: string, data: any) {
 
 // Use JSONP to submit the form, used for submitting directly to ActionKit
 function jsonpSubmit(url: string, data: any) {
-    var scriptTag = document.createElement('script');
-    var queryString;
-    if ( typeof(jQuery) != "undefined" && jQuery.fn.serialize ) {
-        queryString = jQuery(form).serialize();
-    } else {
-        queryString = serialize(form);
-    }
-    scriptTag.src = url + '?' + queryString;
-    var otherTag = document.getElementsByTagName('script')[0];
-    otherTag.parentNode.insertBefore(scriptTag, otherTag)
+  var scriptTag = document.createElement('script');
+  var queryString = "";
+  for (var key in data) {
+  	var val = data[key];
+  	queryString += encodeURIComponent(key).replace(/%20/g, '+') + "=" + encodeURIComponent(val).replace(/%20/g, '+') + "&";
+  };
+  scriptTag.src = url + '?' + queryString;
+  var otherTag = document.getElementsByTagName('script')[0];
+  if (otherTag != null && otherTag.parentNode != null) {
+  	otherTag.parentNode.insertBefore(scriptTag, otherTag);
+  }
+}
+
+interface Window {
+  actionKitSubmitSuccess(): void
+}
+
+window.actionKitSubmitSuccess = function() {
 }
 
 interface Props {
 	url: string
 	org: Organization
+	submitToActionKit: boolean | false
 	setModal: (modal: string | null)=>any
 }
 
@@ -98,8 +108,24 @@ export class PetitionForm extends React.Component<Props, State> {
 			error: null
 		} as State);
 
-		if (this.props.jsonp) {
+		var params = new ExternalFlags();
 
+		if (this.props.submitToActionKit) {
+			var actionKitData = {
+				"page": "battleforthenet_2017_swap",
+				"js": "1", // tell actionkit to respond with JS
+				"callback": "actionKitSubmitSuccess", // Tell actionkit what JS function to call after successful submit
+    		"utf8": "\u1234", // Tell actionkit this is UTF8
+				"name": this.state.input_name,
+				"email": this.state.input_email,
+				"address1": this.state.input_address,
+				"zip": this.state.input_zip,
+				"country": "US",
+				"action_comment": this.state.input_comment,
+				"opt_in": true,
+				"source": params.get("source", "unknown")
+			};
+			jsonpSubmit(this.props.url, actionKitData);
 		} else {
 			var data = {
 				"subject": "Protect Net Neutrality!",
