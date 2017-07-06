@@ -45,10 +45,11 @@ function jsonpSubmit(url: string, data: any) {
 }
 
 interface Window {
-  actionKitSubmitSuccess(): void
+  actionKitSubmitSuccess: () => any
 }
 
 window.actionKitSubmitSuccess = function() {
+	console.log("SUCCESS");
 }
 
 interface Props {
