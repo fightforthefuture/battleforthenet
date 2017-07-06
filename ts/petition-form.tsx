@@ -123,7 +123,7 @@ export class PetitionForm extends React.Component<Props, State> {
 				"country": "US",
 				"action_comment": this.state.input_comment,
 				"opt_in": true,
-				"source": params.get("source", "unknown")
+				"source": params.get("utm_source", "unknown")
 			};
 			jsonpSubmit(this.props.url, actionKitData);
 		} else {
