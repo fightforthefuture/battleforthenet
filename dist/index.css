@@ -430,6 +430,8 @@ template {
     padding: 15px 10px; }
     .bftn-homepage input.error {
       border: 1px solid red; }
+  .bftn-homepage .opt-in input {
+    width: initial; }
   .bftn-homepage .unit {
     width: 800px;
     margin: 0px auto;
@@ -482,6 +484,8 @@ template {
           color: #f94220;
           font-style: inherit;
           font-weight: inherit; }
+    .bftn-homepage .hero .etsy-form .petition-copy p {
+      font-size: 23px; }
     .bftn-homepage .hero .call-action-copy p {
       font-size: 20px; }
     .bftn-homepage .hero .call-action-form {
@@ -558,7 +562,6 @@ template {
     .bftn-homepage .petition-form .note {
       margin-top: 0.6em;
       text-align: center;
-      display: block;
       font-family: "Open Sans", sans-serif;
       font-size: 13px;
       line-height: 1.2em;
@@ -568,6 +571,8 @@ template {
         color: #b1aedc; }
       .bftn-homepage .petition-form .note a.privacy-policy-link {
         text-decoration: underline; }
+  .bftn-homepage .etsy-form .arrow {
+    top: 310px; }
   .bftn-homepage .call-action-form {
     padding: 20px;
     text-align: center; }
