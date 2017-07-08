@@ -72,6 +72,10 @@ $GRAY_LIGHT: #b1aedc;
 		}
 	}
 
+	.opt-in input {
+		width: initial;
+	}
+
 	.unit {
 		width: $PAGE_WIDTH;
 		margin: 0px auto;
@@ -140,6 +144,11 @@ $GRAY_LIGHT: #b1aedc;
 					font-style: inherit;
 					font-weight: inherit;
 				}
+			}
+		}
+		.etsy-form {
+			.petition-copy p {
+				font-size: 23px;
 			}
 		}
 		.call-action-copy {
@@ -238,7 +247,6 @@ $GRAY_LIGHT: #b1aedc;
 		.note {
 			margin-top: 0.6em;
 			text-align: center;
-			display: block;
 			font-family: "Open Sans", sans-serif;
 			font-size: 13px;
 			line-height: 1.2em;
@@ -250,6 +258,11 @@ $GRAY_LIGHT: #b1aedc;
 			a.privacy-policy-link {
 				text-decoration: underline;
 			}
+		}
+	}
+	.etsy-form {
+		.arrow {
+			top: 310px;
 		}
 	}
 	.call-action-form {
@@ -667,7 +680,7 @@ $GRAY_LIGHT: #b1aedc;
 		.shuttleworth {
 			position: relative;
 			top: -14px;
-		}	
+		}
 	}
 	.persistent-button {
 		width: 350px;

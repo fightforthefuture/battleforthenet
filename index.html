@@ -281,7 +281,7 @@
               {
                 heading: "Vimeo",
                 subHeading: "Why we need net neutrality",
-                thumb: "https://i.vimeocdn.com/video/641313984.jpg?mw=700&mh=394", 
+                thumb: "https://i.vimeocdn.com/video/641313984.jpg?mw=700&mh=394",
                 video: "https://player.vimeo.com/video/222706185?title=0&byline=0&portrait=0&autoplay=1"
               },
               {
@@ -342,6 +342,20 @@
           document.getElementById("video-roll")
         );
         GoogleAnalytics.enable("UA-26576645-20");
+
+        if (externalFlags.get('utm_source', "unknown") == 'etsy') {
+          var link = 'https://www.battleforthenet.com/?utm_source=etsy';
+
+          // Update Facebook and Twitter meta tags
+          document.querySelector('meta[property="og:url"]').setAttribute('content', link);
+          document.querySelector('meta[name="twitter:url"]').setAttribute('content', link);
+          document.querySelector('meta[name="twitter:description"]').setAttribute('content', "Without #NetNeutrality, my @Etsy shop would lose out on economic opportunities. Tell @FCC to protect microbusinesses");
+
+          document.querySelector('.social-media .twitter').setAttribute('href', "https://twitter.com/intent/tweet?related=fightfortheftr&text=Without %23NetNeutrality, my %40Etsy shop would lose out on economic opportunities. Tell %40FCC to protect microbusinesses " + link);
+          document.querySelector('.social-media .facebook').setAttribute('href', "https://www.facebook.com/sharer.php?u=" + link);
+          document.querySelector('.social-media-buttons .twitter').setAttribute('href', "https://twitter.com/intent/tweet?related=fightfortheftr&text=Without %23NetNeutrality, my %40Etsy shop would lose out on economic opportunities. Tell %40FCC to protect microbusinesses " + link);
+          document.querySelector('.social-media-buttons .facebook').setAttribute('href', "https://www.facebook.com/sharer.php?u=" + link);
+        }
       })();
     </script>
 

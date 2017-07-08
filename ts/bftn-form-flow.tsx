@@ -15,6 +15,7 @@ import {PetitionCopy} from './petition-copy';
 import {PetitionForm} from './petition-form';
 import {r} from './r';
 import {Organization} from './organization';
+import {ExternalFlags} from './external-flags';
 
 interface Props {
 	initialForm: string
@@ -41,6 +42,9 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		this.setState({modal: modal} as State);
 	}
 	render() {
+		var params = new ExternalFlags();
+		var etsy = params.get("utm_source", "unknown") == "etsy";
+
 		var onClose = () => {this.setModal(null)};
 		var modal: JSX.Element | null = null;
 		var copy: JSX.Element;
@@ -52,8 +56,8 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 			case "petition":
 			default:
-				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} />;
-				copy = <PetitionCopy deadline={this.props.deadline} />
+				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} etsy={etsy} />;
+				copy = <PetitionCopy deadline={this.props.deadline} etsy={etsy} />
 				break;
 		}
 		switch (this.state.modal) {
@@ -80,7 +84,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 		}
 		return (
-			<div>
+			<div className={etsy ? "etsy-form" : ""}>
 				{ copy }
 				{ form }
 				<ReactTransitionGroup.CSSTransitionGroup

@@ -1,5 +1,6 @@
-interface R{
+interface R {
 	defaultFormText: string
+  etsyFormText: string
 }
 
 const DEFAULT_FORM_TEXT = `The FCC's Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.
@@ -26,6 +27,23 @@ So I'm also sending this to my members of Congress. Please publicly support the 
 
 Thank you!`;
 
+const ETSY_FORM_TEXT = `Chairman Pai’s proposed plan to repeal net neutrality protections would put a huge burden on microbusinesses like mine.
+
+As an Etsy seller, net neutrality is essential to the success of my business and my ability to care for myself and my family. The FCC needs to ensure equal opportunities for microbusinesses to compete with larger and more established brands by upholding net neutrality protections.
+
+Etsy has opened the door for me and 1.8 million other sellers to turn our passion into a business by connecting us to a global market of buyers. For 32% of creative entrepreneurs on the platform, our creative business is our sole occupation. A decrease in sales in the internet slow lane or higher cost to participate in Chairman Pai’s pay-to-play environment would create significant obstacles for me and other Etsy sellers to care for ourselves and our families.
+
+Moreover, 87% of Etsy sellers in the U.S. are women, and most run their microbusinesses out of their homes. By rolling back the bright line rules that ensure net neutrality, Chairman Pai is not only taking away our livelihood, he is also putting up barriers to entrepreneurship for a whole cohort of Americans.
+
+My business growth depends on equal access to consumers. Any rule that allows broadband providers to negotiate special deals with some companies would undermine my ability to compete online.
+
+We need a free and open internet that works for everyone, not just telecom companies that stand to benefit from the FCC’s proposed rules.
+
+I'm sending this to the FCC's open proceeding and to my members of Congress. Please publicly support the FCC's existing net neutrality rules based on Title II and microbusinesses like mine.
+
+Thank you!`
+
 export var r = {
-	defaultFormText: DEFAULT_FORM_TEXT
+	defaultFormText: DEFAULT_FORM_TEXT,
+  etsyFormText: ETSY_FORM_TEXT
 };
