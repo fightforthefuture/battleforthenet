@@ -104,9 +104,11 @@ export class CallActionForm extends React.Component<Props, State> {
 			} as State);
 			this.props.setModal("loading");
 			var campaign = this.getCampaign(this.props.campaignId);
+			var zipField = (document.getElementsByName('input_zip').item(0) as HTMLInputElement);
 			var data = {
 				"campaignId": campaign.id,
-				"userPhone": phone
+				"userPhone": phone,
+				"zipcode": zipField ? zipField.value : ''
 			};
 			submitForm(campaign.url, data)
 				.then((result) => {
