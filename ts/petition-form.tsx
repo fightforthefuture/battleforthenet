@@ -54,7 +54,7 @@ declare global {
 interface Props {
 	url: string
 	org: Organization
-	submitToActionKit: boolean | false
+	swap: boolean | false
 	setModal: (modal: string | null)=>any
 	etsy: boolean | false
 }
@@ -117,7 +117,9 @@ export class PetitionForm extends React.Component<Props, State> {
 
 		var params = new ExternalFlags();
 
-		if (this.props.submitToActionKit) {
+		if (this.props.swap) {
+			// Submit form directly to ActionKit
+
 			// Define success callback and bind this
 			window.actionKitSubmitSuccess = function(response : Object) {
 				console.log("SUCCESS");
@@ -209,7 +211,7 @@ export class PetitionForm extends React.Component<Props, State> {
 				</div>
 				{ this.state.error ? this.renderError() : null }
 				{ this.props.etsy ? <span className="opt-in"><input type="checkbox" name="input_opt_in" checked={this.state.input_opt_in} onChange={handleInputChange.bind(this)} /> </span> : "" }
-				<Disclaimer org={this.props.org} optIn={this.props.etsy} />
+				<Disclaimer org={this.props.org} optIn={this.props.etsy} swap={this.props.swap}/>
 			</form>
 		);
 	}
