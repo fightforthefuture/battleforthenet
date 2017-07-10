@@ -430,6 +430,8 @@ template {
     padding: 15px 10px; }
     .bftn-homepage input.error {
       border: 1px solid red; }
+  .bftn-homepage .opt-in input {
+    width: initial; }
   .bftn-homepage .unit {
     width: 800px;
     margin: 0px auto;
@@ -463,6 +465,12 @@ template {
       font-weight: normal; }
     .bftn-homepage .stats span {
       color: #46b8ff; }
+    .bftn-homepage .stats a {
+      color: #83839e;
+      text-decoration: none; }
+      .bftn-homepage .stats a:hover {
+        color: #46b8ff;
+        text-decoration: underline; }
   .bftn-homepage .hero {
     min-height: 435px; }
     .bftn-homepage .hero .petition-copy {
@@ -476,6 +484,8 @@ template {
           color: #f94220;
           font-style: inherit;
           font-weight: inherit; }
+    .bftn-homepage .hero .etsy-form .petition-copy p {
+      font-size: 23px; }
     .bftn-homepage .hero .call-action-copy p {
       font-size: 20px; }
     .bftn-homepage .hero .call-action-form {
@@ -552,7 +562,6 @@ template {
     .bftn-homepage .petition-form .note {
       margin-top: 0.6em;
       text-align: center;
-      display: block;
       font-family: "Open Sans", sans-serif;
       font-size: 13px;
       line-height: 1.2em;
@@ -562,6 +571,8 @@ template {
         color: #b1aedc; }
       .bftn-homepage .petition-form .note a.privacy-policy-link {
         text-decoration: underline; }
+  .bftn-homepage .etsy-form .arrow {
+    top: 310px; }
   .bftn-homepage .call-action-form {
     padding: 20px;
     text-align: center; }
@@ -576,8 +587,40 @@ template {
       text-align: center; }
     .bftn-homepage .call-action-form .disclaimer {
       font-size: 10px; }
-  .bftn-homepage .toggle-true .persistent-button {
-    bottom: 15px; }
+  .bftn-homepage .participants ul {
+    max-width: 680px;
+    margin: 0px auto;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .bftn-homepage .participants ul li {
+      display: inline-block;
+      min-width: 165px;
+      max-width: 165px;
+      max-height: 70px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      flex: 1;
+      box-shadow: 0px 1px 4px 0px #040404; }
+      .bftn-homepage .participants ul li img {
+        max-width: 100%;
+        object-fit: contain; }
+  .bftn-homepage .participants p {
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 40px; }
+    .bftn-homepage .participants p a {
+      color: #717093; }
+  .bftn-homepage .participants a.btn {
+    max-width: 500px;
+    font-size: 30px;
+    margin: 0px auto;
+    box-shadow: 0px 1px 4px 0px #040404; }
   .bftn-homepage .fadein-appear {
     opacity: 0.01; }
     .bftn-homepage .fadein-appear.fadein-appear-active {
@@ -874,11 +917,20 @@ template {
     position: relative;
     top: -14px; }
   .bftn-homepage .persistent-button {
-    width: 250px;
+    width: 350px;
     position: fixed;
-    bottom: -55px;
-    right: 5px;
+    bottom: -85px;
+    right: 25px;
     transition: bottom 0.2s ease-in; }
+    .bftn-homepage .persistent-button a.btn {
+      font-size: 40px;
+      padding: 15px 0;
+      box-shadow: 5px 5px 35px black;
+      transition: box-shadow 0.3s ease-in; }
+    .bftn-homepage .persistent-button a.btn:hover {
+      box-shadow: 10px 10px 35px black; }
+  .bftn-homepage .toggle-true .persistent-button {
+    bottom: 25px; }
   .bftn-homepage button.btn, .bftn-homepage a.btn {
     border: none;
     text-decoration: none;
@@ -1124,7 +1176,16 @@ template {
       height: 18px; }
     .bftn-homepage .twitter-modal .modal-content .btn span {
       font-size: 12px;
-      top: -2px; } }
+      top: -2px; }
+    .bftn-homepage .persistent-button {
+      width: 100%;
+      right: 0; }
+      .bftn-homepage .persistent-button a.btn {
+        border-radius: 0;
+        font-size: 20px;
+        padding: 10px 0; }
+    .bftn-homepage .toggle-true .persistent-button {
+      bottom: 0; } }
   @media screen and (max-width: 370px) {
     .bftn-homepage footer .built-by {
       width: auto; } }

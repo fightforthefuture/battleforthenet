@@ -100,7 +100,12 @@
           target: '.form-wrapper',
           template: e.target.responseText
         });
-        loadJS('/js/actionkit_widget.js');
+
+        // FIXME: Remove this ugly hack for injecting ActionKit JS form handler
+        var script = document.createElement('script');
+        script.setAttribute('src', '/js/actionkit_widget.js');
+        script.setAttribute('type', 'text/javascript');
+        document.body.appendChild(script);
       }
     });
   } else if (document.body.classList.contains('day-of-action')) {
@@ -888,6 +893,7 @@ var Template = require('./Template');
 var OrganizationRotation = require('./OrganizationRotation');
 var UTM = require('./UTM');
 var YourSenators = require('./YourSenators');
+var Polyfills = require('./Polyfills');
 
 function PetitionForm(params) {
   this.target = params.target;
@@ -1251,7 +1257,7 @@ PetitionForm.prototype.addEventListeners = function() {
 module.exports = PetitionForm;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./AJAX":2,"./OrganizationRotation":13,"./Template":18,"./UTM":20,"./YourSenators":21}],15:[function(require,module,exports){
+},{"./AJAX":2,"./OrganizationRotation":13,"./Polyfills":15,"./Template":18,"./UTM":20,"./YourSenators":21}],15:[function(require,module,exports){
 // Polyfill URLSearchParams
 function URLSearchParams(queryString) {
   this.queryObj = queryString.split('&').reduce(function(obj, val) {

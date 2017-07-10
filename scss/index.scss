@@ -72,6 +72,10 @@ $GRAY_LIGHT: #b1aedc;
 		}
 	}
 
+	.opt-in input {
+		width: initial;
+	}
+
 	.unit {
 		width: $PAGE_WIDTH;
 		margin: 0px auto;
@@ -116,6 +120,14 @@ $GRAY_LIGHT: #b1aedc;
 		span {
 			color: $STATS_HLCOLOR;
 		}
+		a {
+			color: $STATS_COLOR;
+			text-decoration: none;
+			&:hover {
+			    color: $STATS_HLCOLOR;
+				text-decoration: underline;
+            }
+		}
 	}
 
 	.hero {
@@ -132,6 +144,11 @@ $GRAY_LIGHT: #b1aedc;
 					font-style: inherit;
 					font-weight: inherit;
 				}
+			}
+		}
+		.etsy-form {
+			.petition-copy p {
+				font-size: 23px;
 			}
 		}
 		.call-action-copy {
@@ -230,7 +247,6 @@ $GRAY_LIGHT: #b1aedc;
 		.note {
 			margin-top: 0.6em;
 			text-align: center;
-			display: block;
 			font-family: "Open Sans", sans-serif;
 			font-size: 13px;
 			line-height: 1.2em;
@@ -242,6 +258,11 @@ $GRAY_LIGHT: #b1aedc;
 			a.privacy-policy-link {
 				text-decoration: underline;
 			}
+		}
+	}
+	.etsy-form {
+		.arrow {
+			top: 310px;
 		}
 	}
 	.call-action-form {
@@ -263,10 +284,47 @@ $GRAY_LIGHT: #b1aedc;
 			font-size: 10px;
 		}
 	}
-
-
-	.toggle-true .persistent-button {
-		bottom: 15px;
+	.participants {
+		ul {
+			max-width: 680px;
+			margin: 0px auto;
+			list-style-type: none;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			li {
+				display: inline-block;
+				min-width: 165px;
+				max-width: 165px;
+				max-height: 70px;
+				padding: 15px;
+				background-color: white;
+				border-radius: 3px;
+				margin-bottom: 6px;
+				display: flex;
+				flex: 1;
+				box-shadow: 0px 1px 4px 0px rgba(4,4,4,1);
+				img {
+					max-width: 100%;
+					object-fit: contain;
+				}
+			}
+		}
+		p {
+			text-align: center;
+			font-size: 11px;
+			margin-bottom: 40px;
+			a {
+				color: $GRAY_DARK;
+			}
+		}
+		a.btn {
+			max-width: 500px;
+			font-size: 30px;
+			margin: 0px auto;
+			box-shadow: 0px 1px 4px 0px rgba(4,4,4,1);
+		}
 	}
 
 	.fadein-appear {
@@ -622,14 +680,26 @@ $GRAY_LIGHT: #b1aedc;
 		.shuttleworth {
 			position: relative;
 			top: -14px;
-		}	
+		}
 	}
 	.persistent-button {
-		width: 250px;
+		width: 350px;
 		position: fixed;
-		bottom: -55px;
-		right: 5px;
+		bottom: -85px;
+		right: 25px;
 		transition: bottom 0.2s ease-in;
+		a.btn {
+			font-size: 40px;
+			padding: 15px 0;
+			box-shadow: 5px 5px 35px rgba(0, 0, 0, 1.0);
+			transition: box-shadow 0.3s ease-in;
+		}
+		a.btn:hover {
+			box-shadow: 10px 10px 35px rgba(0, 0, 0, 1.0);
+		}
+	}
+	.toggle-true .persistent-button {
+		bottom: 25px;
 	}
 
 	button.btn, a.btn {
@@ -975,6 +1045,18 @@ $GRAY_LIGHT: #b1aedc;
 					top: -2px;
 				}
 			}
+		}
+		.persistent-button {
+			width: 100%;
+			right: 0;
+			a.btn {
+				border-radius: 0;
+				font-size: 20px;
+				padding: 10px 0;
+			}
+		}
+		.toggle-true .persistent-button {
+			bottom: 0;
 		}
 	}
 	@media screen and (max-width: 370px) {

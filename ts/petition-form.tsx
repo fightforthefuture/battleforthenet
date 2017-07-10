@@ -57,6 +57,7 @@ interface Props {
 	org: Organization
 	submitToActionKit: boolean | false
 	setModal: (modal: string | null)=>any
+	etsy: boolean | false
 }
 
 
@@ -66,6 +67,8 @@ interface State {
 	input_address: string | string[] | undefined
 	input_zip: string | string[] | undefined
 	input_comment: string | string[] | undefined
+	input_etsy_shop: string | string[] | undefined
+	input_opt_in: boolean | true
 	error: string | null
 }
 
@@ -75,12 +78,15 @@ export class PetitionForm extends React.Component<Props, State> {
 
 	constructor(props: Props) {
 		super(props);
+
 		this.state = {
 			input_name: "",
 			input_email: "",
 			input_address: "",
 			input_zip: "",
-			input_comment: r.defaultFormText,
+			input_comment: this.props.etsy ? r.etsyFormText : r.defaultFormText,
+			input_etsy_shop: "",
+			input_opt_in: true,
 			error: null
 		};
 	}
@@ -105,6 +111,7 @@ export class PetitionForm extends React.Component<Props, State> {
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.props.setModal("loading");
+
 		this.setState({
 			error: null
 		} as State);
@@ -142,7 +149,8 @@ export class PetitionForm extends React.Component<Props, State> {
 				"member[email]": this.state.input_email,
 				"member[street_address]": this.state.input_address,
 				"member[postcode]": this.state.input_zip,
-				"action_comment": this.state.input_comment
+				"action_comment": (this.state.input_etsy_shop ? "Etsy Shop " + this.state.input_etsy_shop + "\n\n" : "") + this.state.input_comment,
+				"opt_out": this.state.input_opt_in ? "0" : "1"
 			};
 			submitForm(this.props.url, data)
 				.then((result) => {
@@ -188,10 +196,15 @@ export class PetitionForm extends React.Component<Props, State> {
 						<textarea ref={(textarea)=>{this.textareaInput=textarea;}} name="input_comment" required value={this.state.input_comment} onChange={handleInputChange.bind(this)} onFocus={this.onTextareaFocus.bind(this)} ></textarea>
 						<button onClick={this.onResetClick.bind(this)} className="reset">Clear and write your own</button>
 					</div>
+					{ this.props.etsy
+						? <div className="etsy-shop-link"><input type="text" placeholder="Etsy Shop Link" name="input_etsy_shop" value={this.state.input_etsy_shop} onChange={handleInputChange.bind(this)} /></div>
+						: ""
+					}
 					<button className="btn">Send Letter</button>
 				</div>
 				{ this.state.error ? this.renderError() : null }
-				<Disclaimer org={this.props.org} />
+				{ this.props.etsy ? <span className="opt-in"><input type="checkbox" name="input_opt_in" checked={this.state.input_opt_in} onChange={handleInputChange.bind(this)} /> </span> : "" }
+				<Disclaimer org={this.props.org} optIn={this.props.etsy} />
 			</form>
 		);
 	}

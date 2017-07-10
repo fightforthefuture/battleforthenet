@@ -59,7 +59,7 @@ export class StatsComponent extends React.Component<Props, LoadedState | Unloade
 				<span>{ format(stats.comments) }</span> comments.{" "}
 				<span>{ format(stats.calls) }</span> calls.{" "}
 				<span>{ format(stats.emails) }</span> emails to Congress.{" "}
-				<span>{ stats.startups }+</span> startups.{" "}
+				<a href="http://www.engine.is/startups-for-net-neutrality" target="_blank"><span>{ stats.startups }+</span> startups.</a>{" "}
 				<span>{ format(stats.internets) } Internet to save.</span>{" "}
 				<span>{ stats.days } { dayLabel } left.</span>
 			</div>
