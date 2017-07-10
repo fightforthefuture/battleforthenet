@@ -44,12 +44,11 @@ function jsonpSubmit(url: string, data: any) {
   }
 }
 
-interface Window {
-  actionKitSubmitSuccess: () => any
-}
-
-window.actionKitSubmitSuccess = function() {
-	console.log("SUCCESS");
+/**** Callback after successful submission to ActionKit ****/
+declare global {
+	interface Window {
+	  actionKitSubmitSuccess: (response : Object) => any
+	}
 }
 
 interface Props {
@@ -119,6 +118,12 @@ export class PetitionForm extends React.Component<Props, State> {
 		var params = new ExternalFlags();
 
 		if (this.props.submitToActionKit) {
+			// Define success callback and bind this
+			window.actionKitSubmitSuccess = function(response : Object) {
+				console.log("SUCCESS");
+				this.props.setModal("call");
+			}.bind(this);
+
 			var actionKitData = {
 				"page": "battleforthenet_2017_swap",
 				"js": "1", // tell actionkit to respond with JS
