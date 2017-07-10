@@ -31,23 +31,23 @@ function submitForm(url: string, data: any) {
 
 // Use JSONP to submit the form, used for submitting directly to ActionKit
 function jsonpSubmit(url: string, data: any) {
-  var scriptTag = document.createElement('script');
-  var queryString = "";
-  for (var key in data) {
-  	var val = data[key];
-  	queryString += encodeURIComponent(key).replace(/%20/g, '+') + "=" + encodeURIComponent(val).replace(/%20/g, '+') + "&";
-  };
-  scriptTag.src = url + '?' + queryString;
-  var otherTag = document.getElementsByTagName('script')[0];
-  if (otherTag != null && otherTag.parentNode != null) {
-  	otherTag.parentNode.insertBefore(scriptTag, otherTag);
-  }
+	var scriptTag = document.createElement('script');
+	var queryString = "";
+	for (var key in data) {
+		var val = data[key];
+		queryString += encodeURIComponent(key).replace(/%20/g, '+') + "=" + encodeURIComponent(val).replace(/%20/g, '+') + "&";
+	};
+	scriptTag.src = url + '?' + queryString;
+	var otherTag = document.getElementsByTagName('script')[0];
+	if (otherTag != null && otherTag.parentNode != null) {
+		otherTag.parentNode.insertBefore(scriptTag, otherTag);
+	}
 }
 
-/**** Callback after successful submission to ActionKit ****/
+/**** For the callback after successful submission to ActionKit ****/
 declare global {
 	interface Window {
-	  actionKitSubmitSuccess: (response : Object) => any
+		actionKitSubmitSuccess: (response : Object) => any
 	}
 }
 
