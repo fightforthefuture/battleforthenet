@@ -84,8 +84,10 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				);
 				break;
 		}
+		var className = etsy ? "etsy-form" : "";
+		className += this.props.swap ? " swap-form" : "";
 		return (
-			<div className={etsy ? "etsy-form" : ""}>
+			<div className={className}>
 				{ copy }
 				{ form }
 				<ReactTransitionGroup.CSSTransitionGroup
