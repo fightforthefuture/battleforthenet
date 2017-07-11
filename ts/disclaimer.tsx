@@ -19,8 +19,8 @@ export class Disclaimer extends React.Component<Props, State> {
     return (
       swap
         ? <span className="note note-small">
-            One or more partner groups may send you updates on this and other important campaigns by email. You may, of course, unsubscribe from their email list(s) whenever you like.
-            We will contract with third-party entities to manage data from this campaign. We will file formal comments with the FCC on your behalf – as such, the information you submit here will be searchable by the public.
+            One or more partner groups may send you updates on this and other important campaigns by email. You may, of course, unsubscribe whenever you like.
+            We will contract with third-party entities to manage data from this campaign. Public comments to the FCC, like these, are searchable by the public.
            </span>
         : <span className="note">
             {optIn
