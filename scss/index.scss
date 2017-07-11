@@ -136,7 +136,7 @@ $GRAY_LIGHT: #b1aedc;
 			padding-bottom: 160px;
 			p {
 				width: 490px;
-				font-size: 26px;
+				font-size: 27px;
 				line-height: 1.6em;
 				color: $WHITE_BRIGHT;
 				em {
@@ -148,7 +148,12 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.etsy-form {
 			.petition-copy p {
-				font-size: 23px;
+				font-size: 24px;
+			}
+		}
+		.swap-form {
+			.petition-copy p {
+				font-size: 26px;
 			}
 		}
 		.call-action-copy {
@@ -186,7 +191,7 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.arrow {
 			position: absolute;
-			top: 256px;
+			top: 309px;
 			left: -140px;
 		}
 		.form-wrapper {
@@ -265,7 +270,12 @@ $GRAY_LIGHT: #b1aedc;
 	}
 	.etsy-form {
 		.arrow {
-			top: 310px;
+			top: 363px;
+		}
+	}
+	.swap-form {
+		.arrow {
+			top: 256px;
 		}
 	}
 	.call-action-form {
