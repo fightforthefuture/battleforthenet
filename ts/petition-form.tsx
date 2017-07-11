@@ -29,10 +29,32 @@ function submitForm(url: string, data: any) {
 	});
 }
 
+// Use JSONP to submit the form, used for submitting directly to ActionKit
+function jsonpSubmit(url: string, data: any) {
+	var scriptTag = document.createElement('script');
+	var queryString = "";
+	for (var key in data) {
+		var val = data[key];
+		queryString += encodeURIComponent(key).replace(/%20/g, '+') + "=" + encodeURIComponent(val).replace(/%20/g, '+') + "&";
+	};
+	scriptTag.src = url + '?' + queryString;
+	var otherTag = document.getElementsByTagName('script')[0];
+	if (otherTag != null && otherTag.parentNode != null) {
+		otherTag.parentNode.insertBefore(scriptTag, otherTag);
+	}
+}
+
+/**** For the callback after successful submission to ActionKit ****/
+declare global {
+	interface Window {
+		actionKitSubmitSuccess: (response : Object) => any
+	}
+}
 
 interface Props {
 	url: string
 	org: Organization
+	swap: boolean | false
 	setModal: (modal: string | null)=>any
 	etsy: boolean | false
 }
@@ -52,6 +74,7 @@ interface State {
 
 export class PetitionForm extends React.Component<Props, State> {
 	textareaInput: HTMLTextAreaElement | null;
+
 	constructor(props: Props) {
 		super(props);
 
@@ -66,10 +89,12 @@ export class PetitionForm extends React.Component<Props, State> {
 			error: null
 		};
 	}
+
 	onTextareaFocus(evt: Event) {
 		var target = evt.target as HTMLTextAreaElement;
 		target.select();
 	}
+
 	onResetClick(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
@@ -80,43 +105,75 @@ export class PetitionForm extends React.Component<Props, State> {
 			input_comment: ""
 		} as State);
 	}
+
 	onSubmit(evt: Event) {
 		evt.preventDefault();
 		evt.stopPropagation();
 		this.props.setModal("loading");
-		var data = {
-			"subject": "Protect Net Neutrality!",
-			"member[country]": "US",
-			"hp_enabled": "on",
-			"guard": "",
-			"contact_congress": "1",
-			"fcc_ecfs_docket": "17-108",
-			"org": this.props.org.code,
-			"an_tags": "[\"net-neutrality\"]",
-			"an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
-			"member[first_name]": this.state.input_name,
-			"member[email]": this.state.input_email,
-			"member[street_address]": this.state.input_address,
-			"member[postcode]": this.state.input_zip,
-			"action_comment": (this.state.input_etsy_shop ? "Etsy Shop " + this.state.input_etsy_shop + "\n\n" : "") + this.state.input_comment,
-			"opt_out": this.state.input_opt_in ? "0" : "1"
-		};
+
 		this.setState({
 			error: null
 		} as State);
-		submitForm(this.props.url, data)
-			.then((result) => {
-				console.log("DONE");
+
+		var params = new ExternalFlags();
+
+		if (this.props.swap) {
+			// Submit form directly to ActionKit
+
+			// Define success callback and bind this
+			window.actionKitSubmitSuccess = function(response : Object) {
+				console.log("SUCCESS");
 				this.props.setModal("call");
-			})
-			.catch((result) => {
-				console.log("FAIL");
-				this.setState({
-					error: "There was an error submitting the form, please try again"
-				} as State);
-				this.props.setModal(null);
-			});
+			}.bind(this);
+
+			var actionKitData = {
+				"page": "battleforthenet_2017_swap",
+				"js": "1", // tell actionkit to respond with JS
+				"callback": "actionKitSubmitSuccess", // Tell actionkit what JS function to call after successful submit
+    		"utf8": "\u1234", // Tell actionkit this is UTF8
+				"name": this.state.input_name,
+				"email": this.state.input_email,
+				"address1": this.state.input_address,
+				"zip": this.state.input_zip,
+				"country": "US",
+				"action_comment": this.state.input_comment,
+				"opt_in": true,
+				"source": params.get("utm_source", "unknown")
+			};
+			jsonpSubmit(this.props.url, actionKitData);
+		} else {
+			var data = {
+				"subject": "Protect Net Neutrality!",
+				"member[country]": "US",
+				"hp_enabled": "on",
+				"guard": "",
+				"contact_congress": "1",
+				"fcc_ecfs_docket": "17-108",
+				"org": this.props.org.code,
+				"an_tags": "[\"net-neutrality\"]",
+				"an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
+				"member[first_name]": this.state.input_name,
+				"member[email]": this.state.input_email,
+				"member[street_address]": this.state.input_address,
+				"member[postcode]": this.state.input_zip,
+				"action_comment": (this.state.input_etsy_shop ? "Etsy Shop " + this.state.input_etsy_shop + "\n\n" : "") + this.state.input_comment,
+				"opt_out": this.state.input_opt_in ? "0" : "1"
+			};
+			submitForm(this.props.url, data)
+				.then((result) => {
+					console.log("DONE");
+					this.props.setModal("call");
+				})
+				.catch((result) => {
+					console.log("FAIL");
+					this.setState({
+						error: "There was an error submitting the form, please try again"
+					} as State);
+					this.props.setModal(null);
+				});
+		}
 	}
+
 	renderError() {
 		return (
 			<div className="form-error">
@@ -125,6 +182,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			</div>
 		);
 	}
+
 	render() {
 		return (
 			<form className="bftn-form petition-form" onSubmit={this.onSubmit.bind(this)}>
@@ -153,7 +211,7 @@ export class PetitionForm extends React.Component<Props, State> {
 				</div>
 				{ this.state.error ? this.renderError() : null }
 				{ this.props.etsy ? <span className="opt-in"><input type="checkbox" name="input_opt_in" checked={this.state.input_opt_in} onChange={handleInputChange.bind(this)} /> </span> : "" }
-				<Disclaimer org={this.props.org} optIn={this.props.etsy} />
+				<Disclaimer org={this.props.org} optIn={this.props.etsy} swap={this.props.swap}/>
 			</form>
 		);
 	}

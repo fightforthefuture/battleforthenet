@@ -571,6 +571,8 @@ template {
         color: #b1aedc; }
       .bftn-homepage .petition-form .note a.privacy-policy-link {
         text-decoration: underline; }
+    .bftn-homepage .petition-form .note-small {
+      font-size: 11px; }
   .bftn-homepage .etsy-form .arrow {
     top: 310px; }
   .bftn-homepage .call-action-form {

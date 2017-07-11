@@ -23,6 +23,7 @@ interface Props {
 	actionUrl: string
 	campaignId: string
 	deadline: Date
+	swap: boolean | false
 }
 
 
@@ -56,7 +57,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 			case "petition":
 			default:
-				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} setModal={this.setModal.bind(this)} etsy={etsy} />;
+				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} swap={this.props.swap} setModal={this.setModal.bind(this)} etsy={etsy} />;
 				copy = <PetitionCopy deadline={this.props.deadline} etsy={etsy} />
 				break;
 		}
