@@ -477,7 +477,7 @@ template {
       padding-bottom: 160px; }
       .bftn-homepage .hero .petition-copy p {
         width: 490px;
-        font-size: 26px;
+        font-size: 27px;
         line-height: 1.6em;
         color: #FFF; }
         .bftn-homepage .hero .petition-copy p em {
@@ -485,7 +485,9 @@ template {
           font-style: inherit;
           font-weight: inherit; }
     .bftn-homepage .hero .etsy-form .petition-copy p {
-      font-size: 23px; }
+      font-size: 24px; }
+    .bftn-homepage .hero .swap-form .petition-copy p {
+      font-size: 26px; }
     .bftn-homepage .hero .call-action-copy p {
       font-size: 20px; }
     .bftn-homepage .hero .call-action-form {
@@ -511,7 +513,7 @@ template {
       margin-bottom: 5px; }
     .bftn-homepage .petition-form .arrow {
       position: absolute;
-      top: 256px;
+      top: 309px;
       left: -140px; }
     .bftn-homepage .petition-form .form-wrapper {
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); }
@@ -574,7 +576,9 @@ template {
     .bftn-homepage .petition-form .note-small {
       font-size: 11px; }
   .bftn-homepage .etsy-form .arrow {
-    top: 310px; }
+    top: 363px; }
+  .bftn-homepage .swap-form .arrow {
+    top: 256px; }
   .bftn-homepage .call-action-form {
     padding: 20px;
     text-align: center; }
