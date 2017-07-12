@@ -139,7 +139,7 @@ export class CallActionForm extends React.Component<Props, State> {
 						(We'll also give you suggestions on what to say)
 					</p>
 					<div>
-						<input className={this.state.error? "error": ""} name="input_phone" type="tel" placeholder="555-555-5555" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
+						<input className={this.state.error? "error": ""} name="input_phone" type="tel" placeholder="Enter your phone #" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
 					</div>
 					<div>
 						<button className="btn">Call Congress</button>
