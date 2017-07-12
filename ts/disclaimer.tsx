@@ -25,7 +25,7 @@ export class Disclaimer extends React.Component<Props, State> {
         : <span className="note">
             {optIn
               ? <span>Allow {orgLink} to</span>
-              : <span>{orgLink} will</span>
+              : <span>{orgLink} will </span>
             }
             contact you about future campaigns. <a href="https://www.battleforthenet.com/privacy/" className="privacy-policy-link">Privacy Policy</a>
           </span>
