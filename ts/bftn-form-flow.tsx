@@ -54,7 +54,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} />
+				form = <CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
 				copy = <CallActionCopy />
 				break;
 			case "petition":
@@ -74,14 +74,14 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} zip={this.state.zip} isModal={true} />
+						<CallActionForm org={this.props.org} header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} zip={this.state.zip} isModal={true} swap={this.props.swap} />
 					</Modal>
 				);
 				break;
 			case "success":
 				modal = (
 					<Modal modalClass="callsuccess-modal" onClose={onClose}>
-						<CallSuccess setModal={this.setModal.bind(this)} />
+						<CallSuccess org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} />
 					</Modal>
 				);
 				break;
