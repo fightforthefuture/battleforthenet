@@ -35,8 +35,6 @@
   </head>
 
   <body class="bftn-homepage">
-    <div class="stats" id="stats"></div>
-
     <div id="foobar"></div>
 
     <div class="unit">
@@ -192,18 +190,13 @@
         mountComponent(
           React.createElement(BFTNFormFlow, {
             actionUrl: "https://act.demandprogress.org/act/",
-            campaignId: "daily", // For the swap always use the Callpower daily call tool
+            campaignId: campaign,
             initialForm: initialForm,
             org: org,
             deadline: deadline,
             swap: true
           }),
           document.getElementById("bftn-action-form")
-        );
-
-        mountComponent(
-          React.createElement(StatsComponent, {deadline: deadline}),
-          document.getElementById("stats")
         );
 
         mountComponent(
