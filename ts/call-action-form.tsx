@@ -3,7 +3,8 @@ import * as React from 'react';
 import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
 import {handleInputChange} from './utils';
-
+import {Organization} from './organization';
+import {AfterActionFooter} from './after-action-footer';
 
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
@@ -50,9 +51,11 @@ const campaigns:Campaigns = {
 
 
 interface Props {
+	org: Organization
 	header: string
 	campaignId: string
 	isModal: boolean
+	swap: boolean | false
 	zip: string | ""
 	setModal: (modal: string | null, zip?: string | "")=>any
 }
@@ -125,21 +128,26 @@ export class CallActionForm extends React.Component<Props, State> {
 	}
 	render() {
 		var campaign = this.getCampaign(this.props.campaignId);
+		const { swap, isModal, org } = this.props;
+
 		return (
-			<form className="bftn-form call-action-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
-				<h3>{ this.props.header }</h3>
-				<p>
-					Enter your number and we'll connect you to Congress and the FCC.<br />
-					(We'll also give you suggestions on what to say)
-				</p>
-				<div>
-					<input className={this.state.error? "error": ""} name="input_phone" type="tel" placeholder="555-555-5555" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
-				</div>
-				<div>
-					<button className="btn">Call Congress</button>
-				</div>
-				<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
-			</form>
+			<div>
+				<form className="bftn-form call-action-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
+					<h3>{ this.props.header }</h3>
+					<p>
+						Enter your number and we'll connect you to Congress and the FCC.<br />
+						(We'll also give you suggestions on what to say)
+					</p>
+					<div>
+						<input className={this.state.error? "error": ""} name="input_phone" type="tel" placeholder="555-555-5555" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
+					</div>
+					<div>
+						<button className="btn">Call Congress</button>
+					</div>
+					<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
+				</form>
+				{ swap || !isModal ? "" : <AfterActionFooter org={org} /> }
+			</div>
 		);
 	}
 }
