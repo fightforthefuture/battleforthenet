@@ -992,6 +992,51 @@ template {
       pointer-events: all;
       position: relative;
       margin: 0 auto; }
+    .bftn-homepage .modal #after-action-footer {
+      padding: 1rem 2rem;
+      background-color: #141037;
+      border-radius: 0 0 0.5rem 0.5rem; }
+    .bftn-homepage .modal #after-action-footer h3 {
+      margin: 0 0 1rem;
+      color: #908dc4;
+      text-align: left; }
+    .bftn-homepage .modal #after-action-footer ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: left;
+      justify-content: space-between;
+      list-style-type: none; }
+    .bftn-homepage .modal #after-action-footer li {
+      margin: 0 0.25rem 0.5rem;
+      flex: 1 0 auto; }
+    .bftn-homepage .modal #after-action-footer button {
+      width: 100%;
+      height: 2rem;
+      padding: 0 0.6rem;
+      background: transparent;
+      border: 1px solid #3d459a;
+      border-radius: 0.2rem;
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 2rem; }
+    .bftn-homepage .modal #after-action-footer button div {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center; }
+    .bftn-homepage .modal #after-action-footer button:hover {
+      cursor: pointer; }
+    .bftn-homepage .modal #after-action-footer button img {
+      max-width: 1rem;
+      max-height: 1rem;
+      margin-right: 0.5rem; }
+    .bftn-homepage .modal #after-action-footer button.facebook {
+      background-color: #2b48a7;
+      border: none; }
   .bftn-homepage .loading-modal .modal-content {
     position: relative;
     height: 60px;
