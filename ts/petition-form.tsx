@@ -144,7 +144,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			};
 			jsonpSubmit(this.props.url, actionKitData);
 		} else {
-			var data = {
+			var data:any = {
 				"subject": "Protect Net Neutrality!",
 				"member[country]": "US",
 				"hp_enabled": "on",
@@ -159,9 +159,12 @@ export class PetitionForm extends React.Component<Props, State> {
 				"member[street_address]": this.state.input_address,
 				"member[postcode]": this.state.input_zip,
 				"member[phone_number]": this.state.input_phone,
-				"action_comment": (this.state.input_etsy_shop ? "Etsy Shop " + this.state.input_etsy_shop + "\n\n" : "") + this.state.input_comment,
-				"opt_out": this.state.input_opt_in ? "0" : "1"
+				"action_comment": (this.state.input_etsy_shop ? "Etsy Shop " + this.state.input_etsy_shop + "\n\n" : "") + this.state.input_comment
 			};
+			if (!this.state.input_opt_in) {
+			 data["opt_out"] = "1";
+			}
+
 			submitForm(this.props.url, data)
 				.then((result) => {
 					console.log("DONE");
