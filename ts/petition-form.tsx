@@ -55,7 +55,7 @@ interface Props {
 	url: string
 	org: Organization
 	swap: boolean | false
-	setModal: (modal: string | null)=>any
+	setModal: (modal: string | null, zip?: string | "")=>any
 	etsy: boolean | false
 }
 
@@ -64,7 +64,7 @@ interface State {
 	input_name: string | string[] | undefined
 	input_email: string | string[] | undefined
 	input_address: string | string[] | undefined
-	input_zip: string | string[] | undefined
+	input_zip: string | undefined
 	input_phone: string | string[] | undefined
 	input_comment: string | string[] | undefined
 	input_etsy_shop: string | string[] | undefined
@@ -125,7 +125,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			// Define success callback and bind this
 			window.actionKitSubmitSuccess = function(response : Object) {
 				console.log("SUCCESS");
-				this.props.setModal("call");
+				this.props.setModal("call", this.state.input_zip);
 			}.bind(this);
 
 			var actionKitData = {
@@ -165,7 +165,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			submitForm(this.props.url, data)
 				.then((result) => {
 					console.log("DONE");
-					this.props.setModal("call");
+					this.props.setModal("call", this.state.input_zip);
 				})
 				.catch((result) => {
 					console.log("FAIL");

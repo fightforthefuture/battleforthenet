@@ -29,6 +29,7 @@ interface Props {
 
 interface State {
 	modal: string | null
+	zip: string | ""
 }
 
 
@@ -37,10 +38,11 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			modal: null,
+			zip: ""
 		};
 	}
-	setModal(modal: string | null): any {
-		this.setState({modal: modal} as State);
+	setModal(modal: string | null, zip = ""): any {
+		this.setState({modal: modal, zip: zip} as State);
 	}
 	render() {
 		var params = new ExternalFlags();
@@ -52,7 +54,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} />
+				form = <CallActionForm header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} />
 				copy = <CallActionCopy />
 				break;
 			case "petition":
@@ -72,7 +74,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={true} />
+						<CallActionForm header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} zip={this.state.zip} isModal={true} />
 					</Modal>
 				);
 				break;

@@ -53,7 +53,8 @@ interface Props {
 	header: string
 	campaignId: string
 	isModal: boolean
-	setModal: (modal: string | null)=>any
+	zip: string | ""
+	setModal: (modal: string | null, zip?: string | "")=>any
 }
 
 
@@ -106,7 +107,8 @@ export class CallActionForm extends React.Component<Props, State> {
 			var campaign = this.getCampaign(this.props.campaignId);
 			var data = {
 				"campaignId": campaign.id,
-				"userPhone": phone
+				"userPhone": phone,
+				"zipcode": this.props.zip ? this.props.zip : ""
 			};
 			submitForm(campaign.url, data)
 				.then((result) => {
@@ -116,7 +118,7 @@ export class CallActionForm extends React.Component<Props, State> {
 				.catch((result) => {
 					console.log("FAIL");
 					if (this.props.isModal) {
-						this.props.setModal("call");
+						this.props.setModal("call", this.props.zip);
 					}
 				});
 		};
