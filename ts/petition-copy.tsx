@@ -23,9 +23,9 @@ export class PetitionCopy extends React.Component<Props, State> {
 				<p>
 					{ etsy
 						? `FCC Chairman Pai wants to repeal existing net neutrality rules that allow Etsy sellers to turn their creative passion into a business. Without these protections, Etsy sellers will be forced to choose between paying for priority access or losing sales in the internet slow lane.`
-						: `Comcast & Verizon want to end net neutrality so they can control what we see & do online.
-							In ${daysLeft} ${dayLabel}, the FCC will let them, unless we stop it.
-						  This is a battle for the Internet's future.`
+						: <span>Comcast & Verizon want to end net neutrality so they can control what we see & do online.
+							On <a href="/july12/">July 12</a>, we take the first step to stop them.
+						  This is a battle for the Internet's future.</span>
 					}
 					{" "}
 					<em>

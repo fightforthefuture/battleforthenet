@@ -6,7 +6,6 @@ import * as URL from 'url-polyfill';
 import * as fetch from 'whatwg-fetch';
 
 import {TestComponent} from './test';
-import {StatsComponent} from './stats';
 import {VideoRollComponent} from './video-roll';
 import {PersistentButton} from './persistent-button';
 import {LoaderLogo} from './loader-logo';
@@ -27,7 +26,6 @@ window['_fetch'] = fetch;
 window['React'] = React;
 window['ReactDOM'] = ReactDOM;
 window['TestComponent'] = TestComponent;
-window['StatsComponent'] = StatsComponent;
 window['VideoRollComponent'] = VideoRollComponent;
 window['PersistentButton'] = PersistentButton;
 window['LoaderLogo'] = LoaderLogo;
