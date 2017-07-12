@@ -6,6 +6,7 @@ interface Props {
 	org: Organization
 	setModal: (modal: string | null)=>any
 	swap: boolean | false
+	zip: string | ""
 }
 
 interface State {
@@ -25,7 +26,7 @@ export class CallSuccess extends React.Component<Props, State> {
 				<p><em>You can introduce yourself and say,</em></p>
 				<p>I’m concerned about net neutrality. Millions of people spoke out for the strong net neutrality rules we currently have because they protect us from Internet service providers like Comcast and Verizon that want to block, throttle, and charge us extra fees to access information equally online.</p>
 				<p>I support Title II net neutrality rules and I urge you to oppose the FCC’s plan to repeal them.</p>
-				{ this.props.swap ? "" : <AfterActionFooter org={this.props.org} /> }
+				{ this.props.swap ? "" : <AfterActionFooter org={this.props.org} zip={this.props.zip} /> }
 			</div>
 		);
 	}

@@ -81,7 +81,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "success":
 				modal = (
 					<Modal modalClass="callsuccess-modal" onClose={onClose}>
-						<CallSuccess org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} />
+						<CallSuccess org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} zip={this.state.zip} />
 					</Modal>
 				);
 				break;

@@ -146,7 +146,7 @@ export class CallActionForm extends React.Component<Props, State> {
 					</div>
 					<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
 				</form>
-				{ swap || !isModal ? "" : <AfterActionFooter org={org} /> }
+				{ swap || !isModal ? "" : <AfterActionFooter org={org} zip={this.props.zip} /> }
 			</div>
 		);
 	}
