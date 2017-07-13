@@ -4,6 +4,7 @@ import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
 import {handleInputChange} from './utils';
 import {Organization} from './organization';
+import {User} from './user';
 import {AfterActionFooter} from './after-action-footer';
 
 // Mock submit:
@@ -56,8 +57,8 @@ interface Props {
 	campaignId: string
 	isModal: boolean
 	swap: boolean | false
-	zip: string | ""
-	setModal: (modal: string | null, zip?: string | "")=>any
+	userData: User
+	setModal: (modal: string | null, userData?: User)=>any
 }
 
 
@@ -111,7 +112,7 @@ export class CallActionForm extends React.Component<Props, State> {
 			var data = {
 				"campaignId": campaign.id,
 				"userPhone": phone,
-				"zipcode": this.props.zip ? this.props.zip : ""
+				"zipcode": this.props.userData.zip ? this.props.userData.zip : ""
 			};
 			submitForm(campaign.url, data)
 				.then((result) => {
@@ -121,7 +122,7 @@ export class CallActionForm extends React.Component<Props, State> {
 				.catch((result) => {
 					console.log("FAIL");
 					if (this.props.isModal) {
-						this.props.setModal("call", this.props.zip);
+						this.props.setModal("call", this.props.userData);
 					}
 				});
 		};
@@ -146,7 +147,7 @@ export class CallActionForm extends React.Component<Props, State> {
 					</div>
 					<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
 				</form>
-				{ swap || !isModal ? "" : <AfterActionFooter org={org} zip={this.props.zip} /> }
+				{ swap || !isModal ? "" : <AfterActionFooter org={org} userData={this.props.userData} /> }
 			</div>
 		);
 	}

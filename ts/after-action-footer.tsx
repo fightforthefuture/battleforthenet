@@ -1,9 +1,10 @@
 import * as React from 'react';
+import {User} from './user';
 import {Organization} from './organization';
 
 interface Props {
   org: Organization
-  zip: string | ""
+  userData: User
 }
 
 interface State {
@@ -11,12 +12,13 @@ interface State {
 
 export class AfterActionFooter extends React.Component<Props, State> {
   render() {
+    const userData = this.props.userData;
+
     const donateLink = this.props.org.code == 'fp' ? "https://freepress.actionkit.com/donate/single/" :
                        this.props.org.code == 'dp' ? "https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn" :
                        "https://donate.fightforthefuture.org/campaigns/bftnlanding/";
-
-    const protestLink = "https://actionnetwork.org/event_campaigns/show-up-and-speak-out-for-net-neutrality" + (this.props.zip ? "?zipcode=" + this.props.zip : "");
-    const videoLink = "https://video.battleforthenet.com/" + (this.props.zip ? "?fcc_postcode=" + this.props.zip : "");
+    const protestLink = "https://actionnetwork.org/event_campaigns/show-up-and-speak-out-for-net-neutrality" + (userData.zip ? "?zipcode=" + userData.zip : "");
+    const videoLink = "https://video.battleforthenet.com/?fcc_name=" + userData.name + "&fcc_email=" + userData.email + "&fcc_address=" + userData.address + "&fcc_postcode=" + userData.zip;
 
     return (
       <div id="after-action-footer">

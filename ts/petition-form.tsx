@@ -4,6 +4,7 @@ import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
 import {handleInputChange} from './utils';
 import {Organization} from './organization';
+import {User} from './user';
 import {Disclaimer} from './disclaimer';
 import {ExternalFlags} from './external-flags';
 
@@ -55,7 +56,7 @@ interface Props {
 	url: string
 	org: Organization
 	swap: boolean | false
-	setModal: (modal: string | null, zip?: string | "")=>any
+	setModal: (modal: string | null, userData?: User)=>any
 	etsy: boolean | false
 }
 
@@ -64,7 +65,7 @@ interface State {
 	input_name: string | string[] | undefined
 	input_email: string | string[] | undefined
 	input_address: string | string[] | undefined
-	input_zip: string | undefined
+	input_zip: string | string[] | undefined
 	input_phone: string | string[] | undefined
 	input_comment: string | string[] | undefined
 	input_etsy_shop: string | string[] | undefined
@@ -118,6 +119,12 @@ export class PetitionForm extends React.Component<Props, State> {
 		} as State);
 
 		var params = new ExternalFlags();
+		var userData = {
+			name: this.state.input_name,
+			email: this.state.input_email,
+			address: this.state.input_address,
+			zip: this.state.input_zip
+		}
 
 		if (this.props.swap) {
 			// Submit form directly to ActionKit
@@ -125,7 +132,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			// Define success callback and bind this
 			window.actionKitSubmitSuccess = function(response : Object) {
 				console.log("SUCCESS");
-				this.props.setModal("call", this.state.input_zip);
+				this.props.setModal("call", userData);
 			}.bind(this);
 
 			var actionKitData = {
@@ -168,7 +175,7 @@ export class PetitionForm extends React.Component<Props, State> {
 			submitForm(this.props.url, data)
 				.then((result) => {
 					console.log("DONE");
-					this.props.setModal("call", this.state.input_zip);
+					this.props.setModal("call", userData);
 				})
 				.catch((result) => {
 					console.log("FAIL");
