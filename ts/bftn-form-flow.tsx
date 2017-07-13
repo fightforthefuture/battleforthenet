@@ -8,6 +8,7 @@ import {Modal} from './modal';
 import {handleInputChange} from './utils';
 import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
+import {User, blankUser} from './user';
 import {CallSuccess} from './call-success';
 import {CallActionCopy} from './call-action-copy';
 import {CallActionForm} from './call-action-form';
@@ -29,7 +30,7 @@ interface Props {
 
 interface State {
 	modal: string | null
-	zip: string | ""
+	userData: User
 }
 
 
@@ -38,11 +39,16 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			modal: null,
-			zip: ""
+			userData: {
+				name: "",
+				email: "",
+				address: "",
+				zip: ""
+			}
 		};
 	}
-	setModal(modal: string | null, zip = ""): any {
-		this.setState({modal: modal, zip: zip} as State);
+	setModal(modal: string | null, userData = blankUser): any {
+		this.setState({modal: modal, userData: userData} as State);
 	}
 	render() {
 		var params = new ExternalFlags();
@@ -54,7 +60,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
+				form = <CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} userData={this.state.userData} swap={this.props.swap} />
 				copy = <CallActionCopy />
 				break;
 			case "petition":
@@ -74,14 +80,14 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm org={this.props.org} header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} zip={this.state.zip} isModal={true} swap={this.props.swap} />
+						<CallActionForm org={this.props.org} header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} userData={this.state.userData} isModal={true} swap={this.props.swap} />
 					</Modal>
 				);
 				break;
 			case "success":
 				modal = (
 					<Modal modalClass="callsuccess-modal" onClose={onClose}>
-						<CallSuccess org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} zip={this.state.zip} />
+						<CallSuccess org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} userData={this.state.userData} />
 					</Modal>
 				);
 				break;
