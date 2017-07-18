@@ -1242,15 +1242,17 @@ template {
       .bftn-homepage .political-scoreboard .politician div.cover span {
         color: #FFF;
         position: absolute;
-        bottom: 0px;
+        bottom: 6px;
         left: 0px;
         text-align: center;
         width: 100%;
-        line-height: 40px;
         text-transform: uppercase;
         font-weight: bold;
         font-size: 14px;
         text-shadow: 0 0 5px black; }
+    .bftn-homepage .political-scoreboard .politician div.cover-long span {
+      font-size: 10px;
+      bottom: 9px; }
     .bftn-homepage .political-scoreboard .politician div.actions {
       position: absolute;
       bottom: 20px;
@@ -1270,8 +1272,14 @@ template {
         background-color: #224769; }
       .bftn-homepage .political-scoreboard .politician div.actions .site:hover {
         background-color: #162d42; }
+    .bftn-homepage .political-scoreboard .politician div.actions.no-site {
+      bottom: 45px; }
+      .bftn-homepage .political-scoreboard .politician div.actions.no-site .site {
+        display: none; }
   .bftn-homepage .political-scoreboard .carousel-item-active:hover div.actions {
     display: block; }
+  .bftn-homepage .political-scoreboard .carousel-item-active:hover div.cover span {
+    opacity: 0.1; }
   .bftn-homepage .political-scoreboard .carousel {
     height: 122px; }
     .bftn-homepage .political-scoreboard .carousel .bar {
