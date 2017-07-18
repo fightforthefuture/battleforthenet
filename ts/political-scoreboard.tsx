@@ -38,6 +38,16 @@ function getPoliticianTweetLink(p:any): string {
 
 function parsePolitician(data:any, idx:number) {
 	var imageBaseURL = '/images/scoreboard/';
+	var team;
+	switch (data.gsx$team.$t) {
+		case "team-cable":
+		case "team-internet":
+			team = data.gsx$team.$t;
+			break;
+		default:
+			team = "undecided";
+			break;
+	}
 	var ret:any = {
 		idx: idx,
 		frontpage: (data.gsx$frontpage.$t === '1'),
@@ -47,7 +57,7 @@ function parsePolitician(data:any, idx:number) {
 		image: imageBaseURL + data.gsx$bioguide.$t + '_x1.jpg',
 		image2x: imageBaseURL + data.gsx$bioguide.$t + '_x2.jpg',
 		weight: data.gsx$weight.$t,
-		team: data.gsx$team.$t || 'undecided',
+		team: team,
 		size: data.gsx$size.$t,
 		meta: data.gsx$meta.$t,
 		twitter: data.gsx$twitter.$t,
@@ -123,7 +133,7 @@ function getGeocode(): Promise<string> {
 
 function getPoliticians(): Promise<PoliticiansSet> {
 	return ajaxPromise({
-		url: "https://cache.battleforthenet.com/politicians.json",
+		url: "https://spreadsheets.google.com/feeds/list/1n6ZuVMbfBdu3MvYutScnnD8k8B2IzqX9woBY-2PLlIM/default/public/values?alt=json",
 		method: "get",
 		json: true
 	}).then(function(response: Response) {
