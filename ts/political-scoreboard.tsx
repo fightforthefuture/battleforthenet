@@ -23,14 +23,21 @@ function getPoliticianSubdomain(p:any): string {
 
 function getPoliticianTweetLink(p:any): string {
 	var shareText: string;
+	var l = 140;
+	var extra = " battleforthenet.com";
 	if (p.sharetext) {
 		shareText = p.sharetext;
 	} else if (p.team === "team-cable") {
 		shareText = `.@${p.twitter}, please stop selling your constituents out to the cable companies. Support the FCC's existing net neutrality rules.`;
 	} else if (p.team === "team-internet") {
-		shareText = `.@${p.twitter} is awesome for supporting strong net neutrality rules and opposing the FCC's plan to destroy them!`;
+		shareText = `.@${p.twitter} thank you for standing up for #NetNeutrality and opposing @AjitPaiFCC's plan.`;
 	} else {
-		shareText = `.@${p.twitter}, I'm a constituent and net neutrality rules matter to me. Please oppose the FCC's plan to destroy them.`;
+		shareText = `.@${p.twitter}, I'm a constituent & #netneutrality rules matter to me. Please oppose @AjitPaiFCC's plan.`;
+	}
+	if (!p.sharetext) {
+		if (shareText.length < l - extra.length) {
+			shareText = shareText + extra;
+		}
 	}
 	return "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&related=fightfortheftr";
 }
