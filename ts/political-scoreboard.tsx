@@ -29,7 +29,7 @@ function getPoliticianTweetLink(p:any): string {
 	if (p.sharetext) {
 		shareText = p.sharetext;
 	} else if (p.team === "team-cable") {
-		shareText = `.@${p.twitter}, please stop selling your constituents out to the cable companies. Support the FCC's existing net neutrality rules.`;
+		shareText = `.@${p.twitter}, stop selling out your constituents. Oppose @AjitPaiFCC's plan to gut #NetNeutrality`;
 	} else if (p.team === "team-internet") {
 		shareText = `.@${p.twitter} thank you for standing up for #NetNeutrality and opposing @AjitPaiFCC's plan.`;
 	} else {
