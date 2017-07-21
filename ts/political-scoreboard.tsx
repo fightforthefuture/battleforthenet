@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 
 import {EventEmitter} from './event-emitter';
+import {ExternalFlags} from './external-flags';
 import {Carousel} from './carousel';
 import {ajaxResult, ajaxPromise} from './utils';
 import {handleInputChange} from './utils';
@@ -180,9 +181,14 @@ interface State {
 export class PoliticalScoreboard extends React.Component<Props, State> {
 	constructor(props:Props) {
 		super(props);
+		var flags = new ExternalFlags();
+		var state = flags.get("state", "");
+		if (!state || !_.includes(r.states, state)) {
+			state = "";
+		}
 		this.state = {
 			politiciansSet: null,
-			state: "",
+			state: state,
 			error: null
 		};
 	}
@@ -192,15 +198,17 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 				politiciansSet: politiciansSet
 			} as State);
 		});
-		getGeocode().then((state:string) => {
-			if (this.state.state === "") {
-				this.setState({
-					state: state
-				} as State);
-			}
-		}).catch((e) => {
-			console.log(e);
-		});
+		if (this.state.state === "") {
+			getGeocode().then((state:string) => {
+				if (this.state.state === "") {
+					this.setState({
+						state: state
+					} as State);
+				}
+			}).catch((e) => {
+				console.log(e);
+			});
+		}
 	}
 	renderPolitician(politician:Politician) {
 		var isLong = (politician.name.indexOf(" ") === -1 && politician.name.length > 11);
