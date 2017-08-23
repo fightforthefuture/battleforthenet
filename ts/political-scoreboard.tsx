@@ -157,7 +157,7 @@ function getPoliticians(): Promise<PoliticiansSet> {
 			"internet": []
 		};
 		_.each(j.feed.entry, function(p, idx) {
-			var politician = parsePolitician(p, parseInt(idx, 10));
+			var politician = parsePolitician(p, idx);
 			var team = teamMapper[politician.team];
 			if (team) {
 				(ret as any)[team].push(politician);
