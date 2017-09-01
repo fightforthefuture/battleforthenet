@@ -19,7 +19,7 @@
     <meta property="og:title" content="Join Team Internet" />
     <meta name="description" property="og:description" content="Sign up to host a meeting for Team Internet">
     <meta property="og:image" content="https://s3.amazonaws.com/demandprogress/images/TeamInternet-fb.png" />
-    <meta property="og:url" content="https://battleforthenet.com/teaminternet/" />
+    <meta property="og:url" content="https://battleforthenet.com/jointeaminternet/" />
     <meta property="og:site_name" content="Demand Progress">
     <meta property="og:type" content="article">
     <meta name="twitter:card" value="summary_large_image">
@@ -38,6 +38,7 @@
             font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
             font-weight: 400;
         }
+        div.ak-page-container { padding-top: 0; }
         .buttonA3 { text-align:center }
         .buttonA3 .box {
             max-width: 290px;
@@ -47,15 +48,15 @@
         .hero-mobile-image img { width: 100%; height: auto;  }
         .hero-mobile-copy { text-align: center; padding: 0 15px; margin-bottom: 20px; }
         @media only screen and (min-width: 750px) {
-            .hero { height: 400px; background:url(//s3.amazonaws.com/peoplepower.org/images/aclubg.jpg) no-repeat center center; background-size: cover; }
+            .hero { height: 400px; background:url(//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/team-internet-cover-large.jpg) no-repeat center center; background-size: cover; }
             .hero-box { width: 1000px; margin: 0 auto; position: relative; }
             .hero-mobile-image { display: none; }
             .hero-mobile-copy { display: none; }
         }
         .signup label { display: none; }
-        .ak-pagetype-signup { padding: 0 15px; }
+        .ak-pagetype-signup { padding: 0 15px; margin-bottom: 20px; }
         @media only screen and (min-width: 750px) {
-            .ak-pagetype-signup { width: 475px; position: absolute; top: 60px; left: 0; padding: 20px; background: rgba(39,47,50,0.9);  }
+            .ak-pagetype-signup { width: 100%; padding: 20px; background: rgba(39,47,50,0.9);  }
         }
         .ak-pagetype-signup form { width:100%; }
         .mainbody { padding-top: 40px; padding-bottom: 60px;  }
@@ -104,24 +105,19 @@
 <body class="ak-pagetype-petition ak-lang-en ak-no-js">
     <script type="text/javascript">actionkit.forms.initPage()</script>
 
-    <div class="ak-page-header">
-        <div class="ak-page-header-contents">
-            <a href='https://events.battleforthenet.com'><img src="//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/team-internet-cover.jpg" alt="Team Internet" /></a>
-            <div class="ak-page-nav"></div>
-        </div>
-    </div>
-
     <div class="ak-page-container">
         <script>console.log("The load_remember_me snippet for Remember Me is disabled by config.")</script>
 
         <div class="hero">
-          <div class="hero-mobile-image"><img src="//s3.amazonaws.com/peoplepower.org/images/aclubg.jpg"></div>
+          <div class="hero-mobile-image"><img src="//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/team-internet-cover-large.jpg"></div>
             <div class="hero-mobile-copy">
                 <h2>Join our movement!</h2>
                 <p>Sign up today to join a team of volunteers mobilizing millions of people to protect Net Neutrality</p>
             </div>
+        </div>
 
-            <div class="hero-box">
+        <div class="ak-grid-row mainbody">
+            <div class="ak-grid-col ak-grid-col-6-of-12 actions">
                 <div class="ak-pagetype-signup">
                     <form class="ak-form" name="act" method="POST" action="//act.demandprogress.org/act/" accept-charset="utf-8">
                         <input type="hidden" name="page" value="team-internet-landing">
@@ -177,11 +173,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
 
-        <div class="ak-grid-row mainbody">
-            <div class="ak-grid-col ak-grid-col-6-of-12 actions">
                 <div class="event-find">
                   <div class="textB">Attend a meeting at your local lawmaker’s offices:</div>
                   <div><a class="buttonA3" href="https://events.battleforthenet.com/" target="_blank"><span class="box">Find an Event</span></a></div>
@@ -201,6 +193,7 @@
             </div>
 
             <div class="ak-grid-col ak-grid-col-6-of-12 thestory">
+                <h3>We need you!</h3>
                 <p>AT&amp;T, Comcast and Verizon want to end Net Neutrality so they can charge extra fees &amp; control what we see &amp; do online.</p>
 
                 <p>On July 12, we helped organize the Day of Action to Save Net Neutrality to stop them. But our battle for the future of the Internet has just begun.</p>
