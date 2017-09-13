@@ -92,11 +92,12 @@
 			background-size: cover;
 			padding-bottom: 40px;
 		}
-		#header p {
-			font-size: 21px;
+		#header p, #content p {
+			font-family: "Open Sans", sans-serif;
+			font-weight: 300;
 			line-height: 1.6em;
 		}
-		#header p b {
+		#header p b, #content p b {
 			font-weight: 700;
 		}
 		#header .buttons {
@@ -120,15 +121,6 @@
 		#content {
 			background-color: #272630;
 			padding-bottom: 140px;
-		}
-		#content p {
-			font-family: "Open Sans", sans-serif;
-			font-weight: 300;
-			line-height: 1.6em;
-		}
-		#content p b {
-			font-weight: 700;
-			color: white;
 		}
 		#content img {
 			text-align: center;
@@ -220,23 +212,33 @@
 			top: 5px;
 		}
 		@media screen and (max-width: 800px) {
+			#header {
+				padding-top: 20px;
+			}
+			#header .buttons .btn {
+				height: 50px;
+				line-height: 50px;
+			}
+			#header p, #content p {
+				font-size: 14px;
+				line-height: 1.4em;
+			}
+			#header p.donate {
+				font-size: 12px;
+			}
+			#header p.donate a {
+				display: block;
+				margin: 5px auto;
+			}
 			h1 {
 				font-size: 30px;
+				margin: 0px;
 			}
 			h2 {
 				font-size: 20px;
 			}
-			#header {
-				padding-top: 140px;
-			}
 		}
 		@media screen and (max-width: 600px) {
-			#header p {
-				font-size: 14px;
-			}
-			#content p {
-				font-size: 14px;
-			}
 			#footer .logo {
 				max-width: 400px;
 			}
