@@ -38,6 +38,16 @@
             font-family: "Helvetica Neue", Helvetica, Arial, "sans-serif";
             font-weight: 400;
         }
+        h3 {
+            color: #2999b7;
+            font-weight: 600;
+            font-size: 2em;
+            font-family: helvetica;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #272F32;
+        }
         div.ak-page-container { padding-top: 0; }
         .buttonA3 { text-align:center }
         .buttonA3 .box {
@@ -46,7 +56,7 @@
         .hero { width: 100%; }
         .hero-mobile-image { margin-bottom: 10px; }
         .hero-mobile-image img { width: 100%; height: auto;  }
-        .hero-mobile-copy { text-align: center; padding: 0 15px; margin-bottom: 20px; }
+        .hero-mobile-copy { text-align: center; padding: 0 15px; }
         @media only screen and (min-width: 750px) {
             .hero { height: 400px; background:url(//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/team-internet-banner-new.jpg) no-repeat center 20%; background-size: cover; }
             .hero-box { width: 1000px; margin: 0 auto; position: relative; }
@@ -54,15 +64,25 @@
             .hero-mobile-copy { display: none; }
         }
         .signup label { display: none; }
-        .ak-pagetype-signup { padding: 0 15px; margin-bottom: 20px; }
+        .ak-pagetype-signup {
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            background: rgba(236, 236, 236, 0.9);
+        }
         @media only screen and (min-width: 750px) {
             .ak-pagetype-signup { width: 100%; padding: 20px; background: rgba(39,47,50,0.9);  }
         }
         .ak-pagetype-signup form { width:100%; }
         .mainbody { padding-top: 40px; padding-bottom: 60px;  }
-        .thestory h2 { background: url(//s3.amazonaws.com/peoplepower.org/assets/pp-logo-fists.svg) no-repeat; background-size: 32px; text-indent: 50px; }
-        .event-find { height: 75px; }
-        .event-host, .volunteer { height: 75px; }
+        .thestory {
+            padding: 0 10px;
+        }
+        .thestory h2 {
+            background: url(//s3.amazonaws.com/peoplepower.org/assets/pp-logo-fists.svg) no-repeat; background-size: 32px; text-indent: 50px;
+        }
+        .event-find { height: 62px; }
+        .event-host, .volunteer { height: 62px; }
         .stories { background: #537882; color: #fff; padding-top: 40px; padding-bottom: 60px;  }
         .stories h2 { color: #fff; }
         .story { margin-bottom: 40px; }
@@ -75,7 +95,10 @@
         .fighters .image { width: 90%; }
         .fighters .image img { width: 100%; height: auto; }
         button { margin:10px auto 0 auto;}
-        .buttonA3 {background-color:#272f32;}
+        .buttonA3 {
+            background-color: #272f32;
+            border-radius: 5px;
+        }
         .buttonA3:hover {background-color:rgba(39,47,50,0.8);transition-duration: 0.15s;}
         .thestory h2 { font-size:40px;}
         @media only screen and (max-width: 950px) {
@@ -95,10 +118,42 @@
         }
         @media only screen and (max-width: 749px) {
             .ak-grid-col {
-              width: 100%;
-              margin-bottom: 20px;
-          }
-      }
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .thestory h3 {
+                display:  none;
+            }
+            .mainbody { padding-top: 0px;}
+        }
+        .ak-pagetype-petition button.ak-submit-button {
+            max-width: initial;
+            border-radius: 5px;
+        }
+        .ak-styled-fields input[type="text"], .ak-styled-fields input[type="email"], .ak-styled-fields input[type="password"], .ak-styled-fields input[type="number"], .ak-styled-fields input[type="tel"], .ak-styled-fields input[type="date"], .ak-styled-fields input[type="url"], .ak-styled-fields input[type="search"], .ak-styled-fields textarea, .ak-styled-fields select {
+                padding: 12px;
+                border: 1px solid #afafaf;
+                /* font-size: 1.0em; */
+                /* font-size: 1.0rem; */
+                background: #F7F7F7;
+                color: #4b4b4b;
+                font-weight: 400;
+                margin-bottom: 6px;
+                margin-top: 0;
+                border-radius: 5px;
+        }
+
+        .ak-page-footer {
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 40px 20px 0 20px;
+        }
+        .ak-page-footer-contents {
+            margin-top:  0;
+        }
+        .ak-page-footer-contents img { margin: 0; }
+
    </style>
 </head>
 
@@ -111,7 +166,7 @@
         <div class="hero">
           <div class="hero-mobile-image"><img src="//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/team-internet-banner-new.jpg"></div>
             <div class="hero-mobile-copy">
-                <h2>Join our movement!</h2>
+                <h3>Team Internet is defending the web. Join us!</h3>
                 <p>Sign up today to join a team of volunteers mobilizing millions of people to protect Net Neutrality</p>
             </div>
         </div>
@@ -189,20 +244,17 @@
             </div>
 
             <div class="ak-grid-col ak-grid-col-6-of-12 thestory">
-                <h3>We need you!</h3>
-                <p>AT&amp;T, Comcast and Verizon want to end Net Neutrality so they can charge extra fees &amp; control what we see &amp; do online.</p>
+                <h3>Team Internet is defending the web. Join us!</h3>
+                <p><strong>The Federal Communications Commission (FCC) is set on killing net neutrality rules that keep the Internet free from censorship, throttling, and extra fees.</strong> But if we show Congress a massive groundswell of support for the open Internet, *they* can stop the FCC, and prevent the passage of ISP-backed legislation that ends net neutrality forever. </p>
 
-                <p>On July 12, we helped organize the Day of Action to Save Net Neutrality to stop them. But our battle for the future of the Internet has just begun.</p>
+                <p><strong>We are a bold network of volunteers combining people power with technology to coordinate Internet users from across the nation to pressure Congress locally.</strong></p>
 
-                <p>We need to push back against threats to internet freedom at the FCC and in Congress.</p>
+                <p>By signing up, you’ll get connected to hundreds of other volunteers and organizers and receive the training and support needed to help organize net neutrality advocates to visit their local congressional offices and recruit others in their community to join them!
+                </p>
 
-                <p>So we’ve launched a bold plan to combine people power with technology to build an unstoppable volunteer network of Net Neutrality activists called #TeamInternet.</p>
+                <p><strong>The Internet has given more of us a voice than ever before. Now is the time to step up and save it.</strong></p>
 
-                <p>We provide volunteers with insider campaign updates, access to organizers, connections to like-minded volunteers and the training and support needed to take our collective activism to save Net Neutrality to the next level.</p>
-
-                <p>The open internet is the greatest tool for communication, learning and organizing in history. At a time when the government is attacking vulnerable communities, journalists and activists, we can’t afford to lose our best means of fighting back.</p>
-
-                <p>Sign up today to join a team of volunteers mobilizing millions of people to protect Net Neutrality.</p>
+                <p><strong>Sign up now to get started.</strong></p>
             </div>
         </div>
 
@@ -216,7 +268,9 @@
 
         <div class="ak-page-footer">
             <div class="ak-page-footer-contents">
-                <a href="https://events.battleforthenet.com/" class="footer-pp-logo"><img src="//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/team-internet.jpg" alt="Team Internet" /></a>
+                <a href="https://events.battleforthenet.com/" class="footer-pp-logo">
+                    <img src="//s3.us-east-2.amazonaws.com/teaminternet-map-prod/images/logobottom.png" alt="Team Internet" />
+                </a>
                 <div class="footer-fineprint">
                     <span>
                         By submitting this form, you are agreeing to receive periodic updates from Demand Progress, Fight for the Future and Free Press Action Fund.
