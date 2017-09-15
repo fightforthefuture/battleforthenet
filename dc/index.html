@@ -134,6 +134,7 @@
 			background-color: #211f29;
 			padding-bottom: 50px;
 		}
+		#petition_thank_you .buttons .btn,
 		#footer .buttons .btn {
 			font-size: 13px;
 			height: 43px;
@@ -199,6 +200,9 @@
 			border-radius: 2.5px;
 			margin-left: 5px;
 		}
+		.btn.submitted_donate {
+			background-color: #1fb69f;
+		}
 		.btn.facebook {
 			background-color: #3456a2;
 		}
@@ -210,6 +214,106 @@
 		}
 		.btn.twitter img {
 			top: 5px;
+		}
+
+		#petition_form {
+			max-width: 480px;
+			margin: 0px auto;
+		}
+		#petition_thank_you {
+			display: none;
+		}
+		#can_embed_form {
+			color: white;
+			font-family: "Open Sans", sans-serif;
+			margin-top: 20px;
+		}
+		#can_embed_form h2,
+		#can_embed_form h4,
+		#can_embed_form #action_info,
+		#can_embed_form #logo_wrap {
+			display: none;
+		}
+		#can_embed_form #form_col2 {
+			text-align: center;
+		}
+		#can_embed_form #form_col2 #d_sharing {
+			text-align: left;
+		}
+		#can_embed_form #action_welcome_message_inner {
+			margin: 10px 0;
+			padding: 10px;
+			border: 1px solid #999;
+		}
+		#can_embed_form #action_welcome_message_inner a {
+			color: #1fb69f;
+		}
+		#can_embed_form .country_wrap {
+			display: none;
+		}
+		#can_embed_form .form_builder_output li {
+			list-style-type: none;
+		}
+		#can_embed_form .form_builder_output .control-label {
+			display: block;
+			margin-bottom: 8px;
+			font-size: 16px;
+		}
+		#can_embed_form #form-first_name,
+		#can_embed_form #form-last_name,
+		#can_embed_form #form-email,
+		#can_embed_form #form-zip_code,
+		#can_embed_form #form-country,
+		#can_embed_form .form_builder_output .input-xlarge,
+		#can_embed_form .form_builder_output textarea {
+			display: block;
+			width: 100%;
+			padding: 5px 10px;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			border: none;
+			line-height: 35px;
+			font-size: 16px;
+			margin-bottom: 16px;
+			box-sizing: border-box;
+		}
+		#can_embed_form .form_builder_output .input-xlarge {
+			height: 35px;
+		}
+		#can_embed_form input[type=submit] {
+			font-size: 20px;
+			font-weight: 700;
+			text-transform: uppercase;
+			margin: 20px auto 0;
+			height: 40px;
+			line-height: 40px;
+			background-color: #1fb69f;
+			color: white;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			border: none;
+			width: 100%;
+		}
+		#can_embed_form .form_builder_output .checkbox_group_wrap label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		#can_embed_form .form_builder_output .checkbox_group_wrap input {
+			display: inline-block;
+		}
+		#can_embed_form .ajax-loading {
+			display: none;
+			margin-top: 10px;
+		}
+		#can_embed_form #d_sharing ul {
+			list-style-type: none;
+			padding-left: 0px;
+		}
+		#can_embed_form #can_thank_you,
+		#can_embed_form .can_thank_you-block {
+			display: none;
 		}
 		@media screen and (max-width: 800px) {
 			#header {
@@ -261,7 +365,7 @@
 			we're helping to cover travel costs. Are you in?</b></p>
 
 			<div class="buttons">
-				<a class="btn dc" href="https://actionnetwork.org/forms/sept-26-27-meet-with-lawmakers-in-dc-to-save-net-neutrality" target="_blank">
+				<a class="btn dc" href="#petition">
 					<img src="/images/dc/airplane_icon.png" srcset="/images/dc/airplane_icon_x2.png 2x" />
 					Come to DC
 				</a>
@@ -322,6 +426,26 @@
 			effort of constituents directly pressuring our members of Congress, who
 			have the power to stop the FCC and vote down bad legislation.</b></p>
 
+			<a id="petition"></a>
+			<h2>Sign up!</h2>
+			<p>Join us in Washington, DC for a rally at the FCC on September 26<br /> and
+			meetings with lawmakers on September 27.</p>
+
+			<div id="petition_form"></div>
+			<div id="petition_thank_you">
+				<h2>Thanks, now can you invite others?</h2>
+				<div class="buttons">
+					<a class="btn facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/dc/" target="_blank">
+						<img src="/images/dc/facebook_icon.png" srcset="/images/dc/facebook_icon_x2.png 2x" />
+						Share on Facebook
+					</a>
+					<a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Are%20you%20free%20September%2026%20-%2027%3F%20This%20is%20the%20most%20important%20thing%20you%20can%20do%20to%20help%20save%20%23NetNeutrality.%20battleforthenet.com%2Fdc" target="_blank">
+						<img src="/images/dc/twitter_icon.png" srcset="/images/dc/twitter_icon_x2.png 2x" />
+						Share on Twitter
+					</a>
+					<a class="btn submitted_donate" href="http://donate.fightforthefuture.org/" target="_blank">Donate</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -346,4 +470,18 @@
 	</div>
 
 </body>
+
+<script src="/js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function($){
+	"use strict";
+	$(document).ready(function() {
+		$(document).on("can_embed_submitted", function(evt) {
+			$("#petition_thank_you").fadeIn();
+		});
+	});
+}(jQuery));
+</script>
+<script src='https://actionnetwork.org/widgets/v2/form/sept-26-27-meet-with-lawmakers-in-dc-to-save-net-neutrality?format=js&source=widget&can_widget_id=petition_form'></script>
+
 </html>
