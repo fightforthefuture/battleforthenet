@@ -302,9 +302,10 @@
 			top: 5px;
 		}
 
-		#petition_form {
-			max-width: 480px;
-			margin: 0px auto;
+		#form_container .message {
+			font-family: "Open Sans", sans-serif;
+			color: red;
+			margin-bottom: 10px;
 		}
 		#petition_thank_you {
 			display: none;
@@ -385,7 +386,7 @@
 							<img src="/images/video/facebook_icon.png" srcset="/images/video/facebook_icon_x2.png 2x" />
 							Share on Facebook
 						</a>
-						<a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Are%20you%20free%20September%2026%20-%2027%3F%20This%20is%20the%20most%20important%20thing%20you%20can%20do%20to%20help%20save%20%23NetNeutrality.%20battleforthenet.com%2Fdc" target="_blank">
+            <a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com/video/" target="_blank">
 							<img src="/images/video/twitter_icon.png" srcset="/images/video/twitter_icon_x2.png 2x" />
 							Share on Twitter
 						</a>
@@ -448,7 +449,7 @@
 				<img src="/images/video/facebook_icon.png" srcset="/images/video/facebook_icon_x2.png 2x" />
 				Share on Facebook
 			</a>
-			<a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Are%20you%20free%20September%2026%20-%2027%3F%20This%20is%20the%20most%20important%20thing%20you%20can%20do%20to%20help%20save%20%23NetNeutrality.%20battleforthenet.com%2Fdc" target="_blank">
+      <a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com/video/" target="_blank">
 				<img src="/images/video/twitter_icon.png" srcset="/images/video/twitter_icon_x2.png 2x" />
 				Share on Twitter
 			</a>
@@ -474,29 +475,23 @@
 		$form.on("submit", function(evt) {
 			evt.preventDefault();
 			var args = $form.serialize();
-			console.log(args);
 			$form.fadeOut();
 			$loader.show();
 			$message.hide();
-			window.setTimeout(function() {
-				$thanks.fadeIn();
-				$loader.hide();
-			}, 1000);
-			/*
 			$.ajax({
 				type: $form.attr("method").toUpperCase(),
 				url: $form.attr("action"),
 				data: args,
 				dataType: "json"
 			}).done(function() {
-				window.location = "/thanks.html";
+				$thanks.fadeIn();
+				$loader.hide();
 			}).fail(function(xhr, text, err) {
 				$message.text("There was an issue submitting the form, please try again");
 				$message.show();
 				$form.show();
 				$loader.hide();
 			});
-			*/
 		});
 	}
 }(jQuery));
