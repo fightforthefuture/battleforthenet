@@ -207,7 +207,6 @@
 		}
 		#content .wrapper {
 			max-width: 840px;
-			padding: 0px 20px;
 			margin: 0px auto;
 		}
 		#video_container {
@@ -323,7 +322,7 @@
 			border-radius: 5px;
 			margin: 5px 6px;
 		}
-		@media screen and (max-width: 800px) {
+		@media screen and (max-width: 880px) {
 			#header {
 				padding-top: 20px;
 			}
@@ -341,6 +340,19 @@
 			}
 			h2 {
 				font-size: 20px;
+			}
+			#video_container {
+				max-width: 100%;
+				display: block;
+				float: none;
+				margin: 0px auto 15px;
+			}
+			#video_container iframe {
+				max-width: 100%;
+			}
+			#form_container {
+				float: none;
+				margin: 0px auto;
 			}
 		}
 		@media screen and (max-width: 600px) {
