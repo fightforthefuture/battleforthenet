@@ -43,7 +43,7 @@
 		h1 {
 			font-family: "Montserrat";
 			font-weight: 700;
-			font-size: 51px;
+			font-size: 55px;
 			color: #2fffdf;
 			background: -webkit-linear-gradient(#46baff, #6d69ff);
 			-webkit-background-clip: text;
@@ -56,7 +56,7 @@
 			font-size: 22px;
 			color: white;
 			margin: 0px;
-			padding: 40px 0;
+			padding: 0 0 30px 0;
 		}
 		h3 {
 			color: white;
@@ -161,11 +161,11 @@
 			font-family: "Open Sans", sans-serif;
 			font-size: 13px;
 			line-height: 1.2em;
-			color: #717093;
+			color: #454563;
 		}
 			.note a {
 				text-decoration: none;
-				color: #b1aedc;
+				color: #6d6a96;
 			}
 			.note a.privacy-policy-link {
 				text-decoration: underline;
@@ -200,7 +200,7 @@
 				font-size: 20px;
 			}
 		#content {
-			padding-bottom: 140px;
+			padding-bottom: 80px;
 		}
 		#content img {
 			text-align: center;
@@ -209,9 +209,23 @@
 			max-width: 840px;
 			margin: 0px auto;
 		}
+		#content .buttons {
+			margin: 75px 0 20px 0;
+		}
+		#content .buttons .btn {
+			font-size: 13px;
+			height: 43px;
+			width: 220px;
+			line-height: 43px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			margin: px 6px;
+		}
 		#video_container {
 			float: left;
 			width: 560px;
+			height: 380px;
 			padding-top: 55px;
 		}
 		#form_container {
@@ -228,21 +242,11 @@
 			text-align: center;
 		}
 		#footer {
-			background-color: #211f29;
+			background-color: #1f1e3a;
 			padding-bottom: 50px;
 		}
-		#footer .buttons .btn {
-			font-size: 13px;
-			height: 43px;
-			width: 220px;
-			line-height: 43px;
-			-webkit-border-radius: 5px;
-			-moz-border-radius: 5px;
-			border-radius: 5px;
-			margin: 5px 6px;
-		}
 		#footer .logo {
-			background-color: #17161d;
+			background-color: #2f2e4a;
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			border-radius: 5px;
@@ -261,7 +265,7 @@
 			border: none;
 			border-top: 1px solid #2b2c2e;
 			max-width: 455px;
-			margin: 40px auto;
+			margin: 5px auto 40px auto;
 		}
 		#footer p {
 			font-family: "Montserrat", sans-serif;
@@ -271,7 +275,7 @@
 			color: white;
 		}
 		#footer p a {
-			color: #858585;
+			color: #7e7ca5;
 		}
 		.btn.dc {
 			background-color: #ff6e51;
@@ -349,6 +353,9 @@
 			}
 			#video_container iframe {
 				max-width: 100%;
+				-webkit-box-shadow: 0px 25px 63px -12px rgba(5,4,10,1);
+				-moz-box-shadow: 0px 25px 63px -12px rgba(5,4,10,1);
+				box-shadow: 0px 25px 63px -12px rgba(5,4,10,1);
 			}
 			#form_container {
 				float: none;
@@ -449,22 +456,22 @@
 				</form>
 			</div>
 			<div class="spacer"></div>
+			<div class="buttons">
+				<a class="btn facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/video/" target="_blank">
+					<img src="/images/video/facebook_icon.png" srcset="/images/video/facebook_icon_x2.png 2x" />
+					Share on Facebook
+				</a>
+				<a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com/video/" target="_blank">
+					<img src="/images/video/twitter_icon.png" srcset="/images/video/twitter_icon_x2.png 2x" />
+					Share on Twitter
+				</a>
+			</div>
 		</div>
 	</div>
 
 	<div id="footer">
 		<div class="logo">
 			<img src="/images/video/fftf_logo.png" srcset="/images/video/fftf_logo_x2.png 2x" />
-		</div>
-		<div class="buttons">
-			<a class="btn facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/video/" target="_blank">
-				<img src="/images/video/facebook_icon.png" srcset="/images/video/facebook_icon_x2.png 2x" />
-				Share on Facebook
-			</a>
-      <a class="btn twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com/video/" target="_blank">
-				<img src="/images/video/twitter_icon.png" srcset="/images/video/twitter_icon_x2.png 2x" />
-				Share on Twitter
-			</a>
 		</div>
 		<hr />
 		<p>
