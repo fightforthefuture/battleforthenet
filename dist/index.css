@@ -1072,7 +1072,7 @@ template {
         display: block;
         color: #f94220; }
     .bftn-homepage .callsuccess-modal .modal-content p {
-      font-size: 14px; }
+      font-size: 16px; }
   .bftn-homepage .twitter-modal .modal-content {
     max-width: 600px;
     background-color: #171629;
@@ -1343,7 +1343,7 @@ template {
     .bftn-homepage .callsuccess-modal .modal-content h4 {
       font-size: 16px; }
     .bftn-homepage .callsuccess-modal .modal-content p {
-      font-size: 12px; }
+      font-size: 14px; }
     .bftn-homepage footer .logos {
       width: 100%;
       border: none;
