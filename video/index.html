@@ -211,7 +211,7 @@
 		}
 		#video_container {
 			float: left;
-			width: 100%;
+			width: 560px;
 			height: 315px;
 			max-width: 560px;
 			max-height: 315px;
@@ -354,18 +354,6 @@
 				width: 200px;
 			}
 		}
-		@media screen and (max-width: 560px) {
-			#video_container {
-				height: 300px;
-				max-height: 300px;
-			}
-		}
-		@media screen and (max-width: 400px) {
-			#video_container {
-				height: 250px;
-				max-height: 250px;
-			}
-		}
 		.hidden {
 			display: none;
 		}
@@ -503,6 +491,25 @@
 			});
 		});
 	}
+	var w = 560;
+	var h = 315;
+	var a = h / w;
+	function fixIframe() {
+		var wh = $(window).width();
+		if (wh > 560) {
+			$("#video_container").css({
+				width: w,
+				height: h
+			});
+		} else {
+			$("#video_container").css({
+				width: wh,
+				height: wh * a
+			});
+		}
+	}
+	$(window).on("resize", fixIframe);
+	$(document).ready(fixIframe);
 }(jQuery));
 </script>
 </html>
