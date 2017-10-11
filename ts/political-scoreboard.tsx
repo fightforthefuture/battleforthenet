@@ -156,7 +156,7 @@ function getPoliticians(): Promise<PoliticiansSet> {
 			"cable": [],
 			"internet": []
 		};
-		_.each(j.feed.entry, function(p, idx) {
+		_.each(j.feed.entry as any[], function(p, idx) {
 			var politician = parsePolitician(p, idx);
 			var team = teamMapper[politician.team];
 			if (team) {
