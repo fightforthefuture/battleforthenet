@@ -20,11 +20,12 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 					him now, and we may have only 13 days. Can you call Congress
 					right now?</em>
 				</p>
-				<div>
+				<div className="flex">
 					<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
-				</div>
-				<div>
-					<button className="btn">Call Congress</button>
+					<button className="btn">
+                      <img src="images/phone.svg" alt="Phone" />
+                      <span>Call</span>
+                    </button>
 				</div>
 				<p>
 					(We’ll connect you and provide a suggested script of what to say. { ctx.campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a>)</p>

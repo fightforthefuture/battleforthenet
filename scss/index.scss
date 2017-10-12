@@ -298,10 +298,18 @@ $GRAY_LIGHT: #b1aedc;
 			font-size: 32px;
 			margin: 0;
 		}
+        .flex {
+          display: flex;
+        }
 		input {
-			margin-bottom: 10px;
+            margin-right: 10px;
 			text-align: center;
 		}
+        .btn img {
+            max-width: 1.4rem;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
 		.disclaimer {
 			font-size: 10px;
 		}
@@ -1029,6 +1037,14 @@ $GRAY_LIGHT: #b1aedc;
 				display: none;
 			}
 		}
+        .call-action-form {
+            .flex {
+              display: block;
+            }
+            input {
+                margin: 0 0 10px 0;
+            }
+        }
 		.modal .modal-close {
 			right: 4px;
 			top: 4px;
