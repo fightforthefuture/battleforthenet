@@ -36,16 +36,13 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 
 export function CallSuccessTemplate(props:CallSuccessProps) {
 	const content_msg = `
-	I support Title II net neutrality rules and I urge you to oppose the FCC's
-	plan to repeal them. Specifically, I'd like you to oppose Ajit Pai's
-	confirmation as FCC Chair, and contact the FCC to demand that they abandon
-	their current plan.
+	I support "Title Two" net neutrality rules and I urge you to oppose the FCC's
+	plan to repeal them. Specifically, I'd like you to contact the FCC Chairman and demand he abandon his current plan.
 	`;
 	return (
 		<div>
 			<h2>Calling you now!</h2>
-			<p><em>Introduce yourself and say,</em></p>
-			<p>{ content_msg }</p>
+			<p><em>Introduce yourself, be polite, and say:</em> { content_msg }</p>
 			{ props.swap ? "" : <AfterActionFooter org={props.org} zip={props.zip} /> }
 		</div>
 	);
