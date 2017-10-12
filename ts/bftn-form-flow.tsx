@@ -8,11 +8,9 @@ import {Modal} from './modal';
 import {handleInputChange} from './utils';
 import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
+import {classes} from './utils';
 import {CallSuccess} from './call-success';
-import {CallActionCopy} from './call-action-copy';
 import {CallActionForm} from './call-action-form';
-import {PetitionCopy} from './petition-copy';
-import {PetitionForm} from './petition-form';
 import {r} from './r';
 import {Organization} from './organization';
 import {ExternalFlags} from './external-flags';
@@ -50,31 +48,11 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 
 		var onClose = () => {this.setModal(null)};
 		var modal: JSX.Element | null = null;
-		var copy: JSX.Element;
-		var form: JSX.Element;
-		switch (this.props.initialForm) {
-			case "call":
-				form = <CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
-				copy = <CallActionCopy />
-				break;
-			case "petition":
-			default:
-				form = <PetitionForm org={this.props.org} url={this.props.actionUrl} swap={this.props.swap} setModal={this.setModal.bind(this)} etsy={etsy} />;
-				copy = <PetitionCopy deadline={this.props.deadline} etsy={etsy} />
-				break;
-		}
 		switch (this.state.modal) {
 			case "loading":
 				modal = (
 					<Modal modalClass="loading-modal">
 						<LoaderLogo />
-					</Modal>
-				);
-				break;
-			case "call":
-				modal = (
-					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm org={this.props.org} header="Thanks for emailing them! Now, can you call?" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} zip={this.state.zip} isModal={true} swap={this.props.swap} />
 					</Modal>
 				);
 				break;
@@ -86,12 +64,9 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				);
 				break;
 		}
-		var className = etsy ? "etsy-form" : "";
-		className += this.props.swap ? " swap-form" : "";
 		return (
-			<div className={className}>
-				{ copy }
-				{ form }
+			<div className={classes(etsy && "etsy-form", this.props.swap && "swap-form")}>
+				<CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
 				<ReactTransitionGroup.CSSTransitionGroup
 					component="div"
 					transitionName="fadein"
