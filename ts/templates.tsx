@@ -10,7 +10,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 	return (
 		<div>
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
-				<h3>This may be your last chance to stop ISPs from #$%@'ing with your Internet.</h3>
+				<h3>This may be your last chance to stop ISPs from messing with your Internet.</h3>
 				<p>
 					FCC Chair Ajit Pai is about to break America's net neutrality
 					rules—meaning companies like Comcast & Verizon will be able to block apps,
