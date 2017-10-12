@@ -4,7 +4,8 @@ import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
 import {handleInputChange} from './utils';
 import {Organization} from './organization';
-import {AfterActionFooter} from './after-action-footer';
+
+import {CallActionFormTemplate} from './templates';
 
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
@@ -50,7 +51,7 @@ const campaigns:Campaigns = {
 };
 
 
-interface Props {
+export interface CallActionFormProps {
 	org: Organization
 	header: string
 	campaignId: string
@@ -61,15 +62,23 @@ interface Props {
 }
 
 
-interface State {
+export interface CallActionFormState {
 	input_phone: string | string[] | undefined
 	error: boolean
 }
 
 
-export class CallActionForm extends React.Component<Props, State> {
+export interface CallActionFormContext {
+	bindRef: any
+	onSubmit: any
+	onChange: any
+	campaign: CampaignSpec
+}
+
+
+export class CallActionForm extends React.Component<CallActionFormProps, CallActionFormState> {
 	formElement: HTMLElement | null
-	constructor(props: Props) {
+	constructor(props: CallActionFormProps) {
 		super(props);
 		this.state = {
 			input_phone: "",
@@ -101,11 +110,11 @@ export class CallActionForm extends React.Component<Props, State> {
 		if (phone === false) {
 			this.setState({
 				error: true
-			} as State);
+			} as CallActionFormState);
 		} else {
 			this.setState({
 				error: false
-			} as State);
+			} as CallActionFormState);
 			this.props.setModal("loading");
 			var campaign = this.getCampaign(this.props.campaignId);
 			var data = {
@@ -128,26 +137,13 @@ export class CallActionForm extends React.Component<Props, State> {
 	}
 	render() {
 		var campaign = this.getCampaign(this.props.campaignId);
-		const { swap, isModal, org } = this.props;
 
-		return (
-			<div>
-				<form className="bftn-form call-action-form" ref={(form) => {this.formElement = form; }} onSubmit={this.onSubmit.bind(this)}>
-					<h3>{ this.props.header }</h3>
-					<p>
-						Enter your number and we'll connect you to Congress and the FCC.<br />
-						(We'll also give you suggestions on what to say)
-					</p>
-					<div>
-						<input className={this.state.error? "error": ""} name="input_phone" type="tel" placeholder="Enter your phone #" value={this.state.input_phone} onChange={handleInputChange.bind(this)} />
-					</div>
-					<div>
-						<button className="btn">Call Congress</button>
-					</div>
-					<p className="disclaimer">{ campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a></p>
-				</form>
-				{ swap || !isModal ? "" : <AfterActionFooter org={org} zip={this.props.zip} /> }
-			</div>
-		);
+		var ctx = {
+			bindRef: (form:HTMLElement) => {this.formElement = form; },
+			onSubmit: this.onSubmit.bind(this),
+			onChange: handleInputChange.bind(this),
+			campaign: campaign
+		};
+		return CallActionFormTemplate(this.props, this.state, ctx);
 	}
 }
