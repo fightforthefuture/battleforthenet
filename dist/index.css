@@ -595,9 +595,15 @@ template {
     .bftn-homepage .call-action-form h3 {
       font-size: 32px;
       margin: 0; }
+    .bftn-homepage .call-action-form .flex {
+      display: flex; }
     .bftn-homepage .call-action-form input {
-      margin-bottom: 10px;
+      margin-right: 10px;
       text-align: center; }
+    .bftn-homepage .call-action-form .btn img {
+      max-width: 1.4rem;
+      margin-right: 0.4rem;
+      vertical-align: middle; }
     .bftn-homepage .call-action-form .disclaimer {
       font-size: 10px; }
   .bftn-homepage .participants ul {
@@ -1040,7 +1046,11 @@ template {
     .bftn-homepage .modal #after-action-footer button img {
       max-width: 1rem;
       max-height: 1rem;
-      margin-right: 0.5rem; }
+      margin: 0 0.5rem 0.1rem 0; }
+    .bftn-homepage .modal #after-action-footer button.facebook img, .bftn-homepage .modal #after-action-footer button.twitter img {
+      max-width: 1.5rem;
+      max-height: 1.5rem;
+      margin-right: 0.2rem; }
     .bftn-homepage .modal #after-action-footer button.facebook {
       background-color: #2b48a7;
       border: none; }
@@ -1331,6 +1341,10 @@ template {
         clear: left; }
       .bftn-homepage .petition-form .arrow {
         display: none; }
+    .bftn-homepage .call-action-form .flex {
+      display: block; }
+    .bftn-homepage .call-action-form input {
+      margin: 0 0 10px 0; }
     .bftn-homepage .modal .modal-close {
       right: 4px;
       top: 4px; }
