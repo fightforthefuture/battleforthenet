@@ -20,14 +20,24 @@ export class AfterActionFooter extends React.Component<Props, State> {
 
     return (
       <div id="after-action-footer">
-        <h3>Other ways to help us win...</h3>
+        <h3>Done calling? Help drive more calls!</h3>
         <ul>
           <li>
-            <a id="protest" href={protestLink} target="_blank">
-              <button className="protest">
+            <a id="facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/" target="_blank">
+              <button className="facebook">
                 <div>
-                  <img src="images/pin.svg" />
-                  <span>Protest</span>
+                  <img src="/images/share/facebook_white.svg" />
+                  <span>Share</span>
+                </div>
+              </button>
+            </a>
+          </li>
+          <li>
+            <a id="twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com" target="_blank">
+              <button className="twitter">
+                <div>
+                  <img src="/images/share/twitter_white.svg" />
+                  <span>Tweet</span>
                 </div>
               </button>
             </a>
@@ -38,16 +48,6 @@ export class AfterActionFooter extends React.Component<Props, State> {
                 <div>
                   <img src="/images/heart.svg" />
                   <span>Donate</span>
-                </div>
-              </button>
-            </a>
-          </li>
-          <li>
-            <a id='video-link' href={videoLink} target="_blank">
-              <button className="video">
-                <div>
-                  <img src="/images/video.svg" />
-                  <span>Send a Video</span>
                 </div>
               </button>
             </a>

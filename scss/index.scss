@@ -849,10 +849,18 @@ $GRAY_LIGHT: #b1aedc;
 		  cursor: pointer;
 		}
 
-		#after-action-footer button img {
-		  max-width: 1rem;
-		  max-height: 1rem;
-		  margin-right: 0.5rem;
+		#after-action-footer button {
+          img {
+            max-width: 1rem;
+            max-height: 1rem;
+            margin: 0 0.5rem 0.1rem 0;
+          }
+
+          &.facebook img, &.twitter img {
+            max-width: 1.5rem;
+            max-height: 1.5rem;
+            margin-right: 0.2rem;
+          }
 		}
 
 		#after-action-footer button.facebook {
