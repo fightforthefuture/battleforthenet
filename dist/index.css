@@ -401,7 +401,7 @@ template {
   .bftn-homepage h1, .bftn-homepage h2, .bftn-homepage h3 {
     font-family: Montserrat, sans-serif;
     font-weight: bold;
-    background: -webkit-linear-gradient(#46baff, #6d69ff);
+    background: -webkit-linear-gradient(#fd4935, #fd6d5a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #279cff; }
@@ -669,7 +669,7 @@ template {
       display: block;
       height: 6px;
       width: 18px;
-      background-color: #46baff;
+      background-color: #fd4935;
       border-radius: 3px; }
     .bftn-homepage .loader .chord-a {
       transform: rotate(0deg); }
