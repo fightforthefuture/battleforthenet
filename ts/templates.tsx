@@ -10,15 +10,13 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 	return (
 		<div>
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
-				<h3>This may be your last chance to stop ISPs from messing with your Internet.</h3>
+				<h3>This could be your last chance to stop ISPs from messing up your Internet.</h3>
 				<p>
-					FCC Chair Ajit Pai is about to break America's net neutrality
+					FCC Chair Ajit Pai is about to announce a vote to slash America's net neutrality
 					rules—meaning companies like Comcast & Verizon will be able to block apps,
-					slow websites, and charge fees to control what you see & do online.
+					slow websites, and charge fees to control what you see & do online. Once Pai announces the vote, the situation becomes desperate.
 					{" "}
-					<em>This is utter garbage, but only Congress can stop
-					him. Can you call Congress
-					now?</em>
+					<em>But if we flood Congress with phone calls right now, they can stop the vote.</em>
 				</p>
 				<div className="flex">
 					<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
