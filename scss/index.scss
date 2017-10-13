@@ -1118,6 +1118,12 @@ $GRAY_LIGHT: #b1aedc;
 			width: 600px;
 			margin: 0px auto;
 		}
+
+		.bftn-homepage .hero .call-action-form h3 {
+    		font-size: 40px;
+    		margin-bottom: 0;
+    		margin-bottom: 30px;
+		}
 	}
 	@media screen and (max-width: 600px) {
 		.the-problem {
@@ -1139,6 +1145,12 @@ $GRAY_LIGHT: #b1aedc;
 				line-height: 1.4em;
 			}
 		}
+
+		.bftn-homepage .hero .call-action-form h3 {
+    		font-size: 32px;
+    		margin-bottom: 0;
+    		margin-bottom: 20px;
+		}
 	}
 	@media screen and (max-width: 500px) {
 		.twitter-modal .modal-content {
@@ -1158,6 +1170,12 @@ $GRAY_LIGHT: #b1aedc;
 					top: -2px;
 				}
 			}
+
+			.bftn-homepage .hero .call-action-form h3 {
+    		font-size: 26px;
+    		margin-bottom: 0;
+    		margin-bottom: 20px;
+		}
 		}
 		.persistent-button {
 			width: 100%;
