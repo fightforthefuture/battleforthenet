@@ -17,8 +17,8 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 					slow websites, and charge fees to control what you see & do online.
 					{" "}
 					<em>This is utter garbage, but only Congress can stop
-					him now, and we may have only 13 days. Can you call Congress
-					right now?</em>
+					him. Can you call Congress
+					now?</em>
 				</p>
 				<div className="flex">
 					<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
