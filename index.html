@@ -228,7 +228,7 @@
     </footer>
 
     <div id="persistent-button">
-      <a href="#" class="btn">Send Letter</a>
+      <a href="#" class="btn">Call Congress</a>
     </div>
 
     <div id="twitter-modal-container"></div>
@@ -252,7 +252,7 @@
 
         var initialForm = externalFlags.has('call') ? 'call' : 'action';
         var campaign = externalFlags.get('campaign', 'fftf');
-        var persistentButtonText = externalFlags.has('call') ? 'Call Congress' : "Send Letter";
+        var persistentButtonText = 'Call Congress';
 
         mountComponent(
           React.createElement(TwitterBrigade, {
