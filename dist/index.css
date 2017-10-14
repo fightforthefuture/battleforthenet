@@ -718,7 +718,6 @@ template {
       border-bottom: 2px solid #393558;
       text-align: center; }
       .bftn-homepage footer .logos a {
-        display: inline-block;
         line-height: 62px; }
       .bftn-homepage footer .logos .fftf {
         margin-right: 40px;
@@ -936,14 +935,13 @@ template {
     position: relative;
     top: -14px; }
   .bftn-homepage .persistent-button {
-    width: 350px;
     position: fixed;
     bottom: -85px;
     right: 25px;
     transition: bottom 0.2s ease-in; }
     .bftn-homepage .persistent-button a.btn {
       font-size: 40px;
-      padding: 15px 0;
+      padding: 15px;
       box-shadow: 5px 5px 35px black;
       transition: box-shadow 0.3s ease-in; }
     .bftn-homepage .persistent-button a.btn:hover {
