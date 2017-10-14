@@ -935,6 +935,7 @@ template {
     position: relative;
     top: -14px; }
   .bftn-homepage .persistent-button {
+    min-width: 28rem;
     position: fixed;
     bottom: -85px;
     right: 25px;
@@ -944,6 +945,10 @@ template {
       padding: 15px;
       box-shadow: 5px 5px 35px black;
       transition: box-shadow 0.3s ease-in; }
+      .bftn-homepage .persistent-button a.btn img {
+        max-width: 3rem;
+        margin-right: 1rem;
+        vertical-align: bottom; }
     .bftn-homepage .persistent-button a.btn:hover {
       box-shadow: 10px 10px 35px black; }
   .bftn-homepage .toggle-true .persistent-button {
@@ -1411,12 +1416,15 @@ template {
       font-size: 12px;
       top: -2px; }
     .bftn-homepage .persistent-button {
+      min-width: 100%;
       width: 100%;
       right: 0; }
       .bftn-homepage .persistent-button a.btn {
         border-radius: 0;
         font-size: 20px;
         padding: 10px 0; }
+        .bftn-homepage .persistent-button a.btn img {
+          max-width: 1.5rem; }
     .bftn-homepage .toggle-true .persistent-button {
       bottom: 0; } }
   @media screen and (max-width: 370px) {
