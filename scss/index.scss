@@ -712,14 +712,13 @@ $GRAY_LIGHT: #b1aedc;
 		}
 	}
 	.persistent-button {
-		width: 350px;
 		position: fixed;
 		bottom: -85px;
 		right: 25px;
 		transition: bottom 0.2s ease-in;
 		a.btn {
 			font-size: 40px;
-			padding: 15px 0;
+			padding: 15px;
 			box-shadow: 5px 5px 35px rgba(0, 0, 0, 1.0);
 			transition: box-shadow 0.3s ease-in;
 		}
