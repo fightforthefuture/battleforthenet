@@ -712,6 +712,7 @@ $GRAY_LIGHT: #b1aedc;
 		}
 	}
 	.persistent-button {
+        min-width: 28rem;
 		position: fixed;
 		bottom: -85px;
 		right: 25px;
@@ -721,6 +722,12 @@ $GRAY_LIGHT: #b1aedc;
 			padding: 15px;
 			box-shadow: 5px 5px 35px rgba(0, 0, 0, 1.0);
 			transition: box-shadow 0.3s ease-in;
+
+            img {
+              max-width: 3rem;
+              margin-right: 1rem;
+              vertical-align: bottom;
+            }
 		}
 		a.btn:hover {
 			box-shadow: 10px 10px 35px rgba(0, 0, 0, 1.0);
@@ -1160,12 +1167,17 @@ $GRAY_LIGHT: #b1aedc;
 
 		}
 		.persistent-button {
+            min-width: 100%;
 			width: 100%;
 			right: 0;
 			a.btn {
 				border-radius: 0;
 				font-size: 20px;
 				padding: 10px 0;
+
+                img {
+                  max-width: 1.5rem;
+                }
 			}
 		}
 		.toggle-true .persistent-button {
