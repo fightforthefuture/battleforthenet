@@ -44649,7 +44649,9 @@ var PersistentButton = (function (_super) {
     PersistentButton.prototype.render = function () {
         return React.createElement("div", { className: "toggle-" + (this.state.toggle ? "true" : "false") },
             React.createElement("div", { className: "persistent-button" },
-                React.createElement("a", { className: "btn", href: "#bftn-action-form" }, this.props.text)));
+                React.createElement("a", { className: "btn", href: "#bftn-action-form" },
+                    React.createElement("img", { src: "/images/phone.svg", alt: "Phone" }),
+                    React.createElement("span", null, this.props.text))));
     };
     return PersistentButton;
 }(React.Component));
