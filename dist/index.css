@@ -526,6 +526,8 @@ template {
       .bftn-homepage .hero .call-action-form h3 {
         font-size: 40px;
         margin-bottom: 0; }
+      .bftn-homepage .hero .call-action-form p {
+        margin-bottom: 30px; }
   .bftn-homepage .form-error {
     font-size: 11px;
     color: #f94220; }
