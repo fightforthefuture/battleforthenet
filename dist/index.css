@@ -524,7 +524,7 @@ template {
     .bftn-homepage .hero .call-action-form {
       text-align: center; }
       .bftn-homepage .hero .call-action-form h3 {
-        font-size: 40px;
+        font-size: 55px;
         margin-bottom: 0; }
       .bftn-homepage .hero .call-action-form p {
         margin-bottom: 30px; }
@@ -975,6 +975,8 @@ template {
         max-width: 3rem;
         margin-right: 1rem;
         vertical-align: bottom; }
+    .bftn-homepage .persistent-button a.btn {
+      width: 100%; }
     .bftn-homepage .persistent-button a.btn:hover {
       box-shadow: 10px 10px 35px black; }
   .bftn-homepage .toggle-true .persistent-button {
@@ -986,7 +988,7 @@ template {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     display: block;
-    width: 100%;
+    width: 50%;
     padding: 10px;
     font-size: 20px;
     border-radius: 4px;
@@ -1416,7 +1418,14 @@ template {
       margin-bottom: 20px; }
     .bftn-homepage .the-problem {
       width: 600px;
-      margin: 0px auto; } }
+      margin: 0px auto; }
+    .bftn-homepage button.btn, .bftn-homepage a.btn {
+      width: 50%; }
+    .bftn-homepage .hero .call-action-form h3 {
+      font-size: 40px; } }
+  @media screen and (max-width: 800px) {
+    .bftn-homepage button.btn, .bftn-homepage a.btn {
+      width: 100%; } }
   @media screen and (max-width: 600px) {
     .bftn-homepage .the-problem {
       width: auto;
@@ -1429,7 +1438,11 @@ template {
       font-size: 25px; }
     .bftn-homepage .twitter-modal .modal-content p {
       font-size: 16px;
-      line-height: 1.4em; } }
+      line-height: 1.4em; }
+    .bftn-homepage button.btn, .bftn-homepage a.btn {
+      width: 100%; }
+    .bftn-homepage .hero .call-action-form h3 {
+      font-size: 36px; } }
   @media screen and (max-width: 500px) {
     .bftn-homepage .twitter-modal .modal-content h2 {
       font-size: 20px; }
@@ -1441,6 +1454,8 @@ template {
     .bftn-homepage .twitter-modal .modal-content .btn span {
       font-size: 12px;
       top: -2px; }
+    .bftn-homepage .twitter-modal .modal-content button.btn, .bftn-homepage .twitter-modal .modal-content a.btn {
+      width: 100%; }
     .bftn-homepage .persistent-button {
       min-width: 100%;
       width: 100%;
@@ -1452,7 +1467,9 @@ template {
         .bftn-homepage .persistent-button a.btn img {
           max-width: 1.5rem; }
     .bftn-homepage .toggle-true .persistent-button {
-      bottom: 0; } }
+      bottom: 0; }
+    .bftn-homepage .hero .call-action-form h3 {
+      font-size: 26px; } }
   @media screen and (max-width: 370px) {
     .bftn-homepage footer .built-by {
       width: auto; } }
