@@ -765,9 +765,16 @@ $GRAY_LIGHT: #b1aedc;
               vertical-align: bottom;
             }
 		}
+
+		a.btn{
+			width:100%;
+		}
+
 		a.btn:hover {
 			box-shadow: 10px 10px 35px rgba(0, 0, 0, 1.0);
 		}
+
+
 	}
 	.toggle-true .persistent-button {
 		bottom: 25px;
@@ -780,7 +787,7 @@ $GRAY_LIGHT: #b1aedc;
 		font-family: "Montserrat", sans-serif;
 		font-weight: bold;
 		display: block;
-		width: 100%;
+		width: 50%;
 		padding: 10px;
 		font-size: 20px;
 		border-radius: 4px;
@@ -1159,6 +1166,10 @@ $GRAY_LIGHT: #b1aedc;
 			width: 600px;
 			margin: 0px auto;
 		}
+
+		button.btn, a.btn {
+			width:100%;
+		}
 	}
 	@media screen and (max-width: 600px) {
 		.the-problem {
@@ -1180,6 +1191,9 @@ $GRAY_LIGHT: #b1aedc;
 				line-height: 1.4em;
 			}
 		}
+		button.btn, a.btn {
+			width:100%;
+		}
 
 	}
 	@media screen and (max-width: 500px) {
@@ -1200,6 +1214,10 @@ $GRAY_LIGHT: #b1aedc;
 					top: -2px;
 				}
 			}
+
+			button.btn, a.btn {
+			width:100%;
+		}
 
 		}
 		.persistent-button {
