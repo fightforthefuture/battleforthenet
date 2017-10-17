@@ -77,6 +77,22 @@ $GRAY_LIGHT: #b1aedc;
 		}
 	}
 
+    pre {
+      margin: 1rem auto;
+      padding: 1rem;
+      background-color: $WHITE;
+      color: $BODY_BGCOLOR;
+      border-radius: 0.2rem;
+
+      & ::-moz-selection {
+        background: $GRAY_LIGHT;
+      }
+
+      & ::selection {
+        background: $GRAY_LIGHT;
+      }
+    }
+
 	.opt-in input {
 		width: initial;
 	}
@@ -114,6 +130,26 @@ $GRAY_LIGHT: #b1aedc;
 			}
 		}
 	}
+
+    .join ul {
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      li {
+        min-width: 400px;
+        max-width: 400px;
+        padding: 1rem;
+        flex: 1;
+
+        img {
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
 
 	.stats {
 		text-align: center;
