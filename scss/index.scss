@@ -208,7 +208,7 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.call-action-form {
 			h3 {
-				font-size: 40px;
+				font-size: 55px;
 				margin-bottom: 0;
 			}
 			text-align: center;
@@ -1170,6 +1170,12 @@ $GRAY_LIGHT: #b1aedc;
 		button.btn, a.btn {
 			width:100%;
 		}
+
+		.hero .call-action-form h3 {
+			font-size: 40px;
+		}
+
+
 	}
 	@media screen and (max-width: 600px) {
 		.the-problem {
@@ -1194,6 +1200,12 @@ $GRAY_LIGHT: #b1aedc;
 		button.btn, a.btn {
 			width:100%;
 		}
+
+		.hero .call-action-form h3 {
+			font-size: 36px;
+		}
+			
+
 
 	}
 	@media screen and (max-width: 500px) {
@@ -1236,6 +1248,10 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.toggle-true .persistent-button {
 			bottom: 0;
+		}
+
+				.hero .call-action-form h3 {
+			font-size: 26px;
 		}
 	}
 	@media screen and (max-width: 370px) {
