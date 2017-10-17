@@ -434,6 +434,16 @@ template {
     padding: 15px 10px; }
     .bftn-homepage input.error {
       border: 1px solid red; }
+  .bftn-homepage pre {
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #CCCAEA;
+    color: #171629;
+    border-radius: 0.2rem; }
+    .bftn-homepage pre ::-moz-selection {
+      background: #b1aedc; }
+    .bftn-homepage pre ::selection {
+      background: #b1aedc; }
   .bftn-homepage .opt-in input {
     width: initial; }
   .bftn-homepage .unit {
@@ -460,6 +470,20 @@ template {
     .bftn-homepage .unit dl dd {
       margin: 2px 0 10px;
       color: #46c9ff; }
+  .bftn-homepage .join ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .bftn-homepage .join ul li {
+      min-width: 400px;
+      max-width: 400px;
+      padding: 1rem;
+      flex: 1; }
+      .bftn-homepage .join ul li img {
+        max-width: 100%;
+        object-fit: contain; }
   .bftn-homepage .stats {
     text-align: center;
     background-color: #111120;
