@@ -1061,6 +1061,9 @@ $GRAY_LIGHT: #b1aedc;
 		h2 {
 			font-size: 24px;
 		}
+
+
+
 		.stats {
 			padding: 5px 0;
 			line-height: 1.2em;
@@ -1172,7 +1175,7 @@ $GRAY_LIGHT: #b1aedc;
 		}
 
 		button.btn, a.btn {
-			width:100%;
+			width: 50%;
 		}
 
 		.hero .call-action-form h3 {
@@ -1181,6 +1184,15 @@ $GRAY_LIGHT: #b1aedc;
 
 
 	}
+
+	@media screen and (max-width: 800px) {
+
+		button.btn, a.btn {
+			width: 100%;
+		}
+
+	}
+
 	@media screen and (max-width: 600px) {
 		.the-problem {
 			width: auto;
