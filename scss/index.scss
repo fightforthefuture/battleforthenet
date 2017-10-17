@@ -139,9 +139,13 @@ $GRAY_LIGHT: #b1aedc;
       justify-content: space-around;
 
       li {
+        margin: 1rem 0;
+        padding: 0 1rem;
+      }
+
+      &.modals li {
         min-width: 400px;
         max-width: 400px;
-        padding: 1rem;
         flex: 1;
 
         img {
