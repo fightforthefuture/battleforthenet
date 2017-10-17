@@ -17,6 +17,7 @@ import {GoogleAnalytics} from './google-analytics';
 import {TwitterBrigade} from './twitter-brigade';
 import {PoliticalScoreboard} from './political-scoreboard';
 import {getOrganization} from './organization';
+import {Leaderboard} from './leaderboard';
 
 declare var window: any;
 
@@ -37,4 +38,5 @@ window['ExternalFlags'] = ExternalFlags;
 window['GoogleAnalytics'] = GoogleAnalytics;
 window['TwitterBrigade'] = TwitterBrigade;
 window['PoliticalScoreboard'] = PoliticalScoreboard;
+window['Leaderboard'] = Leaderboard;
 window['getOrganization'] = getOrganization;

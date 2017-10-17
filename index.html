@@ -53,6 +53,11 @@
     </div>
 
     <div class="unit">
+      <h2>Who's driving the most calls</h2>
+      <div id="leaderboard"></div>
+    </div>
+
+    <div class="unit">
       <h2>What <i>is</i> net neutrality? Why does it matter?</h2>
     </div>
 
@@ -284,6 +289,16 @@
             enabled: externalFlags.has('twitter_modal')
           }),
           document.getElementById('twitter-modal-container')
+        );
+
+        mountComponent(
+          React.createElement(Leaderboard, {
+            statsEndpoint: "https://call-congress.fightforthefuture.org/api/campaign/1/count.json",
+            filterCodes: ["null"],
+            filterPattern: /^fftf/i,
+            n: 10
+          }),
+          document.getElementById('leaderboard')
         );
 
         mountComponent(
