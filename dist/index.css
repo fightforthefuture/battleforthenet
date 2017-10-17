@@ -477,11 +477,13 @@ template {
     flex-wrap: wrap;
     justify-content: space-around; }
     .bftn-homepage .join ul li {
+      margin: 1rem 0;
+      padding: 0 1rem; }
+    .bftn-homepage .join ul.modals li {
       min-width: 400px;
       max-width: 400px;
-      padding: 1rem;
       flex: 1; }
-      .bftn-homepage .join ul li img {
+      .bftn-homepage .join ul.modals li img {
         max-width: 100%;
         object-fit: contain; }
   .bftn-homepage .stats {
