@@ -1,6 +1,8 @@
 import * as React from 'react';
+import * as _ from 'lodash';
 
 import {CallActionFormProps, CallActionFormState, CallActionFormContext} from './call-action-form';
+import {LeaderboardProps, LeaderboardState, LeaderboardReferrer} from './leaderboard';
 import {CallSuccessProps} from './call-success';
 import {AfterActionFooter} from './after-action-footer';
 import {classes} from './utils';
@@ -21,12 +23,13 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 				<div className="flex">
 					<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
 					<button className="btn">
-                      <img src="images/phone.svg" alt="Phone" />
-                      <span>Call</span>
-                    </button>
+						<img src="images/phone.svg" alt="Phone" />
+						<span>Call</span>
+					</button>
 				</div>
 				<p>
-					(We’ll connect you and provide a suggested script of what to say. { ctx.campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a>)</p>
+					(We’ll connect you and provide a suggested script of what to say. { ctx.campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a>)
+				</p>
 			</form>
 		</div>
 	);
@@ -45,4 +48,41 @@ export function CallSuccessTemplate(props:CallSuccessProps) {
 			{ props.swap ? "" : <AfterActionFooter org={props.org} zip={props.zip} /> }
 		</div>
 	);
+};
+
+
+function LeaderboardReferrer(referrer:LeaderboardReferrer) {
+	return (
+		<li key={referrer.code} >
+			{ referrer.code } : { referrer.n }
+		</li>
+	);
+}
+
+export function LeaderboardTemplate(props:LeaderboardProps, state:LeaderboardState) {
+	var stats = state.leaderboardStats;
+	if (stats) {
+		return (
+			<div>
+				<div className="leaderboard-total">
+					{ stats.completed }
+				</div>
+				<div className="leaderboard-week">
+					{ stats.last_week }
+				</div>
+				<div className="leaderboard-day">
+					{ stats.last_day }
+				</div>
+				<div className="leaderboard-top">
+					<ul>
+						{_.map( stats.top_referrers, LeaderboardReferrer)}
+					</ul>
+				</div>
+			</div>
+		)
+	} else {
+		return (
+			<div></div>
+		);
+	}
 };
