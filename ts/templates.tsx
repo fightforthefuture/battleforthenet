@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as _ from 'lodash';
 
 import {CallActionFormProps, CallActionFormState, CallActionFormContext} from './call-action-form';
-import {LeaderboardProps, LeaderboardState, LeaderboardReferrer} from './leaderboard';
+import {LeaderboardProps, LeaderboardState, LeaderboardContext, LeaderboardReferrer} from './leaderboard';
 import {CallSuccessProps} from './call-success';
 import {AfterActionFooter} from './after-action-footer';
 import {classes} from './utils';
@@ -54,29 +54,36 @@ export function CallSuccessTemplate(props:CallSuccessProps) {
 function LeaderboardReferrer(referrer:LeaderboardReferrer) {
 	return (
 		<li key={referrer.code} >
-			{ referrer.code } : { referrer.n }
+			{ referrer.code } ({ referrer.n.toLocaleString() })
 		</li>
 	);
 }
 
-export function LeaderboardTemplate(props:LeaderboardProps, state:LeaderboardState) {
+export function LeaderboardTemplate(props:LeaderboardProps, state:LeaderboardState, ctx:LeaderboardContext) {
 	var stats = state.leaderboardStats;
 	if (stats) {
 		return (
 			<div>
 				<div className="leaderboard-total">
-					{ stats.completed }
+					<h4><span>Total Calls</span></h4>
+					<p>{ stats.completed.toLocaleString() }</p>
 				</div>
 				<div className="leaderboard-week">
-					{ stats.last_week }
+					<h4><span>This week</span></h4>
+					<p>{ stats.last_week.toLocaleString() }</p>
 				</div>
 				<div className="leaderboard-day">
-					{ stats.last_day }
+					<h4><span>Today</span></h4>
+					<p>{ stats.last_day.toLocaleString() }</p>
 				</div>
-				<div className="leaderboard-top">
+				<div className={ classes("leaderboard-top", state.open && "open") }>
+					<h4><span>Top Sites</span></h4>
 					<ul>
 						{_.map( stats.top_referrers, LeaderboardReferrer)}
 					</ul>
+					<div className="leaderboard-open" onClick={ctx.onOpen}>
+						<span>&#x25BC; Show More</span>
+					</div>
 				</div>
 			</div>
 		)

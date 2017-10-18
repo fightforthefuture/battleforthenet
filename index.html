@@ -294,9 +294,9 @@
         mountComponent(
           React.createElement(Leaderboard, {
             statsEndpoint: "https://call-congress.fightforthefuture.org/api/campaign/1/count.json",
-            filterCodes: ["null"],
-            filterPattern: /^fftf/i,
-            n: 10
+            filterCodes: [/^fftf/i, /^null$/, /^\s*$/],
+            showMoreAt: 7,
+            limit: 40
           }),
           document.getElementById('leaderboard')
         );
