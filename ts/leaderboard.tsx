@@ -21,13 +21,18 @@ interface LeaderboardStats {
 
 export interface LeaderboardProps {
 	statsEndpoint: string
-	filterCodes: string[]
-	filterPattern: RegExp
-	n: number
+	filterCodes: RegExp[]
+	showMoreAt: number
+	limit: number
 }
 
 export interface LeaderboardState {
 	leaderboardStats: LeaderboardStats | null
+	open: boolean
+}
+
+export interface LeaderboardContext {
+	onOpen: any
 }
 
 
@@ -45,10 +50,9 @@ function getLeaderboardStats(props:LeaderboardProps): Promise<LeaderboardStats> 
 	}).then(function(j: any) {
 		var pairs = _.toPairs(j["referral_codes"]);
 		var filtered = _.filter(pairs, function(v) {
-			return (
-				(_.indexOf(props.filterCodes, v[0]) !== 0) &&
-				(!props.filterPattern.test(v[0]))
-			); 
+			return _.every(props.filterCodes, function(re) {
+				return !re.test(v[0]);
+			});
 		});
 		var referrers = _.map(filtered, function(v) {
 			return {
@@ -56,12 +60,12 @@ function getLeaderboardStats(props:LeaderboardProps): Promise<LeaderboardStats> 
 				n: v[1]
 			} as LeaderboardReferrer;
 		});
-		var sorted = _.sortBy(referrers, ["n"]);
+		var sorted = _.orderBy(referrers, ["n"], ["desc"]);
 		return {
 			"completed": j["completed"],
 			"last_day": j["last_24h"],
 			"last_week": j["last_week"],
-			"top_referrers": _.take(sorted, props.n)
+			"top_referrers": _.take(sorted, props.limit)
 		};
 	});
 }
@@ -71,17 +75,27 @@ export class Leaderboard extends React.Component<LeaderboardProps, LeaderboardSt
 	constructor(props: LeaderboardProps) {
 		super(props);
 		this.state = {
-			"leaderboardStats": null
+			"leaderboardStats": null,
+			"open": false
 		};
 	}
 	componentDidMount() {
 		getLeaderboardStats(this.props).then((leaderboardStats:LeaderboardStats) => {
 			this.setState({
-				leaderboardStats: leaderboardStats
+				leaderboardStats: leaderboardStats,
+				open: !(leaderboardStats.top_referrers.length > this.props.showMoreAt)
 			} as LeaderboardState);
 		});
 	}
+	onOpen() {
+		this.setState({
+			open: true
+		} as LeaderboardState);
+	}
 	render() {
-		return LeaderboardTemplate(this.props, this.state);
+		var ctx = {
+			onOpen: this.onOpen.bind(this)
+		};
+		return LeaderboardTemplate(this.props, this.state, ctx);
 	}
 }
