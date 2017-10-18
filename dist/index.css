@@ -1337,6 +1337,70 @@ template {
         margin-top: 40px; }
       .bftn-homepage .political-scoreboard .carousel .carousel-item {
         transition: left 0.1s ease-in, opacity 0.1s ease-in; }
+  .bftn-homepage #leaderboard h4 {
+    font-size: 30px;
+    color: #CCCAEA;
+    margin: 0px;
+    font-weight: normal; }
+    .bftn-homepage #leaderboard h4 span {
+      display: inline-block;
+      border-bottom: 3px solid #CCCAEA;
+      padding: 0px 10px; }
+  .bftn-homepage #leaderboard .leaderboard-total,
+  .bftn-homepage #leaderboard .leaderboard-week,
+  .bftn-homepage #leaderboard .leaderboard-day {
+    float: left;
+    width: 33%;
+    text-align: center; }
+    .bftn-homepage #leaderboard .leaderboard-total p,
+    .bftn-homepage #leaderboard .leaderboard-week p,
+    .bftn-homepage #leaderboard .leaderboard-day p {
+      color: #FFF;
+      font-size: 36px;
+      margin-top: 0px;
+      width: auto;
+      font-weight: bold; }
+  .bftn-homepage #leaderboard .leaderboard-top {
+    clear: both;
+    text-align: center;
+    margin-bottom: 8em;
+    position: relative; }
+    .bftn-homepage #leaderboard .leaderboard-top h4 {
+      font-size: 45px;
+      margin-bottom: 15px; }
+    .bftn-homepage #leaderboard .leaderboard-top ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px; }
+      .bftn-homepage #leaderboard .leaderboard-top ul li {
+        color: #FFF;
+        font-size: 20px;
+        margin: 7px 0; }
+    .bftn-homepage #leaderboard .leaderboard-top ul {
+      max-height: 215px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in; }
+    .bftn-homepage #leaderboard .leaderboard-top .leaderboard-open {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 215px;
+      background: linear-gradient(0deg, #171629, rgba(23, 22, 41, 0));
+      opacity: 1.0;
+      transition: opacity 0.5s ease-in; }
+      .bftn-homepage #leaderboard .leaderboard-top .leaderboard-open span {
+        cursor: pointer;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%; }
+        .bftn-homepage #leaderboard .leaderboard-top .leaderboard-open span:hover {
+          color: #FFF; }
+  .bftn-homepage #leaderboard .leaderboard-top.open ul {
+    max-height: 9000px; }
+  .bftn-homepage #leaderboard .leaderboard-top.open .leaderboard-open {
+    opacity: 0; }
   @media screen and (max-width: 800px) {
     .bftn-homepage .unit {
       width: 90%; }
