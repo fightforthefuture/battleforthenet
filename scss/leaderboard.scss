@@ -5,11 +5,13 @@
 		margin: 0px;
 		font-weight: normal;
 		span {
-			display: inline-block;
-			border-bottom: 3px solid $WHITE;
-			padding: 0px 10px;
+				display: inline-block;
+	    		border-bottom: 1px solid #2d2a4e;
+	    		padding: 0px 10px;
+	    		padding-bottom: 9px;
 		}
 	}
+
 	.leaderboard-total,
 	.leaderboard-week,
 	.leaderboard-day {
@@ -30,7 +32,7 @@
 		margin-bottom: 8em;
 		position: relative;
 		h4 {
-			font-size: 45px;
+			font-size: 32px;
 			margin-bottom: 15px;
 		}
 		ul {
@@ -39,7 +41,7 @@
 			padding: 0px;
 			li {
 				color: $WHITE_BRIGHT;
-				font-size: 20px;
+				font-size: 16px;
 				margin: 7px 0;
 			}
 		}
@@ -78,3 +80,24 @@
 		}
 	}
 }
+
+	@media screen and (max-width: 600px) {
+	#leaderboard {
+		.leaderboard-day {
+			width: 100%;
+		}
+			.leaderboard-week {
+			width: 100%;
+		}
+			.leaderboard-total {
+			width: 100%;
+		}
+
+	}	
+	}
+
+
+
+
+
+
