@@ -423,6 +423,9 @@ template {
     font-size: 36px;
     margin-top: 2em;
     margin-left: -2px; }
+  .bftn-homepage .calls-number h2 {
+    text-align: center;
+    margin-bottom: 60px; }
   .bftn-homepage input {
     font-family: "Montserrat", sans-serif;
     border-radius: 4px;
@@ -1344,8 +1347,9 @@ template {
     font-weight: normal; }
     .bftn-homepage #leaderboard h4 span {
       display: inline-block;
-      border-bottom: 3px solid #CCCAEA;
-      padding: 0px 10px; }
+      border-bottom: 1px solid #2d2a4e;
+      padding: 0px 10px;
+      padding-bottom: 9px; }
   .bftn-homepage #leaderboard .leaderboard-total,
   .bftn-homepage #leaderboard .leaderboard-week,
   .bftn-homepage #leaderboard .leaderboard-day {
@@ -1366,7 +1370,7 @@ template {
     margin-bottom: 8em;
     position: relative; }
     .bftn-homepage #leaderboard .leaderboard-top h4 {
-      font-size: 45px;
+      font-size: 32px;
       margin-bottom: 15px; }
     .bftn-homepage #leaderboard .leaderboard-top ul {
       list-style-type: none;
@@ -1374,7 +1378,7 @@ template {
       padding: 0px; }
       .bftn-homepage #leaderboard .leaderboard-top ul li {
         color: #FFF;
-        font-size: 20px;
+        font-size: 16px;
         margin: 7px 0; }
     .bftn-homepage #leaderboard .leaderboard-top ul {
       max-height: 215px;
@@ -1401,6 +1405,13 @@ template {
     max-height: 9000px; }
   .bftn-homepage #leaderboard .leaderboard-top.open .leaderboard-open {
     opacity: 0; }
+  @media screen and (max-width: 600px) {
+    .bftn-homepage #leaderboard .leaderboard-day {
+      width: 100%; }
+    .bftn-homepage #leaderboard .leaderboard-week {
+      width: 100%; }
+    .bftn-homepage #leaderboard .leaderboard-total {
+      width: 100%; } }
   @media screen and (max-width: 800px) {
     .bftn-homepage .unit {
       width: 90%; }
