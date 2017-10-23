@@ -3,8 +3,6 @@ jobs:
   build:
     docker:
     - image: circleci/node:8-browsers
-    environment:
-    - NODE_ENV: "production"
     steps:
     - add-ssh-keys:
         fingerprints:
@@ -18,7 +16,11 @@ jobs:
         paths:
         - node_modules
         key: v1-dependencies-{{ checksum "package-lock.json" }}
-    - run: npm run build
+    - run: 
+        name: Build
+        command: npm run build
+        environment:
+        - NODE_ENV: "production"
     - deploy:
         name: GitHub Pages
         command: |
