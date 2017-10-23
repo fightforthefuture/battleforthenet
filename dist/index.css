@@ -660,11 +660,11 @@ template {
       .bftn-homepage .participants ul li img {
         max-width: 100%;
         object-fit: contain; }
-  .bftn-homepage .participants p {
+  .bftn-homepage .participants p.more {
     text-align: center;
     font-size: 11px;
     margin-bottom: 40px; }
-    .bftn-homepage .participants p a {
+    .bftn-homepage .participants p.more a {
       color: #717093; }
   .bftn-homepage .participants a.btn {
     max-width: 500px;
