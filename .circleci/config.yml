@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    docker:
+    - image: circleci/node:8-browsers
+    environment:
+    - NODE_ENV: "production"
+    steps:
+    - add-ssh-keys:
+        fingerprints:
+        - "be:53:06:90:d4:51:ec:d1:ae:21:0f:c9:73:81:2f:c7"
+    - checkout
+    - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package-lock.json" }}
+    - run: npm install
+    - save_cache:
+        paths:
+        - node_modules
+        key: v1-dependencies-{{ checksum "package-lock.json" }}
+    - run: npm run build
+    - deploy:
+        name: GitHub Pages
+        command: |
+          if [ "${CIRCLE_BRANCH}" == "feature/ci-build" ]; then
+            ./scripts/deploy.sh
+          fi
+    branches:
+      only:
+      - feature/ci-build

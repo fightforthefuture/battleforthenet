@@ -5,10 +5,6 @@ npm install
 npm run watch
 ```
 
-### Publishing for production
+### Deploying to production
 
-Commit any changes to non-generated files separately, then update the generated `dist` files in a separate commit to facilitate easier rebasing. This step will eventually be handled automatically by a CI script.
-
-```sh
-NODE_ENV=production npm run build
-```
+Automated deployment of minified assets and generated files to [GitHub Pages](https://pages.github.com/) happens on every commit to `master` and is handled by [CircleCI](https://circleci.com/) using a [GitHub read/write deploy key](https://circleci.com/docs/2.0/gh-bb-integration/#adding-readwrite-deployment-keys-to-github-or-bitbucket).
