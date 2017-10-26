@@ -7,6 +7,9 @@ import {Organization} from './organization';
 
 import {CallActionFormTemplate} from './templates';
 
+// To use Facebook Pixel fbq global
+declare var fbq: any;
+
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
 	console.log(url, data);
@@ -126,6 +129,16 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 				.then((result) => {
 					console.log("DONE");
 					this.props.setModal("success");
+
+                    // Track conversions, user data is sha256 hashed locally
+                    // before being transmitted to Facebook
+                    var fbqRegistration: any = {
+                      // validatePhoneNumber currently returns a 10-digit string,
+                      // assumes US country code
+                      ph: '1' + phone
+                    }
+                    if (this.props.zip) fbqRegistration.zp = this.props.zip;
+                    fbq('track', 'InitiateCall', fbqRegistration);
 				})
 				.catch((result) => {
 					console.log("FAIL");
