@@ -688,7 +688,7 @@ template {
       transition: opacity .5s ease-in; }
   .bftn-homepage .loader-container {
     width: 60px;
-    height: 60px;
+    height: 29px;
     margin: 20px auto;
     position: relative; }
   .bftn-homepage .loader {
@@ -696,7 +696,7 @@ template {
     width: 60px;
     height: 60px;
     position: relative;
-    top: 30px; }
+    top: 20px; }
     .bftn-homepage .loader .chord {
       position: absolute;
       width: 60px;
