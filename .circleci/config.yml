@@ -25,6 +25,7 @@ jobs:
         name: Deploy to GitHub Pages
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            make cache_bust
             make prep_branch
             make publish_branch
           fi
