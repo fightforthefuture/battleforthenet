@@ -11,7 +11,9 @@ build:
 	NODE_ENV=production npm run build
 
 publish_branch:
-	git commit -a --author="CircleCI Script <>" -m "Build static assets"
+	git config user.email "fftf@users.noreply.github.com"
+	git config user.name "CircleCI Script"
+	git commit -a -m "Build static assets"
 	git push --quiet ${CIRCLE_REPOSITORY_URL} +${PUBLISH_BRANCH};
 
 run:
