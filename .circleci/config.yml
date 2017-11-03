@@ -11,22 +11,28 @@ jobs:
     - restore_cache:
         keys:
         - v1-dependencies-{{ checksum "package-lock.json" }}
-    - run: npm install
+    - run:
+        name: Install deps
+        command: make setup
     - save_cache:
         paths:
         - node_modules
         key: v1-dependencies-{{ checksum "package-lock.json" }}
     - run: 
         name: Build
-        command: npm run build
-        environment:
-        - NODE_ENV: "production"
+        command: make build
     - deploy:
-        name: GitHub Pages
+        name: Deploy to GitHub Pages
         command: |
           if [ "${CIRCLE_BRANCH}" == "feature/ci-build" ]; then
-            ./scripts/deploy.sh
+            make prep_branch
+            make publish_branch
           fi
-    branches:
-      only:
-      - feature/ci-build
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build:
+        filters:
+          branches:
+            only: "feature/ci-build"
