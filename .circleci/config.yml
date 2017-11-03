@@ -24,7 +24,7 @@ jobs:
     - deploy:
         name: Deploy to GitHub Pages
         command: |
-          if [ "${CIRCLE_BRANCH}" == "feature/ci-build" ]; then
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
             make prep_branch
             make publish_branch
           fi
@@ -36,4 +36,4 @@ workflows:
           filters:
             branches:
               only:
-                - "feature/ci-build"
+                - master

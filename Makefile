@@ -1,4 +1,4 @@
-PUBLISH_BRANCH:=test-pages
+PUBLISH_BRANCH:=gh-pages
 
 setup:
 	npm install
