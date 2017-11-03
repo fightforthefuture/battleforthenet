@@ -33,6 +33,7 @@ workflows:
   deploy:
     jobs:
       - build:
-        filters:
-          branches:
-            only: "feature/ci-build"
+          filters:
+            branches:
+              only:
+                - "feature/ci-build"
