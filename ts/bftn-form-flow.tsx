@@ -20,6 +20,7 @@ interface Props {
 	org: Organization
 	actionUrl: string
 	campaignId: string
+	referralCode: string | null
 	deadline: Date
 	swap: boolean | false
 }
@@ -66,7 +67,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		}
 		return (
 			<div className={classes(etsy && "etsy-form", this.props.swap && "swap-form")}>
-				<CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
+				<CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
 				<ReactTransitionGroup.CSSTransitionGroup
 					component="div"
 					transitionName="fadein"
