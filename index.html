@@ -268,6 +268,7 @@
         var initialForm = externalFlags.has('call') ? 'call' : 'action';
         var campaign = externalFlags.get('campaign', 'fftf');
         var persistentButtonText = 'Call Congress';
+        var referralCode = externalFlags.get('ref');
 
         mountComponent(
           React.createElement(TwitterBrigade, {
@@ -290,6 +291,7 @@
           React.createElement(BFTNFormFlow, {
             actionUrl: "https://queue.fightforthefuture.org/action",
             campaignId: campaign,
+            referralCode: referralCode,
             initialForm: initialForm,
             org: org,
             deadline: deadline
