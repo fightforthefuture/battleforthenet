@@ -38,7 +38,7 @@ export function CallSuccessTemplate(props:CallSuccessProps) {
 	const content_msg = `
 	I support "Title Two" net neutrality rules and I would like you to publicly oppose the FCC's
 	plan to repeal them. Please contact the FCC Chairman and demand that he abandon his current plan. 
-	Also, don't support any legislation unless it's even stronger than the current rules.
+	We don't need legislation, we need you to stop the FCC from gutting the existing rules.
 	`;
 	return (
 		<div>
