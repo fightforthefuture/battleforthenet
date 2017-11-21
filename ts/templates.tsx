@@ -42,7 +42,7 @@ export function CallSuccessTemplate(props:CallSuccessProps) {
 	return (
 		<div>
 			<h2>Calling you now!</h2>
-			<p><em>Introduce yourself, be polite, and say:</em> { content_msg }</p>
+			<p><em>Introduce yourself, be polite, and say:</em> { content_msg } <em>UPDATE: We're getting a huge call volume now. If you don't get connected, visit <a href="https://www.callmycongress.com/">callmycongress.com</a> and look up the number for your rep!</p>
 			{ props.swap ? "" : <AfterActionFooter org={props.org} zip={props.zip} /> }
 		</div>
 	);
