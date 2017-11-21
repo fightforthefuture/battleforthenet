@@ -11,6 +11,10 @@ interface State {
 
 export class AfterActionFooter extends React.Component<Props, State> {
   render() {
+    const donateLink = this.props.org.code == 'fp' ? "https://freepress.actionkit.com/donate/single/" :
+                       this.props.org.code == 'dp' ? "https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn" :
+                       "https://donate.fightforthefuture.org/campaigns/bftnlanding/";
+
     const protestLink = "https://actionnetwork.org/event_campaigns/show-up-and-speak-out-for-net-neutrality" + (this.props.zip ? "?zipcode=" + this.props.zip : "");
     const videoLink = "https://video.battleforthenet.com/" + (this.props.zip ? "?fcc_postcode=" + this.props.zip : "");
 
@@ -34,6 +38,16 @@ export class AfterActionFooter extends React.Component<Props, State> {
                 <div>
                   <img src="/images/share/twitter_white.svg" />
                   <span>Tweet</span>
+                </div>
+              </button>
+            </a>
+          </li>
+          <li>
+            <a id="donate" href={donateLink} target="_blank">
+              <button className="donate">
+                <div>
+                  <img src="/images/heart.svg" />
+                  <span>Donate</span>
                 </div>
               </button>
             </a>
