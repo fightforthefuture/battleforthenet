@@ -12,13 +12,11 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 	return (
 		<div>
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
-				<h3>This could be your last chance to stop ISPs from messing up your Internet.</h3>
+				<h3>This is your last chance to stop ISPs from messing up your Internet.</h3>
 				<p>
-					The FCC is about to announce a vote to slash net neutrality
-					rules, allowing ISPs like Verizon to block apps,
-					slow websites, and charge fees to control what you see & do online. Once they announce the vote, it's hard to stop.
+					Today the FCC announces its plan to slash net neutrality rules, allowing ISPs like Verizon to block apps, slow websites, and charge fees to control what you see & do online. They vote December 14th.
 					{" "}
-					<em>But if we flood them with calls now, *Congress* can stop the vote.</em>
+					<em>But if Congress gets enough calls, *they* can stop the FCC.</em>
 				</p>
 				<div className="flex">
 					<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
