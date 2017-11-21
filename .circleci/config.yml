@@ -28,6 +28,7 @@ jobs:
             make cache_bust
             make prep_branch
             make publish_branch
+            make purge_cloudflare
           fi
 workflows:
   version: 2

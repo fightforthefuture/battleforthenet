@@ -19,5 +19,12 @@ publish_branch:
 	git commit -a -m "Build static assets"
 	git push --quiet ${CIRCLE_REPOSITORY_URL} +${PUBLISH_BRANCH};
 
+purge_cloudflare:
+	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+		-H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
+		-H "X-Auth-Key: ${CLOUDFLARE_SECRET}" \
+		-H "Content-Type: application/json" \
+		--data '{"purge_everything":true}'
+
 run:
 	./node_modules/.bin/gulp watch 
