@@ -11,6 +11,7 @@ import {mockAjaxPromise} from './utils';
 import {classes} from './utils';
 import {CallSuccess} from './call-success';
 import {CallActionForm} from './call-action-form';
+import {PetitionForm} from './petition-form';
 import {r} from './r';
 import {Organization} from './organization';
 import {ExternalFlags} from './external-flags';
@@ -49,6 +50,16 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 
 		var onClose = () => {this.setModal(null)};
 		var modal: JSX.Element | null = null;
+		var form: JSX.Element;
+		switch (this.props.initialForm) {
+			case "call":
+				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />;
+				break;
+			case "petition":
+			default:
+				form = <PetitionForm url={this.props.actionUrl} org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} etsy={etsy} />;
+				break;
+		}
 		switch (this.state.modal) {
 			case "loading":
 				modal = (
@@ -57,6 +68,12 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 					</Modal>
 				);
 				break;
+			case "call":
+				modal = (
+					<Modal modalClass="callform-modal" onClose={onClose}>
+						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} swap={this.props.swap} />
+					</Modal>
+				);
 			case "success":
 				modal = (
 					<Modal modalClass="callsuccess-modal" onClose={onClose}>
@@ -67,7 +84,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		}
 		return (
 			<div className={classes(etsy && "etsy-form", this.props.swap && "swap-form")}>
-				<CallActionForm org={this.props.org} header="Call to defend net neutrality!" campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />
+				{form}
 				<ReactTransitionGroup.CSSTransitionGroup
 					component="div"
 					transitionName="fadein"

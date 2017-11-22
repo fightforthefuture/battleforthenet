@@ -7,6 +7,8 @@ import {Organization} from './organization';
 import {Disclaimer} from './disclaimer';
 import {ExternalFlags} from './external-flags';
 
+import {PetitionFormTemplate} from './templates';
+
 import {r} from './r';
 
 // Mock submit:
@@ -51,7 +53,7 @@ declare global {
 	}
 }
 
-interface Props {
+export interface PetitionFormProps {
 	url: string
 	org: Organization
 	swap: boolean | false
@@ -60,7 +62,7 @@ interface Props {
 }
 
 
-interface State {
+export interface PetitionFormState {
 	input_name: string | string[] | undefined
 	input_email: string | string[] | undefined
 	input_address: string | string[] | undefined
@@ -72,11 +74,19 @@ interface State {
 	error: string | null
 }
 
+export interface PetitionFormContext {
+	handleInputChange: any
+	onResetClick: any
+	onSubmit: any
+	onTextareaFocus: any
+	setTextarea: any
+}
 
-export class PetitionForm extends React.Component<Props, State> {
+
+export class PetitionForm extends React.Component<PetitionFormProps, PetitionFormState> {
 	textareaInput: HTMLTextAreaElement | null;
 
-	constructor(props: Props) {
+	constructor(props: PetitionFormProps) {
 		super(props);
 
 		this.state = {
@@ -105,7 +115,7 @@ export class PetitionForm extends React.Component<Props, State> {
 		}
 		this.setState({
 			input_comment: ""
-		} as State);
+		} as PetitionFormState);
 	}
 
 	onSubmit(evt: Event) {
@@ -115,7 +125,7 @@ export class PetitionForm extends React.Component<Props, State> {
 
 		this.setState({
 			error: null
-		} as State);
+		} as PetitionFormState);
 
 		var params = new ExternalFlags();
 
@@ -174,7 +184,7 @@ export class PetitionForm extends React.Component<Props, State> {
 					console.log("FAIL");
 					this.setState({
 						error: "There was an error submitting the form, please try again"
-					} as State);
+					} as PetitionFormState);
 					this.props.setModal(null);
 				});
 		}
@@ -190,37 +200,13 @@ export class PetitionForm extends React.Component<Props, State> {
 	}
 
 	render() {
-		const { swap, etsy, org } = this.props;
-		return (
-			<form className="bftn-form petition-form" onSubmit={this.onSubmit.bind(this)}>
-				<img className="arrow" src="/images/red-arrow.png" />
-				<div className="form-wrapper">
-					<div>
-						<input name="input_name" placeholder="Name" autoComplete="name" required value={this.state.input_name} onChange={handleInputChange.bind(this)} />
-					</div>
-					<div>
-						<input name="input_email" placeholder="E-mail" required value={this.state.input_email} onChange={handleInputChange.bind(this)} />
-					</div>
-					<div className="address-line">
-						<input name="input_address" className="address" placeholder="Address" required value={this.state.input_address} onChange={handleInputChange.bind(this)} />
-						{" "}
-						<input name="input_zip" className="zip" placeholder="Zip" required value={this.state.input_zip} onChange={handleInputChange.bind(this)} />
-					</div>
-					{swap ? "" : <div><input name="input_phone" className="phone" placeholder="Phone # (to volunteer)" value={this.state.input_phone} onChange={handleInputChange.bind(this)} /> </div> }
-					<div className="letter">
-						<textarea ref={(textarea)=>{this.textareaInput=textarea;}} name="input_comment" required value={this.state.input_comment} onChange={handleInputChange.bind(this)} onFocus={this.onTextareaFocus.bind(this)} ></textarea>
-						<button onClick={this.onResetClick.bind(this)} className="reset">Clear and write your own</button>
-					</div>
-					{ etsy
-						? <div className="etsy-shop-link"><input type="text" placeholder="Etsy Shop Link" name="input_etsy_shop" value={this.state.input_etsy_shop} onChange={handleInputChange.bind(this)} /></div>
-						: ""
-					}
-					<button className="btn">Send Letter</button>
-				</div>
-				{ this.state.error ? this.renderError() : null }
-				{ etsy ? <span className="opt-in"><input type="checkbox" name="input_opt_in" checked={this.state.input_opt_in} onChange={handleInputChange.bind(this)} /> </span> : "" }
-				<Disclaimer org={org} optIn={etsy} swap={swap}/>
-			</form>
-		);
+		var ctx: PetitionFormContext = {
+			handleInputChange: handleInputChange.bind(this),
+			onResetClick: this.onResetClick.bind(this),
+			onSubmit: this.onSubmit.bind(this),
+			onTextareaFocus: this.onTextareaFocus.bind(this),
+			setTextarea: (textarea:HTMLTextAreaElement) => {this.textareaInput=textarea;}
+		};
+		return PetitionFormTemplate(this.props, this.state, ctx);
 	}
 }

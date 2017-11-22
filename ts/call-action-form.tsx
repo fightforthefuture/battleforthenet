@@ -56,7 +56,6 @@ const campaigns:Campaigns = {
 
 export interface CallActionFormProps {
 	org: Organization
-	header: string
 	campaignId: string
 	referralCode: string | null
 	isModal: boolean
@@ -130,7 +129,7 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 			if (this.props.referralCode) {
 				url = url + "?ref=" + this.props.referralCode;
 			}
-			submitForm(url, data)
+			mockSubmitForm(url, data)
 				.then((result) => {
 					this.props.setModal("success");
 
