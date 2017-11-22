@@ -68,6 +68,11 @@ $GRAY_LIGHT: #b1aedc;
 		margin-bottom:60px;
 	}
 
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
 
 	input {
 		font-family: "Montserrat", sans-serif;
@@ -88,7 +93,9 @@ $GRAY_LIGHT: #b1aedc;
       padding: 1rem;
       background-color: $WHITE;
       color: $BODY_BGCOLOR;
-      border-radius: 0.2rem;
+			border-radius: 0.2rem;
+			overflow-x: scroll;
+			white-space: pre-wrap;
 
       & ::-moz-selection {
         background: $GRAY_LIGHT;

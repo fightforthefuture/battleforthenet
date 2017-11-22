@@ -33,6 +33,12 @@ a {
 
 img {
   border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
 }
 
 body > main {
