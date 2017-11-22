@@ -14,6 +14,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 	return (
 		<div>
 			<h1>We have just 3 weeks to <span></span>save net neutrality.</h1>
+			<div className="unit">
 			<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
 				<img className="arrow" src="/images/red-arrow.png" />
 				<div className="form-wrapper">
@@ -63,6 +64,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 						}
 					</em>
 				</p>
+			</div>
 			</div>
 		</div>
 	);
