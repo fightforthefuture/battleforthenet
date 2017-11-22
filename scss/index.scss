@@ -48,7 +48,7 @@ $GRAY_LIGHT: #b1aedc;
 
 	h1 {
 		text-align: center;
-		font-size: 60px;
+		font-size: 55px;
 		margin: 20px 0;
 		letter-spacing: 1px;
 		white-space: pre;
@@ -187,6 +187,9 @@ $GRAY_LIGHT: #b1aedc;
 
 	.hero {
 		min-height: 435px;
+		h1 {
+			margin-top: 40px;
+		}
 		.petition-copy {
 			padding-bottom: 160px;
 			p {
@@ -202,6 +205,12 @@ $GRAY_LIGHT: #b1aedc;
 			}
 		}
 		.etsy-form {
+			h1 {
+				font-size: 55px;
+			}
+			textarea {
+				height: 100px;
+			}
 			.petition-copy p {
 				font-size: 24px;
 			}
