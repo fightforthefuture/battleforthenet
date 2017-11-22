@@ -13,6 +13,7 @@ import {classes} from './utils';
 export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionFormState, ctx:PetitionFormContext) {
 	return (
 		<div>
+			<h1>The battle for the future <span></span>of the Internet ends soon.</h1>
 			<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
 				<img className="arrow" src="/images/red-arrow.png" />
 				<div className="form-wrapper">
