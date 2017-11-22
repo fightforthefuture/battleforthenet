@@ -93,9 +93,9 @@ $GRAY_LIGHT: #b1aedc;
       padding: 1rem;
       background-color: $WHITE;
       color: $BODY_BGCOLOR;
-			border-radius: 0.2rem;
-			overflow-x: scroll;
-			white-space: pre-wrap;
+      border-radius: 0.2rem;
+      overflow-x: scroll;
+      white-space: pre-wrap;
 
       & ::-moz-selection {
         background: $GRAY_LIGHT;
