@@ -526,7 +526,7 @@ $GRAY_LIGHT: #b1aedc;
 			height: 90px;
 			width: 30%;
 			margin-left: 5%;
-			a {
+			a, div.faux-a {
 				display: block;
 				width: 100%;
 				font-family: "Open Sans", sans-serif;
@@ -1313,3 +1313,5 @@ $GRAY_LIGHT: #b1aedc;
 		height: 100%;
 	}
 }
+
+@import "shareprogress-overrides";
