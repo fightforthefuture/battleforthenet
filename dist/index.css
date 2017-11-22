@@ -575,6 +575,8 @@ template {
         position: absolute;
         top: 10px;
         left: 9px; }
+    .bftn-homepage .petition-form button.btn {
+      width: 100%; }
     .bftn-homepage .petition-form button.reset {
       font-family: "Montserrat", sans-serif;
       font-weight: bold;
@@ -782,7 +784,7 @@ template {
       height: 90px;
       width: 30%;
       margin-left: 5%; }
-      .bftn-homepage footer .social-media a {
+      .bftn-homepage footer .social-media a, .bftn-homepage footer .social-media div.faux-a {
         display: block;
         width: 100%;
         font-family: "Open Sans", sans-serif;
@@ -798,7 +800,7 @@ template {
         border-radius: 25px;
         text-transform: uppercase;
         text-align: center; }
-        .bftn-homepage footer .social-media a span {
+        .bftn-homepage footer .social-media a span, .bftn-homepage footer .social-media div.faux-a span {
           margin-left: 5px; }
       .bftn-homepage footer .social-media img {
         position: absolute;
@@ -1571,3 +1573,12 @@ template {
     left: 0;
     width: 100%;
     height: 100%; }
+
+.bftn-homepage div.sp_fb_large a {
+  color: transparent;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }

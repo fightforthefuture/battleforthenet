@@ -177,11 +177,9 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 
 			submitForm(this.props.url, data)
 				.then((result) => {
-					console.log("DONE");
 					this.props.setModal("call", this.state.input_zip);
 				})
 				.catch((result) => {
-					console.log("FAIL");
 					this.setState({
 						error: "There was an error submitting the form, please try again"
 					} as PetitionFormState);

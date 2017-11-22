@@ -74,6 +74,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} swap={this.props.swap} />
 					</Modal>
 				);
+				break;
 			case "success":
 				modal = (
 					<Modal modalClass="callsuccess-modal" onClose={onClose}>

@@ -129,7 +129,7 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 			if (this.props.referralCode) {
 				url = url + "?ref=" + this.props.referralCode;
 			}
-			mockSubmitForm(url, data)
+			submitForm(url, data)
 				.then((result) => {
 					this.props.setModal("success");
 

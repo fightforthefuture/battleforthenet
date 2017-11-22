@@ -48,7 +48,7 @@ $GRAY_LIGHT: #b1aedc;
 
 	h1 {
 		text-align: center;
-		font-size: 70px;
+		font-size: 60px;
 		margin: 20px 0;
 		letter-spacing: 1px;
 		white-space: pre;
@@ -250,7 +250,7 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.arrow {
 			position: absolute;
-			top: 309px;
+			top: 345px;
 			left: -140px;
 		}
 		.form-wrapper {
@@ -262,6 +262,7 @@ $GRAY_LIGHT: #b1aedc;
 			font-size: 14px;
 			display: block;
 			width: 100%;
+			height: 130px;
 			border-radius: 4px 4px 0 0;
 			border: none;
 			padding: 35px 10px 15px;
@@ -278,6 +279,10 @@ $GRAY_LIGHT: #b1aedc;
 				top: 10px;
 				left: 9px;
 			}
+		}
+		button.btn {
+			width: 100%;
+			font-size: 18px;
 		}
 		button.reset {
 			font-family: "Montserrat", sans-serif;
@@ -304,9 +309,6 @@ $GRAY_LIGHT: #b1aedc;
 		.zip {
 			width: 94px;
 			margin-left: 1px;
-		}
-		textarea {
-			height: 100px;
 		}
 		.note {
 			margin-top: 0.6em;
