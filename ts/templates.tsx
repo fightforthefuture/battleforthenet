@@ -59,7 +59,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 					<em>
 						{ props.etsy
 							? "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses. "
-							: "But Congress can stop the FCC without bad legislation. Write & call now!"
+							: "But Congress can put a stop to all of this. Write & call now!"
 						}
 					</em>
 				</p>
