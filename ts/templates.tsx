@@ -13,7 +13,7 @@ import {classes} from './utils';
 export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionFormState, ctx:PetitionFormContext) {
 	return (
 		<div>
-			<h1>The battle for the future <span></span>of the Internet ends soon.</h1>
+			<h1>We have just 3 weeks to <span></span>save net neutrality.</h1>
 			<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
 				<img className="arrow" src="/images/red-arrow.png" />
 				<div className="form-wrapper">
@@ -37,7 +37,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 						? <div className="etsy-shop-link"><input type="text" placeholder="Etsy Shop Link" name="input_etsy_shop" value={state.input_etsy_shop} onChange={ctx.handleInputChange} /></div>
 						: ""
 					}
-					<button className="btn">Send Letter</button>
+					<button className="btn">Email & Call Congress</button>
 				</div>
 				{ state.error ? (
 						<div className="form-error">
@@ -59,7 +59,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 					<em>
 						{ props.etsy
 							? "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses. "
-							: "Time is running out to stop them. Write Congress & the FCC now!"
+							: "But Congress can stop the FCC without bad legislation. Write & call now!"
 						}
 					</em>
 				</p>
