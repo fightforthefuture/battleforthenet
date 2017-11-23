@@ -38,7 +38,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 						? <div className="etsy-shop-link"><input type="text" placeholder="Etsy Shop Link" name="input_etsy_shop" value={state.input_etsy_shop} onChange={ctx.handleInputChange} /></div>
 						: ""
 					}
-					<button className="btn">Email Congress</button>
+					<button className="btn">Write Congress</button>
 				</div>
 				{ state.error ? (
 						<div className="form-error">
@@ -60,7 +60,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 					<em>
 						{ props.etsy
 							? "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses. "
-							: "But Congress can put a stop to all of this. Write & call now!"
+							: "But Congress can put a stop to all of this. Write them first, then call!"
 						}
 					</em>
 				</p>
