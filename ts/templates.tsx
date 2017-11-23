@@ -38,7 +38,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 						? <div className="etsy-shop-link"><input type="text" placeholder="Etsy Shop Link" name="input_etsy_shop" value={state.input_etsy_shop} onChange={ctx.handleInputChange} /></div>
 						: ""
 					}
-					<button className="btn">Email & Call Congress</button>
+					<button className="btn">Email Congress</button>
 				</div>
 				{ state.error ? (
 						<div className="form-error">
