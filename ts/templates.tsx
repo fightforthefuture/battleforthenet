@@ -74,7 +74,10 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 	return (
 		<div>
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
-				<h3>This is your last chance to stop ISPs from messing up your Internet.</h3>
+				{ props.isModal ? 
+					<h3>Call to defend net neutrality!</h3> :
+					<h3>This is your last chance to stop ISPs from messing up your Internet.</h3>
+				}
 				<p>
 					The FCC just announced its plan to slash net neutrality rules, allowing ISPs like Verizon to block apps, slow websites, and charge fees to control what you see & do online. They vote December 14th.
 					{" "}
