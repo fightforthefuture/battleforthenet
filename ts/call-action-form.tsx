@@ -63,6 +63,7 @@ export interface CallActionFormProps {
 	swap: boolean | false
 	zip: string | ""
 	setModal: (modal: string | null, zip?: string | "")=>any
+	phone: string | ""
 }
 
 
@@ -85,7 +86,7 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 	constructor(props: CallActionFormProps) {
 		super(props);
 		this.state = {
-			input_phone: "",
+			input_phone: props.phone || "",
 			error: false
 		};
 	}
