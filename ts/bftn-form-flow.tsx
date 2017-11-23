@@ -29,6 +29,7 @@ interface Props {
 
 interface State {
 	modal: string | null
+	phone: string | ""
 	zip: string | ""
 }
 
@@ -38,11 +39,12 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		super(props);
 		this.state = {
 			modal: null,
+			phone: "",
 			zip: ""
 		};
 	}
-	setModal(modal: string | null, zip = ""): any {
-		this.setState({modal: modal, zip: zip} as State);
+	setModal(modal: string | null, zip = "", phone = ""): any {
+		this.setState({modal: modal, zip: zip, phone: phone} as State);
 	}
 	render() {
 		var params = new ExternalFlags();
@@ -53,7 +55,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} swap={this.props.swap} />;
+				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} phone={""} swap={this.props.swap} />;
 				break;
 			case "petition":
 			default:
@@ -71,7 +73,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} swap={this.props.swap} />
+						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} phone={this.state.phone} swap={this.props.swap} />
 					</Modal>
 				);
 				break;

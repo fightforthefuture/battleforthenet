@@ -59,7 +59,7 @@ export interface PetitionFormProps {
 	url: string
 	org: Organization
 	swap: boolean | false
-	setModal: (modal: string | null, zip?: string | "")=>any
+	setModal: (modal: string | null, zip?: string | "", phone?: string | "")=>any
 	etsy: boolean | false
 }
 
@@ -69,7 +69,7 @@ export interface PetitionFormState {
 	input_email: string | string[] | undefined
 	input_address: string | string[] | undefined
 	input_zip: string | undefined
-	input_phone: string | string[] | undefined
+	input_phone: string | undefined
 	input_comment: string | string[] | undefined
 	input_etsy_shop: string | string[] | undefined
 	input_opt_in: boolean | true
@@ -137,7 +137,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			// Define success callback and bind this
 			window.actionKitSubmitSuccess = function(response : Object) {
 				console.log("SUCCESS");
-				this.props.setModal("call", this.state.input_zip);
+				this.props.setModal("call", this.state.input_zip, this.state.input_phone);
 			}.bind(this);
 
 			var actionKitData = {
@@ -179,7 +179,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 
 			submitForm(this.props.url, data)
 				.then((result) => {
-					this.props.setModal("call", this.state.input_zip);
+					this.props.setModal("call", this.state.input_zip, this.state.input_phone);
 					trackEvent("submitted_email");
 				})
 				.catch((result) => {
