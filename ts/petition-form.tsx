@@ -10,6 +10,8 @@ import {ExternalFlags} from './external-flags';
 import {PetitionFormTemplate} from './templates';
 
 import {r} from './r';
+import {trackEvent} from './utils';
+
 
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
@@ -178,6 +180,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			submitForm(this.props.url, data)
 				.then((result) => {
 					this.props.setModal("call", this.state.input_zip);
+					trackEvent("submitted_email");
 				})
 				.catch((result) => {
 					this.setState({
