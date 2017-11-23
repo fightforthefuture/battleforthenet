@@ -31,10 +31,7 @@ $GRAY_LIGHT: #b1aedc;
 	h1, h2, h3 {
 		font-family: Montserrat, sans-serif;
 		font-weight: bold;
-		background: -webkit-linear-gradient($HEADER_COLORA, $HEADER_COLORB);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		color: $HEADER_FBCOLOR;
+		color: $HEADER_COLORA;
 	}
 	h4 {
 		font-family: Montserrat, sans-serif;
@@ -287,6 +284,8 @@ $GRAY_LIGHT: #b1aedc;
 				position: absolute;
 				top: 10px;
 				left: 9px;
+				right: 20px;
+				background-color: white;
 			}
 		}
 		button.btn {
