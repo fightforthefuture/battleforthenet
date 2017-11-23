@@ -6,6 +6,7 @@ import {handleInputChange} from './utils';
 import {Organization} from './organization';
 
 import {CallActionFormTemplate} from './templates';
+import {trackEvent} from './utils';
 
 // To use Facebook Pixel fbq global
 declare var fbq: any;
@@ -142,6 +143,7 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 					}
 					if (this.props.zip) fbqRegistration.zp = this.props.zip;
 					fbq('track', 'InitiateCall', fbqRegistration);
+					trackEvent("initiated_call");
 				})
 				.catch((result) => {
 					console.log("FAIL");

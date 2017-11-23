@@ -3,6 +3,10 @@ import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 
 
+// To use ga
+declare var ga: any;
+
+
 export interface ajaxRequest {
 	url: string
 	method: string
@@ -111,3 +115,10 @@ export function daysUntil(d: Date): number {
 export function noop(evt:Event): void {
 	evt.preventDefault();
 };
+
+
+export function trackEvent(s: String): void {
+	if (ga) {
+		ga("send", "event", "form", "submit", s);
+	}
+}
