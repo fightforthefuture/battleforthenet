@@ -177,7 +177,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			 data["opt_out"] = "1";
 			}
 
-			submitForm(this.props.url, data)
+			mockSubmitForm(this.props.url, data)
 				.then((result) => {
 					this.props.setModal("call", this.state.input_zip);
 					trackEvent("submitted_email");
