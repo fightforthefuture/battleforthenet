@@ -75,7 +75,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 		<div>
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
 				{ props.isModal ? 
-					<h3>Call to defend net neutrality!</h3> :
+					<h3>Thanks! Now, can you call them?</h3> :
 					<h3>This is your last chance to stop ISPs from messing up your Internet.</h3>
 				}
 				<p>
