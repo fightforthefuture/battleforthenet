@@ -7,7 +7,7 @@ import {LeaderboardProps, LeaderboardState, LeaderboardContext, LeaderboardRefer
 import {CallSuccessProps} from './call-success';
 import {Disclaimer} from './disclaimer';
 import {AfterActionFooter} from './after-action-footer';
-import {classes} from './utils';
+import {classes, sanitizeUrl} from './utils';
 
 
 export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionFormState, ctx:PetitionFormContext) {
@@ -116,9 +116,15 @@ export function CallSuccessTemplate(props:CallSuccessProps) {
 
 
 function LeaderboardReferrer(referrer:LeaderboardReferrer) {
+	let href = referrer.code
+
+	if (!referrer.code.match(/^http/)) {
+		href = `http://${href}`
+	}
+
 	return (
 		<li key={referrer.code} >
-			{ referrer.code } ({ referrer.n.toLocaleString() })
+			<a href={ sanitizeUrl(href) }>{ referrer.code }</a> ({ referrer.n.toLocaleString() })
 		</li>
 	);
 }

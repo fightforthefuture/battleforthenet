@@ -43,6 +43,10 @@
 				color: $WHITE_BRIGHT;
 				font-size: 16px;
 				margin: 7px 0;
+
+				a {
+					color: #6388ed;
+				}
 			}
 		}
 		ul {
@@ -73,10 +77,10 @@
 	}
 	.leaderboard-top.open {
 		ul {
-			max-height: 9000px;
+			max-height: none;
 		}
 		.leaderboard-open {
-			opacity: 0;
+			display: none;
 		}
 	}
 }

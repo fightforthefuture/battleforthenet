@@ -122,3 +122,26 @@ export function trackEvent(s: String): void {
 		ga("send", "event", "form", "submit", s);
 	}
 }
+
+export function sanitizeUrl(url: String): string {
+	var invalidPrototcolRegex = /^(%20|\s)*(javascript|data)/im;
+	var ctrlCharactersRegex = /[^\x20-\x7E]/gmi;
+	var urlSchemeRegex = /^([^:]+):/gm;
+
+	var urlScheme;
+	var sanitizedUrl = url.replace(ctrlCharactersRegex, '');
+	var urlSchemeParseResults = sanitizedUrl.match(urlSchemeRegex);
+
+	if (!urlSchemeParseResults) {
+		return 'about:blank';
+	}
+
+	urlScheme = urlSchemeParseResults[0];
+
+	if (invalidPrototcolRegex.test(urlScheme)) {
+		return 'about:blank';
+	}
+
+	return sanitizedUrl;
+}
+
