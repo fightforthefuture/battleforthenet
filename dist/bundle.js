@@ -43893,13 +43893,15 @@ var BFTNFormFlow = (function (_super) {
         var _this = _super.call(this, props) || this;
         _this.state = {
             modal: null,
+            phone: "",
             zip: ""
         };
         return _this;
     }
-    BFTNFormFlow.prototype.setModal = function (modal, zip) {
+    BFTNFormFlow.prototype.setModal = function (modal, zip, phone) {
         if (zip === void 0) { zip = ""; }
-        this.setState({ modal: modal, zip: zip });
+        if (phone === void 0) { phone = ""; }
+        this.setState({ modal: modal, zip: zip, phone: phone });
     };
     BFTNFormFlow.prototype.render = function () {
         var _this = this;
@@ -43910,7 +43912,7 @@ var BFTNFormFlow = (function (_super) {
         var form;
         switch (this.props.initialForm) {
             case "call":
-                form = React.createElement(call_action_form_1.CallActionForm, { org: this.props.org, campaignId: this.props.campaignId, referralCode: this.props.referralCode, setModal: this.setModal.bind(this), isModal: false, zip: this.state.zip, swap: this.props.swap });
+                form = React.createElement(call_action_form_1.CallActionForm, { org: this.props.org, campaignId: this.props.campaignId, referralCode: this.props.referralCode, setModal: this.setModal.bind(this), isModal: false, zip: this.state.zip, phone: "", swap: this.props.swap });
                 break;
             case "petition":
             default:
@@ -43924,7 +43926,7 @@ var BFTNFormFlow = (function (_super) {
                 break;
             case "call":
                 modal = (React.createElement(modal_1.Modal, { modalClass: "callform-modal", onClose: onClose },
-                    React.createElement(call_action_form_1.CallActionForm, { org: this.props.org, campaignId: this.props.campaignId, referralCode: this.props.referralCode, setModal: this.setModal.bind(this), isModal: true, zip: this.state.zip, swap: this.props.swap })));
+                    React.createElement(call_action_form_1.CallActionForm, { org: this.props.org, campaignId: this.props.campaignId, referralCode: this.props.referralCode, setModal: this.setModal.bind(this), isModal: true, zip: this.state.zip, phone: this.state.phone, swap: this.props.swap })));
                 break;
             case "success":
                 modal = (React.createElement(modal_1.Modal, { modalClass: "callsuccess-modal", onClose: onClose },
@@ -44023,6 +44025,7 @@ var utils_1 = require("./utils");
 var utils_2 = require("./utils");
 var utils_3 = require("./utils");
 var templates_1 = require("./templates");
+var utils_4 = require("./utils");
 function mockSubmitForm(url, data) {
     console.log(url, data);
     return utils_2.mockAjaxPromise({
@@ -44056,7 +44059,7 @@ var CallActionForm = (function (_super) {
     function CallActionForm(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
-            input_phone: "",
+            input_phone: props.phone || "",
             error: false
         };
         return _this;
@@ -44110,6 +44113,7 @@ var CallActionForm = (function (_super) {
                 if (_this.props.zip)
                     fbqRegistration.zp = _this.props.zip;
                 fbq('track', 'InitiateCall', fbqRegistration);
+                utils_4.trackEvent("initiated_call");
             })
                 .catch(function (result) {
                 console.log("FAIL");
@@ -44828,6 +44832,7 @@ var utils_3 = require("./utils");
 var external_flags_1 = require("./external-flags");
 var templates_1 = require("./templates");
 var r_1 = require("./r");
+var utils_4 = require("./utils");
 function mockSubmitForm(url, data) {
     return utils_2.mockAjaxPromise({
         code: 200,
@@ -44900,7 +44905,7 @@ var PetitionForm = (function (_super) {
         if (this.props.swap) {
             window.actionKitSubmitSuccess = function (response) {
                 console.log("SUCCESS");
-                this.props.setModal("call", this.state.input_zip);
+                this.props.setModal("call", this.state.input_zip, this.state.input_phone);
             }.bind(this);
             var actionKitData = {
                 "page": "battleforthenet_2017_swap",
@@ -44928,7 +44933,7 @@ var PetitionForm = (function (_super) {
                 "fcc_ecfs_docket": "17-108",
                 "org": this.props.org.code,
                 "an_tags": "[\"net-neutrality\"]",
-                "an_petition_id": "2ddb0663-1282-4b17-bb13-ee89cb92efc1",
+                "an_petition_id": "58171536-6183-4e5b-81c5-0d59d7870399",
                 "member[first_name]": this.state.input_name,
                 "member[email]": this.state.input_email,
                 "member[street_address]": this.state.input_address,
@@ -44941,7 +44946,8 @@ var PetitionForm = (function (_super) {
             }
             submitForm(this.props.url, data)
                 .then(function (result) {
-                _this.props.setModal("call", _this.state.input_zip);
+                _this.props.setModal("call", _this.state.input_zip, _this.state.input_phone);
+                utils_4.trackEvent("submitted_email");
             })
                 .catch(function (result) {
                 _this.setState({
@@ -45220,7 +45226,7 @@ exports.PoliticalScoreboard = PoliticalScoreboard;
 },{"./carousel":215,"./external-flags":218,"./r":228,"./utils":232,"lodash":33,"react":205}],228:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var DEFAULT_FORM_TEXT = "The FCC's Open Internet Rules (net neutrality rules) are extremely important to me. I urge you to protect them.\n\nI don't want ISPs to have the power to block websites, slow them down, give some sites an advantage over others, or split the Internet into \"fast lanes\" for companies that pay and \"slow lanes\" for the rest.\n\nNow is not the time to let giant ISPs censor what we see and do online.\n\nCensorship by ISPs is a serious problem. Comcast has throttled Netflix, AT&T blocked FaceTime, Time Warner Cable throttled the popular game League of Legends, and Verizon admitted it will introduce fast lanes for sites that pay-and slow lanes for everyone else-if the FCC lifts the rules. This hurts consumers and businesses large and small.\n\nCourts have made clear that if the FCC ends Title II classification, the FCC must let ISPs offer \"fast lanes\" to websites for a fee.\n\nChairman Pai has made clear that he intends to do exactly this.\n\nBut if some companies can pay our ISPs to have their content load faster, startups and small businesses that can't pay those fees won't be able to compete. You will kill the open marketplace that has enabled millions of small businesses and created the 5 most valuable companies in America-just to further enrich a few much less valuable cable giants famous for sky-high prices and abysmal customer service.\n\nInternet providers will be able to impose a private tax on every sector of the American economy.\n\nMoreover, under Chairman Pai's plan, ISPs will be able to make it more difficult to access political speech that they don't like. They'll be able to charge fees for website delivery that would make it harder for blogs, nonprofits, artists, and others who can't pay up to have their voices heard.\n\nI'm sending this to the FCC's open proceeding, but I worry that Chairman Pai, a former Verizon lawyer, has made his plans and will ignore me and millions of other Americans.\n\nSo I'm also sending this to my members of Congress. Please publicly support the FCC's existing net neutrality rules based on Title II, and denounce Chairman Pai's plans. Do whatever you can to dissuade him.\n\nThank you!";
+var DEFAULT_FORM_TEXT = "I urge you to stop the FCC's plan to end net neutrality *before* the FCC's December 14th vote.\n\nI don't want ISPs to have the power to block websites, slow them down, give some sites an advantage over others, split the Internet into \"fast lanes\" for companies that pay and \"slow lanes\" for the rest, or force me to buy special \"tiers\" to access the sites and services I choose. But that's exactly what the FCC plan would do. Please read it:\n\nhttps://apps.fcc.gov/edocs_public/attachmatch/DOC-347927A1.pdf\n\nBlocking & throttling by ISPs is a serious problem. Comcast has throttled Netflix, AT&T blocked FaceTime, Time Warner Cable throttled the popular game League of Legends, and Verizon admitted it will introduce fast lanes for sites that pay-and slow lanes for everyone else-if the FCC lifts the rules. This hurts consumers and businesses large and small.\n\nIf some companies can pay ISPs to have their content load faster, startups and small businesses that can't pay those fees won't be able to compete. This will kill the open marketplace that has enabled millions of small businesses and created America\u2019s 5 most valuable companies. Without strong net neutrality protections, Internet providers will effectively be able to impose a tax on every sector of the American economy.\n\nMoreover, under Chairman Pai's plan, ISPs will be able to make it more difficult to access political speech that they don't like. They'll be able to charge fees for website delivery that would make it harder for blogs, nonprofits, artists, and others who can't pay up to have their voices heard.\n\nIf the FCC passes their current order, every Internet user and business in this country will be unprotected from abuse by Internet providers, and the consequences will be dire. Please publicly support net neutrality protections by denouncing the FCC's current plan. Do whatever you can to stop Chairman Pai, to ensure that businesses and Internet users remain protected.\n\nThank you!";
 var ETSY_FORM_TEXT = "Chairman Pai\u2019s proposed plan to repeal net neutrality protections would put a huge burden on microbusinesses like mine.\n\nAs an Etsy seller, net neutrality is essential to the success of my business and my ability to care for myself and my family. The FCC needs to ensure equal opportunities for microbusinesses to compete with larger and more established brands by upholding net neutrality protections.\n\nEtsy has opened the door for me and 1.8 million other sellers to turn our passion into a business by connecting us to a global market of buyers. For 32% of creative entrepreneurs on the platform, our creative business is our sole occupation. A decrease in sales in the internet slow lane or higher cost to participate in Chairman Pai\u2019s pay-to-play environment would create significant obstacles for me and other Etsy sellers to care for ourselves and our families.\n\nMoreover, 87% of Etsy sellers in the U.S. are women, and most run their microbusinesses out of their homes. By rolling back the bright line rules that ensure net neutrality, Chairman Pai is not only taking away our livelihood, he is also putting up barriers to entrepreneurship for a whole cohort of Americans.\n\nMy business growth depends on equal access to consumers. Any rule that allows broadband providers to negotiate special deals with some companies would undermine my ability to compete online.\n\nWe need a free and open internet that works for everyone, not just telecom companies that stand to benefit from the FCC\u2019s proposed rules.\n\nI'm sending this to the FCC's open proceeding and to my members of Congress. Please publicly support the FCC's existing net neutrality rules based on Title II and microbusinesses like mine.\n\nThank you!";
 var STATES = [
     "Alaska",
@@ -45292,9 +45298,9 @@ var utils_1 = require("./utils");
 function PetitionFormTemplate(props, state, ctx) {
     return (React.createElement("div", null,
         React.createElement("h1", null,
-            "The battle for the future ",
+            "We have just 3 weeks to ",
             React.createElement("span", null),
-            "of the Internet ends soon."),
+            "save net neutrality."),
         React.createElement("div", { className: "unit" },
             React.createElement("form", { className: "bftn-form petition-form", onSubmit: ctx.onSubmit },
                 React.createElement("img", { className: "arrow", src: "/images/red-arrow.png" }),
@@ -45317,7 +45323,7 @@ function PetitionFormTemplate(props, state, ctx) {
                         ? React.createElement("div", { className: "etsy-shop-link" },
                             React.createElement("input", { type: "text", placeholder: "Etsy Shop Link", name: "input_etsy_shop", value: state.input_etsy_shop, onChange: ctx.handleInputChange }))
                         : "",
-                    React.createElement("button", { className: "btn" }, "Send Letter")),
+                    React.createElement("button", { className: "btn" }, "Write Congress")),
                 state.error ? (React.createElement("div", { className: "form-error" },
                     React.createElement("span", { className: "oi", "data-glyph": "warning", title: "previous", "aria-hidden": "true" }),
                     " ",
@@ -45334,13 +45340,14 @@ function PetitionFormTemplate(props, state, ctx) {
                     " ",
                     React.createElement("em", null, props.etsy
                         ? "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses. "
-                        : "Time is running out to stop them. Write Congress & the FCC now!"))))));
+                        : "But Congress can put a stop to all of this. Write them first, then call!"))))));
 }
 exports.PetitionFormTemplate = PetitionFormTemplate;
 function CallActionFormTemplate(props, state, ctx) {
     return (React.createElement("div", null,
         React.createElement("form", { className: "bftn-form call-action-form", ref: ctx.bindRef, onSubmit: ctx.onSubmit },
-            props.isModal ? null :
+            props.isModal ?
+                React.createElement("h3", null, "Thanks! Now can you call them?") :
                 React.createElement("h3", null, "This is your last chance to stop ISPs from messing up your Internet."),
             React.createElement("p", null,
                 "The FCC just announced its plan to slash net neutrality rules, allowing ISPs like Verizon to block apps, slow websites, and charge fees to control what you see & do online. They vote December 14th.",
@@ -45585,6 +45592,12 @@ function noop(evt) {
 }
 exports.noop = noop;
 ;
+function trackEvent(s) {
+    if (ga) {
+        ga("send", "event", "form", "submit", s);
+    }
+}
+exports.trackEvent = trackEvent;
 
 },{"lodash":33,"react-dom":43}],233:[function(require,module,exports){
 "use strict";
