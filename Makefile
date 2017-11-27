@@ -16,6 +16,7 @@ cache_bust:
 publish_branch:
 	git config user.email "fftf@users.noreply.github.com"
 	git config user.name "CircleCI Script"
+	git add -f dist/
 	git commit -a -m "Build static assets"
 	git push --quiet ${CIRCLE_REPOSITORY_URL} +${PUBLISH_BRANCH};
 
