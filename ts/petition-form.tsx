@@ -11,7 +11,7 @@ import {TrackProfile} from './tracking';
 import {PetitionFormTemplate} from './templates';
 
 import {r} from './r';
-import {trackEvent} from './utils';
+import {trackGAEvent, trackFBEvent} from './utils';
 
 
 // Mock submit:
@@ -172,7 +172,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			submitForm(this.props.url, data)
 				.then((result) => {
 					this.props.setModal("call", this.state.input_zip, this.state.input_phone);
-					trackEvent("submitted_email");
+					trackGAEvent("form", "submit", "submitted_email");
 				})
 				.catch((result) => {
 					this.setState({

@@ -118,9 +118,15 @@ export function noop(evt:Event): void {
 };
 
 
-export function trackEvent(s: String): void {
+export function trackGAEvent(eventCategory: string, eventAction: string, eventLabel: string): void {
 	if (ga) {
-		ga("send", "event", "form", "submit", s);
+		ga("send", "event", eventCategory, eventAction, eventLabel);
+	}
+}
+
+export function trackFBEvent(eventName: string, eventData: any): void {
+	if (fbq) {
+		fbq("track", eventName, eventData);
 	}
 }
 

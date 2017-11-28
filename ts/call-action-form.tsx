@@ -7,7 +7,7 @@ import {Organization} from './organization';
 
 import {CallActionFormTemplate} from './templates';
 import {TrackProfile} from './tracking';
-import {noop, trackEvent} from './utils';
+import {noop, trackGAEvent, trackFBEvent} from './utils';
 
 
 // Mock submit:
@@ -133,14 +133,14 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 
 					// Track conversions, user data is sha256 hashed locally
 					// before being transmitted to Facebook
-					var fbqRegistration: any = {
-					  // validatePhoneNumber currently returns a 10-digit string,
-					  // assumes US country code
-					  ph: '1' + phone
+					var fbqData: any = {};
+
+					fbqData.ph = '1' + phone;
+					if (this.props.zip) {
+						fbqData.zp = this.props.zip;
 					}
-					if (this.props.zip) fbqRegistration.zp = this.props.zip;
-					fbq('track', 'InitiateCall', fbqRegistration);
-					trackEvent("initiated_call");
+					trackFBEvent("InitialCall", fbqData);
+					trackGAEvent("form", "submit", "initiated_call");
 				})
 				.catch((result) => {
 					console.log("FAIL");
