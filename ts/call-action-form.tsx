@@ -6,10 +6,9 @@ import {handleInputChange} from './utils';
 import {Organization} from './organization';
 
 import {CallActionFormTemplate} from './templates';
+import {TrackProfile} from './tracking';
 import {trackEvent} from './utils';
 
-// To use Facebook Pixel fbq global
-declare var fbq: any;
 
 // Mock submit:
 function mockSubmitForm(url: string, data: any): Promise<ajaxResult> {
@@ -64,6 +63,7 @@ export interface CallActionFormProps {
 	zip: string | ""
 	setModal: (modal: string | null, zip?: string | "")=>any
 	phone: string | ""
+	trackProfile: TrackProfile
 }
 
 

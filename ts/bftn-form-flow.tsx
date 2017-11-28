@@ -15,8 +15,9 @@ import {PetitionForm} from './petition-form';
 import {r} from './r';
 import {Organization} from './organization';
 import {ExternalFlags} from './external-flags';
+import {createTrackProfile, TrackProfile} from './tracking';
 
-interface Props {
+export interface BFTNFormFlowProps {
 	initialForm: string
 	org: Organization
 	actionUrl: string
@@ -27,39 +28,40 @@ interface Props {
 }
 
 
-interface State {
+export interface BFTNFormFlowState {
 	modal: string | null
 	phone: string | ""
 	zip: string | ""
+	trackProfile: TrackProfile
 }
 
 
-export class BFTNFormFlow extends React.Component<Props, State> {
-	constructor(props: Props) {
+export class BFTNFormFlow extends React.Component<BFTNFormFlowProps, BFTNFormFlowState> {
+	constructor(props: BFTNFormFlowProps) {
 		super(props);
+		var params = new ExternalFlags();
+		var trackProfile = createTrackProfile(props, params);
 		this.state = {
 			modal: null,
 			phone: "",
-			zip: ""
+			zip: "",
+			trackProfile: trackProfile
 		};
 	}
 	setModal(modal: string | null, zip = "", phone = ""): any {
-		this.setState({modal: modal, zip: zip, phone: phone} as State);
+		this.setState({modal: modal, zip: zip, phone: phone} as BFTNFormFlowState);
 	}
 	render() {
-		var params = new ExternalFlags();
-		var etsy = params.get("utm_source", "unknown") == "etsy";
-
 		var onClose = () => {this.setModal(null)};
 		var modal: JSX.Element | null = null;
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} phone={""} swap={this.props.swap} />;
+				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} phone={""} swap={this.props.swap} trackProfile={this.state.trackProfile} />;
 				break;
 			case "petition":
 			default:
-				form = <PetitionForm url={this.props.actionUrl} org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} etsy={etsy} />;
+				form = <PetitionForm url={this.props.actionUrl} org={this.props.org} setModal={this.setModal.bind(this)} swap={this.props.swap} trackProfile={this.state.trackProfile} />;
 				break;
 		}
 		switch (this.state.modal) {
@@ -73,7 +75,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} phone={this.state.phone} swap={this.props.swap} />
+						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} phone={this.state.phone} swap={this.props.swap} trackProfile={this.state.trackProfile} />
 					</Modal>
 				);
 				break;
@@ -86,7 +88,7 @@ export class BFTNFormFlow extends React.Component<Props, State> {
 				break;
 		}
 		return (
-			<div className={classes(etsy && "etsy-form", this.props.swap && "swap-form")}>
+			<div className={classes(this.state.trackProfile.etsy && "etsy-form", this.props.swap && "swap-form")}>
 				{form}
 				<ReactTransitionGroup.CSSTransitionGroup
 					component="div"

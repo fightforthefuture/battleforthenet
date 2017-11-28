@@ -6,6 +6,7 @@ import {handleInputChange} from './utils';
 import {Organization} from './organization';
 import {Disclaimer} from './disclaimer';
 import {ExternalFlags} from './external-flags';
+import {TrackProfile} from './tracking';
 
 import {PetitionFormTemplate} from './templates';
 
@@ -48,19 +49,12 @@ function jsonpSubmit(url: string, data: any) {
 	}
 }
 
-/**** For the callback after successful submission to ActionKit ****/
-declare global {
-	interface Window {
-		actionKitSubmitSuccess: (response : Object) => any
-	}
-}
-
 export interface PetitionFormProps {
 	url: string
 	org: Organization
 	swap: boolean | false
 	setModal: (modal: string | null, zip?: string | "", phone?: string | "")=>any
-	etsy: boolean | false
+	trackProfile: TrackProfile
 }
 
 
@@ -97,7 +91,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			input_address: "",
 			input_zip: "",
 			input_phone: "",
-			input_comment: this.props.etsy ? r.etsyFormText : r.defaultFormText,
+			input_comment: this.props.trackProfile.etsy ? r.etsyFormText : r.defaultFormText,
 			input_etsy_shop: "",
 			input_opt_in: true,
 			error: null
@@ -129,8 +123,6 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			error: null
 		} as PetitionFormState);
 
-		var params = new ExternalFlags();
-
 		if (this.props.swap) {
 			// Submit form directly to ActionKit
 
@@ -152,7 +144,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 				"country": "US",
 				"action_comment": this.state.input_comment,
 				"opt_in": true,
-				"source": params.get("utm_source", "unknown")
+				"source": this.props.trackProfile.utm_source
 			};
 			jsonpSubmit(this.props.url, actionKitData);
 		} else {

@@ -5,6 +5,18 @@ import * as ClassList from 'classlist-polyfill';
 import * as URL from 'url-polyfill';
 import * as fetch from 'whatwg-fetch';
 
+
+declare global {
+	interface Window {
+		actionKitSubmitSuccess: (response : Object) => any
+	}
+	var fbq: any
+	var ga: any
+}
+
+
+declare var window: any;
+
 import {TestComponent} from './test';
 import {VideoRollComponent} from './video-roll';
 import {PersistentButton} from './persistent-button';
@@ -18,8 +30,6 @@ import {TwitterBrigade} from './twitter-brigade';
 import {PoliticalScoreboard} from './political-scoreboard';
 import {getOrganization} from './organization';
 import {Leaderboard} from './leaderboard';
-
-declare var window: any;
 
 window['_promise'] = Promise;
 window['_classlist'] = ClassList;

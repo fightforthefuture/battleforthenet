@@ -3,10 +3,6 @@ import * as ReactDOM from 'react-dom';
 import * as _ from 'lodash';
 
 
-// To use ga
-declare var ga: any;
-
-
 export interface ajaxRequest {
 	url: string
 	method: string
