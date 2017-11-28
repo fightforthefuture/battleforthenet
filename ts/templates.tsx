@@ -91,7 +91,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 					</button>
 				</div>
 				<p>
-					(We’ll connect you and provide a suggested script of what to say. { ctx.campaign.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a>)
+					(We’ll connect you and provide a suggested script of what to say. { state.campaignSpec.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a>)
 				</p>
 			</form>
 		</div>

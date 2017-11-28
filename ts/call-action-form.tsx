@@ -7,7 +7,7 @@ import {Organization} from './organization';
 
 import {CallActionFormTemplate} from './templates';
 import {TrackProfile} from './tracking';
-import {trackEvent} from './utils';
+import {noop, trackEvent} from './utils';
 
 
 // Mock submit:
@@ -57,7 +57,6 @@ const campaigns:Campaigns = {
 export interface CallActionFormProps {
 	org: Organization
 	campaignId: string
-	referralCode: string | null
 	isModal: boolean
 	swap: boolean | false
 	zip: string | ""
@@ -70,6 +69,7 @@ export interface CallActionFormProps {
 export interface CallActionFormState {
 	input_phone: string | string[] | undefined
 	error: boolean
+	campaignSpec: CampaignSpec
 }
 
 
@@ -77,7 +77,6 @@ export interface CallActionFormContext {
 	bindRef: any
 	onSubmit: any
 	onChange: any
-	campaign: CampaignSpec
 }
 
 
@@ -87,7 +86,8 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 		super(props);
 		this.state = {
 			input_phone: props.phone || "",
-			error: false
+			error: false,
+			campaignSpec: campaigns[props.campaignId] || campaigns["fftf"]
 		};
 	}
 	validatePhoneNumber(v: any): string | false {
@@ -105,12 +105,8 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 		// Return formatted phone number if valid
 		return phone.length == 10 ? phone : false;
 	}
-	getCampaign(campaignId: string): CampaignSpec {
-		return campaigns[campaignId] || campaigns["fftf"];
-	}
 	onSubmit(evt: Event) {
-		evt.preventDefault();
-		evt.stopPropagation();
+		noop(evt);
 		var phone = this.validatePhoneNumber(this.state.input_phone);
 		if (phone === false) {
 			this.setState({
@@ -121,15 +117,15 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 				error: false
 			} as CallActionFormState);
 			this.props.setModal("loading");
-			var campaign = this.getCampaign(this.props.campaignId);
+			var campaign = this.state.campaignSpec;
 			var data = {
 				"campaignId": campaign.id,
 				"userPhone": phone,
 				"zipcode": this.props.zip ? this.props.zip : ""
 			};
 			var url = campaign.url;
-			if (this.props.referralCode) {
-				url = url + "?ref=" + this.props.referralCode;
+			if (this.props.trackProfile.referralCode) {
+				url = url + "?ref=" + this.props.trackProfile.referralCode;
 			}
 			submitForm(url, data)
 				.then((result) => {
@@ -155,13 +151,10 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 		};
 	}
 	render() {
-		var campaign = this.getCampaign(this.props.campaignId);
-
 		var ctx = {
 			bindRef: (form:HTMLElement) => {this.formElement = form; },
 			onSubmit: this.onSubmit.bind(this),
-			onChange: handleInputChange.bind(this),
-			campaign: campaign
+			onChange: handleInputChange.bind(this)
 		};
 		return CallActionFormTemplate(this.props, this.state, ctx);
 	}

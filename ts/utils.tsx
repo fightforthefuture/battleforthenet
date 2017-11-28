@@ -109,7 +109,12 @@ export function daysUntil(d: Date): number {
 
 
 export function noop(evt:Event): void {
-	evt.preventDefault();
+	if (evt.preventDefault) {
+		evt.preventDefault();
+	}
+	if (evt.stopPropagation) {
+		evt.stopPropagation();
+	}
 };
 
 

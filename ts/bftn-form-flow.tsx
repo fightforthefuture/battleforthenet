@@ -57,7 +57,7 @@ export class BFTNFormFlow extends React.Component<BFTNFormFlowProps, BFTNFormFlo
 		var form: JSX.Element;
 		switch (this.props.initialForm) {
 			case "call":
-				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} phone={""} swap={this.props.swap} trackProfile={this.state.trackProfile} />;
+				form = <CallActionForm org={this.props.org} campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={false} zip={this.state.zip} phone={""} swap={this.props.swap} trackProfile={this.state.trackProfile} />;
 				break;
 			case "petition":
 			default:
@@ -75,7 +75,7 @@ export class BFTNFormFlow extends React.Component<BFTNFormFlowProps, BFTNFormFlo
 			case "call":
 				modal = (
 					<Modal modalClass="callform-modal" onClose={onClose}>
-						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} referralCode={this.props.referralCode} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} phone={this.state.phone} swap={this.props.swap} trackProfile={this.state.trackProfile} />
+						<CallActionForm org={this.props.org} campaignId={this.props.campaignId} setModal={this.setModal.bind(this)} isModal={true} zip={this.state.zip} phone={this.state.phone} swap={this.props.swap} trackProfile={this.state.trackProfile} />
 					</Modal>
 				);
 				break;
