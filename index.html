@@ -291,7 +291,7 @@
 
         mountComponent(
           React.createElement(Leaderboard, {
-            statsEndpoint: "/js/count.json",
+            statsEndpoint: "https://cache.battleforthenet.com/v2/leaderboard.json",
             filterCodes: [/^fftf/i, /^null$/, /^\s*$/],
             showMoreAt: 7,
             limit: 40
@@ -326,14 +326,14 @@
           document.getElementById("persistent-button")
         );
 
-        /*
+        
         mountComponent(
           React.createElement(PoliticalScoreboard, {
             eventEmitter: eventEmitter
           }),
           document.getElementById("political-scoreboard")
         );
-        */
+        
 
         mountComponent(
           React.createElement(VideoRollComponent, {
