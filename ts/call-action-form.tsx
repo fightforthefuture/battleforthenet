@@ -141,6 +141,7 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 					}
 					trackFBEvent("InitialCall", fbqData);
 					trackGAEvent("form", "submit", "initiated_call");
+					trackGAEvent("call", "initiated", this.props.trackProfile.ask);
 				})
 				.catch((result) => {
 					console.log("FAIL");

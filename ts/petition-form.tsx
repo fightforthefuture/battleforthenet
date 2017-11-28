@@ -173,6 +173,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 				.then((result) => {
 					this.props.setModal("call", this.state.input_zip, this.state.input_phone);
 					trackGAEvent("form", "submit", "submitted_email");
+					trackGAEvent("signup", "completed", this.props.trackProfile.ask);
 				})
 				.catch((result) => {
 					this.setState({
