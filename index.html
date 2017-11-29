@@ -277,7 +277,12 @@
         var org = getOrganization(externalFlags);
         var deadline = new Date(2017, 8, 9);
 
-        var initialForm = externalFlags.has('call') ? 'call' : 'action';
+        var initialForm;
+        if (externalFlags.has('call')) {
+          initialForm = 'call';
+        } else {
+          initialForm = (Math.floor(Math.random() * 2) == 0) ? 'call' : 'petition';
+        }
         var campaign = externalFlags.get('campaign', 'fftf');
         var persistentButtonText = 'Contact Them';
         var referralCode = externalFlags.get('ref');
