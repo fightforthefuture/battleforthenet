@@ -141,6 +141,15 @@ export class CallActionForm extends React.Component<CallActionFormProps, CallAct
 					}
 					fbqData.ask = this.props.trackProfile.ask;
 					trackFBEvent("InitiateCall", fbqData);
+					trackFBEvent("ActionTaken", fbqData);
+					switch (this.props.trackProfile.ask) {
+						case "callOnly":
+							trackFBEvent("Call", fbqData);
+							break;
+						case "emailThenCall":
+							trackFBEvent("CallAfterEmail", fbqData);
+							break;
+					}
 					trackGAEvent("form", "submit", "initiated_call");
 					trackGAEvent("call", "initiated", this.props.trackProfile.ask);
 				})
