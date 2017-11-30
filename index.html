@@ -280,6 +280,8 @@
         var initialForm;
         if (externalFlags.has('call')) {
           initialForm = 'call';
+        } else if (externalFlags.has('email')) {
+          initialForm = 'petition';
         } else {
           initialForm = (Math.floor(Math.random() * 2) == 0) ? 'call' : 'petition';
         }
