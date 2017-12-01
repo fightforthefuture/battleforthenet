@@ -13,7 +13,7 @@ import {classes, sanitizeUrl} from './utils';
 export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionFormState, ctx:PetitionFormContext) {
 	return (
 		<div>
-			<h1>We have just 3 weeks to <span></span>save net neutrality.</h1>
+			<h1>We have until Dec 14 to<span></span>save net neutrality.</h1>
 			<div className="unit">
 			<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
 				<img className="arrow" src="/images/red-arrow.png" />
@@ -54,7 +54,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 					{ props.trackProfile.etsy
 						? `FCC Chairman Pai wants to repeal existing net neutrality rules that allow Etsy sellers to turn their creative passion into a business. Without these protections, Etsy sellers will be forced to choose between paying for priority access or losing sales in the internet slow lane.`
 						: <span>Comcast, Verizon and AT&T want to end net neutrality so they can control what we see & do online.
-							First, they want to gut FCC rules. Then, they plan to pass bad legislation that allows extra fees, throttling & censorship.</span>
+							First, they want to gut FCC rules in a December 14 vote. Then, they plan to pass bad legislation that allows extra fees, throttling & censorship.</span>
 					}
 					{" "}
 					<em>

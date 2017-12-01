@@ -31,7 +31,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" rel="stylesheet" type="text/css" />
-    <link href="/dist/index.css?v=ec03a45d3943e621f412aeae714310eded66e0aa" rel="stylesheet" type="text/css" />
+    <link href="/dist/index.css?v=9946f78e0b0e9b66dbac4bd356b1dfa9c65dd74d" rel="stylesheet" type="text/css" />
     <script src="//c.shpg.org/103/sp.js"></script>
   </head>
 
@@ -168,7 +168,7 @@
 		<div class="unit">
 			<a id="scoreboard"></a>
 			<h2>Where do your members of Congress stand? Find out, and tweet them!</h2>
-			
+
 			<p>To win, we need to bring more members of Congress onto "Team Internet"&mdash;especially Republicans. Republican members of Congress face massive pressure from party leadership to oppose Net Neutrality, partly because of lobbying by Team Cable, and partly because they see it as "Obama era" policy. But Net Neutrality predates Obama, has always been a design principle of the Internet, and does <em>not</em> need to be a partisan issue. Some Republicans are open to the need for rules&mdash;but they won't break ranks from party leaders unless they hear from constituents. Tweets are surprisingly effective&mdash;<a href="#bftn-action-form">and you should still call too</a>.</p>
 		</div>
 		<div id="political-scoreboard"></div>
@@ -266,7 +266,11 @@
       if (typeof Raven !== 'undefined') Raven.config('https://1a4b59d92e894725acb1d5f4ac65df91@sentry.io/165029').install();
     </script>
 
+<<<<<<< HEAD
     <script type="text/javascript" src="/dist/bundle.js?v=ec03a45d3943e621f412aeae714310eded66e0aa"></script>
+=======
+    <script type="text/javascript" src="/dist/bundle.js?v=9946f78e0b0e9b66dbac4bd356b1dfa9c65dd74d"></script>
+>>>>>>> gh-pages
 
     <script type="text/javascript">
       (function() {
@@ -277,7 +281,14 @@
         var org = getOrganization(externalFlags);
         var deadline = new Date(2017, 8, 9);
 
-        var initialForm = externalFlags.has('call') ? 'call' : 'action';
+        var initialForm;
+        if (externalFlags.has('call')) {
+          initialForm = 'call';
+        } else if (externalFlags.has('email')) {
+          initialForm = 'petition';
+        } else {
+          initialForm = 'petition';
+        }
         var campaign = externalFlags.get('campaign', 'fftf');
         var persistentButtonText = 'Contact Them';
         var referralCode = externalFlags.get('ref');
@@ -326,14 +337,14 @@
           document.getElementById("persistent-button")
         );
 
-        
+
         mountComponent(
           React.createElement(PoliticalScoreboard, {
             eventEmitter: eventEmitter
           }),
           document.getElementById("political-scoreboard")
         );
-        
+
 
         mountComponent(
           React.createElement(VideoRollComponent, {
@@ -347,7 +358,7 @@
               {
                 heading: "Fight for the Future",
                 subHeading: "The Internet is under attack. This is the Battle for the Net.",
-                thumb: "http://img.youtube.com/vi/UsyzP5hejxI/maxresdefault.jpg",
+                thumb: "https://img.youtube.com/vi/UsyzP5hejxI/maxresdefault.jpg",
                 video: "https://www.youtube.com/embed/UsyzP5hejxI?rel=0&autoplay=1"
               },
               {
@@ -442,7 +453,7 @@
       s.parentNode.insertBefore(t,s)}(window,document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
 
-      fbq('init', '1762844240629117'); 
+      fbq('init', '1762844240629117');
       fbq('track', 'PageView');
     </script>
     <noscript>
