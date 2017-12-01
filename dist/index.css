@@ -1,0 +1,1606 @@
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block; }
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none; }
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none; }
+
+* {
+  box-sizing: border-box; }
+
+.bftn-homepage {
+  background-color: #171629;
+  color: #CCCAEA;
+  background-image: url("/images/v2-bg-noise.png");
+  background-repeat: no-repeat;
+  background-position: center top; }
+  .bftn-homepage h1, .bftn-homepage h2, .bftn-homepage h3 {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    color: #fd4935; }
+  .bftn-homepage h4 {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    color: #279cff; }
+  .bftn-homepage div, .bftn-homepage p {
+    font-family: "Open Sans", sans-serif; }
+  .bftn-homepage h1 {
+    text-align: center;
+    font-size: 55px;
+    margin: 20px 0;
+    letter-spacing: 1px;
+    white-space: pre; }
+    .bftn-homepage h1 span {
+      display: block; }
+  .bftn-homepage h2 {
+    font-size: 36px;
+    margin-top: 2em;
+    margin-left: -2px; }
+  .bftn-homepage .calls-number h2 {
+    text-align: center;
+    margin-bottom: 60px; }
+  .bftn-homepage input {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 4px;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    font-size: 17px;
+    width: 100%;
+    padding: 15px 10px; }
+    .bftn-homepage input.error {
+      border: 1px solid red; }
+  .bftn-homepage pre {
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #CCCAEA;
+    color: #171629;
+    border-radius: 0.2rem; }
+    .bftn-homepage pre ::-moz-selection {
+      background: #b1aedc; }
+    .bftn-homepage pre ::selection {
+      background: #b1aedc; }
+  .bftn-homepage .opt-in input {
+    width: initial; }
+  .bftn-homepage .unit {
+    width: 800px;
+    margin: 0px auto;
+    position: relative; }
+    .bftn-homepage .unit hr {
+      margin: 60px 0;
+      border: 1px solid #2a284a; }
+    .bftn-homepage .unit p {
+      width: 800px;
+      line-height: 1.5em; }
+      .bftn-homepage .unit p em {
+        font-weight: bold;
+        font-style: normal;
+        color: #FFF; }
+      .bftn-homepage .unit p a:not(.btn) {
+        text-decoration: underline;
+        color: #6388ed; }
+    .bftn-homepage .unit dl dt {
+      margin: 0;
+      color: #FFF;
+      text-decoration: underline; }
+    .bftn-homepage .unit dl dd {
+      margin: 2px 0 10px;
+      color: #46c9ff; }
+    .bftn-homepage .unit .protest-map {
+      width: 100%;
+      height: 500px;
+      background-color: #f7f4f0;
+      border-radius: 4px;
+      overflow: hidden; }
+      @media screen and (max-width: 800px) {
+        .bftn-homepage .unit .protest-map {
+          height: 300px; } }
+      .bftn-homepage .unit .protest-map iframe {
+        width: 100%;
+        height: 100%;
+        border: none; }
+  .bftn-homepage .join ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .bftn-homepage .join ul li {
+      margin: 1rem 0;
+      padding: 0 1rem; }
+    .bftn-homepage .join ul.modals li {
+      min-width: 400px;
+      max-width: 400px;
+      flex: 1; }
+      .bftn-homepage .join ul.modals li img {
+        max-width: 100%;
+        object-fit: contain; }
+  .bftn-homepage .stats {
+    text-align: center;
+    background-color: #111120;
+    height: 52px;
+    line-height: 52px;
+    color: #83839e;
+    font-size: 14.7px; }
+    .bftn-homepage .stats div {
+      font-family: Montserrat, sans-serif;
+      font-weight: normal; }
+    .bftn-homepage .stats span {
+      color: #46b8ff; }
+    .bftn-homepage .stats a {
+      color: #83839e;
+      text-decoration: none; }
+      .bftn-homepage .stats a:hover {
+        color: #46b8ff;
+        text-decoration: underline; }
+  .bftn-homepage .hero {
+    min-height: 435px; }
+    .bftn-homepage .hero h1 {
+      margin-top: 40px; }
+    .bftn-homepage .hero .petition-copy {
+      padding-bottom: 160px; }
+      .bftn-homepage .hero .petition-copy p {
+        width: 490px;
+        font-size: 27px;
+        line-height: 1.6em;
+        color: #FFF; }
+        .bftn-homepage .hero .petition-copy p em {
+          color: #f94220;
+          font-style: inherit;
+          font-weight: inherit; }
+    .bftn-homepage .hero .etsy-form h1 {
+      font-size: 55px; }
+    .bftn-homepage .hero .etsy-form textarea {
+      height: 100px; }
+    .bftn-homepage .hero .etsy-form .petition-copy p {
+      font-size: 24px; }
+    .bftn-homepage .hero .swap-form .petition-copy p {
+      font-size: 24px; }
+    .bftn-homepage .hero .call-action-copy p {
+      font-size: 20px; }
+    .bftn-homepage .hero .call-action-form {
+      text-align: center; }
+      .bftn-homepage .hero .call-action-form h3 {
+        font-size: 55px;
+        margin-bottom: 0; }
+      .bftn-homepage .hero .call-action-form p {
+        margin-bottom: 30px; }
+  .bftn-homepage .form-error {
+    font-size: 11px;
+    color: #f94220; }
+    .bftn-homepage .form-error span {
+      font-size: 14px;
+      float: left;
+      position: relative;
+      top: 4px;
+      margin-right: 5px; }
+  .bftn-homepage .petition-form {
+    width: 265px;
+    position: absolute;
+    top: 0px;
+    left: 535px; }
+    .bftn-homepage .petition-form div {
+      margin-bottom: 5px; }
+    .bftn-homepage .petition-form .arrow {
+      position: absolute;
+      top: 345px;
+      left: -140px; }
+    .bftn-homepage .petition-form .form-wrapper {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); }
+    .bftn-homepage .petition-form textarea {
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      display: block;
+      width: 100%;
+      height: 130px;
+      border-radius: 4px 4px 0 0;
+      border: none;
+      padding: 35px 10px 15px; }
+    .bftn-homepage .petition-form .letter {
+      position: relative; }
+      .bftn-homepage .petition-form .letter:after {
+        color: #777;
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        content: "Letter:";
+        position: absolute;
+        top: 10px;
+        left: 9px;
+        right: 20px;
+        background-color: white; }
+    .bftn-homepage .petition-form button.btn {
+      width: 100%;
+      font-size: 18px; }
+    .bftn-homepage .petition-form button.reset {
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      border-radius: 0 0 4px 4px;
+      padding: 5px 0;
+      display: block;
+      width: 100%;
+      border: none;
+      background-color: #ccc;
+      color: #999;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background-color 0.1s ease-in, color 0.1s ease-in; }
+      .bftn-homepage .petition-form button.reset:hover {
+        background-color: #aaa;
+        color: #777; }
+    .bftn-homepage .petition-form .address {
+      width: 165px; }
+    .bftn-homepage .petition-form .zip {
+      width: 94px;
+      margin-left: 1px; }
+    .bftn-homepage .petition-form .note {
+      margin-top: 0.6em;
+      text-align: center;
+      font-family: "Open Sans", sans-serif;
+      font-size: 13px;
+      line-height: 1.2em;
+      color: #717093; }
+      .bftn-homepage .petition-form .note a {
+        text-decoration: none;
+        color: #b1aedc; }
+      .bftn-homepage .petition-form .note a.privacy-policy-link {
+        text-decoration: underline; }
+    .bftn-homepage .petition-form .note-small {
+      font-size: 11px; }
+  .bftn-homepage .etsy-form .arrow {
+    top: 363px; }
+  .bftn-homepage .swap-form .arrow {
+    top: 256px; }
+  .bftn-homepage .call-action-form {
+    padding: 20px;
+    text-align: center; }
+    .bftn-homepage .call-action-form p {
+      width: 100%;
+      font-size: 16px; }
+    .bftn-homepage .call-action-form h3 {
+      font-size: 32px;
+      margin: 0; }
+    .bftn-homepage .call-action-form .flex {
+      display: flex; }
+    .bftn-homepage .call-action-form input {
+      margin-right: 10px;
+      text-align: center; }
+    .bftn-homepage .call-action-form .btn img {
+      max-width: 1.4rem;
+      margin-right: 0.4rem;
+      vertical-align: middle; }
+    .bftn-homepage .call-action-form .disclaimer {
+      font-size: 10px; }
+  .bftn-homepage .participants ul {
+    max-width: 680px;
+    margin: 0px auto;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .bftn-homepage .participants ul li {
+      display: inline-block;
+      min-width: 165px;
+      max-width: 165px;
+      max-height: 70px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      flex: 1;
+      box-shadow: 0px 1px 4px 0px #040404; }
+      .bftn-homepage .participants ul li img {
+        max-width: 100%;
+        object-fit: contain; }
+  .bftn-homepage .participants p.more {
+    text-align: center;
+    font-size: 11px;
+    margin-bottom: 40px; }
+    .bftn-homepage .participants p.more a {
+      color: #717093; }
+  .bftn-homepage .participants a.btn {
+    max-width: 500px;
+    font-size: 30px;
+    margin: 0px auto;
+    box-shadow: 0px 1px 4px 0px #040404; }
+  .bftn-homepage .fadein-appear {
+    opacity: 0.01; }
+    .bftn-homepage .fadein-appear.fadein-appear-active {
+      opacity: 1;
+      transition: opacity .5s ease-in; }
+  .bftn-homepage .fadein-enter {
+    opacity: 0.01; }
+    .bftn-homepage .fadein-enter.fadein-enter-active {
+      opacity: 1;
+      transition: opacity .5s ease-in; }
+  .bftn-homepage .fadein-leave {
+    opacity: 1; }
+    .bftn-homepage .fadein-leave.fadein-leave-active {
+      opacity: 0;
+      transition: opacity .5s ease-in; }
+  .bftn-homepage .loader-container {
+    width: 60px;
+    height: 29px;
+    margin: 20px auto;
+    position: relative; }
+  .bftn-homepage .loader {
+    position: inline-block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 20px; }
+    .bftn-homepage .loader .chord {
+      position: absolute;
+      width: 60px;
+      height: 6px;
+      transition: opacity 0.05s; }
+    .bftn-homepage .loader .ray {
+      display: block;
+      height: 6px;
+      width: 18px;
+      background-color: #fd4935;
+      border-radius: 3px; }
+    .bftn-homepage .loader .chord-a {
+      transform: rotate(0deg); }
+    .bftn-homepage .loader .chord-b {
+      transform: rotate(45deg); }
+    .bftn-homepage .loader .chord-c {
+      transform: rotate(90deg); }
+    .bftn-homepage .loader .chord-d {
+      transform: rotate(135deg); }
+    .bftn-homepage .loader .chord-e {
+      transform: rotate(180deg); }
+    .bftn-homepage .loader .chord-f {
+      transform: rotate(225deg); }
+    .bftn-homepage .loader .chord-g {
+      transform: rotate(270deg); }
+    .bftn-homepage .loader .chord-h {
+      transform: rotate(315deg); }
+    .bftn-homepage .loader .chord-0 {
+      opacity: 1.0; }
+    .bftn-homepage .loader .chord-1 {
+      opacity: 0.9; }
+    .bftn-homepage .loader .chord-2 {
+      opacity: 0.8; }
+    .bftn-homepage .loader .chord-3 {
+      opacity: 0.7; }
+    .bftn-homepage .loader .chord-4 {
+      opacity: 0.6; }
+    .bftn-homepage .loader .chord-5 {
+      opacity: 0.5; }
+    .bftn-homepage .loader .chord-6 {
+      opacity: 0.4; }
+    .bftn-homepage .loader .chord-7 {
+      opacity: 0.3; }
+  .bftn-homepage footer {
+    background-color: #1f1c35;
+    padding: 30px 30px 0px 30px;
+    margin-top: 100px; }
+    .bftn-homepage footer .logos {
+      padding: 20px 0;
+      border-bottom: 2px solid #393558;
+      text-align: center; }
+      .bftn-homepage footer .logos a {
+        line-height: 62px; }
+      .bftn-homepage footer .logos .fftf {
+        margin-right: 40px;
+        position: relative;
+        top: -6px; }
+      .bftn-homepage footer .logos .demandprogress {
+        position: relative;
+        top: 8px;
+        margin-right: 40px; }
+    .bftn-homepage footer .press-inquiries {
+      width: 65%;
+      float: left;
+      padding-top: 10px;
+      font-weight: bold;
+      color: #717093; }
+      .bftn-homepage footer .press-inquiries a {
+        color: #FFF; }
+      .bftn-homepage footer .press-inquiries .no-em {
+        text-decoration: none; }
+      .bftn-homepage footer .press-inquiries h3 {
+        margin-bottom: 15px; }
+      .bftn-homepage footer .press-inquiries ul {
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        list-style-type: none;
+        padding: 0; }
+        .bftn-homepage footer .press-inquiries ul li {
+          margin: 0 0 8px 0; }
+    .bftn-homepage footer .social-media {
+      float: left;
+      height: 90px;
+      width: 30%;
+      margin-left: 5%; }
+      .bftn-homepage footer .social-media a, .bftn-homepage footer .social-media div.faux-a {
+        display: block;
+        width: 100%;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        position: relative;
+        color: #FFF;
+        text-decoration: none;
+        cursor: pointer;
+        height: 50px;
+        padding: 0 45px 0 15px;
+        line-height: 50px;
+        border-radius: 25px;
+        text-transform: uppercase;
+        text-align: center; }
+        .bftn-homepage footer .social-media a span, .bftn-homepage footer .social-media div.faux-a span {
+          margin-left: 5px; }
+      .bftn-homepage footer .social-media img {
+        position: absolute;
+        height: 40px;
+        top: 5px;
+        right: 15px; }
+      .bftn-homepage footer .social-media .twitter {
+        background-color: #2ecaf8;
+        margin-top: 70px;
+        margin-bottom: 10px; }
+        .bftn-homepage footer .social-media .twitter:hover {
+          background-color: #44bee2; }
+      .bftn-homepage footer .social-media .facebook {
+        background-color: #224769; }
+        .bftn-homepage footer .social-media .facebook:hover {
+          background-color: #30465b; }
+    .bftn-homepage footer .built-by {
+      clear: both;
+      font-weight: bold;
+      text-align: center;
+      width: 300px;
+      margin: 40px auto 0;
+      background-color: #171629;
+      padding: 20px 0 40px;
+      line-height: 1em;
+      color: #717093;
+      border-radius: 3px 3px 0 0; }
+      .bftn-homepage footer .built-by img {
+        position: relative;
+        top: 2px; }
+  .bftn-homepage .video-roll {
+    position: relative;
+    height: 300px;
+    margin: 25px 0 0 0; }
+    .bftn-homepage .video-roll .controls {
+      position: absolute;
+      width: 100%;
+      top: 0; }
+      .bftn-homepage .video-roll .controls .bar {
+        position: absolute;
+        background-color: #2a2749;
+        top: 290px;
+        height: 3px;
+        width: 90%;
+        margin: 0 5%; }
+      .bftn-homepage .video-roll .controls .section {
+        height: 100%;
+        position: absolute;
+        background-color: #5f88ff;
+        transition: left 0.3s ease-in; }
+      .bftn-homepage .video-roll .controls .prev, .bftn-homepage .video-roll .controls .next {
+        top: 0px;
+        height: 250px;
+        position: absolute;
+        cursor: pointer;
+        text-align: center; }
+        .bftn-homepage .video-roll .controls .prev div, .bftn-homepage .video-roll .controls .next div {
+          display: inline-block;
+          background-color: #494476;
+          color: #17152a;
+          font-size: 18px;
+          height: 42px;
+          width: 42px;
+          line-height: 42px;
+          margin-top: 80px;
+          border-radius: 21px; }
+          .bftn-homepage .video-roll .controls .prev div span, .bftn-homepage .video-roll .controls .next div span {
+            position: relative;
+            top: 2px; }
+        .bftn-homepage .video-roll .controls .prev:hover div, .bftn-homepage .video-roll .controls .next:hover div {
+          background-color: #5f88ff; }
+      .bftn-homepage .video-roll .controls .prev {
+        left: 0; }
+      .bftn-homepage .video-roll .controls .next {
+        right: 0; }
+        .bftn-homepage .video-roll .controls .next span {
+          left: 1px; }
+    .bftn-homepage .video-roll .video-container {
+      height: 250px; }
+    .bftn-homepage .video-roll .video-scroller {
+      position: absolute;
+      top: 0px; }
+    .bftn-homepage .video-roll .video {
+      position: absolute;
+      transition: left 0.3s ease-in, opacity 0.3s ease-in;
+      opacity: 0.2; }
+      .bftn-homepage .video-roll .video.video-end {
+        transition: none; }
+      .bftn-homepage .video-roll .video.video-active {
+        opacity: 1.0; }
+      .bftn-homepage .video-roll .video .thumb {
+        position: relative;
+        overflow: hidden;
+        border-radius: 2px;
+        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.4), inset 0 2px 0px white; }
+        .bftn-homepage .video-roll .video .thumb .veneer {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(0, 0, 140, 0.2); }
+        .bftn-homepage .video-roll .video .thumb img {
+          width: 100%;
+          height: 100%; }
+      .bftn-homepage .video-roll .video p {
+        margin: 10px 0; }
+        .bftn-homepage .video-roll .video p span {
+          display: block;
+          font-weight: bold; }
+      .bftn-homepage .video-roll .video .play {
+        display: none;
+        text-align: center;
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+        .bftn-homepage .video-roll .video .play .wrapper {
+          position: absolute;
+          top: 50%;
+          left: 50%; }
+        .bftn-homepage .video-roll .video .play .circle {
+          position: relative;
+          top: -32px;
+          left: -32px;
+          display: block;
+          font-size: 40px;
+          color: white;
+          cursor: pointer;
+          width: 75px;
+          height: 75px;
+          line-height: 75px;
+          border-radius: 50px;
+          border: 3px solid white;
+          background-color: #515470; }
+          .bftn-homepage .video-roll .video .play .circle span {
+            position: relative;
+            left: 5px; }
+      .bftn-homepage .video-roll .video.video-active:hover .play {
+        display: block; }
+  .bftn-homepage .the-problem {
+    text-align: center; }
+    .bftn-homepage .the-problem ul {
+      list-style-type: none;
+      padding: 0; }
+    .bftn-homepage .the-problem li {
+      display: inline-block; }
+    .bftn-homepage .the-problem img {
+      height: 100px;
+      margin: 0 20px; }
+  .bftn-homepage .extra-reading {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .bftn-homepage .extra-reading li {
+      margin-bottom: 10px; }
+    .bftn-homepage .extra-reading a {
+      color: #FFF; }
+    .bftn-homepage .extra-reading em {
+      font-style: normal;
+      color: #46c9ff; }
+  .bftn-homepage .backers img {
+    margin: 20px 10px; }
+  .bftn-homepage .backers .shuttleworth {
+    position: relative;
+    top: -14px; }
+  .bftn-homepage .persistent-button {
+    min-width: 28rem;
+    position: fixed;
+    bottom: -85px;
+    right: 25px;
+    transition: bottom 0.2s ease-in; }
+    .bftn-homepage .persistent-button a.btn {
+      font-size: 40px;
+      padding: 15px;
+      box-shadow: 5px 5px 35px black;
+      transition: box-shadow 0.3s ease-in; }
+      .bftn-homepage .persistent-button a.btn img {
+        max-width: 3rem;
+        margin-right: 1rem;
+        vertical-align: bottom; }
+    .bftn-homepage .persistent-button a.btn {
+      width: 100%; }
+    .bftn-homepage .persistent-button a.btn:hover {
+      box-shadow: 10px 10px 35px black; }
+  .bftn-homepage .toggle-true .persistent-button {
+    bottom: 25px; }
+  .bftn-homepage button.btn, .bftn-homepage a.btn {
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    display: block;
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    background-color: #f94220;
+    color: #FFF;
+    cursor: pointer; }
+    .bftn-homepage button.btn:hover, .bftn-homepage a.btn:hover {
+      background-color: #e25237; }
+  .bftn-homepage .no-overflow {
+    overflow: hidden; }
+  .bftn-homepage .modal {
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%; }
+    .bftn-homepage .modal p {
+      width: 100%; }
+    .bftn-homepage .modal .modal-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0.6; }
+    .bftn-homepage .modal .modal-close {
+      color: rgba(100, 100, 100, 0.8);
+      position: absolute;
+      font-size: 30px;
+      top: -20px;
+      right: -20px;
+      cursor: pointer; }
+      .bftn-homepage .modal .modal-close:hover {
+        color: rgba(100, 100, 100, 0.9); }
+    .bftn-homepage .modal .modal-content-container {
+      pointer-events: none;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      top: 50%; }
+    .bftn-homepage .modal .modal-content {
+      pointer-events: all;
+      position: relative;
+      margin: 0 auto; }
+    .bftn-homepage .modal #after-action-footer {
+      padding: 1rem 2rem;
+      background-color: #141037;
+      border-radius: 0 0 0.5rem 0.5rem; }
+    .bftn-homepage .modal #after-action-footer h3 {
+      margin: 0 0 1rem;
+      color: #908dc4;
+      text-align: left; }
+    .bftn-homepage .modal #after-action-footer ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: left;
+      justify-content: space-between;
+      list-style-type: none; }
+    .bftn-homepage .modal #after-action-footer li {
+      margin: 0 0.25rem 0.5rem;
+      flex: 1 0 auto; }
+    .bftn-homepage .modal #after-action-footer button {
+      width: 100%;
+      height: 2rem;
+      padding: 0 0.6rem;
+      background: transparent;
+      border: 1px solid #3d459a;
+      border-radius: 0.2rem;
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 2rem; }
+    .bftn-homepage .modal #after-action-footer button div {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center; }
+    .bftn-homepage .modal #after-action-footer button:hover {
+      cursor: pointer; }
+    .bftn-homepage .modal #after-action-footer button img {
+      max-width: 1rem;
+      max-height: 1rem;
+      margin: 0 0.5rem 0.1rem 0; }
+    .bftn-homepage .modal #after-action-footer button.facebook img, .bftn-homepage .modal #after-action-footer button.twitter img {
+      max-width: 1.5rem;
+      max-height: 1.5rem;
+      margin-right: 0.2rem; }
+    .bftn-homepage .modal #after-action-footer button.facebook {
+      background-color: #2b48a7;
+      border: none; }
+  .bftn-homepage .loading-modal .modal-content {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    margin: -30px auto 0; }
+  .bftn-homepage .callform-modal .call-action-form h3 {
+    font-size: 30px; }
+  .bftn-homepage .callform-modal .modal-content {
+    height: 350px;
+    max-width: 600px;
+    background-color: #171629;
+    margin: -175px auto 0; }
+  .bftn-homepage .callsuccess-modal .modal-content {
+    height: 400px;
+    max-width: 600px;
+    background-color: #171629;
+    margin: -200px auto 0;
+    padding: 20px; }
+    .bftn-homepage .callsuccess-modal .modal-content h2 {
+      text-align: center;
+      font-size: 40px;
+      margin: 0 0 10px; }
+    .bftn-homepage .callsuccess-modal .modal-content h4 {
+      text-align: center;
+      font-size: 24px;
+      margin: 0 0 10px; }
+      .bftn-homepage .callsuccess-modal .modal-content h4 em {
+        display: block;
+        color: #f94220; }
+    .bftn-homepage .callsuccess-modal .modal-content p {
+      font-size: 16px; }
+  .bftn-homepage .twitter-modal .modal-content {
+    max-width: 600px;
+    background-color: #171629;
+    margin: -180px auto 0;
+    padding: 20px; }
+    .bftn-homepage .twitter-modal .modal-content a {
+      color: #FFF; }
+    .bftn-homepage .twitter-modal .modal-content h2 {
+      text-align: center;
+      font-size: 40px;
+      margin: 0 0 10px; }
+    .bftn-homepage .twitter-modal .modal-content .btn span {
+      position: relative;
+      top: -6px; }
+    .bftn-homepage .twitter-modal .modal-content img {
+      display: inline-block;
+      height: 30px; }
+    .bftn-homepage .twitter-modal .modal-content .notice {
+      text-align: center; }
+  .bftn-homepage .social-media-buttons {
+    position: absolute;
+    left: 0;
+    top: 500px;
+    z-index: 100; }
+    .bftn-homepage .social-media-buttons .share-bar {
+      display: block;
+      position: relative;
+      height: 60px;
+      width: 80px;
+      border-radius: 0 30px 30px 0;
+      margin-bottom: 10px;
+      transition: width 0.2s ease-in; }
+      .bftn-homepage .social-media-buttons .share-bar span {
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        display: block;
+        line-height: 60px;
+        width: 200px;
+        text-align: right;
+        opacity: 0;
+        position: absolute;
+        right: 60px;
+        transition: opacity 0.4s ease-in; }
+      .bftn-homepage .social-media-buttons .share-bar img {
+        position: absolute;
+        height: 50px;
+        right: 15px;
+        top: 5px; }
+    .bftn-homepage .social-media-buttons .share-bar:hover {
+      width: 250px; }
+      .bftn-homepage .social-media-buttons .share-bar:hover span {
+        opacity: 1.0; }
+    .bftn-homepage .social-media-buttons .twitter {
+      background-color: #2ecbf8; }
+    .bftn-homepage .social-media-buttons .facebook {
+      background-color: #234769; }
+  .bftn-homepage .carousel {
+    position: relative; }
+    .bftn-homepage .carousel .controls {
+      position: absolute;
+      width: 100%;
+      top: 0; }
+      .bftn-homepage .carousel .controls .bar {
+        position: absolute;
+        background-color: #2a2749;
+        top: 290px;
+        height: 3px;
+        width: 90%;
+        margin: 0 5%; }
+      .bftn-homepage .carousel .controls .section {
+        height: 100%;
+        position: absolute;
+        background-color: #5f88ff;
+        transition: left 0.3s ease-in; }
+      .bftn-homepage .carousel .controls .prev, .bftn-homepage .carousel .controls .next {
+        top: 0px;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+        text-align: center; }
+        .bftn-homepage .carousel .controls .prev div, .bftn-homepage .carousel .controls .next div {
+          display: inline-block;
+          background-color: #494476;
+          color: #17152a;
+          font-size: 18px;
+          height: 42px;
+          width: 42px;
+          line-height: 42px;
+          margin-top: 50%;
+          position: relative;
+          border-radius: 21px; }
+          .bftn-homepage .carousel .controls .prev div span, .bftn-homepage .carousel .controls .next div span {
+            position: relative;
+            top: 2px; }
+        .bftn-homepage .carousel .controls .prev:hover div, .bftn-homepage .carousel .controls .next:hover div {
+          background-color: #5f88ff; }
+      .bftn-homepage .carousel .controls .prev {
+        left: 0; }
+      .bftn-homepage .carousel .controls .next {
+        right: 0; }
+        .bftn-homepage .carousel .controls .next span {
+          left: 1px; }
+    .bftn-homepage .carousel .carousel-scroller {
+      position: absolute;
+      top: 0px; }
+    .bftn-homepage .carousel .carousel-item {
+      position: absolute;
+      transition: left 0.3s ease-in, opacity 0.3s ease-in;
+      opacity: 0.2; }
+      .bftn-homepage .carousel .carousel-item.carousel-item-end {
+        transition: none; }
+      .bftn-homepage .carousel .carousel-item.carousel-item-active {
+        opacity: 1.0; }
+  .bftn-homepage .political-scoreboard {
+    overflow: hidden; }
+    .bftn-homepage .political-scoreboard .state-selector {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #6b63ff; }
+      .bftn-homepage .political-scoreboard .state-selector select {
+        margin-left: 40px;
+        padding: 5px;
+        text-transform: uppercase; }
+    .bftn-homepage .political-scoreboard .psb-section {
+      position: relative; }
+      .bftn-homepage .political-scoreboard .psb-section .unit h4 {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-top: 40px;
+        margin-bottom: 0; }
+      .bftn-homepage .political-scoreboard .psb-section .unit p {
+        margin-top: 0;
+        font-size: 14px; }
+    .bftn-homepage .political-scoreboard .psb-unknown h4 {
+      color: #7067a4; }
+    .bftn-homepage .political-scoreboard .psb-unknown div.cover {
+      background-color: rgba(55, 53, 82, 0.5); }
+    .bftn-homepage .political-scoreboard .psb-unknown .politician:hover div.cover {
+      background-color: rgba(55, 53, 82, 0.9); }
+    .bftn-homepage .political-scoreboard .psb-cable h4 {
+      color: #ff1a09; }
+    .bftn-homepage .political-scoreboard .psb-cable div.cover {
+      background-color: rgba(255, 26, 9, 0.5); }
+    .bftn-homepage .political-scoreboard .psb-cable .politician:hover div.cover {
+      background-color: rgba(255, 26, 9, 0.7); }
+    .bftn-homepage .political-scoreboard .psb-internet h4 {
+      color: #45bcc0; }
+    .bftn-homepage .political-scoreboard .psb-internet div.cover {
+      background-color: rgba(75, 205, 207, 0.5); }
+    .bftn-homepage .political-scoreboard .psb-internet .politician:hover div.cover {
+      background-color: rgba(75, 205, 207, 0.7); }
+    .bftn-homepage .political-scoreboard .politician {
+      width: 100px;
+      height: 122px;
+      position: relative; }
+      .bftn-homepage .political-scoreboard .politician img {
+        width: 100px;
+        height: 122px; }
+      .bftn-homepage .political-scoreboard .politician div.cover {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%; }
+        .bftn-homepage .political-scoreboard .politician div.cover span {
+          color: #FFF;
+          position: absolute;
+          bottom: 6px;
+          left: 0px;
+          text-align: center;
+          width: 100%;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 14px;
+          text-shadow: 0 0 5px black; }
+      .bftn-homepage .political-scoreboard .politician div.cover-long span {
+        font-size: 10px;
+        bottom: 9px; }
+      .bftn-homepage .political-scoreboard .politician div.actions {
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+        width: 100%;
+        display: none; }
+        .bftn-homepage .political-scoreboard .politician div.actions .btn {
+          font-size: 10px;
+          padding: 7px 5px;
+          width: 90%;
+          margin: 10px auto 0; }
+        .bftn-homepage .political-scoreboard .politician div.actions .tweet {
+          background-color: #2ecaf8; }
+        .bftn-homepage .political-scoreboard .politician div.actions .tweet:hover {
+          background-color: #0691ba; }
+        .bftn-homepage .political-scoreboard .politician div.actions .site {
+          background-color: #224769; }
+        .bftn-homepage .political-scoreboard .politician div.actions .site:hover {
+          background-color: #162d42; }
+      .bftn-homepage .political-scoreboard .politician div.actions.no-site {
+        bottom: 45px; }
+        .bftn-homepage .political-scoreboard .politician div.actions.no-site .site {
+          display: none; }
+    .bftn-homepage .political-scoreboard .carousel-item-active:hover div.actions {
+      display: block; }
+    .bftn-homepage .political-scoreboard .carousel-item-active:hover div.cover span {
+      opacity: 0.1; }
+    .bftn-homepage .political-scoreboard .carousel {
+      height: 122px; }
+      .bftn-homepage .political-scoreboard .carousel .bar {
+        display: none; }
+      .bftn-homepage .political-scoreboard .carousel .controls .prev div, .bftn-homepage .political-scoreboard .carousel .controls .next div {
+        height: 32px;
+        width: 32px;
+        line-height: 32px;
+        border-radius: 16px;
+        margin-top: 40px; }
+      .bftn-homepage .political-scoreboard .carousel .carousel-item {
+        transition: left 0.1s ease-in, opacity 0.1s ease-in; }
+  .bftn-homepage #leaderboard h4 {
+    font-size: 30px;
+    color: #CCCAEA;
+    margin: 0px;
+    font-weight: normal; }
+    .bftn-homepage #leaderboard h4 span {
+      display: inline-block;
+      border-bottom: 1px solid #2d2a4e;
+      padding: 0px 10px;
+      padding-bottom: 9px; }
+  .bftn-homepage #leaderboard .leaderboard-total,
+  .bftn-homepage #leaderboard .leaderboard-week,
+  .bftn-homepage #leaderboard .leaderboard-day {
+    float: left;
+    width: 33%;
+    text-align: center; }
+    .bftn-homepage #leaderboard .leaderboard-total p,
+    .bftn-homepage #leaderboard .leaderboard-week p,
+    .bftn-homepage #leaderboard .leaderboard-day p {
+      color: #FFF;
+      font-size: 36px;
+      margin-top: 0px;
+      width: auto;
+      font-weight: bold; }
+  .bftn-homepage #leaderboard .leaderboard-top {
+    clear: both;
+    text-align: center;
+    margin-bottom: 8em;
+    position: relative; }
+    .bftn-homepage #leaderboard .leaderboard-top h4 {
+      font-size: 32px;
+      margin-bottom: 15px; }
+    .bftn-homepage #leaderboard .leaderboard-top ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px; }
+      .bftn-homepage #leaderboard .leaderboard-top ul li {
+        color: #FFF;
+        font-size: 16px;
+        margin: 7px 0; }
+        .bftn-homepage #leaderboard .leaderboard-top ul li a {
+          color: #6388ed; }
+    .bftn-homepage #leaderboard .leaderboard-top ul {
+      max-height: 215px;
+      overflow: hidden;
+      transition: max-height 0.5s ease-in; }
+    .bftn-homepage #leaderboard .leaderboard-top .leaderboard-open {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 215px;
+      background: linear-gradient(0deg, #171629, rgba(23, 22, 41, 0));
+      opacity: 1.0;
+      transition: opacity 0.5s ease-in; }
+      .bftn-homepage #leaderboard .leaderboard-top .leaderboard-open span {
+        cursor: pointer;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%; }
+        .bftn-homepage #leaderboard .leaderboard-top .leaderboard-open span:hover {
+          color: #FFF; }
+  .bftn-homepage #leaderboard .leaderboard-top.open ul {
+    max-height: none; }
+  .bftn-homepage #leaderboard .leaderboard-top.open .leaderboard-open {
+    display: none; }
+  @media screen and (max-width: 600px) {
+    .bftn-homepage #leaderboard .leaderboard-day {
+      width: 100%; }
+    .bftn-homepage #leaderboard .leaderboard-week {
+      width: 100%; }
+    .bftn-homepage #leaderboard .leaderboard-total {
+      width: 100%; } }
+  @media screen and (max-width: 800px) {
+    .bftn-homepage .unit {
+      width: 90%; }
+      .bftn-homepage .unit p {
+        width: auto; }
+    .bftn-homepage h1 {
+      font-size: 40px;
+      white-space: normal; }
+      .bftn-homepage h1 span {
+        display: none; }
+    .bftn-homepage h2 {
+      font-size: 24px; }
+    .bftn-homepage .stats {
+      padding: 5px 0;
+      line-height: 1.2em;
+      height: auto; }
+    .bftn-homepage .social-media-buttons {
+      display: none; }
+    .bftn-homepage .hero .petition-copy {
+      padding-bottom: 20px; }
+      .bftn-homepage .hero .petition-copy p {
+        width: auto;
+        font-size: 20px; }
+    .bftn-homepage .petition-form {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%; }
+      .bftn-homepage .petition-form .address {
+        width: 60%; }
+      .bftn-homepage .petition-form .zip {
+        float: right;
+        width: 39%; }
+      .bftn-homepage .petition-form textarea {
+        clear: left; }
+      .bftn-homepage .petition-form .arrow {
+        display: none; }
+    .bftn-homepage .call-action-form .flex {
+      display: block; }
+    .bftn-homepage .call-action-form input {
+      margin: 0 0 10px 0; }
+    .bftn-homepage .modal .modal-close {
+      right: 4px;
+      top: 4px; }
+    .bftn-homepage .modal .call-action-form h3 {
+      font-size: 20px; }
+    .bftn-homepage .modal .call-action-form p {
+      font-size: 12px; }
+    .bftn-homepage .callsuccess-modal .modal-content h2 {
+      font-size: 20px; }
+    .bftn-homepage .callsuccess-modal .modal-content h4 {
+      font-size: 16px; }
+    .bftn-homepage .callsuccess-modal .modal-content p {
+      font-size: 14px; }
+    .bftn-homepage footer .logos {
+      width: 100%;
+      border: none;
+      text-align: center;
+      margin: 0;
+      padding: 10px 0 0;
+      float: none; }
+      .bftn-homepage footer .logos a {
+        display: block; }
+      .bftn-homepage footer .logos .fftf, .bftn-homepage footer .logos .demandprogress, .bftn-homepage footer .logos .freepress {
+        margin: 0; }
+    .bftn-homepage footer .social-media {
+      width: 100%;
+      margin: 0;
+      border: none;
+      text-align: center;
+      float: none; }
+      .bftn-homepage footer .social-media .twitter {
+        margin-top: 20px; }
+    .bftn-homepage footer .press-inquiries {
+      width: 100%;
+      float: none; }
+    .bftn-homepage footer .built-by {
+      padding-bottom: 80px; } }
+  @media screen and (max-width: 930px) {
+    .bftn-homepage .hero {
+      margin-bottom: 20px; }
+    .bftn-homepage .the-problem {
+      width: 600px;
+      margin: 0px auto; }
+    .bftn-homepage button.btn, .bftn-homepage a.btn {
+      width: 50%; }
+    .bftn-homepage .hero .call-action-form h3 {
+      font-size: 40px; } }
+  @media screen and (max-width: 800px) {
+    .bftn-homepage button.btn, .bftn-homepage a.btn {
+      width: 100%; } }
+  @media screen and (max-width: 600px) {
+    .bftn-homepage .the-problem {
+      width: auto;
+      text-align: center; }
+      .bftn-homepage .the-problem li {
+        display: block; }
+    .bftn-homepage .video-roll .controls {
+      display: none; }
+    .bftn-homepage .twitter-modal .modal-content h2 {
+      font-size: 25px; }
+    .bftn-homepage .twitter-modal .modal-content p {
+      font-size: 16px;
+      line-height: 1.4em; }
+    .bftn-homepage button.btn, .bftn-homepage a.btn {
+      width: 100%; }
+    .bftn-homepage .hero .call-action-form h3 {
+      font-size: 36px; } }
+  @media screen and (max-width: 500px) {
+    .bftn-homepage .twitter-modal .modal-content h2 {
+      font-size: 20px; }
+    .bftn-homepage .twitter-modal .modal-content p {
+      font-size: 15px;
+      line-height: 1.2em; }
+    .bftn-homepage .twitter-modal .modal-content .btn img {
+      height: 18px; }
+    .bftn-homepage .twitter-modal .modal-content .btn span {
+      font-size: 12px;
+      top: -2px; }
+    .bftn-homepage .twitter-modal .modal-content button.btn, .bftn-homepage .twitter-modal .modal-content a.btn {
+      width: 100%; }
+    .bftn-homepage .persistent-button {
+      min-width: 100%;
+      width: 100%;
+      right: 0; }
+      .bftn-homepage .persistent-button a.btn {
+        border-radius: 0;
+        font-size: 20px;
+        padding: 10px 0; }
+        .bftn-homepage .persistent-button a.btn img {
+          max-width: 1.5rem; }
+    .bftn-homepage .toggle-true .persistent-button {
+      bottom: 0; }
+    .bftn-homepage .hero .call-action-form h3 {
+      font-size: 26px; } }
+  @media screen and (max-width: 370px) {
+    .bftn-homepage footer .built-by {
+      width: auto; } }
+  .bftn-homepage .no-scroll {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch; }
+  .bftn-homepage .hidden {
+    display: none; }
+  .bftn-homepage .spacer {
+    clear: both; }
+
+#video_container {
+  margin-top: 2em;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 600px;
+  padding-bottom: 56.25%; }
+  #video_container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.bftn-homepage div.sp_fb_large a {
+  color: transparent;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
