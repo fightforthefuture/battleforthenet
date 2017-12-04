@@ -29,7 +29,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../images/collage.jpg");
+  background-image: url("../images/collage2.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: 1;
@@ -37,22 +37,22 @@ a {
 
 .logo {
   position: absolute;
-  z-index: 2;
-  top: 30px;
+  z-index: 3;
+  top: 18px;
   left: 0;
   right: 0;
   text-align: center;
 }
 
 .logo img {
-  width: 450px;
+  width: 129px;
   max-width: 90%;
 }
 
 .content {
   position: absolute;
   z-index: 2;
-  top: 120px;
+  top: 90px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -63,14 +63,14 @@ a {
 }
 
 .container {
-  width: 400px;
+  width: 600px;
   max-width: 80%;
   margin: auto;
 }
 
 h1 {
   color: #ff2121;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: bold;
 }
 
