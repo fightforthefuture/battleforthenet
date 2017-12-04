@@ -39,11 +39,19 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 42px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+h1 small {
+  display: block;
+  font-weight: normal;
+  font-size: 60%;
 }
 
 p {
-  font-weight: bold;
   line-height: 1.4;
 }
 
@@ -59,7 +67,7 @@ img {
 }
 
 section {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .logo {
@@ -67,7 +75,7 @@ section {
 }
 
 .logo img {
-  width: 130px;
+  width: 120px;
 }
 
 .btn {
@@ -156,7 +164,7 @@ a.twitter {
   width: 100%;
   font-family: monospace;
   margin-bottom: 20px;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
 }
 
 .widgets .modals img {
