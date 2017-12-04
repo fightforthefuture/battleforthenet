@@ -1,24 +1,46 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, .btn, input, .and {
+  font-family: 'Montserrat', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html, body {
   min-height: 100%;
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
   color: #424242;
+}
+
+a {
+  color: #ff2121;
+  text-decoration: underline;
+}
+
+.collage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url("../images/collage.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-}
-
-.content {
-  background-image: url("../images/eraser.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding: 50px 0;
+  z-index: 1;
 }
 
 .logo {
-  margin: 30px 0 10px;
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: 0;
+  right: 0;
   text-align: center;
 }
 
@@ -27,30 +49,39 @@ body {
   max-width: 90%;
 }
 
+.content {
+  position: absolute;
+  z-index: 2;
+  top: 120px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/eraser.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 60px 0;
+}
+
 .container {
   width: 400px;
   max-width: 80%;
   margin: auto;
 }
 
-a {
-  text-decoration: none;
-}
-
 h1 {
-  color: #dc2626;
+  color: #ff2121;
   font-size: 30px;
-  font-weight: 900;
+  font-weight: bold;
 }
 
 p {
-  font-weight: 900;
+  font-weight: bold;
   line-height: 1.33;
 }
 
 .btn {
   color: #fff;
-  background-color: #dc2626;
+  background-color: #ff2121;
   display: block;
   width: 100%;
   padding: 20px 0;
@@ -58,36 +89,45 @@ p {
   text-transform: uppercase;
   border: none;
   border-radius: 3px;
-  font-family: 'Rubik', sans-serif;
-  font-weight: 900;
+  font-weight: bold;
   font-size: 30px;
   flex-grow: 1;
+  text-decoration: none;
+}
+
+.and {
+  color: #c6c6c6;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin: 10px 0;
 }
 
 .btn-outline {
-  color: #dc2626;
+  color: #ff2121;
   background-color: #fff;
-  border: 1px solid #dc2626;
+  border: 1px solid #ff2121;
   font-size: 16px;
   width: auto;
 }
 
 .form-error {
-  color: #dc2626;
+  color: #ff2121;
 }
 
 input {
-  font-family: 'Rubik', sans-serif;
   font-size: 16px;
   padding: 15px;
   border: 1px solid #343434;
   border-radius: 3px;
-  width: 41%;
-  margin: 0 4px 8px 0;
+  width: 49%;
+  margin: 0 0 8px 0;
+  float: left;
 }
 
 input:nth-child(even) {
-  margin-right: 0;
+  margin-left: 2%;
 }
 
 .hidden {
@@ -99,9 +139,10 @@ input:nth-child(even) {
 }
 
 .social a {
+  text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: bold;
   display: inline-block;
   margin: 20px 0;
   width: 49%;
@@ -109,25 +150,41 @@ input:nth-child(even) {
 }
 
 a.facebook {
-  color: #3c5cc4;
-  border-right: 1px solid #eee;
+  color: #215cc8;
+  border-right: 1px solid #c6c6c6;
 }
 
 a.twitter {
-  color: #79cff2;
+  color: #28d0f4;
 }
 
 @media screen and (max-width: 800px) {
   .content {
     background-size: 160%;
     background-position: top center;
+    padding-top: 30px;
   }
 
   input {
-    width: 92%;
+    width: 100%;
+    float: none;
+  }
+
+  input:nth-child(even) {
+    margin-left: 0;
   }
 
   .btn:not(.btn-outline) {
     font-size: 26px;
+  }
+
+  a.facebook {
+    border-right: none;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .content {
+    padding-top: 80px;
   }
 }
