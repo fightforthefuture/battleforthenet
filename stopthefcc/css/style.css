@@ -22,10 +22,6 @@ html, body {
 
 body {
   color: #424242;
-  background-image: url("../images/collage.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center -100px;
   padding-top: 75px;
 }
 
@@ -55,15 +51,8 @@ img {
   max-width: 100%;
 }
 
-.eraserhead {
-  background-image: url("../images/eraser.png");
-  background-size: 105%;
-  background-repeat: no-repeat;
-  background-position: center 50px;
-}
-
 .container {
-  width: 800px;
+  width: 600px;
   max-width: 80%;
   margin: auto;
   margin-top: -50px;
@@ -71,13 +60,6 @@ img {
 
 section {
   margin-bottom: 100px;
-}
-
-section.main {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
 }
 
 .logo {
