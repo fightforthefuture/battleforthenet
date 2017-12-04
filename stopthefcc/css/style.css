@@ -2,12 +2,18 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-h1, .btn, input, .and {
+h1, h2, h3, .btn, input, .and {
   font-family: 'Montserrat', sans-serif;
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
 }
 
 html, body {
@@ -16,6 +22,11 @@ html, body {
 
 body {
   color: #424242;
+  background-image: url("../images/collage.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center -100px;
+  padding-top: 75px;
 }
 
 a {
@@ -23,61 +34,58 @@ a {
   text-decoration: underline;
 }
 
-.collage {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../images/collage2.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  z-index: 1;
+a[name] {
+  text-decoration: none;
 }
 
-.logo {
-  position: absolute;
-  z-index: 3;
-  top: 18px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.logo img {
-  width: 129px;
-  max-width: 90%;
-}
-
-.content {
-  position: absolute;
-  z-index: 2;
-  top: 90px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../images/eraser.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding: 60px 0;
-}
-
-.container {
-  width: 550px;
-  max-width: 80%;
-  margin: auto;
-  padding-top: 10px;
+h1, h2, h3 {
+  color: #ff2121;
 }
 
 h1 {
-  color: #ff2121;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 28px;
 }
 
 p {
   font-weight: bold;
-  line-height: 1.33;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+}
+
+.eraserhead {
+  background-image: url("../images/eraser.png");
+  background-size: 105%;
+  background-repeat: no-repeat;
+  background-position: center 50px;
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  margin: auto;
+  margin-top: -50px;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+section.main {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 130px;
 }
 
 .btn {
@@ -117,17 +125,20 @@ p {
   color: #ff2121;
 }
 
-input {
+input, textarea {
   font-size: 16px;
   padding: 15px;
   border: 1px solid #343434;
   border-radius: 3px;
+}
+
+form input {
   width: 49%;
   margin: 0 0 8px 0;
   float: left;
 }
 
-input:nth-child(even) {
+form input:nth-child(even) {
   margin-left: 2%;
 }
 
@@ -136,7 +147,7 @@ input:nth-child(even) {
 }
 
 .social {
-  margin: 10px 0;
+  margin: 10px 30px;
 }
 
 .social a {
@@ -159,11 +170,35 @@ a.twitter {
   color: #28d0f4;
 }
 
+.widgets textarea {
+  width: 100%;
+  font-family: monospace;
+  margin-bottom: 20px;
+  padding: 10px 10px 0 10px;
+}
+
+.widgets .modals img {
+  width: 48%;
+  border-radius: 8px;
+  display: block;
+  float: left;
+  margin: 10px 1%;
+}
+
+.widgets .banners img {
+  display: block;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .eraserhead {
+    background-size: 140%;
+  }
+}
+
 @media screen and (max-width: 800px) {
-  .content {
-    background-size: 160%;
-    background-position: top center;
-    padding-top: 30px;
+  .eraserhead {
+    background-size: 200%;
   }
 
   input {
@@ -179,13 +214,27 @@ a.twitter {
     font-size: 26px;
   }
 
+  .social {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   a.facebook {
     border-right: none;
   }
-}
 
-@media screen and (min-width: 2000px) {
-  .content {
-    padding-top: 80px;
+  .widgets .modals img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .widgets textarea {
+    padding: 5px;
+  }
+
+  .widgets .banners img {
+    width: 100%;
+    height: auto;
   }
 }
