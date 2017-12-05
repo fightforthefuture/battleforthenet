@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2, h3, .btn, input, .and {
+h1, h2, h3, .btn, input, .and, a.share {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -16,6 +16,17 @@ h1, h2, h3, .btn, input, .and {
   clear:both;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 html, body {
   min-height: 100%;
 }
@@ -27,6 +38,7 @@ body {
 
 a {
   color: #ff2121;
+  font-weight: bold;
   text-decoration: underline;
 }
 
@@ -57,6 +69,15 @@ p {
 
 img {
   max-width: 100%;
+}
+
+hr {
+  border: 0;
+  width: 50%;
+  color: #ff2121;
+  background-color: #ff2121;
+  height: 5px;
+  margin: 50px auto;
 }
 
 .container {
@@ -115,14 +136,19 @@ section {
   color: #ff2121;
 }
 
-input, textarea {
+form input[type=text],
+form input[type=email],
+form input[type=tel],
+textarea {
   font-size: 16px;
   padding: 15px;
   border: 1px solid #343434;
   border-radius: 3px;
 }
 
-form input {
+form input[type=text],
+form input[type=email],
+form input[type=tel] {
   width: 49%;
   margin: 0 0 8px 0;
   float: left;
@@ -130,6 +156,12 @@ form input {
 
 form input:nth-child(even) {
   margin-left: 2%;
+}
+
+.action-comment input[type=text] {
+  width: 100%;
+  margin: 0 0 10px;
+  float: none;
 }
 
 .hidden {
@@ -180,24 +212,100 @@ a.twitter {
   margin: 20px auto;
 }
 
-@media screen and (max-width: 1000px) {
-  .eraserhead {
-    background-size: 140%;
-  }
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  width: 60%;
+  margin: 40% auto 0;
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  right:6px;
+  top: -3px;
+  color: #fff;
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.modal header {
+  background-color: #ff2121;
+  padding: 20px 30px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.modal header h2 {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.modal article {
+  background: #fff;
+  padding: 30px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.modal a.share {
+  width: 40%;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 10px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.modal a.facebook {
+  background-color: #215cc8;
+  margin-right: 5%;
+}
+
+.modal a.twitter {
+  background-color: #28d0f4;
 }
 
 @media screen and (max-width: 800px) {
-  .eraserhead {
-    background-size: 200%;
-  }
-
-  input {
+  form input[type=text],
+  form input[type=email],
+  form input[type=tel] {
     width: 100%;
     float: none;
   }
 
-  input:nth-child(even) {
+  form input:nth-child(even) {
     margin-left: 0;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
+  .modal a.share {
+    width: 100%;
+  }
+
+  .modal a.facebook {
+    margin-bottom: 20px;
   }
 
   .btn:not(.btn-outline) {
