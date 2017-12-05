@@ -10,7 +10,7 @@ $(function(){
   };
 
   // toggle large audience checkbox
-  $('input[name=volunteer').click(function(e){
+  $('input[name=volunteer]').click(function(e){
     var isChecked =  $(this).is(':checked');
     var $div = $('.action-comment');
 
