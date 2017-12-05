@@ -35,6 +35,14 @@ export interface LeaderboardContext {
 	onOpen: any
 }
 
+let matchDomain = /(https?:\/\/[^\/]+\/)/i;
+function cleanCode(s:string) {
+	var m = s.match(matchDomain);
+	if (m) {
+		return m[0];
+	}
+	return s;
+}
 
 function getLeaderboardStats(props:LeaderboardProps): Promise<LeaderboardStats> {
 	return ajaxPromise({
@@ -54,11 +62,21 @@ function getLeaderboardStats(props:LeaderboardProps): Promise<LeaderboardStats> 
 				return !re.test(v[0]);
 			});
 		});
-		var referrers = _.map(filtered, function(v) {
-			return {
-				code: v[0],
-				n: v[1]
-			} as LeaderboardReferrer;
+		var referrers:{[key:string]: LeaderboardReferrer} = {};
+		_.each(j["referral_codes"] as {[key:string]: number}, function(v, k) {
+			var check:boolean = _.every(props.filterCodes, function(re) {
+				return !re.test(k);
+			});
+			if (check) {
+				var code = cleanCode(k);
+				if (!referrers[code]) {
+					referrers[code] = {
+						"code": code,
+						"n": 0
+					};
+				}
+				referrers[code].n += v;
+			}
 		});
 		var sorted = _.orderBy(referrers, ["n"], ["desc"]);
 		return {
