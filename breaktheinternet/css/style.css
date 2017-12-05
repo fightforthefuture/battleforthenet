@@ -210,6 +210,7 @@ a.twitter {
 .widgets .banners img {
   display: block;
   margin: 20px auto;
+  height: auto;
 }
 
 
@@ -329,10 +330,5 @@ body.modal-open {
 
   .widgets textarea {
     padding: 5px;
-  }
-
-  .widgets .banners img {
-    width: 100%;
-    height: auto;
   }
 }
