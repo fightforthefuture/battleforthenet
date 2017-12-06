@@ -29,7 +29,7 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 						{" "}
 						<input name="input_zip" className="zip" placeholder="Zip" required value={state.input_zip} onChange={ctx.handleInputChange} />
 					</div>
-					{props.swap ? "" : <div><input name="input_phone" className="phone" placeholder="Phone # (to volunteer)" value={state.input_phone} onChange={ctx.handleInputChange} /> </div> }
+					{props.swap ? "" : <div><input name="input_phone" className="phone" placeholder="Phone # (for text list)" value={state.input_phone} onChange={ctx.handleInputChange} /> </div> }
 					<div className="letter">
 						<textarea ref={ctx.setTextarea} name="input_comment" required value={state.input_comment} onChange={ctx.handleInputChange} onFocus={ctx.onTextareaFocus} ></textarea>
 						<button onClick={ctx.onResetClick} className="reset">Clear and write your own</button>
