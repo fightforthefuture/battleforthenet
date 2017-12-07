@@ -89,8 +89,16 @@ hr {
 
 #header h1  small {
   display: block;
-  font-size: 40%;
-  margin: 15px 0 10px;
+  font-size: 24px;
+  margin: 12px 0 5px;
+}
+
+#header p {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin: 0;
 }
 
 .container {
@@ -137,9 +145,8 @@ section {
 }
 
 .btn-outline {
-  color: #ff2121;
-  background-color: #fff;
-  border: 1px solid #ff2121;
+  color: #fff;
+  background-color: #28d0f4;
   font-size: 16px;
   width: auto;
 }
@@ -240,7 +247,7 @@ body.modal-open {
 }
 
 .modal {
-  width: 60%;
+  width: 700px;
   margin: 20% auto 0;
   position: relative;
 }
@@ -272,6 +279,10 @@ body.modal-open {
   padding: 30px;
   border-radius: 0 0 8px 8px;
   text-align: center;
+}
+
+.modal article p {
+  margin: -10px 0 25px;
 }
 
 .modal a.share {

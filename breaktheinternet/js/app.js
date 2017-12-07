@@ -9,6 +9,12 @@ $(function(){
     $('body').removeClass('modal-open');
   };
 
+  var showTwitterModal = function() {
+    var url = 'https://mothership-js.fightforthefuture.org/connect/twitter?tag=breaktheinternet';
+    var properties = 'width=600,height=500,toolbar=no,status=no,menubar=no';
+    window.open(url, 'idl_connect', properties);
+  };
+
   // toggle large audience checkbox
   $('input[name=volunteer]').click(function(e){
     var isChecked =  $(this).is(':checked');
@@ -55,5 +61,11 @@ $(function(){
   $('.modal .close').click(function(e) {
     e.preventDefault();
     hideModal();
+  });
+
+  // twitter tool modals
+  $('.twitter-modal').click(function(e){
+    e.preventDefault();
+    showTwitterModal();
   });
 });
