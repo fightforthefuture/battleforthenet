@@ -150,6 +150,16 @@ $GRAY_LIGHT: #b1aedc;
 				border: none;
 			}
 		}
+
+		a.app-store,
+		a.google-play {
+			display: inline-block;
+			margin-right: 10px;
+			
+			img {
+				height: 50px;
+			}
+		}
 	}
 
     .join ul {
