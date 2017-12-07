@@ -144,10 +144,9 @@ section {
   margin: 10px 0;
 }
 
-.btn-outline {
+.twitter-btn {
   color: #fff;
   background-color: #28d0f4;
-  font-size: 16px;
   width: auto;
 }
 
@@ -336,7 +335,7 @@ body.modal-open {
     margin-bottom: 20px;
   }
 
-  .btn:not(.btn-outline) {
+  .btn {
     font-size: 26px;
   }
 

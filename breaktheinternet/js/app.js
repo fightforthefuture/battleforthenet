@@ -1,4 +1,22 @@
 $(function(){
+  function PopupCenter(url, title, w, h) {
+    // Fixes dual-screen position
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+    var top = ((height / 2) - (h / 2)) + dualScreenTop;
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+    // Puts focus on the newWindow
+    if (window.focus) {
+        newWindow.focus();
+    }
+  }
+
   var showModal = function() {
     $('.modal-wrapper').fadeIn();
     $('body').addClass('modal-open');
@@ -9,10 +27,8 @@ $(function(){
     $('body').removeClass('modal-open');
   };
 
-  var showTwitterModal = function() {
-    var url = 'https://mothership-js.fightforthefuture.org/connect/twitter?tag=breaktheinternet';
-    var properties = 'width=600,height=500,toolbar=no,status=no,menubar=no';
-    window.open(url, 'idl_connect', properties);
+  var showTwitterPopup = function() {
+    PopupCenter('twitter.html', 'twitter', 600, 500);
   };
 
   // toggle large audience checkbox
@@ -66,6 +82,6 @@ $(function(){
   // twitter tool modals
   $('.twitter-modal').click(function(e){
     e.preventDefault();
-    showTwitterModal();
+    showTwitterPopup();
   });
 });

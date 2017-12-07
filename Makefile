@@ -11,7 +11,7 @@ build:
 	NODE_ENV=production npm run build
 
 cache_bust:
-	CACHE_BUST=`git rev-parse HEAD` && sed -i "s/CACHE_BUST/$$CACHE_BUST/g" index.html breaktheinternet/index.html
+	CACHE_BUST=`git rev-parse HEAD` && sed -i "s/CACHE_BUST/$$CACHE_BUST/g" index.html breaktheinternet/index.html breaktheinternet/twitter.html
 
 publish_branch:
 	git config user.email "fftf@users.noreply.github.com"
