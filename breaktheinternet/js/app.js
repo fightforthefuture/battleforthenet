@@ -52,7 +52,7 @@ $(function(){
     
     var $form = $(this);
     var params = $form.serialize();
-    
+    console.log(params)
     $('.form-error').hide();
     $form.find('input').attr('disabled', 'disabled');
 
@@ -84,4 +84,11 @@ $(function(){
     e.preventDefault();
     showTwitterPopup();
   });
+  var loc = window.location.href;
+  if (loc.indexOf('org=dp') != -1) {
+    document.getElementById('fftf_disclosure').style.display = 'none';
+    document.getElementById('fftf_form').style.display = 'none';
+    document.getElementById('dp_disclosure').style.display = 'block';
+    document.getElementById('dp_form').style.display = 'block';
+    }
 });
