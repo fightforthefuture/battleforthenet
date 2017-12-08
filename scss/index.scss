@@ -32,6 +32,9 @@ $GRAY_LIGHT: #b1aedc;
 		font-family: Montserrat, sans-serif;
 		font-weight: bold;
 		color: $HEADER_COLORA;
+		a {
+			color: inherit;
+			}
 	}
 	h4 {
 		font-family: Montserrat, sans-serif;

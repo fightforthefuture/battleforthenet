@@ -13,7 +13,7 @@ import {classes, sanitizeUrl} from './utils';
 export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionFormState, ctx:PetitionFormContext) {
 	return (
 		<div>
-			<h1>We have until Dec 14 to <span></span>save net neutrality.</h1>
+			<h1>On 12/12, <a href="/breaktheinternet/">Break the Internet</a><span></span> to stop the FCC.</h1>
 			<div className="unit">
 			<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
 				<img className="arrow" src="/images/red-arrow.png" />
