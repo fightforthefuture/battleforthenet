@@ -177,36 +177,22 @@ form input:nth-child(even) {
 }
 
 .participants ul {
-      max-width: 680px;
-      margin: 0px auto;
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
 }
 
 .participants li {
-        display: inline-block;
-        min-width: 165px;
-        max-width: 165px;
-        max-height: 70px;
-        padding: 15px;
-        background-color: white;
-        border-radius: 3px;
-        margin-bottom: 6px;
-        display: flex;
-        flex: 1;
-        box-shadow: 0px 1px 4px 0px rgba(4,4,4,1);
-}
-
-.participants img {
-          max-width: 100%;
-          object-fit: contain;
-}
-
-.participants a {
-  padding: 0 0 0 0;
+  float: left;
+  width: 30%;
+  margin: 6px 1.5%;
+  padding: 15px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 1px 4px 0px rgba(4,4,4,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
 }
 
 .action-comment input[type=text] {
