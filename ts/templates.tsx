@@ -54,13 +54,13 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 					{ props.trackProfile.etsy
 						? `FCC Chairman Pai wants to repeal existing net neutrality rules that allow Etsy sellers to turn their creative passion into a business. Without these protections, Etsy sellers will be forced to choose between paying for priority access or losing sales in the internet slow lane.`
 						: <span>Comcast, Verizon and AT&T want to end net neutrality so they can control what we see & do online.
-							First, they want to gut FCC rules in a December 14 vote. Then, they plan to pass bad legislation that allows extra fees, throttling & censorship.</span>
+							They want to gut FCC rules, and then pass bad legislation that allows extra fees, throttling & censorship. But Congress can put a stop to all of this.</span>
 					}
 					{" "}
 					<em>
 						{ props.trackProfile.etsy
-							? "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses. "
-							: "But Congress can put a stop to all of this. Write them first, then call!"
+							? "Send a message to the FCC and Congress urging them to protect net neutrality and microbusinesses."
+							: "Write Congress first, then call, then join our day of action December 12th!"
 						}
 					</em>
 				</p>
