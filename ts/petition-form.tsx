@@ -65,7 +65,6 @@ export interface PetitionFormState {
 	input_zip: string | undefined
 	input_phone: string | undefined
 	input_comment: string | string[] | undefined
-	input_etsy_shop: string | string[] | undefined
 	input_opt_in: boolean | true
 	error: string | null
 }
@@ -91,8 +90,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			input_address: "",
 			input_zip: "",
 			input_phone: "",
-			input_comment: this.props.trackProfile.etsy ? r.etsyFormText : r.defaultFormText,
-			input_etsy_shop: "",
+			input_comment: r.defaultFormText,
 			input_opt_in: true,
 			error: null
 		};
@@ -163,7 +161,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 				"member[street_address]": this.state.input_address,
 				"member[postcode]": this.state.input_zip,
 				"member[phone_number]": this.state.input_phone,
-				"action_comment": (this.state.input_etsy_shop ? "Etsy Shop " + this.state.input_etsy_shop + "\n\n" : "") + this.state.input_comment
+				"action_comment": this.state.input_comment
 			};
 			if (!this.state.input_opt_in) {
 			 data["opt_out"] = "1";
