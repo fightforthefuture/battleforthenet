@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "watch": "gulp watch",
+    "htmllint": "gulp htmllint",
     "congress.jpg": "gulp congress.jpg",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +21,7 @@
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
+    "gulp-htmllint": "0.0.14",
     "gulp-jimp": "^1.2.7",
     "gulp-sass": "^3.1.0",
     "gulp-typescript": "^3.1.7",

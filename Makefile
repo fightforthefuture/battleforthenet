@@ -9,6 +9,7 @@ prep_branch:
 
 build:
 	NODE_ENV=production npm run build
+	NODE_ENV=production npm run htmllint
 
 cache_bust:
 	CACHE_BUST=`git rev-parse HEAD` && sed -i "s/CACHE_BUST/$$CACHE_BUST/g" index.html breaktheinternet/index.html breaktheinternet/twitter.html
