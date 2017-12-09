@@ -8,54 +8,44 @@ import {CallSuccessProps} from './call-success';
 import {Disclaimer} from './disclaimer';
 import {AfterActionFooter} from './after-action-footer';
 import {classes, sanitizeUrl} from './utils';
+import {Fragment} from './fragment';
 
 
 export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionFormState, ctx:PetitionFormContext) {
 	return (
 		<div>
-			<h1>On 12/12, <a href="/breaktheinternet/">Break the Internet</a><span></span> to stop the FCC.</h1>
+			<Fragment fragmentId="bftn_email_form_header" />
 			<div className="unit">
-			<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
-				<img className="arrow" src="/images/red-arrow.png" />
-				<div className="form-wrapper">
-					<div>
-						<input name="input_name" placeholder="Name" autoComplete="name" required value={state.input_name} onChange={ctx.handleInputChange} />
-					</div>
-					<div>
-						<input name="input_email" placeholder="E-mail" required value={state.input_email} onChange={ctx.handleInputChange} />
-					</div>
-					<div className="address-line">
-						<input name="input_address" className="address" placeholder="Address" required value={state.input_address} onChange={ctx.handleInputChange} />
-						{" "}
-						<input name="input_zip" className="zip" placeholder="Zip" required value={state.input_zip} onChange={ctx.handleInputChange} />
-					</div>
-					{props.swap ? "" : <div><input name="input_phone" className="phone" placeholder="Phone # (for text list)" value={state.input_phone} onChange={ctx.handleInputChange} /> </div> }
-					<div className="letter">
-						<textarea ref={ctx.setTextarea} name="input_comment" required value={state.input_comment} onChange={ctx.handleInputChange} onFocus={ctx.onTextareaFocus} ></textarea>
-						<button onClick={ctx.onResetClick} className="reset">Clear and write your own</button>
-					</div>
-					<button className="btn">Write Congress</button>
-				</div>
-				{ state.error ? (
-						<div className="form-error">
-							<span className="oi" data-glyph="warning" title="previous" aria-hidden="true"></span>
-							{" "}{state.error}
+				<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
+					<img className="arrow" src="/images/red-arrow.png" />
+					<div className="form-wrapper">
+						<div>
+							<input name="input_name" placeholder="Name" autoComplete="name" required value={state.input_name} onChange={ctx.handleInputChange} />
 						</div>
-					) : null }
-				<Disclaimer org={props.org} swap={props.swap}/>
-			</form>
-			<div className="petition-copy">
-				<p>
-					<span>
-						Comcast, Verizon and AT&T want to end net neutrality so they can
-						control what we see & do online.  They want to gut FCC rules, and
-						then pass bad legislation that allows extra fees, throttling &
-						censorship. But Congress can put a stop to all of this.
-					</span>
-					{" "}
-					<em>Write Congress first, then call, then join our day of action December 12th!</em>
-				</p>
-			</div>
+						<div>
+							<input name="input_email" placeholder="E-mail" required value={state.input_email} onChange={ctx.handleInputChange} />
+						</div>
+						<div className="address-line">
+							<input name="input_address" className="address" placeholder="Address" required value={state.input_address} onChange={ctx.handleInputChange} />
+							{" "}
+							<input name="input_zip" className="zip" placeholder="Zip" required value={state.input_zip} onChange={ctx.handleInputChange} />
+						</div>
+						{props.swap ? "" : <div><input name="input_phone" className="phone" placeholder="Phone # (for text list)" value={state.input_phone} onChange={ctx.handleInputChange} /> </div> }
+						<div className="letter">
+							<textarea ref={ctx.setTextarea} name="input_comment" required value={state.input_comment} onChange={ctx.handleInputChange} onFocus={ctx.onTextareaFocus} ></textarea>
+							<button onClick={ctx.onResetClick} className="reset">Clear and write your own</button>
+						</div>
+						<button className="btn">Write Congress</button>
+					</div>
+					{ state.error ? (
+							<div className="form-error">
+								<span className="oi" data-glyph="warning" title="previous" aria-hidden="true"></span>
+								{" "}{state.error}
+							</div>
+						) : null }
+					<Disclaimer org={props.org} swap={props.swap}/>
+				</form>
+				<Fragment fragmentId="bftn_email_body" />
 			</div>
 		</div>
 	);
