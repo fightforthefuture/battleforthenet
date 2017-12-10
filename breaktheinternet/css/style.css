@@ -70,35 +70,29 @@ hr {
 
 #header {
   background-color: #ff0006;
-  padding: 25px 0;
+  padding: 50px 0;
   text-align: center;
   margin-bottom: 25px;
 }
 
-#header img {
-  width: 200px;
+#header h1 {
+  margin-top: 30px;
+  margin-bottom: -25px;
 }
 
-#header h1 {
+#header h1 img {
+  width: 950px;
+}
+
+#header h2 {
   margin: 0;
   color: #fff;
-  font-size: 98px;
+  font-size: 20px;
   line-height: 1;
   text-transform: uppercase;
-}
-
-#header h1  small {
-  display: block;
-  font-size: 24px;
-  margin: 12px 0 5px;
-}
-
-#header p {
-  color: #fff;
-  font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  margin: 0;
+  padding: 0 20px;
 }
 
 .container {
@@ -338,8 +332,8 @@ body.modal-open {
     margin-left: 0;
   }
 
-  #header h1 {
-    font-size: 60px;
+  #header h2 {
+    font-size: 16px;
   }
 
   .modal {
@@ -375,5 +369,14 @@ body.modal-open {
 
   .widgets textarea {
     padding: 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #header h1 {
+    margin-bottom: 0px;
+  }
+  #header h2 {
+    font-size: 12px;
   }
 }
