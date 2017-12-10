@@ -256,8 +256,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 				{ items.length ?
 					<div className="psb-section psb-unknown">
 						<div className="unit">
-							<h4>Against Net Neutrality:</h4>
-							<p>They are for Pai's plan. We need you to tweet them.</p>
+							<h4>Against net neutrality or Unknown:</h4>
 						</div>
 						<Carousel items={items} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
 					</div> : null }
