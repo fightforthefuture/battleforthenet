@@ -138,10 +138,11 @@ section {
   margin: 10px 0;
 }
 
-.twitter-btn {
-  color: #fff;
-  background-color: #28d0f4;
-  width: auto;
+.congress-btn {
+  background-color: #fff;
+  border: 3px solid #215cc8;
+  color: #215cc8;
+  font-size: 24px;
 }
 
 .form-error {
@@ -350,6 +351,10 @@ body.modal-open {
 
   .btn {
     font-size: 26px;
+  }
+
+  .congress-btn {
+    font-size: 20px;
   }
 
   .social {
