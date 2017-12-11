@@ -59,12 +59,18 @@ img {
   max-width: 100%;
 }
 
+h2{
+	font-size: 34px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
 hr {
   border: 0;
   width: 50%;
-  color: #ff2121;
-  background-color: #ff2121;
-  height: 5px;
+  color: #a9a9a9;
+  background-color: #a9a9a9;
+  height: 1px;
   margin: 50px auto;
 }
 
@@ -140,8 +146,15 @@ section {
 
 .congress-btn {
   background-color: #fff;
-  border: 3px solid #215cc8;
-  color: #215cc8;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 24px;
+}
+
+.congress-btn:hover {
+  background-color: #000;
+  border: 2px solid #000;
+  color: #fff;
   font-size: 24px;
 }
 
@@ -180,10 +193,10 @@ form input:nth-child(even) {
   float: left;
   width: 30%;
   margin: 6px 1.5%;
-  padding: 15px;
+  padding: 20px;
   background-color: white;
   border-radius: 3px;
-  box-shadow: 0px 1px 4px 0px rgba(4,4,4,1);
+  border: 1px solid #b4b4b4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,7 +220,7 @@ form input:nth-child(even) {
 .social a {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
   display: inline-block;
   margin: 20px 0;
