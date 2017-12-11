@@ -47,31 +47,36 @@ $(function(){
   });
 
   // submit form
-  $('form').submit(function(e){
-    e.preventDefault();
+  var loc = window.location.href;
     
-    var $form = $(this);
-    var params = $form.serialize();
-    
-    $('.form-error').hide();
-    $form.find('input').attr('disabled', 'disabled');
-
-    var $button = $form.find('button')
-    var buttonText = $button.text()
-    $button.text('Saving...');
-    
-    $.post($form.attr('action'), params, function(response) {
-      if (response.data) {
-        showModal();
-      }
-      else {
-        $('.form-error').show();
-      }
-
-      $form.find('input').removeAttr('disabled');
-      $button.text(buttonText);
+    $('form').submit(function(e){
+      
+      if (loc.indexOf('org=dp') === -1) {
+        e.preventDefault();
+        var $form = $(this);
+        var params = $form.serialize();
+        console.log(params)
+        $('.form-error').hide();
+        $form.find('input').attr('disabled', 'disabled');
+        
+        var $button = $form.find('button')
+        var buttonText = $button.text()
+        $button.text('Saving...');
+        
+        $.post($form.attr('action'), params, function(response) {
+          console.log(response)
+          if (response.data) {
+            showModal();
+          }
+          else {
+            $('.form-error').show();
+          }
+        
+          $form.find('input').removeAttr('disabled');
+          $button.text(buttonText);
+        });
+      } 
     });
-  });
 
   // close modal
   $('.modal .close').click(function(e) {
@@ -84,7 +89,7 @@ $(function(){
     e.preventDefault();
     showTwitterPopup();
   });
-  var loc = window.location.href;
+
   if (loc.indexOf('org=dp') != -1) {
     document.getElementById('fftf_disclosure').style.display = 'none';
     document.getElementById('fftf_form').style.display = 'none';
