@@ -241,8 +241,8 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 		};
 		var undecided = filterState(politiciansSet.undecided, state);
 		var cable = filterState(politiciansSet.cable, state);
-		var internet = filterState(politiciansSet.internet, state);
 		var renderItem = this.renderPolitician.bind(this);
+		var items = _.concat(cable, undecided);
 		return (
 			<div>
 				<div className="state-selector unit">
@@ -253,32 +253,14 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 					</select>
 				</div>
 
-				{ undecided.length ?
+				{ items.length ?
 					<div className="psb-section psb-unknown">
 						<div className="unit">
-							<h4>Unknown:</h4>
-							<p>They haven't come out against Pai's plan yet. We need you to tweet them.</p>
+							<h4>Against net neutrality or Unknown:</h4>
 						</div>
-						<Carousel items={undecided} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
+						<Carousel items={items} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
 					</div> : null }
 
-				{ cable.length ?
-					<div className="psb-section psb-cable">
-						<div className="unit">
-							<h4>Team Cable:</h4>
-							<p>They are for Pai's plan. We need you to tweet them.</p>
-						</div>
-						<Carousel items={cable} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
-					</div> : null }
-
-				{ internet.length ?
-					<div className="psb-section psb-internet">
-						<div className="unit">
-							<h4>Team Internet:</h4>
-							<p>They have come out against Pai's plan. Show them your support.</p>
-						</div>
-						<Carousel items={internet} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
-					</div> : null }
 			</div>
 		);
 	}
