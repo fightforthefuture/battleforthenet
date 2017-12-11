@@ -32,11 +32,11 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css?v=CACHE_BUST">
 
-    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="//s3.amazonaws.com/s3.peoplepower.org/scripts/jquery.min.js"></script>
     <script type="text/javascript" src="//act.demandprogress.org/resources/actionkit.js"></script>
     <script src="js/app.js?v=CACHE_BUST"></script>
   </head>
-  <body>
+  <body class="ak-pagetype-petition ak-lang-en ak-no-js">
     <header id="header">
       <div>
         <h2>This Tuesday, 12/12</h2>
@@ -76,33 +76,36 @@
             </form>
           </div>
         
-          <div class="ak-pagetype-signup" id="dp_form" style="display:none">
-              <form class="ak-form" name="act" method="POST" action="//act.demandprogress.org/act/" accept-charset="utf-8">
-                  <input type="hidden" name="page" value="break-the-internet-landing">
-                  <div id="petition-form" class="ak-styled-fields ak-labels-overlaid ak-errs-below">
-                      <ul class="compact" id="ak-errors"></ul>
-                      <div id="known_user" style="display:none">
-                          Not <span id="known_user_name"></span>?  <a href="http://act.demandprogress.org?" onclick="return actionkit.forms.logOut()">Click here.</a>
-                          <hr>
+          <div class="ak-page-container" id="dp_form" style="display:none">
+          <script>console.log("The load_remember_me snippet for Remember Me is disabled by config.")</script>
+              <div class="ak-pagetype-signup">
+                  <form class="ak-form" name="act" method="POST" action="//act.demandprogress.org/act/" accept-charset="utf-8">
+                      <input type="hidden" name="page" value="team-internet-landing">
+                      <div id="petition-form" class="ak-styled-fields ak-labels-overlaid ak-errs-below">
+                          <ul class="compact" id="ak-errors" style="display:none"></ul>
+                          <div id="known_user" style="display:none">
+                              Not <span id="known_user_name"></span>?  <a href="http://act.demandprogress.org?" onclick="return actionkit.forms.logOut()">Click here.</a>
+                              <hr>
+                          </div>
+                          <div id="unknown_user" class="ak-user-form">
+                              <div id="ak-fieldbox-name" >
+                                  <input type="text" name="name" id="id_name" class="ak-userfield-input" placeholder="Full Name" required style="margin-right: 5px">
+                              </div>
+                              <div id="ak-fieldbox-email" class="required">
+                                  <input type="text" name="email" id="id_email" class="ak-userfield-input" placeholder="Email" required>
+                              </div>
+                              <div id="ak-fieldbox-zip" class="required">
+                                  <input type="text" name="zip" id="id_zip" class="ak-userfield-input" placeholder="Zip Code" style="margin-right: 5px">
+                              </div>
+                              <div id="ak-fieldbox-mobile_phone" class="required">
+                                  <input type="text" name="phone" id="id_phone" class="ak-userfield-input" placeholder="Phone # (for text list)">
+                              </div>
+                              <input type="hidden" name="country" value="United States">
+                          </div>
+                          <button type="submit" class="ak-submit-button btn">Join the Protest</button>
                       </div>
-                      <div id="unknown_user" class="ak-user-form">
-                          <div id="ak-fieldbox-name">
-                              <input type="text" placeholder="Full Name" name="name" id="id_name" class="ak-userfield-input" style="margin-right:8px"required>
-                          </div>
-                          <div id="ak-fieldbox-email" class="required">
-                              <input type="text" placeholder="Email" name="email" id="id_email" class="ak-userfield-input" required>
-                          </div>
-                          <div id="ak-fieldbox-zip" class="required">
-                              <input type="text" placeholder="Zip Code" name="zip" id="id_zip" class="ak-userfield-input" style="margin-right:8px">
-                          </div>
-                          <div id="ak-fieldbox-mobile_phone" class="required">
-                              <input type="text" placeholder="Phone # (for text list)" name="phone" id="id_phone" class="ak-userfield-input">
-                          </div>
-                          <input type="hidden" name="country" value="United States">
-                      </div>
-                      <button type="submit" class="ak-submit-button btn">Join the Protest</button>
-                  </div>
-              </form>
+                  </form>
+              </div>
           </div>
         
           <small class="and">or</small>
@@ -113,7 +116,7 @@
            </div>
            <div id="dp_disclosure" style="display:none">
              <p class="text-center"><small>We’ll send you everything you need to participate. <a href="https://demandprogress.org/">Demand Progress</a> will email you about work related to this, and you can unsubscribe at any time. Here’s our <a href="https://demandprogress.org/privacy-policy/">Privacy Policy</a>.</small></p>
-</div>
+           </div>
         <div class="social">
           <a class="facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Facebook</a>
           <a class="twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The%20FCC%20is%20days%20away%20from%20voting%20to%20kill%20NetNeutrality%2C%20but%20Congress%20can%20still%20stop%20them.%20On%20December%2012th%20we'll%20%23BreakTheInternet%20to%20stop%20censorship%2C%20throttling%2C%20and%20extra%20fees%3A%20https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Twitter</a>
@@ -217,7 +220,7 @@
         <a class="share twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The%20FCC%20is%20days%20away%20from%20voting%20to%20kill%20NetNeutrality%2C%20but%20Congress%20can%20still%20stop%20them.%20On%20December%2012th%20we'll%20%23BreakTheInternet%20to%20stop%20censorship%2C%20throttling%2C%20and%20extra%20fees%3A%20https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Twitter</a>
       </article>
     </div>
-
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26576645-44"></script>
     <script>
      window.dataLayer = window.dataLayer || [];
@@ -226,5 +229,6 @@
 
      gtag('config', 'UA-26576645-44');
     </script>
+    <script language="javascript" type="text/javascript" src="https://www.aclu.org/sites/all/libraries/sitecatalyst/AppMeasurement.js"></script>
   </body>
 </html>
