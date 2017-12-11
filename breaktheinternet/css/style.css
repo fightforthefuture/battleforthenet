@@ -162,6 +162,30 @@ section {
   color: #ff2121;
 }
 
+.toc {
+  font-size: 86%;
+  margin: 5px 0 20px;
+}
+
+.toc p {
+  margin: 0 0 5px;
+}
+
+.toc ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  display: inline-block;
+}
+
+.toc li:not(:last-child):after {
+  content: " | ";
+  color: #c6c6c6;
+}
+
 form input[type=text],
 form input[type=email],
 form input[type=tel],
@@ -237,14 +261,14 @@ a.twitter {
   color: #28d0f4;
 }
 
-.widgets textarea {
+#widgets textarea {
   width: 100%;
   font-family: monospace;
   margin-bottom: 20px;
   padding: 10px;
 }
 
-.widgets .modals img {
+#widgets .modals img {
   width: 48%;
   border-radius: 8px;
   display: block;
@@ -252,7 +276,7 @@ a.twitter {
   margin: 10px 1%;
 }
 
-.widgets .banners img {
+#widgets .banners img {
   display: block;
   margin: 20px auto;
   height: auto;
@@ -379,13 +403,13 @@ body.modal-open {
     border-right: none;
   }
 
-  .widgets .modals img {
+  #widgets .modals img {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
 
-  .widgets textarea {
+  #widgets textarea {
     padding: 5px;
   }
 }
