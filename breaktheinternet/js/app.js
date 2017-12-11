@@ -55,7 +55,6 @@ $(function(){
         e.preventDefault();
         var $form = $(this);
         var params = $form.serialize();
-        console.log(params)
         $('.form-error').hide();
         $form.find('input').attr('disabled', 'disabled');
         
