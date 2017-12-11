@@ -90,5 +90,6 @@ $(function(){
     document.getElementById('fftf_form').style.display = 'none';
     document.getElementById('dp_disclosure').style.display = 'block';
     document.getElementById('dp_form').style.display = 'block';
+    document.getElementsByClassName('congress-btn')[0].href='/?org=dp';
     }
 });
