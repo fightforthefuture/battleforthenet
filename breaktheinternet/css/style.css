@@ -186,6 +186,10 @@ section {
   color: #c6c6c6;
 }
 
+img.profile-pic {
+  width: 200px;
+}
+
 form input[type=text],
 form input[type=email],
 form input[type=tel],
