@@ -82,7 +82,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 
 export function CallSuccessTemplate(props:CallSuccessProps) {
 	const content_msg = `
-	"I support the *existing* net neutrality rules and I would like *you* to support Representative Mike Coffman in his call to *stop* Thursday’s FCC vote."
+	"I support the *existing* net neutrality rules and I would like *you* to join Representative Mike Coffman in his call to *stop* Thursday’s FCC vote."
 	`;
 	return (
 		<div>
