@@ -95,6 +95,11 @@ $(function(){
     showTwitterPopup();
   });
 
+  $('#cta_join').click(function(e) {
+    e.preventDefault();
+    window.location.href = '#join';
+  });
+
   // enable org-conditional CSS
   var isDemandProgressPage = window.location.href.indexOf('org=dp') !== -1;
   if (isDemandProgressPage) {
