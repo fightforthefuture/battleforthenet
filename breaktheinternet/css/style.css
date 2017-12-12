@@ -230,6 +230,11 @@ form input:nth-child(even) {
   align-items: center;
   justify-content: center;
   height: 70px;
+  overflow: hidden;
+}
+
+.participants img {
+  max-height: 60px;
 }
 
 .action-comment input[type=text] {
@@ -464,5 +469,14 @@ body.dp .hidden-dp {
     width: 100%;
     margin-right: 0;
     margin-bottom: 10px;
+  }
+  #participants li {
+    width: 48%;
+    margin-right: 2%;
+    margin-left: 0;
+  }
+
+  #participants li:nth-child(even) {
+    margin-right: 0;
   }
 }
