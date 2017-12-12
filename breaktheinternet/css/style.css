@@ -323,7 +323,7 @@ body.modal-open {
 
 .modal {
   width: 700px;
-  margin: 20% auto 0;
+  margin: auto;
   position: relative;
 }
 
@@ -381,6 +381,17 @@ body.modal-open {
 
 .modal a.twitter {
   background-color: #28d0f4;
+}
+
+.modal strong.bigger {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Use these clases to hide DP content from FFTF and vice versa */
+body.fftf .hidden-fftf,
+body.dp .hidden-dp {
+  display: none !important;
 }
 
 @media screen and (max-width: 800px) {

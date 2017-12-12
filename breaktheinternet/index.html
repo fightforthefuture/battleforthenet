@@ -36,7 +36,7 @@
     <script type="text/javascript" src="//act.demandprogress.org/resources/actionkit.js"></script>
     <script src="js/app.js?v=CACHE_BUST"></script>
   </head>
-  <body>
+  <body class="fftf">
 
     <header id="header">
       <h2>This Tuesday, 12/12</h2>
@@ -49,36 +49,34 @@
         <p>We have just days. The FCC is about to vote to end net neutrality—breaking the fundamental principle of the open Internet—and only an avalanche of calls to Congress can stop it. <b>So this Tuesday, December 12th, "Break the Internet" <a href="#widgets">on your site</a>, <a href="#twitter">Twitter</a>, <a href="#facebook">Facebook</a>, Snapchat, <a href="#instagram">Instagram</a>, <a href="#linkedin">LinkedIn</a>, <a href="#reddit">reddit</a>, <a href="https://www.fightforthefuture.org/news/2017-07-11-how-to-stand-up-for-netneutrality-on-tumblr/">Tumblr</a>, <a href="#bumper">Youtube</a> or in whatever <a href="https://www.sbnation.com/a/17776-football/">wild</a> creative way you can to get your audience to <a href="https://www.battleforthenet.com">contact Congress</a>. That’s how we win. <a href="#join">Are you in?</a></b></p>
         
         <h3 class="hidden form-error">Hmmm... That didn't work :/</h3>
-
-        <div id="fftf_form">
-          <form method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
-            <input type="text" placeholder="Full Name" name="member[first_name]" required>
-            <input type="email" name="member[email]" placeholder="Email" required>
-            <input type="text" name="member[postcode]" placeholder="Zip Code">
-            <input type="tel" name="member[phone_number]" placeholder="Phone (optional)">
-            <input type="hidden" name="member[country]" value="US">
-            <input class="hidden" type="checkbox" checked="checked" name="hp_enabled">
-            <input class="hidden" type="checkbox" name="hp_disabled">
-            <input class="hidden" type="text" name="guard">
-            <input type="hidden" name="contact_congress" value="0">
-            <input type="hidden" name="org" value="fftf">
-            <input type="hidden" name="an_tags" value="['net-neutrality']">
-            <input type="hidden" name="an_petition_id" value="01b54c87-fb14-4bae-8301-ea11e46a2104">
-            <p>
-              <label>
-                <input type="checkbox" name="volunteer">
-                &nbsp;I have a large online audience, or a friend or employer who does.
-              </label>
-            </p>
-            <div class="action-comment hidden">
-              <input type="text" name="action_comment" placeholder="Explain">
-            </div>
-            <button class="btn">Join the Protest</button>
-          </form>
-        </div>
+        <form class="hidden-dp" id="fftf-form" method="post" action="https://queue.fightforthefuture.org/action" accept-charset="UTF-8">
+          <input type="text" placeholder="Full Name" name="member[first_name]" required>
+          <input type="email" name="member[email]" placeholder="Email" required>
+          <input type="text" name="member[postcode]" placeholder="Zip Code">
+          <input type="tel" name="member[phone_number]" placeholder="Phone (optional)">
+          <input type="hidden" name="member[country]" value="US">
+          <input class="hidden" type="checkbox" checked="checked" name="hp_enabled">
+          <input class="hidden" type="checkbox" name="hp_disabled">
+          <input class="hidden" type="text" name="guard">
+          <input type="hidden" name="contact_congress" value="0">
+          <input type="hidden" name="org" value="fftf">
+          <input type="hidden" name="an_tags" value="['net-neutrality']">
+          <input type="hidden" name="an_petition_id" value="01b54c87-fb14-4bae-8301-ea11e46a2104">
+          <p>
+            <label>
+              <input type="checkbox" name="volunteer">
+              &nbsp;I have a large online audience, or a friend or employer who does.
+            </label>
+          </p>
+          <div class="action-comment hidden">
+            <input type="text" name="action_comment" placeholder="Explain">
+          </div>
+          <button class="btn">Join the Protest</button>
+        </form>
         
-        <div class="ak-pagetype-signup" id="dp_form" style="display:none">
-          <form class="ak-form" name="act" method="POST" action="//act.demandprogress.org/act/" accept-charset="utf-8">
+        <div class="ak-pagetype-signup hidden-fftf">
+          <iframe class="hidden" name="actionkit-iframe"></iframe>
+          <form id="dp-form" class="ak-form" name="act" method="post" action="https://act.demandprogress.org/act/" accept-charset="utf-8" target="actionkit-iframe">
             <input type="hidden" name="page" value="battleforthenet_2017_dec12_rsvp">
             <div id="petition-form" class="ak-styled-fields ak-labels-overlaid ak-errs-below">
               <ul class="compact" id="ak-errors"></ul>
@@ -94,7 +92,7 @@
                   <input type="text" placeholder="Email" name="email" id="id_email" class="ak-userfield-input" required>
                 </div>
                 <div id="ak-fieldbox-zip" class="required">
-                  <input type="text" placeholder="Zip Code" name="zip" id="id_zip" class="ak-userfield-input" style="margin-right:8px">
+                  <input type="text" placeholder="Zip Code" name="zip" id="id_zip" class="ak-userfield-input" style="margin-right:8px" required>
                 </div>
                 <div id="ak-fieldbox-mobile_phone" class="required">
                   <input type="text" placeholder="Phone # (for text list)" name="phone" id="id_phone" class="ak-userfield-input">
@@ -107,12 +105,14 @@
         </div>
         
         <small class="and">or</small>
-        <a class="btn congress-btn" href="/">Write Congress Now</a>        
-        <div class="disclaimer_container">
-          <div id="fftf_disclosure">
+        <a class="btn congress-btn hidden-dp" href="/">Write Congress Now</a>
+        <a class="btn congress-btn hidden-fftf" href="/?org=dp">Write Congress Now</a>      
+
+        <div class="disclaimer">
+          <div class="hidden-dp">
             <p class="text-center"><small>We’ll send you everything you need to participate. <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will email you about work related to this, and you can unsubscribe at any time. If you enter your number (it's optional) Fight for the Future may follow up by SMS, at which point message &amp; data rates apply. You can always text STOP to stop receiving messages. Here’s our <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a>.</small></p>
           </div>
-          <div id="dp_disclosure" style="display:none">
+          <div class="hidden-fftf">
             <p class="text-center"><small>We’ll send you everything you need to participate. <a href="https://demandprogress.org/">Demand Progress</a> will email you about work related to this, and you can unsubscribe at any time. Here’s our <a href="https://demandprogress.org/privacy-policy/">Privacy Policy</a>.</small></p>
           </div>
         </div>
@@ -301,36 +301,65 @@
     
     </div> <!-- /container -->
 
+    <footer id="footer">
+      <div class="container">
+        <div class="logos clearfix">
+          <a class="fftf flex-center" href="https://www.fightforthefuture.org/">
+            <img src="/images/v2/footer-fftf-logo.png" srcset="/images/v2/footer-fftf-logo-x2.png 2x" />
+          </a>
+          <a class="demandprogress flex-center" href="https://demandprogress.org/">
+            <img src="/images/v2/footer-demandprogress-logo.png" srcset="/images/v2/footer-demandprogress-logo-x2.png 2x" />
+          </a>
+          <a class="freepress flex-center" href="https://www.freepress.net/">
+            <img src="/images/v2/footer-freepress-logo.png" srcset="/images/v2/footer-freepress-logo-x2.png 2x" />
+          </a>
+        </div>
+        <div class="press-inquiries">
+          <h3>For Press inquiries, please contact us at:</h3>
+          <p>
+            <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a><br />
+            <a class="no-em" href="tel://1-201-533-8838">201-533-8838</a> or <a href="mailto:tkarr@freepress.net">tkarr@freepress.net</a><br />
+            <a class="no-em" href="tel://1-202-681-7582">202-681-7582</a> or <a href="mailto:press@demandprogress.org">press@demandprogress.org</a>
+          </p>
+          <p>All other inquiries, contact <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a></p>
+        </div>
+      </div>
+    </footer>
+
     <!-- Post-submit modal -->
     <div class="modal-wrapper hidden">
-      <div class="modal">
-        <a class="close" href="#none">&times;</a>
-        <header>
-          <h2 id="modal-header">Thanks! Now, can you get others to join, before the FCC vote?</h2>
-        </header>
-        <article>
-            <div class="fftf-thankyou">
-          <a class="share facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Facebook</a>
-          <a class="share twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The%20FCC%20is%20days%20away%20from%20voting%20to%20kill%20NetNeutrality%2C%20but%20Congress%20can%20still%20stop%20them.%20On%20December%2012th%20we'll%20%23BreakTheInternet%20to%20stop%20censorship%2C%20throttling%2C%20and%20extra%20fees%3A%20https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Twitter</a>
-                </div>
-            <div class="hidden dp-thankyou">
+      <div class="flex-center">
+        <div class="modal hidden-dp">
+          <a class="close" href="#none">&times;</a>
+          <header>
+            <h2>Thanks! Now, can you get others to join, before the FCC vote?</h2>
+          </header>
+          <article>
+            <a class="share facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Facebook</a>
+            <a class="share twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The%20FCC%20is%20days%20away%20from%20voting%20to%20kill%20NetNeutrality%2C%20but%20Congress%20can%20still%20stop%20them.%20On%20December%2012th%20we'll%20%23BreakTheInternet%20to%20stop%20censorship%2C%20throttling%2C%20and%20extra%20fees%3A%20https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Twitter</a>
+          </article>
+        </div>
+        <div class="modal hidden-fftf">
+          <a class="close" href="#none">&times;</a>
+          <header>
+            <h2>Thanks for signing.</h2>
+          </header>
+          <article>
             <p>
-                    <strong style="font-size: 20px">
-                        Now, one of the most impactful things you can do to help save net neutrality before Dec. 14th is to make phone calls to Congress.
-                    </strong>
-                    <br/><br/>
-                    If offices get more phone calls from constituents, we can persuade them to stop the catastrophic plan to repeal net neutrality.
-                </p>
-                <h4>Please Call: <a href="tel:4243634877">424-363-4877</a></h4>
-                <p>
-                    We will connect you to the offices of your lawmakers.
-                    <br/><br/>
-                    You can use this script when talking to them -- <strong>just introduce yourself, be polite, and say</strong>:
-                    <br/><br/>
-                    <i>"I support 'Title Two' net neutrality rules and I urge you to oppose the FCC's plan to repeal them. Specifically, I'd like you to contact the FCC Chairman and demand he abandon his current plan."</i>
-                </p>
-                </div>
-        </article>
+              <strong class="bigger">Now, one of the most impactful things you can do to help save net neutrality before Dec. 14th is to make phone calls to Congress.</strong>
+              <br><br>
+              If offices get more phone calls from constituents, we can persuade them to stop the catastrophic plan to repeal net neutrality.
+            </p>
+            <h4>Please Call: <a href="tel:4243634877">424-363-4877</a></h4>
+            <p>
+              We will connect you to the offices of your lawmakers.
+              <br><br>
+              You can use this script when talking to them -- <strong>just introduce yourself, be polite, and say</strong>:
+              <br><br>
+              <i>"I support 'Title Two' net neutrality rules and I urge you to oppose the FCC's plan to repeal them. Specifically, I'd like you to contact the FCC Chairman and demand he abandon his current plan."</i>
+            </p>
+          </article>
+        </div>
       </div>
     </div>
 

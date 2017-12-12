@@ -13,7 +13,7 @@ $(function(){
 
     // Puts focus on the newWindow
     if (window.focus) {
-        newWindow.focus();
+      newWindow.focus();
     }
   }
 
@@ -46,8 +46,8 @@ $(function(){
     }
   });
 
-  // submit form
-  $('#fftf_form form').submit(function(e){
+  // submit FFTF form
+  $('#fftf-form').submit(function(e){
     e.preventDefault();
     
     var $form = $(this);
@@ -59,7 +59,7 @@ $(function(){
     var $button = $form.find('button')
     var buttonText = $button.text()
     $button.text('Saving...');
-    
+
     $.post($form.attr('action'), params, function(response) {
       if (response.data) {
         showModal();
@@ -73,55 +73,16 @@ $(function(){
     });
   });
 
-    $('#dp_form form').submit(function(e) {
-        console.log('WTF?');
-        e.preventDefault();
-        
-        var $form = e.target;
-        var params = {
-            page: $form.page.value.trim(),
-            name: $form.name.value.trim(),
-            email: $form.email.value.trim(),
-            zip: $form.zip.value.trim(),
-            phone: $form.phone.value.trim()
-        };
-    
-        $('.form-error').hide();
-        $($form).find('input').attr('disabled', 'disabled');
-
-        var $button = $($form).find('button')
-        var buttonText = $button.text()
-        $button.text('Saving...');
-    
-        // iFrame
-    const iframe = document.createElement('iframe')
-    iframe.style.display = 'none'
-    iframe.setAttribute('name', 'actionkit-iframe')
-    document.body.appendChild(iframe)
-
-    // Form
-    const form = document.createElement('form')
-    form.style.display = 'none'
-    form.setAttribute('action', $form.action)
-    form.setAttribute('method', 'post')
-    form.setAttribute('target', 'actionkit-iframe')
-    document.body.appendChild(form)
-
-    Object.keys(params).forEach(function(key) {
-        const input = document.createElement('input')
-        input.type = 'hidden'
-        input.name = key
-        input.value = params[key]
-        form.appendChild(input)
+  // submit Demand Progress form
+  $('#dp-form').submit(function(e) {
+    // trim all inputs
+    $(this).find(':input').val(function(_, value) {
+      return $.trim(value);
     });
-        
 
-    form.submit();
-        $('#modal-header').html("Thanks for signing.");
-        $('.fftf-thankyou').addClass('hidden');
-        $('.dp-thankyou').removeClass('hidden');
-        showModal();
-    });
+    showModal();
+  });
+
   // close modal
   $('.modal .close').click(function(e) {
     e.preventDefault();
@@ -133,12 +94,10 @@ $(function(){
     e.preventDefault();
     showTwitterPopup();
   });
-  var loc = window.location.href;
-  if (loc.indexOf('org=dp') != -1) {
-    document.getElementById('fftf_disclosure').style.display = 'none';
-    document.getElementById('fftf_form').style.display = 'none';
-    document.getElementById('dp_disclosure').style.display = 'block';
-    document.getElementById('dp_form').style.display = 'block';
-    document.getElementsByClassName('congress-btn')[0].href='/?org=dp';
-    }
+
+  // enable org-conditional CSS
+  var isDemandProgressPage = window.location.href.indexOf('org=dp') !== -1;
+  if (isDemandProgressPage) {
+    $('body').removeClass('fftf').addClass('dp');
+  }
 });
