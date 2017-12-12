@@ -286,6 +286,26 @@ a.twitter {
   height: auto;
 }
 
+#footer {
+  margin-top: 70px;
+  padding: 30px 0;
+  font-size: 86%;
+  background-color: #eee;
+}
+
+#footer .logos a {
+  background-color: #1f1c35;
+  width: 32%;
+  float: left;
+  height: 80px;
+  margin-right: 2%;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+#footer .logos a:last-child {
+  margin-right: 0;
+}
 
 body.modal-open {
   overflow: hidden;
@@ -422,7 +442,14 @@ body.modal-open {
   #header h1 {
     margin-bottom: 0px;
   }
+
   #header h2 {
     font-size: 12px;
+  }
+
+  #footer .logos a {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
