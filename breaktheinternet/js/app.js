@@ -47,7 +47,7 @@ $(function(){
   });
 
   // submit form
-  $('form').submit(function(e){
+  $('#fftf_form form').submit(function(e){
     e.preventDefault();
     
     var $form = $(this);
@@ -73,6 +73,55 @@ $(function(){
     });
   });
 
+    $('#dp_form form').submit(function(e) {
+        console.log('WTF?');
+        e.preventDefault();
+        
+        var $form = e.target;
+        var params = {
+            page: $form.page.value.trim(),
+            name: $form.name.value.trim(),
+            email: $form.email.value.trim(),
+            zip: $form.zip.value.trim(),
+            phone: $form.phone.value.trim()
+        };
+    
+        $('.form-error').hide();
+        $($form).find('input').attr('disabled', 'disabled');
+
+        var $button = $($form).find('button')
+        var buttonText = $button.text()
+        $button.text('Saving...');
+    
+        // iFrame
+    const iframe = document.createElement('iframe')
+    iframe.style.display = 'none'
+    iframe.setAttribute('name', 'actionkit-iframe')
+    document.body.appendChild(iframe)
+
+    // Form
+    const form = document.createElement('form')
+    form.style.display = 'none'
+    form.setAttribute('action', $form.action)
+    form.setAttribute('method', 'post')
+    form.setAttribute('target', 'actionkit-iframe')
+    document.body.appendChild(form)
+
+    Object.keys(params).forEach(function(key) {
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = key
+        input.value = params[key]
+        form.appendChild(input)
+    });
+        
+
+    form.submit();
+        $('#modal-header').html("Thanks for signing.");
+        $('.fftf-thankyou').addClass('hidden');
+        $('.dp-thankyou').removeClass('hidden');
+        showModal();
+    });
   // close modal
   $('.modal .close').click(function(e) {
     e.preventDefault();
