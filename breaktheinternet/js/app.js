@@ -31,6 +31,28 @@ $(function(){
     PopupCenter('twitter.html', 'twitter', 600, 500);
   };
 
+  var renderTweets = function() {
+    // fetch tweets from JSON file
+    $.get('js/tweets.json', function(tweets) {
+      var $tweets = $('#tweets');
+      var templateHTML = $('#tweet-template').html();
+      var rows = [];
+
+      // build row HTML
+      for (var i = 0; i < tweets.length; i++) {
+        var tweet = tweets[i];
+        var $template = $(templateHTML);
+        $template.find('.tweet').text(tweet);
+        $template.find('a.btn').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet));
+        rows.push($template);
+      }
+
+      // populate the tweets table
+      $tweets.find('tbody').html(rows);
+      $tweets.show();
+    });
+  };
+
   // toggle large audience checkbox
   $('input[name=volunteer]').click(function(e){
     var isChecked =  $(this).is(':checked');
@@ -105,4 +127,6 @@ $(function(){
   if (isDemandProgressPage) {
     $('body').removeClass('fftf').addClass('dp');
   }
+
+  renderTweets();
 });

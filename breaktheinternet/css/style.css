@@ -55,11 +55,11 @@ p {
   line-height: 1.4;
 }
 
-img {
+img, iframe {
   max-width: 100%;
 }
 
-h2{
+h2 {
 	font-size: 34px;
 	padding-bottom: 0px;
 	margin-bottom: 0px;
@@ -103,7 +103,7 @@ hr {
 
 .container {
   width: 600px;
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
 }
 
@@ -292,6 +292,36 @@ a.twitter {
   height: auto;
 }
 
+#tweets table {
+  border-collapse: collapse;
+}
+
+#tweets td {
+  padding: 10px;
+}
+
+#tweets th {
+  padding: 5px 10px;
+  text-align: left;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+#tweets tr:nth-child(even) {
+  background-color: #eee;
+}
+
+#tweets .tweet {
+  white-space: pre-line;
+  font-size: 86%;
+}
+
+#tweets .btn {
+  background-color: #28d0f4;
+  font-size: 12px;
+  padding: 8px;
+  white-space: nowrap;
+}
+
 #footer {
   margin-top: 70px;
   padding: 30px 0;
@@ -470,6 +500,12 @@ body.dp .hidden-dp {
     margin-right: 0;
     margin-bottom: 10px;
   }
+
+  td.tweet {
+    max-width: 240px;
+    overflow: hidden;
+  }
+
   #participants li {
     width: 48%;
     margin-right: 2%;
