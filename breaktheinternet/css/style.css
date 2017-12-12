@@ -133,6 +133,7 @@ section {
   font-size: 30px;
   flex-grow: 1;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .and {
