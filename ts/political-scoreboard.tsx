@@ -10,8 +10,10 @@ import {handleInputChange} from './utils';
 import {clamp, classes} from './utils';
 import {r} from './r';
 
+import {STATES} from './data-state-codes';
 
-function getPoliticianSubdomain(p:any): string {
+
+export function getPoliticianSubdomain(p:any): string {
 	var subdomain: string;
 	if (p.subdomain) {
 		subdomain = p.subdomain;
@@ -22,7 +24,7 @@ function getPoliticianSubdomain(p:any): string {
 	return "http://" + subdomain + host;
 }
 
-function getPoliticianTweetLink(p:any): string {
+export function getPoliticianTweetLink(p:any): string {
 	var shareText: string;
 	var l = 140;
 	var extra = " battleforthenet.com";
@@ -58,9 +60,11 @@ function parsePolitician(data:any, idx:number) {
 	}
 	var ret:any = {
 		idx: idx,
+		biocode: data.gsx$bioguide.$t,
 		frontpage: (data.gsx$frontpage.$t === '1'),
 		first: data.gsx$first.$t,
 		name: data.gsx$name.$t,
+		org: null,
 		organization: data.gsx$organization.$t,
 		image: imageBaseURL + data.gsx$bioguide.$t + '_x1.jpg',
 		image2x: imageBaseURL + data.gsx$bioguide.$t + '_x2.jpg',
@@ -72,8 +76,20 @@ function parsePolitician(data:any, idx:number) {
 		sharetext: data.gsx$sharetext.$t,
 		subdomain: data.gsx$subdomain.$t,
 		state: data.gsx$state.$t,
+		stateCode: null,
 		tweetLink: null
 	};
+	switch(ret["organization"]) {
+		case "Senate":
+			ret["org"] = "SEN";
+			break;
+		case "House":
+			ret["org"] = "REP";
+			break;
+	}
+	if (ret["state"]) {
+		ret["stateCode"] = STATES[ret["state"]];
+	}
 	ret["site"] = getPoliticianSubdomain(ret);
 	if (ret.twitter) {
 		ret["tweetLink"] = getPoliticianTweetLink(ret);
@@ -81,12 +97,14 @@ function parsePolitician(data:any, idx:number) {
 	return ret as Politician;
 }
 
-interface Politician {
+export interface Politician {
 	idx: number
+	biocode: string
 	frontpage: boolean
 	first: string
 	name: string
 	organization: string
+	org: string
 	image: string
 	image2x: string
 	weight: string
@@ -98,13 +116,15 @@ interface Politician {
 	subdomain: string
 	site: string
 	state: string
+	stateCode: string
 	tweetLink: string | null
 }
 
-interface PoliticiansSet {
+export interface PoliticiansSet {
 	undecided: Politician[]
 	cable: Politician[]
 	internet: Politician[]
+	extracted: Politician[]
 }
 
 var teamMapper: any = {
@@ -114,7 +134,7 @@ var teamMapper: any = {
 }
 
 
-function getGeocode(): Promise<string> {
+export function getGeocode(): Promise<string> {
 	return ajaxPromise({
 		url: "https://fftf-geocoder.herokuapp.com",
 		method: "get",
@@ -139,7 +159,7 @@ function getGeocode(): Promise<string> {
 	});
 }
 
-function getPoliticians(): Promise<PoliticiansSet> {
+export function getPoliticians(extractSet:string[]|null=null): Promise<PoliticiansSet> {
 	return ajaxPromise({
 		// url: "https://spreadsheets.google.com/feeds/list/1n6ZuVMbfBdu3MvYutScnnD8k8B2IzqX9woBY-2PLlIM/default/public/values?alt=json",
 		url: "https://cache.battleforthenet.com/v2/politicians.json",
@@ -155,13 +175,19 @@ function getPoliticians(): Promise<PoliticiansSet> {
 		var ret: PoliticiansSet = {
 			"undecided": [],
 			"cable": [],
-			"internet": []
+			"internet": [],
+			"extracted": []
 		};
 		_.each(j.feed.entry as any[], function(p, idx) {
 			var politician = parsePolitician(p, idx);
-			var team = teamMapper[politician.team];
-			if (team) {
-				(ret as any)[team].push(politician);
+			var key: string;
+			if (extractSet && _.indexOf(extractSet, politician.biocode) !== -1) {
+				key = "extracted";
+			} else {
+				key = teamMapper[politician.team];
+			}
+			if (key) {
+				(ret as any)[key].push(politician);
 			}
 		});
 		return ret;

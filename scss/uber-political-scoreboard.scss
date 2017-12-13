@@ -1,0 +1,16 @@
+.bftn-uber-scoreboard {
+	.politicians-inline {
+		margin-bottom: 2em;
+		.politician {
+			display: inline-block;
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+	}
+	.politician div.cover span.cover-name {
+		bottom: 20px;
+	}
+	.politician div.cover span.cover-org {
+		font-size: 10px;
+	}
+}

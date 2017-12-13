@@ -151,4 +151,3 @@ export function sanitizeUrl(url: String): string {
 
 	return sanitizedUrl;
 }
-
