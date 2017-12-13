@@ -1,0 +1,496 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, .btn, input, .and, a.share {
+  font-family: 'Montserrat', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  color: #424242;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #ff2121;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a[name] {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: #ff2121;
+}
+
+p {
+  line-height: 1.4;
+}
+
+img, iframe {
+  max-width: 100%;
+}
+
+h2 {
+	font-size: 34px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+hr {
+  border: 0;
+  width: 50%;
+  color: #a9a9a9;
+  background-color: #a9a9a9;
+  height: 1px;
+  margin: 50px auto;
+}
+
+#header {
+  background-color: #ff0006;
+  padding: 50px 0;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#header h1 {
+  margin-top: 30px;
+  margin-bottom: -25px;
+}
+
+#header h1 img {
+  width: 950px;
+}
+
+#header h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+.container {
+  width: 600px;
+  max-width: 90%;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #ff2121;
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 30px;
+  flex-grow: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.and {
+  color: #c6c6c6;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin: 10px 0;
+}
+
+.congress-btn {
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 24px;
+}
+
+.congress-btn:hover {
+  background-color: #000;
+  border: 2px solid #000;
+  color: #fff;
+  font-size: 24px;
+}
+
+.form-error {
+  color: #ff2121;
+}
+
+.toc {
+  font-size: 86%;
+  margin: 5px 0 20px;
+}
+
+.toc p {
+  margin: 0 0 5px;
+}
+
+.toc ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  display: inline-block;
+}
+
+.toc li:not(:last-child):after {
+  content: " | ";
+  color: #c6c6c6;
+}
+
+img.profile-pic {
+  width: 200px;
+}
+
+.participants ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.participants li {
+  float: left;
+  width: 30%;
+  margin: 6px 1.5%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  overflow: hidden;
+}
+
+.participants img {
+  max-height: 60px;
+}
+
+.action-comment input[type=text] {
+  width: 100%;
+  margin: 0 0 10px;
+  float: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.social {
+  margin: 10px 30px;
+}
+
+.social a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 20px 0;
+  width: 49%;
+  text-align: center;
+}
+
+a.facebook {
+  color: #215cc8;
+  border-right: 1px solid #c6c6c6;
+}
+
+a.twitter {
+  color: #28d0f4;
+}
+
+#widgets textarea {
+  width: 100%;
+  font-family: monospace;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#widgets .modals img {
+  width: 48%;
+  border-radius: 8px;
+  display: block;
+  float: left;
+  margin: 10px 1%;
+}
+
+#widgets .banners img {
+  display: block;
+  margin: 20px auto;
+  height: auto;
+}
+
+#tweets table {
+  border-collapse: collapse;
+}
+
+#tweets td {
+  padding: 10px;
+}
+
+#tweets th {
+  padding: 5px 10px;
+  text-align: left;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+#tweets tr:nth-child(even) {
+  background-color: #eee;
+}
+
+#tweets .tweet {
+  white-space: pre-line;
+  font-size: 86%;
+}
+
+#tweets .btn {
+  background-color: #28d0f4;
+  font-size: 12px;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+#footer {
+  margin-top: 70px;
+  padding: 30px 0;
+  font-size: 86%;
+  background-color: #eee;
+}
+
+#footer .logos a {
+  background-color: #1f1c35;
+  width: 32%;
+  float: left;
+  height: 80px;
+  margin-right: 2%;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+#footer .logos a:last-child {
+  margin-right: 0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: scroll;
+}
+
+.modal {
+  width: 700px;
+  margin: auto;
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  right:6px;
+  top: -3px;
+  color: #fff;
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.modal header {
+  background-color: #ff2121;
+  padding: 20px 30px;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.modal header h2 {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.modal article {
+  background: #fff;
+  padding: 30px;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.modal article p {
+  margin: -10px 0 25px;
+}
+
+.modal a.share {
+  width: 40%;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 10px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.modal a.facebook {
+  background-color: #215cc8;
+  margin-right: 5%;
+}
+
+.modal a.twitter {
+  background-color: #28d0f4;
+}
+
+.modal strong.bigger {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Use these clases to hide DP content from FFTF and vice versa */
+body.fftf .hidden-fftf,
+body.dp .hidden-dp {
+  display: none !important;
+}
+
+@media screen and (max-width: 800px) {
+  form input[type=text],
+  form input[type=email],
+  form input[type=tel] {
+    width: 100%;
+    float: none;
+  }
+
+  form input:nth-child(even) {
+    margin-left: 0;
+  }
+
+  #header h2 {
+    font-size: 16px;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
+  .modal a.share {
+    width: 100%;
+  }
+
+  .modal a.facebook {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 26px;
+  }
+
+  .congress-btn {
+    font-size: 20px;
+  }
+
+  .social {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  a.facebook {
+    border-right: none;
+  }
+
+  #widgets .modals img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #widgets textarea {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #header h1 {
+    margin-bottom: 0px;
+  }
+
+  #header h2 {
+    font-size: 12px;
+  }
+
+  #footer .logos a {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  td.tweet {
+    max-width: 240px;
+    overflow: hidden;
+  }
+
+  #participants li {
+    width: 48%;
+    margin-right: 2%;
+    margin-left: 0;
+  }
+
+  #participants li:nth-child(even) {
+    margin-right: 0;
+  }
+}
