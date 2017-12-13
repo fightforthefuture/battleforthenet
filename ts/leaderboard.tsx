@@ -80,7 +80,7 @@ function getLeaderboardStats(props:LeaderboardProps): Promise<LeaderboardStats> 
 		});
 		var sorted = _.orderBy(referrers, ["n"], ["desc"]);
 		return {
-			"completed": j["completed"],
+			"completed": j["completed"] + 84328, // sum of other campaigns that weren't being tracked in this number. see here for justification: https://github.com/fightforthefuture/battleforthenet/blob/master/images/12-13-2017-callpower-stats.png
 			"last_day": j["last_24h"],
 			"last_week": j["last_week"],
 			"top_referrers": _.take(sorted, props.limit)
