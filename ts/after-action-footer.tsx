@@ -52,6 +52,17 @@ export class AfterActionFooter extends React.Component<Props, State> {
               </button>
             </a>
           </li>
+           <li>
+           <a href="http://testyourinter.net" target="_blank">                
+              <button>
+                <div>
+                  <img src="/images/mobile.svg" />
+                  <span>TestYourInter.net
+                  </span>
+                </div>
+              </button>
+              </a>
+            </li>
         </ul>
       </div>
     );
