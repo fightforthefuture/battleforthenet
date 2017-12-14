@@ -83,7 +83,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 
 export function CallSuccessTemplate(props:CallSuccessProps) {
 	const content_msg = `
-	"I support the *existing* Title II net neutrality rules and I would like you to *publicly oppose* the FCC’s plan to repeal them."
+	I support Title Two net neutrality and I urge you to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's December vote to repeal the Open Internet Order.
 	`;
 	return (
 		<div>
