@@ -297,31 +297,11 @@
       <div class="modal">
         <a class="close" href="#none">&times;</a>
         <header>
-          <h2 id="modal-header">Thanks! Now, can you get others to join, before the FCC vote?</h2>
+          <h2 id="modal-header">Thanks for joining and being a part of our distributed organizing project, 'Team Internet.'</h2>
         </header>
         <article>
-          <div class="fftf-thankyou">
-            <a class="share facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Facebook</a>
-            <a class="share twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The%20FCC%20is%20days%20away%20from%20voting%20to%20kill%20NetNeutrality%2C%20but%20Congress%20can%20still%20stop%20them.%20On%20December%2012th%20we'll%20%23BreakTheInternet%20to%20stop%20censorship%2C%20throttling%2C%20and%20extra%20fees%3A%20https%3A%2F%2Fbattleforthenet.com%2Fbreaktheinternet" target="_blank">Share on Twitter</a>
-            <br/><br/>
-          </div>
-          <div class="hidden dp-thankyou">
-            <p>
-              <strong style="font-size: 20px">
-                  Now, one of the most impactful things you can do to help save net neutrality before Dec. 14th is to make phone calls to Congress.
-              </strong>
-              <br/><br/>
-                  If offices get more phone calls from constituents, we can persuade them to stop the catastrophic plan to repeal net neutrality.
-            </p>
-            <h4>Please Call: <a href="tel:4243634877">424-363-4877</a></h4>
-            <p>
-              We will connect you to the offices of your lawmakers.
-              <br/><br/>
-              You can use this script when talking to them -- <strong>just introduce yourself, be polite, and say</strong>:
-              <br/><br/>
-              <i>"I support 'Title Two' net neutrality rules and I urge you to oppose the FCC's plan to repeal them. Specifically, I'd like you to contact the FCC Chairman and demand he abandon his current plan."</i>
-            </p>
-          </div>
+            <p>Now, we're going to send you to BattleForTheNet.com, where you can contact your lawmakers and ask them to support strong net neutrality. </p>
+            <p>Thanks for all that you do for a free and open internet.</p>
         </article>
       </div>
     </div>
@@ -386,6 +366,7 @@
       var showModal = function() {
         $('.modal-wrapper').fadeIn();
         $('body').addClass('modal-open');
+        setTimeout("location.href = 'https://www.battleforthenet.com';",5000);
       };
       
       var hideModal = function() {
@@ -434,6 +415,7 @@
         if(paramsValueArray.length === 5) {
           form.submit();
           $('.dp-thankyou').removeClass('hidden');
+          //show modal and redirect 
           showModal();
         }
         
