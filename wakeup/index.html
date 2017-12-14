@@ -226,6 +226,8 @@
                                     <input type="text" name="phone" id="id_phone" class="ak-userfield-input">
                                 </div>
                                 <input type="hidden" name="country" value="United States">
+                                
+                                <input type="hidden" name="opt_in" value="true">
                             </div>
 
                             <button type="submit" class="ak-submit-button">Sign Up</button>
@@ -366,7 +368,7 @@
       var showModal = function() {
         $('.modal-wrapper').fadeIn();
         $('body').addClass('modal-open');
-        setTimeout("location.href = 'https://www.battleforthenet.com';",5000);
+        setTimeout("location.href = 'https://www.battleforthenet.com';",7000);
       };
       
       var hideModal = function() {
@@ -384,7 +386,8 @@
           phone: $form.phone.value.trim(),
           email: $form.email.value.trim(),
           zip: $form.zip.value.trim(),
-          page: $form.page.value.trim()
+          page: $form.page.value.trim(),
+          opt_in: $form.opt_in.value.trim()
         }
         // iFrame
         const iframe = document.createElement('iframe')
@@ -412,7 +415,7 @@
           return params[key]
         })
 
-        if(paramsValueArray.length === 5) {
+        if(paramsValueArray.length === 6) {
           form.submit();
           $('.dp-thankyou').removeClass('hidden');
           //show modal and redirect 
