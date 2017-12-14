@@ -25,6 +25,28 @@ interface State {
 }
 
 
+function getTweetLink(p:Politician): string {
+	var shareText: string;
+	var l = 280;
+	var extra = " battleforthenet.com";
+	if (p.sharetext) {
+		shareText = p.sharetext;
+	} else if (p.team === "team-cable") {
+		shareText = `.@${p.twitter}, I know you've supported the destruction of the open Internet in the past. But please, #NetNeutrality matters to me. Vote for a "Congressional Resolution of Disapproval" to overrule the FCC.`;
+	} else if (p.team === "team-internet") {
+		shareText = `.@${p.twitter} Thank you for supporting #NetNeutrality! Now, can you vote for a "Congressional Resolution of Disapproval" to overrule the FCC?`;
+	} else {
+		shareText = `.@${p.twitter}, I want you to support strong Title II #NetNeutrality rules! Please vote for a "Congressional Resolution of Disapproval" to overrule the FCC!`;
+	}
+	if (!p.sharetext) {
+		if (shareText.length < l - extra.length) {
+			shareText = shareText + extra;
+		}
+	}
+	return "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&related=fightfortheftr";
+}
+
+
 export class UberPoliticalScoreboard extends React.Component<Props, State> {
 	constructor(props:Props) {
 		super(props);
@@ -40,7 +62,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		};
 	}
 	componentDidMount() {
-		getPoliticians(this.props.highlight).then((politiciansSet:PoliticiansSet)=> {
+		getPoliticians().then((politiciansSet:PoliticiansSet)=> {
 			this.setState({
 				politiciansSet: politiciansSet
 			} as State);
@@ -61,14 +83,14 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		var isLong = (politician.name.indexOf(" ") === -1 && politician.name.length > 11);
 		var hideSite = true;
 		return (
-			<div key={"p-" + politician.idx} className="politician carousel-item-active">
+			<div key={"p-" + politician.idx} className={classes("politician", "carousel-item-active", "politician-" + politician.team)}>
 				<img src={ politician.image } srcSet={ politician.image2x + " 2x" } />
 				<div className={classes("cover", isLong && "cover-long")}>
 					<span className="cover-name">{politician.name}</span>
 					<span className="cover-org">{politician.org} - {politician.stateCode} ({politician.partyCode.toUpperCase()})</span>
 				</div>
 				<div className={classes("actions", hideSite && "no-site")}>
-					{ politician.twitter ? <a className="btn tweet" href={politician.tweetLink as string} target="_blank">Tweet</a> : null }
+					{ politician.twitter ? <a className="btn tweet" href={getTweetLink(politician)} target="_blank">Tweet</a> : null }
 					<a className="btn call" href="/?call=1">Call</a>
 					<a className="btn site" href={politician.site} target="_blank">Visit Site</a>
 				</div>
@@ -79,26 +101,40 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		return <option key={state} value={state}>{state}</option>
 	}
 	renderContent(highlight: string[], politiciansSet:PoliticiansSet, state: string) {
-		var congressNotForInState: Politician[] = [];
-		var congressNotForOutState: Politician[] = [];
-		var notFor = _.concat(politiciansSet.undecided, politiciansSet.cable);
+		var congressInState: Politician[] = [];
+		var congressTeamInternet: Politician[] = [];
+		var congressUnknown: Politician[] = [];
+		var congressCable: Politician[] = [];
 
 		var sortFunction = function(p: Politician): string {
-			var partySort:string;
-			var orgSort:string;
+			var highlightSort = (_.indexOf(highlight, p.biocode) !== -1) ? "a": "b";
+			var partySort = (p.partyCode === "r") ? "a" : "b";
+			var orgSort = (p.organization === "Senate") ? "a": "b";
 
-			partySort = (p.partyCode === "r") ? "a" : "b";
-			orgSort = (p.organization === "Senate") ? "a": "b";
-
-			return partySort + orgSort;
+			return highlightSort + partySort + orgSort;
 		}
-		var sortedNotFor = _.orderBy(notFor, sortFunction);
 
-		_.each(sortedNotFor, function(p) {
+		_.each(_.orderBy(politiciansSet.cable, sortFunction), function(p) {
 			if (p.state === state) {
-				congressNotForInState.push(p);
+				congressInState.push(p);
 			} else {
-				congressNotForOutState.push(p);
+				congressCable.push(p);
+			}
+		});
+
+		_.each(_.orderBy(politiciansSet.undecided, sortFunction), function(p) {
+			if (p.state === state) {
+				congressInState.push(p);
+			} else {
+				congressUnknown.push(p);
+			}
+		});
+
+		_.each(_.orderBy(politiciansSet.internet, sortFunction), function(p) {
+			if (p.state === state) {
+				congressInState.push(p);
+			} else {
+				congressTeamInternet.push(p);
 			}
 		});
 
@@ -106,36 +142,47 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		return (
 			<div>
 				<div className="politicians-inline politicians-highlight">
-					<h2>Here are the 5 Republican lawmakers who have publicly opposed the FCC's plan, but need to do more to stop the vote.</h2>
-					<div className="psb-unknown">
-						{_.map(politiciansSet.extracted, renderItem)}
-					</div>
-				</div>
-
-				<div className="politicians-inline">
-					<h2>And here are the members of Congress who have not yet opposed the FCC's plan.</h2>
+					<h2>Your representatives:</h2>
 					<div className="state-selector">
-						<h3>Members from your state: 
-						<select name="state" value={state} onChange={handleInputChange.bind(this)}>
-							<option key="null" value="">Select state</option>
-							{_.map(r.states, this.renderStateOption)}
-						</select>
-						</h3>
+						<p>These are your members of Congress. Start here.
+							<select name="state" value={state} onChange={handleInputChange.bind(this)}>
+								<option key="null" value="">Select state</option>
+								{_.map(r.states, this.renderStateOption)}
+							</select>
+						</p>
 					</div>
 					<div className="psb-unknown">
-						{_.map(congressNotForInState, renderItem)}
-					</div>
-
-					<h3>Other Members of Congress</h3>
-					<div className="psb-unknown">
-						{_.map(congressNotForOutState, renderItem)}
+						{_.map(congressInState, renderItem)}
 					</div>
 				</div>
 
 				<div className="politicians-inline">
-					<h2>Members of Congress opposed to the FCC's plan.</h2>
+					<h2>Team Internet</h2>
+					<p>These are the other members of Congress who've come out against
+					the FCC plan. Thank them, and ask them to vote for the CRA</p>
+
 					<div className="psb-internet">
-						{_.map(politiciansSet.internet, renderItem)}
+						{_.map(congressTeamInternet, renderItem)}
+					</div>
+				</div>
+
+				<div className="politicians-inline">
+					<h2>Unknown</h2>
+					<p>These are all the members of Congress whose stance we don't know
+					yet. Ask them to vote for the CRA!</p>
+
+					<div className="psb-unknown">
+						{_.map(congressUnknown, renderItem)}
+					</div>
+				</div>
+
+				<div className="politicians-inline">
+					<h2>Team Cable</h2>
+					<p>These are the members of Congress who supported the FCC plan. We
+					still might be able to move them</p>
+
+					<div className="psb-cable">
+						{_.map(congressCable, renderItem)}
 					</div>
 				</div>
 			</div>

@@ -70,7 +70,7 @@ function parsePolitician(data:any, idx:number) {
 		organization: data.gsx$organization.$t,
 		image: imageBaseURL + biocode + '_x1.jpg',
 		image2x: imageBaseURL + biocode + '_x2.jpg',
-		partyCode: PARTY_MAP[biocode],
+		partyCode: PARTY_MAP[biocode] || "",
 		weight: data.gsx$weight.$t,
 		team: team,
 		size: data.gsx$size.$t,
@@ -128,7 +128,6 @@ export interface PoliticiansSet {
 	undecided: Politician[]
 	cable: Politician[]
 	internet: Politician[]
-	extracted: Politician[]
 }
 
 var teamMapper: any = {
@@ -163,7 +162,7 @@ export function getGeocode(): Promise<string> {
 	});
 }
 
-export function getPoliticians(extractSet:string[]|null=null): Promise<PoliticiansSet> {
+export function getPoliticians(): Promise<PoliticiansSet> {
 	return ajaxPromise({
 		// url: "https://spreadsheets.google.com/feeds/list/1n6ZuVMbfBdu3MvYutScnnD8k8B2IzqX9woBY-2PLlIM/default/public/values?alt=json",
 		url: "https://cache.battleforthenet.com/v2/politicians.json",
@@ -180,16 +179,10 @@ export function getPoliticians(extractSet:string[]|null=null): Promise<Politicia
 			"undecided": [],
 			"cable": [],
 			"internet": [],
-			"extracted": []
 		};
 		_.each(j.feed.entry as any[], function(p, idx) {
 			var politician = parsePolitician(p, idx);
-			var key: string;
-			if (extractSet && _.indexOf(extractSet, politician.biocode) !== -1) {
-				key = "extracted";
-			} else {
-				key = teamMapper[politician.team];
-			}
+			var key = teamMapper[politician.team];
 			if (key) {
 				(ret as any)[key].push(politician);
 			}
