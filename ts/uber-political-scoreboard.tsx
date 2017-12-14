@@ -142,6 +142,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		return (
 			<div>
 				<div className="politicians-inline politicians-highlight">
+					<a id="in-state" />
 					<h2>Your representatives:</h2>
 					<div className="state-selector">
 						<p>These are your members of Congress. Start here.
@@ -157,6 +158,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 				</div>
 
 				<div className="politicians-inline">
+					<a id="team-internet" />
 					<h2>Team Internet</h2>
 					<p>These are the other members of Congress who've come out against
 					the FCC plan. Thank them, and ask them to vote for the CRA</p>
@@ -167,6 +169,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 				</div>
 
 				<div className="politicians-inline">
+					<a id="team-unknown" />
 					<h2>Unknown</h2>
 					<p>These are all the members of Congress whose stance we don't know
 					yet. Ask them to vote for the CRA!</p>
@@ -177,6 +180,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 				</div>
 
 				<div className="politicians-inline">
+					<a id="team-cable" />
 					<h2>Team Cable</h2>
 					<p>These are the members of Congress who supported the FCC plan. We
 					still might be able to move them</p>
