@@ -10,6 +10,7 @@ import {handleInputChange} from './utils';
 import {clamp, classes} from './utils';
 import {r} from './r';
 
+import {PARTY_MAP} from './data-party-map';
 import {STATES} from './data-state-codes';
 
 
@@ -48,6 +49,7 @@ export function getPoliticianTweetLink(p:any): string {
 
 function parsePolitician(data:any, idx:number) {
 	var imageBaseURL = '/images/scoreboard/';
+	var biocode = data.gsx$bioguide.$t;
 	var team;
 	switch (data.gsx$team.$t) {
 		case "team-cable":
@@ -60,14 +62,15 @@ function parsePolitician(data:any, idx:number) {
 	}
 	var ret:any = {
 		idx: idx,
-		biocode: data.gsx$bioguide.$t,
+		biocode: biocode,
 		frontpage: (data.gsx$frontpage.$t === '1'),
 		first: data.gsx$first.$t,
 		name: data.gsx$name.$t,
 		org: null,
 		organization: data.gsx$organization.$t,
-		image: imageBaseURL + data.gsx$bioguide.$t + '_x1.jpg',
-		image2x: imageBaseURL + data.gsx$bioguide.$t + '_x2.jpg',
+		image: imageBaseURL + biocode + '_x1.jpg',
+		image2x: imageBaseURL + biocode + '_x2.jpg',
+		partyCode: PARTY_MAP[biocode],
 		weight: data.gsx$weight.$t,
 		team: team,
 		size: data.gsx$size.$t,
@@ -118,6 +121,7 @@ export interface Politician {
 	state: string
 	stateCode: string
 	tweetLink: string | null
+	partyCode: string
 }
 
 export interface PoliticiansSet {

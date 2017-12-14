@@ -9,7 +9,6 @@ import {ajaxResult, ajaxPromise} from './utils';
 import {handleInputChange} from './utils';
 import {clamp, classes} from './utils';
 import {r} from './r';
-import {PARTY_MAP} from './data-party-map';
 
 import {Politician, PoliticiansSet, getGeocode, getPoliticians} from './political-scoreboard';
 
@@ -66,7 +65,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 				<img src={ politician.image } srcSet={ politician.image2x + " 2x" } />
 				<div className={classes("cover", isLong && "cover-long")}>
 					<span className="cover-name">{politician.name}</span>
-					<span className="cover-org">{politician.org} - {politician.stateCode}</span>
+					<span className="cover-org">{politician.org} - {politician.stateCode} ({politician.partyCode.toUpperCase()})</span>
 				</div>
 				<div className={classes("actions", hideSite && "no-site")}>
 					{ politician.twitter ? <a className="btn tweet" href={politician.tweetLink as string} target="_blank">Tweet</a> : null }
@@ -80,27 +79,26 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		return <option key={state} value={state}>{state}</option>
 	}
 	renderContent(highlight: string[], politiciansSet:PoliticiansSet, state: string) {
+		var congressNotForInState: Politician[] = [];
+		var congressNotForOutState: Politician[] = [];
 		var notFor = _.concat(politiciansSet.undecided, politiciansSet.cable);
 
-		var sortFunction = function(p: Politician) {
-			if (p.organization === "Senate") {
-				return "a";
-			} else {
-				return "b";
-			}
+		var sortFunction = function(p: Politician): string {
+			var partySort:string;
+			var orgSort:string;
+
+			partySort = (p.partyCode === "r") ? "a" : "b";
+			orgSort = (p.organization === "Senate") ? "a": "b";
+
+			return partySort + orgSort;
 		}
-		var republicansNotForInState: Politician[] = [];
-		var republicansNotForOutState: Politician[] = [];
+		var sortedNotFor = _.orderBy(notFor, sortFunction);
 
-		var republicansNotFor = _.orderBy(_.filter(notFor, function(p) {
-			return PARTY_MAP[p.biocode] === "r";
-		}), sortFunction);
-
-		_.each(republicansNotFor, function(p) {
+		_.each(sortedNotFor, function(p) {
 			if (p.state === state) {
-				republicansNotForInState.push(p);
+				congressNotForInState.push(p);
 			} else {
-				republicansNotForOutState.push(p);
+				congressNotForOutState.push(p);
 			}
 		});
 
@@ -114,10 +112,10 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 					</div>
 				</div>
 
-				<div className="politicians-inline politicians-republicans">
-					<h2>And here are the Republicans who have not yet opposed the FCC's plan.</h2>
+				<div className="politicians-inline">
+					<h2>And here are the members of Congress who have not yet opposed the FCC's plan.</h2>
 					<div className="state-selector">
-						<h3>Republicans from your state: 
+						<h3>Members from your state: 
 						<select name="state" value={state} onChange={handleInputChange.bind(this)}>
 							<option key="null" value="">Select state</option>
 							{_.map(r.states, this.renderStateOption)}
@@ -125,12 +123,19 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 						</h3>
 					</div>
 					<div className="psb-unknown">
-						{_.map(republicansNotForInState, renderItem)}
+						{_.map(congressNotForInState, renderItem)}
 					</div>
 
-					<h3>Other republicans</h3>
+					<h3>Other Members of Congress</h3>
 					<div className="psb-unknown">
-						{_.map(republicansNotForOutState, renderItem)}
+						{_.map(congressNotForOutState, renderItem)}
+					</div>
+				</div>
+
+				<div className="politicians-inline">
+					<h2>Members of Congress opposed to the FCC's plan.</h2>
+					<div className="psb-internet">
+						{_.map(politiciansSet.internet, renderItem)}
 					</div>
 				</div>
 			</div>
