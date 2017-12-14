@@ -3,21 +3,15 @@ interface R {
 	states: string[]
 }
 
-const DEFAULT_FORM_TEXT = `I urge you to stop the FCC's plan to end net neutrality *before* the FCC's December 14th vote.
+const DEFAULT_FORM_TEXT = `The FCC vote to destroy the Net Neutrality protections on Dec. 14 cannot stand. 
 
-I don't want ISPs to have the power to block websites, slow them down, give some sites an advantage over others, split the Internet into "fast lanes" for companies that pay and "slow lanes" for the rest, or force me to buy special "tiers" to access the sites and services I choose. But that's exactly what the FCC plan would do. Please read it:
+I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote. 
 
-https://apps.fcc.gov/edocs_public/attachmatch/DOC-347927A1.pdf
+The FCC's Dec. 14 decision willfully ignored the outcry from tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing. 
 
-Blocking & throttling by ISPs is a serious problem. Comcast has throttled Netflix, AT&T blocked FaceTime, Time Warner Cable throttled the popular game League of Legends, and Verizon admitted it will introduce fast lanes for sites that pay-and slow lanes for everyone else-if the FCC lifts the rules. This hurts consumers and businesses large and small.
+We need members of Congress to stand up for the open internet and for the digital civil rights of their constituents now. Please use the CRA to pass a Resolution of Disapproval to overturn the FCC's December 14 "Restoring Internet Freedom" vote. 
 
-If some companies can pay ISPs to have their content load faster, startups and small businesses that can't pay those fees won't be able to compete. This will kill the open marketplace that has enabled millions of small businesses and created America’s 5 most valuable companies. Without strong net neutrality protections, Internet providers will effectively be able to impose a tax on every sector of the American economy.
-
-Moreover, under Chairman Pai's plan, ISPs will be able to make it more difficult to access political speech that they don't like. They'll be able to charge fees for website delivery that would make it harder for blogs, nonprofits, artists, and others who can't pay up to have their voices heard.
-
-If the FCC passes their current order, every Internet user and business in this country will be unprotected from abuse by Internet providers, and the consequences will be dire. Please publicly support net neutrality protections by denouncing the FCC's current plan. Do whatever you can to stop Chairman Pai, to ensure that businesses and Internet users remain protected.
-
-Thank you!`;
+Thank you.`;
 
 
 const STATES = [
