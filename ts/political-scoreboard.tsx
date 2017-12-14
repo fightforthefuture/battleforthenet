@@ -275,6 +275,8 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 						<option key="null" value="">Select state</option>
 						{_.map(r.states, this.renderStateOption)}
 					</select>
+					<br /><br />
+					<a className="btn" href="/scoreboard">View the scoreboard</a>
 				</div>
 
 				{ items.length ?
