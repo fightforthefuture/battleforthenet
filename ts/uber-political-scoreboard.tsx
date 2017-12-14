@@ -89,9 +89,20 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 				return "b";
 			}
 		}
+		var republicansNotForInState: Politician[] = [];
+		var republicansNotForOutState: Politician[] = [];
+
 		var republicansNotFor = _.orderBy(_.filter(notFor, function(p) {
 			return PARTY_MAP[p.biocode] === "r";
 		}), sortFunction);
+
+		_.each(republicansNotFor, function(p) {
+			if (p.state === state) {
+				republicansNotForInState.push(p);
+			} else {
+				republicansNotForOutState.push(p);
+			}
+		});
 
 		var renderItem = this.renderPolitician.bind(this);
 		return (
@@ -105,8 +116,21 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 
 				<div className="politicians-inline politicians-republicans">
 					<h2>And here are the Republicans who have not yet opposed the FCC's plan.</h2>
+					<div className="state-selector">
+						<h3>Republicans from your state: 
+						<select name="state" value={state} onChange={handleInputChange.bind(this)}>
+							<option key="null" value="">Select state</option>
+							{_.map(r.states, this.renderStateOption)}
+						</select>
+						</h3>
+					</div>
 					<div className="psb-unknown">
-						{_.map(republicansNotFor, renderItem)}
+						{_.map(republicansNotForInState, renderItem)}
+					</div>
+
+					<h3>Other republicans</h3>
+					<div className="psb-unknown">
+						{_.map(republicansNotForOutState, renderItem)}
 					</div>
 				</div>
 			</div>
