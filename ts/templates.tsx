@@ -58,12 +58,12 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
 				{ props.isModal ? 
 					<h3>Thanks! Now can you call them?</h3> :
-					<h3>This is your last chance to stop ISPs from messing up your Internet.</h3>
+					<h3>The FCC just voted to end net neutrality. We can get Congress to overrule them.</h3>
 				}
 				<p>
-					The FCC just announced its plan to slash net neutrality rules, allowing ISPs like Verizon to block apps, slow websites, and charge fees to control what you see & do online. They vote December 14th.
+				The FCC just voted to gut net neutrality rules, letting Internet providers like Verizon and Comcast control what we can see and do online with new fees, throttling, and censorship. But we can still get Congress to stop this&mdash;by passing a "Resolution of Disapproval" to overturn the FCC vote.
 					{" "}
-					<em>But if Congress gets enough calls, *they* can stop the FCC.</em>
+					<em>There's a narrow window to make it happen. Call your legislators now.</em>
 				</p>
 				<div className="flex">
 					<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
