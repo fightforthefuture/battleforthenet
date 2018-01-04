@@ -46,15 +46,22 @@ export function getPoliticianTweetLink(p:any): string {
 	return "https://twitter.com/intent/tweet?text=" + encodeURIComponent(shareText) + "&related=fightfortheftr";
 }
 
-
 function parsePolitician(data:any, idx:number) {
+	function ex(k:string): any {
+		var r = data["gsx$" + k];
+		if (r) {
+			return r["$t"];
+		} else {
+			console.log("no key", k);
+		}
+		return null;
+	}
 	var imageBaseURL = '/images/scoreboard/';
-	var biocode = data.gsx$bioguide.$t;
-	var team;
-	switch (data.gsx$team.$t) {
+	var biocode = ex("bioguide");
+	var team = ex("team");
+	switch (team) {
 		case "team-cable":
 		case "team-internet":
-			team = data.gsx$team.$t;
 			break;
 		default:
 			team = "undecided";
@@ -63,22 +70,22 @@ function parsePolitician(data:any, idx:number) {
 	var ret:any = {
 		idx: idx,
 		biocode: biocode,
-		frontpage: (data.gsx$frontpage.$t === '1'),
-		first: data.gsx$first.$t,
-		name: data.gsx$name.$t,
+		frontpage: (ex("frontpage") === '1'),
+		first: ex("first"),
+		name: ex("name"),
 		org: null,
-		organization: data.gsx$organization.$t,
+		organization: ex("organization"),
 		image: imageBaseURL + biocode + '_x1.jpg',
 		image2x: imageBaseURL + biocode + '_x2.jpg',
 		partyCode: PARTY_MAP[biocode] || "",
-		weight: data.gsx$weight.$t,
+		weight: ex("weight"),
 		team: team,
-		size: data.gsx$size.$t,
-		meta: data.gsx$meta.$t,
-		twitter: data.gsx$twitter.$t,
-		sharetext: data.gsx$sharetext.$t,
-		subdomain: data.gsx$subdomain.$t,
-		state: data.gsx$state.$t,
+		size: ex("size"),
+		meta: ex("meta"),
+		twitter: ex("twitter"),
+		sharetext: ex("sharetext"),
+		subdomain: ex("subdomain"),
+		state: ex("state"),
 		stateCode: null,
 		tweetLink: null
 	};
