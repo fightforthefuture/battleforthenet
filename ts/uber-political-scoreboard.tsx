@@ -62,9 +62,22 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 		};
 	}
 	componentDidMount() {
+		var highlight = this.props.highlight;
 		getPoliticians().then((politiciansSet:PoliticiansSet)=> {
+			var sortFunction = function(p: Politician): string {
+				var highlightSort = (_.indexOf(highlight, p.biocode) !== -1) ? "a": "b";
+				var partySort = (p.partyCode === "r") ? "a" : "b";
+				var orgSort = (p.organization === "Senate") ? "a": "b";
+				return highlightSort + partySort + orgSort;
+			}
+
+			var newSet = {
+				internet: _.orderBy(politiciansSet.internet, sortFunction),
+				undecided: _.orderBy(politiciansSet.undecided, sortFunction),
+				cable: _.orderBy(politiciansSet.cable, sortFunction)
+			}
 			this.setState({
-				politiciansSet: politiciansSet
+				politiciansSet: newSet
 			} as State);
 		});
 		if (this.state.state === "") {
@@ -102,39 +115,26 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 	}
 	renderContent(highlight: string[], politiciansSet:PoliticiansSet, state: string) {
 		var congressInState: Politician[] = [];
-		var congressTeamInternet: Politician[] = [];
-		var congressUnknown: Politician[] = [];
-		var congressCable: Politician[] = [];
 
-		var sortFunction = function(p: Politician): string {
-			var highlightSort = (_.indexOf(highlight, p.biocode) !== -1) ? "a": "b";
-			var partySort = (p.partyCode === "r") ? "a" : "b";
-			var orgSort = (p.organization === "Senate") ? "a": "b";
+		var congressTeamInternet = politiciansSet.internet;
+		var congressUnknown = politiciansSet.undecided;
+		var congressCable = politiciansSet.cable;
 
-			return highlightSort + partySort + orgSort;
-		}
-
-		_.each(_.orderBy(politiciansSet.cable, sortFunction), function(p) {
+		_.each(congressCable, function(p) {
 			if (p.state === state) {
 				congressInState.push(p);
-			} else {
-				congressCable.push(p);
 			}
 		});
 
-		_.each(_.orderBy(politiciansSet.undecided, sortFunction), function(p) {
+		_.each(congressUnknown, function(p) {
 			if (p.state === state) {
 				congressInState.push(p);
-			} else {
-				congressUnknown.push(p);
 			}
 		});
 
-		_.each(_.orderBy(politiciansSet.internet, sortFunction), function(p) {
+		_.each(congressTeamInternet, function(p) {
 			if (p.state === state) {
 				congressInState.push(p);
-			} else {
-				congressTeamInternet.push(p);
 			}
 		});
 
@@ -152,7 +152,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 							</select>
 						</p>
 					</div>
-					<div className="psb-unknown">
+					<div className="psb-multi">
 						{_.map(congressInState, renderItem)}
 					</div>
 				</div>
@@ -163,7 +163,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 					<p>These are the other members of Congress who've come out against
 					the FCC plan. Thank them, and ask them to vote for the CRA</p>
 
-					<div className="psb-internet">
+					<div className="psb-multi">
 						{_.map(congressTeamInternet, renderItem)}
 					</div>
 				</div>
@@ -174,7 +174,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 					<p>These are all the members of Congress whose stance we don't know
 					yet. Ask them to vote for the CRA!</p>
 
-					<div className="psb-unknown">
+					<div className="psb-multi">
 						{_.map(congressUnknown, renderItem)}
 					</div>
 				</div>
@@ -185,7 +185,7 @@ export class UberPoliticalScoreboard extends React.Component<Props, State> {
 					<p>These are the members of Congress who supported the FCC plan. We
 					still might be able to move them</p>
 
-					<div className="psb-cable">
+					<div className="psb-multi">
 						{_.map(congressCable, renderItem)}
 					</div>
 				</div>

@@ -16,4 +16,39 @@
 	.politician div.cover span.cover-org {
 		font-size: 10px;
 	}
+	.psb-multi {
+		.politician-team-cable {
+			h4 {
+				color: #ff1a09;
+			}
+			div.cover {
+				background-color: rgba(255,26,9,0.5);
+			}
+			&:hover div.cover {
+				background-color: rgba(255,26,9,0.7);
+			}
+		}
+		.politician-team-internet {
+			h4 {
+				color: #45bcc0;
+			}
+			div.cover {
+				background-color: rgba(75,205,207,0.5);
+			}
+			&:hover div.cover {
+				background-color: rgba(75,205,207,0.7);
+			}
+		}
+		.politician-unknown {
+			h4 {
+				color: #7067a4;
+			}
+			div.cover {
+				background-color: rgba(55,53,82,0.5);
+			}
+			&:hover div.cover {
+				background-color: rgba(55,53,82,0.9);
+			}
+		}
+	}
 }
