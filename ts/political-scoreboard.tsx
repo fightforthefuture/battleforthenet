@@ -172,7 +172,7 @@ export function getGeocode(): Promise<string> {
 export function getPoliticians(): Promise<PoliticiansSet> {
 	return ajaxPromise({
 		// url: "https://spreadsheets.google.com/feeds/list/1n6ZuVMbfBdu3MvYutScnnD8k8B2IzqX9woBY-2PLlIM/default/public/values?alt=json",
-		url: "https://cache.battleforthenet.com/v2/politicians.json",
+		url: "https://data.battleforthenet.com/politicians-full.json",
 		// url: "/js/politicians.json",
 		method: "get",
 		json: true
