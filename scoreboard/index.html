@@ -30,9 +30,14 @@
     <meta name="twitter:url" content="https://www.battleforthenet.com/" />
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" rel="stylesheet" type="text/css" /> -->
     <link href="/dist/index.css?v=CACHE_BUST" rel="stylesheet" type="text/css" />
+    <link href="css/style.css?v=CACHE_BUST" rel="stylesheet" type="text/css" />
     <script src="//c.shpg.org/103/sp.js"></script>
+
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <script src="js/app.js?v=CACHE_BUST"></script>
   </head>
 
   <body class="bftn-homepage bftn-uber-scoreboard">
@@ -59,15 +64,60 @@
 			know which ones have come out against the FCC's plan, and which have supported
 			it. We need to try to move all of them, but here are the priorities.</p>
 
-			<p>Quick jump: <a href="#in-state">Your representatives</a> &middot; <a href="#team-internet">Team Internet</a> &middot; <a href="#team-unknown">Unknown</a> &middot; <a href="#team-cable">Team Cable</a></p>
+<!-- 			<p>Quick jump: <a href="#in-state">Your representatives</a> &middot; <a href="#team-internet">Team Internet</a> &middot; <a href="#team-unknown">Unknown</a> &middot; <a href="#team-cable">Team Cable</a></p> -->
 			
 		</div>
 
 		<div class="unit">
-			<div id="political-scoreboard">
-				<div id="uber-political-scoreboard"></div>
-			</div>
+      <div id="political-scoreboard" v-cloak>
+        <div class="scoreboard" v-show="isLoaded">
+          <div class="container">
+            <div id="in-state" class="politicians">
+              <h2>This is where <em>your</em> senators stand. Tweet them first!</h2>
+              <div class="state-selector">
+                <p>
+                  <select v-model="selectedState">
+                    <option value="">Select state</option>
+                    <option v-for="state in states">{{ state }}</option>
+                  </select>
+                </p>
+              </div>
+              <div class="psb-unknown">
+                <politician-card v-for="politician in senatorsInState" :politician="politician"></politician-card>
+              </div>
+            </div>
+
+            <div id="senate" class="politicians">
+              <h2>{{ senateCRACount }} senators now. 51 to win. {{ 51 - senateCRACount }} to go.</h2>
+              <p>(The green ones are already voting for a CRA, so tweet at the ones who haven't yet!)</p>
+              <politician-card v-for="politician in senators" :politician="politician"></politician-card>
+            </div>
+
+            <div id="house" class="politicians">
+              <h2>House of Representatives: Coming Soon...</h2>
+              <p>(The fight starts in the Senate, but we'll launch a full list of House members once they start coming out for the CRA.)</p>
+            </div>
+          </div>
+        </div>
+      </div>
 		</div>
+
+    <script type="text/x-template" id="politician-card-template">
+      <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
+        <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
+        <div class="cover" @click="openTweetURL(politician)">
+          <h5>
+            {{ politician.name }}
+            <small>
+              (<b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
+            </small>
+          </h5>
+        </div>
+        <div class="actions">
+          <a v-if="politician.twitter" class="btn tweet" :href="tweetURL(politician)" target="_blank">Tweet</a>
+        </div>
+      </div>
+    </script>
 
 
     <footer class="footer">
@@ -122,24 +172,14 @@
       if (typeof Raven !== 'undefined') Raven.config('https://1a4b59d92e894725acb1d5f4ac65df91@sentry.io/165029').install();
     </script>
 
-    <script type="text/javascript" src="/dist/bundle.js?v=CACHE_BUST"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26576645-45"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <script type="text/javascript">
-      (function() {
-        'use strict';
-
-        var eventEmitter = new EventEmitter();
-
-        mountComponent(
-          React.createElement(UberPoliticalScoreboard, {
-						highlight: ["C001077", "C001035", "R000578", "F000449"],
-            eventEmitter: eventEmitter
-          }),
-          document.getElementById("uber-political-scoreboard")
-        );
-        
-        GoogleAnalytics.enable("UA-26576645-20");
-      })();
+      gtag('config', 'UA-26576645-20');
     </script>
 
     <!-- Facebook Pixel -->
