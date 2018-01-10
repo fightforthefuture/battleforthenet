@@ -56,7 +56,7 @@ function parsePolitician(data:any, idx:number) {
 		}
 		return null;
 	}
-	var imageBaseURL = '/images/scoreboard/';
+	var imageBaseURL = 'https://www.fightforthefuture.org/congress-images/';
 	var biocode = ex("bioguide");
 	var team = ex("team");
 	switch (team) {
