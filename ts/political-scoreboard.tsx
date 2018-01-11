@@ -326,21 +326,21 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 		const isLong = (politician.name.indexOf(" ") === -1 && politician.name.length > 11)
 
 		function imageURL(biocode:string, suffix='_x1') {
-		  return 'https://www.fightforthefuture.org/congress-images/' +  biocode + suffix + '.jpg';
+			return 'https://www.fightforthefuture.org/congress-images/' +  biocode + suffix + '.jpg';
 		}
 
 		function tweetURL(pol:any) {
-      var tweetText;
+			var tweetText;
 
-      if (pol.yesOnCRA) {
-        tweetText = '.@' + pol.twitter + ', I will only be voting for folks (like you) who are voting for the CRA to save #NetNeutrality. Thanks!\n\n(Friends: text "WIN" to 384-387 to make this same pledge to your reps. VoteForNetNeutrality.com will text you how they voted, right before the election.)';
-      }
-      else {
-        tweetText = '.@' + pol.twitter + ' just FYI, I will not be voting for anyone who doesn’t vote for the CRA to save #NetNeutrality.\n\n(Friends: text "WIN" to 384-387 to make this same pledge to your reps! VoteForNetNeutrality.com will text you how they voted, right before the election!)'
-      }
+			if (pol.yesOnCRA) {
+				tweetText = '.@' + pol.twitter + ', I will only be voting for folks (like you) who are voting for the CRA to save #NetNeutrality. Thanks!\n\n(Friends: text "WIN" to 384-387 to make this same pledge to your reps. VoteForNetNeutrality.com will text you how they voted, right before the election.)';
+			}
+			else {
+				tweetText = '.@' + pol.twitter + ' just FYI, I will not be voting for anyone who doesn’t vote for the CRA to save #NetNeutrality.\n\n(Friends: text "WIN" to 384-387 to make this same pledge to your reps! VoteForNetNeutrality.com will text you how they voted, right before the election!)'
+			}
 
-      return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
-    }
+			return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
+		}
 
 		return (
 			<div key={"p-" + politician.biocode} className={classes("politician", politician.yesOnCRA ? 'yes-vote': '')}>
