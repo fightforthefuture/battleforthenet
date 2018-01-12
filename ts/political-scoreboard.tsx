@@ -333,10 +333,10 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 			var tweetText;
 
 			if (pol.yesOnCRA) {
-				tweetText = '.@' + pol.twitter + ', I will only be voting for folks (like you) who are voting for the CRA to save #NetNeutrality. Thanks!\n\n(Friends: text "WIN" to 384-387 to make this same pledge to your reps. VoteForNetNeutrality.com will text you how they voted, right before the election.)';
+				tweetText = 'I am delighted that @' + pol.twitter + ' will be voting for the CRA to overrule the FCC and save our #NetNeutrality rules. Find out where your representatives stand and ask them to do the same! https://battleforthenet.com';
 			}
 			else {
-				tweetText = '.@' + pol.twitter + ' just FYI, I will not be voting for anyone who doesn’t vote for the CRA to save #NetNeutrality.\n\n(Friends: text "WIN" to 384-387 to make this same pledge to your reps! VoteForNetNeutrality.com will text you how they voted, right before the election!)'
+				tweetText = '@' + pol.twitter + ', why haven\'t you promised to vote for the CRA to overrule the FCC and save our #NetNeutrality rules? This issue matters to me! (Friends: find out where your representatives stand and contact them at https://battleforthenet.com)'
 			}
 
 			return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
