@@ -8,7 +8,8 @@
     "watch": "gulp watch",
     "htmllint": "gulp htmllint",
     "congress.jpg": "gulp congress.jpg",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "aws s3 sync . s3://www.battleforthenet.com --delete --exclude 'node_modules' --exclude 'ts' --exclude '.*' --exclude '_*'"
   },
   "author": "",
   "license": "ISC",

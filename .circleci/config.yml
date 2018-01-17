@@ -31,7 +31,7 @@ jobs:
       - deploy:
           name: Deploy to S3
           command: |
-            aws s3 sync . s3://www.battleforthenet.com --delete
+            npm run deploy
 
       - run:
           name: Purge CloudFlare cache
