@@ -9,7 +9,7 @@
     "htmllint": "gulp htmllint",
     "congress.jpg": "gulp congress.jpg",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "aws s3 sync . s3://www.battleforthenet.com --delete --exclude 'node_modules' --exclude 'ts' --exclude '.*' --exclude '_*'"
+    "deploy": "aws s3 sync public s3://www.battleforthenet.com --delete --exclude '.*' --exclude '_*'"
   },
   "author": "",
   "license": "ISC",

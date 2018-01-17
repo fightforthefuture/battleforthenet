@@ -18,33 +18,41 @@ var gutil = require('gulp-util');
 
 var prodBuild = (process.env.NODE_ENV === "production");
 
+const paths = {
+	public: 'public',
+	dist: 'public/dist',
+	sass: 'src/scss',
+	ts: 'src/ts',
+	index: 'public/index.html'
+}
+
 gulp.task('sass', function() {
-	return gulp.src("scss/index.scss")
+	return gulp.src(`${paths.sass}/index.scss`)
 		.pipe(sass())
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest(paths.dist))
 		.pipe(browserSync.reload({ stream: true }))
 })
 
 gulp.task('browserSync', function() {
 	browserSync.init({
 		server: {
-			baseDir: "."
+			baseDir: paths.public
 		},
 		open: false
 	})  
 })
 
 gulp.task('clean:dist', function() {
-	return del.sync('dist');
+	return del.sync(paths.dist);
 })
 
 gulp.task('typescript', function() {
 	var ret = browserify({
-		entries: ['ts/bootstrap.tsx'],
+		entries: [`${paths.ts}/bootstrap.tsx`],
 		debug: false,
 		extensions: ['tsx'],
 		plugin: [
-		  [tsify, {project: 'ts/tsconfig.json'}]
+		  [tsify, {project: `${paths.ts}/tsconfig.json`}]
 		],
 	})
 	.bundle()
@@ -59,13 +67,13 @@ gulp.task('typescript', function() {
 	  ret = ret.pipe(uglify())
 	}
 
-	return ret.pipe(gulp.dest('dist'));
+	return ret.pipe(gulp.dest(paths.dist));
 })
 
 gulp.task('watch', ['browserSync', 'sass', 'typescript'], function() {
-	gulp.watch('scss/**/*.scss', ['sass']);
-	gulp.watch('ts/**/*.ts', ['typescript']);
-	gulp.watch('ts/**/*.tsx', ['typescript']);
+	gulp.watch(`${paths.sass}/**/*.scss`, ['sass']);
+	gulp.watch(`${paths.ts}/**/*.ts`, ['typescript']);
+	gulp.watch(`${paths.ts}/**/*.tsx`, ['typescript']);
 	gulp.watch('app/*.html', browserSync.reload);
 	//gulp.watch('js/**/*.js', browserSync.reload);
 })
@@ -127,7 +135,7 @@ var htmllintOpts = {
 };
 
 gulp.task('htmllint', function() {
-	return gulp.src('index.html').pipe(
+	return gulp.src(paths.index).pipe(
 		htmllint(htmllintOpts, htmllintReporter)
 	);
 });
