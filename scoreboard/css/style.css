@@ -1,0 +1,100 @@
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.scoreboard {
+  margin-top: 100px;
+  animation: fade-in .3s;
+  text-align: center;
+}
+
+.politicians {
+  margin-bottom: 100px;
+}
+
+.politician img,
+.politician .cover {
+  width: 100px;
+  height: 122px;
+  border-radius: 4px;
+}
+
+.politician {
+  display: inline-block;
+  margin: 15px;
+  position: relative;
+}
+
+.politician .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.politician .cover:hover {
+  cursor: pointer;
+}
+
+.politician h5 {
+  position: absolute;
+  bottom: 6px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.politician h5 small {
+  display: block;
+  font-size: 10px;
+}
+
+.politician.long-name h5 {
+  font-size: 10px;
+  bottom: 9px;
+}
+
+.politician.vote-yes .cover {
+  background-color: rgba(75,205,207,0.5);
+}
+
+.politician a.btn {
+  font-size: 10px;
+  padding: 7px 5px;
+  margin: 0 0 5px 0;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  /*font-family: "Montserrat",sans-serif;*/
+  font-weight: bold;
+  background-color: #f94220;
+  color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.politician .btn:hover {
+  background-color: #e25237;
+}
+
+.politician .btn.tweet {
+  background-color: #2ecaf8;
+}
+
+.politician .btn.tweet:hover {
+  background-color: #0691ba;
+}
+
+@media screen and (max-width: 800px) {
+  .politician {
+    margin: 7px;
+  }
+}

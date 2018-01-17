@@ -199,6 +199,20 @@ export function getPoliticians(): Promise<PoliticiansSet> {
 	});
 }
 
+function getCRAPoliticians(): Promise<any[]> {
+	return ajaxPromise({
+		url: "https://data.battleforthenet.com/politicians.json",
+		method: "get",
+		json: true
+	}).then(function(response: Response) {
+		if (response.ok) {
+			return response.json();
+		} else {
+			throw new Error("Bad response");
+		}
+	});
+}
+
 interface Props {
 	eventEmitter: EventEmitter
 }
@@ -207,6 +221,7 @@ interface State {
 	politiciansSet: PoliticiansSet | null
 	state: string
 	error: string | null
+	politicians: any[]
 }
 
 
@@ -221,15 +236,23 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 		this.state = {
 			politiciansSet: null,
 			state: state,
-			error: null
+			error: null,
+			politicians: []
 		};
 	}
 	componentDidMount() {
-		getPoliticians().then((politiciansSet:PoliticiansSet)=> {
+		// getPoliticians().then((politiciansSet:PoliticiansSet)=> {
+		// 	this.setState({
+		// 		politiciansSet: politiciansSet
+		// 	} as State);
+		// });
+
+		getCRAPoliticians().then(politicians => {
 			this.setState({
-				politiciansSet: politiciansSet
+				politicians: politicians
 			} as State);
-		});
+		})
+
 		if (this.state.state === "") {
 			getGeocode().then((state:string) => {
 				if (this.state.state === "") {
@@ -242,6 +265,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 			});
 		}
 	}
+
 	renderPolitician(politician:Politician) {
 		var isLong = (politician.name.indexOf(" ") === -1 && politician.name.length > 11);
 		var hideSite = true;
@@ -297,10 +321,77 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 			</div>
 		);
 	}
+
+	renderCRAPolitician(politician:any) {
+		const isLong = (politician.name.indexOf(" ") === -1 && politician.name.length > 11)
+
+		function imageURL(biocode:string, suffix='_x1') {
+			return 'https://www.fightforthefuture.org/congress-images/' +  biocode + suffix + '.jpg';
+		}
+
+		function tweetURL(pol:any) {
+			var tweetText;
+
+			if (pol.yesOnCRA) {
+				tweetText = 'I am delighted that @' + pol.twitter + ' will be voting for the CRA to overrule the FCC and save our #NetNeutrality rules. Find out where your representatives stand and ask them to do the same! https://battleforthenet.com';
+			}
+			else {
+				tweetText = '@' + pol.twitter + ', why haven\'t you promised to vote for the CRA to overrule the FCC and save our #NetNeutrality rules? This issue matters to me! (Friends: find out where your representatives stand and contact them at https://battleforthenet.com)'
+			}
+
+			return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
+		}
+
+		return (
+			<div key={"p-" + politician.biocode} className={classes("politician", politician.yesOnCRA ? 'yes-vote': '')}>
+				<img src={ imageURL(politician.biocode) } srcSet={ imageURL(politician.biocode, '_x2') + " 2x" } />
+				<div className={classes("cover", isLong && "cover-long")} onClick={(event: React.MouseEvent<HTMLElement>) => { 
+					if (politician.twitter) {
+						window.open(tweetURL(politician), '_blank')
+					}
+				}}>
+					<span>
+						{politician.name}<br/>
+						<small>({politician.partyCode ? `${politician.partyCode.toUpperCase()} - ` : ''}{politician.stateCode})</small>
+					</span>
+				</div>
+				<div className="actions no-site">
+					{ politician.twitter ? <a className="btn tweet" href={tweetURL(politician)} target="_blank">Tweet</a> : null }
+				</div>
+			</div>
+		)
+	}
+
+	renderCRAContent(politicians:any[], state: string) {
+		var renderItem = this.renderCRAPolitician.bind(this);
+		var items = _.sortBy(_.filter(politicians, { state: state }), ['name']);
+
+		return (
+			<div>
+				<div className="state-selector unit">
+				Choose state:
+					<select name="state" value={state} onChange={handleInputChange.bind(this)}>
+						<option key="null" value="">Select state</option>
+						{_.map(r.states, this.renderStateOption)}
+					</select>
+					<br /><br />
+				</div>
+
+				{ items.length ?
+					<div className="psb-section psb-unknown">
+						<div className="unit">
+						</div>
+						<Carousel items={items} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
+					</div> : null }
+
+			</div>
+		);
+	}
+
 	render() {
 		var content: JSX.Element|null = null;
-		if (this.state.politiciansSet) {
-			content = this.renderContent(this.state.politiciansSet, this.state.state);
+		if (this.state.politicians) {
+			content = this.renderCRAContent(this.state.politicians, this.state.state);
 		}
 		return (
 			<div className="political-scoreboard">

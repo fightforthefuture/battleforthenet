@@ -19,7 +19,7 @@
 				font-weight: bold;
 				text-transform: uppercase;
 				margin-top: 40px;
-				margin-bottom: 0;
+				margin-bottom: 10px;
 			}
 			p {
 				margin-top: 0;
@@ -34,9 +34,9 @@
 		div.cover {
 			background-color: rgba(55,53,82,0.5);
 		}
-		.politician:hover div.cover {
-			background-color: rgba(55,53,82,0.9);
-		}
+		// .politician:hover div.cover {
+		// 	background-color: rgba(55,53,82,0.9);
+		// }
 	}
 	.psb-cable {
 		h4 {
@@ -45,39 +45,46 @@
 		div.cover {
 			background-color: rgba(255,26,9,0.5);
 		}
-		.politician:hover div.cover {
-			background-color: rgba(255,26,9,0.7);
-		}
+		// .politician:hover div.cover {
+		// 	background-color: rgba(255,26,9,0.7);
+		// }
 	}
-	.psb-internet {
+	.psb-internet, .yes-vote {
 		h4 {
 			color: #45bcc0;
 		}
 		div.cover {
 			background-color: rgba(75,205,207,0.5);
 		}
-		.politician:hover div.cover {
-			background-color: rgba(75,205,207,0.7);
-		}
+		// .politician:hover div.cover {
+		// 	background-color: rgba(75,205,207,0.7);
+		// }
 	}
+
+	$politician-height: 148px;
+
 	.politician {
 		width: 100px;
-		height: 122px;
+		// height: 122px;
+		height: $politician-height;
 		position: relative;
+		border-radius: 4px;
 		img {
 			width: 100px;
 			height: 122px;
+			border-radius: 4px;
 		}
 		div.cover {
 			position: absolute;
 			top: 0px;
 			left: 0px;
 			width: 100%;
-			height: 100%;
+			height: 122px; //100%;
+			border-radius: 4px;
 			span {
 				color: $WHITE_BRIGHT;
 				position: absolute;
-				bottom: 6px;
+				bottom: 4px;
 				left: 0px;
 				text-align: center;
 				width: 100%;
@@ -85,7 +92,14 @@
 				font-weight: bold;
 				font-size: 14px;
 				text-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+
+				small {
+					display: block;
+				}
 			}
+		}
+		div.cover:hover {
+			cursor: pointer;
 		}
 		div.cover-long {
 			span {
@@ -98,11 +112,11 @@
 			bottom: 20px;
 			left: 0px;
 			width: 100%;
-			display: none;
+			// display: none;
 			.btn {
 				font-size: 10px;
 				padding: 7px 5px;
-				width: 90%;
+				width: 100%; //90%;
 				margin: 10px auto 0;
 			}
 			.tweet {
@@ -119,22 +133,22 @@
 			}
 		}
 		div.actions.no-site {
-			bottom: 45px;
+			bottom: 0; //45px;
 			.site {
 				display: none;
 			}
 		}
 	}
-	.carousel-item-active:hover {
-		div.actions {
-			display: block;
-		}
-		div.cover span {
-			opacity: 0.1;
-		}
-	}
+	// .carousel-item-active:hover {
+	// 	div.actions {
+	// 		display: block;
+	// 	}
+	// 	div.cover span {
+	// 		opacity: 0.1;
+	// 	}
+	// }
 	.carousel {
-		height: 122px;
+		height: $politician-height; //122px;
 		.bar {
 			display: none;
 		}
