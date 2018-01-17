@@ -3,7 +3,7 @@ Battle for the Net!
 
 [![CircleCI](https://circleci.com/gh/fightforthefuture/battleforthenet/tree/master.svg?style=svg&circle-token=cc0477227a0fdae4c035fee910b31001f463909f)](https://circleci.com/gh/fightforthefuture/battleforthenet/tree/master)
 
-* **This is the source code for [battleforthenet.com][1]!**
+**This is the source code for [battleforthenet.com][1]!**
 
 Don't let the FCC kill net neutrality! The Battle for the Net is a
 collaboration between [Fight for the Future][2], [Demand Progress][3], [Free Press Action Fund][4]  and a
@@ -22,10 +22,7 @@ Follow these instructions to install it on your site: http://widget.battleforthe
 ### Contributing to our code
 
 We are looking for skilled web developers to help us build the front page on
-our [battleforthenet.com][1] site. You can see our code right in this Github
-repo by switching to the _gh_pages_ branch.
-
-If you're interested in volunteering, contact <sarah@fightforthefuture.org>
+our [battleforthenet.com][1] site. If you're interested in volunteering, contact <sarah@fightforthefuture.org>
 
 [1]: https://www.battleforthenet.com
 [2]: https://www.fightforthefuture.org
