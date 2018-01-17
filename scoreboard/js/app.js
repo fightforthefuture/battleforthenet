@@ -139,9 +139,14 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       },
       
-      // this function needs to change once we add house members because it counts all.
       senateCRACount: function () {
-        return this.politicians.filter(function(p){
+        return this.senators.filter(function(p){
+          return p.yesOnCRA
+        }).length
+      },
+
+      houseCRACount: function() {
+        return this.representatives.filter(function(p){
           return p.yesOnCRA
         }).length
       }

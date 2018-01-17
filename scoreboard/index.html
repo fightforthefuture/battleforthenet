@@ -70,7 +70,7 @@
               <div class="state-selector">
                 <p>
                   <select v-model="selectedState">
-                    <option value="">Select state</option>
+                    <option :value="null">Select state</option>
                     <option v-for="state in states">{{ state }}</option>
                   </select>
                 </p>
@@ -83,13 +83,13 @@
             <div id="senate" class="politicians">
               <h2>50 senators now. 51 to win. 1 to go.</h2>
               <p>(The green ones are already voting for a CRA, so tweet at the ones who haven't yet!)</p>
-              <politician-card v-for="politician in senators" :politician="politician"></politician-card>
+              <politician-card v-for="politician in senators" :politician="politician" v-if="politician.twitter"></politician-card>
             </div>
 
             <div id="house" class="politicians">
-              <h2>House of Representatives</h2>
+              <h2>{{ houseCRACount }} representatives now.<br>218 to win. {{ 218 - houseCRACount }} to go.</h2>
               <p>(The green ones are already voting for a CRA, so tweet at the ones who haven't yet!)</p>
-              <politician-card v-for="politician in representatives" :politician="politician"></politician-card>
+              <politician-card v-for="politician in representatives" :politician="politician" v-if="politician.twitter"></politician-card>
 
             </div>
           </div>
@@ -104,7 +104,7 @@
           <h5>
             {{ politician.name }}
             <small>
-              (<b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
+              (<span v-if="politician.organization == 'Senate'">SEN </span><b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
             </small>
           </h5>
         </div>
