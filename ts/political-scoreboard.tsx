@@ -369,7 +369,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 		return (
 			<div>
 				<div className="state-selector unit">
-				Choose your state:
+				Choose state:
 					<select name="state" value={state} onChange={handleInputChange.bind(this)}>
 						<option key="null" value="">Select state</option>
 						{_.map(r.states, this.renderStateOption)}
