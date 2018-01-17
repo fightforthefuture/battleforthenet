@@ -90,8 +90,8 @@
               <h2>We need 218 votes to win the House.<br>We have {{ houseCRACount }}. {{ 218 - houseCRACount }} to go.</h2>
               <p>(The green ones have already promised to vote for a CRA, so tweet at the ones who haven't yet!)</p>
               <politician-card v-for="politician in representatives" :politician="politician" v-if="politician.twitter"></politician-card>
-
             </div>
+            <h2>Done tweeting? Be sure to <a href="/">email and call</a> your members of Congress too!</h2>
           </div>
         </div>
       </div>
