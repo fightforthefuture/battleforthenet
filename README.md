@@ -1,6 +1,8 @@
 Battle for the Net!
 -------------------
 
+[![CircleCI](https://circleci.com/gh/fightforthefuture/battleforthenet/tree/master.svg?style=svg&circle-token=cc0477227a0fdae4c035fee910b31001f463909f)](https://circleci.com/gh/fightforthefuture/battleforthenet/tree/master)
+
 * **This is the source code for [battleforthenet.com][1]!**
 
 Don't let the FCC kill net neutrality! The Battle for the Net is a
