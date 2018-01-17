@@ -14,6 +14,8 @@ var uglify = require('gulp-uglify');
 var jimp = require('gulp-jimp');
 var htmllint = require('gulp-htmllint');
 var gutil = require('gulp-util');
+var git = require('git-rev-sync');
+var replace = require('gulp-replace');
 //var sourcemaps = require('gulp-sourcemaps');
 
 var prodBuild = (process.env.NODE_ENV === "production");
@@ -138,6 +140,12 @@ gulp.task('htmllint', function() {
 	return gulp.src(paths.index).pipe(
 		htmllint(htmllintOpts, htmllintReporter)
 	);
+});
+
+gulp.task('bust-cache', function(){
+	return gulp.src(`${paths.public}/**/*.html`)
+		.pipe(replace('CACHE_BUST', git.long()))
+		.pipe(gulp.dest(paths.public))
 });
 
 gulp.task('default', ['build', 'watch']);

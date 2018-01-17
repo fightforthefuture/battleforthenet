@@ -9,7 +9,8 @@
     "htmllint": "gulp htmllint",
     "congress.jpg": "gulp congress.jpg",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "aws s3 sync public s3://www.battleforthenet.com --delete --exclude '.*' --exclude '_*'"
+    "deploy": "aws s3 sync public s3://www.battleforthenet.com --delete --exclude '.*' --exclude '_*'",
+    "bust-cache": "gulp bust-cache"
   },
   "author": "",
   "license": "ISC",
@@ -19,11 +20,13 @@
     "browser-sync": "^2.18.12",
     "browserify": "^14.4.0",
     "del": "^3.0.0",
+    "git-rev-sync": "^1.9.1",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-htmllint": "0.0.14",
     "gulp-jimp": "^1.2.7",
+    "gulp-replace": "^0.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-typescript": "^3.1.7",
     "gulp-uglify": "^3.0.0",
