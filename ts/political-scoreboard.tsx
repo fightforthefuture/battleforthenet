@@ -369,19 +369,17 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 		return (
 			<div>
 				<div className="state-selector unit">
-					Choose your state:
+				Choose your state:
 					<select name="state" value={state} onChange={handleInputChange.bind(this)}>
 						<option key="null" value="">Select state</option>
 						{_.map(r.states, this.renderStateOption)}
 					</select>
 					<br /><br />
-					<a className="btn" href="/scoreboard">View the scoreboard</a>
 				</div>
 
 				{ items.length ?
 					<div className="psb-section psb-unknown">
 						<div className="unit">
-							<h4>(The green ones are already voting for a CRA, so tweet at the ones who haven’t yet!)</h4>
 						</div>
 						<Carousel items={items} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
 					</div> : null }
