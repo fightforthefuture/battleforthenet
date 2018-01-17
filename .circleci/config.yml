@@ -2,34 +2,46 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/node:8-browsers
+      # circleci/ruby:2.4-node-browsers + awscli
+      - image: kenmickles/fftf-static-site-builder:0.0.1
+
     steps:
-    - add-ssh-keys:
-        fingerprints:
-        - "be:53:06:90:d4:51:ec:d1:ae:21:0f:c9:73:81:2f:c7"
-    - checkout
-    - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "package-lock.json" }}
-    - run:
-        name: Install deps
-        command: make setup
-    - save_cache:
-        paths:
-        - node_modules
-        key: v1-dependencies-{{ checksum "package-lock.json" }}
-    - run: 
-        name: Build
-        command: make build
-    - deploy:
-        name: Deploy to GitHub Pages
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            make cache_bust
-            make prep_branch
-            make publish_branch
-            make purge_cloudflare
-          fi
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
+
+      - save_cache:
+          paths:
+          - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run: 
+          name: Build
+          command: |
+            NODE_ENV=production npm run build
+            NODE_ENV=production npm run htmllint
+
+      - deploy:
+          name: Deploy to S3
+          command: |
+            aws s3 sync . s3://www.battleforthenet.com --delete
+
+      - run:
+          name: Purge CloudFlare cache
+          command: |
+            curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE}/purge_cache" \
+              -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
+              -H "X-Auth-Key: ${CLOUDFLARE_SECRET}" \
+              -H "Content-Type: application/json" \
+              --data '{"purge_everything":true}'
+
 workflows:
   version: 2
   deploy:
