@@ -27,7 +27,7 @@ jobs:
           command: |
             NODE_ENV=production npm run build
             NODE_ENV=production npm run htmllint
-            NODE_ENV=production npm run bust-cache
+            npm run bust-cache
 
       - deploy:
           name: Deploy to S3
