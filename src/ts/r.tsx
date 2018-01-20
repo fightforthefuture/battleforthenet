@@ -9,7 +9,7 @@ I’m calling on you to work with your colleagues to use the Congressional Revie
 
 The FCC's Dec. 14 decision willfully ignored the outcry from tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing. 
 
-We need members of Congress to stand up for the open internet and for the digital civil rights of their constituents now. Please use the CRA to pass a Resolution of Disapproval to overturn the FCC's December 14 "Restoring Internet Freedom" vote. 
+We need members of Congress to stand up for the open internet and for the digital civil rights of their constituents now. Please co-sponsor, sign the discharge petition, and vote for the CRA to pass a Resolution of Disapproval overturning the FCC's December 14 "Restoring Internet Freedom" vote. 
 
 Thank you.`;
 
