@@ -40,7 +40,8 @@ gulp.task('browserSync', function() {
 		server: {
 			baseDir: paths.public
 		},
-		open: false
+		open: false,
+		files: "public/**/*.html"
 	})  
 })
 
