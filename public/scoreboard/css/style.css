@@ -93,6 +93,14 @@
   background-color: #0691ba;
 }
 
+.politician .btn.call {
+  background-color: #224769;
+}
+
+.politician .btn.call:hover {
+  background-color: #224769;
+}
+
 @media screen and (max-width: 800px) {
   .politician {
     margin: 7px;
