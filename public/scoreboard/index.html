@@ -112,7 +112,7 @@
           <a v-if="politician.twitter" class="btn tweet" :href="tweetURL(politician)" target="_blank">Tweet</a>
         </div>
         <div class="politician-stats">
-          <span class="calls">Calls: {{ politician.calls | formatNumber }}</span>
+          <span class="calls">{{ politician.calls | formatNumber }} calls</span>
         </div>
       </div>
     </script>
