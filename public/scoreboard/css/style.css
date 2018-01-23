@@ -93,9 +93,12 @@
   background-color: #0691ba;
 }
 
-.politician-stats {
-  color: #fff;
-  font-size: 12px;
+.politician .btn.call {
+  background-color: #224769;
+}
+
+.politician .btn.call:hover {
+  background-color: #224769;
 }
 
 @media screen and (max-width: 800px) {
