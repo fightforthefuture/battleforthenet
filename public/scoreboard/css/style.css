@@ -93,6 +93,11 @@
   background-color: #0691ba;
 }
 
+.politician-stats {
+  color: #fff;
+  font-size: 12px;
+}
+
 @media screen and (max-width: 800px) {
   .politician {
     margin: 7px;

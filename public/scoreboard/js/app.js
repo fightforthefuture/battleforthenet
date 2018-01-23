@@ -53,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
     "Wyoming"
   ];
 
+  Vue.filter('formatNumber', function(x) {
+    return x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
+  });
+
   var app = new Vue({
     el: '#political-scoreboard',
 
