@@ -3,8 +3,23 @@
   to   { opacity: 1; }
 }
 
+[v-cloak] {
+  display: none;
+}
+
+h3.legend {
+  color: #fff;
+}
+
+h3.legend .red {
+  color: #ff1a09;
+}
+
+h3.legend .green {
+  color: #45bcc0;
+}
+
 .scoreboard {
-  margin-top: 100px;
   animation: fade-in .3s;
   text-align: center;
 }
@@ -30,6 +45,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  background-color: rgba(255,26,9,0.5);
 }
 
 .politician .cover:hover {
@@ -93,12 +109,12 @@
   background-color: #0691ba;
 }
 
-.politician .btn.call {
-  background-color: #224769;
+.politician.vote-yes .btn.call {
+  background-color: #45bcc0;
 }
 
-.politician .btn.call:hover {
-  background-color: #224769;
+.politician.vote-yes .btn.call:hover {
+  background-color: #35999d;
 }
 
 @media screen and (max-width: 800px) {

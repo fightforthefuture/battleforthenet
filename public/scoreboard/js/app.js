@@ -243,4 +243,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
+
+  Vue.component('team-legend', {
+    template: '#team-legend-template'
+  });
 });

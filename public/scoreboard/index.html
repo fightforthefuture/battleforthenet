@@ -58,7 +58,6 @@
 			<p>To save net neutrality, we need to get every member of Congress to
 			promise to vote to overrule the FCC vote. Use this page to track them,
 			call them and tweet them. <em>We are just one vote away from winning in the Senate, though we need a lot more votes in the House. Help us get those votes!</em></p>
-			
 		</div>
 
 		<div class="unit">
@@ -67,6 +66,7 @@
           <div class="container">
             <div id="in-state" class="politicians">
               <h2>This is where <em>your</em> senators and reps stand. Tweet them first, then call!</h2>
+              <team-legend></team-legend>
               <div class="state-selector">
                 <p>
                   <select v-model="selectedState">
@@ -82,12 +82,14 @@
 
             <div id="senate" class="politicians">
               <h2>We need just <em>one</em> more vote in the Senate. Tweet them!</h2>
+              <team-legend></team-legend>
               <p>(The green ones have already promised to vote for a CRA, so tweet at the ones who haven't yet!)</p>
               <politician-card v-for="politician in senators" :politician="politician" v-if="politician.twitter"></politician-card>
             </div>
 
             <div id="house" class="politicians">
               <h2>We need 218 votes to win the House.<br>We have {{ houseCRACount }}. {{ 218 - houseCRACount }} to go.</h2>
+              <team-legend></team-legend>
               <p>(The green ones have already promised to vote for a CRA, so tweet at the ones who haven't yet!)</p>
               <politician-card v-for="politician in representatives" :politician="politician" v-if="politician.twitter"></politician-card>
             </div>
@@ -112,12 +114,15 @@
           <a v-if="politician.twitter" class="btn tweet" :href="tweetURL(politician)" target="_blank">Tweet</a>
           <a href="/call" class="btn call">
             <span v-if="politician.calls">{{ politician.calls | pluralize('call') }}</span>
-            <span v-else>No calls yet</span>
+            <span v-else>No call data</span>
           </a>
         </div>
       </div>
     </script>
 
+    <script type="text/x-template" id="team-legend-template">
+      <h3 class="legend"><span class="red">Red</span> = Team Cable (no stance) &nbsp; <span class="green">Green</span> = Team Internet (voting!)</h3>
+    </script>
 
     <footer class="footer">
       <div class="unit">
