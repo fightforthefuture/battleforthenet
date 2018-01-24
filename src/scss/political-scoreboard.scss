@@ -1,16 +1,21 @@
 .political-scoreboard {
 	overflow: hidden;
+	text-align: center;
+
 	.state-selector {
 		font-size: 20px;
 		text-transform: uppercase;
 		font-weight: bold;
 		color: #6b63ff;
+		margin: 20px auto;
+
 		select {
 			margin-left: 40px;
 			padding: 5px;
 			text-transform: uppercase;
 		}
 	}
+
 	.psb-section {
 		position: relative;
 		.unit {
@@ -69,6 +74,13 @@
 		height: $politician-height;
 		position: relative;
 		border-radius: 4px;
+		display: inline-block;
+		margin: 15px;
+
+		@media screen and (max-width: 500px) {
+			margin: 7.5px;
+		}
+
 		img {
 			width: 100px;
 			height: 122px;
@@ -133,7 +145,7 @@
 			}
 		}
 		div.actions.no-site {
-			bottom: 0; //45px;
+			bottom: -2px; //45px;
 			.site {
 				display: none;
 			}
@@ -166,5 +178,12 @@
 		.carousel-item {
 			transition: left 0.1s ease-in, opacity 0.1s ease-in;
 		}
+	}
+
+	p.more a {
+		font-size: 26px;
+		text-transform: uppercase;
+		font-weight: bold;
+		color: #6388ed;
 	}
 }
