@@ -116,6 +116,18 @@
           target: '.form-wrapper',
           template: e.target.responseText
         });
+
+        // update petition ID if we have one set in the meta tags
+        var metaTag = document.querySelector('meta[name=an_petition_id]');
+
+        if (metaTag) {
+          var actionNetworkPetitionId = metaTag.getAttribute('content');
+          var input = document.querySelector('input[name=an_petition_id]');
+
+          if (input) {
+            input.value = actionNetworkPetitionId;
+          }
+        }
       }
     });
   } else {

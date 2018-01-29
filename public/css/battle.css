@@ -2041,7 +2041,8 @@ input{
 
 @media screen and (min-width: 480px) {
   .day-of-action input[type="text"],
-  .day-of-action input[type="email"] {
+  .day-of-action input[type="email"],
+  .day-of-action input[type="tel"] {
     min-width: 0;
     margin: 0 2px;
   }
