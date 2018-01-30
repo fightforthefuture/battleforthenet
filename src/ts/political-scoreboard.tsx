@@ -377,6 +377,10 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 						{_.map(r.states, this.renderStateOption)}
 					</select>
 				</div>
+				<h3 className="legend">
+					<span className="red">Red</span> = Team Cable (no stance) &nbsp;
+					<span className="green">Green</span> = Team Internet (voting!)
+				</h3>
 				{ items.length ? 
 					<div className="psb-section psb-unknown">
 						<div className="unit">
