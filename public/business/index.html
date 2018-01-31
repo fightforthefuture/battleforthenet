@@ -44,19 +44,14 @@
     <div id="app">
       <div class="container">
         <section>
-          <h1>We pressure businesses. They pressure Congress. We Win.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h1>How we get Congress to save net neutrality.</h1>
+          <p>This fall, while working to persuade members of Congress to oppose FCC chairman Ajit Pai, we found that the most effective form of persuasion&mdash;by far&mdash;was to organize pressure from local businesses. But it was a <em>ton</em> of work, and now we need to scale up from dozens of targets to hundreds. So we're moving our business outreach strategy to Twitter, and crowdsourcing it. <strong>By following the steps below, you can make sure <em>every</em> undecided member of Congress is getting pressure from local businesses.</strong></p>
 
-          <h3><a href="https://businessesfornetneutrality.com">Do you own a business? Sign our letter!</a></h3>
+          <p>(And if <em>you</em> own a business, <a href="https://businessesfornetneutrality.com">sign our letter</a>.)</h3>
         </section>
 
         <section>
-          <h2>1. Ask businesses in your state to apply pressure.</h2>
+          <h2>Step 1: Tweet these businesses in your state, asking <em>them</em> to sign our letter and meet with Congress.</h2>
           <p class="state-selector">
             <select v-model="selectedState">
               <option :value="null">Select state</option>
@@ -69,14 +64,24 @@
         </section>
 
         <section>
-          <h2>2. Ask these businesses in critical districts to apply pressure.</h2>
+          <h2>Step 2: retweet the people who've already tweeted.</h2>
+          <pre>[INSERT TWITTER STREAM]</pre>
+        </section>
+
+        <section>
+          <h2>Step 3: Tweet these national (or global) businesses too, since <em>their</em> members of Congress are high priorty.</h2>
           <div class="businesses">
             <business-card v-for="business in businesses" :business="business"></business-card>
           </div>
         </section>
 
         <section>
-          <h2>3. Add more crucial local businesses to our database.</h2>
+          <h2>Step 4: Tweet more tomorrow! Sign up for daily updates with new targets to persuade!</h2>
+          <p>[INSERT SIGNUP FORM HERE]
+          </p>
+
+        <section>
+          <h2>Step 5: Add more local businesses in crucial places to our database so that others can tweet them.</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -86,11 +91,6 @@
           <p>
             <button class="btn btn-large">Get Started</button>
           </p>
-        </section>
-
-        <section>
-          <h2>Retweet the people who've been tweeting already</h2>
-          <pre>[INSERT TWITTER STREAM]</pre>
         </section>
       </div>
 
