@@ -1,0 +1,325 @@
+/* move this stuff into bftn-basic.css */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+[v-cloak], .hidden {
+  display: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5,
+.btn {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.2;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%
+}
+
+body {
+  background-color: #171629;
+  color: #CCCAEA;
+  background-image: url("/images/v2-bg-noise.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+h1, h2, h3 {
+  color: #fd4935;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+a {
+  color: #6388ed;
+  text-decoration: underline;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.btn {
+  padding: 7px 14px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #f94220;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  transition: background-color .1s;
+}
+
+.btn:hover {
+  background-color: #e25237;
+  cursor: pointer;
+}
+
+.btn-tweet {
+  background-color: #2ecaf8;
+}
+
+.btn-tweet:hover {
+  background-color: #0691ba;
+}
+
+.btn-block {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-large {
+  font-size: 24px;
+  padding: 14px 28px;
+}
+
+.container {
+  width: 800px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.bftn-footer {
+  background-color: #1f1c35;
+  padding: 30px 30px 0px 30px;
+  margin-top: 100px;
+}
+.bftn-footer .logos {
+  padding: 20px 0;
+  border-bottom: 2px solid #393558;
+  text-align: center;
+}
+.bftn-footer .logos a {
+  line-height: 62px;
+}
+.bftn-footer .logos .fftf {
+  margin-right: 40px;
+  position: relative;
+  top: -6px;
+}
+.bftn-footer .logos .demandprogress {
+  position: relative;
+  top: 8px;
+  margin-right: 40px;
+}
+.bftn-footer .press-inquiries {
+  width: 65%;
+  float: left;
+  padding-top: 10px;
+  font-weight: bold;
+  color: #717093;
+}
+.bftn-footer .press-inquiries ul {
+  font-weight: bold;
+  list-style-type: none;
+  padding: 0;
+}
+.bftn-footer .press-inquiries ul li {
+  margin: 0 0 8px 0;
+}
+.bftn-footer .social-media {
+  float: left;
+  height: 90px;
+  width: 30%;
+  margin-left: 5%;
+}
+.bftn-footer .social-media a, .bftn-footer .social-media div.faux-a {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  height: 50px;
+  padding: 0 45px 0 15px;
+  line-height: 50px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.bftn-footer .social-media a span, .bftn-footer .social-media div.faux-a span {
+  margin-left: 5px;
+}
+.bftn-footer .social-media img {
+  position: absolute;
+  height: 40px;
+  top: 5px;
+  right: 15px;
+}
+.bftn-footer .social-media .twitter {
+  background-color: #2ecaf8;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+.bftn-footer .social-media .twitter:hover {
+  background-color: #44bee2;
+}
+.bftn-footer .social-media .facebook {
+  background-color: #224769;
+}
+.bftn-footer .social-media .facebook:hover {
+  background-color: #30465b;
+}
+.bftn-footer .built-by {
+  clear: both;
+  font-weight: bold;
+  text-align: center;
+  width: 300px;
+  margin: 40px auto 0;
+  background-color: #171629;
+  padding: 20px 0 40px;
+  line-height: 1em;
+  color: #717093;
+  border-radius: 3px 3px 0 0;
+}
+.bftn-footer .built-by img {
+  position: relative;
+  top: 2px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: scroll;
+  animation: fade-in .2s;
+}
+
+.modal {
+  width: 700px;
+  margin: auto;
+  position: relative;
+  background-color: #fff;
+  color: #06032e;
+  padding: 15px 30px;
+  border-radius: 8px;
+}
+
+.modal .close {
+  position: absolute;
+  right:6px;
+  top: -3px;
+  color: #fff;
+  font-size: 36px;
+  text-decoration: none;
+  background-color: transparent;
+  color: #06032e;
+  border:none;
+}
+
+
+/* site-specific */
+
+section {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.businesses {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.business-card {
+  width: 23%;
+  margin: 4% 1%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.business-card:hover {
+  cursor: pointer;
+}
+
+.business-card:hover .btn-tweet {
+  background-color: #0691ba;
+}
+
+.business-card .logo {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  border: 2px solid #000;
+  background-color: #fff;
+  overflow: hidden;
+  margin: auto;
+}
+
+.business-card .logo img {
+  max-width: 86%;
+  max-height: 86%;
+}
+
+.business-card .name {
+  font-size: 90%;
+  margin-top: 4px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.business-card .location {
+  font-size: 80%;
+}
+
+.business-card .btn-tweet {
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .business-card {
+    width: 48%;
+  }
+}
+
