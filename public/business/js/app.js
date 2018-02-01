@@ -1,57 +1,65 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var STATES = [
-    "Alaska",
-    "Alabama",
-    "Arkansas",
-    "Arizona",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "District of Columbia",
-    "Delaware",
-    "Florida",
-    "Georgia",
-    "Hawaii",
-    "Iowa",
-    "Idaho",
-    "Illinois",
-    "Indiana",
-    "Kansas",
-    "Kentucky",
-    "Louisiana",
-    "Massachusetts",
-    "Maryland",
-    "Maine",
-    "Michigan",
-    "Minnesota",
-    "Missouri",
-    "Mississippi",
-    "Montana",
-    "North Carolina",
-    "North Dakota",
-    "Nebraska",
-    "New Hampshire",
-    "New Jersey",
-    "New Mexico",
-    "Nevada",
-    "New York",
-    "Ohio",
-    "Oklahoma",
-    "Oregon",
-    "Pennsylvania",
-    "Rhode Island",
-    "South Carolina",
-    "South Dakota",
-    "Tennessee",
-    "Texas",
-    "Utah",
-    "Virginia",
-    "Vermont",
-    "Washington",
-    "Wisconsin",
-    "West Virginia",
-    "Wyoming"
-  ];
+  var STATES = {
+    "Alabama": "AL",
+    "Alaska": "AK",
+    "American Samoa": "AS",
+    "Arizona": "AZ",
+    "Arkansas": "AR",
+    "California": "CA",
+    "Colorado": "CO",
+    "Connecticut": "CT",
+    "Delaware": "DE",
+    "District Of Columbia": "DC",
+    "Federated States Of Micronesia": "FM",
+    "Florida": "FL",
+    "Georgia": "GA",
+    "Guam": "GU",
+    "Hawaii": "HI",
+    "Idaho": "ID",
+    "Illinois": "IL",
+    "Indiana": "IN",
+    "Iowa": "IA",
+    "Kansas": "KS",
+    "Kentucky": "KY",
+    "Louisiana": "LA",
+    "Maine": "ME",
+    "Marshall Islands": "MH",
+    "Maryland": "MD",
+    "Massachusetts": "MA",
+    "Michigan": "MI",
+    "Minnesota": "MN",
+    "Mississippi": "MS",
+    "Missouri": "MO",
+    "Montana": "MT",
+    "Nebraska": "NE",
+    "Nevada": "NV",
+    "New Hampshire": "NH",
+    "New Jersey": "NJ",
+    "New Mexico": "NM",
+    "New York": "NY",
+    "North Carolina": "NC",
+    "North Dakota": "ND",
+    "Northern Mariana Islands": "MP",
+    "Ohio": "OH",
+    "Oklahoma": "OK",
+    "Oregon": "OR",
+    "Palau": "PW",
+    "Pennsylvania": "PA",
+    "Puerto Rico": "PR",
+    "Rhode Island": "RI",
+    "South Carolina": "SC",
+    "South Dakota": "SD",
+    "Tennessee": "TN",
+    "Texas": "TX",
+    "Utah": "UT",
+    "Vermont": "VT",
+    "Virgin Islands": "VI",
+    "Virginia": "VA",
+    "Washington": "WA",
+    "West Virginia": "WV",
+    "Wisconsin": "WI",
+    "Wyoming": "WY"
+  };
 
   var formatNumber = function(x) {
     return x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
@@ -132,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
               geo.subdivisions[0].names &&
               geo.subdivisions[0].names.en
             ) {
-              self.selectedState = geo.subdivisions[0].names.en;
+              self.selectedState = geo.subdivisions[0].iso_code;
             }
           }
         });
@@ -164,16 +172,30 @@ document.addEventListener("DOMContentLoaded", function() {
   Vue.component('business-card', {
     template: '#business-card-template',
     props: [ 'business' ],
-    methods: {
-      tweetURL: function(business) {
-        var tweetText = "@" + business.twitter + " i am tweeting at you!"
+    
+    computed: {
+      tweetURL: function() {
+        var tweetText = "@" + this.business.twitter + " i am tweeting at you!";
         return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
       },
 
+      locationString: function() {
+        if (this.business.city && this.business.state) {
+          return [this.business.city, this.business.state].join(', ');
+        }
+        else if (this.business.city) {
+          return this.business.city;
+        }
+        else if (this.business.state) {
+          return this.business.state;
+        }
+      }
+    },
+
+    methods: {
       openTweetURL: function(business) {
-        this.$parent.tweetCount += 1
-        var url = this.tweetURL(business);
-        window.open(url, '_blank');
+        this.$parent.tweetCount += 1;
+        window.open(this.tweetURL, '_blank');
       }
     }
   });

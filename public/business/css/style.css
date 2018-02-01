@@ -291,15 +291,7 @@ section {
   width: 75px;
   height: 75px;
   border-radius: 100%;
-  border: 2px solid #000;
-  background-color: #fff;
-  overflow: hidden;
-  margin: auto;
-}
-
-.business-card .logo img {
-  max-width: 86%;
-  max-height: 86%;
+  border: 2px solid #CCCAEA;
 }
 
 .business-card .name {

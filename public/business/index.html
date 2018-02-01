@@ -55,7 +55,7 @@
           <p class="state-selector">
             <select v-model="selectedState">
               <option :value="null">Select state</option>
-              <option v-for="state in states">{{ state }}</option>
+              <option v-for="(abbr, name) in states" :value="abbr">{{ name }}</option>
             </select>
           </p>
           <div class="businesses">
@@ -161,11 +161,11 @@
     </div> <!-- /app -->
 
     <script type="text/x-template" id="business-card-template">
-      <div class="business-card" @click="openTweetURL(business)">
-        <div class="logo flex-center"><img :src="business.logo" :alt="business.name + ' Logo'"></div>
+      <div class="business-card" @click="openTweetURL()">
+        <img class="logo" :src="business.logo" :alt="business.name + ' Logo'">
         <div class="name truncate" :title="business.name">{{ business.name }}</div>
-        <div class="location truncate" :title="business.location">({{ business.location }})</div>
-        <a class="btn btn-tweet" :href="tweetURL(business)" target="_blank">Tweet</a>
+        <div class="location truncate" :title="business.location">({{ locationString }})</div>
+        <a class="btn btn-tweet" :href="tweetURL" target="_blank">Tweet</a>
       </div>
     </script>
 
