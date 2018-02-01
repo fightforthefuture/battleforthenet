@@ -292,6 +292,7 @@ section {
   height: 75px;
   border-radius: 100%;
   border: 2px solid #CCCAEA;
+  background-color: #fff;
 }
 
 .business-card .name {
