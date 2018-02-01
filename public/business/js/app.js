@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+  var PRIORITY_STATES = [ 'KS', 'SC' ];
+
   var STATES = {
     "Alabama": "AL",
     "Alaska": "AK",
@@ -119,6 +121,13 @@ document.addEventListener("DOMContentLoaded", function() {
           return b.state === self.selectedState;
         });
       },
+
+      priorityBusinesses: function() {
+        var self = this;
+        return this.businesses.filter(function(b){
+          return PRIORITY_STATES.indexOf(b.state) !== -1;
+        }).slice(0, 20);
+      }
     },
 
     created: function() {
