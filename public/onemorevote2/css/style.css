@@ -1,0 +1,204 @@
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+[v-cloak], .hidden {
+  display: none;
+}
+
+/* These elements will only be visible to screen readers */
+.sr-only {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+body, input {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5,
+.btn {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.2;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%
+}
+
+body {
+  color: #a2b0ca;
+  background-color: #131620;
+  background-image: url("../images/bg.jpg");
+  /*background-repeat: no-repeat;*/
+  /*background-position: center top;*/
+  background-size: cover;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, b, strong {
+  font-weight: 700;
+}
+
+h1, h2, strong {
+  color: #fff;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  color: #f6ec40;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+a {
+  color: #f6ec40;
+  text-decoration: underline;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.container {
+  width: 500px;
+  max-width: 90%;
+  margin: 50px auto;
+}
+
+header .logo {
+  width: 300px;
+}
+
+section {
+  margin: 50px 0 100px;
+}
+
+form .row {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+input {
+  width: 49%;
+  margin: 0 2% 2% 0;
+  border: none;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+input:last-child {
+  margin-right: 0;
+}
+
+input::placeholder {
+  color: #13161c;
+  font-weight: normal;
+}
+
+.btn {
+  color: #13161c;
+  background-color: #f6ec40;
+  border: none;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+.disclaimer {
+  margin-top: 8px;
+}
+
+.disclaimer small {
+  display: block;
+  line-height: 1.2;
+}
+
+#participants ul {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#participants li {
+  padding: 0;
+  display: block;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 31%;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#participants li img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+
+@media screen and (max-width: 600px) {
+  #participants li {
+    width: 47%;
+    margin: 1.5%;
+  }
+}
+

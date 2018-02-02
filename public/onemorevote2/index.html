@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Feb 27: Operation #OneMoreVote</title>
+
+  <meta name="description" content="Flood the senate to save net neutrality">
+  <meta name="author" content="Fight for the Future">
+
+  <meta itemprop="name" content="Feb 27: Operation #OneMoreVote">
+  <meta itemprop="description" content="Flood the senate to save net neutrality">
+  <meta itemprop="image" content="https://www.battleforthenet.com/images/share_images/urgent.png">
+
+  <!-- Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.battleforthenet.com/onemorevote/" />
+  <meta property="og:image" content="https://www.battleforthenet.com/images/share_images/urgent.png" />
+  <meta property="og:title" content="Flood the senate to save net neutrality" />
+  <meta property="og:description" content="The FCC voted to destroy net neutrality and give big cable companies control over what we see and do online. On February 27th, the Internet will flood the Senate with phone calls, emails, and meetings, Are you in?" />
+  <meta property="og:site_name" content="Feb 27: Operation #OneMoreVote" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@FightForTheFtr" />
+  <meta name="twitter:title" content="Feb 27: Operation #OneMoreVote" />
+  <meta name="twitter:description" content="The FCC voted to destroy net neutrality and give big cable companies control over what we see and do online. On February 27th, the Internet will flood the Senate with phone calls, emails, and meetings, Are you in?" />
+  <meta name="twitter:image" content="https://www.battleforthenet.com/images/share_images/urgent.png" />
+  <meta name="twitter:url" content="https://www.battleforthenet.com/onemorevote/" />
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet" />
+  <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css?v=CACHE_BUST" rel="stylesheet" type="text/css" />
+
+  <!-- App JS -->
+  <script src="js/vue.js"></script>
+  <script src="js/vue-resource.js"></script>
+  <script src="js/app.js?v=CACHE_BUST"></script>
+</head>
+
+<body>
+  <div id="app" class="container">
+    <header>
+      <img class="logo" src="images/logo.png" alt="Feb 27: Operation #OneMoreVote">
+    </header>
+
+    <section id="join">
+      <h2>Flood the senate to save net neutrality</h2>
+      <p>
+        The FCC voted to destroy net neutrality and give big cable companies control over what we see and do online. <strong>On February 27th, the Internet will flood the Senate with phone calls, emails, and meetings, Are you in?</strong>
+      </p>
+      <form @submit.prevent="submitForm()">
+        <p v-if="formMessage"><strong>{{ formMessage }}</strong></p>
+        <div class="row">
+          <input type="text" placeholder="Name*" required v-model="name">
+          <input type="email" placeholder="Email*" required v-model="email">
+        </div>
+        <div class="row">
+          <input type="tel" placeholder="Zip Code" v-model="zipCode">
+          <input type="tel" placeholder="Phone #" v-model="phone">
+        </div>
+        <button class="btn join-btn" v-bind:disabled="isLoading">
+          <span v-if="isLoading" v-cloak>Joining...</span>
+          <span v-else>Join the Protest</span>
+        </button>
+        <div class="disclaimer">
+          <small>The FCC voted to destroy net neutrality and give big cable companies control over what we see and do online.</small>
+        </div>
+      </form>
+    </section>
+
+    <section id="participants">
+      <h3>Participants</h3>
+      <p>Below is a list of notable websites, companies, and organizations who have confirmed their participation in the July 12th day of action. The list is broad, and represents a wide range of perspectives and online communities. The one thing all of them agree on: defending Title II net neutrality.</p>
+      <ul>
+        <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
+        <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
+        <li><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></li>
+        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
+        <li><img src="/images/logos/Etsy_logo-correct.png" alt="Etsy"></li>
+        <li><img src="/images/logos/kickstarter-logo-light.png" alt="Kickstarter"></li>
+        <li><img src="/images/logos/netflix.jpg" alt="Netflix"></li>
+        <li><img src="/images/logos/twitter.png" alt="Twitter"></li>
+        <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
+        <li><img src="/images/logos/github.png" alt="GitHub"></li>
+        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+        <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
+        <li><img src="/images/logos/ycombinator.png" alt="Y Combinator"></li>
+        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
+        <li><img src="/images/logos/pornhub.png" alt="PornHub"></li>
+        <li><img src="/images/logos/okcupid.png" alt="OkCupid"></li>
+        <li><img src="/images/logos/18mr.png" alt="18 Million Rising"></li>
+        <li><img src="/images/logos/WordMark150x40PuntRoad.png" alt="99 Designs"></li>
+        <li><img src="/images/logos/aall.png" alt="AALL"></li>
+        <li><img src="/images/logos/accessnow.png" alt="accessnow"></li>
+        <li><img src="/images/logos/aclu.jpg" alt="ACLU"></li>
+      </ul>
+  </div>
+</body>
