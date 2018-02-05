@@ -62,9 +62,6 @@ h1 {
 h2 {
   font-size: 24px;
   margin-bottom: 10px;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 h3 {
@@ -95,6 +92,21 @@ button:hover {
   text-overflow: ellipsis;
 }
 
+.video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .text-center {
   text-align: center;
 }
@@ -104,6 +116,25 @@ button:hover {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+ul.flex {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.flex li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  color: #ff1a09;
 }
 
 .container {
@@ -154,7 +185,7 @@ input::placeholder {
   font-size: 24px;
   font-weight: 700;
   border-radius: 4px;
-  padding: 12px;
+  padding: 12px 24px;
   text-transform: uppercase;
 }
 
@@ -167,13 +198,10 @@ input::placeholder {
   line-height: 1.2;
 }
 
-#participants ul {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+#join h2 {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #participants li {
@@ -184,9 +212,6 @@ input::placeholder {
   border-radius: 4px;
   width: 31%;
   margin: 1%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #participants li img {
@@ -194,11 +219,162 @@ input::placeholder {
   max-height: 80%;
 }
 
+#sites textarea {
+  width: 100%;
+  height: 70px;
+  font-family: monospace;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+}
+
+#sites .widgets li {
+  width: 47%;
+  margin: 1%;
+}
+
+#sites .widgets img {
+  border-radius: 8px;
+}
+
+#everyone .loaders img {
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+#footer {
+  width: 700px;
+  max-width: 90%;
+  margin: 50px auto;
+}
+
+#footer hr {
+  border-top: 1px solid #666694;
+  border-left: 0px none transparent;
+  border-right: 0px none transparent;
+  border-bottom: 0px none transparent;
+}
+
+#footer .logos {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+#footer .logos a {
+  max-width: 90%;
+  max-height: 80%;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 31%;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer .logos a img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+#share-buttons {
+  animation: fade-in .5s;
+  top: 0;
+  left: 0px;
+  bottom: 0px;
+  position: fixed;
+  z-index: 99;
+  width: 64px;
+}
+
+#share-buttons a {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 0 2px 2px 0;
+}
+
+#share-buttons a.facebook {
+  background-color: #3C5A96;
+  margin-bottom: 10px;
+}
+
+#share-buttons a.twitter {
+  background-color: #59ADEB;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: scroll;
+  animation: fade-in .2s;
+  z-index: 1984;
+}
+
+.modal {
+  width: 700px;
+  margin: auto;
+  position: relative;
+  background-color: #131620;
+  padding: 15px 30px;
+  border-radius: 8px;
+}
+
+.modal h3 {
+  margin-top: 20px;
+}
+
+.modal .close {
+  position: absolute;
+  right:6px;
+  top: -3px;
+  font-size: 36px;
+  text-decoration: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+
+.modal .share .btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  display: inline-block;
+  width: auto;
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 40px;
+}
+
+.modal .share .btn.facebook {
+  background-color: #3C5A96;
+  background-image: url(/images/share/facebook_white.svg);
+  margin-right: 10px;
+}
+
+.modal .share .btn.twitter {
+  background-color: #59ADEB;
+  background-image: url(/images/share/twitter_white.svg);
+}
 
 @media screen and (max-width: 600px) {
   #participants li {
     width: 47%;
     margin: 1.5%;
   }
-}
 
+  #share-buttons {
+    display: none;
+  }
+}
