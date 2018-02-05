@@ -41,152 +41,176 @@
 </head>
 
 <body>
-  <div id="app" class="container">
-    <header>
-      <img class="logo" src="images/logo.png" alt="Feb 27: Operation #OneMoreVote">
+  <div id="app">
+
+    <header id="header">
+      <img class="logo" src="images/logo.png?v=CACHE_BUST" alt="Feb 27: Operation #OneMoreVote">
+      <div class="progress-bar-container desktop-only">
+        <progress-bar :bars="51" v-cloak></progress-bar>
+      </div>
+      <div class="progress-bar-container mobile-only">
+        <progress-bar :bars="36" v-cloak></progress-bar>
+      </div>
     </header>
 
-    <section id="join">
-      <h2>Flood the senate to save net neutrality</h2>
-      <p>
-        The FCC voted to destroy net neutrality and give big cable companies control over what we see and do online. <strong>On February 27th, the Internet will flood the Senate with phone calls, emails, and meetings, Are you in?</strong>
-      </p>
-      <form @submit.prevent="submitForm()">
-        <p v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
-        <div class="row">
-          <input type="text" placeholder="Name*" required v-model="name">
-          <input type="email" placeholder="Email*" required v-model="email">
-        </div>
-        <div class="row">
-          <input type="tel" placeholder="Zip Code" v-model="zipCode">
-          <input type="tel" placeholder="Phone #" v-model="phone">
-        </div>
-        <button class="btn join-btn" v-bind:disabled="isLoading">
-          <span v-if="isLoading" v-cloak>Joining...</span>
-          <span v-else>Join the Protest</span>
-        </button>
-        <div class="disclaimer">
-          <small>The FCC voted to destroy net neutrality and give big cable companies control over what we see and do online.</small>
-        </div>
-      </form>
-    </section>
-
-    <section>
-      <h3>What is net neutrality?</h3>
-      <p>Net neutrality is the basic principle that protects our free speech on the Internet. "Title II" of the Communications Act is what provides the legal foundation for net neutrality and prevents Internet Service Providers like Comcast, Verizon, and AT&T from slowing down and blocking websites, or charging apps and sites extra fees to reach an audience (which they then pass along to consumers.) The Internet has thrived precisely because of net neutrality. It's what makes it so vibrant and innovative&mdash;a place for creativity, free expression, and exchange of ideas. Without net neutrality, the Internet will become more like Cable TV, where the content you see is what your provider puts in front of you.</p>
-    </section>
-
-    <section>
-      <h3>How can we save it?</h3>
-      <p>The FCC voted to kill net neutrality on December 14, 2017. But Congress can block their repeal using the Congressional Review Act (CRA). It takes a simple majority in the Senate and House. It can't be blocked by leadership, and there can be no amendments or filibusters. We already have 50 votes committed in the Senate, so we just need one more to win! Then we take the fight to the House where there are already more than 100 cosponsors. We'll need 218 votes there to win. Let's get started!</p>
-      <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section>
-      <h3>What will happen on February 27</h3>
-      <p>Websites, Internet users, and online communities will come together to harness our power to secure the #OneMoreVote we need to pass the CRA resolution in the Senate. We'll provide tools for everyone to make it super easy for your followers / visitors to take action. From the SOPA blackout to the Internet Slowdown, we've shown time and time again that when the Internet comes together, we can stop censorship and corruption. Now, we have to do it again!</p>
-    </section>
-
-    <section id="sites">
-      <h3>SITES: DISPLAY AN ALERT</h3>
-      <p>On February 27, sites from across the web will display a prominent alert on their homepage that shows the world what the web will look like without net neutrality. Below are “spinning wheel of death”, “blocked”, and “upgrade” alert modals; plan to use the one that best fits your site to encourage users to send a letter to the FCC and Congress in support of net neutrality. To use these them, you just need to embed a bit of javascript in the header of your site. <a href="https://widget.battleforthenet.com/demos/modal.html?theme=slow">Click here to try them out</a>, and then be sure to <a href="https://github.com/fightforthefuture/battleforthenet-widget">grab the code on GitHub.</a> If you're a Cloudflare user, <a href="https://www.cloudflare.com/apps/net-neutrality">try out their BattleForTheNet app.</a> And for Wordpress, <a href="https://wordpress.org/plugins/net-neutrality/">use their plug-in here.</a></p> 
-
-      <p>And don't worry, none of these will <em>actually</em> block, slow, or paywall your site. But, they will let your users contact their Senators and Representatives without having to leave your platform. They will only show up once and users can click away.</p>
-
-      <textarea readonly onclick="this.select()">&lt;script&gt;var _bftn_options = { theme: 'glitch' };&lt;/script&gt;&lt;script src="https://widget.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</textarea>
-
-      <ul class="widgets flex">
-        <li><img src="/images/modal/glitch.png" alt="Glitch"></li>
-        <li><img src="/images/modal/countdown.png" alt="Countdown Modal Preview"></li>
-        <li><img src="/images/modal/slow.png" alt="Slow Modal Preview"></li>
-        <li><img src="/images/modal/money.png" alt="Money Modal Preview"></li>
-        <li><img src="/images/modal/stop.png" alt="Stop Modal Preview"></li>
-      </ul>
-
-      <p>Feel free to use these alerts, or create a unique message that makes sense for your site. For example, if you primarily host video, put the spinning wheel of death on every video with a link to battleforthenet.com so your users can contact their Senators.</p>
-    </section>
-
-    <section>
-      <h3>USE THESE BANNER ADS</h3>
-      <p>Do you run a site or blog? Use these banner ads to get the word out on net neutrality. There are tons of <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzdTk4WTdCdGsxVlk">ad sizes to choose from here.</a></p>
-      <p><img src="/images/banner2.jpg" alt="Traffic throttling? Site blocking? New fees? No Thanks. Save Net neutrality"></p>
-    </section>
-
-    <section>
-      <h3>APPS: SEND A PUSH NOTIFICATION</h3>
-      <p>Do you run a popular mobile app? Tell your users that ISPs want new powers to control what they see and do online.</p>
-      <img src="/images/tools/push.png" alt="An example push notification">
-    </section>
-
-    <section id="everyone">
-      <h3>EVERYONE: SHARE ON SOCIAL MEDIA</h3>
-      <p>Are you a social media user? Tell all your friends to join the protest on February 27. Check back here for graphics and suggested tweets.</p>
-      <p><img src="/images/internet-weird.png"></p>
-      <p>Or change your avatar to a dreaded loading sign below.</p>
-      <p class="loaders">
-        <img src="/images/change_avatar/avatar-black.gif" alt="Loading...">
-        <img src="/images/change_avatar/avatar-white-red.gif" alt="Loading...">
-        <img src="/images/change_avatar/avatar-green.gif" alt="Loading...">
-        <img src="/images/change_avatar/avatar-purple.gif" alt="Loading...">
-      </p>
-    </section>
-
-    <section>
-      <h3>HELP US GET CREATIVE!</h3>
-      <p>We're just getting started with organizing Operation: #OneMoreVote, so sign up and we’ll get in touch soon with more information. If you have ideas or want to help, let us know. If you run a high-traffic website, startup, or small business, <a href="mailto:team@fightforthefuture.org">get in touch</a>. We need you!</p>
-    </section>
-
-<!--     <section id="participants">
-      <h3>Participants</h3>
-      <p>Below is a list of notable websites, companies, and organizations who have confirmed their participation in the July 12th day of action. The list is broad, and represents a wide range of perspectives and online communities. The one thing all of them agree on: defending Title II net neutrality.</p>
-      <ul class="flex">
-        <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
-        <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
-        <li><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></li>
-        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
-      </ul>
-    </section> -->
-
-    <aside id="share-buttons">
-      <div class="flex-center">
-        <div>
-          <a class="facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/onemorevote/" target="_blank" @click.prevent="shareOnFacebook()"><img src="/images/share/facebook_white.svg" alt="Share on Facebook"></a>
-          <a class="twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The FCC killed %23netneutrality %26 and gave Big Cable control over the Internet. This is how we can still win: https://www.battleforthenet.com/onemorevote" target="_blank"><img alt="" src="/images/share/twitter_white.svg" alt="Share on Twitter" @click.prevent="shareOnTwitter()"></a>
-        </div>
-      </div>
-    </aside>
-
-    <div class="modal-wrapper" v-show="modalVisible" v-cloak>
-      <div class="flex-center">
-        <div class="modal">
-          <button class="close" @click="hideModal()">&times;</button>
-
-          <h3>Thanks! We'll be in touch :)</h3>
-            <!-- <p><b>Introduce yourself, be polite and say:</b> something something something</p> -->
-
-          <p><strong>Now, can you help us spread the word?</strong></p>
-
-          <div class="share">
-            <a href="https://www.facebook.com/sharer.php?u=https://www.stopspyingon.us" target="_blank" class="btn facebook" @click.prevent="shareOnFacebook()">Share on Facebook</a>
-            <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Congress just passed a law expanding authoritarian government surveillance powers for 6 more years." target="_blank" class="btn twitter" @click.prevent="shareOnTwitter()">Share on Twitter</a>
+    <div class="container">
+      <section id="join">
+        <p>
+          The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or learn more here.</strong>
+        </p>
+        <form @submit.prevent="submitForm()">
+          <p v-cloak v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
+          <div class="row">
+            <input type="text" placeholder="Name*" required v-model="name">
+            <input type="email" placeholder="Email*" required v-model="email">
           </div>
-          <br>
+          <div class="row">
+            <input type="tel" placeholder="Zip Code" v-model="zipCode">
+            <input type="tel" placeholder="Phone #" v-model="phone">
+          </div>
+          <div class="large-audience">
+            <label>
+              <input type="checkbox" v-model="hasLargeAudience">
+              &nbsp;I have a large online audience, or a friend or employer who does.
+            </label>
+            <input type="text" placeholder="Explain" v-model="actionComment" v-if="hasLargeAudience" v-cloak>
+          </div>
+          <button class="btn join-btn" v-bind:disabled="isLoading">
+            <span v-if="isLoading" v-cloak>Joining...</span>
+            <span v-else>Join the Protest</span>
+          </button>
+          <div class="disclaimer">
+            <small>We’ll send you everything you need to participate. <a href="https://www.fightforthefuture.org/">Fight for the Future</a> will email you about work related to this, and you can unsubscribe at any time. If you enter your number (it's optional) Fight for the Future may follow up by SMS, at which point message &amp; data rates apply. You can always text STOP to stop receiving messages. Here’s our <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a>.</small>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h3>What is net neutrality?</h3>
+        <p>Net neutrality is the basic principle that protects our free speech on the Internet. "Title II" of the Communications Act is what provides the legal foundation for net neutrality and prevents Internet Service Providers like Comcast, Verizon, and AT&T from slowing down and blocking websites, or charging apps and sites extra fees to reach an audience (which they then pass along to consumers.) The Internet has thrived precisely because of net neutrality. It's what makes it so vibrant and innovative&mdash;a place for creativity, free expression, and exchange of ideas. Without net neutrality, the Internet will become more like Cable TV, where the content you see is what your provider puts in front of you.</p>
+      </section>
+
+      <section>
+        <h3>How can we save it?</h3>
+        <p>The FCC voted to kill net neutrality on December 14, 2017. But Congress can block their repeal using the Congressional Review Act (CRA). It takes a simple majority in the Senate and House. It can't be blocked by leadership, and there can be no amendments or filibusters. We already have 50 votes committed in the Senate, so we just need one more to win! Then we take the fight to the House where there are already more than 100 cosponsors. We'll need 218 votes there to win. Let's get started!</p>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section>
+        <h3>What will happen on February 27</h3>
+        <p>Websites, Internet users, and online communities will come together to harness our power to secure the #OneMoreVote we need to pass the CRA resolution in the Senate. We'll provide tools for everyone to make it super easy for your followers / visitors to take action. From the SOPA blackout to the Internet Slowdown, we've shown time and time again that when the Internet comes together, we can stop censorship and corruption. Now, we have to do it again!</p>
+      </section>
+
+      <section id="sites">
+        <h3>SITES: DISPLAY AN ALERT</h3>
+        <p>On February 27, sites from across the web will display a prominent alert on their homepage that shows the world what the web will look like without net neutrality. Below are “spinning wheel of death”, “blocked”, and “upgrade” alert modals; plan to use the one that best fits your site to encourage users to send a letter to the FCC and Congress in support of net neutrality. To use these them, you just need to embed a bit of javascript in the header of your site. <a href="https://widget.battleforthenet.com/demos/modal.html?theme=slow">Click here to try them out</a>, and then be sure to <a href="https://github.com/fightforthefuture/battleforthenet-widget">grab the code on GitHub.</a> If you're a Cloudflare user, <a href="https://www.cloudflare.com/apps/net-neutrality">try out their BattleForTheNet app.</a> And for Wordpress, <a href="https://wordpress.org/plugins/net-neutrality/">use their plug-in here.</a></p> 
+
+        <p>And don't worry, none of these will <em>actually</em> block, slow, or paywall your site. But, they will let your users contact their Senators and Representatives without having to leave your platform. They will only show up once and users can click away.</p>
+
+        <textarea readonly onclick="this.select()">&lt;script&gt;var _bftn_options = { theme: 'glitch' };&lt;/script&gt;&lt;script src="https://widget.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</textarea>
+
+        <ul class="widgets flex">
+          <li><img src="/images/modal/glitch.png" alt="Glitch"></li>
+          <li><img src="/images/modal/countdown.png" alt="Countdown Modal Preview"></li>
+          <li><img src="/images/modal/slow.png" alt="Slow Modal Preview"></li>
+          <li><img src="/images/modal/money.png" alt="Money Modal Preview"></li>
+          <li><img src="/images/modal/stop.png" alt="Stop Modal Preview"></li>
+        </ul>
+
+        <p>Feel free to use these alerts, or create a unique message that makes sense for your site. For example, if you primarily host video, put the spinning wheel of death on every video with a link to battleforthenet.com so your users can contact their Senators.</p>
+      </section>
+
+      <section>
+        <h3>USE THESE BANNER ADS</h3>
+        <p>Do you run a site or blog? Use these banner ads to get the word out on net neutrality. There are tons of <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzdTk4WTdCdGsxVlk">ad sizes to choose from here.</a></p>
+        <p><img src="/images/banner2.jpg" alt="Traffic throttling? Site blocking? New fees? No Thanks. Save Net neutrality"></p>
+      </section>
+
+      <section>
+        <h3>APPS: SEND A PUSH NOTIFICATION</h3>
+        <p>Do you run a popular mobile app? Tell your users that ISPs want new powers to control what they see and do online.</p>
+        <img src="/images/tools/push.png" alt="An example push notification">
+      </section>
+
+      <section id="everyone">
+        <h3>EVERYONE: SHARE ON SOCIAL MEDIA</h3>
+        <p>Are you a social media user? Tell all your friends to join the protest on February 27. Check back here for graphics and suggested tweets.</p>
+        <p><img src="/images/internet-weird.png"></p>
+        <p>Or change your avatar to a dreaded loading sign below.</p>
+        <p class="loaders">
+          <img src="/images/change_avatar/avatar-black.gif" alt="Loading...">
+          <img src="/images/change_avatar/avatar-white-red.gif" alt="Loading...">
+          <img src="/images/change_avatar/avatar-green.gif" alt="Loading...">
+          <img src="/images/change_avatar/avatar-purple.gif" alt="Loading...">
+        </p>
+      </section>
+
+      <section>
+        <h3>HELP US GET CREATIVE!</h3>
+        <p>We're just getting started with organizing Operation: #OneMoreVote, so sign up and we’ll get in touch soon with more information. If you have ideas or want to help, let us know. If you run a high-traffic website, startup, or small business, <a href="mailto:team@fightforthefuture.org">get in touch</a>. We need you!</p>
+      </section>
+
+      <section id="participants">
+        <h3>Participants</h3>
+        <p>Below is a list of notable websites, companies, and organizations who have confirmed their participation in the July 12th day of action. The list is broad, and represents a wide range of perspectives and online communities. The one thing all of them agree on: defending Title II net neutrality.</p>
+        <ul class="flex">
+          <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
+          <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
+          <li><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></li>
+          <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
+        </ul>
+      </section>
+
+      <aside id="share-buttons">
+        <div class="flex-center">
+          <div>
+            <a class="facebook" href="https://www.facebook.com/sharer.php?u=https://www.battleforthenet.com/onemorevote/" target="_blank" @click.prevent="shareOnFacebook()"><img src="/images/share/facebook_white.svg" alt="Share on Facebook"></a>
+            <a class="twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=The FCC killed %23netneutrality %26 and gave Big Cable control over the Internet. This is how we can still win: https://www.battleforthenet.com/onemorevote" target="_blank"><img alt="" src="/images/share/twitter_white.svg" alt="Share on Twitter" @click.prevent="shareOnTwitter()"></a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="modal-wrapper" v-show="modalVisible" v-cloak>
+        <div class="flex-center">
+          <div class="modal">
+            <button class="close" @click="hideModal()">&times;</button>
+
+            <h3>Thanks! We'll be in touch :)</h3>
+              <!-- <p><b>Introduce yourself, be polite and say:</b> something something something</p> -->
+
+            <p><strong>Now, can you help us spread the word?</strong></p>
+
+            <div class="share">
+              <a href="https://www.facebook.com/sharer.php?u=https://www.stopspyingon.us" target="_blank" class="btn facebook" @click.prevent="shareOnFacebook()">Share on Facebook</a>
+              <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Congress just passed a law expanding authoritarian government surveillance powers for 6 more years." target="_blank" class="btn twitter" @click.prevent="shareOnTwitter()">Share on Twitter</a>
+            </div>
+            <br>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <footer id="footer">
-    <p><b>Battle for the Net</b> is a project of:</p>
-    <p class="logos">
-      <a href="https://www.fightforthefuture.org" target="_blank"><img src="/images/logos/fftf.png" alt="Fight for the Future"></a>
-      <a href="https://www.freepress.net/" target="_blank"><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></a>
-      <a href="https://demandprogress.org/" target="_blank"><img src="/images/logos/demandprogress.png" alt="Demand Progress"></a>
-    </p>
-    <hr>
-    <p class='org fftf'>Press inquiries email <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a> or call <a href="tel:978-852-6457">978-852-6457</a>.</p>
-    <p class='org dp'>Press inquiries email <a href="mailto:press@demandprogress.org">press@demandprogress.org</a> or call <a href="tel:202-681-7582 ">202-681-7582</a>.</p>
-  </footer>
+    </div> <!-- /container -->
+
+    <footer id="footer">
+      <p><b>Battle for the Net</b> is a project of:</p>
+      <p class="logos">
+        <a href="https://www.fightforthefuture.org" target="_blank"><img src="/images/logos/fftf.png" alt="Fight for the Future"></a>
+        <a href="https://www.freepress.net/" target="_blank"><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></a>
+        <a href="https://demandprogress.org/" target="_blank"><img src="/images/logos/demandprogress.png" alt="Demand Progress"></a>
+      </p>
+      <hr>
+      <p class='org fftf'>Press inquiries email <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a> or call <a href="tel:978-852-6457">978-852-6457</a>.</p>
+      <p class='org dp'>Press inquiries email <a href="mailto:press@demandprogress.org">press@demandprogress.org</a> or call <a href="tel:202-681-7582 ">202-681-7582</a>.</p>
+    </footer>
+
+    <script type="text/x-template" id="progress-bar-template">
+      <div :class="{ 'progress-bar': 'progress-bar', done: isDone }">
+        <div v-for="index in bars" :class="{ bar: 'bar', 'active': index < currentIndex }"></div>
+      </div>
+    </script>
+
+  </div> <!-- /app -->
 </body>
+</html>

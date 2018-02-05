@@ -1,4 +1,44 @@
 document.addEventListener("DOMContentLoaded", function() {
+  Vue.component('progress-bar', {
+    template: '#progress-bar-template',
+
+    props: [ 'bars' ],
+
+    data: function() {
+      return {
+        currentIndex: 0
+      }
+    },
+
+    computed: {
+      isDone: function() {
+        return this.bars === this.currentIndex
+      },
+    },
+
+    created: function() {
+      var self = this;
+      setTimeout(function(){
+        self.animation = setInterval(self.animate, 50);
+      }, 1000);
+    },
+
+    destroyed: function() {
+      clearInterval(this.animation)
+    },
+
+    methods: {
+      animate: function() {
+        if (this.currentIndex < this.bars) {
+          this.currentIndex += 1
+        }
+        else {
+          clearInterval(this.animation)
+        }
+      }
+    }
+  });
+
   var app = new Vue({
     el: '#app',
 
@@ -8,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
         email: null,
         zipCode: null,
         phone: null,
+        hasLargeAudience: false,
+        actionComment: null,
         isLoading: false,
         formMessage: null,
         modalVisible: false
@@ -20,10 +62,10 @@ document.addEventListener("DOMContentLoaded", function() {
         self.isLoading = true;
         self.$http.post('https://queue.fightforthefuture.org/action', {
           member: {
-            first_name: this.name,
-            email: this.email,
-            postcode: this.zipCode,
-            phone_number: this.phone,
+            first_name: self.name,
+            email: self.email,
+            postcode: self.zipCode,
+            phone_number: self.phone,
             country: 'US'
           },
           hp_enabled: 'true',
@@ -31,17 +73,15 @@ document.addEventListener("DOMContentLoaded", function() {
           contact_congress: 0,
           org: 'fftf',
           an_tags: '[&quot;net-neutrality&quot;]',
-          an_petition_id: '11f84b38-e65b-4259-b0ae-e879a4044ca9'
+          an_petition_id: '11f84b38-e65b-4259-b0ae-e879a4044ca9',
+          volunteer: self.hasLargeAudience,
+          action_comment: self.actionComment
         }, { emulateJSON: true })
         .then(function(response){
           self.isLoading = false;
 
           if (response.ok) {
-            self.phone = null;
-            this.name = null;
-            this.email = null;
-            this.zipCode = null;
-            self.formMessage = null;
+            self.resetForm();
             self.showModal();
           }
           else {
@@ -52,6 +92,16 @@ document.addEventListener("DOMContentLoaded", function() {
           self.isLoading = false;
           self.formMessage = "That didn't work for some reason :(";
         })
+      },
+
+      resetForm() {
+        this.phone = null;
+        this.name = null;
+        this.email = null;
+        this.zipCode = null;
+        this.hasLargeAudience = false;
+        this.actionComment = null;
+        this.formMessage = null;
       },
 
       showModal: function() {
@@ -102,5 +152,5 @@ document.addEventListener("DOMContentLoaded", function() {
         this.openPopup('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'twitter');
       }
     }
-  })
+  });
 });
