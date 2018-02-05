@@ -37,6 +37,7 @@ body {
   color: #a2b0ca;
   background-color: #161a29;
   text-align: center;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
