@@ -37,7 +37,6 @@ body {
   color: #a2b0ca;
   background-color: #161a29;
   text-align: center;
-  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -137,7 +136,7 @@ ul.flex li {
 .container {
   width: 500px;
   max-width: 90%;
-  margin:  auto;
+  margin: auto;
 }
 
 #header {
@@ -146,7 +145,6 @@ ul.flex li {
   background-position: center top;
   background-size: cover;
   height: 295px;
-  width: 100%;
   padding-top: 30px;
   margin-bottom: 100px;
 }
@@ -174,6 +172,12 @@ textarea {
   width: 100%;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #13161c;
+  font-weight: normal;
+}
+
 form .row {
   display: flex;
   justify-content: center;
@@ -188,11 +192,6 @@ form .row input {
 
 form .row input:last-child {
   margin-right: 0;
-}
-
-form .row input::placeholder {
-  color: #13161c;
-  font-weight: normal;
 }
 
 form .large-audience {
@@ -250,7 +249,7 @@ form .large-audience label {
 #widgets textarea {
   width: 100%;
   font-size: 13px;
-  height: 50px;
+  height: 5em;
   font-family: monospace;
   font-weight: normal;
   margin-bottom: 20px;
@@ -410,7 +409,6 @@ body.modal-open {
 }
 
 .progress-bar {
-  margin: 0 -10px;
   animation: fade-in 3s;
   white-space: nowrap;
 }
