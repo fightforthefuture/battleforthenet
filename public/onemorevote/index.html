@@ -56,8 +56,9 @@
     <div class="container">
 
       <section id="join">
+        <h2>FLOOD THE SENATE TO SAVE NET NEUTRALITY</h2>
         <p>
-          The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content.  But we can stop them by using the Congressional Review Act (CRA). <strong>We need one more vote to win the Senate.  Fill out the form below to join the mission, or learn more here.</strong>
+          The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content. But we can stop them by using the Congressional Review Act (CRA). <strong>We need one more vote to win the Senate.</strong>
         </p>
         <form @submit.prevent="submitForm()">
           <p v-cloak v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
@@ -69,6 +70,10 @@
             <input type="tel" placeholder="Zip Code" v-model="zipCode">
             <input type="tel" placeholder="Phone #" v-model="phone">
           </div>
+          <button class="btn join-btn" v-bind:disabled="isLoading">
+            <span v-if="isLoading" v-cloak>Joining...</span>
+            <span v-else>Join the Protest</span>
+          </button>
           <div class="large-audience">
             <label>
               <input type="checkbox" v-model="hasLargeAudience">
@@ -76,10 +81,6 @@
             </label>
             <input type="text" placeholder="Explain" v-model="actionComment" v-if="hasLargeAudience" v-cloak>
           </div>
-          <button class="btn join-btn" v-bind:disabled="isLoading">
-            <span v-if="isLoading" v-cloak>Joining...</span>
-            <span v-else>Join the Protest</span>
-          </button>
           <div class="disclaimer">
             <small><a href="https://www.fightforthefuture.org/">Fight for the Future</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we may follow up by SMS (message &amp; data rates apply.) You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a></small>
           </div>
@@ -126,15 +127,16 @@
 
       <section id="widgets">
         <h3>SITES: DISPLAY AN ALERT</h3>
-        <p>On February 27, sites from across the web will display a prominent alert on their homepage that shows the world what the web will look like without net neutrality. Below are “spinning wheel of death”, “blocked”, and “upgrade” alert modals; plan to use the one that best fits your site to encourage users to send a letter to the FCC and Congress in support of net neutrality. To use these them, you just need to embed a bit of javascript in the header of your site. <a href="https://widget.battleforthenet.com/demos/modal.html?theme=slow">Click here to try them out</a>, and then be sure to <a href="https://github.com/fightforthefuture/battleforthenet-widget">grab the code on GitHub.</a> If you're a Cloudflare user, <a href="https://www.cloudflare.com/apps/net-neutrality">try out their BattleForTheNet app.</a> And for Wordpress, <a href="https://wordpress.org/plugins/net-neutrality/">use their plug-in here.</a></p> 
-
-        <p>And don't worry, none of these will <em>actually</em> block, slow, or paywall your site. But, they will let your users contact their Senators and Representatives without having to leave your platform. They will only show up once and users can click away.</p>
+        <p>On February 27, sites from across the web will display a prominent alert on their homepage to flood the Senate with messages in support of using the CRA to overturn the FCC's vote to destroy net neutrality.  To use these them, you just need to embed a bit of javascript in the header of your site. <a href="https://widget.battleforthenet.com/demos/modal.html?theme=capitol">Click here to try them out</a>, and then be sure to <a href="https://github.com/fightforthefuture/battleforthenet-widget" target="_blank">grab the code on GitHub</a>. If you're a Cloudflare user, <a href="https://www.cloudflare.com/apps/net-neutrality" target="_blank">try out their Battle for the Net app</a>. And for Wordpress, <a href="https://wordpress.org/plugins/net-neutrality/" target="_blank">use their plug-in here</a>.</p>
 
         <textarea readonly onclick="this.select()">&lt;script src="https://widget.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</textarea>
 
-        <img src="/images/modal/onemorevote.png" alt="Screenshot of One More Vote Widget">
+        <ul class="flex widgets">
+          <li><img src="/images/modal/onemorevote.png" alt="Screenshot of One More Vote Widget"></li>
+          <li><img src="/images/modal/onemorevote-text.png" alt="Screenshot of One More Vote Widget"></li>
+        </ul>
 
-        <p>Feel free to use these alerts, or create a unique message that makes sense for your site. For example, if you primarily host video, put the spinning wheel of death on every video with a link to battleforthenet.com so your users can contact their Senators.</p>
+        <p>Feel free to use these alerts, <a href="https://www.battleforthenet.com/#join">our other alerts</a>, or create a unique message that makes sense for your site.  If you choose to create a custom alert, please make sure to link your users to battleforthenet.com so they can contact their Senators.</p>
       </section>
 
       <section id="banners">
