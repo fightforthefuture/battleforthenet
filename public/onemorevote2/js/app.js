@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     created: function() {
       var self = this;
       setTimeout(function(){
-        self.animation = setInterval(self.animate, 50);
+        self.animation = setInterval(self.animate, 25);
       }, 1000);
     },
 

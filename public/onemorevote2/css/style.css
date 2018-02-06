@@ -246,7 +246,7 @@ form .large-audience label {
   max-height: 80%;
 }
 
-#sites textarea {
+#widgets textarea {
   width: 100%;
   height: 100px;
   font-family: monospace;
@@ -256,16 +256,16 @@ form .large-audience label {
   border: none;
 }
 
-#sites .widgets li {
+#widgets .widgets li {
   width: 47%;
   margin: 1%;
 }
 
-#sites .widgets img {
+#widgets .widgets img {
   border-radius: 8px;
 }
 
-#everyone .loaders img {
+#social .loaders img {
   padding: 10px;
   width: 100px;
   height: 100px;
@@ -403,7 +403,8 @@ body.modal-open {
 
 .progress-bar-container {
   height: 20px;
-  margin-top: 5px;
+  padding-top: 5px;
+  background-color: #161a29;
 }
 
 .progress-bar {
@@ -416,7 +417,6 @@ body.modal-open {
   display: inline-block;
   height: 20px;
   width: 6px;
-  /*background-color: #a1afc8;*/
   background-color: #f7ea54;
   border-radius: 3px;
   margin: 0 2px;
