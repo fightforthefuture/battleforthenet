@@ -178,11 +178,12 @@ form .row {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  margin-bottom: 2%;
 }
 
 form .row input {
   width: 49%;
-  margin: 0 2% 2% 0;
+  margin-right: 2%;
 }
 
 form .row input:last-child {
