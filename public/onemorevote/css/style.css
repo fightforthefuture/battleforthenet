@@ -420,8 +420,14 @@ body.modal-open {
 }
 
 @keyframes blink-last-bar {
-  from { background-color: #f7ea54; }
-  to   { background-color: #a1afc8; }
+  from { 
+    background-color: #f7ea54;
+    box-shadow: 0px 0px 8px 2px rgba(246, 236, 64, 0.5); 
+  }
+  to {
+    background-color: #a1afc8;
+    box-shadow: none;
+  }
 }
 
 .progress-bar-container {
@@ -450,6 +456,7 @@ body.modal-open {
 
 .progress-bar.done .bar:last-child {
   animation: blink-last-bar 1.5s infinite;
+  animation-delay: .5s;
 }
 
 @media screen and (min-width: 601px) {
