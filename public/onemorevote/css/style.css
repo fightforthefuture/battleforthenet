@@ -361,11 +361,10 @@ body.modal-open {
 }
 
 .modal {
-  width: 700px;
+  width: 470px;
   margin: auto;
   position: relative;
-  background-color: #131620;
-  padding: 15px 30px;
+  background-color: #0f1219;
   border-radius: 8px;
 }
 
@@ -375,9 +374,9 @@ body.modal-open {
 
 .modal .close {
   position: absolute;
-  right:6px;
-  top: -3px;
-  font-size: 36px;
+  right: 8px;
+  top: 0;
+  font-size: 28px;
   text-decoration: none;
   background-color: transparent;
   color: #fff;
@@ -404,6 +403,20 @@ body.modal-open {
 .modal .share .btn.twitter {
   background-color: #59ADEB;
   background-image: url(/images/share/twitter_white.svg);
+}
+
+.modal header {
+  background-color: #171b24;
+  padding: 30px 0 20px;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal img.thanks {
+  width: 320px;
+}
+
+.modal main {
+  padding: 0 0 30px;
 }
 
 @keyframes blink-last-bar {

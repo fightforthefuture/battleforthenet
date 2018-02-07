@@ -199,18 +199,18 @@
       <div class="modal-wrapper" v-show="modalVisible" v-cloak>
         <div class="flex-center">
           <div class="modal">
-            <button class="close" @click="hideModal()">&times;</button>
+            <header>
+              <button class="close" @click="hideModal()">&times;</button>
+              <img class="thanks" src="images/thanks.png" alt="Thanks! We'll be in touch">
+            </header>
+            <main>
+              <p><strong>Now, can you help us spread the word?</strong></p>
 
-            <h3>Thanks! We'll be in touch :)</h3>
-              <!-- <p><b>Introduce yourself, be polite and say:</b> something something something</p> -->
-
-            <p><strong>Now, can you help us spread the word?</strong></p>
-
-            <div class="share">
-              <a href="https://www.facebook.com/sharer.php?u=https://www.stopspyingon.us" target="_blank" class="btn facebook" @click.prevent="shareOnFacebook()">Share on Facebook</a>
-              <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Congress just passed a law expanding authoritarian government surveillance powers for 6 more years." target="_blank" class="btn twitter" @click.prevent="shareOnTwitter()">Share on Twitter</a>
-            </div>
-            <br>
+              <div class="share">
+                <a href="https://www.facebook.com/sharer.php?u=https://www.stopspyingon.us" target="_blank" class="btn facebook" @click.prevent="shareOnFacebook()">Share on Facebook</a>
+                <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=Congress just passed a law expanding authoritarian government surveillance powers for 6 more years." target="_blank" class="btn twitter" @click.prevent="shareOnTwitter()">Share on Twitter</a>
+              </div>
+            </main>
           </div>
         </div>
       </div>
