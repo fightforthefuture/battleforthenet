@@ -247,7 +247,7 @@ form .large-audience label {
   background-color: #fff;
   border-radius: 4px;
   width: 31%;
-  margin: 1%;
+  margin: 5px auto;
 }
 
 #participants li img {
@@ -482,7 +482,6 @@ body.modal-open {
 
   #participants li {
     width: 47%;
-    margin: 1.5%;
   }
 
   #share-buttons {
