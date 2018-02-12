@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
           guard: '',
           contact_congress: 0,
           org: 'fftf',
-          an_tags: '[&quot;net-neutrality&quot;]',
+          an_tags: "[\"net-neutrality\"]",
           an_petition_id: '11f84b38-e65b-4259-b0ae-e879a4044ca9',
           volunteer: self.hasLargeAudience,
           action_comment: self.actionComment
