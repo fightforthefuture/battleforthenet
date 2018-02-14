@@ -104,8 +104,17 @@ button:hover {
   background-color: #0691ba;
 }
 
+.btn-facebook {
+  background-color: #3C5A96;
+}
+
+.btn-facebook:hover {
+  background-color: #30465b;
+}
+
 .btn-block {
   display: block;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -117,7 +126,7 @@ button:hover {
 
 .container {
   width: 800px;
-  max-width: 100%;
+  max-width: 96%;
   margin: auto;
 }
 
@@ -270,6 +279,42 @@ section {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  animation: fade-in .2s;
+}
+
+.businesses strong {
+  color: #fff;
+}
+
+.business-row {
+  width: 48%;
+  text-align: left;
+  font-size: 90%;
+  margin: 8px 1%;
+}
+
+.business-row .logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background-color: #fff;
+  margin-right: 8px;
+  float: left;
+  border: 1px solid #CCCAEA;
+}
+
+.business-row .name-location {
+  float: left;
+  width: 60%;
+}
+
+.business-row .name-location strong {
+  display: block;
+}
+
+.business-row .btn-tweet {
+  float: left;
+  margin-left: 8px;
 }
 
 .business-card {
@@ -310,9 +355,69 @@ section {
   margin-top: 8px;
 }
 
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  border: none;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #13161c;
+  font-weight: normal;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+form .row {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin-bottom: 2%;
+}
+
+form .row input {
+  width: 49%;
+  margin-right: 2%;
+}
+
+form .row input:last-child {
+  margin-right: 0;
+}
+
+form .large-audience {
+  text-align: left;
+  font-size: 96%;
+  margin: 10px 0;
+}
+
+form .large-audience label {
+  margin-bottom: 4px;
+  display: block;
+}
+
 @media screen and (max-width: 600px) {
   .business-card {
     width: 48%;
+  }
+
+  .business-row {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .business-row .btn-tweet {
+    float: right;
   }
 }
 
