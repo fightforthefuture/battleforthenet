@@ -47,7 +47,7 @@
           <h1>How we get Congress to save net neutrality.</h1>
           <p>This fall, while working to persuade members of Congress to oppose FCC chairman Ajit Pai, we found that the most effective form of persuasion&mdash;by far&mdash;was to organize pressure from local businesses. But it was a <em>ton</em> of work, and now we need to scale up from dozens of targets to hundreds. So we're moving our business outreach strategy to Twitter, and crowdsourcing it. <strong>By following the steps below, you can make sure <em>every</em> undecided member of Congress is getting pressure from local businesses.</strong></p>
 
-          <p>(And if <em>you</em> own a business, <a href="https://businessesfornetneutrality.com">sign our letter</a>.)</h3>
+          <p>(And if <em>you</em> own a business, <a href="https://businessesfornetneutrality.com">sign our letter</a>.)</p>
         </section>
 
         <section>
@@ -58,9 +58,11 @@
               <option v-for="(abbr, name) in states" :value="abbr">{{ name }}</option>
             </select>
           </p>
-          <div class="businesses">
+          <div class="businesses" v-if="isLoaded" v-cloak>
             <business-card v-for="business in localBusinesses" :business="business"></business-card>
+            <p v-if="localBusinesses.length < 1">We don't have any businesses on file for your state yet. <br><strong>Can you help us out by <a href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0">adding some to our spreadsheet</a>?</strong></p>
           </div>
+          <p v-else><i>Loading...</i></p>
         </section>
 
         <section>
@@ -73,22 +75,46 @@
 
         <section>
           <h2>Step 3: Tweet these national (or global) businesses too, since <em>their</em> members of Congress are high priorty.</h2>
-          <div class="businesses">
+          <div class="businesses" v-if="isLoaded" v-cloak>
             <business-card v-for="business in priorityBusinesses" :business="business"></business-card>
           </div>
         </section>
 
         <section>
           <h2>Step 4: Tweet more tomorrow! Sign up for daily updates with new targets to persuade!</h2>
-          <p>[INSERT SIGNUP FORM HERE]
-          </p>
+          <form @submit.prevent="submitForm()">
+            <p v-cloak v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
+            <div class="row">
+              <input type="text" placeholder="Name*" required v-model="name">
+              <input type="email" placeholder="Email*" required v-model="email">
+            </div>
+            <div class="row">
+              <input type="tel" placeholder="ZIP Code*" required v-model="zipCode">
+              <input type="tel" placeholder="Phone #" v-model="phone">
+            </div>
+            <div class="large-audience">
+              <label>
+                <input type="checkbox" v-model="hasLargeAudience">
+                &nbsp;I have a large online audience, or a friend or employer who does.
+              </label>
+              <input type="text" placeholder="Explain" v-model="actionComment" v-if="hasLargeAudience" v-cloak>
+            </div>
+            <button class="btn btn-large btn-block" v-bind:disabled="isLoading">
+              <span v-if="isLoading" v-cloak>Joining...</span>
+              <span v-else>Join the Protest</span>
+            </button>
+            <div class="disclaimer">
+              <small><a href="https://www.fightforthefuture.org/">Fight for the Future</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we may follow up by SMS (message &amp; data rates apply.) You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a></small>
+            </div>
+          </form>
+        </section>
 
         <section>
           <h2>Step 5: Add more local businesses in crucial places to our database so that others can tweet them.</h2>
           <p>For this plan to work, we need to build a national list of companies for Internet users to contact, and we need to do it <em>fast</em>. Which companies do you think need to speak out on net neutrality? They could be household names or shops down the street. <strong>We especially need companies based outside tech centers like Silicon Valley and NYC.</strong> All we need is the company's Twitter handle and where they're based. Can you help? For now, we're giving volunteers direct access to a spreadsheet (not the live version). You just have to add the Twitter handle and zipcode (or city/state) of each company.
           </p>
           <p>
-            <a href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0"><button class="btn btn-large">Get Started</button></a>
+            <a class="btn btn-large" href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0">Get Started</a>
           </p>
           <p>
             (opens our spreadsheet)
@@ -140,31 +166,42 @@
         </div>
       </footer>
 
-      <div class="modal-wrapper" v-if="modalVisible" v-cloak>
+      <div class="modal-wrapper" v-show="modalVisible" v-cloak>
         <div class="flex-center">
-          <div class="modal">
+          <div class="modal text-center">
             <button class="close" @click="hideModal()">&times;</button>
 
             <h2>Thanks so much for your support!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            <pre>[INSERT FORM WITH NAME, EMAIL, STREET, ZIP]</pre>
+            <p>Now, can you help us spread the word?</p>
+
+            <div class="share">
+              <button class="btn btn-facebook" @click.prevent="shareOnFacebook()">Share on Facebook</button>
+              <button class="btn btn-tweet" @click.prevent="shareOnTwitter()">Share on Twitter</button>
+            </div>
+            <br>
           </div>
         </div>
       </div>
 
     </div> <!-- /app -->
 
-    <script type="text/x-template" id="business-card-template">
+<!--     <script type="text/x-template" id="business-card-template">
       <div class="business-card" @click="openTweetURL()">
         <img class="logo" :src="business.logo" :alt="business.name + ' Logo'">
         <div class="name truncate" :title="business.name">{{ business.name }}</div>
         <div class="location truncate" :title="business.location">({{ locationString }})</div>
+        <a class="btn btn-tweet" :href="tweetURL" target="_blank">Tweet</a>
+      </div>
+    </script> -->
+
+    <script type="text/x-template" id="business-card-template">
+      <div class="business-row">
+        <img class="logo" :src="business.logo" :alt="business.name + ' Logo'">
+        <div class="name-location">
+          <strong class="truncate">{{ business.name }}</strong>
+          {{ locationString }}
+        </div>
         <a class="btn btn-tweet" :href="tweetURL" target="_blank">Tweet</a>
       </div>
     </script>

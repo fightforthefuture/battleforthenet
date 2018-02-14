@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var PRIORITY_STATES = [ 'KS', 'SC' ];
+  var PRIORITY_STATES = [ 'LA' ];
 
   var STATES = {
     "Alabama": "AL",
@@ -102,31 +102,56 @@ document.addEventListener("DOMContentLoaded", function() {
         isLoaded: false,
         businesses: [],
         tweetCount: 0,
+        name: null,
+        email: null,
+        zipCode: null,
+        phone: null,
+        hasLargeAudience: false,
+        actionComment: null,
+        isLoading: false,
+        formMessage: null,
         modalVisible: false
       }
     },
 
-    watch: {
-      tweetCount: function(val) {
-        if (val === 4) {
-          this.showModal()
-        }
-      }
-    },
+    // watch: {
+    //   tweetCount: function(val) {
+    //     if (val === 4) {
+    //       this.showModal()
+    //     }
+    //   }
+    // },
 
     computed: {
       localBusinesses: function() {
         var self = this;
-        return this.businesses.filter(function(b){
+        return this.uniqueishBusinesses.filter(function(b){
           return b.state === self.selectedState;
-        });
+        }).slice(0, 20);
       },
 
       priorityBusinesses: function() {
         var self = this;
-        return this.businesses.filter(function(b){
+        return this.uniqueishBusinesses.filter(function(b){
           return PRIORITY_STATES.indexOf(b.state) !== -1;
         }).slice(0, 20);
+      },
+
+      uniqueishBusinesses: function() {
+        var uids = [];
+        var businesses = [];
+        
+        for (var i = 0; i < this.businesses.length; i++) {
+          var biz = this.businesses[i];
+          var uid = biz.twitter + biz.state;
+
+          if (uids.indexOf(uid) === -1) {
+            uids.push(uid);
+            businesses.push(biz);
+          }
+        }
+
+        return businesses;
       }
     },
 
@@ -174,6 +199,91 @@ document.addEventListener("DOMContentLoaded", function() {
       hideModal: function() {
         this.modalVisible = false;
         document.querySelector('body').classList.remove('modal-open');
+      },
+
+      getMetaContent: function(name) {
+        var el = document.querySelector('meta[name="' + name + '"]') || document.querySelector('meta[property="' + name + '"]');
+        
+        if (el) {
+          return el.getAttribute('content');
+        }
+
+        return null;
+      },
+
+      openPopup: function(url, title='popup', w=600, h=500) {
+        // Fixes dual-screen position
+        var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+        var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+        var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+        var top = ((height / 2) - (h / 2)) + dualScreenTop;
+        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+        // Puts focus on the newWindow
+        if (window.focus) {
+          newWindow.focus();
+        }
+      },
+
+      shareOnFacebook: function() {
+        var url = this.getMetaContent('og:url');
+        this.openPopup('https://www.facebook.com/sharer.php?u=' + encodeURIComponent(url), 'facebook');
+      },
+
+      shareOnTwitter: function() {
+        var tweetText = this.getMetaContent('twitter:description') + ' ' + this.getMetaContent('twitter:url');
+        this.openPopup('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'twitter');
+      },
+
+      submitForm: function() {
+        var self = this;
+        self.isLoading = true;
+        self.$http.post('https://queue.fightforthefuture.org/action', {
+          member: {
+            first_name: self.name,
+            email: self.email,
+            postcode: self.zipCode,
+            phone_number: self.phone,
+            country: 'US'
+          },
+          hp_enabled: 'true',
+          guard: '',
+          contact_congress: 0,
+          org: 'fftf',
+          an_tags: "[\"net-neutrality\"]",
+          an_petition_id: '11f84b38-e65b-4259-b0ae-e879a4044ca9',
+          volunteer: self.hasLargeAudience,
+          action_comment: self.actionComment
+        }, { emulateJSON: true })
+        .then(function(response){
+          self.isLoading = false;
+
+          if (response.ok) {
+            self.resetForm();
+            self.showModal();
+          }
+          else {
+            self.formMessage = "That didn't work for some reason :(";
+          }
+        })
+        .catch(function(error){
+          self.isLoading = false;
+          self.formMessage = "That didn't work for some reason :(";
+        })
+      },
+
+      resetForm() {
+        this.phone = null;
+        this.name = null;
+        this.email = null;
+        this.zipCode = null;
+        this.hasLargeAudience = false;
+        this.actionComment = null;
+        this.formMessage = null;
       }
     }
   });
@@ -184,8 +294,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     computed: {
       tweetURL: function() {
-        var tweetText = "@" + this.business.twitter + " i am tweeting at you!";
-        return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
+        var tweetText = "@" + this.business.twitter + " Without net neutrality, Internet service providers will add a new tax onto businesses across the country. Please sign this open letter to stop this now:"
+        return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText) + '&url=' + encodeURIComponent('https://www.businessesfornetneutrality.com');
       },
 
       locationString: function() {
