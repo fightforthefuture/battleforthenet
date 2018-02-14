@@ -75,6 +75,10 @@ button:hover {
   cursor: pointer;
 }
 
+.yellow {
+  color: #f6ec40 !important;
+}
+
 .clearfix:after {
   content:"";
   display:block;

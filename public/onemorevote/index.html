@@ -70,10 +70,6 @@
             <input type="tel" placeholder="ZIP Code*" v-model="zipCode">
             <input type="tel" placeholder="Phone #" v-model="phone">
           </div>
-          <button class="btn join-btn" v-bind:disabled="isLoading">
-            <span v-if="isLoading" v-cloak>Joining...</span>
-            <span v-else>Join the Protest</span>
-          </button>
           <div class="large-audience">
             <label>
               <input type="checkbox" v-model="hasLargeAudience">
@@ -81,9 +77,11 @@
             </label>
             <input type="text" placeholder="Explain" v-model="actionComment" v-if="hasLargeAudience" v-cloak>
           </div>
-          <div class="disclaimer">
-            <small><a href="https://www.fightforthefuture.org/">Fight for the Future</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we may follow up by SMS (message &amp; data rates apply.) You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a></small>
-          </div>
+          <button class="btn join-btn" v-bind:disabled="isLoading">
+            <span v-if="isLoading" v-cloak>Joining...</span>
+            <span v-else>Join the Protest</span>
+          </button>
+          <p>Or text <strong class="yellow">MISSION</strong> to <strong class="yellow">384-387</strong> to contact Congress and stop the FCC</p>
         </form>
       </section>
 
