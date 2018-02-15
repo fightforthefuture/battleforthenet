@@ -65,12 +65,12 @@
           <p v-cloak v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
           <input type="hidden" name="country" value="United States">
           <div class="row">
-            <input type="text" placeholder="Name*" required v-model="name">
-            <input type="email" placeholder="Email*" required v-model="email">
+            <input id="name" type="text" placeholder="Name*" required v-model="name">
+            <input id="email" type="email" placeholder="Email*" required v-model="email">
           </div>
           <div class="row">
-            <input type="tel" placeholder="Zip Code" v-model="zipCode">
-            <input type="tel" placeholder="Phone #" v-model="phone">
+            <input id="zipCode" type="tel" placeholder="Zip Code*" required v-model="zipCode">
+            <input id="phone" type="tel" placeholder="Phone #" v-model="phone">
           </div>
           <button class="btn join-btn" v-bind:disabled="isLoading">
             <span v-if="isLoading" v-cloak>Joining...</span>
