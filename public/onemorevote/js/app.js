@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+  var TEXT_FLOW_ID = '17f1f58a-b56d-4d95-ac83-a8586dbcb99c';
+
   Vue.component('progress-bar', {
     template: '#progress-bar-template',
 
@@ -52,17 +54,17 @@ document.addEventListener("DOMContentLoaded", function() {
         actionComment: null,
         isLoading: false,
         formMessage: null,
-        modalVisible: false,
-        isDemandProgressPage: false
-        
+        modalVisible: false 
+      }
+    },
+
+    computed: {
+      isDemandProgressPage: function() {
+        return window.location.href.indexOf('org=dp') !== -1;
       }
     },
     
     methods: {
-      windowLocation: function(){
-        var self= this; 
-        self.isDemandProgressPage = window.location.href.indexOf('org=dp') !== -1
-      },
       submitFormDp: function(event){
         var self = this;
         self.isLoading = true;
@@ -125,6 +127,11 @@ document.addEventListener("DOMContentLoaded", function() {
       submitForm: function() {
         var self = this;
         self.isLoading = true;
+
+        if (self.phone) {
+          self.startTextFlow();
+        }
+
         self.$http.post('https://queue.fightforthefuture.org/action', {
           member: {
             first_name: self.name,
@@ -167,6 +174,13 @@ document.addEventListener("DOMContentLoaded", function() {
         this.hasLargeAudience = false;
         this.actionComment = null;
         this.formMessage = null;
+      },
+
+      startTextFlow() {
+        this.$http.post('https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', { 
+          flow: TEXT_FLOW_ID,
+          phone: this.phone
+        })
       },
 
       showModal: function() {
@@ -218,5 +232,4 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   });
-  app.windowLocation();
 });
