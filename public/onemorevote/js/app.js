@@ -61,36 +61,89 @@ document.addEventListener("DOMContentLoaded", function() {
     methods: {
       windowLocation: function(){
         var self= this; 
-        self.isDemandProgressPage = window.location.href.indexOf('org=dp') !== -1
+        self.isDemandProgressPage = window.location.href.indexOf('source=dp') !== -1
       },
       submitFormDp: function(event){
-        var self = this;
-        self.isLoading = true;
-              
+        var self = this
+        const name = document.getElementById('name') 
+        const nameRegex = /^[A-Za-z '.-]+$/.test(name.value)
+        const email = document.getElementById('email')
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email.value)
+        const zipCode = document.getElementById('zipCode')
+        
+        
+        if (!nameRegex) {
+            name.focus()
+            alert('Please enter your name')
+            return
+          }
+        
+        if (!emailRegex) {
+            email.focus()
+            alert('Please enter your email')
+            return
+          }
+          
+        if (!self.zipCode) {
+          zipCode.focus()
+          alert('Please enter your Zipcode')
+          return
+        } else if (self.zipCode.length < 5 || self.zipCode.length > 5) {
+          zipCode.focus();
+          alert('Please enter a valid Zipcode')
+          return
+        }
+
+        const nameAlert = function(){
+          name.focus()
+          alert('Please enter your name')
+          return
+        }
+        
+        const emailAlert = function(){
+          email.focus()
+          alert('Please enter your email')
+          return
+        }
+        
+        const phoneAlert = function(){
+          zipCode.focus();
+          alert('Please enter your zipCode')
+          return
+        }
+        
+        const zipCodeAlert = function(){
+          zipCode.focus();
+          alert('Please enter your zipCode')
+          return
+        }
+        
+        const getQueryVariables = (function(){
+          const variables = {};
+          const queryString = location.search.substr(1);
+          const pairs = queryString.split('&');
+          
+          for (let i = 0; i < pairs.length; i++) {
+            const keyValue = pairs[i].split('=');
+            variables[keyValue[0]] = keyValue[1];
+          }
+          
+          return variables;
+        }())
+        
         const params = {
-          name: self.name,
-          phone: self.phone,
-          email: self.email,
-          zip: self.zipCode,
+          name: self.name ? self.name.trim() : nameAlert(),
+          phone: self.phone ? self.phone : phoneAlert(),
+          email: self.email ? self.email : emailAlert(),
+          zip: self.zipCode ? self.zipCode : zipCodeAlert(),
           page: 'one-more-vote',
           country: 'united states',
           form_name: 'act-petition',
-          source: 'website',
+          source: getQueryVariables || 'website',
           want_progress: 1,
           js: 1,
           opt_in: 1
         }
-        
-              
-        Object.keys(params).forEach(function(key) {
-            if(params[key] && (typeof params[key] != "number")){
-              params[key] = params[key].trim()
-            } else {
-              if(typeof params[key] != "number"){
-                params[key] = ''
-              }
-            }
-        });  
       
         // iFrame
         const iframe = document.createElement('iframe')
@@ -113,7 +166,8 @@ document.addEventListener("DOMContentLoaded", function() {
             input.value = params[key]
             form.appendChild(input)
         });  
-
+        
+        self.isLoading = true
         form.submit()
         
         setTimeout(function() { 
