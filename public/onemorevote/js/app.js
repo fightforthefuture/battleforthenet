@@ -67,6 +67,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
     methods: {
       submitForm: function() {
+        if (this.phone) {
+          this.startTextFlow();
+        }
+
         if (this.isDemandProgressPage) {
           this.submitDPForm();
         }
@@ -90,11 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
       submitFFTFForm: function() {
         var self = this;
         self.isLoading = true;
-
-        if (self.phone) {
-          self.startTextFlow();
-        }
-
         self.$http.post('https://queue.fightforthefuture.org/action', {
           member: {
             first_name: self.name,
