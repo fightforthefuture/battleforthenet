@@ -34,6 +34,12 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css" />
   <link href="css/style.css?v=CACHE_BUST" rel="stylesheet" type="text/css" />
 
+  <!-- Sentry error reporting -->
+  <script src="https://cdn.ravenjs.com/3.22.3/raven.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    if (typeof Raven !== 'undefined') Raven.config('https://82802ee452a54e328dc1f650353f3f2a@sentry.io/288976').install();
+  </script>
+
   <!-- App JS -->
   <script src="js/vue.js"></script>
   <script src="js/vue-resource.js"></script>
