@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   var TEXT_FLOW_ID = '17f1f58a-b56d-4d95-ac83-a8586dbcb99c';
+  var GENERIC_ERROR = "That didn't work for some reason :(";
 
   Vue.component('progress-bar', {
     template: '#progress-bar-template',
@@ -65,66 +66,28 @@ document.addEventListener("DOMContentLoaded", function() {
     },
     
     methods: {
-      submitFormDp: function(event){
+      submitForm: function() {
+        if (this.isDemandProgressPage) {
+          this.submitDPForm();
+        }
+        else {
+          this.submitFFTFForm();
+        }
+      },
+
+      submitDPForm: function() {
         var self = this;
         self.isLoading = true;
-              
-        const params = {
-          name: self.name,
-          phone: self.phone,
-          email: self.email,
-          zip: self.zipCode,
-          page: 'one-more-vote',
-          country: 'united states',
-          form_name: 'act-petition',
-          source: 'website',
-          want_progress: 1,
-          js: 1,
-          opt_in: 1
-        }
-        
-              
-        Object.keys(params).forEach(function(key) {
-            if(params[key] && (typeof params[key] != "number")){
-              params[key] = params[key].trim()
-            } else {
-              if(typeof params[key] != "number"){
-                params[key] = ''
-              }
-            }
-        });  
-      
-        // iFrame
-        const iframe = document.createElement('iframe')
-        iframe.style.display = 'none'
-        iframe.setAttribute('name', 'actionkit-iframe')
-        document.body.appendChild(iframe)
-         
-        // Form
-        const form = document.createElement('form')
-        form.style.display = 'none'
-        form.setAttribute('action', 'https://act.demandprogress.org/act/')
-        form.setAttribute('method', 'post')
-        form.setAttribute('target', 'actionkit-iframe')
-        document.body.appendChild(form)
-        
-        Object.keys(params).forEach(function(key) {
-            const input = document.createElement('input')
-            input.type = 'hidden'
-            input.name = key
-            input.value = params[key]
-            form.appendChild(input)
-        });  
+        self.$refs.dpForm.submit();
 
-        form.submit()
-        
         setTimeout(function() { 
-          self.isLoading = false
-          self.resetForm()
-          self.showModal()
-        }, 5000)
+          self.isLoading = false;
+          self.resetForm();
+          self.showModal();
+        }, 5000);
       },
-      submitForm: function() {
+
+      submitFFTFForm: function() {
         var self = this;
         self.isLoading = true;
 
@@ -157,12 +120,12 @@ document.addEventListener("DOMContentLoaded", function() {
             self.showModal();
           }
           else {
-            self.formMessage = "That didn't work for some reason :(";
+            self.formMessage = GENERIC_ERROR;
           }
         })
         .catch(function(error){
           self.isLoading = false;
-          self.formMessage = "That didn't work for some reason :(";
+          self.formMessage = GENERIC_ERROR;
         })
       },
 

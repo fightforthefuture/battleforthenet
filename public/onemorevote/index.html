@@ -66,41 +66,33 @@
         <p>
           The FCC voted to repeal net neutrality, letting internet providers like Verizon and Comcast impose new fees, throttle bandwidth, and censor online content. But we can stop them by using the Congressional Review Act (CRA). We need one more vote to win in the Senate, and we're launching an Internet-wide push to get it. <br><strong>Fill out the form below. We’ll help you contact Congress and send you alerts about the day of action.</strong>
         </p>
-        <iframe class="hidden" name="actionkit-iframe"></iframe>
-        <form v-if="isDemandProgressPage" @submit.prevent="submitFormDp($event)">
-          <p v-cloak v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
-          <input type="hidden" name="country" value="United States">
-          <div class="row">
-            <input type="text" placeholder="Name*" required v-model="name">
-            <input type="email" placeholder="Email*" required v-model="email">
-          </div>
-          <div class="row">
-            <input type="tel" placeholder="Zip Code" v-model="zipCode">
-            <input type="tel" placeholder="Phone #" v-model="phone">
-          </div>
-          <button class="btn join-btn" v-bind:disabled="isLoading">
-            <span v-if="isLoading" v-cloak>Joining...</span>
-            <span v-else>Join the Protest</span>
-          </button>
-          <div class="large-audience">
-            <label>
-              <input type="checkbox" v-model="hasLargeAudience">
-              &nbsp;I have a large online audience, or a friend or employer who does.
-            </label>
-            <input type="text" placeholder="Explain" v-model="actionComment" v-if="hasLargeAudience" v-cloak>
-          </div>
-          <div class="disclaimer">
-            <small><a href="https://www.demandprogress.org/">Demand Progress</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we may follow up by SMS (message &amp; data rates apply.) You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a></small>
-          </div>
-        </form>
-        <form v-else @submit.prevent="submitForm()">
+
+        <!-- hidden Demand Progress form -->
+        <div class="hidden">
+          <iframe class="hidden" name="actionkit-iframe"></iframe>
+          <form action="https://act.demandprogress.org/act/" method="post" target="actionkit-iframe" ref="dpForm">
+            <input type="hidden" name="name" :value="name">
+            <input type="hidden" name="phone" :value="phone">
+            <input type="hidden" name="zip" :value="zipCode">
+            <input type="hidden" name="page" value="one-more-vote">
+            <input type="hidden" name="country" value="united states">
+            <input type="hidden" name="form_name" value="act-petition">
+            <input type="hidden" name="source" value="website">
+            <input type="hidden" name="want_progress" value="1">
+            <input type="hidden" name="js" value="1">
+            <input type="hidden" name="opt_in" value="1">
+          </form>
+        </div>
+
+        <form @submit.prevent="submitForm()">
           <p v-cloak v-if="formMessage" class="error"><strong>{{ formMessage }}</strong></p>
           <div class="row">
             <input type="text" placeholder="Name*" required v-model="name">
             <input type="email" placeholder="Email*" required v-model="email">
           </div>
           <div class="row">
-            <input type="tel" placeholder="ZIP Code*" required v-model="zipCode">
+            <input type="tel" placeholder="ZIP Code" v-model="zipCode" v-if="isDemandProgressPage" v-cloak>
+            <input type="tel" placeholder="ZIP Code*" required v-model="zipCode" v-else>
             <input type="tel" placeholder="Phone #" v-model="phone">
           </div>
           <div class="large-audience">
@@ -115,7 +107,10 @@
             <span v-else>Join the Protest</span>
           </button>
           <p>Or text <strong class="yellow">MISSION</strong> to <strong class="yellow">384-387</strong> to contact Congress and stop the FCC</p>
-          <div class="disclaimer">
+          <div class="disclaimer" v-if="isDemandProgressPage" v-cloak>
+            <small><a href="https://www.demandprogress.org/">Demand Progress</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we may follow up by SMS (message &amp; data rates apply.) You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a></small>
+          </div>
+          <div class="disclaimer" v-else>
             <small><a href="https://www.fightforthefuture.org/">Fight for the Future</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS (message &amp; data rates apply.) You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/">Privacy Policy</a></small>
           </div>
         </form>
