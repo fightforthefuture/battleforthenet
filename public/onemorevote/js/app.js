@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     computed: {
       isDemandProgressPage: function() {
-        return window.location.href.indexOf('org=dp') !== -1;
+        return window.location.href.indexOf('source=dp') !== -1;
       }
     },
     
