@@ -76,7 +76,7 @@
         <section>
           <h2>Step 3: Tweet these out-of-state businesses too, since <em>their</em> members of Congress are high priorty!</h2>
           <div class="businesses" v-if="isLoaded" v-cloak>
-            <business-card v-for="business in priorityBusinesses" :business="business"></business-card>
+            <business-card v-for="business in priorityBusinesses" :business="business" :national="true"></business-card>
           </div>
         </section>
 
