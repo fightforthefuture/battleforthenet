@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
       states: STATES,
       selectedState: null,
       politicians: [],
-      isLoaded: false
+      isLoaded: false,
     },
 
     computed: {
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
           return p.team === 'team-cable';
         });
       },
-      
+
       senateCRACount: function () {
         return this.senators.filter(function(p){
           return p.yesOnCRA
@@ -205,6 +205,10 @@ document.addEventListener("DOMContentLoaded", function() {
             self.isLoaded = true;
           }
         });
+      },
+
+      mapState: function(e) {
+        this.selectedState = e.target.id;
       }
     }
   });
@@ -247,4 +251,5 @@ document.addEventListener("DOMContentLoaded", function() {
   Vue.component('team-legend', {
     template: '#team-legend-template'
   });
+
 });
