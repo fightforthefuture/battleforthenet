@@ -117,11 +117,8 @@ h3.legend .green {
   background-color: #35999d;
 }
 
-.us-map {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+.mapState-selector {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
