@@ -204,7 +204,40 @@ document.addEventListener("DOMContentLoaded", function() {
             self.politicians = response.body;
             self.isLoaded = true;
           }
+          var changeColor = {};
+          self.politicians.forEach(function(pol) {
+            var state = pol.state;
+
+            if (state && pol.yesOnCRA === true) {
+              if (!changeColor.hasOwnProperty(state)) {
+                changeColor[state] = 1;
+              } else if (changeColor.hasOwnProperty(state)) {
+                changeColor[state] += 1;
+              }
+            } else if (state && pol.yesOnCRA === false) {
+                if (!changeColor.hasOwnProperty(state)) {
+                  changeColor[state] = - 1;
+                } else if (changeColor.hasOwnProperty(state)) {
+                  changeColor[state] -= 1;
+                }
+              }
+          })
+
+          for (state in changeColor) {
+            if (changeColor[state] > 0) {
+              this.setStateColor(state);
+            }
+          }
         });
+      },
+
+      setStateColor: function(elem) {
+        var mapState = document.getElementsByTagName("path");
+        for (var i = 0; i < mapState.length; i++) {
+          if (mapState[i].id === elem) {
+            mapState[i].setAttribute("fill", "#45bcc0");
+          }
+        }
       },
 
       mapState: function(e) {
