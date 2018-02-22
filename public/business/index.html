@@ -52,7 +52,6 @@
 
         <section>
           <h2>Step 1: Tweet these businesses in your state, asking <em>them</em> to sign our letter and meet with Congress.</h2>
-          <p>(If your business is on this list, you can contact us at <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a>)</p>
           <p class="state-selector">
             <select v-model="selectedState">
               <option :value="null">Select state</option>
@@ -64,6 +63,7 @@
             <p v-if="localBusinesses.length < 1">We don't have any businesses on file for your state yet. <br><strong>Can you help us out by <a href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0">adding some to our spreadsheet</a>?</strong></p>
           </div>
           <p v-else><i>Loading...</i></p>
+          <p>(If your business is on this list, you can contact us at <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a>)</p>
         </section>
 
         <section>
