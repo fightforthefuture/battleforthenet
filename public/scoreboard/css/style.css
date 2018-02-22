@@ -126,3 +126,9 @@ h3.legend .green {
     margin: 7px;
   }
 }
+
+@media screen and (max-width: 940px) {
+  .mapState-selector {
+    display: none;
+  }
+}
