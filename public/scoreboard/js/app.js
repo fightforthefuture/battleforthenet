@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
           var changeColor = {};
           self.politicians.forEach(function(pol) {
             var state = pol.state;
-
+            // console.log(pol)
             if (state && pol.yesOnCRA === true) {
               if (!changeColor.hasOwnProperty(state)) {
                 changeColor[state] = 1;
@@ -223,11 +223,16 @@ document.addEventListener("DOMContentLoaded", function() {
               }
           })
 
+          var undecided = [];
           for (state in changeColor) {
             if (changeColor[state] > 0) {
               this.setStateColor(state);
             }
+            if (changeColor[state] === 0) {
+              undecided.push(state);
+            }
           }
+          // this.undecidedState(undecided);
         });
       },
 
@@ -239,6 +244,22 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
       },
+
+      // This method lists the undecided states above the map
+      // undecidedState: function(arr) {
+      //   var undecidedStates = document.querySelector(".undecided");
+      //   arr.forEach(function(elem) {
+      //     undecidedStates.innerHTML += '<p>' + '*' + elem + '<p>';
+      //   })
+      // },
+
+      // This method adds asterisks to the map for undecided states...not working yet
+      // undecidedState: function(arr) {
+      //   var undecidedStates = document.querySelector("textPath");
+      //   arr.forEach(function(state) {
+      //     undecidedStates.setAttribute("href", "#" + state);
+      //   })
+      // },
 
       mapState: function(e) {
         this.selectedState = e.target.id;
