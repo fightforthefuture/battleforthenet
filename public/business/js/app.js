@@ -89,6 +89,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
+  // send event to Google Analytics
+  var trackEvent = function(category, action, label, value) {
+    if (!window.ga) return
+
+    if (typeof label === undefined) {
+      label = null;
+    }
+
+    if (typeof value === undefined) {
+      value = null;
+    }
+
+    window.ga('send', 'event', category, action, label, value);
+  };
+
   Vue.filter('formatNumber', formatNumber);
   Vue.filter('pluralize', pluralize);
 
@@ -265,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function() {
           if (response.ok) {
             self.resetForm();
             self.showModal();
+            trackEvent('signup', 'success', 'Sign Up', 'Step 4');
           }
           else {
             self.formMessage = "That didn't work for some reason :(";
@@ -284,6 +300,11 @@ document.addEventListener("DOMContentLoaded", function() {
         this.hasLargeAudience = false;
         this.actionComment = null;
         this.formMessage = null;
+      },
+
+      openSpreadsheet() {
+        window.open('https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0', '_blank');
+        trackEvent('button', 'click', 'Get Started', 'Step 5');
       }
     }
   });
@@ -329,9 +350,12 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     methods: {
-      openTweetURL: function(business) {
+      openTweetURL: function() {
         this.$parent.tweetCount += 1;
         window.open(this.tweetURL, '_blank');
+
+        var stepNumber = this.national ? 3 : 1;
+        trackEvent('business', 'tweet', this.business.twitter, 'Step ' + stepNumber);
       }
     }
   });

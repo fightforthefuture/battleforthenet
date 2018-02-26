@@ -293,6 +293,14 @@ section {
   margin: 8px 1%;
 }
 
+.business-row:hover {
+  cursor: pointer;
+}
+
+.business-row:hover .btn-tweet {
+  background-color: #0691ba;
+}
+
 .business-row .logo {
   width: 35px;
   height: 35px;

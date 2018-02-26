@@ -108,7 +108,7 @@
           <p>For this plan to work, we need to build a national list of companies for Internet users to contact, and we need to do it <em>fast</em>. Which companies do you think need to speak out on net neutrality? They could be household names or shops down the street. <strong>We especially need companies based outside tech centers like Silicon Valley and NYC.</strong> All we need is the company's Twitter handle and where they're based. Can you help? For now, we're giving volunteers direct access to a spreadsheet (not the live version). You just have to add the Twitter handle and zipcode (or city/state) of each company.
           </p>
           <p>
-            <a class="btn btn-large" href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0">Get Started</a>
+            <a class="btn btn-large" href="#" @click.prevent="openSpreadsheet()">Get Started</a>
           </p>
           <p>
             (opens our spreadsheet)
@@ -190,13 +190,13 @@
     </script> -->
 
     <script type="text/x-template" id="business-card-template">
-      <div class="business-row">
+      <div class="business-row" @click="openTweetURL()">
         <img class="logo" :src="business.logo" :alt="business.name + ' Logo'">
         <div class="name-location">
           <strong class="truncate">{{ business.name }}</strong>
           {{ locationString }}
         </div>
-        <a class="btn btn-tweet" :href="tweetURL" target="_blank">Tweet</a>
+        <a class="btn btn-tweet">Tweet</a>
       </div>
     </script>
 
@@ -211,13 +211,14 @@
     <script src="//c.shpg.org/103/sp.js"></script>
 
     <!-- Google Analytics -->
-<!--     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26576645-45"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      gtag('config', 'UA-26576645-20');
-    </script> -->
+    ga('create', 'UA-26576645-47', 'auto');
+    ga('send', 'pageview');
+    </script>
   </body>
 </html>
