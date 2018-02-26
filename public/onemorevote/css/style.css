@@ -332,16 +332,23 @@ form .large-audience label {
   width: 64px;
 }
 
-#share-buttons a {
+#share-buttons .share-button {
   display: block;
   width: 64px;
   height: 64px;
   border-radius: 0 2px 2px 0;
 }
 
-#share-buttons a.facebook {
+#share-buttons .facebook {
   background-color: #3C5A96;
   margin-bottom: 10px;
+  background-image: url(/images/share/facebook_white.svg);
+  background-size: cover;
+}
+
+#share-buttons .facebook .sp_fb_large a {
+  color: transparent !important;
+  background: transparent !important;
 }
 
 #share-buttons a.twitter {
