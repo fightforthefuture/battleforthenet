@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     return x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
   };
 
-  var pluralize = function(number, singular, plural=null){
+  var pluralize = function(number, singular, plural){
     if (parseFloat(number) === 1.0) {
       return number + ' ' + singular;
     }
