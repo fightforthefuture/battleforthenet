@@ -1352,17 +1352,18 @@ $GRAY_LIGHT: #b1aedc;
 
 		}
 		.persistent-button {
-            min-width: 100%;
+      min-width: 100%;
 			width: 100%;
 			right: 0;
 			a.btn {
 				border-radius: 0;
-				font-size: 20px;
-				padding: 10px 0;
-
-                img {
-                  max-width: 1.5rem;
-                }
+				font-size: 1.9rem;
+				padding: 1rem 0;
+				letter-spacing: -0.4px;
+				img {
+					max-width: 1.8rem;
+					margin-right: 0.2rem;
+				}
 			}
 		}
 		.toggle-true .persistent-button {
