@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         actionComment: null,
         isLoading: false,
         formMessage: null,
-        modalVisible: true,
+        modalVisible: false,
         hasCalled: false
       }
     },
