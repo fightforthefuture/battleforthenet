@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+  "use strict";
+
   var TEXT_FLOW_ID = '17f1f58a-b56d-4d95-ac83-a8586dbcb99c';
   var GENERIC_ERROR = "That didn't work for some reason :(";
 
@@ -182,7 +184,16 @@ document.addEventListener("DOMContentLoaded", function() {
         return null;
       },
 
-      openPopup: function(url, title='popup', w=600, h=500) {
+      openPopup: function(url, title, w, h) {
+        if (!title) {
+          title = 'popup';
+        }
+        if (!w) {
+          w = 600;
+        }
+        if (!h) {
+          h = 500;
+        }
         // Fixes dual-screen position
         var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
         var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
