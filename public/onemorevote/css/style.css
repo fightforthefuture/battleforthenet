@@ -185,12 +185,12 @@ textarea::placeholder {
 form .row {
   display: flex;
   justify-content: center;
-  flex-flow: row wrap;
   margin-bottom: 2%;
 }
 
-form .row input {
-  width: 49%;
+form .row input,
+form .row .btn {
+  flex: 1;
   margin-right: 2%;
 }
 
@@ -342,13 +342,6 @@ form .large-audience label {
 #share-buttons .facebook {
   background-color: #3C5A96;
   margin-bottom: 10px;
-  background-image: url(/images/share/facebook_white.svg);
-  background-size: cover;
-}
-
-#share-buttons .facebook .sp_fb_large a {
-  color: transparent !important;
-  background: transparent !important;
 }
 
 #share-buttons a.twitter {
@@ -383,6 +376,28 @@ body.modal-open {
   margin-top: 20px;
 }
 
+.modal h4 {
+  color: #fff;
+  font-weight: normal;
+}
+
+.modal blockquote {
+  display: block;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.modal .tip {
+  background-color: #24233d;
+  color: #fff;
+  background-image: url(/images/tip-icon.png);
+  background-size: 15px 15px;
+  background-position: 8px center;
+  background-repeat: no-repeat;
+  font-size: .92em;
+  padding: 8px 8px 8px 30px;
+}
+
 .modal .close {
   position: absolute;
   right: 8px;
@@ -394,6 +409,25 @@ body.modal-open {
   border: none;
 }
 
+.modal main {
+  margin: 20px 30px;
+}
+
+.modal form .row .btn {
+  font-size: 18px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal .share .row {
+  display: flex;
+  margin-top: 10px;
+}
+
+.modal .share .row .btn {
+  flex: 1;
+}
+
 .modal .share .btn {
   color: #fff;
   text-decoration: none;
@@ -401,14 +435,19 @@ body.modal-open {
   display: inline-block;
   width: auto;
   background-repeat: no-repeat;
-  background-position: center left;
+  background-position: 8px center;
+  background-size: 24px;
   padding-left: 40px;
+  margin-right: 10px;
+}
+
+.modal .share .btn:last-child {
+  margin-right: 0;
 }
 
 .modal .share .btn.facebook {
   background-color: #3C5A96;
   background-image: url(/images/share/facebook_white.svg);
-  margin-right: 10px;
 }
 
 .modal .share .btn.twitter {
@@ -416,18 +455,33 @@ body.modal-open {
   background-image: url(/images/share/twitter_white.svg);
 }
 
+.modal .share .btn.donate {
+  background-image: url(/images/heart.svg);
+  background-color: #3a4459;
+  background-size: 18px;
+}
+
+.modal .share .btn.protest {
+  background-color: #59ADEB;
+  background-image: url(/images/location-icon.png);
+  background-size: 15px auto;
+  background-position: 15% center;
+  border: 1px solid #282f3e;
+  background-color: transparent;
+}
+
 .modal header {
   background-color: #171b24;
-  padding: 30px 0 20px;
+  padding: 30px 30px 10px;
   border-radius: 8px 8px 0 0;
 }
 
-.modal img.thanks {
-  width: 320px;
+.modal img.can-you-call {
+  width: 366px;
 }
 
-.modal main {
-  padding: 0 0 30px;
+.modal img.calling-you-now {
+  width: 222.5px;
 }
 
 @keyframes blink-last-bar {
@@ -468,6 +522,10 @@ body.modal-open {
 .progress-bar.done .bar:last-child {
   animation: blink-last-bar 1.5s infinite;
   animation-delay: .5s;
+}
+
+.fade-in {
+  animation: fade-in .5s;
 }
 
 @media screen and (min-width: 601px) {

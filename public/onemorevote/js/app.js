@@ -55,13 +55,32 @@ document.addEventListener("DOMContentLoaded", function() {
         actionComment: null,
         isLoading: false,
         formMessage: null,
-        modalVisible: false 
+        modalVisible: true,
+        hasCalled: false
       }
     },
 
     computed: {
       isDemandProgressPage: function() {
         return window.location.href.indexOf('source=dp') !== -1;
+      },
+
+      protestLink: function() {
+        var link = 'https://events.battleforthenet.com/';
+
+        if (this.zipCode) {
+          link += '#zipcode=' + this.zipCode;
+        }
+
+        return link;
+      },
+
+      donateLink: function() {
+        if (this.isDemandProgressPage) {
+          return 'https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn';
+        }
+
+        return 'https://donate.fightforthefuture.org/campaigns/bftnlanding/';
       }
     },
     
@@ -86,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setTimeout(function() { 
           self.isLoading = false;
-          self.resetForm();
           self.showModal();
         }, 5000);
       },
@@ -115,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function() {
           self.isLoading = false;
 
           if (response.ok) {
-            self.resetForm();
             self.showModal();
           }
           else {
@@ -185,12 +202,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
       shareOnFacebook: function() {
         var url = this.getMetaContent('og:url');
-        this.openPopup('https://www.facebook.com/sharer.php?u=' + encodeURIComponent(url), 'facebook');
+        this.openPopup('http://shpg.org/103/186446/facebook', 'facebook');
       },
 
       shareOnTwitter: function() {
         var tweetText = this.getMetaContent('twitter:description') + ' ' + this.getMetaContent('twitter:url');
         this.openPopup('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'twitter');
+      },
+
+      callCongress: function() {
+        this.hasCalled = true;
+        this.$http.post('https://call-congress.fightforthefuture.org/create', {
+          campaignId: 'battleforthenet-2017',
+          userPhone: this.phone,
+          zipcode: this.zipcode
+        }, { emulateJSON: true })
       }
     }
   });
