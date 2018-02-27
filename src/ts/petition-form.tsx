@@ -121,6 +121,8 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			error: null
 		} as PetitionFormState);
 
+		const actionComment = `${this.state.input_comment}\n\nThe sender of this message generated it using tools available at BattleForTheNet.com.`
+
 		if (this.props.swap) {
 			// Submit form directly to ActionKit
 
@@ -140,7 +142,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 				"address1": this.state.input_address,
 				"zip": this.state.input_zip,
 				"country": "US",
-				"action_comment": this.state.input_comment,
+				"action_comment": actionComment,
 				"opt_in": true,
 				"source": this.props.trackProfile.utm_source
 			};
@@ -161,7 +163,7 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 				"member[street_address]": this.state.input_address,
 				"member[postcode]": this.state.input_zip,
 				"member[phone_number]": this.state.input_phone,
-				"action_comment": this.state.input_comment
+				"action_comment": actionComment
 			};
 			if (!this.state.input_opt_in) {
 			 data["opt_out"] = "1";
