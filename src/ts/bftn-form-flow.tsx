@@ -49,6 +49,10 @@ export class BFTNFormFlow extends React.Component<BFTNFormFlowProps, BFTNFormFlo
 		};
 	}
 	setModal(modal: string | null, zip = "", phone = ""): any {
+		// hi, i'm a hack. TODO: fix this
+		if (zip) {
+			(window as any)['ZIP_CODE'] = zip;
+		}
 		this.setState({modal: modal, zip: zip, phone: phone} as BFTNFormFlowState);
 	}
 	render() {
