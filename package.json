@@ -46,7 +46,7 @@
     "@types/react-dom": "15.5.1",
     "classlist-polyfill": "^1.2.0",
     "lodash": "^4.17.4",
-    "moment": "^2.18.1",
+    "moment": "^2.21.0",
     "native-promise-only": "^0.8.1",
     "react": "15.5.4",
     "react-dom": "15.5.4",
