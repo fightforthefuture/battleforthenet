@@ -330,14 +330,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     computed: {
       tweetURL: function() {
-        var tweetText = '';
-
-        if (this.national) {
-          tweetText = ".@" + this.business.twitter + " members of Congress REALLY listen to businesses. Can you sign on to this open letter supporting #NetNeutrality so lawmakers know how important this is to companies across the country?";
-        }
-        else {
-          tweetText = ".@" + this.business.twitter + " your members of Congress aren't all supporting #NetNeutrality, and will soon face a CRA vote to overturn the FCC’s repeal.\n\nIt’s crucial that all businesses in " + this.$parent.selectedState + " take a stand. Can you sign on to this letter?";
-        }
+        var tweetText = "Hi @" + this.business.twitter + ", I’m volunteering to save #NetNeutrality, especially because losing it will hurt businesses like you. Will you join other businesses in your area by signing this letter?";
 
         return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText) + '&url=' + encodeURIComponent('https://www.businessesfornetneutrality.com');
       },
