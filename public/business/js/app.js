@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       fetchBusinesses: function() {
         var self = this;
-        this.$http.get('https://data.battleforthenet.com/businesses.json').then(function(response){
+        this.$http.get('https://data.battleforthenet.com/businesses-v2.json').then(function(response){
           if (response.ok) {
             self.businesses = response.body;
             shuffle(self.businesses);
@@ -344,6 +344,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         else if (this.business.state) {
           return this.business.state;
+        }
+      },
+
+      logo: function() {
+        if (this.business.twitter) {
+          return 'https://data.battleforthenet.com/images/twitter/' + this.business.twitter.toLowerCase() + '.jpg';
+        }
+      },
+
+      domain: function() {
+        if (this.business.website) {
+          var a = document.createElement('a');
+          a.href = this.business.website;
+          return a.hostname.replace(/^www\./i, '');
         }
       }
     },

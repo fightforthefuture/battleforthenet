@@ -169,7 +169,6 @@
             <button class="close" @click="hideModal()">&times;</button>
 
             <h2>Thanks so much for your support!</h2>
-
             <p>Now, can you help us spread the word?</p>
 
             <div class="share">
@@ -183,23 +182,20 @@
 
     </div> <!-- /app -->
 
-<!--     <script type="text/x-template" id="business-card-template">
-      <div class="business-card" @click="openTweetURL()">
-        <img class="logo" :src="business.logo" :alt="business.name + ' Logo'">
-        <div class="name truncate" :title="business.name">{{ business.name }}</div>
-        <div class="location truncate" :title="business.location">({{ locationString }})</div>
-        <a class="btn btn-tweet" :href="tweetURL" target="_blank">Tweet</a>
-      </div>
-    </script> -->
-
     <script type="text/x-template" id="business-card-template">
-      <div class="business-row" @click="openTweetURL()">
-        <img class="logo" :src="business.logo" :alt="business.name + ' Logo'">
-        <div class="name-location">
-          <strong class="truncate">{{ business.name }}</strong>
-          {{ locationString }}
+      <div class="business-row">
+        <div class="content">
+          <img class="logo" :src="logo" :alt="business.name + ' Logo'">
+          <div class="name-location">
+            <strong class="truncate">{{ business.name }}</strong>
+            <address class="truncate">{{ locationString }}</address>
+            <div v-if="business.phone">
+              {{ business.phone }}
+            </div>
+            <a v-if="business.website" :href="business.website" target="_blank" class="truncate">{{ domain }}</a>
+          </div>
+          <a class="btn btn-tweet" @click.prevent="openTweetURL()">Tweet</a>
         </div>
-        <a class="btn btn-tweet">Tweet</a>
       </div>
     </script>
 
