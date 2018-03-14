@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  var PRIORITY_STATES = [ 'LA' ];
-
   var STATES = {
     "Alabama": "AL",
     "Alaska": "AK",
@@ -120,8 +118,9 @@ document.addEventListener("DOMContentLoaded", function() {
       return {
         states: STATES,
         selectedState: null,
-        isLoaded: false,
-        businesses: [],
+        isLoading: false,
+        localBusinesses: [],
+        priorityBusinesses: [],
         tweetCount: 0,
         name: null,
         email: null,
@@ -129,62 +128,32 @@ document.addEventListener("DOMContentLoaded", function() {
         phone: null,
         hasLargeAudience: false,
         actionComment: null,
-        isLoading: false,
+        isSubmittingForm: false,
         formMessage: null,
         modalVisible: false
       }
     },
 
-    // watch: {
-    //   tweetCount: function(val) {
-    //     if (val === 4) {
-    //       this.showModal()
-    //     }
-    //   }
-    // },
-
-    computed: {
-      localBusinesses: function() {
-        var self = this;
-        return this.uniqueishBusinesses.filter(function(b){
-          return b.state === self.selectedState;
-        }).slice(0, 20);
-      },
-
-      priorityBusinesses: function() {
-        var self = this;
-        return this.uniqueishBusinesses.filter(function(b){
-          return PRIORITY_STATES.indexOf(b.state) !== -1;
-        }).slice(0, 20);
-      },
-
-      uniqueishBusinesses: function() {
-        var uids = [];
-        var businesses = [];
-        
-        for (var i = 0; i < this.businesses.length; i++) {
-          var biz = this.businesses[i];
-          var uid = biz.twitter + biz.state;
-
-          if (uids.indexOf(uid) === -1) {
-            uids.push(uid);
-            businesses.push(biz);
-          }
+    watch: {
+      selectedState: function(newValue) {
+        if (newValue) {
+          this.fetchLocalBusinesses();
         }
-
-        return businesses;
+        else {
+          this.localBusinesses = [];
+        }
       }
     },
 
     created: function() {
       this.geocodeSelectedState();
-      this.fetchBusinesses();
+      this.fetchPriorityBusinesses();
     },
 
     methods: {
       geocodeSelectedState: function() {
         var self = this;
-        this.$http.get('https://fftf-geocoder.herokuapp.com').then(function(response){
+        self.$http.get('https://fftf-geocoder.herokuapp.com').then(function(response){
           if (response.ok) {
             var geo = response.body;
 
@@ -201,13 +170,43 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       },
 
-      fetchBusinesses: function() {
+      uniqueifyBusinesses: function(businesses) {
+        var uids = [];
+        var uniqueishBusinesses = [];
+        
+        for (var i = 0; i < businesses.length; i++) {
+          var biz = businesses[i];
+          var uid = biz.twitter + biz.state;
+
+          if (uids.indexOf(uid) === -1) {
+            uids.push(uid);
+            uniqueishBusinesses.push(biz);
+          }
+        }
+
+        return uniqueishBusinesses;
+      },
+
+      fetchLocalBusinesses: function() {
         var self = this;
-        this.$http.get('https://data.battleforthenet.com/businesses-v2.json').then(function(response){
+        self.isLoading = true;
+        self.$http.get('https://data.battleforthenet.com/businesses/' + self.selectedState.toLowerCase() + '.json').then(function(response){
           if (response.ok) {
-            self.businesses = response.body;
-            shuffle(self.businesses);
-            self.isLoaded = true;
+            var businesses = self.uniqueifyBusinesses(response.body);
+            shuffle(businesses);
+            self.localBusinesses = businesses.slice(0, 20);
+            self.isLoading = false;
+          }
+        });
+      },
+
+      fetchPriorityBusinesses: function() {
+        var self = this;
+        self.$http.get('https://data.battleforthenet.com/businesses/priority.json').then(function(response){
+          if (response.ok) {
+            var businesses = response.body;
+            shuffle(businesses);
+            self.priorityBusinesses = businesses.slice(0, 12);
           }
         });
       },
@@ -262,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       submitForm: function() {
         var self = this;
-        self.isLoading = true;
+        self.isSubmittingForm = true;
         self.$http.post('https://queue.fightforthefuture.org/action', {
           member: {
             first_name: self.name,
@@ -281,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function() {
           action_comment: self.actionComment
         }, { emulateJSON: true })
         .then(function(response){
-          self.isLoading = false;
+          self.isSubmittingForm = false;
 
           if (response.ok) {
             self.resetForm();
@@ -293,7 +292,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         })
         .catch(function(error){
-          self.isLoading = false;
+          self.isSubmittingForm = false;
           self.formMessage = "That didn't work for some reason :(";
         })
       },

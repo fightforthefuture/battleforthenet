@@ -60,14 +60,13 @@
           <p class="state-selector">
             <select v-model="selectedState">
               <option :value="null">Select state</option>
-              <option v-for="(abbr, name) in states" :value="abbr">{{ name }}</option>
+              <option v-for="(abbr, name) in states" :value="abbr">{{ isLoading && abbr == selectedState ? 'Loading data...' : name }}</option>
             </select>
           </p>
-          <div class="businesses" v-if="isLoaded" v-cloak>
+          <div class="businesses" v-cloak>
             <business-card v-for="business in localBusinesses" :business="business"></business-card>
             <p v-if="localBusinesses.length < 1 && selectedState">We don't have any businesses on file for your state yet. <br><strong>Can you help us out by <a href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0">adding some to our spreadsheet</a>?</strong></p>
           </div>
-          <p v-else><i>Loading...</i></p>
           <p>(If your business is on this list, you can contact us at <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a>)</p>
         </section>
 
@@ -83,7 +82,7 @@
           <h2>Step 3: Tweet these out-of-state businesses</h2>
           <p>These businesses are located in states where Congress is on the fence about supporting net neutrality.  Let them know how important this issue is!
           </p>
-          <div class="businesses" v-if="isLoaded" v-cloak>
+          <div class="businesses" v-if="priorityBusinesses.length > 0" v-cloak>
             <business-card v-for="business in priorityBusinesses" :business="business" :national="true"></business-card>
           </div>
         </section>
@@ -102,8 +101,8 @@
               <input type="tel" placeholder="ZIP Code*" required v-model="zipCode">
               <input type="tel" placeholder="Phone #" v-model="phone">
             </div>
-            <button class="btn btn-large btn-block" v-bind:disabled="isLoading">
-              <span v-if="isLoading" v-cloak>Joining...</span>
+            <button class="btn btn-large btn-block" v-bind:disabled="isSubmittingForm">
+              <span v-if="isSubmittingForm" v-cloak>Joining...</span>
               <span v-else>Sign Up</span>
             </button>
             <div class="disclaimer">
