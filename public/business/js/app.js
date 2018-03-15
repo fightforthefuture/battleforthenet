@@ -138,16 +138,26 @@ document.addEventListener("DOMContentLoaded", function() {
       selectedState: function(newValue) {
         if (newValue) {
           this.fetchLocalBusinesses();
+          localStorage.setItem('selectedState', newValue);
         }
         else {
           this.localBusinesses = [];
+          localStorage.removeItem('selectedState');
         }
       }
     },
 
     created: function() {
-      this.geocodeSelectedState();
       this.fetchPriorityBusinesses();
+
+      var savedState = localStorage.getItem('selectedState');
+
+      if (savedState) {
+        this.selectedState = savedState;
+      }
+      else {
+        this.geocodeSelectedState();
+      }
     },
 
     methods: {
