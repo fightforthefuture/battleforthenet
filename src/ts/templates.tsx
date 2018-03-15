@@ -62,7 +62,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 					<h3>We're running out of time to save net neutrality.</h3>
 				}
 				<p>
-				The FCC voted to kill net neutrality and let ISPs like Comcast ruin the web with throttling, censorship, and new fees. Congress has 60 legislative days to overrule them and save the Internet using the Congressional Review Act (CRA), but we still need #OneMoreVote to win in the Senate. <em>Can you write Congress now?<em>
+				The FCC voted to kill net neutrality and let ISPs like Comcast ruin the web with throttling, censorship, and new fees. Congress has 60 legislative days to overrule them and save the Internet using the Congressional Review Act (CRA), but we still need #OneMoreVote to win in the Senate. Can you write Congress now?
 					{" "}
 				</p>
 				<div className="flex">
