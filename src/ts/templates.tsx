@@ -44,8 +44,6 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 							</div>
 						) : null }
 					<Disclaimer org={props.org} swap={props.swap}/>
-					<p className="or-text-congress">Or <a href="sms:384387?body=BATTLE">text <b>BATTLE</b> to <b>384-387</b></a> to write Congress &amp; stop the FCC.</p>
-					<span className="note">Message &amp; data rates apply. Text STOP to stop messages.</span>
 				</form>
 				<Fragment fragmentId="bftn_email_body" />
 			</div>

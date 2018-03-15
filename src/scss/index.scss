@@ -21,6 +21,14 @@ $GRAY_LIGHT: #b1aedc;
 	box-sizing: border-box;
 }
 
+#bftn-action-form {
+	min-height: 600px;
+
+	body.call-form-page & {
+		min-height: 0;
+	}
+}
+
 .bftn-homepage {
 	background-color: $BODY_BGCOLOR;
 	color: $WHITE;
@@ -214,8 +222,6 @@ $GRAY_LIGHT: #b1aedc;
 	}
 
 	.hero {
-		min-height: 675px;
-		
 		h1 {
 			margin-top: 40px;
 		}
@@ -246,15 +252,13 @@ $GRAY_LIGHT: #b1aedc;
 				font-size: 20px;
 			}
 		}
+
 		.call-action-form {
 			h3 {
 				font-size: 55px;
 				margin-bottom: 0;
 			}
 
-			p{
-				margin-bottom:30px;
-			}
 			text-align: center;
 		}
 	}

@@ -305,6 +305,9 @@
         } else {
           initialForm = 'petition';
         }
+        
+        document.querySelector('body').classList.add(initialForm + '-form-page');
+
         var campaign = externalFlags.get('campaign', 'fftf');
         var persistentButtonText = 'Contact Them';
         var referralCode = externalFlags.get('ref');
