@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as moment from 'moment';
 
 import {ajaxResult, ajaxPromise} from './utils';
 import {mockAjaxPromise} from './utils';
@@ -121,7 +122,9 @@ export class PetitionForm extends React.Component<PetitionFormProps, PetitionFor
 			error: null
 		} as PetitionFormState);
 
-		const actionComment = `${this.state.input_comment}\n\nThe sender of this message generated it using tools available at BattleForTheNet.com.`
+		const date = moment().format('dddd, MMMM Do YYYY');
+		const time = moment().format('h:mm:ss a');
+		const actionComment = `${this.state.input_comment}\n\n(The sender of this message generated it using tools available at BattleForTheNet.com on ${date} at ${time}.)`
 
 		if (this.props.swap) {
 			// Submit form directly to ActionKit
