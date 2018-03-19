@@ -21,6 +21,12 @@ $GRAY_LIGHT: #b1aedc;
 	box-sizing: border-box;
 }
 
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
 #bftn-action-form {
 	min-height: 600px;
 
@@ -225,8 +231,13 @@ $GRAY_LIGHT: #b1aedc;
 		h1 {
 			margin-top: 40px;
 		}
+
 		.petition-copy {
-			padding-bottom: 50px;
+			padding-bottom: 25px;
+			background-image: url(/images/red-arrow.png);
+			background-repeat: no-repeat;
+			background-position: bottom;
+
 			p {
 				width: 490px;
 				font-size: 27px;
@@ -276,31 +287,29 @@ $GRAY_LIGHT: #b1aedc;
 
 	.petition-form {
 		width: 265px;
-		position: absolute;
-		top: 0px;
-		left: 535px;
+		float: right;
+
 		div {
 			margin-bottom: 5px;
 		}
-		.arrow {
-			position: absolute;
-			top: 345px;
-			left: -140px;
-		}
+
 		.form-wrapper {
 			box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 		}
+
 		textarea {
 			font-family: "Montserrat", sans-serif;
 			font-weight: bold;
 			font-size: 14px;
 			display: block;
 			width: 100%;
+			min-width: 265px;
 			height: 130px;
 			border-radius: 4px 4px 0 0;
 			border: none;
 			padding: 35px 10px 15px;
 		}
+
 		.letter {
 			position: relative;
 			&:after {
@@ -1185,6 +1194,7 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.hero {
 			.petition-copy {
+				background-image: none;
 				padding-bottom: 20px;
 				p {
 					width: auto;
@@ -1194,9 +1204,9 @@ $GRAY_LIGHT: #b1aedc;
 		}
 		.petition-form {
 			position: relative;
-			top: 0;
-			left: 0;
 			width: 100%;
+			margin-bottom: 20px;
+
 			.address {
 				width: 60%;
 			}
@@ -1207,18 +1217,17 @@ $GRAY_LIGHT: #b1aedc;
 			textarea {
 				clear: left;
 			}
-			.arrow {
-				display: none;
-			}
 		}
-        .call-action-form {
-            .flex {
-              display: block;
-            }
-            input {
-                margin: 0 0 10px 0;
-            }
-        }
+
+    .call-action-form {
+      .flex {
+        display: block;
+      }
+
+      input {
+         margin: 0 0 10px 0;
+      }
+    }
 		.modal .modal-close {
 			right: 4px;
 			top: 4px;

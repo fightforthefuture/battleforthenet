@@ -17,7 +17,6 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 			<Fragment fragmentId="bftn_email_form_header" />
 			<div className="unit">
 				<form className="bftn-form petition-form" onSubmit={ctx.onSubmit}>
-					<img className="arrow" src="/images/red-arrow.png" />
 					<div className="form-wrapper">
 						<div>
 							<input name="input_name" placeholder="Name" autoComplete="name" required value={state.input_name} onChange={ctx.handleInputChange} />
