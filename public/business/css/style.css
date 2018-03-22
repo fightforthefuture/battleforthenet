@@ -36,16 +36,22 @@ body {
   background-position: center top;
 }
 
-h1, h2, h3 {
+h1, h2 strong {
   color: #fd4935;
 }
 
 h1 {
   font-size: 48px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+h2, h3 {
+  color: #fff;
 }
 
 a {
-  color: #6388ed;
+  color: #2ecaf8;
   text-decoration: underline;
 }
 
@@ -309,7 +315,7 @@ section {
 }
 
 .business-row .name-location {
-  min-height: 100px;
+  min-height: 95px;
 }
 
 .business-row address {
@@ -319,7 +325,6 @@ section {
 
 .business-row .btn-tweet {
   font-size: 120%;
-  margin-top: 10px;
   width: 80%;
 }
 
@@ -342,15 +347,15 @@ textarea::placeholder {
 }
 
 form {
-  max-width: 500px;
   margin: auto;
+  width: 96%;
 }
 
 form .row {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  margin-bottom: 2%;
+  margin-bottom: 10px;
 }
 
 form .row input {
@@ -373,7 +378,30 @@ form .large-audience label {
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .business-row {
+    width: 33%;
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  section:first-child {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
   .business-row {
     width: 50%;
     padding: 6px;
