@@ -61,6 +61,19 @@ document.addEventListener("DOMContentLoaded", function() {
     "Wyoming": "WY"
   };
 
+  var TWEETS = [
+    "Hi @[NAME], I’m working to save #NetNeutrality, especially because losing it will hurt businesses like you. Will you join other businesses in your area by signing this letter?",
+    "Hey @[NAME], We're reaching out to businesses across the country to sign on to our letter to congress. Can you join other businesses and help save #NetNeutrality by signing this letter?",
+    "Hi @[NAME], Would you like to help save #NetNeutrality? Join other businesses in your area by signing this letter!",
+    "Hello @[NAME], We need businesses like yours to reach out to congress and stick up for #NetNeutrality. Could you please sign this letter and show your support?",
+    "Hey @[NAME], We're calling on all businesses big and small to sign onto our letter urging congress to save #NetNeutrality. Want to join?",
+    "Hi @[NAME], Can you join other businesses in your area by signing on to a letter to congress urging support for #NetNeutrality?",
+    "Hi @[NAME], Members of Congress can save #NetNeutrality, but they need to hear from businesses like you.  Will you let them know where you stand?",
+    "Hi @[NAME], Without #NetNeutrality, local businesses will suffer.  Will you sign this letter to Congress to remind them how important you are to the economy?",
+    "Hi @[NAME], #NetNeutrality helps small businesses find customers and compete in the marketplace.  Will you tell Congress to support Net Neutrality and businesses like you?",
+    "Hi @[NAME], Over a thousand small businesses have signed a letter to Congress in support of #NetNeutrality.  Will you join and let Congress know that the internet is important to your business?"
+  ];
+
   var formatNumber = function(x) {
     return x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
   };
@@ -84,6 +97,46 @@ document.addEventListener("DOMContentLoaded", function() {
       var temp = array[i];
       array[i] = array[j];
       array[j] = temp;
+    }
+  };
+
+  var getMetaContent = function(name) {
+    var el = document.querySelector('meta[name="' + name + '"]') || document.querySelector('meta[property="' + name + '"]');
+    
+    if (el) {
+      return el.getAttribute('content');
+    }
+
+    return null;
+  };
+
+  var openPopup = function(url, title, w, h) {
+    if (!title) {
+      title = 'popup';
+    }
+
+    if (!w) {
+      w = 600;
+    }
+
+    if (!h) {
+      h = 500;
+    }
+
+    // Fixes dual-screen position
+    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+    var top = ((height / 2) - (h / 2)) + dualScreenTop;
+    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+    // Puts focus on the newWindow
+    if (window.focus) {
+      newWindow.focus();
     }
   };
 
@@ -231,42 +284,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('body').classList.remove('modal-open');
       },
 
-      getMetaContent: function(name) {
-        var el = document.querySelector('meta[name="' + name + '"]') || document.querySelector('meta[property="' + name + '"]');
-        
-        if (el) {
-          return el.getAttribute('content');
-        }
-
-        return null;
-      },
-
-      openPopup: function(url, title='popup', w=600, h=500) {
-        // Fixes dual-screen position
-        var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
-        var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
-
-        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-
-        var left = ((width / 2) - (w / 2)) + dualScreenLeft;
-        var top = ((height / 2) - (h / 2)) + dualScreenTop;
-        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-
-        // Puts focus on the newWindow
-        if (window.focus) {
-          newWindow.focus();
-        }
-      },
-
       shareOnFacebook: function() {
-        var url = this.getMetaContent('og:url');
-        this.openPopup('https://www.facebook.com/sharer.php?u=' + encodeURIComponent(url), 'facebook');
+        var url = getMetaContent('og:url');
+        openPopup('https://www.facebook.com/sharer.php?u=' + encodeURIComponent(url), 'facebook');
       },
 
       shareOnTwitter: function() {
-        var tweetText = this.getMetaContent('twitter:description') + ' ' + this.getMetaContent('twitter:url');
-        this.openPopup('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'twitter');
+        var tweetText = getMetaContent('twitter:description') + ' ' + getMetaContent('twitter:url');
+        openPopup('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'twitter');
       },
 
       submitForm: function() {
@@ -339,8 +364,9 @@ document.addEventListener("DOMContentLoaded", function() {
     
     computed: {
       tweetURL: function() {
-        var tweetText = "Hi @" + this.business.twitter + ", I’m volunteering to save #NetNeutrality, especially because losing it will hurt businesses like you. Will you join other businesses in your area by signing this letter?";
-
+        var randomIndex = Math.floor(Math.random() * Math.floor(TWEETS.length-1));
+        var template = TWEETS[randomIndex];
+        var tweetText = template.replace('@[NAME]', '@' + this.business.twitter);
         return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText) + '&url=' + encodeURIComponent('https://www.businessesfornetneutrality.com');
       },
 
@@ -372,9 +398,15 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     methods: {
-      openTweetURL: function() {
+      openTweetURL: function(event) {
         this.$parent.tweetCount += 1;
-        window.open(this.tweetURL, '_blank');
+        
+        if (event && event.metaKey) {
+          window.open(this.tweetURL, '_blank');
+        }
+        else {
+          openPopup(this.tweetURL, 'tweet');
+        }
 
         var stepNumber = this.national ? 3 : 1;
         trackEvent('business', 'tweet', 'Step ' + stepNumber + ' - ' + this.business.twitter);
