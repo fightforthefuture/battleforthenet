@@ -50,6 +50,11 @@ const campaigns:Campaigns = {
 		"url": "https://call-congress.fightforthefuture.org/create",
 		"id": "battleforthenet-2017",
 		"disclaimer": "Your phone number will only be used to make this call."
+	},
+	"battleforthenet-2017-senate-targets": {
+		"url": "https://call-congress.fightforthefuture.org/create",
+		"id": "battleforthenet-2017-senate-targets",
+		"disclaimer": "Your phone number will only be used to make this call."
 	}
 };
 
