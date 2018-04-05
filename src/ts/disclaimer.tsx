@@ -24,8 +24,7 @@ export class Disclaimer extends React.Component<Props, State> {
 						these, are searchable by the public.
 					 </span>
 				: <span className="note">
-						<span>{orgLink} will </span>
-						contact you about future campaigns. <a href="https://www.battleforthenet.com/privacy/" className="privacy-policy-link">Privacy Policy</a>
+						{orgLink} will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS. Message &amp; data rates apply. You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/" className="privacy-policy-link">Privacy Policy</a>
 					</span>
 		);
 	}
