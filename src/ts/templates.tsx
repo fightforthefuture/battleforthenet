@@ -51,6 +51,29 @@ export function PetitionFormTemplate(props:PetitionFormProps, state:PetitionForm
 }
 
 export function CallActionFormTemplate(props:CallActionFormProps, state:CallActionFormState, ctx:CallActionFormContext) {
+	// This is the California page
+	if (state.campaignSpec.id == 'California-SB-822') {
+		return (
+			<div>
+				<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
+					<h3>We're running out of time to save net neutrality in California.</h3>
+					<p>The FCC voted to kill net neutrality and let ISPs like Comcast ruin the web with throttling, censorship, and new fees. Congress has 60 legislative days to overrule them and save the Internet using the Congressional Review Act (CRA), but we still need #OneMoreVote to win in the Senate. Can you call Congress now?</p>
+					<div className="flex">
+						<input className={classes(state.error && "error")} name="input_phone" type="tel" placeholder="Enter your phone #" value={state.input_phone} onChange={ctx.onChange} />
+						<button className="btn">
+							<img src="images/phone.svg" alt="Phone" />
+							<span>Call</span>
+						</button>
+					</div>
+					<p>
+						(We’ll connect you and provide a suggested script of what to say. { state.campaignSpec.disclaimer }{" "}<a href="/privacy" target="_blank">Privacy Policy</a>)
+					</p>
+				</form>
+			</div>
+		)
+	}
+
+	// This is the regular page
 	return (
 		<div>
 			<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
