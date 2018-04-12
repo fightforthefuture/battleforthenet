@@ -57,8 +57,7 @@ export function CallActionFormTemplate(props:CallActionFormProps, state:CallActi
 			<div>
 				<form className="bftn-form call-action-form" ref={ctx.bindRef} onSubmit={ctx.onSubmit}>
 					<h3>Save net neutrality in California</h3>
-					<p>California lawmakers have introduced the best, most comprehensive,  
-					<a href="https://www.wired.com/story/california-net-neutrality-bill-would-go-beyond-original-protections/">net neutrality bill</a>
+					<p>California lawmakers have introduced the best, most comprehensive, <a href="https://www.wired.com/story/california-net-neutrality-bill-would-go-beyond-original-protections/">net neutrality bill</a> 
 					in the country. Passing this bill will set a strong precedent for other states, and build 
 					momentum for Congress to restore protections at the federal level. But this bill is under 
 					attack by telecom giants like AT&T. Tell your California representatives to save net
