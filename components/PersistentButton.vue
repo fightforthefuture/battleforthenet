@@ -39,6 +39,7 @@
       left: 0;
 
       .btn {
+        border-radius: 0;
         box-shadow: none;
       }
     }

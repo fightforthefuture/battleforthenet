@@ -13,13 +13,13 @@
 
   .video {
     float: left;
-    width: 350px;
-    margin-right: 10px;
+    width: 35rem;
+    margin-right: 1rem;
     position: relative;
 
     img.thumb {
-      width: 350px;
-      height: 190px;
+      width: 35rem;
+      height: 19rem;
       object-fit: cover;
     }
 
@@ -29,7 +29,7 @@
 
     p {
       margin: 0;
-      font-size: 92%;
+      font-size: 1.5rem;
       line-height: 1.33;
     }
 
@@ -44,7 +44,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 190px;
+      height: 19rem;
       background-color: rgba(0, 0, 0, 0.25);
       transition: background-color .3s;
 
@@ -55,16 +55,16 @@
       .circle {
         border: 3px solid #fff;
         background-color: #515470;
-        width: 75px;
-        height: 75px;
+        width: 7.5rem;
+        height: 7.5rem;
         border-radius: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
 
         img {
-          height: 40px;
-          margin-left: 8px;
+          height: 4rem;
+          margin-left: .8rem;
         }
       }
     }
@@ -77,7 +77,7 @@
     text-align: center;
     position: absolute;
     top: 0;
-    height: 190px;
+    height: 19rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,14 +90,14 @@
     .circle {
       background: #494476;
       border-radius: 100%;
-      width: 42px;
-      height: 42px;
+      width: 4.2rem;
+      height: 4.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
 
       img {
-        height: 18px;
+        height: 1.8rem;
       }
     }
 
@@ -107,21 +107,43 @@
   }
 
   button.prev {
-    left: -60px;
+    left: -6rem;
   }
 
   button.next {
-    right: -60px;
+    right: -6rem;
   }
 
   .modal {
     background-color: transparent;
   }
+
+  .video-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include mobile {
+    button.prev, button.next {
+      display: none;
+    }
+  }
 }
 </style>
 
 <template>
-  <div class="video-roll">
+  <div class="video-roll" @touchstart="touchStart" @touchend="touchEnd">
     <div class="video-scroller">
       <div class="video-container" :style="{ width: `${totalWidth}px`, transform: translate3d }">
         <div v-for="video in videos" :key="video.video" class="video">
@@ -142,7 +164,9 @@
     </button>
 
     <modal v-if="modalVideo">
-      <iframe width="640" height="360" :src="modalVideo.video" frameborder="0" allowfullscreen></iframe>
+      <div class="video-iframe-container">
+        <iframe width="640" height="360" :src="modalVideo.video" frameborder="0" allowfullscreen></iframe>
+      </div>
     </modal>
   </div>
 </template>
@@ -151,19 +175,19 @@
 import videos from '~/assets/data/videos.json'
 const videoWidth = 360
 
-export default {  
+export default {
   computed: {
     videos: () => videos,
-    
+
     totalWidth: () => videos.length * videoWidth,
-    
+
     lastPage() {
-      return Math.ceil(this.totalWidth / videoWidth) - 2
+      return Math.ceil(this.totalWidth / videoWidth) - 1
     },
 
     translate3d() {
       const x = this.page * videoWidth * -1
-      return `translate3d(${x}px, 0, 0)`
+      return `translate3d(${x/10}rem, 0, 0)`
     }
   },
 
@@ -199,6 +223,23 @@ export default {
     showModal(video) {
       this.modalVideo = video
       this.modalVisible = true
+    },
+
+    touchStart(event) {
+      this.touchStartX = event.changedTouches[0].screenX
+    },
+
+    touchEnd(event) {
+      const endX = event.changedTouches[0].screenX
+
+      // swipe left
+      if (endX < this.touchStartX) {
+        this.nextPage()
+      }
+      // swipe right
+      else if (endX > this.touchStartX) {
+        this.prevPage()
+      }
     }
   }
 }
