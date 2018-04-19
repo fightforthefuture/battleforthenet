@@ -1,7 +1,6 @@
 #!/bin/bash
-REPO=battleforthenet
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-BUCKET="$REPO-stage-$BRANCH"
+BUCKET="bftn-$BRANCH"
 
 # if bucket doesn't exist, create it and set up website hosting
 if aws s3 ls "s3://$BUCKET" 2>&1 | grep -q 'NoSuchBucket'; then

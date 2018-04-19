@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build_prod:
+  build:
     docker:
       # circleci/ruby:2.4-node-browsers + awscli
       - image: kenmickles/fftf-static-site-builder:0.0.1
@@ -77,7 +77,7 @@ workflows:
   version: 2
   deploy:
     jobs:
-      - build_prod:
+      - build:
           filters:
             branches:
               only:
@@ -85,5 +85,5 @@ workflows:
       - build_stage:
           filters:
             branches:
-              ignore:
-                - master
+              only:
+                - /^stage-/
