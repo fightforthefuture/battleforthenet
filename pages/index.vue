@@ -1,0 +1,237 @@
+<style lang="scss" scoped>
+#team-internet ul {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0;
+    height: 7rem;
+    background-color: #fff;
+    border-radius: $border-radius;
+    width: 24%;
+    margin: .5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      width: 48%;
+      margin: 1%;
+    }
+
+    img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  }
+}
+
+#team-cable .logos {
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+
+  img {
+    height: 10rem;
+    margin: 0 2rem;
+
+    @include mobile {
+      height: 8rem;
+      margin: 0;
+    }
+  }
+}
+
+#ooni a img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+#events iframe {
+  width: 100%;
+  height: 450px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+</style>
+
+<template>
+  <div class="container">
+
+    <section id="bftn-action-form">
+      <loader-logo></loader-logo>
+      <h1 class="text-center">We're running out of time to save net neutrality.</h1>
+      <call-form v-if="isCallPage" />
+      <petition-form v-else />
+    </section>
+
+    <section id="onemorevote">
+      <h2>We need One More Vote to save net neutrality in the Senate.</h2>
+      <p>The FCC voted to end net neutrality rules, but Congress can overrule the FCC with the <a href="https://en.wikipedia.org/wiki/Congressional_Review_Act">Congressional Review Act</a> (CRA). Unlike a normal bill, the CRA only requires a <i>simple majority</i> in the Senate and House. Once we get the votes, we win. No filibuster. No procedural tricks. And we already have 50 of 51 votes needed to win the Senate. <b><a href="/onemorevote/">Click here to join the massive, Internet-wide day of action on February 27th</a>.</b></p>
+    </section>
+
+    <section id="scoreboard">
+      <h2>Contact Congress now to show your support for net neutrality.</h2>
+      <p>Below you'll find a list of your state's senators and representatives.  The ones in green support net neutrality, so let them know you appreciate their support.  The ones in red need to be convinced, so let them know how important this issue is to you.  Then target the <a href="/scoreboard/#senate">49 undecided senators</a>. Once we win the Senate, the fight moves to the House, where we need over 25 Republican votes to win. So make sure you tweet and call senators AND representatives!</p>
+      <scoreboard :summary="true"></scoreboard>
+    </section>
+
+    <section id="events">
+      <h2>Find an event in your area</h2>
+      <p><strong>Want to make your voice heard?</strong> Check out the map below to find a protest or a meeting with a representative in your state.  And if there are no events in your area, consider organizing one!</p>
+      <!-- <iframe src="https://events.battleforthenet.com/iframe"></iframe> -->
+    </section>
+
+    <section id="videos">
+      <h2>What is net neutrality? Why does it matter? Watch these videos!</h2>
+      <p><strong>Net neutrality</strong> is the principle that Internet providers like Comcast &amp; Verizon should not control what we see and do online. In 2015, startups, Internet freedom groups, and 3.7 million commenters won strong net neutrality rules from the US Federal Communication Commission (FCC). The rules prohibit Internet providers from blocking, throttling, and paid prioritization&mdash;"fast lanes" for sites that pay, and slow lanes for everyone else. Want to learn more? Watch these videos!</p>
+      <video-roll></video-roll>
+    </section>
+
+    <section id="team-internet">
+      <h2>We are Team Internet. We support net neutrality, freedom of speech.</h2>
+      <p>Nearly everyone who understands and depends on the Internet supports net neutrality, whether they're startup founders, activists, gamers, politicians, investors, comedians, YouTube stars, or typical Internet users who just want their Internet to work as advertised&mdash;regardless of their political party. Even some of the biggest and most interesting sites in the world have joined in <a href="https://www.battleforthenet.com/sept10th/">unprecedented</a>, <a href="https://www.battleforthenet.com/july12/">historic</a> <a href="https://breaktheinternet.org/">protests</a> to defend net neutrality. <a href="https://imgur.com/a/vYVet">See screenshots from the online protests</a> or <a href="https://www.flickr.com/photos/141697942@N08/albums/72157689309670051/page1">photos from protests around the country</a>.</p>
+      <ul class="logos">
+        <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
+        <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
+        <li><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></li>
+        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
+        <li><img src="/images/logos/github.png" alt="GitHub"></li>
+        <li><img src="/images/logos/Etsy_logo-correct.png" alt="Etsy"></li>
+        <li><img src="/images/logos/kickstarter-logo-light.png" alt="Kickstarter"></li>
+        <li><img src="/images/logos/netflix.jpg" alt="Netflix"></li>
+        <li><img src="/images/logos/twitter.png" alt="Twitter"></li>
+        <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
+        <li><img src="/images/logos/boingboing.png" alt="BoingBoing"></li>
+        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+        <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
+        <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
+        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
+        <li><img src="/images/logos/eff-logo-plain-rgb.png" alt="EFF"></li>
+        <li><img src="/images/logos/okcupid.png" alt="OkCupid"></li>
+        <li><img src="/images/logos/18mr.png" alt="18 Million Rising"></li>
+        <li><img src="/images/logos/ycombinator.png" alt="Y Combinator"></li>
+        <li><img src="/images/logos/aall.png" alt="AALL"></li>
+        <li><img src="/images/logos/accessnow.png" alt="accessnow"></li>
+        <li><img src="/images/logos/aclu.jpg" alt="ACLU"></li>
+        <li><img src="/images/logos/discord.png" alt="Discord"></li>
+        <li><img src="/images/logos/automattic.png" alt="Automattic"></li>
+      </ul>
+      <p class="text-center"><a href="/july12/#participants">View all</a></p>
+    </section>
+
+    <section id="team-cable">
+      <h2>They are Team Cable. They want to end net neutrality, to control &amp; tax the Internet.</h2>  
+      <div class="logos flex-center">
+        <img src="/images/v2/problem-comcast.png" alt="Comcast">
+        <img src="/images/v2/problem-verizon.png" alt="Verizon">
+        <img src="/images/v2/problem-att.png" alt="ATT">
+        <img src="/images/v2/problem-spectrum.png" alt="Spectrum">
+      </div>
+      <p>Cable companies are famous for high prices and poor service. Several rank as the most hated companies in America. Now, they're lobbying the FCC and Congress to end net neutrality. Why? It's simple: <strong>if they win the power to slow sites down, they can bully any site into paying millions to escape the "slow lane."</strong> This would amount to a tax on every sector of the American economy. Every site would cost more, since they'd all have to pay big cable. Worse, it would extinguish the startups and independent voices who can't afford to pay. If we lose net neutrality, the Internet will never be the same.</p>
+    </section>
+
+    <section id="join">
+      <h2>Now, we must convince Congress to stop the FCC. Can you display an alert on your site?</h2>
+      <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. If you have a website, you can display a prominent alert on your site that asks your visitors to contact Congress. <a href="https://widget.battleforthenet.com/demos/modal.html">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/battleforthenet-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/u/0/folders/1gfot3MqZDAyBcmMUm2bunJMn5geNKf6v">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
+      <code>&lt;script src="https://widget.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
+      <div class="modals flex-center">
+        <a href="/onemorevote#widgets"><img src="/images/modal/onemorevote.png" alt="One More Vote"></a>
+        <a href="/onemorevote#widgets"><img src="/images/modal/onemorevote-text.png" alt="One More Vote Text Only"></a>
+      </div>
+    </section>
+
+    <section id="visit">
+      <h2>Want to go above and beyond? Visit your member of Congress.</h2>
+      <p>Meeting in person with your member of Congress is by far the most high-impact thing most people can do right now. Ever since the July 12 Day of Action, we've been helping set up Team Internet meetings with members of Congress. <a href="https://events.battleforthenet.com/" target="_blank">Click here to find a Team Internet drop-in visit, scheduled meeting, or town hall near you.</a> If you're a local business owner who could be harmed by a loss of net neutrality rules, that's even more persuasive. <a href="mailto:team@fightforthefuture.org">Be in touch</a>.</p>
+    </section>
+
+    <section id="ooni">
+      <h2>Want to use your Internet connection to help catch net neutrality violations? Get this app.</h2>
+
+      <p>ISPs like <a href="https://www.engadget.com/2017/08/22/verizon-video-throttling-net-neutrality-unfair-to-customers/">Verizon</a> and <a href="https://www.polygon.com/2017/2/9/14548880/time-warner-lawsuit-new-york-league-of-legends-netflix">Spectrum</a> already violate net neutrality rules, but it's hard to spot. <a href="https://ooni.torproject.org/">OONI</a>, part of the <a href="https://torproject.org/">Tor Project</a>, helps catch net neutrality violations and other kinds of online censorship. Can you install the app on your phone, and set it to run daily? Visit <a href="http://www.testyourinter.net/">TestYourInter.net</a> to learn more, or download the app now!</p>
+
+      <p>
+        <a href="https://itunes.apple.com/us/app/id1199566366" class="app-store"><img src="/images/app-store.png" alt="Download for iOS"></a>
+        <a href="https://play.google.com/store/apps/details?id=org.openobservatory.ooniprobe" class="google-play"><img src="/images/google-play.png" alt="Download for Android"></a>
+      </p>
+    </section>
+
+    <section id="extra-reading">
+      <h2>Extra Reading</h2>
+      <p>Here are some excellent articles for additional depth. They cover the issue, its political history, the struggles we've overcome, and the fight ahead in Congress and at the FCC.</p>
+      <ul class="extra-reading">
+        <li>
+          <a href="http://www.wired.com/2015/11/comcast-may-have-found-a-major-net-neutrality-loophole/" target="_blank">Comcast May Have Found a Major Net Neutrality Loophole</a>
+          <em> &mdash; Wired</em>
+        </li>
+        <li>
+          <a href="http://arstechnica.com/business/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/" target="_blank">Verizon's mobile video won't count against data caps&mdash;but Netflix does</a>
+          <em> &mdash; Ars Technica</em>
+        </li>
+        <li>
+          <a href="https://www.battleforthenet.com/how-we-won" target="_blank">How we won (the first time around, in 2014)</a>
+          <em> &mdash; Battle for the Net</em>
+        </li>
+        <li>
+          <a href="https://medium.com/@freepress/the-fcc-s-net-neutrality-order-protects-internet-freedom-by-restoring-the-law-9092f9f5a99f/" target="_blank">The FCC's Net Neutrality Order Protects Internet Freedom by Restoring the Law</a>
+          <em> &mdash; Medium</em>
+        </li>
+      </ul>
+    </section>
+
+    <section id="email-notice">
+      <h2>Important notice RE: Delivery of emails to Congress</h2>
+      <p>When you submit to Battle for the Net, you aren't just signing a petition. We actually deliver your messages directly to Congress. However, we submit them through a rate-limited API and this can cause delays. For example, after the July 12th day of action an unprecedented number of submissions created significant delays. We've since taken steps to speed up submission, but it led to some confusion when users received replies from Congress long after taking action. Also, members of Congress themselves sometimes take weeks or more to reply to constituents. So please keep in mind that there may be a delay between when you take action and when your members of Congress reply.</p>
+    </section>
+
+    <social-sidebar />
+    <persistent-button><a class="btn btn-phone" href="#bftn-action-form">Contact Them</a></persistent-button>
+
+  </div>
+</template>
+
+<script>
+import { createMetaTags, getRandomOrg } from '~/assets/js/helpers'
+import LoaderLogo from '~/components/LoaderLogo'
+import CallForm from '~/components/CallForm'
+import PetitionForm from '~/components/PetitionForm'
+import Scoreboard from '~/components/Scoreboard/Scoreboard'
+import VideoRoll from '~/components/VideoRoll'
+import SocialSidebar from '~/components/SocialSidebar'
+import PersistentButton from '~/components/PersistentButton'
+
+import { stringify } from 'querystring'
+
+export default {
+  components: {
+    LoaderLogo,
+    CallForm,
+    PetitionForm,
+    Scoreboard,
+    VideoRoll,
+    SocialSidebar,
+    PersistentButton
+  },
+
+  computed: {
+    isCallPage() {
+      return this.$router.currentRoute.name === 'call' || this.$router.currentRoute.query.call
+    }
+  },
+
+  created() {
+    const org = this.$router.currentRoute.query.org || getRandomOrg()
+    this.$store.commit('setOrg', org)
+    // this.$trackPageView()
+  }
+}
+</script>

@@ -1,8 +1,11 @@
-node_modules/
+# dependencies
+node_modules
+
+# logs
 npm-debug.log
 
-css/john-oliver.css
-dist/bundle.js
-dist/index.css
-tmp/
-dist/
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
