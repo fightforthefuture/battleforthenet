@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO=$(basename `git rev-parse --show-toplevel`)
+REPO=battleforthenet
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 BUCKET="$REPO-stage-$BRANCH"
 
