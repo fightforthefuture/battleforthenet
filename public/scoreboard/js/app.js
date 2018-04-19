@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
       states: STATES,
       selectedState: null,
       politicians: [],
-      isLoaded: false
+      isLoaded: false,
     },
 
     computed: {
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
           return p.team === 'team-cable';
         });
       },
-      
+
       senateCRACount: function () {
         return this.senators.filter(function(p){
           return p.yesOnCRA
@@ -204,7 +204,65 @@ document.addEventListener("DOMContentLoaded", function() {
             self.politicians = response.body;
             self.isLoaded = true;
           }
+          var changeColor = {};
+          self.politicians.forEach(function(pol) {
+            var state = pol.state;
+            // console.log(pol)
+            if (state && pol.yesOnCRA === true) {
+              if (!changeColor.hasOwnProperty(state)) {
+                changeColor[state] = 1;
+              } else if (changeColor.hasOwnProperty(state)) {
+                changeColor[state] += 1;
+              }
+            } else if (state && pol.yesOnCRA === false) {
+                if (!changeColor.hasOwnProperty(state)) {
+                  changeColor[state] = - 1;
+                } else if (changeColor.hasOwnProperty(state)) {
+                  changeColor[state] -= 1;
+                }
+              }
+          })
+
+          var undecided = [];
+          for (state in changeColor) {
+            if (changeColor[state] > 0) {
+              this.setStateColor(state);
+            }
+            if (changeColor[state] === 0) {
+              undecided.push(state);
+            }
+          }
+          // this.undecidedState(undecided);
         });
+      },
+
+      setStateColor: function(elem) {
+        var mapState = document.getElementsByTagName("path");
+        for (var i = 0; i < mapState.length; i++) {
+          if (mapState[i].id === elem) {
+            mapState[i].setAttribute("fill", "#45bcc0");
+          }
+        }
+      },
+
+      // This method lists the undecided states above the map
+      // undecidedState: function(arr) {
+      //   var undecidedStates = document.querySelector(".undecided");
+      //   arr.forEach(function(elem) {
+      //     undecidedStates.innerHTML += '<p>' + '*' + elem + '<p>';
+      //   })
+      // },
+
+      // This method adds asterisks to the map for undecided states...not working yet
+      // undecidedState: function(arr) {
+      //   var undecidedStates = document.querySelector("textPath");
+      //   arr.forEach(function(state) {
+      //     undecidedStates.setAttribute("href", "#" + state);
+      //   })
+      // },
+
+      mapState: function(e) {
+        this.selectedState = e.target.id;
       }
     }
   });
@@ -247,4 +305,5 @@ document.addEventListener("DOMContentLoaded", function() {
   Vue.component('team-legend', {
     template: '#team-legend-template'
   });
+
 });

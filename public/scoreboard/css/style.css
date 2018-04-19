@@ -117,8 +117,18 @@ h3.legend .green {
   background-color: #35999d;
 }
 
+.mapState-selector {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
   .politician {
     margin: 7px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .mapState-selector {
+    display: none;
   }
 }
