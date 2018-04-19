@@ -13,7 +13,8 @@
     "precommit": "npm run lint",
     "pregenerate": "npm run generate-politicians",
     "generate-politicians": "node scripts/generate-politicians.js",
-    "deploy": "aws s3 sync public s3://www.battleforthenet.com --delete"
+    "deploy": "aws s3 sync dist s3://www.battleforthenet.com --delete",
+    "deploy-branch": "bash scripts/deploy-branch.sh"
   },
   "dependencies": {
     "nuxt": "^1.0.0"
