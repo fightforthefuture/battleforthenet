@@ -43,7 +43,12 @@ a.view-all {
               </select>
             </p>
           </div>
-          <politician-card v-for="politician in congressInState" :politician="politician" :key="politician.biocode"></politician-card>
+          <div v-if="statePoliticians.length > 0">
+            <politician-card v-for="politician in statePoliticians" :politician="politician" :key="politician.biocode"></politician-card>
+          </div>
+          <div v-else-if="selectedState && !isLoadingState">
+            <h3>Sorry, but we don't have any data for your state yet.</h3>
+          </div>
           <router-link v-if="summary" to="/scoreboard" class="view-all">View all</router-link>
         </div>
       </no-ssr>
@@ -66,10 +71,9 @@ a.view-all {
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import axios from 'axios'
 import TeamLegend from '@/components/Scoreboard/TeamLegend'
 import PoliticianCard from '@/components/Scoreboard/PoliticianCard'
-import politicians from '~/assets/data/politicians'
 import states from '~/assets/data/states'
 import { geocodeState } from '~/assets/js/helpers'
 
@@ -87,8 +91,6 @@ export default {
   },
 
   computed: {
-    politicians: () => politicians,
-
     states: () => states,
 
     senators() {
@@ -99,22 +101,6 @@ export default {
       return this.politicians.filter(p => p.organization === 'House')
     },
 
-    congressInState() {
-      return this.politicians.filter(p => p.stateCode === this.selectedState)
-    },
-
-    teamInternet() {
-      return this.politicians.filter(p => p.team === 'team-internet')
-    },
-
-    undecided() {
-      return this.politicians.filter(p => p.team === 'undecided')
-    },
-
-    teamCable() {
-      return this.politicians.filter(p => p.team === 'team-cable')
-    },
-    
     senateCRACount() {
       return this.senators.filter(p => p.yesOnCRA).length
     },
@@ -126,14 +112,24 @@ export default {
 
   data() {
     return {
-      selectedState: null
+      selectedState: null,
+      politicians: [],
+      statePoliticians: [],
+      isLoadingState: false
     }
   },
 
   watch: {
     selectedState(newValue) {
-      if (process.browser) {
+      if (!process.browser) return
+
+      if (newValue) {
         localStorage.selectedState = newValue
+        this.fetchStatePoliticians()
+      }
+      else {
+        localStorage.removeItem('selectedState')
+        this.statePoliticians = []
       }
     }
   },
@@ -147,6 +143,29 @@ export default {
         const { code } = await geocodeState()
         this.selectedState = code
       }
+    }
+
+    if (!this.summary) {
+      this.fetchPoliticians()
+    }
+  },
+
+  methods: {
+    async fetchPoliticians() {
+      if (this.$store.state.politicians.length > 0) {
+        this.politicians = this.$store.state.politicians
+      }
+      else {
+        const { data } = await axios.get(`https://data.battleforthenet.com/politicians.json`)
+        this.politicians = data
+      }
+    },
+
+    async fetchStatePoliticians() {
+      this.isLoadingState = true
+      const { data } = await axios.get(`https://data.battleforthenet.com/politicians/${this.selectedState.toLowerCase()}.json`)
+      this.statePoliticians = data
+      this.isLoadingState = false
     }
   }
 }

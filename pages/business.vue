@@ -15,43 +15,21 @@ h2 {
   }
 }
 
-.businesses:after {
-  content:"";
-  display:block;
-  clear:both;
+a.twitter-timeline {
+  display: block;
 }
 
-.businesses strong {
-  color: #fff;
-}
-
-@media screen and (max-width: 700px) {
-  h1 {
-    font-size: 32px;
-  }
-
-  .business-card {
-    width: 33%;
-    padding: 6px;
-  }
-}
-
-@media screen and (max-width: 450px) {
+@include mobile {
   section:first-child {
     margin-top: 0;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 3.2rem;
   }
 
   h2 {
-    font-size: 20px;
-  }
-
-  .business-card {
-    width: 50%;
-    padding: 6px;
+    font-size: 2.6rem;
   }
 }
 </style>
@@ -79,7 +57,7 @@ h2 {
         </select>
       </p>
       <no-ssr>
-        <div class="businesses">
+        <div class="businesses clearfix">
           <business-card v-for="business in localBusinesses" :business="business" :key="business.twitter"></business-card>
           <p v-if="localBusinesses.length < 1 && selectedState">We don't have any businesses on file for your state yet. <br><strong>Can you help us out by <a href="https://docs.google.com/spreadsheets/d/12MkAWz8VGyIIiCgVdGXWfLKROBegZNew8-xKyPVv6vU/edit#gid=0">adding some to our spreadsheet</a>?</strong></p>
         </div>
@@ -89,9 +67,8 @@ h2 {
 
     <section id="step2">
       <h2><strong>Step 2:</strong> Retweet the people who've already tweeted</h2>
-      <p>            
+      <p>
         <a class="twitter-timeline" href="https://twitter.com/search?q=businessesfornetneutrality.com" data-widget-id="958830309532946437">Tweets about businessesfornetneutrality.com</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </p>
     </section>
 
@@ -99,7 +76,7 @@ h2 {
       <h2><strong>Step 3:</strong> Tweet these out-of-state businesses</h2>
       <p>These businesses are located in states where Congress is on the fence about supporting net neutrality.  Let them know how important this issue is!
       </p>
-      <div class="businesses" v-if="priorityBusinesses.length > 0" v-cloak>
+      <div class="businesses clearfix" v-if="priorityBusinesses.length > 0" v-cloak>
         <business-card v-for="business in priorityBusinesses" :business="business" :national="true" :key="business.twitter"></business-card>
       </div>
     </section>
@@ -108,12 +85,12 @@ h2 {
       <h2><strong>Step 4:</strong> Come back tomorrow!</h2>
       <p>Enter your information to sign up for updates with new targets to persuade!
       </p>
-      <mothership-form an-tags="net-neutrality" an-petition-id="11f84b38-e65b-4259-b0ae-e879a4044ca9"></mothership-form>
+      <business-form an-tags="net-neutrality" an-petition-id="11f84b38-e65b-4259-b0ae-e879a4044ca9"></business-form>
     </section>
-    
+
     <section id="step5">
       <h2><strong>Step 5:</strong> Reach out to your favorite local businesses</h2>
-      <p>We created a list of businesses we thought might be open to supporting net neutrality. But you may know businesses in your area who weren't on our list. Please let them know how important net neutrality is to their customers.  We'd love to have them sign our petition!        
+      <p>We created a list of businesses we thought might be open to supporting net neutrality. But you may know businesses in your area who weren't on our list. Please let them know how important net neutrality is to their customers.  We'd love to have them sign our petition!
       </p>
     </section>
   </div>
@@ -122,7 +99,7 @@ h2 {
 <script>
 import axios from 'axios'
 import BusinessCard from '~/components/BusinessCard'
-import MothershipForm from '~/components/MothershipForm'
+import BusinessForm from '~/components/BusinessForm'
 import US_STATES from '~/assets/data/states.json'
 import shuffle from 'lodash/shuffle'
 import { createMetaTags, geocodeSelectedState } from '~/assets/js/helpers'
@@ -140,7 +117,7 @@ export default {
 
   components: {
     BusinessCard,
-    MothershipForm
+    BusinessForm
   },
 
   data() {
@@ -186,11 +163,15 @@ export default {
     }
   },
 
+  mounted() {
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  },
+
   methods: {
     uniqueifyBusinesses(businesses) {
       var uids = [];
       var uniqueishBusinesses = [];
-      
+
       for (var i = 0; i < businesses.length; i++) {
         var biz = businesses[i];
         var uid = biz.twitter + biz.state;

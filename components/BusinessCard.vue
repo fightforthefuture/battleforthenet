@@ -1,27 +1,35 @@
 <style lang="scss">
 .business-card {
-  font-size: 90%;
+  font-size: 1.4rem;
   width: 25%;
-  padding: 10px;
+  padding: 1rem;
   float: left;
+
+  @media screen and (max-width: $PAGE_WIDTH) {
+    width: 33%;
+  }
+
+  @include mobile {
+    width: 50%;
+  }
 
   .content {
     background-color: #1f1c35;
-    border-radius: 8px;
+    border-radius: $border-radius;
     padding: 10px;
   }
 
   .logo {
-    width: 75px;
-    height: 75px;
+    width: 7.5rem;
+    height: 7.5rem;
     border-radius: 100%;
     background-color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
     border: 1px solid #CCCAEA;
   }
 
   .name-location {
-    min-height: 95px;
+    min-height: 9.5rem;
   }
 
   address {
@@ -29,9 +37,12 @@
     font-size: 92%;
   }
 
-  .btn-tweet {
-    font-size: 120%;
+  .btn-twitter {
     width: 80%;
+
+    &:before {
+      content: none;
+    }
   }
 }
 </style>
@@ -48,7 +59,7 @@
         </div>
         <a v-if="business.website" :href="business.website" target="_blank" class="truncate">{{ domain }}</a>
       </div>
-      <a class="btn btn-tweet" href="#" @click.prevent="openTweetURL">Tweet</a>
+      <a class="btn btn-twitter" href="#" @click.prevent="openTweetURL">Tweet</a>
     </div>
   </div>
 </template>
@@ -67,7 +78,7 @@ export default {
       default: false
     }
   },
-  
+
   computed: {
     tweetURL() {
       const template = tweetTemplates[Math.floor(Math.random()*tweetTemplates.length)]

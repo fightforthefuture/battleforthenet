@@ -1,57 +1,6 @@
 <style lang="scss" scoped>
-#team-internet ul {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    padding: 0;
-    height: 7rem;
-    background-color: #fff;
-    border-radius: $border-radius;
-    width: 24%;
-    margin: .5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include mobile {
-      width: 48%;
-      margin: 1%;
-    }
-
-    img {
-      max-width: 80%;
-      max-height: 80%;
-    }
-  }
-}
-
-#team-cable .logos {
-  flex-flow: row wrap;
-  justify-content: space-around;
-
-  @include mobile {
-    margin-bottom: 20px;
-  }
-
-  img {
-    height: 10rem;
-    margin: 0 2rem;
-
-    @include mobile {
-      height: 8rem;
-      margin: 0;
-    }
-  }
-}
-
-#ooni a img {
-  height: 50px;
-  margin-right: 10px;
+img.app-store {
+  height: 5rem;
 }
 
 #events iframe {
@@ -59,7 +8,11 @@
   height: 450px;
   background-color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: $border-radius;
+
+  @include mobile {
+    height: 250px;
+  }
 }
 </style>
 
@@ -87,7 +40,7 @@
     <section id="events">
       <h2>Find an event in your area</h2>
       <p><strong>Want to make your voice heard?</strong> Check out the map below to find a protest or a meeting with a representative in your state.  And if there are no events in your area, consider organizing one!</p>
-      <!-- <iframe src="https://events.battleforthenet.com/iframe"></iframe> -->
+      <iframe src="https://events.battleforthenet.com/iframe"></iframe>
     </section>
 
     <section id="videos">
@@ -99,7 +52,7 @@
     <section id="team-internet">
       <h2>We are Team Internet. We support net neutrality, freedom of speech.</h2>
       <p>Nearly everyone who understands and depends on the Internet supports net neutrality, whether they're startup founders, activists, gamers, politicians, investors, comedians, YouTube stars, or typical Internet users who just want their Internet to work as advertised&mdash;regardless of their political party. Even some of the biggest and most interesting sites in the world have joined in <a href="https://www.battleforthenet.com/sept10th/">unprecedented</a>, <a href="https://www.battleforthenet.com/july12/">historic</a> <a href="https://breaktheinternet.org/">protests</a> to defend net neutrality. <a href="https://imgur.com/a/vYVet">See screenshots from the online protests</a> or <a href="https://www.flickr.com/photos/141697942@N08/albums/72157689309670051/page1">photos from protests around the country</a>.</p>
-      <ul class="logos">
+      <ul class="logo-grid">
         <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
         <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
         <li><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></li>
@@ -129,13 +82,13 @@
     </section>
 
     <section id="team-cable">
-      <h2>They are Team Cable. They want to end net neutrality, to control &amp; tax the Internet.</h2>  
-      <div class="logos flex-center">
-        <img src="/images/v2/problem-comcast.png" alt="Comcast">
-        <img src="/images/v2/problem-verizon.png" alt="Verizon">
-        <img src="/images/v2/problem-att.png" alt="ATT">
-        <img src="/images/v2/problem-spectrum.png" alt="Spectrum">
-      </div>
+      <h2>They are Team Cable. They want to end net neutrality, to control &amp; tax the Internet.</h2>
+      <ul class="logo-cloud">
+        <li><img src="~/assets/images/problem-comcast.png" alt="Comcast"></li>
+        <li><img src="~/assets/images/problem-verizon.png" alt="Verizon"></li>
+        <li><img src="~/assets/images/problem-att.png" alt="ATT"></li>
+        <li><img src="~/assets/images/problem-spectrum.png" alt="Spectrum"></li>
+      </ul>
       <p>Cable companies are famous for high prices and poor service. Several rank as the most hated companies in America. Now, they're lobbying the FCC and Congress to end net neutrality. Why? It's simple: <strong>if they win the power to slow sites down, they can bully any site into paying millions to escape the "slow lane."</strong> This would amount to a tax on every sector of the American economy. Every site would cost more, since they'd all have to pay big cable. Worse, it would extinguish the startups and independent voices who can't afford to pay. If we lose net neutrality, the Internet will never be the same.</p>
     </section>
 
@@ -160,8 +113,9 @@
       <p>ISPs like <a href="https://www.engadget.com/2017/08/22/verizon-video-throttling-net-neutrality-unfair-to-customers/">Verizon</a> and <a href="https://www.polygon.com/2017/2/9/14548880/time-warner-lawsuit-new-york-league-of-legends-netflix">Spectrum</a> already violate net neutrality rules, but it's hard to spot. <a href="https://ooni.torproject.org/">OONI</a>, part of the <a href="https://torproject.org/">Tor Project</a>, helps catch net neutrality violations and other kinds of online censorship. Can you install the app on your phone, and set it to run daily? Visit <a href="http://www.testyourinter.net/">TestYourInter.net</a> to learn more, or download the app now!</p>
 
       <p>
-        <a href="https://itunes.apple.com/us/app/id1199566366" class="app-store"><img src="/images/app-store.png" alt="Download for iOS"></a>
-        <a href="https://play.google.com/store/apps/details?id=org.openobservatory.ooniprobe" class="google-play"><img src="/images/google-play.png" alt="Download for Android"></a>
+        <a href="https://itunes.apple.com/us/app/id1199566366"><img class="app-store" src="/images/app-store.png" alt="Download for iOS"></a>
+        &nbsp;
+        <a href="https://play.google.com/store/apps/details?id=org.openobservatory.ooniprobe"><img class="app-store" src="/images/google-play.png" alt="Download for Android"></a>
       </p>
     </section>
 
@@ -209,8 +163,6 @@ import VideoRoll from '~/components/VideoRoll'
 import SocialSidebar from '~/components/SocialSidebar'
 import PersistentButton from '~/components/PersistentButton'
 
-import { stringify } from 'querystring'
-
 export default {
   components: {
     LoaderLogo,
@@ -231,7 +183,6 @@ export default {
   created() {
     const org = this.$router.currentRoute.query.org || getRandomOrg()
     this.$store.commit('setOrg', org)
-    // this.$trackPageView()
   }
 }
 </script>

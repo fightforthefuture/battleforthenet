@@ -1,6 +1,3 @@
-import axios from 'axios'
-import querystring from 'querystring'
-
 export function getHostName(url) {
   var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
   if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
@@ -9,37 +6,6 @@ export function getHostName(url) {
   else {
     return null;
   }
-}
-
-// send event to Google Analytics
-export function trackEvent(category, action, label, value) {
-  if (window.ga) {
-    var params = {
-      hitType: 'event',
-      eventCategory: category,
-      eventAction: action
-    };
-
-    if (label) {
-      params.eventLabel = label;
-    }
-
-    if (value) {
-      params.eventValue = value;
-    }
-
-    window.ga('send', params);
-  }
-}
-
-export function getMetaContent(name) {
-  var el = document.querySelector('meta[name="' + name + '"]') || document.querySelector('meta[property="' + name + '"]');
-  
-  if (el) {
-    return el.getAttribute('content');
-  }
-
-  return null;
 }
 
 export function openPopup(url, title='popup', w=600, h=500) {
@@ -100,7 +66,10 @@ export function createMetaTags(tags={}) {
 }
 
 export function postFormData(url, data={}) {
-  return axios.post(url, querystring.stringify(data), {
+  const axios = require('axios')
+  const qs = require('querystring')
+
+  return axios.post(url, qs.stringify(data), {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
@@ -137,6 +106,8 @@ export function getDonateLink(org) {
 }
 
 export async function geocodeState() {
+  const axios = require('axios')
+
   const state = {
     name: null,
     code: null

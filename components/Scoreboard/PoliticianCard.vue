@@ -33,7 +33,7 @@
     width: 100%;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     text-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
     margin: 0;
     padding: 0;
@@ -46,7 +46,7 @@
   }
 
   &.long-name h5 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     bottom: .9rem;
   }
 

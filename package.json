@@ -27,7 +27,6 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "lodash": "^4.17.5",
-    "moment": "^2.22.1",
     "node-sass": "^4.8.3",
     "normalize.css": "^8.0.0",
     "nuxt-sass-resources-loader": "^1.2.0",

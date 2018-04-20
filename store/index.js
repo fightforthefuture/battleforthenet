@@ -4,24 +4,12 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       org: 'fftf',
-      modalVisible: false
+      politicians: []
     },
 
     mutations: {
-      showModal(state) {
-        state.modalVisible = true
-
-        if (process.browser) {
-          document.querySelector('body').classList.add('modal-open')
-        }
-      },
-
-      hideModal(state) {
-        state.modalVisible = false
-
-        if (process.browser) {
-          document.querySelector('body').classList.remove('modal-open')
-        }
+      setPoliticians(state, value) {
+        state.politicians = value
       },
 
       setOrg(state, value) {

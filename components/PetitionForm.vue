@@ -1,19 +1,17 @@
 <style lang="scss" scoped>
 .petition-form {
-  // display: flex;
-
   .petition-copy {
-    font-size: 27px;
+    font-size: 2.7rem;
     line-height: 1.5;
     color: #fff;
     float: left;
-    width: 500px;
+    width: 50rem;
 
     @media screen and (min-width: $PAGE_WIDTH) {
-      padding-bottom: 100px;
+      padding-bottom: 10rem;
       background-image: url(/images/red-arrow.png);
       background-repeat: no-repeat;
-      background-position: 300px 350px;
+      background-position: 30rem 35rem;
     }
 
     strong {
@@ -23,24 +21,19 @@
   }
 
   form {
-    width: 265px;
+    width: 26.5rem;
     float: right;
 
-    .flex-row input {
-      flex: 1;
-      margin-right: 5px;
+    .flex-row {
+      margin-bottom: 0;
+    }
 
-      &.address {
-        flex: 2;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
+    input.address {
+      flex: 2;
     }
 
     input {
-      margin-bottom: 6px;
+      margin-bottom: 0.6rem;
     }
 
     .letter {
@@ -48,17 +41,17 @@
         color: #777;
         font-family: $title-font;
         font-weight: bold;
-        font-size: 17px;
+        font-size: 1.7rem;
         content: "Letter:";
         background-color: #fff;
         display: block;
-        border-radius: 4px 4px 0 0;
-        padding: 10px 10px 0;
+        border-radius: $border-radius $border-radius 0 0;
+        padding: 1rem 1rem 0;
       }
 
       textarea {
-        min-width: 265px;
-        height: 130px;
+        min-width: 26.5rem;
+        height: 13rem;
         border-radius: 0;
       }
 
@@ -70,11 +63,11 @@
         text-transform: uppercase;
         display: block;
         text-decoration: none;
-        font-size: 12px;
+        font-size: 1.2rem;
         text-align: center;
-        border-radius: 0 0 4px 4px;
-        margin: -6px 0 6px;
-        padding: 5px;
+        border-radius: 0 0 $border-radius $border-radius;
+        margin: -0.65rem 0 .6rem;
+        padding: .5rem;
 
         &:hover {
           color: darken(#999, 10%);
@@ -85,7 +78,7 @@
     }
 
     .btn {
-      font-size: 18px;
+      font-size: 1.8rem;
       margin: 0;
     }
 
@@ -96,16 +89,18 @@
   }
 
   @media screen and (max-width: $PAGE_WIDTH) {
-    .petition-copy {
-      float: none;
-      width: auto;
-      font-size: 20px;
-    }
-
+    .petition-copy,
     form {
       float: none;
       width: auto;
-      margin-bottom: 20px;
+    }
+
+    form {
+      margin-bottom: 3rem;
+
+      textarea {
+        min-width: none;
+      }
     }
   }
 }
@@ -131,20 +126,7 @@
         <span v-else>Write Congress</span>
       </button>
       <no-ssr>
-        <p class="disclaimer" slot="placeholder"></p>
-        <p class="disclaimer">
-          <small v-if="org == 'fftf'">
-            <a target="_blank" href="https://www.fightforthefuture.org">Fight for the Future</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS. Message &amp; data rates apply. You can always text STOP to stop receiving messages.
-            <a target="_blank" href="/privacy">Privacy Policy</a>
-          </small>
-          <small v-else>
-            <a v-if="org == 'dp'" target="_blank" href="https://www.demandprogress.org">Demand Progress</a>
-            <a v-else-if="org == 'fp'" target="_blank" href="https://www.freepress.net">Free Press</a>
-            <a v-else target="_blank" href="https://www.fightforthefuture.org">Fight for the Future</a>
-            will contact you about future campaigns.
-            <a target="_blank" href="/privacy">Privacy Policy</a>
-          </small>
-        </p>
+        <disclaimer :org="org"></disclaimer>
       </no-ssr>
     </form>
     <div class="petition-copy">
@@ -153,11 +135,10 @@
     <modal v-if="modalVisible">
       <call-form :in-modal="true"></call-form>
     </modal>
-  </div> 
+  </div>
 </template>
 
 <script>
-import moment from 'moment'
 import { mapState } from 'vuex'
 import { sendToMothership } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
@@ -176,13 +157,13 @@ export default {
       address: null,
       zipCode: null,
       phone: null,
-      comments: `The FCC vote to destroy the Net Neutrality protections on Dec. 14 cannot stand. 
+      comments: `The FCC vote to destroy the Net Neutrality protections on Dec. 14 cannot stand.
 
-I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote. 
+I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
 
-The FCC's Dec. 14 decision willfully ignored the outcry from tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing. 
+The FCC's Dec. 14 decision willfully ignored the outcry from tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
 
-We need members of Congress to stand up for the open internet and for the digital civil rights of their constituents now. Please co-sponsor, sign the discharge petition, and vote for the CRA to pass a Resolution of Disapproval overturning the FCC's December 14 "Restoring Internet Freedom" vote. 
+We need members of Congress to stand up for the open internet and for the digital civil rights of their constituents now. Please co-sponsor, sign the discharge petition, and vote for the CRA to pass a Resolution of Disapproval overturning the FCC's December 14 "Restoring Internet Freedom" vote.
 
 Thank you.`
     }
@@ -192,9 +173,7 @@ Thank you.`
     ...mapState(['org']),
 
     actionComment() {
-      const date = moment().format('dddd, MMMM Do YYYY')
-      const time = moment().format('h:mm:ss a')
-      return `${this.comments}\n\n(The sender of this message generated it using tools available at BattleForTheNet.com on ${date} at ${time}.)`
+      return `${this.comments}\n\n(The sender of this message generated it using tools available at BattleForTheNet.com on ${new Date()}.)`
     }
   },
 

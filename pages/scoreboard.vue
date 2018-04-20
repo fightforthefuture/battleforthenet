@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
 .scoreboard {
-  margin-bottom: 100px;
+  margin-bottom: 10rem;
 }
 </style>
 
@@ -17,11 +17,15 @@
       <scoreboard></scoreboard>
       <h2>Done tweeting? Be sure to <router-link to="/">email and call</router-link> your members of Congress too!</h2>
     </section>
+
+    <social-sidebar></social-sidebar>
   </div>
 </template>
 
 <script>
+import politicians from '~/assets/data/politicians'
 import Scoreboard from '~/components/Scoreboard/Scoreboard'
+import SocialSidebar from '~/components/SocialSidebar'
 
 export default {
   head: {
@@ -29,7 +33,13 @@ export default {
   },
 
   components: {
-    Scoreboard
+    Scoreboard,
+    SocialSidebar
+  },
+
+  created() {
+    // store politician data in Vuex so Nuxt will pre-render it for this page
+    this.$store.commit('setPoliticians', politicians)
   }
 }
 </script>

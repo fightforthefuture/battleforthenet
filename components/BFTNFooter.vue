@@ -5,28 +5,31 @@
   margin-top: 10rem;
 
   .logos {
-    padding: 2rem 0;
-    border-bottom: 2px solid #393558;
+    padding: 2rem 0 3rem;
+    border-bottom: .2rem solid #393558;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
 
-    a {
-      line-height: 6.2rem;
+    img {
+      max-width: 240px;
+      height: 50px;
+      object-fit: contain;
+      margin: 0 2rem;
+    }
 
-      @include mobile {
-        line-height: auto;
+    a.freepress img {
+      margin-top: -1rem;
+    }
+
+    @include mobile {
+      padding-top: 0;
+
+      a.freepress img {
+        margin-top: 0;
       }
-    }
-
-    .fftf {
-      margin-right: 4rem;
-      position: relative;
-      top: -0.6rem;
-    }
-
-    .demandprogress {
-      position: relative;
-      top: .8rem;
-      margin-right: 4rem;
     }
   }
 
@@ -37,27 +40,24 @@
     font-weight: bold;
     color: #717093;
 
+    h3 {
+      color: $header-color;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
     @include mobile {
       width: auto;
       float: none;
     }
-
-    ul {
-      font-weight: bold;
-      list-style-type: none;
-      padding: 0;
-
-      li {
-        margin: 0 0 .8rem 0;
-      }
-    }
   }
 
   .social-media {
-    float: left;
-    height: 9rem;
+    float: right;
     width: 30%;
-    margin-left: 5%;
 
     @include mobile {
       float: none;
@@ -70,7 +70,7 @@
       display: block;
       width: 100%;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 1.4rem;
       position: relative;
       color: #FFF;
       text-decoration: none;
@@ -110,24 +110,22 @@
   }
 
   .built-by {
-    clear: both;
     font-weight: bold;
     text-align: center;
     width: 30rem;
     margin: 4rem auto 0;
     background-color: #171629;
-    padding: 2rem 0 4rem;
-    line-height: 1em;
+    padding: 2rem 0 3rem;
     color: #717093;
     border-radius: $border-radius $border-radius 0 0;
+    font-size: 1.6rem;
 
     span {
       margin-right: .5rem;
     }
 
     img {
-      position: relative;
-      top: .2rem;
+      width: 14.4rem;
     }
 
     @include mobile {
@@ -142,13 +140,13 @@
     <div class="container">
       <div class="logos">
         <a class="fftf" href="https://www.fightforthefuture.org/">
-          <img src="/images/v2/footer-fftf-logo.png" srcset="/images/v2/footer-fftf-logo-x2.png 2x" />
+          <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">
         </a>
         <a class="demandprogress" href="https://demandprogress.org/">
-          <img src="/images/v2/footer-demandprogress-logo.png" srcset="/images/v2/footer-demandprogress-logo-x2.png 2x" />
+          <img src="/images/v2/footer-demandprogress-logo.png" srcset="/images/v2/footer-demandprogress-logo-x2.png 2x" alt="Demand Progress">
         </a>
         <a class="freepress" href="https://www.freepress.net/">
-          <img src="/images/v2/footer-freepress-logo.png" srcset="/images/v2/footer-freepress-logo-x2.png 2x" />
+          <img src="/images/v2/footer-freepress-logo.png" srcset="/images/v2/footer-freepress-logo-x2.png 2x" alt="Free Press">
         </a>
       </div>
       <div class="clearfix">
@@ -156,10 +154,9 @@
           <h3>For Press inquiries, please contact us at:</h3>
           <p>
             <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a><br />
-            <a class="no-em" href="tel://1-201-533-8838">201-533-8838</a> or <a href="mailto:tkarr@freepress.net">tkarr@freepress.net</a><br />
-            <a class="no-em" href="tel://1-202-681-7582">202-681-7582</a> or <a href="mailto:press@demandprogress.org">press@demandprogress.org</a>
+            <a href="tel://1-201-533-8838">201-533-8838</a> or <a href="mailto:tkarr@freepress.net">tkarr@freepress.net</a><br />
+            <a href="tel://1-202-681-7582">202-681-7582</a> or <a href="mailto:press@demandprogress.org">press@demandprogress.org</a>
           </p>
-
           <p>All other inquiries, contact <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a></p>
         </div>
         <div class="social-media">
@@ -174,7 +171,9 @@
         </div>
       </div>
       <div class="built-by">
-        <span>Built by:</span> <img src="/images/v2/credit-fftf.png" srcset="/images/v2/credit-fftf-x2.png 2x" />
+        <div class="flex-center">
+          <span>Built by:</span> <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">
+        </div>
       </div>
     </div>
   </footer>

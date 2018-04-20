@@ -55,7 +55,7 @@ h1 {
   letter-spacing: 0.1rem;
 
   @include mobile {
-    font-size: 4.5rem;
+    font-size: 4.2rem;
   }
 }
 
@@ -110,6 +110,16 @@ strong {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  margin-bottom: 1rem;
+
+  > * {
+    flex: 1;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .inherit-color {
@@ -209,7 +219,7 @@ button {
     background-image: url($icon-url);
     background-size: cover;
     display: inline-flex;
-    width: $width; 
+    width: $width;
     height: $height;
     content: "";
     margin-right: .4rem;
@@ -254,7 +264,7 @@ button {
 
   &:hover {
     background-color: #171629;
-  }  
+  }
 }
 
 .container {
@@ -265,4 +275,60 @@ button {
 
 section {
   margin-bottom: 6rem;
+}
+
+
+ul.logo-cloud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    width: 25%;
+    padding: 2rem;
+
+    @include mobile {
+      width: 50%;
+      padding: 0 1.5rem;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+ul.logo-grid {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    padding: 0;
+    height: 7rem;
+    background-color: #fff;
+    border-radius: $border-radius;
+    width: 25%;
+    margin: .5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      width: 48%;
+      margin: 1%;
+    }
+
+    img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  }
 }
