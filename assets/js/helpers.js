@@ -80,19 +80,6 @@ export function sendToMothership(data={}) {
   return postFormData('https://queue.fightforthefuture.org/action', data)
 }
 
-export function getRandomOrg() {
-  var coinToss = Math.random();
-  if (coinToss < .20) {
-    return 'fp';
-  }
-  else if (coinToss < .60) {
-    return 'dp';
-  }
-  else {
-    return 'fftf';
-  }
-}
-
 export function getDonateLink(org) {
   switch (org) {
     case 'fp':

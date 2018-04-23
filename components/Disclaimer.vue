@@ -16,12 +16,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  props: {
-    org: {
-      type: String,
-      default: 'fftf'
-    }
-  }
+  computed: mapState(['org'])
 }
 </script>

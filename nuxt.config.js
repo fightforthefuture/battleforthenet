@@ -73,6 +73,7 @@ module.exports = {
     // '~/plugins/org-rotation.js'
     '~/plugins/filters.js',
     '~/plugins/components.js',
-    { src: '~/plugins/analytics.js', ssr: false},
+    { src: '~/plugins/analytics.js', ssr: false },
+    '~/plugins/org-rotation.js'
   ]
 }

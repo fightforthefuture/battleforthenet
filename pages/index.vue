@@ -176,13 +176,8 @@ export default {
 
   computed: {
     isCallPage() {
-      return this.$router.currentRoute.name === 'call' || this.$router.currentRoute.query.call
+      return this.$route.name === 'call' || this.$route.query.call
     }
-  },
-
-  created() {
-    const org = this.$router.currentRoute.query.org || getRandomOrg()
-    this.$store.commit('setOrg', org)
   }
 }
 </script>
