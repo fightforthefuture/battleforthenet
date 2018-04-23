@@ -15,9 +15,9 @@ img.app-store {
   }
 }
 
-.modals img {
-  max-width: 40rem;
-  margin: 1rem;
+.modals a {
+  width: 50%;
+  padding: 1rem;
 }
 </style>
 
