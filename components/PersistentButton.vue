@@ -2,8 +2,8 @@
   .persistent-button {
     z-index: 1983;
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 2.5rem;
+    right: 2.5rem;
     transform: translate3d(0, 200%, 0);
     transition: transform 0.2s ease-in;
 
@@ -12,20 +12,20 @@
       white-space: nowrap;
       font-size: 4rem;
       padding: 1.5rem;
-      box-shadow: 5px 5px 35px rgba(0, 0, 0, 1.0);
+      box-shadow: .5rem .5rem 3.5rem rgba(0, 0, 0, 1.0);
       transition: box-shadow 0.3s ease-in;
 
       &.btn-phone {
         background-image: url('~/assets/images/phone.svg');
         background-repeat: no-repeat;
-        background-size: 50px auto;
-        background-position: 20px center;
-        padding-left: 80px;
+        background-size: 4rem auto;
+        background-position: 1.2rem center;
+        padding-left: 6rem;
       }
 
       &:hover {
         color: #fff;
-        box-shadow: 10px 10px 35px rgba(0, 0, 0, 1.0);
+        box-shadow: 1rem 1rem 3.5rem rgba(0, 0, 0, 1.0);
       }
     }
 
