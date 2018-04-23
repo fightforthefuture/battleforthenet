@@ -320,6 +320,7 @@ ul.logo-grid {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
     @include mobile {
       width: 48%;

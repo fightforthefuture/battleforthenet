@@ -20,7 +20,6 @@ body.modal-open {
 
 .modal {
   width: 700px;
-  margin: auto;
   position: relative;
   background-color: $body-bg-color;
   padding: 40px 30px 30px;

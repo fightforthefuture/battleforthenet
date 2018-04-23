@@ -15,8 +15,6 @@
 
     img {
       max-width: 240px;
-      height: 50px;
-      object-fit: contain;
       margin: 0 2rem;
     }
 

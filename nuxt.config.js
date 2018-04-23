@@ -65,8 +65,19 @@ module.exports = {
     },
 
     vendor: [
-      'axios'
-    ]
+      'axios',
+      'babel-polyfill'
+    ],
+
+    babel: {
+      presets: [
+        ['vue-app', {
+            useBuiltIns: true,
+            targets: { ie: 9, uglify: true }
+          }
+        ]
+      ]
+    },
   },
 
   plugins: [

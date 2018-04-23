@@ -14,6 +14,11 @@ img.app-store {
     height: 250px;
   }
 }
+
+.modals img {
+  max-width: 40rem;
+  margin: 1rem;
+}
 </style>
 
 <template>
