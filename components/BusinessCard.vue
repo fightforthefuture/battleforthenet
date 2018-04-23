@@ -120,8 +120,7 @@ export default {
         openPopup(this.tweetURL, 'tweet');
       }
 
-      // var stepNumber = this.national ? 3 : 1;
-      // trackEvent('business', 'tweet', 'Step ' + stepNumber + ' - ' + this.business.twitter);
+      this.$trackEvent('business', 'tweet', this.business.twitter)
     }
   }
 }
