@@ -81,13 +81,15 @@ export default {
 
   computed: {
     campaign() {
-      return this.$router.currentRoute.query.campaign || 'fftf'
+      return this.$route.query.campaign || 'fftf'
     },
 
     campaignId() {
       switch (this.campaign) {
         case 'daily':
           return 1
+        case 'california':
+          return 'California-SB-822'
         case 'fftf':
           return DEFAULT_CAMPAIGN_ID
         default:
