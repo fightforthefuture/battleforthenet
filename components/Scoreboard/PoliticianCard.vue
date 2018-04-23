@@ -66,10 +66,10 @@
     }
 
     a.btn-call {
-      background-color: $team-internet-blue;
+      background-color: $team-internet-green;
 
       &:hover {
-        background-color: darken($team-internet-blue, 10%);
+        background-color: darken($team-internet-green, 10%);
       }
     }
   }

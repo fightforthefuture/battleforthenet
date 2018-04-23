@@ -3,11 +3,11 @@ h3.legend {
   color: #fff;
 
   .red {
-    color: $TEAM_CABLE_RED;
+    color: $team-cable-red;
   }
 
   .green {
-    color: $TEAM_INTERNET_GREEN;
+    color: $team-internet-green;
   }
 }
 </style>

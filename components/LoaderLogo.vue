@@ -23,7 +23,7 @@
     display: block;
     height: 6px;
     width: 18px;
-    background-color: $HEADER_COLORA;
+    background-color: $header-color;
     border-radius: 3px;
   }
 

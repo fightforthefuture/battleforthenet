@@ -31,8 +31,8 @@ img {
 }
 
 body {
-  background-color: #171629;
-  color: #CCCAEA;
+  background-color: $body-bg-color;
+  color: $body-color;
   background-image: url("/images/v2-bg-noise.png");
   background-repeat: no-repeat;
   background-position: center top;
@@ -149,8 +149,8 @@ code {
   margin: 1.5rem 0;
   padding: 1rem;
   font-size: 1.4rem;
-  background-color: #cccaea;
-  color: #171629;
+  background-color: $body-color;
+  color: $body-bg-color;
   border-radius: $border-radius;
 }
 
@@ -160,10 +160,10 @@ p.disclaimer {
   small {
     display: block;
     font-size: 1.3rem;
-    color: #717093;
+    color: $muted-text-color;
 
     a {
-      color: #b1aedc;
+      color: $muted-link-color;
     }
   }
 }
@@ -263,7 +263,7 @@ button {
   }
 
   &:hover {
-    background-color: #171629;
+    background-color: $body-bg-color;
   }
 }
 
@@ -313,10 +313,10 @@ ul.logo-grid {
   li {
     padding: 0;
     height: 7rem;
-    background-color: #fff;
     border-radius: $border-radius;
+    background-color: #fff;
     width: 25%;
-    margin: .5%;
+    margin: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;

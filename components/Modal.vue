@@ -22,7 +22,7 @@ body.modal-open {
   width: 700px;
   margin: auto;
   position: relative;
-  background-color: #171629;
+  background-color: $body-bg-color;
   padding: 40px 30px 30px;
   border-radius: 8px;
   text-align: center;

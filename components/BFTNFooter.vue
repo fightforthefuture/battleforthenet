@@ -6,7 +6,7 @@
 
   .logos {
     padding: 2rem 0 3rem;
-    border-bottom: .2rem solid #393558;
+    border-bottom: .2rem solid $border-color;
     text-align: center;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
       margin-top: -1rem;
     }
 
-    @include mobile {
+    @include small-screen {
       padding-top: 0;
 
       a.freepress img {
@@ -38,7 +38,7 @@
     float: left;
     padding-top: 1rem;
     font-weight: bold;
-    color: #717093;
+    color: $muted-text-color;
 
     h3 {
       color: $header-color;
@@ -49,7 +49,7 @@
       font-size: 1.5rem;
     }
 
-    @include mobile {
+    @include small-screen {
       width: auto;
       float: none;
     }
@@ -57,9 +57,9 @@
 
   .social-media {
     float: right;
-    width: 30%;
+    width: 35%;
 
-    @include mobile {
+    @include small-screen {
       float: none;
       width: auto;
       height: auto;
@@ -82,6 +82,7 @@
       text-transform: uppercase;
       text-align: center;
       background-image: none;
+      white-space: nowrap;
 
       &:before {
         content: none;
@@ -102,7 +103,7 @@
         margin-top: 7rem;
         margin-bottom: 1rem;
 
-        @include mobile {
+        @include small-screen {
           margin: 2rem 0 1rem;
         }
       }
@@ -114,9 +115,9 @@
     text-align: center;
     width: 30rem;
     margin: 4rem auto 0;
-    background-color: #171629;
+    background-color: $body-bg-color;
     padding: 2rem 0 3rem;
-    color: #717093;
+    color: $muted-text-color;
     border-radius: $border-radius $border-radius 0 0;
     font-size: 1.6rem;
 
@@ -128,7 +129,7 @@
       width: 14.4rem;
     }
 
-    @include mobile {
+    @include small-screen {
       padding-bottom: 10rem;
     }
   }

@@ -5,7 +5,7 @@
   padding: 1rem;
   float: left;
 
-  @media screen and (max-width: $PAGE_WIDTH) {
+  @include small-screen {
     width: 33%;
   }
 
@@ -25,7 +25,7 @@
     border-radius: 100%;
     background-color: #fff;
     margin-bottom: 0.5rem;
-    border: 1px solid #CCCAEA;
+    border: 1px solid $body-color;
   }
 
   .name-location {

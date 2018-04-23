@@ -5,13 +5,14 @@
     line-height: 1.5;
     color: #fff;
     float: left;
-    width: 50rem;
+    width: 60%;
 
-    @media screen and (min-width: $PAGE_WIDTH) {
-      padding-bottom: 10rem;
-      background-image: url(/images/red-arrow.png);
+    @include big-screen {
+      padding-bottom: 100px;
+      background-image: url('~/assets/images/arrow.svg');
       background-repeat: no-repeat;
-      background-position: 30rem 35rem;
+      background-position: 300px 370px;
+      background-size: 120px auto;
     }
 
     strong {
@@ -21,19 +22,24 @@
   }
 
   form {
-    width: 26.5rem;
+    width: 35%;
     float: right;
 
     .flex-row {
       margin-bottom: 0;
     }
 
-    input.address {
-      flex: 2;
-    }
-
     input {
       margin-bottom: 0.6rem;
+    }
+
+    input.address {
+      width: 58%;
+      margin-right: 2%;
+    }
+
+    input.zip-code {
+      width: 40%;
     }
 
     .letter {
@@ -88,7 +94,7 @@
     }
   }
 
-  @media screen and (max-width: $PAGE_WIDTH) {
+  @include small-screen {
     .petition-copy,
     form {
       float: none;
@@ -111,10 +117,8 @@
     <form @submit.prevent="submitForm()">
       <input v-model.trim="name" type="text" placeholder="Name*" required>
       <input v-model.trim="email" type="email" placeholder="E-mail*" required>
-      <div class="flex-row">
-        <input v-model.trim="address" class="address" type="text" placeholder="Address*" required>
-        <input v-model.trim="zipCode" class="zip-code" type="tel" placeholder="Zip*" required>
-      </div>
+      <input v-model.trim="address" type="text" placeholder="Address*" required class="address">
+      <input v-model.trim="zipCode" type="tel" placeholder="Zip*" required class="zip-code">
       <input v-model.trim="phone" type="tel" placeholder="Phone # (for text list)">
       <div class="letter">
         <label>Letter:</label>
@@ -126,7 +130,7 @@
         <span v-else>Write Congress</span>
       </button>
       <no-ssr>
-        <disclaimer></disclaimer>
+        <disclaimer :org="org"></disclaimer>
       </no-ssr>
     </form>
     <div class="petition-copy">
@@ -139,6 +143,7 @@
 </template>
 
 <script>
+// import moment from 'moment'
 import { mapState } from 'vuex'
 import { sendToMothership } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
