@@ -1,0 +1,36 @@
+/* This file is injected into every Vue component */
+
+$body-font: "Open Sans", sans-serif;
+$title-font: Montserrat, sans-serif;
+$body-color: #CCCAEA;
+$body-bg-color: #171629;
+$border-color: #393558;
+$link-color: #6388ed;
+$header-color: #fd4935;
+$facebook-blue: #3C5A96;
+$twitter-blue: #2ecbf8;
+$team-internet-green: #45bcc0;
+$team-cable-red: #ff1a09;
+$muted-text-color: #717093;
+$muted-link-color: #b1aedc;
+$button-primary: #f94220;
+$border-radius: 4px;
+$container-width: 800px;
+
+@mixin mobile {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin big-screen {
+  @media only screen and (min-width: $container-width) {
+    @content;
+  }
+}
+
+@mixin small-screen {
+  @media only screen and (max-width: $container-width - 1px) {
+    @content;
+  }
+}

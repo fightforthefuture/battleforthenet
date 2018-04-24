@@ -22,12 +22,10 @@ jobs:
           - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
 
-      - run: 
+      - run:
           name: Build
           command: |
-            NODE_ENV=production npm run build
-            NODE_ENV=production npm run htmllint
-            npm run bust-cache
+            npm run generate
 
       - deploy:
           name: Deploy to S3
@@ -43,6 +41,38 @@ jobs:
               -H "Content-Type: application/json" \
               --data '{"purge_everything":true}'
 
+  build_stage:
+    docker:
+      # circleci/ruby:2.4-node-browsers + awscli
+      - image: kenmickles/fftf-static-site-builder:0.0.1
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Install dependencies
+          command: |
+            npm install
+
+      - save_cache:
+          paths:
+          - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Build
+          command: |
+            npm run generate
+
+      - deploy:
+          name: Deploy to S3
+          command: |
+            npm run deploy-branch
+
 workflows:
   version: 2
   deploy:
@@ -52,3 +82,8 @@ workflows:
             branches:
               only:
                 - master
+      - build_stage:
+          filters:
+            branches:
+              only:
+                - /stage-.*/
