@@ -76,6 +76,17 @@ img.rounded {
     width: 7rem;
   }
 
+  form .row {
+    input {
+      width: 32.5%;
+      margin-right: 1%;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
   .btn {
     background-color: #000;
   }
@@ -268,7 +279,7 @@ iframe.events-map {
         <p>The FCC voted to let ISPs ruin the Internet. But there’s an imminent vote in the US Senate to overrule them and restore net neutrality. Starting on May 9th until the day of the vote, put your website or social profile on RED ALERT to help sound the alarm and flood lawmakers with calls and emails. <b>Are you in?</b></p>
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
-          <div class="flex-row">
+          <div class="row">
             <input v-model="name" placeholder="Name*" name="name" type="text" required autocomplete="name">
             <input v-model="email" placeholder="Email*" name="email" type="email" required autocomplete="email">
             <input v-model="zipCode" placeholder="ZIP*" name="zip_code" type="tel" required autocomplete="postal-code">
