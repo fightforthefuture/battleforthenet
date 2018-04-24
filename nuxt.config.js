@@ -24,13 +24,7 @@ module.exports = {
     '~/assets/css/main.scss'
   ],
   modules: [
-    'nuxt-sass-resources-loader',
-    // ['@nuxtjs/google-analytics', {
-    //   id: settings.googleAnalyticsId,
-    //   autoTracking: {
-    //     page: false
-    //   }
-    // }]
+    'nuxt-sass-resources-loader'
   ],
   sassResources: [
     '~/assets/css/_variables.scss'
@@ -81,10 +75,10 @@ module.exports = {
   },
 
   plugins: [
-    // '~/plugins/org-rotation.js'
     '~/plugins/filters.js',
     '~/plugins/components.js',
     { src: '~/plugins/analytics.js', ssr: false },
-    '~/plugins/org-rotation.js'
+    '~/plugins/org-rotation.js',
+    { src: '~/plugins/raven.js', ssr: false }
   ]
 }
