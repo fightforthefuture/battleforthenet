@@ -224,6 +224,10 @@ section {
 
       .btn {
         white-space: nowrap;
+
+        @include mobile {
+          white-space: normal;
+        }
       }
 
       .or {
