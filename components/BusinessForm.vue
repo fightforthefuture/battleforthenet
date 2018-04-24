@@ -69,7 +69,7 @@ export default {
         <span v-if="isSending" v-cloak>Joining...</span>
         <span v-else>Sign Up</span>
       </button>
-      <disclaimer></disclaimer>
+      <disclaimer :sms="true"></disclaimer>
     </form>
     <modal v-if="modalVisible">
       <h2>Thanks so much for your support!</h2>

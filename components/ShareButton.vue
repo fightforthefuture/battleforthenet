@@ -23,7 +23,7 @@ export default {
     }
   },
 
-  computed: {   
+  computed: {
     shareURL() {
       if (this.url) {
         return this.url
@@ -38,6 +38,7 @@ export default {
   methods: {
     share() {
       openPopup(this.shareURL, 'share')
+      this.$emit('clicked')
     }
   }
 }

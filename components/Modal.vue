@@ -23,7 +23,7 @@ body.modal-open {
   position: relative;
   background-color: $body-bg-color;
   padding: 40px 30px 30px;
-  border-radius: 8px;
+  border-radius: $border-radius;
   text-align: center;
 
   .close {

@@ -16,7 +16,7 @@
     background-image: none;
     padding: 0;
     font-size: 16px;
-    
+
     &:before {
       content: none;
     }
@@ -68,13 +68,19 @@
 
 <template>
   <div class="social-sidebar">
-    <twitter-button>
+    <twitter-button :url="twitterUrl" @clicked="$trackEvent('sidebar_twitter_button', 'click')">
       <span>Share on Twitter</span>
       <img src="~/assets/images/twitter_white.svg" alt="">
     </twitter-button>
-    <facebook-button>
+    <facebook-button :url="facebookUrl" @clicked="$trackEvent('sidebar_facebook_button', 'click')">
       <span>Share on Facebook</span>
       <img src="~/assets/images/facebook_white.svg" alt="">
     </facebook-button>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['twitterUrl', 'facebookUrl']
+}
+</script>

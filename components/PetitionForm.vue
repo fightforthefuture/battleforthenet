@@ -130,7 +130,7 @@
         <span v-else>Write Congress</span>
       </button>
       <no-ssr>
-        <disclaimer :org="org"></disclaimer>
+        <disclaimer :sms="true"></disclaimer>
       </no-ssr>
     </form>
     <div class="petition-copy">

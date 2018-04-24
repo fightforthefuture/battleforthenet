@@ -3,18 +3,6 @@ img.app-store {
   height: 5rem;
 }
 
-#events iframe {
-  width: 100%;
-  height: 450px;
-  background-color: #fff;
-  border: none;
-  border-radius: $border-radius;
-
-  @include mobile {
-    height: 250px;
-  }
-}
-
 .modals a {
   width: 50%;
   padding: 1rem;
@@ -45,7 +33,7 @@ img.app-store {
     <section id="events">
       <h2>Find an event in your area</h2>
       <p><strong>Want to make your voice heard?</strong> Check out the map below to find a protest or a meeting with a representative in your state.  And if there are no events in your area, consider organizing one!</p>
-      <iframe src="https://events.battleforthenet.com/iframe"></iframe>
+      <iframe class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
     </section>
 
     <section id="videos">
@@ -159,7 +147,7 @@ img.app-store {
 </template>
 
 <script>
-import { createMetaTags, getRandomOrg } from '~/assets/js/helpers'
+import { createMetaTags } from '~/assets/js/helpers'
 import LoaderLogo from '~/components/LoaderLogo'
 import CallForm from '~/components/CallForm'
 import PetitionForm from '~/components/PetitionForm'
