@@ -88,7 +88,7 @@ export function getDonateLink(org) {
       return "https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn"
     case "fftf":
     default:
-      return "https://donate.fightforthefuture.org/campaigns/bftnlanding/"
+      return "https://donate.fightforthefuture.org"
   }
 }
 
