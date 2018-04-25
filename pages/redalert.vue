@@ -280,7 +280,7 @@ iframe.events-map {
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
         <h1 class="upcase">{{ $t('redalert.title') }}</h1>
-        <p v-html="$t('redalert.intro_html')"></p>
+        <div v-html="$t('redalert.intro_html')"></div>
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
