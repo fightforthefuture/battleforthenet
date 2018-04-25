@@ -279,88 +279,33 @@ iframe.events-map {
     <header class="page-header" id="#top">
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
-        <h1 class="upcase">Red Alert for Net Neutrality</h1>
-        <p>The FCC voted to let ISPs ruin the Internet. But there’s an imminent vote in the US Senate to overrule them and restore net neutrality. Starting on May 9th until the day of the vote, put your website or social profile on RED ALERT to help sound the alarm and flood lawmakers with calls and emails. <b>Are you in?</b></p>
+        <h1 class="upcase">{{ $t('redalert.title') }}</h1>
+        <p v-html="$t('redalert.intro_html')"></p>
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
-            <input v-model="name" placeholder="Name*" name="name" type="text" required autocomplete="name">
-            <input v-model="email" placeholder="Email*" name="email" type="email" required autocomplete="email">
-            <input v-model="zipCode" placeholder="ZIP*" name="zip_code" type="tel" required autocomplete="postal-code">
+            <input v-model="name" :placeholder="$t('redalert.form.name_placeholder')" name="name" type="text" required autocomplete="name">
+            <input v-model="email" :placeholder="$t('redalert.form.email_placeholder')" name="email" type="email" required autocomplete="email">
+            <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required autocomplete="postal-code">
           </div>
           <button class="btn btn-block btn-large" :disabled="isSending">
-            <span v-if="isSending">Saving...</span>
-            <span v-else>Join the Protest</span>
+            <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
+            <span v-else>{{ $t('redalert.form.button_cta') }}</span>
           </button>
           <disclaimer></disclaimer>
         </form>
       </div>
     </header>
 
-    <section>
+    <section v-for="(section, id) in sections" :id="id" :key="id">
       <div class="container">
-        <h2>What's happening?</h2>
-        <p>The US Senate is headed for a mid-May vote on a Congressional Review Act (CRA) resolution to block the FCC’s repeal of net neutrality. Starting on May 9th, and carrying through until the vote, the Internet will “go red” to raise awareness and ensure that lawmakers hear from their constituents, who overwhelmingly support restoring open Internet protections. <a href="#social">Click to jump to instructions for how to join with your website or on social media.</a></p>
+        <h2>{{ section.title }}</h2>
+        <div v-html="section.body_html"></div>
       </div>
     </section>
-
-    <section>
-      <div class="container">
-        <h2>How to put your site on RED ALERT:</h2>
-        <p>On May 9th, cover your homepage with an unavoidable message that informs visitors about the impending vote and invites them to take action. Then between May 9th and the vote, display a prominent alert on your homepage to continue driving calls and emails to lawmakers. See the examples below. Check back soon and we’ll provide some simple code that makes it easy to put any site on RED ALERT. You don’t have to use our code to participate, but you have to do something epic that gets your visitors attention drives calls and emails to Congress. This is the moment to fight!</p>
-        <p><b>Starting at 12:01am on May 9th, the RED ALERT widget will display this:</b></p>
-        <p><img src="~/assets/images/redalert/modal-preview.jpg" srcset="~/assets/images/redalert/modal-preview.jpg 1x, ~/assets/images/redalert/modal-preview@2x.jpg 2x" alt="A screenshot of our Red Alert modal" class="rounded"></p>
-        <p><b>From 12:01am on May 10 until the midnight the night before the vote, the RED ALERT widget will look like this:</b></p>
-        <p><img src="~/assets/images/redalert/modal-minimized-preview.jpg" srcset="~/assets/images/redalert/modal-minimized-preview.jpg 1x, ~/assets/images/redalert/modal-minimized-preview@2x.jpg 2x" alt="A screenshot of our Red Alert modal when minimized" class="rounded"></p>
-        <p>Starting at midnight, the night before the vote, the widget will expand again.</p>
-      </div>
-    </section>
-
-    <section id="social">
-      <div class="container">
-        <h2>Put your social media accounts on Red Alert</h2>
-        <p>If you’re active on social media, have a video channel, or moderate an online forum, put your small piece of the Internet on RED ALERT by changing your profile and banner images, and scheduling frequent posts linking to <a href="https://www.battleforthenet.com">BattleForTheNet.com</a> where people can take action. Check back soon for a giant folder of content you can use.</p>
-      </div>
-    </section>
-
-    <section id="events">
-      <div class="container">
-        <h2>Events</h2>
-        <p>People and small businesses all over America are vigorously defending net neutrality by staging protests and organizing events at Congressional offices.  Check out the map below to view events in your area, or <a href="https://events.battleforthenet.com/">view our full events page here</a>.</p>
-        <iframe class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
-      </div>
-    </section>
-
-<!--     <section id="participants">
-      <div class="container">
-        <h2>Participants</h2>
-        <p>Below is a list of notable websites, companies, and organizations who have confirmed their participation in the RED ALERT action. The list is broad, and represents a wide range of perspectives and online communities. The one thing all of them agree on: defending Title II net neutrality.</p>
-        <ul class="logo-grid">
-          <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
-          <li><img src="~/assets/images/fftf-light.svg" alt="Fight for the Future"></li>
-          <li><img src="~/assets/images/free-press-logo.svg" alt="Free Press Action Fund"></li>
-        </ul>
-      </div>
-    </section> -->
-
-    <footer class="page-footer">
-      <div class="container">
-      <h4>Built by:</h4>
-      <div class="logos">
-        <a href="https://www.fightforthefuture.org"><img src="~/assets/images/fftf-light.svg" alt="Fight for the Future"></a>
-        <a href="https://www.demandprogress.org"><img src="/images/logos/demandprogress.png" alt="Demand Progress"></a>
-        <a href="https://www.freepress.net"><img src="~/assets/images/free-press-logo.svg" alt="Free Press Action Fund"></a>
-      </div>
-      <h4>For Press inquiries, please contact us at:</h4>
-      <p><a href="tel://19788526457">978-852-6457</a> or <a href="tel://19788526457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a></p>
-      <p><a href="tel://12015338838">201-533-8838</a> or <a href="mailto:tkarr@freepress.net">tkarr@freepress.net</a></p>
-      <p><a href="tel://12026817582">202-681-7582</a> or <a href="mailto:press@demandprogress.org">press@demandprogress.org</a></p>
-      <p>All other inquiries, contact <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a></p>
-      </div>
-    </footer>
 
     <persistent-button>
-      <a class="flex-center" href="#top"><img src="~/assets/images/warning.svg" alt=""> <span>Join the Protest</span></a>
+      <a class="flex-center" href="#top"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $t('redalert.persistent_button') }}</span></a>
     </persistent-button>
 
     <social-sidebar :twitter-url="twitterShareURL" :facebook-url="facebookShareURL"></social-sidebar>
@@ -372,7 +317,7 @@ iframe.events-map {
       <div class="modal-content">
         <experiment name="redalert-after-action">
           <variant slot="a">
-            <p>We'll send you detailed instructions on how to participate in the Red Alert for net neutrality, so check your email shortly.  In the meantime, use the links below to share this campaign on social media, donate to the cause and find an event in your area.</p>
+            <div v-html="$t('redalert.after_action.a.body_html')"></div>
             <div class="flex-row">
               <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-a')"></facebook-button>
               <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-a')"></twitter-button>
@@ -384,7 +329,7 @@ iframe.events-map {
             </div>
           </variant>
           <variant slot="b">
-            <p>We'll send you detailed instructions on how to participate in the Red Alert for net neutrality, so check your email shortly. In the meantime, use the links below to share this campaign on social media.</p>
+            <div v-html="$t('redalert.after_action.b.body_html')"></div>
             <div class="flex-row">
               <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-b')"></facebook-button>
               <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-b')"></twitter-button>
@@ -444,6 +389,10 @@ export default {
   },
 
   computed: {
+    sections() {
+      return this.$t('redalert.sections')
+    },
+
     donateLink() {
       return getDonateLink(this.$store.state.org)
     },
@@ -453,7 +402,7 @@ export default {
     },
 
     twitterShareURL: function() {
-      const tweetText = "In mid-May, the U.S. Senate will vote on whether or not to save net neutrality. Join millions of other every day Americans demanding freedom on the Internet."
+      const tweetText = this.$t('redalert.tweet_text')
       return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(shareURL)}`
     },
   },
@@ -482,7 +431,7 @@ export default {
       catch (error) {
         console.error(error)
         this.isSending = false
-        this.errorMessage = "That didn't work for some reason 😞"
+        this.errorMessage = this.$t('redalert.form.generic_error')
       }
     },
 

@@ -32,6 +32,9 @@
     "normalize.css": "^8.0.0",
     "nuxt-sass-resources-loader": "^1.2.0",
     "raven-js": "^3.24.2",
-    "sass-loader": "^6.0.7"
+    "sass-loader": "^6.0.7",
+    "showdown": "^1.8.6",
+    "vue-i18n": "^7.6.0",
+    "yaml-loader": "^0.5.0"
   }
 }

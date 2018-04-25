@@ -1,0 +1,61 @@
+title: Red Alert for Net Neutrality
+intro_html: |
+  The FCC voted to let ISPs ruin the Internet. But there’s an imminent vote in the US Senate to overrule them and restore net neutrality. Starting on May 9th until the day of the vote, put your website or social profile on RED ALERT to help sound the alarm and flood lawmakers with calls and emails. **Are you in?**
+persistent_button: Join the Protest
+tweet_text: In mid-May, the U.S. Senate will vote on whether or not to save net neutrality. Join millions of other every day Americans demanding freedom on the Internet.
+after_action:
+  title: "Thanks!"
+  a:
+    body_html: |
+      We'll send you detailed instructions on how to participate in the Red Alert for net neutrality, so check your email shortly.  In the meantime, use the links below to share this campaign on social media, donate to the cause and find an event in your area.
+  b:
+    body_html: |
+      We'll send you detailed instructions on how to participate in the Red Alert for net neutrality, so check your email shortly. In the meantime, use the links below to share this campaign on social media.
+
+form:
+  generic_error: That didn't work for some reason 😞
+  name_placeholder: Name*
+  email_placeholder: Email*
+  zip_placeholder: ZIP*
+  button_loading: Saving...
+  button_cta: Join the Protest
+
+sections:
+  what:
+    title: What's happening?
+    body_html: |
+      The US Senate is headed for a mid-May vote on a Congressional Review Act (CRA) resolution to block the FCC’s repeal of net neutrality. Starting on May 9th, and carrying through until the vote, the Internet will “go red” to raise awareness and ensure that lawmakers hear from their constituents, who overwhelmingly support restoring open Internet protections. Click to jump to instructions for how to join with [your website](#website) or on [social media](#social).
+  website:
+    title: "How to put your site on RED ALERT:"
+    body_html: |
+      On May 9th, cover your homepage with an unavoidable message that informs visitors about the impending vote and invites them to take action. Then between May 9th and the vote, display a prominent alert on your homepage to continue driving calls and emails to lawmakers. See the examples below. Check back soon and we’ll provide some simple code that makes it easy to put any site on RED ALERT. You don’t have to use our code to participate, but you have to do something epic that gets your visitors attention drives calls and emails to Congress. This is the moment to fight!
+
+      **Starting at 12:01am on May 9th, the RED ALERT widget will display this:**
+
+      <img src="/images/redalert/modal-preview.jpg" srcset="/images/redalert/modal-preview.jpg 1x, /images/redalert/modal-preview@2x.jpg 2x" alt="A screenshot of our Red Alert modal" class="rounded">
+
+      **From 12:01am on May 10 until the midnight the night before the vote, the RED ALERT widget will look like this:**
+
+      <img src="/images/redalert/modal-minimized-preview.jpg" srcset="/images/redalert/modal-minimized-preview.jpg 1x, /images/redalert/modal-minimized-preview@2x.jpg 2x" alt="A screenshot of our Red Alert modal when minimized" class="rounded">
+
+      Starting at midnight, the night before the vote, the widget will expand again.
+  social:
+    title: Put your social media accounts on Red Alert
+    body_html: |
+      If you’re active on social media, have a video channel, or moderate an online forum, put your small piece of the Internet on RED ALERT by changing your profile and banner images, and scheduling frequent posts linking to [BattleForTheNet.com](https://www.battleforthenet.com) where people can take action. Check back soon for a giant folder of content you can use.
+  participants:
+    title: Participants
+    body_html: |
+      Below is a list of notable websites, companies, and organizations who have confirmed their participation in the RED ALERT action. The list is broad, and represents a wide range of perspectives and online communities. The one thing all of them agree on: defending Title II net neutrality.
+      <ul class="logo-grid">
+        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
+        <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
+        <li><img src="/images/logos/free-press.svg" alt="Free Press Action Fund"></li>
+        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+      </ul>
+  events:
+    title: Events
+    body_html: |
+      People and small businesses all over America are vigorously defending net neutrality by staging protests and organizing events at Congressional offices.  Check out the map below to view events in your area, or <a href="https://events.battleforthenet.com/">view our full events page here</a>.
+      <iframe class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
+

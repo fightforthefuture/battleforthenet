@@ -52,6 +52,12 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      config.module.rules.push({
+        test: /\.(yaml|yml)$/,
+        // include: path.resolve('data'),
+        loader: 'json-loader!yaml-loader',
+      })
     },
 
     vendor: [
@@ -75,6 +81,7 @@ module.exports = {
     '~/plugins/components.js',
     { src: '~/plugins/analytics.js', ssr: false },
     '~/plugins/org-rotation.js',
-    { src: '~/plugins/raven.js', ssr: false }
+    { src: '~/plugins/raven.js', ssr: false },
+    '~/plugins/i18n.js'
   ]
 }
