@@ -14,6 +14,10 @@ body {
 section {
   margin-bottom: 6rem;
 }
+
+strong {
+  color: #fff;
+}
 </style>
 
 <template>
