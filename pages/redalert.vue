@@ -300,7 +300,7 @@ iframe.events-map {
     <section>
       <div class="container">
         <h2>What's happening?</h2>
-        <p>The US Senate is headed for a mid-May vote on a Congressional Review Act (CRA) resolution to block the FCC’s repeal of net neutrality. Starting on May 9th, and carrying through until the vote (likely about a week later), the Internet will “go red” to raise awareness and ensure that lawmakers hear from their constituents, who overwhelmingly support restoring open Internet protections. <a href="#social">Click to jump to instructions for how to join with your website or on social media.</a></p>
+        <p>The US Senate is headed for a mid-May vote on a Congressional Review Act (CRA) resolution to block the FCC’s repeal of net neutrality. Starting on May 9th, and carrying through until the vote, the Internet will “go red” to raise awareness and ensure that lawmakers hear from their constituents, who overwhelmingly support restoring open Internet protections. <a href="#social">Click to jump to instructions for how to join with your website or on social media.</a></p>
       </div>
     </section>
 
