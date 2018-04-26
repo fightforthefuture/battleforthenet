@@ -1,3 +1,11 @@
+#
+# This file contains the strings used in https://battleforthenet.com/redalert
+#
+# Keys with _html suffixes allow Markdown and HTML markup. Everything else will
+# be rendered as plain text.
+#
+
+# These are used for FB and Twitter sharing previews
 sharing:
   title: Congress will vote to save net neutrality
   description: |
@@ -35,6 +43,9 @@ form:
   button_loading: Saving...
   button_cta: Join the Protest
 
+# New sections created here will be added dynamically to the page in the order
+# they're listed. The section key (website, social, etc.) will be used to create
+# an anchor link (social = https://battleforthenet.com/redalert#social)
 sections:
   what:
     title: What's happening?
