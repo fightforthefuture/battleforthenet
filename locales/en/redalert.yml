@@ -5,7 +5,10 @@
 # be rendered as plain text.
 #
 
-# These are used for FB and Twitter sharing previews
+# These are used for FB and Twitter sharing previews. Make sure to run the URL
+# through the FB Debugger (https://developers.facebook.com/tools/debug/) and
+# Twitter Card Validator (https://cards-dev.twitter.com/validator) after changing
+# these values.
 sharing:
   title: Congress will vote to save net neutrality
   description: |
