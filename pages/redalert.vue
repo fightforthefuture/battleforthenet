@@ -297,7 +297,7 @@ iframe.events-map {
       </div>
     </header>
 
-    <section v-for="(section, id) in sections" :id="id" :key="id">
+    <section v-for="(section, id) in $t('redalert.sections')" :id="id" :key="id">
       <div class="container">
         <h2>{{ section.title }}</h2>
         <div v-html="section.body_html"></div>
@@ -312,27 +312,27 @@ iframe.events-map {
 
     <modal v-if="modalVisible">
       <header>
-        <h2>Thanks!</h2>
+        <h2>{{ $t('redalert.after_action.title') }}</h2>
       </header>
       <div class="modal-content">
         <experiment name="redalert-after-action">
           <variant slot="a">
             <div v-html="$t('redalert.after_action.a.body_html')"></div>
             <div class="flex-row">
-              <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-a')"></facebook-button>
-              <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-a')"></twitter-button>
-              <a class="btn btn-donate" :href="donateLink" @click="$trackEvent('donate_button', 'click', 'redalert-after-action-a')">Donate</a>
+              <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.facebook_button') }}</facebook-button>
+              <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.twitter_button') }}</twitter-button>
+              <donate-button @clicked="$trackEvent('donate_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.donate_button') }}</donate-button>
             </div>
-            <div class="or"><span>OR</span></div>
+            <div class="or"><span>{{ $t('redalert.after_action.a.or') }}</span></div>
             <div class="flex-row">
-              <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('events_button', 'click', 'redalert-after-action-a')">Find a protest near you</a>
+              <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('events_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.event_button') }}</a>
             </div>
           </variant>
           <variant slot="b">
             <div v-html="$t('redalert.after_action.b.body_html')"></div>
             <div class="flex-row">
-              <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-b')"></facebook-button>
-              <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-b')"></twitter-button>
+              <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-b')">{{ $t('redalert.after_action.b.facebook_button') }}</facebook-button>
+              <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-b')">{{ $t('redalert.after_action.b.twitter_button') }}</twitter-button>
             </div>
           </variant>
         </experiment>
@@ -345,30 +345,31 @@ iframe.events-map {
 import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import axios from 'axios'
-import { createMetaTags, getDonateLink } from '~/assets/js/helpers'
+import { createMetaTags } from '~/assets/js/helpers'
 
 const petitionId = 'e31d4d82-9fac-4cf0-882e-96bc565e1f25'
-const shareURL = "https://www.battleforthenet.com/redalert/"
 
 export default {
   layout: 'basic',
 
-  head: {
-    title: "Red Alert for Net Neutrality",
+  head() {
+    return {
+      title: this.$t('redalert.title'),
 
-    link: [
-      {
-        rel: 'stylesheet',
-        href: 'https://use.typekit.net/dkr1hdf.css'
-      }
-    ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://use.typekit.net/dkr1hdf.css'
+        }
+      ],
 
-    meta: createMetaTags({
-      title: "Congress will vote to save net neutrality",
-      description: "In mid-May, the U.S. Senate will vote on whether or not to save net neutrality. Join millions of other every day Americans demanding freedom on the Internet.",
-      image: "https://www.battleforthenet.com/images/share_images/redalert.png",
-      url: shareURL
-    })
+      meta: createMetaTags({
+        title: this.$t('redalert.sharing.title'),
+        description: this.$t('redalert.sharing.description'),
+        image: this.$t('redalert.sharing.image'),
+        url: this.$t('redalert.sharing.url')
+      })
+    }
   },
 
   components: {
@@ -389,21 +390,17 @@ export default {
   },
 
   computed: {
-    sections() {
-      return this.$t('redalert.sections')
-    },
-
-    donateLink() {
-      return getDonateLink(this.$store.state.org)
+    shareURL() {
+      return this.$t('redalert.sharing.url')
     },
 
     facebookShareURL() {
-      return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareURL)}`
+      return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.shareURL)}`
     },
 
     twitterShareURL: function() {
       const tweetText = this.$t('redalert.tweet_text')
-      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(shareURL)}`
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(this.shareURL)}`
     },
   },
 

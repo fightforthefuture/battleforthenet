@@ -12,7 +12,7 @@
         <div class="flex-row">
           <facebook-button>Share</facebook-button>
           <twitter-button>Tweet</twitter-button>
-          <a class="btn btn-donate" :href="donateLink">Donate</a>
+          <donate-button>Donate</donate-button>
         </div>
         <div class="flex-row">
           <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank">Find a protest near you</a>
@@ -24,15 +24,10 @@
 
 <script>
 import { mapState } from 'vuex'
-import { getDonateLink } from '~/assets/js/helpers'
 
 export default {
   computed: {
-    ...mapState(['org']),
-
-    donateLink() {
-      return getDonateLink(this.org)
-    }
+    ...mapState(['org'])
   }
 }
 </script>
