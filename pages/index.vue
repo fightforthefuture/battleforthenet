@@ -14,14 +14,14 @@ img.app-store {
 
     <section id="bftn-action-form">
       <loader-logo></loader-logo>
-      <h1 class="text-center">We're running out of time to save net neutrality.</h1>
+      <h1 class="text-center">Red Alert for Net Neutrality!</h1>
       <call-form v-if="isCallPage" />
       <petition-form v-else />
     </section>
 
     <section id="onemorevote">
-      <h2>We need One More Vote to save net neutrality in the Senate.</h2>
-      <p>The FCC voted to end net neutrality rules, but Congress can overrule the FCC with the <a href="https://en.wikipedia.org/wiki/Congressional_Review_Act">Congressional Review Act</a> (CRA). Unlike a normal bill, the CRA only requires a <i>simple majority</i> in the Senate and House. Once we get the votes, we win. No filibuster. No procedural tricks. And we already have 50 of 51 votes needed to win the Senate. <b><a href="/onemorevote/">Click here to join the massive, Internet-wide day of action on February 27th</a>.</b></p>
+      <h2>The Senate is about to vote on whether to save net neutrality or let it die.</h2>
+      <p>Ajit Pai's FCC wants to let cable companies control which websites and apps you use, where you get your news, how you listen to music and watch videos -- everything you do on the Internet. But the US Senate will vote in mid-May on a resolution to block the FCC's repeal of net neutrality and keep the web free and open. <b><a href="/redalert">Starting May 9th through the vote itself, we're calling on websites and social media users to "go red" as part of our Red Alert for Net Neutrality to help sound the alarm. Join us!</a></b></p>
     </section>
 
     <section id="scoreboard">
