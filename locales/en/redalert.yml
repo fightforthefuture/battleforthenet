@@ -119,19 +119,28 @@ sections:
     title: Participants
     body_html: |
       Below is a list of notable websites, companies, and organizations who have
-      confirmed their participation in the RED ALERT action. The list is broad,
-      and represents a wide range of perspectives and online communities. The
-      one thing all of them agree on: defending Title II net neutrality.
+      confirmed their participation in the RED ALERT action.
       <ul class="logo-grid">
+        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
+        <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
+        <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
         <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
         <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
         <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
         <li><img src="/images/logos/free-press.svg" alt="Free Press Action Fund"></li>
         <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
+        <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
+        <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
+        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
+        <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li> 
+        <li><img src="/images/logos/new-mode.jpg" alt="New Mode"></li> 
         <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
         <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+        <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
+        <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
         <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
         <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
+        <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
       </ul>
   events:
     title: Events
