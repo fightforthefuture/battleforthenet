@@ -306,9 +306,9 @@ iframe.events-map {
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
-            <input v-model="name" :placeholder="$t('redalert.form.name_placeholder')" name="name" type="text" required autocomplete="name">
-            <input v-model="email" :placeholder="$t('redalert.form.email_placeholder')" name="email" type="email" required autocomplete="email">
-            <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required autocomplete="postal-code">
+            <input v-model="name" :placeholder="$t('redalert.form.name_placeholder')" name="name" type="text" required>
+            <input v-model="email" :placeholder="$t('redalert.form.email_placeholder')" name="email" type="email" required>
+            <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required>
           </div>
           <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
             <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
