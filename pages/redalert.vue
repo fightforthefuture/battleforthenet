@@ -281,6 +281,25 @@ iframe.events-map {
         <img class="logo" src="~/assets/images/warning.svg" alt="">
         <h1 class="upcase">{{ $t('redalert.title') }}</h1>
         <div v-html="$t('redalert.intro_html')"></div>
+
+        <!-- hidden Demand Progress form -->
+        <div class="hidden">
+          <iframe name="actionkit-iframe"></iframe>
+          <form action="https://act.demandprogress.org/act/" method="post" target="actionkit-iframe" ref="dpForm">
+            <input type="hidden" name="name" :value="name">
+            <input type="hidden" name="phone" :value="phone">
+            <input type="hidden" name="email" :value="email">
+            <input type="hidden" name="zip" :value="zipCode">
+            <input type="hidden" name="page" value="">
+            <input type="hidden" name="form_name" value="act-petition">
+            <input type="hidden" name="country" value="united states">
+            <input type="hidden" name="source" value="website">
+            <input type="hidden" name="subscribed_user" value="1">
+            <input type="hidden" name="js" value="1">
+            <input type="hidden" name="opt_in" value="1">
+          </form>
+        </div>
+
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
@@ -405,9 +424,18 @@ export default {
   },
 
   methods: {
-    async submitForm() {
+    submitForm() {
+      if (this.org === 'dp') {
+        this.submitDPForm()
+      }
+      else {
+        this.submitFFTFForm()
+      }
+    },
+
+    async submitFFTFForm() {
       this.isSending = true
-      this.$trackEvent('redalert_form', 'submit')
+      this.$trackEvent('redalert_form', 'submit', 'fftf')
 
       try {
         const { data } = await axios.post(
@@ -417,7 +445,6 @@ export default {
             email: this.email,
             phone: this.phone,
             zip_code: this.zipCode,
-            comments: this.comments,
             tags: 'net-neutrality'
           }
         )
@@ -430,6 +457,17 @@ export default {
         this.isSending = false
         this.errorMessage = this.$t('redalert.form.generic_error')
       }
+    },
+
+    submitDPForm: function() {
+      this.isSending = true
+      this.$refs.dpForm.submit()
+      this.$trackEvent('redalert_form', 'submit', 'dp')
+
+      setTimeout(function() {
+        this.resetForm()
+        this.modalVisible = true
+      }, 5000)
     },
 
     resetForm() {
