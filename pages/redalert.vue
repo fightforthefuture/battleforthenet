@@ -141,15 +141,9 @@ section {
     text-transform: uppercase;
   }
 
-  .logos {
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    img {
-      height: 3rem;
-    }
+  .logos img {
+    height: 3rem;
+    margin: 1rem;
   }
 
   p {
@@ -169,6 +163,15 @@ section {
 }
 
 .red-alert {
+  .btn-cta {
+    letter-spacing: 0.2rem;
+    transition: transform .2s ease-in;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
   .persistent-button {
     left: 0;
     right: 0;
@@ -307,7 +310,7 @@ iframe.events-map {
             <input v-model="email" :placeholder="$t('redalert.form.email_placeholder')" name="email" type="email" required autocomplete="email">
             <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required autocomplete="postal-code">
           </div>
-          <button class="btn btn-block btn-large" :disabled="isSending">
+          <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
             <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
             <span v-else>{{ $t('redalert.form.button_cta') }}</span>
           </button>
