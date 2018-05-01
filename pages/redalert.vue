@@ -276,7 +276,7 @@ iframe.events-map {
 
 <template>
   <div class="red-alert text-center">
-    <header class="page-header" id="#top">
+    <header class="page-header" id="top">
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
         <h1 class="upcase">{{ $t('redalert.title') }}</h1>
@@ -324,7 +324,7 @@ iframe.events-map {
     </section>
 
     <persistent-button>
-      <a class="flex-center" href="#top"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $t('redalert.persistent_button') }}</span></a>
+      <a class="flex-center" href="#top" @click.prevent="scrollToTop()"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $t('redalert.persistent_button') }}</span></a>
     </persistent-button>
 
     <social-sidebar :twitter-url="twitterShareURL" :facebook-url="facebookShareURL"></social-sidebar>
@@ -364,7 +364,7 @@ iframe.events-map {
 import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import axios from 'axios'
-import { createMetaTags } from '~/assets/js/helpers'
+import { createMetaTags, smoothScrollTo } from '~/assets/js/helpers'
 
 const petitionId = 'e31d4d82-9fac-4cf0-882e-96bc565e1f25'
 
@@ -476,6 +476,10 @@ export default {
       this.email = null
       this.phone = null
       this.zipCode = null
+    },
+
+    scrollToTop() {
+      smoothScrollTo(0, 0, 500)
     }
   }
 }
