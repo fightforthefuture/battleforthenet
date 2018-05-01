@@ -5,7 +5,7 @@
       <div class="logos">
         <a href="https://www.fightforthefuture.org"><img src="~/assets/images/fftf-light.svg" alt="Fight for the Future"></a>
         <a href="https://www.demandprogress.org"><img src="/images/logos/demandprogress.png" alt="Demand Progress"></a>
-        <a href="https://www.freepress.net"><img src="~/assets/images/free-press-logo.svg" alt="Free Press Action Fund"></a>
+        <a href="https://www.freepress.net"><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></a>
       </div>
       <h4>For Press inquiries, please contact us at:</h4>
       <p><a href="tel://19788526457">978-852-6457</a> or <a href="tel://19788526457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a></p>
