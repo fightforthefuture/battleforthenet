@@ -141,7 +141,7 @@ img.app-store {
     </section>
 
     <social-sidebar />
-    <persistent-button><a class="btn btn-phone" href="#bftn-action-form">Contact Them</a></persistent-button>
+    <persistent-button><a class="btn" href="#bftn-action-form">Write Congress</a></persistent-button>
 
   </div>
 </template>
