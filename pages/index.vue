@@ -48,7 +48,7 @@ img.app-store {
       <ul class="logo-grid">
         <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
         <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
-        <li><img src="/images/logos/freepressactionfund.png" alt="Free Press Action Fund"></li>
+        <li><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
         <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
         <li><img src="/images/logos/github.png" alt="GitHub"></li>
         <li><img src="/images/logos/Etsy_logo-correct.png" alt="Etsy"></li>

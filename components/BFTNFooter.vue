@@ -18,16 +18,8 @@
       margin: 0 2rem;
     }
 
-    a.freepress img {
-      margin-top: -1rem;
-    }
-
     @include small-screen {
       padding-top: 0;
-
-      a.freepress img {
-        margin-top: 0;
-      }
     }
   }
 
@@ -145,7 +137,7 @@
           <img src="/images/v2/footer-demandprogress-logo.png" srcset="/images/v2/footer-demandprogress-logo-x2.png 2x" alt="Demand Progress">
         </a>
         <a class="freepress" href="https://www.freepress.net/">
-          <img src="/images/v2/footer-freepress-logo.png" srcset="/images/v2/footer-freepress-logo-x2.png 2x" alt="Free Press">
+          <img src="~/assets/images/fp-footer-logo.png" alt="Free Press Action Fund">
         </a>
       </div>
       <div class="clearfix">
