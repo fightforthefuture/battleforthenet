@@ -428,7 +428,7 @@ export default {
 
   methods: {
     submitForm() {
-      if (this.org === 'dp') {
+      if (this.$store.state.org === 'dp') {
         this.submitDPForm()
       }
       else {
@@ -467,7 +467,7 @@ export default {
       this.$refs.dpForm.submit()
       this.$trackEvent('redalert_form', 'submit', 'dp')
 
-      setTimeout(function() {
+      setTimeout(() => {
         this.resetForm()
         this.modalVisible = true
       }, 5000)
