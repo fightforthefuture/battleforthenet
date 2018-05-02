@@ -293,7 +293,7 @@ iframe.events-map {
             <input type="hidden" name="phone" :value="phone">
             <input type="hidden" name="email" :value="email">
             <input type="hidden" name="zip" :value="zipCode">
-            <input type="hidden" name="page" value="">
+            <input type="hidden" name="page" value="cra-vote">
             <input type="hidden" name="form_name" value="act-petition">
             <input type="hidden" name="country" value="united states">
             <input type="hidden" name="source" value="website">
