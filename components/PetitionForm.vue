@@ -143,7 +143,6 @@
 </template>
 
 <script>
-// import moment from 'moment'
 import { mapState } from 'vuex'
 import { sendToMothership } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'

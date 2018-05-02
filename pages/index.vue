@@ -15,7 +15,7 @@ img.app-store {
     <section id="bftn-action-form">
       <loader-logo></loader-logo>
       <h1 class="text-center">Red Alert for Net Neutrality!</h1>
-      <call-form v-if="isCallPage" />
+      <call-form v-if="isCallPage" default-campaign="RED-ALERT-battleforthenet-call"></call-form>
       <petition-form v-else />
     </section>
 

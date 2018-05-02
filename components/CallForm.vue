@@ -55,8 +55,6 @@ form {
 import { postFormData } from '~/assets/js/helpers'
 import CallScript from '~/components/CallScript'
 
-const DEFAULT_CAMPAIGN_ID = 'battleforthenet-2017'
-
 export default {
   components: {
     CallScript
@@ -66,6 +64,11 @@ export default {
     inModal: {
       type: Boolean,
       default: false
+    },
+
+    defaultCampaign: {
+      type: String,
+      default: 'RED-ALERT-battleforthenet'
     }
   },
 
@@ -81,7 +84,7 @@ export default {
 
   computed: {
     campaign() {
-      return this.$route.query.campaign || 'fftf'
+      return this.$route.query.campaign || this.defaultCampaign
     },
 
     campaignId() {
@@ -91,7 +94,6 @@ export default {
         case 'california':
           return 'California-SB-822'
         case 'fftf':
-          return DEFAULT_CAMPAIGN_ID
         default:
           return this.campaign
       }
@@ -101,7 +103,9 @@ export default {
       if (this.campaign === 'daily') {
         return "https://demandprogress.callpower.org/call/create"
       }
-      return "https://call-congress.fightforthefuture.org/create"
+      else {
+        return "https://call-congress.fightforthefuture.org/create"
+      }
     }
   },
 
