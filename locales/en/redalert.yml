@@ -16,7 +16,7 @@ sharing:
     neutrality. Join millions of other every day Americans demanding freedom on
     the Internet.
   image: https://www.battleforthenet.com/images/share_images/redalert.png
-  url: https://www.battleforthenet.com/redalert/
+  url: https://www.battleforthenet.com
 
 title: Red Alert for Net Neutrality
 intro_html: |
@@ -72,7 +72,7 @@ sections:
       May 9th, and carrying through until the vote, the Internet will “go red”
       to raise awareness and ensure that lawmakers hear from their constituents,
       who overwhelmingly support restoring open Internet protections. Click to
-      jump to instructions for how to join with [your website](#website) or on
+      jump to instructions for how to join with [your website](#join) or on
       [social media](#social).
   join:
     title: "How to put your site on RED ALERT:"
