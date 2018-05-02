@@ -440,9 +440,14 @@ export default {
     document.querySelectorAll('.demo-widget').forEach(el => {
       el.addEventListener('click', event => {
         event.preventDefault()
+        this.$trackEvent('try_redalert_widget_button', 'click')
         this.demoWidget()
       })
     })
+
+    if (this.$route.query.widget) {
+      this.demoWidget()
+    }
   },
 
   methods: {
@@ -510,21 +515,35 @@ export default {
         return
       }
 
-      const scriptId = 'REDALERT_SCRIPT'
+      const scriptId = 'RED_ALERT_SCRIPT'
 
-      if (document.getElementById(scriptId)) {
-        const script = document.getElementById(scriptId)
-        script.parentNode.removeChild(script)
+      // clean up any existing widget elements
+      let el = document.getElementById(scriptId)
+      if (el) {
+        el.parentNode.removeChild(el)
       }
 
+      el = document.getElementById('RED_ALERT_CSS')
+      if (el) {
+        el.parentNode.removeChild(el)
+      }
+
+      // set up widget options
+      let baseURL = 'https://redalert.battleforthenet.com'
+
+      if (process.env.NODE_ENV === 'development') {
+        baseURL = 'http://localhost:8080'
+      }
 
       window.RED_ALERT_OPTIONS = {
-        alwaysShow: true
+        alwaysShow: true,
+        iframeHost: baseURL
       }
 
+      // load script
       const script = document.createElement('script')
       script.id = scriptId
-      script.src = 'https://redalert.battleforthenet.com/widget.js';
+      script.src = `${baseURL}/widget.js`
       document.head.appendChild(script)
     }
   }
