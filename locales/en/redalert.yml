@@ -77,9 +77,9 @@ sections:
   join:
     title: "How to put your site on RED ALERT:"
     body_html: |
-      Add our RED ALERT widget to your site.  On May 9th, the widget will cover your 
+      Add our RED ALERT widget to your site.  On May 9th, the widget will cover your
       homepage with an unavoidable message that informs visitors about the impending
-      vote and provides them with the opportunity to take action. 
+      vote and provides them with the opportunity to take action.
 
       <img src="/images/redalert/modal-preview.jpg"
         srcset="/images/redalert/modal-preview.jpg 1x,
@@ -87,9 +87,9 @@ sections:
         alt="A screenshot of our Red Alert modal"
         class="rounded">
 
-      Then between May 9th and the vote (date TBD), the widget will shrink down to a 
-      smaller size, continuing to drive calls and emails to lawmakers without 
-      distracting users from your site.  
+      Then between May 9th and the vote (date TBD), the widget will shrink down to a
+      smaller size, continuing to drive calls and emails to lawmakers without
+      distracting users from your site.
 
       <img src="/images/redalert/modal-minimized-preview.jpg"
         srcset="/images/redalert/modal-minimized-preview.jpg 1x,
@@ -99,27 +99,27 @@ sections:
 
       Starting at midnight, the night before the vote, the widget will expand
       again.  You can try out the widget for yourself by clicking the button below.
-      
-      [CTA: TRY IT OUT]
-      
+
+      <a class="btn btn-cta demo-widget" href="#">Try it out</a>
+
       Pretty cool, right?  To implement this on your site, simply grab the code here:
-      
-      [WIDGET CODE LOCATION]
-      
-      You don’t have to use our code to participate, but you have to do something epic 
-      that gets your visitors' attention and drives calls and emails to Congress. This is 
+
+      <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
+
+      You don’t have to use our code to participate, but you have to do something epic
+      that gets your visitors' attention and drives calls and emails to Congress. This is
       the moment to fight!
   banners:
     title: Post banner ads on your site
     body_html: |
-      Do you run a site or blog? Use these banner ads to get the word out on net neutrality. 
-      [Click here](https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g) 
+      Do you run a site or blog? Use these banner ads to get the word out on net neutrality.
+      [Click here](https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g)
       to see a bunch of different ad sizes and styles.
-      
+
       [INSERT AD IMAGES]
-      
-      Feeling creative? Make something yourself and submit it for other sites to use by 
-      emailing us at team@fightforthefuture.org.
+
+      Feeling creative? Make something yourself and submit it for other sites to use by
+      emailing us at [team@fightforthefuture.org](mailto:team@fightforthefuture.org).
   social:
     title: Put your social media accounts on Red Alert
     body_html: |
@@ -127,7 +127,7 @@ sections:
       online forum, put your small piece of the Internet on RED ALERT by
       changing your profile and banner images, and scheduling frequent posts
       linking to [BattleForTheNet.com](https://www.battleforthenet.com) where
-      people can take action. [Click here](https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM) 
+      people can take action. [Click here](https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM)
       for a giant folder of content you can use.  Then [click here](https://docs.google.com/document/d/1mjc4Ng0uqaS_SUAR8JYbgan60MYNg5vF2-6WBYZiZIE/edit?usp=sharing)
       to see ideas for blog posts, emails, tweets and more.
   participants:

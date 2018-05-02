@@ -3,6 +3,7 @@ $body-font: open-sans, sans-serif;
 $title-font: futura-pt-bold, $body-font;
 $red: #ff0e0e;
 $gray: #b7b7b7;
+$odd-section-bg-color: #fff6f6;
 
 body {
   font-family: $body-font;
@@ -87,10 +88,6 @@ img.rounded {
     }
   }
 
-  .btn {
-    background-color: #000;
-  }
-
   p.disclaimer {
     small, a {
       color: inherit;
@@ -103,6 +100,10 @@ img.rounded {
   }
 }
 
+code {
+  background-color: $odd-section-bg-color;
+}
+
 section {
   padding: 6rem;
 
@@ -111,7 +112,11 @@ section {
   }
 
   &:nth-child(odd) {
-    background-color: #fff6f6;
+    background-color: $odd-section-bg-color;
+
+    code {
+      background-color: #fff;
+    }
   }
 
   p {
@@ -122,10 +127,14 @@ section {
     color: $red;
     text-decoration: none;
 
-    &:hover {
+    &:not(.btn):hover {
       color: $red;
       text-decoration: underline;
     }
+  }
+
+  .btn-cta {
+    font-size: 1.5rem;
   }
 }
 
@@ -164,6 +173,7 @@ section {
 
 .red-alert {
   .btn-cta {
+    background-color: #000;
     letter-spacing: 0.2rem;
     transition: transform .2s ease-in;
 
@@ -426,6 +436,15 @@ export default {
     },
   },
 
+  mounted() {
+    document.querySelectorAll('.demo-widget').forEach(el => {
+      el.addEventListener('click', event => {
+        event.preventDefault()
+        this.demoWidget()
+      })
+    })
+  },
+
   methods: {
     submitForm() {
       if (this.org === 'dp') {
@@ -483,6 +502,30 @@ export default {
 
     scrollToTop() {
       smoothScrollTo(0, 0, 500)
+    },
+
+    demoWidget() {
+      // widget is already loaded
+      if (document.getElementById('RED_ALERT_WIDGET')) {
+        return
+      }
+
+      const scriptId = 'REDALERT_SCRIPT'
+
+      if (document.getElementById(scriptId)) {
+        const script = document.getElementById(scriptId)
+        script.parentNode.removeChild(script)
+      }
+
+
+      window.RED_ALERT_OPTIONS = {
+        alwaysShow: true
+      }
+
+      const script = document.createElement('script')
+      script.id = scriptId
+      script.src = 'https://redalert.battleforthenet.com/widget.js';
+      document.head.appendChild(script)
     }
   }
 }
