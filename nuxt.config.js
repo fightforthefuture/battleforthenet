@@ -82,6 +82,7 @@ module.exports = {
     { src: '~/plugins/analytics.js', ssr: false },
     '~/plugins/org-rotation.js',
     { src: '~/plugins/raven.js', ssr: false },
-    '~/plugins/i18n.js'
+    '~/plugins/i18n.js',
+    { src: '~/plugins/hash-link-fix.js', ssr: false }
   ]
 }
