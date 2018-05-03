@@ -280,6 +280,22 @@ section {
       }
     }
   }
+
+  .banner-ads {
+    img {
+      width: 48%;
+      margin: 1%;
+      float: left;
+
+      &:last-child {
+        width: 98%;
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
 }
 
 iframe.events-map {

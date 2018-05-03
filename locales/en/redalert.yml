@@ -102,9 +102,15 @@ sections:
 
       <a class="btn btn-cta demo-widget" href="#">Try it out</a>
 
-      Pretty cool, right?  To implement this on your site, simply grab the code here:
+      Pretty cool, right?  To put this on your site, just add this line of
+      JavaScript to any page:
 
       <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
+
+      (You can also position the widget on the left side, if that works better
+      for your site.
+      [Check out our GitHub page](https://github.com/fightforthefuture/redalert-widget)
+      for more info.)
 
       You don’t have to use our code to participate, but you have to do something epic
       that gets your visitors' attention and drives calls and emails to Congress. This is
@@ -113,10 +119,14 @@ sections:
     title: Post banner ads on your site
     body_html: |
       Do you run a site or blog? Use these banner ads to get the word out on net neutrality.
-      [Click here](https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g)
-      to see a bunch of different ad sizes and styles.
+      <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+       target="_blank">Click here</a> to see a bunch of different ad sizes and styles.
 
-      [INSERT AD IMAGES]
+      <div class="banner-ads clearfix">
+        <img src="/images/redalert/banner-600x450a.png" alt="600x450px banner image">
+        <img src="/images/redalert/banner-600x450b.png" alt="600x450px banner image">
+        <img src="/images/redalert/banner-970x90.png" alt="970x90px banner image">
+      </div>
 
       Feeling creative? Make something yourself and submit it for other sites to use by
       emailing us at [team@fightforthefuture.org](mailto:team@fightforthefuture.org).
