@@ -37,10 +37,6 @@ h2 {
   }
 }
 
-img.rounded {
-  border-radius: $border-radius;
-}
-
 .container {
   width: 600px;
 }

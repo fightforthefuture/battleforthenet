@@ -27,7 +27,7 @@ input, textarea, .btn {
 }
 
 img {
-  max-width: 100%
+  max-width: 100%;
 }
 
 body {
@@ -119,6 +119,10 @@ a {
 
 .inherit-color {
   color: inherit;
+}
+
+.rounded {
+  border-radius: $border-radius;
 }
 
 input, textarea {
