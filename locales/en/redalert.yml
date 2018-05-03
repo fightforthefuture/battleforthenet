@@ -77,10 +77,10 @@ sections:
   join:
     title: "How to put your site on RED ALERT:"
     body_html: |
-      Add our RED ALERT widget to your site. It's a small &mdash; but powerful &mdash; 
-      notice to your site's users that something BIG is happening with net neutrality.  
-      Users can expand the widget and contact Congress by selecting "TAKE ACTION" or 
-      close the widget by pressing the "Close" button. It's easy! See for yourself ...
+      Add our RED ALERT widget to your site. It's a small (but powerful!) notice to your site's 
+      users that something BIG is happening with net neutrality. Users can expand the widget and 
+      contact Congress by selecting "TAKE ACTION" or close the widget by pressing the "Close" 
+      button. It's easy! See for yourself ...
       
       <a class="btn btn-cta demo-widget" href="#">Try it out</a>
 
