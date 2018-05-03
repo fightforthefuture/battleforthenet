@@ -85,7 +85,7 @@ sections:
       <a class="btn btn-cta demo-widget" href="#">Try it out</a>
 
       Pretty cool, right?  You can even configure the location of the widget on your
-      webpages. Check out our GitHub page](https://github.com/fightforthefuture/redalert-widget)
+      webpages. Check out [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
       for more info, then add this line of JavaScript to any page on your site when you're
       ready to join the RED ALERT:
 
@@ -99,8 +99,8 @@ sections:
         alt="A screenshot of our Red Alert modal when minimized"
         class="rounded">
 
-      But on May 9th the widget will automatically expand to show your site's users
-      a powerful message to contact Congress in support of net neutrality:
+      But on May 9th the widget will automatically expand to display an urgent
+      message to contact Congress in support of net neutrality:
 
       <img src="/images/redalert/modal-preview.jpg"
         srcset="/images/redalert/modal-preview.jpg 1x,
@@ -113,7 +113,7 @@ sections:
 
       Please feel free to create your own custom way to drive awareness of this important
       issue and encourage your users to contact Congress.  But whatever you do, make sure 
-      it's epic ... THIS is the moment to fight!
+      it's epic. THIS is the moment to fight!
   banners:
     title: Post banner ads on your site
     body_html: |
