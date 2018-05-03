@@ -98,6 +98,7 @@ h2 {
 
 code {
   background-color: $odd-section-bg-color;
+  border: 1px solid lighten(#000, 10%);
 }
 
 section {
