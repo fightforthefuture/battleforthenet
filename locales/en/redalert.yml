@@ -77,9 +77,30 @@ sections:
   join:
     title: "How to put your site on RED ALERT:"
     body_html: |
-      Add our RED ALERT widget to your site.  On May 9th, the widget will cover your
-      homepage with an unavoidable message that informs visitors about the impending
-      vote and provides them with the opportunity to take action.
+      Add our RED ALERT widget to your site. It's a small &mdash; but powerful &mdash; 
+      notice to your site's users that something BIG is happening with net neutrality.  
+      Users can expand the widget and contact Congress by selecting "TAKE ACTION" or 
+      close the widget by pressing the "Close" button. It's easy! See for yourself ...
+      
+      <a class="btn btn-cta demo-widget" href="#">Try it out</a>
+
+      Pretty cool, right?  You can even configure the location of the widget on your
+      webpages. Check out our GitHub page](https://github.com/fightforthefuture/redalert-widget)
+      for more info, then add this line of JavaScript to any page on your site when you're
+      ready to join the RED ALERT:
+
+      <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
+      
+      From now until May 9th, the widget will appear just like you see it here:
+      
+      <img src="/images/redalert/modal-minimized-preview.jpg"
+        srcset="/images/redalert/modal-minimized-preview.jpg 1x,
+                /images/redalert/modal-minimized-preview@2x.jpg 2x"
+        alt="A screenshot of our Red Alert modal when minimized"
+        class="rounded">
+
+      But on May 9th the widget will automatically expand to show your site's users
+      a powerful message to contact Congress in support of net neutrality:
 
       <img src="/images/redalert/modal-preview.jpg"
         srcset="/images/redalert/modal-preview.jpg 1x,
@@ -88,33 +109,11 @@ sections:
         class="rounded">
 
       Then between May 9th and the vote (date TBD), the widget will shrink down to a
-      smaller size, continuing to drive calls and emails to lawmakers without
-      distracting users from your site.
+      smaller size before expanding again the day before the vote.
 
-      <img src="/images/redalert/modal-minimized-preview.jpg"
-        srcset="/images/redalert/modal-minimized-preview.jpg 1x,
-                /images/redalert/modal-minimized-preview@2x.jpg 2x"
-        alt="A screenshot of our Red Alert modal when minimized"
-        class="rounded">
-
-      Starting at midnight, the night before the vote, the widget will expand
-      again.  You can try out the widget for yourself by clicking the button below.
-
-      <a class="btn btn-cta demo-widget" href="#">Try it out</a>
-
-      Pretty cool, right?  To put this on your site, just add this line of
-      JavaScript to any page:
-
-      <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
-
-      (You can also position the widget on the left side, if that works better
-      for your site.
-      [Check out our GitHub page](https://github.com/fightforthefuture/redalert-widget)
-      for more info.)
-
-      You don’t have to use our code to participate, but you have to do something epic
-      that gets your visitors' attention and drives calls and emails to Congress. This is
-      the moment to fight!
+      Please feel free to create your own custom way to drive awareness of this important
+      issue and encourage your users to contact Congress.  But whatever you do, make sure 
+      it's epic ... THIS is the moment to fight!
   banners:
     title: Post banner ads on your site
     body_html: |
