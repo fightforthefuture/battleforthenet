@@ -80,14 +80,13 @@ sections:
       Add our RED ALERT widget to your site. It's a small (but powerful!) notice to your site's 
       users that something BIG is happening with net neutrality. Users can expand the widget and 
       contact Congress by selecting "TAKE ACTION" or close the widget by pressing the "Close" 
-      button. It's easy! See for yourself ...
+      button.
       
-      <a class="btn btn-cta demo-widget" href="#">Try it out</a>
+      <a class="btn btn-cta demo-widget" href="#">Check it out</a>
 
-      Pretty cool, right?  You can even configure the location of the widget on your
-      webpages. Check out [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
-      for more info, then add this line of JavaScript to any page on your site when you're
-      ready to join the RED ALERT:
+      You can configure the location of the widget on your webpages. Check out 
+      [our GitHub page](https://github.com/fightforthefuture/redalert-widget) for more info, then 
+      add this line of JavaScript to any page on your site when you're ready to join the RED ALERT:
 
       <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
       
