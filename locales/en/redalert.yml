@@ -77,21 +77,21 @@ sections:
   join:
     title: "How to put your site on RED ALERT:"
     body_html: |
-      Add our RED ALERT widget to your site. It's a small (but powerful!) notice to your site's 
-      users that something BIG is happening with net neutrality. Users can expand the widget and 
-      contact Congress by selecting "TAKE ACTION" or close the widget by pressing the "Close" 
+      Add our RED ALERT widget to your site. It's a small (but powerful!) notice to your site's
+      users that something BIG is happening with net neutrality. Users can expand the widget and
+      contact Congress by selecting "TAKE ACTION" or close the widget by pressing the "Close"
       button.
-      
+
       <a class="btn btn-cta demo-widget" href="#">Check it out</a>
 
-      You can configure the location of the widget on your webpages. Visit 
-      [our GitHub page](https://github.com/fightforthefuture/redalert-widget) for more info, then 
+      You can configure the location of the widget on your webpages. Visit
+      [our GitHub page](https://github.com/fightforthefuture/redalert-widget) for more info, then
       add this line of JavaScript to any page on your site when you're ready to join the RED ALERT:
 
       <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
-      
+
       From now until May 9th, the widget will appear just like you see it here:
-      
+
       <img src="/images/redalert/modal-minimized-preview.jpg"
         srcset="/images/redalert/modal-minimized-preview.jpg 1x,
                 /images/redalert/modal-minimized-preview@2x.jpg 2x"
@@ -111,7 +111,7 @@ sections:
       smaller size before expanding again the day before the vote.
 
       Please feel free to create your own custom way to drive awareness of this important
-      issue and encourage your users to contact Congress.  But whatever you do, make sure 
+      issue and encourage your users to contact Congress.  But whatever you do, make sure
       it's epic. THIS is the moment to fight!
   banners:
     title: Post banner ads on your site
@@ -121,9 +121,12 @@ sections:
        target="_blank">Click here</a> to see a bunch of different ad sizes and styles.
 
       <div class="banner-ads clearfix">
-        <img src="/images/redalert/banner-600x450a.png" alt="600x450px banner image">
-        <img src="/images/redalert/banner-600x450b.png" alt="600x450px banner image">
-        <img src="/images/redalert/banner-970x90.png" alt="970x90px banner image">
+        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+         target="_blank"><img src="/images/redalert/banner-600x450a.png" alt="600x450px banner image"></a>
+        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+         target="_blank"><img src="/images/redalert/banner-600x450b.png" alt="600x450px banner image"></a>
+        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+         target="_blank"><img src="/images/redalert/banner-970x90.png" alt="970x90px banner image"></a>
       </div>
 
       Feeling creative? Make something yourself and submit it for other sites to use by

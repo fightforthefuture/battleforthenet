@@ -278,7 +278,7 @@ section {
   }
 
   .banner-ads {
-    img {
+    a {
       width: 48%;
       margin: 1%;
       float: left;
