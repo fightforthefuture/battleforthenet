@@ -1,11 +1,11 @@
 <template>
   <p class="disclaimer">
     <small v-if="org == 'dp'">
-      <a target="_blank" href="https://www.demandprogress.org">Demand Progress</a> will contact you about important net neutrality protests and news.
+      <a target="_blank" href="https://www.demandprogress.org">Demand Progress</a> will contact you about important net neutrality updates.
       <a target="_blank" href="/privacy">Privacy Policy</a>
     </small>
     <small v-else-if="org == 'fp'">
-      <a target="_blank" href="https://www.freepress.net">Free Press</a> will contact you about important net neutrality protests and news.
+      <a target="_blank" href="https://www.freepress.net">Free Press</a> will contact you about important net neutrality updates.
       <a target="_blank" href="/privacy">Privacy Policy</a>
     </small>
     <small v-else-if="sms">
@@ -13,7 +13,7 @@
       <a target="_blank" href="/privacy">Privacy Policy</a>
     </small>
     <small v-else>
-      <a target="_blank" href="https://www.fightforthefuture.org">Fight for the Future</a> will contact you about important net neutrality protests and news.
+      <a target="_blank" href="https://www.fightforthefuture.org">Fight for the Future</a> will contact you about important net neutrality updates.
       <a target="_blank" href="/privacy">Privacy Policy</a>
     </small>
   </p>
