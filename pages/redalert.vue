@@ -471,11 +471,11 @@ export default {
 
   mounted() {
     document.querySelectorAll('.demo-widget').forEach(el => {
-      el.addEventListener('click', event => {
+      el.onclick = (event) => {
         event.preventDefault()
         this.$trackEvent('try_redalert_widget_button', 'click')
         this.demoWidget()
-      })
+      }
     })
 
     if (this.$route.query.widget) {
