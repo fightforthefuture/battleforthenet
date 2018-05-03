@@ -17,7 +17,7 @@ win one of the biggest fights for Internet freedom EVER!
 
 We've created a tool that lets people directly contact the FCC and Congress to stop net neutrality rules from being rolled back.
 
-Follow these instructions to install it on your site: http://widget.battleforthenet.com/
+[Follow these instructions](https://github.com/fightforthefuture/redalert-widget) to install it on your site.
 
 ### Contributing to our code
 
