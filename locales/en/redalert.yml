@@ -82,11 +82,10 @@ sections:
       contact Congress by selecting "TAKE ACTION" or close the widget by pressing the "Close"
       button.
 
-      <a class="btn btn-cta demo-widget" href="#">Check it out</a>
+      <a class="btn btn-cta demo-widget" href="#">Try it out</a>
 
-      You can configure the location of the widget on your webpages. Visit
-      [our GitHub page](https://github.com/fightforthefuture/redalert-widget) for more info, then
-      add this line of JavaScript to any page on your site when you're ready to join the RED ALERT:
+      Pretty cool, right?  Simply add this line of JavaScript to any page on your site to join 
+      the RED ALERT campaign:
 
       <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
 
@@ -108,7 +107,13 @@ sections:
         class="rounded">
 
       Then between May 9th and the vote (date TBD), the widget will shrink down to a
-      smaller size before expanding again the day before the vote.
+      smaller size before expanding again the day before the vote. 
+      
+      And remember ... the widget does all of this automatically. All you have to do is
+      place the code on your website and we'll take care of the rest.  But if you'd like 
+      to configure the appearance or change the location of the widget on your web pages, 
+      just visit [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
+      to learn how.
 
       Please feel free to create your own custom way to drive awareness of this important
       issue and encourage your users to contact Congress.  But whatever you do, make sure
