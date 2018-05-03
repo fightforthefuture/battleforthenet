@@ -16,7 +16,7 @@ sharing:
     neutrality. Join millions of other every day Americans demanding freedom on
     the Internet.
   image: https://www.battleforthenet.com/images/share_images/redalert.png
-  url: https://www.battleforthenet.com/redalert/
+  url: https://www.battleforthenet.com
 
 title: Red Alert for Net Neutrality
 intro_html: |
@@ -72,31 +72,25 @@ sections:
       May 9th, and carrying through until the vote, the Internet will “go red”
       to raise awareness and ensure that lawmakers hear from their constituents,
       who overwhelmingly support restoring open Internet protections. Click to
-      jump to instructions for how to join with [your website](#website) or on
+      jump to instructions for how to join with [your website](#join) or on
       [social media](#social).
-  website:
+  join:
     title: "How to put your site on RED ALERT:"
     body_html: |
-      On May 9th, cover your homepage with an unavoidable message that informs
-      visitors about the impending vote and invites them to take action. Then
-      between May 9th and the vote, display a prominent alert on your homepage
-      to continue driving calls and emails to lawmakers. See the examples below.
-      Check back soon and we’ll provide some simple code that makes it easy to
-      put any site on RED ALERT. You don’t have to use our code to participate,
-      but you have to do something epic that gets your visitors attention drives
-      calls and emails to Congress. This is the moment to fight!
+      Add our RED ALERT widget to your site. It's a small (but powerful!) notice to your site's
+      users that something BIG is happening with net neutrality. Users can expand the widget and
+      contact Congress by selecting "TAKE ACTION" or close the widget by pressing the "Close"
+      button.
 
-      **Starting at 12:01am on May 9th, the RED ALERT widget will display
-      this:**
+      <a class="btn btn-cta demo-widget" href="#">Check it out</a>
 
-      <img src="/images/redalert/modal-preview.jpg"
-        srcset="/images/redalert/modal-preview.jpg 1x,
-                /images/redalert/modal-preview@2x.jpg 2x"
-        alt="A screenshot of our Red Alert modal"
-        class="rounded">
+      You can configure the location of the widget on your webpages. Visit
+      [our GitHub page](https://github.com/fightforthefuture/redalert-widget) for more info, then
+      add this line of JavaScript to any page on your site when you're ready to join the RED ALERT:
 
-      **From 12:01am on May 10 until the midnight the night before the vote,
-      the RED ALERT widget will look like this:**
+      <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
+
+      From now until May 9th, the widget will appear just like you see it here:
 
       <img src="/images/redalert/modal-minimized-preview.jpg"
         srcset="/images/redalert/modal-minimized-preview.jpg 1x,
@@ -104,8 +98,39 @@ sections:
         alt="A screenshot of our Red Alert modal when minimized"
         class="rounded">
 
-      Starting at midnight, the night before the vote, the widget will expand
-      again.
+      But on May 9th the widget will automatically expand to display an urgent
+      message to contact Congress in support of net neutrality:
+
+      <img src="/images/redalert/modal-preview.jpg"
+        srcset="/images/redalert/modal-preview.jpg 1x,
+                /images/redalert/modal-preview@2x.jpg 2x"
+        alt="A screenshot of our Red Alert modal"
+        class="rounded">
+
+      Then between May 9th and the vote (date TBD), the widget will shrink down to a
+      smaller size before expanding again the day before the vote.
+
+      Please feel free to create your own custom way to drive awareness of this important
+      issue and encourage your users to contact Congress.  But whatever you do, make sure
+      it's epic. THIS is the moment to fight!
+  banners:
+    title: Post banner ads on your site
+    body_html: |
+      Do you run a site or blog? Use these banner ads to get the word out on net neutrality.
+      <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+       target="_blank">Click here</a> to see a bunch of different ad sizes and styles.
+
+      <div class="banner-ads clearfix">
+        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+         target="_blank"><img src="/images/redalert/banner-600x450a.png" alt="600x450px banner image"></a>
+        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+         target="_blank"><img src="/images/redalert/banner-600x450b.png" alt="600x450px banner image"></a>
+        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+         target="_blank"><img src="/images/redalert/banner-970x90.png" alt="970x90px banner image"></a>
+      </div>
+
+      Feeling creative? Make something yourself and submit it for other sites to use by
+      emailing us at [team@fightforthefuture.org](mailto:team@fightforthefuture.org).
   social:
     title: Put your social media accounts on Red Alert
     body_html: |
@@ -113,8 +138,9 @@ sections:
       online forum, put your small piece of the Internet on RED ALERT by
       changing your profile and banner images, and scheduling frequent posts
       linking to [BattleForTheNet.com](https://www.battleforthenet.com) where
-      people can take action. Check back soon for a giant folder of content you
-      can use.
+      people can take action. [Click here](https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM)
+      for a giant folder of content you can use.  Then [click here](https://docs.google.com/document/d/1mjc4Ng0uqaS_SUAR8JYbgan60MYNg5vF2-6WBYZiZIE/edit?usp=sharing)
+      to see ideas for blog posts, emails, tweets and more.
   participants:
     title: Participants
     body_html: |

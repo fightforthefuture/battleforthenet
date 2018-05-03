@@ -3,6 +3,7 @@ $body-font: open-sans, sans-serif;
 $title-font: futura-pt-bold, $body-font;
 $red: #ff0e0e;
 $gray: #b7b7b7;
+$odd-section-bg-color: #fff6f6;
 
 body {
   font-family: $body-font;
@@ -34,10 +35,6 @@ h2 {
     width: 3rem;
     margin: 2rem auto;
   }
-}
-
-img.rounded {
-  border-radius: $border-radius;
 }
 
 .container {
@@ -87,10 +84,6 @@ img.rounded {
     }
   }
 
-  .btn {
-    background-color: #000;
-  }
-
   p.disclaimer {
     small, a {
       color: inherit;
@@ -103,6 +96,10 @@ img.rounded {
   }
 }
 
+code {
+  background-color: $odd-section-bg-color;
+}
+
 section {
   padding: 6rem;
 
@@ -111,7 +108,11 @@ section {
   }
 
   &:nth-child(odd) {
-    background-color: #fff6f6;
+    background-color: $odd-section-bg-color;
+
+    code {
+      background-color: #fff;
+    }
   }
 
   p {
@@ -122,10 +123,14 @@ section {
     color: $red;
     text-decoration: none;
 
-    &:hover {
+    &:not(.btn):hover {
       color: $red;
       text-decoration: underline;
     }
+  }
+
+  .btn-cta {
+    font-size: 1.5rem;
   }
 }
 
@@ -164,6 +169,7 @@ section {
 
 .red-alert {
   .btn-cta {
+    background-color: #000;
     letter-spacing: 0.2rem;
     transition: transform .2s ease-in;
 
@@ -267,6 +273,22 @@ section {
         &:hover {
           background-color: #eee;
         }
+      }
+    }
+  }
+
+  .banner-ads {
+    a {
+      width: 48%;
+      margin: 1%;
+      float: left;
+
+      &:last-child {
+        width: 98%;
+      }
+
+      @include mobile {
+        width: 100%;
       }
     }
   }
@@ -426,6 +448,20 @@ export default {
     },
   },
 
+  mounted() {
+    document.querySelectorAll('.demo-widget').forEach(el => {
+      el.addEventListener('click', event => {
+        event.preventDefault()
+        this.$trackEvent('try_redalert_widget_button', 'click')
+        this.demoWidget()
+      })
+    })
+
+    if (this.$route.query.widget) {
+      this.demoWidget()
+    }
+  },
+
   methods: {
     submitForm() {
       if (this.$store.state.org === 'dp') {
@@ -483,6 +519,44 @@ export default {
 
     scrollToTop() {
       smoothScrollTo(0, 0, 500)
+    },
+
+    demoWidget() {
+      // widget is already loaded
+      if (document.getElementById('RED_ALERT_WIDGET')) {
+        return
+      }
+
+      const scriptId = 'RED_ALERT_SCRIPT'
+
+      // clean up any existing widget elements
+      let el = document.getElementById(scriptId)
+      if (el) {
+        el.parentNode.removeChild(el)
+      }
+
+      el = document.getElementById('RED_ALERT_CSS')
+      if (el) {
+        el.parentNode.removeChild(el)
+      }
+
+      // set up widget options
+      let baseURL = 'https://redalert.battleforthenet.com'
+
+      if (process.env.NODE_ENV === 'development') {
+        baseURL = 'http://localhost:8080'
+      }
+
+      window.RED_ALERT_OPTIONS = {
+        alwaysShow: true,
+        iframeHost: baseURL
+      }
+
+      // load script
+      const script = document.createElement('script')
+      script.id = scriptId
+      script.src = `${baseURL}/widget.js`
+      document.head.appendChild(script)
     }
   }
 }
