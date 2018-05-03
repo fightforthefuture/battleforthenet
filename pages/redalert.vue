@@ -140,6 +140,10 @@ section {
   padding: 5rem;
   color: #222;
 
+  @include mobile {
+    padding: 2.5rem 0;
+  }
+
   h4 {
     font-family: $title-font;
     margin-bottom: 1.5rem;
@@ -277,18 +281,31 @@ section {
     }
   }
 
-  .banner-ads {
-    a {
-      width: 48%;
-      margin: 1%;
-      float: left;
+  .image-gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 
-      &:last-child {
-        width: 98%;
+    a {
+      width: 50%;
+      padding: 0 0.5rem 0.5rem;
+
+      &.full {
+        width: 100%;
+      }
+    }
+
+    &.avatars a {
+      width: 25%;
+    }
+
+    @include mobile {
+      a {
+        width: 100%;
       }
 
-      @include mobile {
-        width: 100%;
+      &.avatars a {
+        width: 50%;
       }
     }
   }
@@ -296,6 +313,10 @@ section {
 
 iframe.events-map {
   height: 350px;
+
+  @include mobile {
+    height: 200px;
+  }
 }
 </style>
 

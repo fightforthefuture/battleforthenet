@@ -84,7 +84,7 @@ sections:
 
       <a class="btn btn-cta demo-widget" href="#">Try it out</a>
 
-      Pretty cool, right?  Simply add this line of JavaScript to any page on your site to join 
+      Pretty cool, right?  Simply add this line of JavaScript to any page on your site to join
       the RED ALERT campaign:
 
       <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
@@ -107,11 +107,11 @@ sections:
         class="rounded">
 
       Then between May 9th and the vote (date TBD), the widget will shrink down to a
-      smaller size before expanding again the day before the vote. 
-      
+      smaller size before expanding again the day before the vote.
+
       And remember ... the widget does all of this automatically. All you have to do is
-      place the code on your website and we'll take care of the rest.  But if you'd like 
-      to configure the appearance or change the location of the widget on your web pages, 
+      place the code on your website and we'll take care of the rest.  But if you'd like
+      to configure the appearance or change the location of the widget on your web pages,
       just visit [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
       to learn how.
 
@@ -125,17 +125,18 @@ sections:
       <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
        target="_blank">Click here</a> to see a bunch of different ad sizes and styles.
 
-      <div class="banner-ads clearfix">
+      <div class="image-gallery">
         <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
          target="_blank"><img src="/images/redalert/banner-600x450a.png" alt="600x450px banner image"></a>
         <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
          target="_blank"><img src="/images/redalert/banner-600x450b.png" alt="600x450px banner image"></a>
-        <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
+        <a class="full" href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
          target="_blank"><img src="/images/redalert/banner-970x90.png" alt="970x90px banner image"></a>
       </div>
 
       Feeling creative? Make something yourself and submit it for other sites to use by
       emailing us at [team@fightforthefuture.org](mailto:team@fightforthefuture.org).
+
   social:
     title: Put your social media accounts on Red Alert
     body_html: |
@@ -146,6 +147,62 @@ sections:
       people can take action. [Click here](https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM)
       for a giant folder of content you can use.  Then [click here](https://docs.google.com/document/d/1mjc4Ng0uqaS_SUAR8JYbgan60MYNg5vF2-6WBYZiZIE/edit?usp=sharing)
       to see ideas for blog posts, emails, tweets and more.
+
+      ### Avatar images
+
+      <div class="image-gallery avatars">
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/facebook-avatar1.png"
+          srcset="/images/redalert/facebook-avatar1.png 1x,
+                  /images/redalert/facebook-avatar1@2x.png 2x"
+          alt="Facebook avatar image"></a>
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/facebook-avatar2.png"
+          srcset="/images/redalert/facebook-avatar2.png 1x,
+                  /images/redalert/facebook-avatar2@2x.png 2x"
+          alt="Facebook avatar image"></a>
+      </div>
+
+      ### Twitter header images
+
+      <div class="image-gallery">
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/twitter-header1.png"
+          srcset="/images/redalert/twitter-header1.png 1x,
+                  /images/redalert/twitter-header1@2x.png 2x"
+          alt="Twitter header image"></a>
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/twitter-header2.png"
+          srcset="/images/redalert/twitter-header2.png 1x,
+                  /images/redalert/twitter-header2@2x.png 2x"
+          alt="Twitter header image"></a>
+      </div>
+
+      ### Facebook header images
+
+      <div class="image-gallery">
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/facebook-header1.png"
+          srcset="/images/redalert/facebook-header1.png 1x,
+                  /images/redalert/facebook-header1@2x.png 2x"
+          alt="Facebook header image"></a>
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/facebook-header2.png"
+          srcset="/images/redalert/facebook-header2.png 1x,
+                  /images/redalert/facebook-header2@2x.png 2x"
+          alt="Facebook header image"></a>
+      </div>
+
+      ### Instagram Story
+
+      <div class="image-gallery">
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/instagram-story.jpg"
+          srcset="/images/redalert/instagram-story.jpg 1x,
+                  /images/redalert/instagram-story@2x.jpg 2x"
+          alt="Instagram story screenshot"></a>
+      </div>
+
   participants:
     title: Participants
     body_html: |
