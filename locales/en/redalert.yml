@@ -152,14 +152,14 @@ sections:
 
       <div class="image-gallery avatars">
         <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
-          target="_blank"><img src="/images/redalert/facebook-avatar1.png"
-          srcset="/images/redalert/facebook-avatar1.png 1x,
-                  /images/redalert/facebook-avatar1@2x.png 2x"
-          alt="Facebook avatar image"></a>
-        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
           target="_blank"><img src="/images/redalert/facebook-avatar2.png"
           srcset="/images/redalert/facebook-avatar2.png 1x,
                   /images/redalert/facebook-avatar2@2x.png 2x"
+          alt="Facebook avatar image"></a>
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/facebook-avatar1.png"
+          srcset="/images/redalert/facebook-avatar1.png 1x,
+                  /images/redalert/facebook-avatar1@2x.png 2x"
           alt="Facebook avatar image"></a>
       </div>
 
@@ -209,40 +209,40 @@ sections:
       Below is a list of notable websites, companies, and organizations who have
       confirmed their participation in the RED ALERT action.
       <ul class="logo-grid">
-        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
-        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
-        <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
-        <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
-        <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
-        <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
         <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
-        <li><img src="/images/logos/eff-logo-plain-rgb.png" alt="EFF"></li>
-        <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
-        <li><img src="/images/logos/fark.png" alt="Fark"></li>
         <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
-        <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
         <li><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
-        <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
-        <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
-        <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
-        <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
-        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
-        <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
-        <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
-        <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
-        <li><img src="/images/logos/new-mode.jpg" alt="New Mode"></li>
-        <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
-        <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
-        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
-        <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
+        <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
         <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
-        <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
-        <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
-        <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
         <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
-        <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
+        <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
+        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
+        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+        <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
         <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
+        <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
+        <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
+        <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
+        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
+        <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
+        <li><img src="/images/logos/fark.png" alt="Fark"></li>
+        <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
+        <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
+        <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
+        <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
+        <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
+        <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
+        <li><img src="/images/logos/new-mode.jpg" alt="New Mode"></li>   
+        <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
+        <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
+        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
+        <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
+        <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
+        <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
         <li><img src="/images/logos/wakatime.png" alt="WakaTime"></li>
+        <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
+        <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
+        <li><img src="/images/logos/eff-logo-plain-rgb.png" alt="EFF"></li>
       </ul>
   events:
     title: Events
