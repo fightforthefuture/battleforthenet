@@ -470,6 +470,14 @@ export default {
     },
   },
 
+  beforeCreate() {
+    // This page has a 50/50 org rotation between FFTF and DP
+    if (!this.$route.query.org && !this.$route.query.source) {
+      const randomOrg = Math.random() < 0.5 ? 'fftf' : 'dp'
+      this.$store.commit('setOrg', randomOrg)
+    }
+  },
+
   mounted() {
     document.querySelectorAll('.demo-widget').forEach(el => {
       el.onclick = (event) => {
