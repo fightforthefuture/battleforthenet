@@ -2,21 +2,31 @@
 form {
   display: flex;
 
+  input, button {
+    width: 33%;
+    flex-grow: 1;
+  }
+
   input {
-    flex: 1;
-    margin-right: 5px;
+    margin-right: 0.5rem;
   }
 
   button {
-    font-size: 20px;
-    width: 30%;
+    font-size: 2rem;
 
     span {
       background-image: url('~/assets/images/phone.svg');
       background-repeat: no-repeat;
-      background-size: 22px auto;
+      background-size: 2.2rem auto;
       background-position: bottom left;
-      padding-left: 25px;
+      padding-left: 2.5rem;
+    }
+  }
+
+  @include big-screen {
+    button, input.zip {
+      width: 25%;
+      flex: none;
     }
   }
 }
@@ -28,7 +38,8 @@ form {
       <h2 v-if="inModal">Thanks! Now can you call them?</h2>
       <p>The FCC voted to kill net neutrality and let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But the Senate is about to vote on a resolution to overrule them and save the Internet using the Congressional Review Act (CRA). We only need one more vote to win. <strong>Can you call Congress now?</strong></p>
       <form @submit.prevent="submitForm()">
-        <input type="tel" placeholder="Enter your phone #" v-model.trim="phone">
+        <input class="phone" type="tel" placeholder="Phone #" v-model.trim="phone" required>
+        <input class="zip" type="tel" placeholder="Zip Code" v-model.trim="zipCode" required>
         <button class="btn">
           <span v-if="isSending">Saving...</span>
           <span v-else>Call</span>
@@ -52,8 +63,10 @@ form {
 </template>
 
 <script>
+import axios from 'axios'
 import { postFormData } from '~/assets/js/helpers'
 import CallScript from '~/components/CallScript'
+import settings from '~/config.json'
 
 export default {
   components: {
@@ -68,13 +81,33 @@ export default {
 
     defaultCampaign: {
       type: String,
-      default: 'RED_ALERT_BattleForTheNet_Call_2RSens_House'
+      default: settings.callpowerCampaigns.default
+    },
+
+    defaultZip: {
+      type: String,
+      default: null
+    },
+
+    defaultPhone: {
+      type: String,
+      default: null
+    }
+  },
+
+  watch: {
+    zipCode(newValue) {
+      if (newValue.length >= 5) {
+        this.geocodeZip()
+      }
     }
   },
 
   data() {
     return {
-      phone: null,
+      phone: this.defaultPhone,
+      zipCode: this.defaultZip,
+      stateCode: null,
       isSending: false,
       hasCalled: false,
       modalVisible: false,
@@ -82,9 +115,23 @@ export default {
     }
   },
 
+  created() {
+    if (this.zipCode) {
+      this.geocodeZip()
+    }
+  },
+
   computed: {
     campaign() {
-      return this.$route.query.campaign || this.defaultCampaign
+      if (this.$route.query.campaign) {
+        return this.$route.query.campaign
+      }
+      else if (this.stateCode && settings.callpowerCampaigns[this.stateCode]) {
+        return settings.callpowerCampaigns[this.stateCode]
+      }
+      else {
+        return this.defaultCampaign
+      }
     },
 
     campaignId() {
@@ -116,7 +163,8 @@ export default {
       try {
         const { data } = await postFormData(this.callPowerURL,{
           campaignId: this.campaignId,
-          userPhone: this.phone
+          userPhone: this.phone,
+          userLocation: this.zipCode
         })
 
         this.isSending = false
@@ -127,6 +175,17 @@ export default {
       catch (err) {
         this.isSending = false
         this.errorMessage = "That didn't work for some reason :("
+      }
+    },
+
+    async geocodeZip() {
+      try {
+        const { data } = await axios.get(`https://geo.battleforthenet.com/zip/${this.zipCode.substring(0, 5)}.json`)
+        this.stateCode = data.state_code
+      }
+      catch (error) {
+        // Invalid zip code
+        this.stateCode = null
       }
     }
   }
