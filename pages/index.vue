@@ -44,7 +44,7 @@ img.app-store {
 
     <section id="team-internet">
       <h2>We are Team Internet. We support net neutrality, freedom of speech.</h2>
-      <p>Nearly everyone who understands and depends on the Internet supports net neutrality, whether they're startup founders, activists, gamers, politicians, investors, comedians, YouTube stars, or typical Internet users who just want their Internet to work as advertised&mdash;regardless of their political party. Even some of the biggest and most interesting sites in the world have joined in <a href="https://www.battleforthenet.com/sept10th/">unprecedented</a>, <a href="https://www.battleforthenet.com/july12/">historic</a> <a href="https://breaktheinternet.org/">protests</a> to defend net neutrality. <a href="https://imgur.com/a/vYVet">See screenshots from the online protests</a> or <a href="https://www.flickr.com/photos/141697942@N08/albums/72157689309670051/page1">photos from protests around the country</a>.</p>
+      <p>These companies and organizations have been champions of net neutrality and participated in campaigns to save it:</p>
       <ul class="logo-grid">
         <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
         <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
