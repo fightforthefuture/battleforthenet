@@ -144,7 +144,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { sendToMothership } from '~/assets/js/helpers'
+import { sendToMothership, startTextFlow } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
 
 export default {
@@ -215,6 +215,10 @@ Thank you.`
         this.$trackEvent('petition_form', 'submit')
         this.resetForm()
         this.modalVisible = true
+
+        if (this.phone && this.org === 'fftf') {
+          this.startTextFlow()
+        }
       }
       catch (err) {
         self.isSending = false
@@ -224,6 +228,13 @@ Thank you.`
 
     resetForm() {
       this.isSending = false
+    },
+
+    startTextFlow() {
+      startTextFlow({
+        flow: '9a1fe2d7-0647-4133-88ec-6bf7097228e8',
+        phone: this.phone
+      })
     }
   }
 }

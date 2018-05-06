@@ -153,3 +153,19 @@ export function smoothScrollTo(endX, endY, duration) {
     window.scrollTo(newX, newY);
   }, 1000 / 60); // 60 fps
 };
+
+export async function startTextFlow({ flow, phone }) {
+  const axios = require('axios')
+
+  try {
+    const { data } = await axios.get('https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', {
+      flow: flow,
+      phone: phone
+    })
+
+    return data
+  }
+  catch (error) {
+    return {}
+  }
+}
