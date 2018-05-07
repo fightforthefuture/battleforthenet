@@ -68,7 +68,7 @@ export default {
 
     defaultCampaign: {
       type: String,
-      default: 'RED-ALERT-battleforthenet'
+      default: 'RED_ALERT_BattleForTheNet_Call_2RSens_House'
     }
   },
 
