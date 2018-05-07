@@ -2,6 +2,7 @@
 $body-font: open-sans, sans-serif;
 $title-font: futura-pt-bold, $body-font;
 $red: #ff0e0e;
+$header-red: #c60000;
 $gray: #b7b7b7;
 $odd-section-bg-color: #fff6f6;
 
@@ -42,11 +43,20 @@ h2 {
 }
 
 .page-header {
-  background: rgb(255,14,13);
-  background: linear-gradient(177deg, rgba(255,14,13,1) 0%, rgba(222,6,6,1) 51%, rgba(198,0,0,1) 100%);
+  background-color: rgba($header-red, 0.74);
+  background-image: repeating-radial-gradient(circle farthest-corner at center bottom,$header-red 0%,$header-red 44.8%,rgba($header-red, 0.5) 76.2%,transparent 100%);
   color: #fff;
   padding: 3rem;
   position: relative;
+
+  .top-gradient .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    background-image: radial-gradient(ellipse farthest-corner at center top, rgba(#fff,0.75) 5%, rgba(#fff,0.05) 50%, transparent 64%);
+  }
 
   // arrow
   &:after {
@@ -58,8 +68,8 @@ h2 {
     width: 0;
     position: absolute;
     pointer-events: none;
-    border-color: rgba(198, 0, 0, 0);
-    border-top-color: #c60000;
+    border-color: transparent;
+    border-top-color: $header-red;
     border-width: 2.5rem;
     margin-left: -2.5rem;
   }
@@ -324,6 +334,7 @@ iframe.events-map {
 <template>
   <div class="red-alert text-center">
     <header class="page-header" id="top">
+      <div class="top-gradient"><div class="container"></div></div>
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
         <h1 class="upcase">{{ $t('redalert.title') }}</h1>
