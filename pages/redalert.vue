@@ -55,7 +55,7 @@ h2 {
     left: 0;
     right: 0;
     height: 6rem;
-    background-image: radial-gradient(ellipse farthest-corner at center top, rgba(#fff,0.75) 5%, rgba(#fff,0.05) 50%, transparent 64%);
+    background-image: radial-gradient(ellipse farthest-corner at center top, rgba(#fff, 0.95) 17%, rgba(#fff, .25) 50%, transparent 64%);
   }
 
   // arrow
