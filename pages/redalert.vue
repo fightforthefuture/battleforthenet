@@ -42,21 +42,25 @@ h2 {
   width: 600px;
 }
 
+.top-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background-image: url('~/assets/images/redalert-top-gradient.png');
+  background-size: 1000px 120px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: 2;
+}
+
 .page-header {
-  background-color: rgba($header-red, 0.74);
-  background-image: repeating-radial-gradient(circle farthest-corner at center bottom,$header-red 0%,$header-red 44.8%,rgba($header-red, 0.5) 76.2%,transparent 100%);
+  background: rgb(255,14,13);
+  background: linear-gradient(177deg, rgba(255,14,13,1) 0%, rgba(222,6,6,1) 51%, rgba(198,0,0,1) 100%);
   color: #fff;
   padding: 3rem;
   position: relative;
-
-  .top-gradient .container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6rem;
-    background-image: radial-gradient(ellipse farthest-corner at center top, rgba(#fff, 0.95) 17%, rgba(#fff, .25) 50%, transparent 64%);
-  }
 
   // arrow
   &:after {
@@ -333,8 +337,8 @@ iframe.events-map {
 
 <template>
   <div class="red-alert text-center">
+    <div class="top-gradient"><div class="container"></div></div>
     <header class="page-header" id="top">
-      <div class="top-gradient"><div class="container"></div></div>
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
         <h1 class="upcase">{{ $t('redalert.title') }}</h1>
