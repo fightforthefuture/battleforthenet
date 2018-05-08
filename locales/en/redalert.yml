@@ -56,7 +56,9 @@ form:
   generic_error: That didn't work for some reason 😞
   name_placeholder: Name*
   email_placeholder: Email*
+  address_placeholder: Address*
   zip_placeholder: ZIP*
+  phone_placeholder: Phone (optional)
   button_loading: Saving...
   button_cta: Join the Protest
 
@@ -107,7 +109,7 @@ sections:
         <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
         <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
         <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
-        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>   
+        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>
         <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
         <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
         <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
@@ -132,7 +134,7 @@ sections:
       who overwhelmingly support restoring open Internet protections. Click to
       jump to instructions for how to join with [your website](#join) or on
       [social media](#social).
-      
+
   join:
     title: "How to put your site on RED ALERT"
     body_html: |
@@ -177,7 +179,7 @@ sections:
       Please feel free to create your own custom way to drive awareness of this important
       issue and encourage your users to contact Congress.  But whatever you do, make sure
       it's epic. THIS is the moment to fight!
-  
+
   banners:
     title: Post banner ads on your site
     body_html: |

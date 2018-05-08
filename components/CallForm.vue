@@ -33,20 +33,20 @@ form {
 </style>
 
 <template>
-  <div class="call-form text-center">
+  <div class="call-form">
     <div v-if="!hasCalled || !inModal">
-      <h2 v-if="inModal">Thanks! Now can you call them?</h2>
-      <p>The FCC voted to kill net neutrality and let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But the Senate is about to vote on a resolution to overrule them and save the Internet using the Congressional Review Act (CRA). We only need one more vote to win. <strong>Can you call Congress now?</strong></p>
+      <h2 v-if="inModal"><strong>Thanks!</strong> Can you call?</h2>
+      <p>We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.</p>
       <form @submit.prevent="submitForm()">
-        <input class="phone" type="tel" placeholder="Phone #" v-model.trim="phone" required>
+        <input class="phone" type="tel" placeholder="Phone Number" v-model.trim="phone" required>
         <input class="zip" type="tel" placeholder="Zip Code" v-model.trim="zipCode" required>
-        <button class="btn">
+        <button class="btn btn-cta">
           <span v-if="isSending">Saving...</span>
           <span v-else>Call</span>
         </button>
       </form>
-      <p>
-        (We’ll connect you and provide a suggested script of what to say. <a href="/privacy" target="_blank">Privacy Policy</a>)
+      <p class="disclaimer">
+        <small>Your number will only be used for this call and will never be shared with third parties. <a href="/privacy" target="_blank">Privacy Policy</a></small>
       </p>
     </div>
 

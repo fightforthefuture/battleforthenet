@@ -34,3 +34,19 @@ $container-width: 800px;
     @content;
   }
 }
+
+@mixin btn-icon($icon-url, $width, $height) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    background-image: url($icon-url);
+    background-size: cover;
+    display: inline-flex;
+    width: $width;
+    height: $height;
+    content: "";
+    margin-right: .4rem;
+  }
+}

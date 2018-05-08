@@ -214,22 +214,6 @@ button {
   padding: 1.4rem 2.8rem;
 }
 
-@mixin btn-icon($icon-url, $width, $height) {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  &:before {
-    background-image: url($icon-url);
-    background-size: cover;
-    display: inline-flex;
-    width: $width;
-    height: $height;
-    content: "";
-    margin-right: .4rem;
-  }
-}
-
 .btn-facebook {
   background-color: $facebook-blue;
   @include btn-icon('~/assets/images/facebook_white.svg', 24px, 24px);
@@ -254,20 +238,6 @@ button {
 
   &:hover {
     background-color: darken(#39375b, 10%);
-  }
-}
-
-.btn-events {
-  @include btn-icon('~/assets/images/location-icon.png', 14px, 21px);
-  border: 1px solid #2b294b;
-  background-color: transparent;
-
-  &:before {
-    margin-right: 6px;
-  }
-
-  &:hover {
-    background-color: $body-bg-color;
   }
 }
 
