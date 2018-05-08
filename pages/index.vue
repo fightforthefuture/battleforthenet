@@ -38,7 +38,7 @@ img.app-store {
 
     <section id="scoreboard">
       <h2>Contact Congress now to show your support for net neutrality.</h2>
-      <p>Below you'll find a list of your state's senators and representatives.  The ones in green support net neutrality, so let them know you appreciate their support.  The ones in red need to be convinced, so let them know how important this issue is to you.  Then target the <a href="/scoreboard/#senate">49 undecided senators</a>. Once we win the Senate, the fight moves to the House, where we need over 25 Republican votes to win. So make sure you tweet and call senators AND representatives!</p>
+      <p>Below you'll find a list of your state's senators and representatives.  The ones in green support net neutrality, so let them know you appreciate their support.  The ones in red need to be convinced, so let them know how important this issue is to you.  Then target the <a href="/scoreboard/#senate">49 undecided senators</a>. Once we win the Senate, the fight moves to the House, where we need over 25 Republican votes to win. So please tweet and call your senators, then tweet and call your representatives!</p>
       <scoreboard :summary="true"></scoreboard>
     </section>
 
