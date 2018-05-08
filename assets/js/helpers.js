@@ -158,7 +158,7 @@ export async function startTextFlow({ flow, phone }) {
   const axios = require('axios')
 
   try {
-    const { data } = await axios.get('https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', {
+    const { data } = await axios.post('https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', {
       flow: flow,
       phone: phone
     })

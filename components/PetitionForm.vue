@@ -147,6 +147,19 @@ import { mapState } from 'vuex'
 import { sendToMothership, startTextFlow } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
 
+// battle-for-the-net-action-4
+const petitionId = '25488448-4124-4359-8873-d1ef731ea5f4'
+
+const defaultLetter = `Last December's FCC vote to destroy the Net Neutrality protections cannot stand.
+
+I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
+
+The FCC's December decision willfully ignored the outcry of tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
+
+We need members of Congress to stand up for the open internet and for the digital rights of their constituents now. Please co-sponsor, sign the discharge petition for, and vote for the CRA Resolution of Disapproval that would overturn the FCC's December "Restoring Internet Freedom" vote.
+
+Thank you.`
+
 export default {
   components: {
     CallForm
@@ -161,15 +174,15 @@ export default {
       address: null,
       zipCode: null,
       phone: null,
-      comments: `Last December's FCC vote to destroy the Net Neutrality protections cannot stand.
+      comments: defaultLetter
+    }
+  },
 
-I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
-
-The FCC's December decision willfully ignored the outcry of tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
-
-We need members of Congress to stand up for the open internet and for the digital rights of their constituents now. Please co-sponsor, sign the discharge petition for, and vote for the CRA Resolution of Disapproval that would overturn the FCC's December "Restoring Internet Freedom" vote.
-
-Thank you.`
+  watch: {
+    modalVisible(isVisible) {
+      if (!isVisible) {
+        this.resetForm()
+      }
     }
   },
 
@@ -208,12 +221,12 @@ Thank you.`
           fcc_ecfs_docket: "17-108",
           org: this.org,
           an_tags: "[\"net-neutrality\"]",
-          an_petition_id: "58171536-6183-4e5b-81c5-0d59d7870399",
+          an_petition_id: petitionId,
           action_comment: this.actionComment
         })
 
         this.$trackEvent('petition_form', 'submit')
-        this.resetForm()
+        this.isSending = false
         this.modalVisible = true
 
         if (this.phone && this.org === 'fftf') {
@@ -228,6 +241,12 @@ Thank you.`
 
     resetForm() {
       this.isSending = false
+      this.name = null
+      this.email = null
+      this.address = null
+      this.zipCode = null
+      this.phone = null
+      this.comments = defaultLetter
     },
 
     startTextFlow() {

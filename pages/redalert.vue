@@ -88,12 +88,22 @@ h2 {
   }
 
   form .row {
+    display: flex;
+    margin-bottom: 1.5%;
+
     input {
-      width: 32.5%;
-      margin-right: 1%;
+      margin-right: 1.5%;
 
       &:last-child {
         margin-right: 0;
+      }
+
+      &.address, &.phone {
+        width: 38.5%;
+      }
+
+      &.zip {
+        width: 20%;
       }
     }
   }
@@ -220,80 +230,8 @@ section {
     }
   }
 
-  .modal {
-    background-color: #fff;
-    padding: 0;
-    width: 600px;
-
-    .close {
-      color: #fff;
-      top: 0;
-    }
-
-    header {
-      background-color: #101010;
-      border-radius: $border-radius $border-radius 0 0;
-
-      h2 {
-        color: #fff;
-        margin: 0;
-        padding-top: 2rem;
-        font-size: 3.2rem;
-      }
-    }
-
-    .modal-content {
-      padding: 0 4rem 2rem;
-
-      p {
-        font-weight: 300;
-        font-size: 1.4rem;
-      }
-
-      .btn {
-        white-space: nowrap;
-
-        @include mobile {
-          white-space: normal;
-        }
-      }
-
-      .or {
-        font-family: $title-font;
-        font-weight: 500;
-        font-size: 1rem;
-        color: $gray;
-        margin: 1rem 0;
-        position: relative;
-        height: 1.5rem;
-
-        &:before {
-          content: "";
-          background-color: #b7b7b7;
-          height: 0.1rem;
-          width: 100%;
-          display: block;
-          position: absolute;
-          top: 50%;
-        }
-
-        span {
-          background-color: #fff;
-          position: absolute;
-          top: 0;
-          padding: 0 .5rem;
-        }
-      }
-
-      .btn-events {
-        border-color: $gray;
-        color: #000;
-
-        &:hover {
-          background-color: #eee;
-        }
-      }
-    }
+  .modal h2:after {
+    content: none;
   }
 
   .image-gallery {
@@ -344,36 +282,22 @@ iframe.events-map {
         <h1 class="upcase">{{ $t('redalert.title') }}</h1>
         <div v-html="$t('redalert.intro_html')"></div>
 
-        <!-- hidden Demand Progress form -->
-        <div class="hidden">
-          <iframe name="actionkit-iframe"></iframe>
-          <form action="https://act.demandprogress.org/act/" method="post" target="actionkit-iframe" ref="dpForm">
-            <input type="hidden" name="name" :value="name">
-            <input type="hidden" name="phone" :value="phone">
-            <input type="hidden" name="email" :value="email">
-            <input type="hidden" name="zip" :value="zipCode">
-            <input type="hidden" name="page" value="cra-vote">
-            <input type="hidden" name="form_name" value="act-petition">
-            <input type="hidden" name="country" value="united states">
-            <input type="hidden" name="source" value="website">
-            <input type="hidden" name="subscribed_user" value="1">
-            <input type="hidden" name="js" value="1">
-            <input type="hidden" name="opt_in" value="1">
-          </form>
-        </div>
-
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
             <input v-model="name" :placeholder="$t('redalert.form.name_placeholder')" name="name" type="text" required>
             <input v-model="email" :placeholder="$t('redalert.form.email_placeholder')" name="email" type="email" required>
-            <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required>
+          </div>
+          <div class="row">
+            <input v-model="address" :placeholder="$t('redalert.form.address_placeholder')" name="address" type="text" required class="address">
+            <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required class="zip">
+            <input v-model="phone" :placeholder="$t('redalert.form.phone_placeholder')" name="phone" type="tel" class="phone">
           </div>
           <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
             <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
             <span v-else>{{ $t('redalert.form.button_cta') }}</span>
           </button>
-          <disclaimer></disclaimer>
+          <disclaimer :sms="true"></disclaimer>
         </form>
       </div>
     </header>
@@ -392,32 +316,7 @@ iframe.events-map {
     <social-sidebar :twitter-url="twitterShareURL" :facebook-url="facebookShareURL"></social-sidebar>
 
     <modal v-if="modalVisible">
-      <header>
-        <h2>{{ $t('redalert.after_action.title') }}</h2>
-      </header>
-      <div class="modal-content">
-        <experiment name="redalert-after-action">
-          <variant slot="a">
-            <div v-html="$t('redalert.after_action.a.body_html')"></div>
-            <div class="flex-row">
-              <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.facebook_button') }}</facebook-button>
-              <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.twitter_button') }}</twitter-button>
-              <donate-button @clicked="$trackEvent('donate_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.donate_button') }}</donate-button>
-            </div>
-            <div class="or"><span>{{ $t('redalert.after_action.a.or') }}</span></div>
-            <div class="flex-row">
-              <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('events_button', 'click', 'redalert-after-action-a')">{{ $t('redalert.after_action.a.event_button') }}</a>
-            </div>
-          </variant>
-          <variant slot="b">
-            <div v-html="$t('redalert.after_action.b.body_html')"></div>
-            <div class="flex-row">
-              <facebook-button :url="facebookShareURL" @clicked="$trackEvent('facebook_button', 'click', 'redalert-after-action-b')">{{ $t('redalert.after_action.b.facebook_button') }}</facebook-button>
-              <twitter-button :url="twitterShareURL" @clicked="$trackEvent('twitter_button', 'click', 'redalert-after-action-b')">{{ $t('redalert.after_action.b.twitter_button') }}</twitter-button>
-            </div>
-          </variant>
-        </experiment>
-      </div>
+      <call-form :in-modal="true" :default-phone="phone" :default-zip="zipCode"></call-form>
     </modal>
   </div>
 </template>
@@ -425,10 +324,17 @@ iframe.events-map {
 <script>
 import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
+import CallForm from '~/components/CallForm'
+import { createMetaTags, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
 import axios from 'axios'
-import { createMetaTags, smoothScrollTo } from '~/assets/js/helpers'
 
-const petitionId = '5440013f-1133-457b-b375-f6b88f7d0b3c'
+// red-alert-action
+const actionPetitionId = '5440013f-1133-457b-b375-f6b88f7d0b3c'
+// battle-for-the-net-action-5
+const contactCongressPetitionId = '29e95d4c-b60c-4544-83bd-04f8eafeb96d'
+
+// Red Alert response flow
+const textFlowId = '9a1fe2d7-0647-4133-88ec-6bf7097228e8'
 
 export default {
   layout: 'basic',
@@ -455,18 +361,28 @@ export default {
 
   components: {
     PersistentButton,
-    SocialSidebar
+    SocialSidebar,
+    CallForm
   },
 
   data() {
     return {
       name: null,
       email: null,
+      address: null,
       zipCode: null,
       phone: null,
       isSending: false,
       errorMessage: null,
       modalVisible: false
+    }
+  },
+
+  watch: {
+    modalVisible(isVisible) {
+      if (!isVisible) {
+        this.resetForm()
+      }
     }
   },
 
@@ -508,22 +424,54 @@ export default {
   },
 
   methods: {
-    submitForm() {
-      if (this.$store.state.org === 'dp') {
-        this.submitDPForm()
-      }
-      else {
-        this.submitFFTFForm()
-      }
-    },
-
-    async submitFFTFForm() {
+    async submitForm() {
       this.isSending = true
       this.$trackEvent('redalert_form', 'submit', 'fftf')
 
       try {
+        const response = await sendToMothership({
+          subject: "Protect Net Neutrality!",
+          member: {
+            first_name: this.name,
+            email: this.email,
+            postcode: this.zipCode,
+            phone_number: this.phone,
+            street_address: this.address,
+            country: 'US'
+          },
+          hp_enabled: 'true',
+          guard: '',
+          contact_congress: 1,
+          fcc_ecfs_docket: "17-108",
+          org: this.org,
+          an_tags: "[\"net-neutrality\"]",
+          an_petition_id: contactCongressPetitionId,
+          action_comment: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."
+        })
+
+        this.isSending = false
+        this.modalVisible = true
+      }
+      catch (error) {
+        console.error(error)
+        this.isSending = false
+        this.errorMessage = this.$t('redalert.form.generic_error')
+      }
+
+      this.signActionPetition()
+
+      if (this.org === 'fftf') {
+        startTextFlow({
+          flow: textFlowId,
+          phone: this.phone
+        })
+      }
+    },
+
+    async signActionPetition() {
+      try {
         const { data } = await axios.post(
-          `https://fv8xpw9hri.execute-api.us-east-1.amazonaws.com/v1/petitions/${petitionId}/signatures`,
+          `https://fv8xpw9hri.execute-api.us-east-1.amazonaws.com/v1/petitions/${actionPetitionId}/signatures`,
           {
             name: this.name,
             email: this.email,
@@ -537,25 +485,8 @@ export default {
         this.modalVisible = true
       }
       catch (error) {
-        // console.error(error)
-        // this.isSending = false
-        // this.errorMessage = this.$t('redalert.form.generic_error')
-
-        // fail silently for now
-        this.resetForm()
-        this.modalVisible = true
+        // uh oh
       }
-    },
-
-    submitDPForm: function() {
-      this.isSending = true
-      this.$refs.dpForm.submit()
-      this.$trackEvent('redalert_form', 'submit', 'dp')
-
-      setTimeout(() => {
-        this.resetForm()
-        this.modalVisible = true
-      }, 5000)
     },
 
     resetForm() {
@@ -564,6 +495,7 @@ export default {
       this.email = null
       this.phone = null
       this.zipCode = null
+      this.address = null
     },
 
     scrollToTop() {

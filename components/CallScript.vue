@@ -1,24 +1,108 @@
+<style lang="scss" scoped>
+.btn {
+  letter-spacing: 0.2rem;
+}
+
+.btn-events {
+  color: #111;
+  background-color: #fff;
+  border: .2rem solid #9a9a9a;
+  font-size: 1.7rem;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1.7rem 0;
+  text-align: center;
+
+  &:hover {
+    background-color: darken(#fff, 10%);
+  }
+
+  img {
+    width: 15px;
+    height: 21px;
+    margin: 0 1rem -0.45rem 0;
+  }
+}
+
+.btn-donate {
+  background-color: #ffeb65;
+  color: #000;
+
+  &:hover {
+    background-color: darken(#ffeb65, 10%);
+  }
+}
+
+.flex-row .btn {
+  font-size: 1.2rem;
+  padding: 1.5rem 0;
+
+  &:before {
+    content: none;
+  }
+}
+
+b {
+  font-weight: 700;
+}
+
+h2 img {
+  width: 32px;
+  height: 32px;
+  margin: 0 0 -0.25rem 0;
+}
+
+h3 {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin: 1rem 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin: 3.5rem 0;
+}
+
+.warning {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  img {
+    width: 18px;
+    height: 18px;
+    margin: 0 .25rem -.35rem 0;
+  }
+}
+</style>
+
 <template>
   <div>
-    <h2>Calling you now!</h2>
-    <p><strong>Introduce yourself, be polite, and say:</strong></p>
-    <blockquote>“I support Title Two net neutrality and I urge you to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's December vote to repeal the Open Internet Order.”</blockquote>
-    <div class="tip">
+    <h2>
+      <img src="~/assets/images/call-icon.svg" alt="">
+      Calling you now...
+    </h2>
+    <p><b>Introduce yourself, be polite, and say:</b></p>
+    <p>I'm calling to ask my lawmakers to support the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you.</p>
+    <div class="warning">
+      <img src="~/assets/images/warning-circle.svg" alt="">
       If lines are busy, we may call you in a few minutes.
     </div>
-    <footer>
-      <h4>Done calling? Do these things, too!</h4>
-      <div class="buttons">
-        <div class="flex-row">
-          <facebook-button>Share</facebook-button>
-          <twitter-button>Tweet</twitter-button>
-          <donate-button>Donate</donate-button>
-        </div>
-        <div class="flex-row">
-          <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank">Find a protest near you</a>
-        </div>
+    <hr>
+    <h3>Done calling? Do these things, too!</h3>
+    <div class="buttons">
+      <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank">
+        <img src="~/assets/images/map-marker.svg" alt="" @click="$trackEvent('call_script_events_button', 'click')">
+        Find a protest near you
+      </a>
+      <div class="flex-row">
+        <facebook-button @clicked="$trackEvent('call_script_facebook_button', 'click')">Share on Facebook</facebook-button>
+        <twitter-button @clicked="$trackEvent('call_script_twitter_button', 'click')">Share on Twitter</twitter-button>
+        <donate-button @clicked="$trackEvent('call_script_donate_button', 'click')">Donate</donate-button>
       </div>
-    </footer>
+    </div>
   </div>
 </template>
 

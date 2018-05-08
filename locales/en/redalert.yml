@@ -21,42 +21,24 @@ sharing:
 title: Red Alert for Net Neutrality
 intro_html: |
   The FCC voted to let ISPs ruin the Internet. But there’s an imminent vote in
-  the US Senate to overrule them and restore net neutrality. Starting on May 9th
-  until the day of the vote, put your website or social profile on RED ALERT to
-  help sound the alarm and flood lawmakers with calls and emails.
-  **Are you in?**
+  the US Senate to overrule them and restore net neutrality. To join the Red
+  Alert, simply enter your contact information below. We'll send a letter to
+  your congressional representatives letting them know you support net
+  neutrality. Then we'll send you instructions on how to add our Red Alert
+  widget to your website, spread the word on social media, and more.
 persistent_button: Join the Protest
 tweet_text: |
   In mid-May, the U.S. Senate will vote on whether or not to save net
   neutrality. Join millions of other every day Americans demanding freedom on
   the Internet.
 
-after_action:
-  title: "Thanks!"
-  a:
-    body_html: |
-      We'll send you detailed instructions on how to participate in the Red
-      Alert for net neutrality, so check your email shortly.  In the meantime,
-      use the links below to share this campaign on social media, donate to the
-      cause and find an event in your area.
-    or: or
-    event_button: Find a protest near you
-    donate_button: Donate
-    facebook_button: Share on Facebook
-    twitter_button: Share on Twitter
-  b:
-    body_html: |
-      We'll send you detailed instructions on how to participate in the Red
-      Alert for net neutrality, so check your email shortly. In the meantime,
-      use the links below to share this campaign on social media.
-    facebook_button: Share on Facebook
-    twitter_button: Share on Twitter
-
 form:
   generic_error: That didn't work for some reason 😞
   name_placeholder: Name*
   email_placeholder: Email*
+  address_placeholder: Address*
   zip_placeholder: ZIP*
+  phone_placeholder: Phone (optional)
   button_loading: Saving...
   button_cta: Join the Protest
 
@@ -107,7 +89,7 @@ sections:
         <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
         <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
         <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
-        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>   
+        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>
         <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
         <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
         <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
@@ -132,7 +114,7 @@ sections:
       who overwhelmingly support restoring open Internet protections. Click to
       jump to instructions for how to join with [your website](#join) or on
       [social media](#social).
-      
+
   join:
     title: "How to put your site on RED ALERT"
     body_html: |
@@ -177,7 +159,7 @@ sections:
       Please feel free to create your own custom way to drive awareness of this important
       issue and encourage your users to contact Congress.  But whatever you do, make sure
       it's epic. THIS is the moment to fight!
-  
+
   banners:
     title: Post banner ads on your site
     body_html: |

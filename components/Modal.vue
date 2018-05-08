@@ -19,19 +19,20 @@ body.modal-open {
 }
 
 .modal {
-  width: 700px;
+  width: 70rem;
   position: relative;
-  background-color: $body-bg-color;
-  padding: 40px 30px 30px;
+  color: #000;
+  background-color: #fff;
+  padding: 4rem 3rem 3rem;
   border-radius: $border-radius;
-  text-align: center;
+  text-align: left;
 
   .close {
     position: absolute;
-    right:6px;
-    top: -3px;
-    color: #cad7ee;
-    font-size: 36px;
+    right: .6rem;
+    top: -.3rem;
+    color: inherit;
+    font-size: 3.6rem;
     text-decoration: none;
     background-color: transparent;
     border:none;
@@ -41,60 +42,38 @@ body.modal-open {
     }
   }
 
-  blockquote {
-    font-size: 19px;
-    line-height: 1.4;
-    font-style: italic;
-    color: #a2b0ca;
-    display: block;
-  }
+  h2 {
+    font-size: 4rem;
+    margin: 0;
+    color: inherit;
 
-  .tip {
-    background-color: #24233d;
-    color: #fff;
-    background-image: url('~/assets/images/tip-icon.png');
-    background-size: 15px 15px;
-    background-position: 8px center;
-    background-repeat: no-repeat;
-    margin: auto;
-    display: inline-block;
-    padding: 8px 8px 8px 30px;
-    border-radius: 2px;
-  }
-
-  footer {
-    background-color: #121122;
-    margin: 30px -30px -30px;
-    padding: 5px 10px 35px;
-    border-radius: 0 0 8px 8px;
-
-    h4 {
-      color: #94a3c3;
-      text-transform: uppercase;
-      font-size: 16px;
+    strong {
+      color: #1abe50;
     }
+  }
 
-    .buttons {
-      width: 96%;
-      margin: auto;
+  p {
+    font-weight: 300;
+    font-size: 2rem;
+  }
 
-      .flex-row {
-        margin-bottom: 10px;
+  input {
+    border: .2rem solid #111;
+    padding: 2rem;
+  }
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+  .btn-cta {
+    background-color: #000;
 
-        .btn {
-          flex: 1;
-        }
-      }
+    span {
+      background: none;
+      padding: 0;
+    }
+  }
 
-      .btn {
-        font-size: 16px;
-        padding: 13px;
-        margin: 0 8px;
-      }
+  p.disclaimer {
+    small, a {
+      color: inherit;
     }
   }
 }
