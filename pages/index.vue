@@ -43,7 +43,7 @@ img.app-store {
     </section>
 
     <section id="events">
-      <h2>Find an event in your area</h2>
+      <h2>There are protests all over the country on Monday May 14th. Join one near you.</h2>
       <p><strong>Want to make your voice heard?</strong> Check out the map below to find a protest or a meeting with a representative in your state.  And if there are no events in your area, consider organizing one!</p>
       <iframe class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
     </section>
