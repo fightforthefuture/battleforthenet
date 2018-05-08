@@ -470,19 +470,22 @@ export default {
 
     async signActionPetition() {
       try {
-        const { data } = await axios.post(
-          `https://fv8xpw9hri.execute-api.us-east-1.amazonaws.com/v1/petitions/${actionPetitionId}/signatures`,
-          {
-            name: this.name,
+        await sendToMothership({
+          member: {
+            first_name: this.name,
             email: this.email,
-            phone: this.phone,
-            zip_code: this.zipCode,
-            tags: 'net-neutrality'
-          }
-        )
-
-        this.resetForm()
-        this.modalVisible = true
+            postcode: this.zipCode,
+            phone_number: this.phone,
+            street_address: this.address,
+            country: 'US'
+          },
+          hp_enabled: 'true',
+          guard: '',
+          contact_congress: 0,
+          org: this.org,
+          an_tags: "[\"net-neutrality\"]",
+          an_petition_id: actionPetitionId
+        })
       }
       catch (error) {
         // uh oh
