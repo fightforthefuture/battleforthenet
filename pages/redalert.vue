@@ -537,9 +537,13 @@ export default {
         this.modalVisible = true
       }
       catch (error) {
-        console.error(error)
-        this.isSending = false
-        this.errorMessage = this.$t('redalert.form.generic_error')
+        // console.error(error)
+        // this.isSending = false
+        // this.errorMessage = this.$t('redalert.form.generic_error')
+
+        // fail silently for now
+        this.resetForm()
+        this.modalVisible = true
       }
     },
 
