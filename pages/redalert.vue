@@ -325,13 +325,16 @@ iframe.events-map {
 import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import CallForm from '~/components/CallForm'
-import { createMetaTags, sendToMothership, smoothScrollTo } from '~/assets/js/helpers'
+import { createMetaTags, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
 import axios from 'axios'
 
 // red-alert-action
 const actionPetitionId = '5440013f-1133-457b-b375-f6b88f7d0b3c'
 // battle-for-the-net-action-5
 const contactCongressPetitionId = '29e95d4c-b60c-4544-83bd-04f8eafeb96d'
+
+// Red Alert response flow
+const textFlowId = '9a1fe2d7-0647-4133-88ec-6bf7097228e8'
 
 export default {
   layout: 'basic',
@@ -442,7 +445,7 @@ export default {
           fcc_ecfs_docket: "17-108",
           org: this.org,
           an_tags: "[\"net-neutrality\"]",
-          an_petition_id: petitionId,
+          an_petition_id: contactCongressPetitionId,
           action_comment: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."
         })
 
@@ -456,6 +459,11 @@ export default {
       }
 
       this.signActionPetition()
+
+      startTextFlow({
+        flow: textFlowId,
+        phone: this.phone
+      })
     },
 
     async signActionPetition() {
