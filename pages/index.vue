@@ -21,7 +21,8 @@ img.app-store {
 
     <section id="join">
       <h2>Do you run a website? Use it to join the Red Alert.</h2>
-      <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. If you have a website, you can display a prominent alert on your site that asks your visitors to contact Congress. <a href="https://www.fightforthefuture.org?redalert">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/redalert-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
+      <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. Sites will go on Red Alert from May 9th until the Senate votes a week or so later. Can you join us for all or some of it?</p>
+      <p>If you have a website, you can display a prominent alert on your site that asks your visitors to contact Congress. <a href="https://www.fightforthefuture.org?redalert">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/redalert-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
       <code>&lt;script src="https://redalert.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
       <div class="modals flex-center">
         <img src="/images/redalert/modal-minimized-preview@2x.jpg"
