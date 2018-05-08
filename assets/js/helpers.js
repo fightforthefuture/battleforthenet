@@ -67,7 +67,7 @@ export function createMetaTags(tags={}) {
 
 export function postFormData(url, data={}) {
   const axios = require('axios')
-  const qs = require('querystring')
+  const qs = require('qs')
 
   return axios.post(url, qs.stringify(data), {
     headers: {
