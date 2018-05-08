@@ -225,18 +225,22 @@ sections:
         <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
         <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
         <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
-        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
         <li><img src="/images/logos/duckduckgo.png" alt="DuckDuckGo"></li>
+        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
+        <li><img src="/images/logos/pornhub.png" alt="Pornhub"></li>
+        <li><img src="/images/logos/funnyordie.png" alt="Funny or Die"></li>
         <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
         <li><img src="/images/logos/fark.png" alt="Fark"></li>
         <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
         <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
+        <li><img src="/images/logos/credo.png" alt="CREDO"></li>
         <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
         <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
         <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
         <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
         <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>   
         <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
+        <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
         <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
         <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
         <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
@@ -246,7 +250,7 @@ sections:
         <li><img src="/images/logos/wakatime.png" alt="WakaTime"></li>
         <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
         <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
-        <li><img src="/images/logos/eff-logo-plain-rgb.png" alt="EFF"></li>
+        <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
       </ul>
   events:
     title: Events
