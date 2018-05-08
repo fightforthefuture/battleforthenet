@@ -67,7 +67,7 @@ img.app-store {
         <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
         <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
         <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
-        <li><img src="/images/logos/eff-logo-plain-rgb.png" alt="EFF"></li>
+        <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
         <li><img src="/images/logos/okcupid.png" alt="OkCupid"></li>
         <li><img src="/images/logos/18mr.png" alt="18 Million Rising"></li>
         <li><img src="/images/logos/ycombinator.png" alt="Y Combinator"></li>
