@@ -45,10 +45,9 @@ form {
           <span v-else>Call</span>
         </button>
       </form>
-<!--       <p>
+      <p>
         (We’ll connect you and provide a suggested script of what to say. <a href="/privacy" target="_blank">Privacy Policy</a>)
-      </p> -->
-      <p>Hi, Laila, the campaign ID is: <strong>{{ campaignId }}</strong></p>
+      </p>
     </div>
 
     <!-- Show call script after form has been submitted -->
