@@ -24,6 +24,15 @@
   }
 }
 
+.btn-donate {
+  background-color: #ffeb65;
+  color: #000;
+
+  &:hover {
+    background-color: darken(#ffeb65, 10%);
+  }
+}
+
 .flex-row .btn {
   font-size: 1.2rem;
   padding: 1.5rem 0;
