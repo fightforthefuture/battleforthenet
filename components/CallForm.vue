@@ -45,9 +45,10 @@ form {
           <span v-else>Call</span>
         </button>
       </form>
-      <p>
+<!--       <p>
         (We’ll connect you and provide a suggested script of what to say. <a href="/privacy" target="_blank">Privacy Policy</a>)
-      </p>
+      </p> -->
+      <p>Hi, Laila, the campaign ID is: <strong>{{ campaignId }}</strong></p>
     </div>
 
     <!-- Show call script after form has been submitted -->
@@ -66,7 +67,7 @@ form {
 import axios from 'axios'
 import { postFormData } from '~/assets/js/helpers'
 import CallScript from '~/components/CallScript'
-import settings from '~/config.json'
+import settings from '~/assets/data/callpower.json'
 
 export default {
   components: {
@@ -79,9 +80,9 @@ export default {
       default: false
     },
 
-    defaultCampaign: {
+    page: {
       type: String,
-      default: settings.callpowerCampaigns.default
+      default: 'home'
     },
 
     defaultZip: {
@@ -122,15 +123,34 @@ export default {
   },
 
   computed: {
+    campaignData() {
+      if (this.page === 'call') {
+        return settings.callPage
+      }
+      else {
+        return settings.homePage
+      }
+    },
+
+    stateCampaign() {
+      if (this.stateCode) {
+        for (let campaign of this.campaignData.stateCampaigns) {
+          if (campaign.states.includes(this.stateCode)) {
+            return campaign.id
+          }
+        }
+      }
+    },
+
     campaign() {
       if (this.$route.query.campaign) {
         return this.$route.query.campaign
       }
-      else if (this.stateCode && settings.callpowerCampaigns[this.stateCode]) {
-        return settings.callpowerCampaigns[this.stateCode]
+      else if (this.stateCampaign) {
+        return this.stateCampaign
       }
       else {
-        return this.defaultCampaign
+        return this.campaignData.defaultCampaign
       }
     },
 

@@ -2,10 +2,5 @@
   "facebookShareURL": "https://shpg.org/103/187904/facebook",
   "twitterShareURL": "https://shpg.org/103/187905/twitter",
   "googleAnalyticsId": "UA-26576645-20",
-  "sentryDSN": "https://a9a3a247f4804059a192eaad9fff3231@sentry.io/294926",
-  "callpowerCampaigns": {
-    "PA": "PA-test-campaign",
-    "callPageDefault": "RED-ALERT-battleforthenet-call",
-    "default": "RED-ALERT-battleforthenet"
-  }
+  "sentryDSN": "https://a9a3a247f4804059a192eaad9fff3231@sentry.io/294926"
 }
