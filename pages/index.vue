@@ -19,6 +19,17 @@ img.app-store {
       <petition-form v-else />
     </section>
 
+    <section id="join">
+      <h2>Do you run a website? Use it to join the Red Alert.</h2>
+      <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. If you have a website, you can display a prominent alert on your site that asks your visitors to contact Congress. <a href="https://www.fightforthefuture.org?redalert">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/redalert-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
+      <code>&lt;script src="https://redalert.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
+      <div class="modals flex-center">
+        <img src="/images/redalert/modal-minimized-preview@2x.jpg"
+          alt="A screenshot of our Red Alert modal when minimized"
+          class="rounded">
+      </div>
+    </section>
+    
     <section id="onemorevote">
       <h2>The Senate is about to vote on whether to save net neutrality or let it die.</h2>
       <p>Ajit Pai's FCC wants to let cable companies control which websites and apps you use, where you get your news, how you listen to music and watch videos -- everything you do on the Internet. But the US Senate will vote in mid-May on a resolution to block the FCC's repeal of net neutrality and keep the web free and open. <b><a href="/redalert">Starting May 9th through the vote itself, we're calling on websites and social media users to "go red" as part of our Red Alert for Net Neutrality to help sound the alarm. Join us!</a></b></p>
@@ -34,12 +45,6 @@ img.app-store {
       <h2>Find an event in your area</h2>
       <p><strong>Want to make your voice heard?</strong> Check out the map below to find a protest or a meeting with a representative in your state.  And if there are no events in your area, consider organizing one!</p>
       <iframe class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
-    </section>
-
-    <section id="videos">
-      <h2>What is net neutrality? Why does it matter? Watch these videos!</h2>
-      <p><strong>Net neutrality</strong> is the principle that Internet providers like Comcast &amp; Verizon should not control what we see and do online. In 2015, startups, Internet freedom groups, and 3.7 million commenters won strong net neutrality rules from the US Federal Communication Commission (FCC). The rules prohibit Internet providers from blocking, throttling, and paid prioritization&mdash;"fast lanes" for sites that pay, and slow lanes for everyone else. Want to learn more? Watch these videos!</p>
-      <video-roll></video-roll>
     </section>
 
     <section id="team-internet">
@@ -85,17 +90,6 @@ img.app-store {
       <p>Cable companies are famous for high prices and poor service. Several rank as the most hated companies in America. Now, they're lobbying the FCC and Congress to end net neutrality. Why? It's simple: <strong>if they win the power to slow sites down, they can bully any site into paying millions to escape the "slow lane."</strong> This would amount to a tax on every sector of the American economy. Every site would cost more, since they'd all have to pay big cable. Worse, it would extinguish the startups and independent voices who can't afford to pay. If we lose net neutrality, the Internet will never be the same.</p>
     </section>
 
-    <section id="join">
-      <h2>Now, we must convince Congress to stop the FCC. Can you display an alert on your site?</h2>
-      <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. If you have a website, you can display a prominent alert on your site that asks your visitors to contact Congress. <a href="https://www.fightforthefuture.org?redalert">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/redalert-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
-      <code>&lt;script src="https://redalert.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
-      <div class="modals flex-center">
-        <img src="/images/redalert/modal-minimized-preview@2x.jpg"
-          alt="A screenshot of our Red Alert modal when minimized"
-          class="rounded">
-      </div>
-    </section>
-
     <section id="visit">
       <h2>Want to go above and beyond? Visit your member of Congress.</h2>
       <p>Meeting in person with your member of Congress is by far the most high-impact thing most people can do right now. Ever since the July 12 Day of Action, we've been helping set up Team Internet meetings with members of Congress. <a href="https://events.battleforthenet.com/" target="_blank">Click here to find a Team Internet drop-in visit, scheduled meeting, or town hall near you.</a> If you're a local business owner who could be harmed by a loss of net neutrality rules, that's even more persuasive. <a href="https://www.businessesfornetneutrality.com" target="_blank">Be in touch</a>.</p>
@@ -113,6 +107,12 @@ img.app-store {
       </p>
     </section>
 
+    <section id="videos">
+      <h2>What is net neutrality? Why does it matter? Watch these videos!</h2>
+      <p><strong>Net neutrality</strong> is the principle that Internet providers like Comcast &amp; Verizon should not control what we see and do online. In 2015, startups, Internet freedom groups, and 3.7 million commenters won strong net neutrality rules from the US Federal Communication Commission (FCC). The rules prohibit Internet providers from blocking, throttling, and paid prioritization&mdash;"fast lanes" for sites that pay, and slow lanes for everyone else. Want to learn more? Watch these videos!</p>
+      <video-roll></video-roll>
+    </section>
+    
     <section id="extra-reading">
       <h2>Extra Reading</h2>
       <p>Here are some excellent articles for additional depth. They cover the issue, its political history, the struggles we've overcome, and the fight ahead in Congress and at the FCC.</p>
