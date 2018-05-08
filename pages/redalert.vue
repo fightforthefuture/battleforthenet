@@ -460,10 +460,12 @@ export default {
 
       this.signActionPetition()
 
-      startTextFlow({
-        flow: textFlowId,
-        phone: this.phone
-      })
+      if (this.org === 'fftf') {
+        startTextFlow({
+          flow: textFlowId,
+          phone: this.phone
+        })
+      }
     },
 
     async signActionPetition() {
