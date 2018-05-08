@@ -64,6 +64,56 @@ form:
 # they're listed. The section key (website, social, etc.) will be used to create
 # an anchor link (social = https://battleforthenet.com/redalert#social)
 sections:
+  participants:
+    title: Participants
+    body_html: |
+      Below is a list of notable websites, companies, and organizations who have
+      confirmed their participation in the RED ALERT action.
+      <ul class="logo-grid">
+        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
+        <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
+        <li><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
+        <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
+        <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
+        <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
+        <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
+        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
+        <li><img src="/images/logos/github.png" alt="GitHub"></li>
+        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+        <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
+        <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
+        <li><img src="/images/logos/salesforce.png" alt="Salesforce"></li>
+        <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
+        <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
+        <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
+        <li><img src="/images/logos/duckduckgo.png" alt="DuckDuckGo"></li>
+        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
+        <li><img src="/images/logos/pornhub.png" alt="Pornhub"></li>
+        <li><img src="/images/logos/funnyordie.png" alt="Funny or Die"></li>
+        <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
+        <li><img src="/images/logos/fark.png" alt="Fark"></li>
+        <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
+        <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
+        <li><img src="/images/logos/credo.png" alt="CREDO"></li>
+        <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
+        <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
+        <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
+        <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
+        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>   
+        <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
+        <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
+        <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
+        <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
+        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
+        <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
+        <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
+        <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
+        <li><img src="/images/logos/wakatime.png" alt="WakaTime"></li>
+        <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
+        <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
+        <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
+      </ul>
+
   what:
     title: What's happening?
     body_html: |
@@ -74,6 +124,7 @@ sections:
       who overwhelmingly support restoring open Internet protections. Click to
       jump to instructions for how to join with [your website](#join) or on
       [social media](#social).
+      
   join:
     title: "How to put your site on RED ALERT"
     body_html: |
@@ -118,6 +169,7 @@ sections:
       Please feel free to create your own custom way to drive awareness of this important
       issue and encourage your users to contact Congress.  But whatever you do, make sure
       it's epic. THIS is the moment to fight!
+  
   banners:
     title: Post banner ads on your site
     body_html: |
@@ -203,55 +255,6 @@ sections:
           alt="Instagram story screenshot"></a>
       </div>
 
-  participants:
-    title: Participants
-    body_html: |
-      Below is a list of notable websites, companies, and organizations who have
-      confirmed their participation in the RED ALERT action.
-      <ul class="logo-grid">
-        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
-        <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
-        <li><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
-        <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
-        <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
-        <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
-        <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
-        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
-        <li><img src="/images/logos/github.png" alt="GitHub"></li>
-        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
-        <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
-        <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
-        <li><img src="/images/logos/salesforce.png" alt="Salesforce"></li>
-        <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
-        <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
-        <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
-        <li><img src="/images/logos/duckduckgo.png" alt="DuckDuckGo"></li>
-        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
-        <li><img src="/images/logos/pornhub.png" alt="Pornhub"></li>
-        <li><img src="/images/logos/funnyordie.png" alt="Funny or Die"></li>
-        <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
-        <li><img src="/images/logos/fark.png" alt="Fark"></li>
-        <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
-        <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
-        <li><img src="/images/logos/credo.png" alt="CREDO"></li>
-        <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
-        <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
-        <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
-        <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
-        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>   
-        <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
-        <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
-        <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
-        <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
-        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
-        <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
-        <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
-        <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
-        <li><img src="/images/logos/wakatime.png" alt="WakaTime"></li>
-        <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
-        <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
-        <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
-      </ul>
   events:
     title: Events
     body_html: |
