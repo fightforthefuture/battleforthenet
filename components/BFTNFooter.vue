@@ -31,7 +31,7 @@
     color: $muted-text-color;
 
     h3 {
-      color: $header-color;
+      color: $secondary-header-color;
       font-size: 1.8rem;
     }
 

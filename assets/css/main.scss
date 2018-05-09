@@ -37,7 +37,6 @@ body {
 }
 
 h1, h2 {
-  color: $header-color;
   line-height: 1.15;
 
   a, a:hover {
@@ -46,6 +45,7 @@ h1, h2 {
 }
 
 h1 {
+  color: $header-color;
   font-size: 5.2rem;
   letter-spacing: 0.1rem;
 
@@ -55,6 +55,7 @@ h1 {
 }
 
 h2 {
+  color: $secondary-header-color;
   font-size: 3.5rem;
   margin: 2rem 0;
 }
@@ -159,7 +160,7 @@ p.disclaimer {
 
   small {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: $muted-text-color;
 
     a {
