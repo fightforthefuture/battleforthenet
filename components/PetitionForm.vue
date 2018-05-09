@@ -34,12 +34,12 @@
     }
 
     input.address {
-      width: 58%;
+      width: 64%;
       margin-right: 2%;
     }
 
     input.zip-code {
-      width: 40%;
+      width: 34%;
     }
 
     .letter {
@@ -57,7 +57,7 @@
 
       textarea {
         min-width: 26.5rem;
-        height: 13rem;
+        height: 10rem;
         border-radius: 0;
       }
 
@@ -104,6 +104,15 @@
     form {
       margin-bottom: 3rem;
 
+      input.name {
+        width: 49%;
+        margin-right: 2%;
+      }
+
+      input.email {
+        width: 49%;
+      }
+
       textarea {
         min-width: none;
       }
@@ -115,8 +124,8 @@
 <template>
   <div class="petition-form clearfix">
     <form @submit.prevent="submitForm()">
-      <input v-model.trim="name" type="text" placeholder="Name*" required>
-      <input v-model.trim="email" type="email" placeholder="E-mail*" required>
+      <input v-model.trim="name" type="text" placeholder="Name*" required class="name">
+      <input v-model.trim="email" type="email" placeholder="E-mail*" required class="email">
       <input v-model.trim="address" type="text" placeholder="Address*" required class="address">
       <input v-model.trim="zipCode" type="tel" placeholder="Zip*" required class="zip-code">
       <input v-model.trim="phone" type="tel" placeholder="Phone # (for text list)">
