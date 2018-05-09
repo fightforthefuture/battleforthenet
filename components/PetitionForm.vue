@@ -231,7 +231,7 @@ export default {
           org: this.org,
           an_tags: "[\"net-neutrality\"]",
           an_petition_id: petitionId,
-          action_comment: this.actionComment
+          action_comment: this.comments
         })
 
         this.$trackEvent('petition_form', 'submit')
