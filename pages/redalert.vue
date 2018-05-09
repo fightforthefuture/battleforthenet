@@ -205,6 +205,10 @@ section {
     &:hover {
       transform: scale(1.02);
     }
+
+    &.btn-large {
+      min-height: 5.6rem;
+    }
   }
 
   .persistent-button {
@@ -295,7 +299,7 @@ iframe.events-map {
           </div>
           <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
             <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
-            <span v-else>{{ ctaText }}</span>
+            <span v-else><no-ssr>{{ ctaText }}</no-ssr></span>
           </button>
           <disclaimer :sms="true"></disclaimer>
         </form>
