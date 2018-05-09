@@ -93,9 +93,9 @@ hr {
     <hr>
     <h3>Done calling? Do these things, too!</h3>
     <div class="buttons">
-      <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank">
-        <img src="~/assets/images/map-marker.svg" alt="" @click="$trackEvent('call_script_events_button', 'click')">
-        Find a protest near you
+      <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
+        <img src="~/assets/images/map-marker.svg" alt="">
+        Join an event near you on May 14th
       </a>
       <div class="flex-row">
         <facebook-button @clicked="$trackEvent('call_script_facebook_button', 'click')">Share on Facebook</facebook-button>
