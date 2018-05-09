@@ -295,7 +295,7 @@ iframe.events-map {
           </div>
           <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
             <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
-            <span v-else>{{ $t('redalert.form.button_cta') }}</span>
+            <span v-else>{{ ctaText }}</span>
           </button>
           <disclaimer :sms="true"></disclaimer>
         </form>
@@ -387,6 +387,15 @@ export default {
   },
 
   computed: {
+    ctaText() {
+      if (Math.random() < 0.5) {
+        return this.$t('redalert.form.button_cta_a')
+      }
+      else {
+        return this.$t('redalert.form.button_cta_b')
+      }
+    },
+
     shareURL() {
       return this.$t('redalert.sharing.url')
     },
@@ -426,7 +435,7 @@ export default {
   methods: {
     async submitForm() {
       this.isSending = true
-      this.$trackEvent('redalert_form', 'submit', 'fftf')
+      this.$trackEvent('redalert_form', 'submit', this.ctaText)
 
       try {
         const response = await sendToMothership({

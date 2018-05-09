@@ -20,8 +20,8 @@ sharing:
 
 title: Red Alert for Net Neutrality
 intro_html: |
-  Breaking: the Senate is about to vote on a resolution to save net neutrality 
-  and stop ISPs from ruining the Internet. Starting May 9th, put your website, 
+  Breaking: the Senate is about to vote on a resolution to save net neutrality
+  and stop ISPs from ruining the Internet. Starting May 9th, put your website,
   app, or social profile on "Red Alert" to help sound the alarm. **Fill out the form
   to contact your lawmakers and get everything you need to join the protest!**
 persistent_button: Join the Protest
@@ -38,7 +38,8 @@ form:
   zip_placeholder: ZIP*
   phone_placeholder: Phone (optional)
   button_loading: Saving...
-  button_cta: Take Action
+  button_cta_a: Take Action
+  button_cta_b: Write Congress
 
 # New sections created here will be added dynamically to the page in the order
 # they're listed. The section key (website, social, etc.) will be used to create
