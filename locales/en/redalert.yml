@@ -53,18 +53,14 @@ sections:
         <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
         <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
         <li><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
+        <li><img src="/images/logos/wikimedia.png" alt="Wikimedia Foundation"></li>
         <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
         <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
         <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
         <li><img src="/images/logos/match-btn.png" alt="Match"></li>
         <li><img src="/images/logos/tinder-btn.png" alt="Tinder"></li>
         <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
-        <li><img src="/images/logos/pof-btn.png" alt="Plenty of Fish"></li>
-        <li><img src="/images/logos/meetic-btn.png" alt="Meetic"></li>
-        <li><img src="/images/logos/twoo-btn.png" alt="Twoo"></li>
-        <li><img src="/images/logos/our-tIme-btn.png" alt="OurTime"></li>
-        <li><img src="/images/logos/lovescout24-btn.png" alt="LoveScout24"></li>
-        <li><img src="/images/logos/Pairs-Biger-BTN.png" alt="Pairs"></li>
+        <li><img src="/images/logos/tripadvisor.png" alt="TripAdvisor"></li>
         <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
         <li><img src="/images/logos/github.png" alt="GitHub"></li>
         <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
@@ -78,7 +74,11 @@ sections:
         <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
         <li><img src="/images/logos/pornhub.png" alt="Pornhub"></li>
         <li><img src="/images/logos/funnyordie.png" alt="Funny or Die"></li>
+        <li><img src="/images/logos/pof-btn.png" alt="Plenty of Fish"></li>
+        <li><img src="/images/logos/meetic-btn.png" alt="Meetic"></li>
+        <li><img src="/images/logos/twoo-btn.png" alt="Twoo"></li>
         <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
+        <li><img src="/images/logos/chess.png" alt="Chess"></li>
         <li><img src="/images/logos/fark.png" alt="Fark"></li>
         <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
         <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
@@ -93,6 +93,9 @@ sections:
         <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
         <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
         <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
+        <li><img src="/images/logos/our-tIme-btn.png" alt="OurTime"></li>
+        <li><img src="/images/logos/lovescout24-btn.png" alt="LoveScout24"></li>
+        <li><img src="/images/logos/Pairs-Biger-BTN.png" alt="Pairs"></li>
         <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
         <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
         <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
