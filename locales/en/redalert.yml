@@ -38,7 +38,7 @@ form:
   zip_placeholder: ZIP*
   phone_placeholder: Phone (optional)
   button_loading: Saving...
-  button_cta: Join the Protest
+  button_cta: Take Action
 
 # New sections created here will be added dynamically to the page in the order
 # they're listed. The section key (website, social, etc.) will be used to create
