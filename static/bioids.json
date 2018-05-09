@@ -1,0 +1,7747 @@
+{
+	"A000055": {
+		"example_address": "1011 George Wallace Boulevard",
+		"example_city": "Tuscumbia",
+		"example_state": "AL",
+		"zip5": "35674",
+		"zip4": "1726",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robert Aderholt"
+	},
+	"L000588": {
+		"example_address": "504 Washington Road",
+		"example_city": "Pittsburgh",
+		"example_state": "PA",
+		"zip5": "15228",
+		"zip4": "2817",
+		"example_district": "18",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Conor Lamb"
+	},
+	"A000367": {
+		"example_address": "110 Michigan Street Northeast",
+		"example_city": "Grand Rapids",
+		"example_state": "MI",
+		"zip5": "49503",
+		"zip4": "2313",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Justin Amash"
+	},
+	"A000369": {
+		"example_address": "400 South Virginia Street",
+		"example_city": "Reno",
+		"example_state": "NV",
+		"zip5": "89501",
+		"zip4": "2116",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mark Amodei"
+	},
+	"P000609": {
+		"example_address": "PO Box 502 ",
+		"example_city": "Clanton",
+		"example_state": "AL",
+		"zip5": "35046",
+		"zip4": "0502",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gary Palmer"
+	},
+	"B000213": {
+		"example_address": "2106 West Ennis Avenue",
+		"example_city": "Ennis",
+		"example_state": "TX",
+		"zip5": "75119",
+		"zip4": "3624",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joe Barton"
+	},
+	"G000585": {
+		"example_address": "255 East Temple Street",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90012",
+		"zip4": "3334",
+		"example_district": "34",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jimmy Gomez"
+	},
+	"B000490": {
+		"example_address": "18 9th Street",
+		"example_city": "Columbus",
+		"example_state": "GA",
+		"zip5": "31901",
+		"zip4": "2778",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sanford Bishop"
+	},
+	"B000574": {
+		"example_address": "729 Northeast Oregon Street",
+		"example_city": "Portland",
+		"example_state": "OR",
+		"zip5": "97232",
+		"zip4": "2184",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Earl Blumenauer"
+	},
+	"B000755": {
+		"example_address": "1202 Sam Houston Avenue",
+		"example_city": "Huntsville",
+		"example_state": "TX",
+		"zip5": "77340",
+		"zip4": "4638",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kevin Brady"
+	},
+	"L000586": {
+		"example_address": "613 Saint Johns Avenue",
+		"example_city": "Palatka",
+		"example_state": "FL",
+		"zip5": "32177",
+		"zip4": "4643",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Al Lawson Jr."
+	},
+	"B001227": {
+		"example_address": "63 North Broad Street",
+		"example_city": "Philadelphia",
+		"example_state": "PA",
+		"zip5": "19107",
+		"zip4": "4602",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robert Brady"
+	},
+	"Z000017": {
+		"example_address": "137 Hampton Road",
+		"example_city": "Southampton",
+		"example_state": "NY",
+		"zip5": "11968",
+		"zip4": "4923",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lee Zeldin"
+	},
+	"B001243": {
+		"example_address": "198 3rd Avenue South",
+		"example_city": "Franklin",
+		"example_state": "TN",
+		"zip5": "37064",
+		"zip4": "2518",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Marsha Blackburn"
+	},
+	"B001245": {
+		"example_address": "120 Father Duenas Avenue",
+		"example_city": "Hagatna",
+		"example_state": "GU",
+		"zip5": "96910",
+		"zip4": "5058",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Madeleine Z. Bordallo"
+	},
+	"B001248": {
+		"example_address": "1660 Stemmons Freeway",
+		"example_city": "Lewisville",
+		"example_state": "TX",
+		"zip5": "75067",
+		"zip4": "0600",
+		"example_district": "26",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michael Burgess"
+	},
+	"B001250": {
+		"example_address": "324 East 2500 South",
+		"example_city": "Ogden",
+		"example_state": "UT",
+		"zip5": "84401",
+		"zip4": "2361",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rob Bishop"
+	},
+	"B001251": {
+		"example_address": "216 Nash Street Northwest",
+		"example_city": "Wilson",
+		"example_state": "NC",
+		"zip5": "27893",
+		"zip4": "3802",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "George Butterfield"
+	},
+	"A000372": {
+		"example_address": "4246 Washington Road",
+		"example_city": "Evans",
+		"example_state": "GA",
+		"zip5": "30809",
+		"zip4": "3087",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rick W. Allen"
+	},
+	"H001077": {
+		"example_address": "One Lakeshore Drive",
+		"example_city": "Lake Charles",
+		"example_state": "LA",
+		"zip5": "70629",
+		"zip4": "0114",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Clay Higgins"
+	},
+	"E000294": {
+		"example_address": "110 2nd Street South",
+		"example_city": "Waite Park",
+		"example_state": "MN",
+		"zip5": "56387",
+		"zip4": "1313",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom Emmer"
+	},
+	"B001257": {
+		"example_address": "35111 US Highway 19 North",
+		"example_city": "Palm Harbor",
+		"example_state": "FL",
+		"zip5": "34684",
+		"zip4": "1934",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gus Bilirakis"
+	},
+	"B001294": {
+		"example_address": "501 Sycamore Street",
+		"example_city": "Waterloo",
+		"example_state": "IA",
+		"zip5": "50703",
+		"zip4": "4051",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rod Blum"
+	},
+	"B001260": {
+		"example_address": "235 North Orange Avenue",
+		"example_city": "Sarasota",
+		"example_state": "FL",
+		"zip5": "34236",
+		"zip4": "8522",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Vern Buchanan"
+	},
+	"H001071": {
+		"example_address": "PO Box 1017 ",
+		"example_city": "Sandersville",
+		"example_state": "GA",
+		"zip5": "31082",
+		"zip4": "1017",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jody Hice"
+	},
+	"B001269": {
+		"example_address": "300 Centerville Road",
+		"example_city": "Newville",
+		"example_state": "PA",
+		"zip5": "02886",
+		"zip4": "0212",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lou Barletta"
+	},
+	"B001270": {
+		"example_address": "4322 Wilshire Boulevard",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90010",
+		"zip4": "3794",
+		"example_district": "37",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Karen Bass"
+	},
+	"B001301": {
+		"example_address": "121 East Front Street",
+		"example_city": "Traverse City",
+		"example_state": "MI",
+		"zip5": "49684",
+		"zip4": "2500",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jack Bergman"
+	},
+	"B001273": {
+		"example_address": "62 East 2nd Street",
+		"example_city": "Crossville",
+		"example_state": "TN",
+		"zip5": "38555",
+		"zip4": "4564",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Diane Black"
+	},
+	"B001274": {
+		"example_address": "2101 Clinton Avenue West",
+		"example_city": "Huntsville",
+		"example_state": "AL",
+		"zip5": "35805",
+		"zip4": "3109",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mo Brooks"
+	},
+	"B001275": {
+		"example_address": "901 Wabash Avenue",
+		"example_city": "Terre Haute",
+		"example_state": "IN",
+		"zip5": "47807",
+		"zip4": "3232",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Larry Bucshon"
+	},
+	"B001278": {
+		"example_address": "12725 SW Millikan Way",
+		"example_city": "Beaverton",
+		"example_state": "OR",
+		"zip5": "97005",
+		"zip4": "1678",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Suzanne Bonamici"
+	},
+	"M001197": {
+		"example_address": "1661 North Swan Road",
+		"example_city": "Tucson",
+		"example_state": "AZ",
+		"zip5": "85712",
+		"zip4": "4051",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Martha McSally"
+	},
+	"T000475": {
+		"example_address": "560 Kirts Boulevard",
+		"example_city": "Troy",
+		"example_state": "MI",
+		"zip5": "48084",
+		"zip4": "4141",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Trott"
+	},
+	"B001281": {
+		"example_address": "3000 Corporate Exchange Drive",
+		"example_city": "Columbus",
+		"example_state": "OH",
+		"zip5": "43231",
+		"zip4": "4054",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joyce Beatty"
+	},
+	"B001282": {
+		"example_address": "1010 Monarch Street",
+		"example_city": "Lexington",
+		"example_state": "KY",
+		"zip5": "40513",
+		"zip4": "1866",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Andy Barr"
+	},
+	"B001283": {
+		"example_address": "5727 South Lewis Avenue",
+		"example_city": "Tulsa",
+		"example_state": "OK",
+		"zip5": "74105",
+		"zip4": "7146",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jim Bridenstine"
+	},
+	"B001284": {
+		"example_address": "209 South Washington Street",
+		"example_city": "Marion",
+		"example_state": "IN",
+		"zip5": "46952",
+		"zip4": "3803",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Susan Brooks"
+	},
+	"B001285": {
+		"example_address": "2675 North Ventura Road",
+		"example_city": "Port Hueneme",
+		"example_state": "CA",
+		"zip5": "93041",
+		"zip4": "2045",
+		"example_district": "26",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Julia Brownley"
+	},
+	"B001286": {
+		"example_address": "100 Northeast Monroe Street",
+		"example_city": "Peoria",
+		"example_state": "IL",
+		"zip5": "61602",
+		"zip4": "1047",
+		"example_district": "17",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Cheri Bustos"
+	},
+	"B001287": {
+		"example_address": "2339 Gold Meadow Way",
+		"example_city": "Gold River",
+		"example_state": "CA",
+		"zip5": "95670",
+		"zip4": "6307",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ami Bera"
+	},
+	"B001289": {
+		"example_address": "11 North Water Street",
+		"example_city": "Mobile",
+		"example_state": "AL",
+		"zip5": "36602",
+		"zip4": "5000",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bradley Byrne"
+	},
+	"C000059": {
+		"example_address": "4160 Temescal Canyon Rd",
+		"example_city": "Corona",
+		"example_state": "CA",
+		"zip5": "92883",
+		"zip4": "4625",
+		"example_district": "42",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ken Calvert"
+	},
+	"M001194": {
+		"example_address": "135 Ashman Street",
+		"example_city": "Midland",
+		"example_state": "MI",
+		"zip5": "48640",
+		"zip4": "5103",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Moolenaar"
+	},
+	"C000266": {
+		"example_address": "441 Vine Street",
+		"example_city": "Cincinnati",
+		"example_state": "OH",
+		"zip5": "45202",
+		"zip4": "3003",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Chabot"
+	},
+	"C000380": {
+		"example_address": "#1 Estate Cane",
+		"example_city": "St. Croix",
+		"example_state": "VI",
+		"zip5": "00840",
+		"zip4": "4425",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Donna Christensen"
+	},
+	"C000537": {
+		"example_address": "176 Brooks Boulevard",
+		"example_city": "Santee",
+		"example_state": "SC",
+		"zip5": "29142",
+		"zip4": "8644",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "James Clyburn"
+	},
+	"W000819": {
+		"example_address": "1634 North Main Street",
+		"example_city": "High Point",
+		"example_state": "NC",
+		"zip5": "27262",
+		"zip4": "2644",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mark Walker"
+	},
+	"C000754": {
+		"example_address": "605 Church Street",
+		"example_city": "Nashville",
+		"example_state": "TN",
+		"zip5": "37219",
+		"zip4": "2314",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jim Cooper"
+	},
+	"C000984": {
+		"example_address": "8267 Main Street",
+		"example_city": "Ellicott City",
+		"example_state": "MD",
+		"zip5": "21043",
+		"zip4": "9903",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Elijah Cummings"
+	},
+	"C001112": {
+		"example_address": "485 Alisal Road",
+		"example_city": "Solvang",
+		"example_state": "CA",
+		"zip5": "93463",
+		"zip4": "3701",
+		"example_district": "24",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Salud O. Carbajal"
+	},
+	"C001037": {
+		"example_address": "1234 Columbus Avenue",
+		"example_city": "Boston",
+		"example_state": "MA",
+		"zip5": "02120",
+		"zip4": "3400",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michael Capuano"
+	},
+	"C001038": {
+		"example_address": "74-09 37th Avenue",
+		"example_city": "Queens",
+		"example_state": "NY",
+		"zip5": "11372",
+		"zip4": "6303",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joseph Crowley"
+	},
+	"R000609": {
+		"example_address": "1061 Riverside Avenue",
+		"example_city": "Jacksonville",
+		"example_state": "FL",
+		"zip5": "32204",
+		"zip4": "4151",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John H. Rutherford"
+	},
+	"M001195": {
+		"example_address": "300 Foxcroft Avenue",
+		"example_city": "Martinsburg",
+		"example_state": "WV",
+		"zip5": "25401",
+		"zip4": "5341",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Alex Mooney"
+	},
+	"C001048": {
+		"example_address": "1550 Foxlake Drive",
+		"example_city": "Houston",
+		"example_state": "TX",
+		"zip5": "77084",
+		"zip4": "6043",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Culberson"
+	},
+	"C001049": {
+		"example_address": "8021 West Florissant Avenue",
+		"example_city": "Jennings",
+		"example_state": "MO",
+		"zip5": "63136",
+		"zip4": "1449",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Wm. Clay"
+	},
+	"C001051": {
+		"example_address": "6544 South General Bruce Drive",
+		"example_city": "Temple",
+		"example_state": "TX",
+		"zip5": "76502",
+		"zip4": "5811",
+		"example_district": "31",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Carter"
+	},
+	"C001053": {
+		"example_address": "2420 Springer Drive",
+		"example_city": "Norman",
+		"example_state": "OK",
+		"zip5": "73069",
+		"zip4": "3965",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom Cole"
+	},
+	"C001059": {
+		"example_address": "2222 M Street",
+		"example_city": "Merced",
+		"example_state": "CA",
+		"zip5": "95340",
+		"zip4": "3729",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jim Costa"
+	},
+	"C001061": {
+		"example_address": "101 West 31st Street",
+		"example_city": "Kansas City",
+		"example_state": "MO",
+		"zip5": "64108",
+		"zip4": "3318",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Emanuel Cleaver"
+	},
+	"C001062": {
+		"example_address": "33 East Twohig Avenue",
+		"example_city": "San Angelo",
+		"example_state": "TX",
+		"zip5": "76903",
+		"zip4": "6451",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "K. Conaway"
+	},
+	"C001063": {
+		"example_address": "615 E. Houston Street",
+		"example_city": "San Antonio",
+		"example_state": "TX",
+		"zip5": "78205",
+		"zip4": "2001",
+		"example_district": "28",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Henry Cuellar"
+	},
+	"W000820": {
+		"example_address": "26111 Antonio Parkway",
+		"example_city": "Rancho Santa Margarita",
+		"example_state": "CA",
+		"zip5": "92688",
+		"zip4": "5597",
+		"example_district": "45",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mimi Walters"
+	},
+	"C001066": {
+		"example_address": "4144 North Armenia Avenue",
+		"example_city": "Tampa",
+		"example_state": "FL",
+		"zip5": "33607",
+		"zip4": "6435",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kathy Castor"
+	},
+	"C001067": {
+		"example_address": "123 Linden Boulevard",
+		"example_city": "Brooklyn",
+		"example_state": "NY",
+		"zip5": "11226",
+		"zip4": "3888",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Yvette Clarke"
+	},
+	"C001068": {
+		"example_address": "167 North Main Street",
+		"example_city": "Memphis",
+		"example_state": "TN",
+		"zip5": "38103",
+		"zip4": "1822",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Cohen"
+	},
+	"C001069": {
+		"example_address": "77 Hazard Avenue",
+		"example_city": "Enfield",
+		"example_state": "CT",
+		"zip5": "06082",
+		"zip4": "3890",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joe Courtney"
+	},
+	"C001072": {
+		"example_address": "300 East Fall Creek Parkway North Drive",
+		"example_city": "Indianapolis",
+		"example_state": "IN",
+		"zip5": "46205",
+		"zip4": "4258",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Andre Carson"
+	},
+	"G000577": {
+		"example_address": "PO Box 426 ",
+		"example_city": "Livingston",
+		"example_state": "LA",
+		"zip5": "70754",
+		"zip4": "0426",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Garret Graves"
+	},
+	"C001114": {
+		"example_address": "51 South University Avenue",
+		"example_city": "Provo",
+		"example_state": "UT",
+		"zip5": "84601",
+		"zip4": "4491",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Curtis"
+	},
+	"C001077": {
+		"example_address": "3300 S. Parker Road",
+		"example_city": "Aurora",
+		"example_state": "CO",
+		"zip5": "80014",
+		"zip4": "3518",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Coffman"
+	},
+	"C001078": {
+		"example_address": "4308 Ridgewood Center Drive",
+		"example_city": "Woodbridge",
+		"example_state": "VA",
+		"zip5": "22192",
+		"zip4": "5307",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gerald Connolly"
+	},
+	"C001080": {
+		"example_address": "87 North Raymond Avenue",
+		"example_city": "Pasadena",
+		"example_state": "CA",
+		"zip5": "91103",
+		"zip4": "3966",
+		"example_district": "27",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Judy Chu"
+	},
+	"B001303": {
+		"example_address": "201 North Walnut Street",
+		"example_city": "Wilmington",
+		"example_state": "DE",
+		"zip5": "19801",
+		"zip4": "3998",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lisa Blunt Rochester"
+	},
+	"C001084": {
+		"example_address": "1070 Main Street",
+		"example_city": "Pawtucket",
+		"example_state": "RI",
+		"zip5": "02860",
+		"zip4": "4974",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Cicilline"
+	},
+	"C001087": {
+		"example_address": "2400 East Highland Drive",
+		"example_city": "Jonesboro",
+		"example_state": "AR",
+		"zip5": "72401",
+		"zip4": "6229",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Eric Crawford"
+	},
+	"C001090": {
+		"example_address": "101 North Centre Street",
+		"example_city": "Pottsville",
+		"example_state": "PA",
+		"zip5": "17901",
+		"zip4": "2972",
+		"example_district": "17",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Matthew Cartwright"
+	},
+	"C001091": {
+		"example_address": "6363 De Zavala Road",
+		"example_city": "San Antonio",
+		"example_state": "TX",
+		"zip5": "78249",
+		"zip4": "2104",
+		"example_district": "20",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joaquin Castro"
+	},
+	"C001092": {
+		"example_address": "2813 Wehrle Drive",
+		"example_city": "Williamsville",
+		"example_state": "NY",
+		"zip5": "14221",
+		"zip4": "7384",
+		"example_district": "27",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Chris Collins"
+	},
+	"C001093": {
+		"example_address": "194 Remsdale Street",
+		"example_city": "Toccoa",
+		"example_state": "GA",
+		"zip5": "30577",
+		"zip4": "1899",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Doug Collins"
+	},
+	"C001094": {
+		"example_address": "14955 Dale Evans Parkway",
+		"example_city": "Apple Valley",
+		"example_state": "CA",
+		"zip5": "92307",
+		"zip4": "3061",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Paul Cook"
+	},
+	"W000821": {
+		"example_address": "221 West Main Street",
+		"example_city": "Prescott",
+		"example_state": "AR",
+		"zip5": "71857",
+		"zip4": "3608",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bruce Westerman"
+	},
+	"C001096": {
+		"example_address": "3003 32nd Avenue South",
+		"example_city": "Fargo",
+		"example_state": "ND",
+		"zip5": "58103",
+		"zip4": "6163",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kevin Cramer"
+	},
+	"C001097": {
+		"example_address": "14546 Hamlin Street",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "91411",
+		"zip4": "4102",
+		"example_district": "29",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tony Cárdenas"
+	},
+	"C001101": {
+		"example_address": "16 Common Street",
+		"example_city": "Watertown",
+		"example_state": "MA",
+		"zip5": "02155",
+		"zip4": "6611",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Katherine Clark"
+	},
+	"D000096": {
+		"example_address": "3333 West Arthington Street",
+		"example_city": "Chicago",
+		"example_state": "IL",
+		"zip5": "60624",
+		"zip4": "4102",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Danny Davis"
+	},
+	"D000191": {
+		"example_address": "PO Box 2460 ",
+		"example_city": "Roseburg",
+		"example_state": "OR",
+		"zip5": "97470",
+		"zip4": "0511",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Peter DeFazio"
+	},
+	"D000197": {
+		"example_address": "600 Grant Street",
+		"example_city": "Denver",
+		"example_state": "CO",
+		"zip5": "80203",
+		"zip4": "3525",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Diana DeGette"
+	},
+	"D000216": {
+		"example_address": "300 State Street",
+		"example_city": "New Haven",
+		"example_state": "CT",
+		"zip5": "06510",
+		"zip4": "2047",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rosa DeLauro"
+	},
+	"D000624": {
+		"example_address": "301 West Michigan Avenue",
+		"example_city": "Ypsilanti",
+		"example_state": "MI",
+		"zip5": "48197",
+		"zip4": "5450",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Debbie Dingell"
+	},
+	"D000399": {
+		"example_address": "1313 Southeast Military Drive",
+		"example_city": "San Antonio",
+		"example_state": "TX",
+		"zip5": "78214",
+		"zip4": "2850",
+		"example_district": "35",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lloyd Doggett"
+	},
+	"D000482": {
+		"example_address": "11 Duff Road",
+		"example_city": "Pittsburgh",
+		"example_state": "PA",
+		"zip5": "15235",
+		"zip4": "3263",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michael Doyle"
+	},
+	"D000533": {
+		"example_address": "200 East Broadway Avenue",
+		"example_city": "Maryville",
+		"example_state": "TN",
+		"zip5": "37804",
+		"zip4": "5782",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Duncan"
+	},
+	"D000598": {
+		"example_address": "2700 Adams Avenue",
+		"example_city": "San Diego",
+		"example_state": "CA",
+		"zip5": "92116",
+		"zip4": "1367",
+		"example_district": "53",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Susan Davis"
+	},
+	"D000600": {
+		"example_address": "4715 Golden Gate Parkway",
+		"example_city": "Naples",
+		"example_state": "FL",
+		"zip5": "34116",
+		"zip4": "6901",
+		"example_district": "25",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mario Diaz-Balart"
+	},
+	"D000610": {
+		"example_address": "5790 Margate Boulevard",
+		"example_city": "Margate",
+		"example_state": "FL",
+		"zip5": "33063",
+		"zip4": "3614",
+		"example_district": "21",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Theodore Deutch"
+	},
+	"D000612": {
+		"example_address": "3509 Coffee Road",
+		"example_city": "Modesto",
+		"example_state": "CA",
+		"zip5": "95355",
+		"zip4": "1356",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jeff Denham"
+	},
+	"D000614": {
+		"example_address": "208 Grand Avenue",
+		"example_city": "Wausau",
+		"example_state": "WI",
+		"zip5": "54403",
+		"zip4": "6217",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sean Duffy"
+	},
+	"D000615": {
+		"example_address": "207 Maxwell Avenue",
+		"example_city": "Anderson",
+		"example_state": "SC",
+		"zip5": "29037",
+		"zip4": "5820",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jeff Duncan"
+	},
+	"D000616": {
+		"example_address": "305 West Main Street",
+		"example_city": "Murfreesboro",
+		"example_state": "TN",
+		"zip5": "37130",
+		"zip4": "3547",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Scott DesJarlais"
+	},
+	"D000617": {
+		"example_address": "204 W. Montgomery Street",
+		"example_city": "Mount Vernon",
+		"example_state": "WA",
+		"zip5": "98273",
+		"zip4": "3843",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Suzan DelBene"
+	},
+	"G000584": {
+		"example_address": "2603 Wheat Drive",
+		"example_city": "Bozeman",
+		"example_state": "MT",
+		"zip5": "59101",
+		"zip4": "4800",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Greg Gianforte"
+	},
+	"D000619": {
+		"example_address": "235 South 6th Street",
+		"example_city": "Springfield",
+		"example_state": "IL",
+		"zip5": "62701",
+		"zip4": "1502",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rodney Davis"
+	},
+	"D000620": {
+		"example_address": "1800 Dual Highway",
+		"example_city": "Hagerstown",
+		"example_state": "MD",
+		"zip5": "21742",
+		"zip4": "6646",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Delaney"
+	},
+	"D000621": {
+		"example_address": "3000 North Ponce De Leon Boulevard",
+		"example_city": "St. Augustine",
+		"example_state": "FL",
+		"zip5": "32084",
+		"zip4": "8600",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ron DeSantis"
+	},
+	"K000391": {
+		"example_address": "150 South Bloomingdale Road",
+		"example_city": "Bloomingdale",
+		"example_state": "IL",
+		"zip5": "60108",
+		"zip4": "1494",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Raja Krishnamoorthi"
+	},
+	"E000179": {
+		"example_address": "6 Gramatan Avenue",
+		"example_city": "Mount Vernon",
+		"example_state": "NY",
+		"zip5": "10550",
+		"zip4": "3208",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Eliot Engel"
+	},
+	"E000215": {
+		"example_address": "698 Emerson Street",
+		"example_city": "Palo Alto",
+		"example_state": "CA",
+		"zip5": "94301",
+		"zip4": "1609",
+		"example_district": "18",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Anna Eshoo"
+	},
+	"E000288": {
+		"example_address": "2100 Plymouth Avenue North",
+		"example_city": "Minneapolis",
+		"example_state": "MN",
+		"zip5": "55411",
+		"zip4": "3675",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Keith Ellison"
+	},
+	"B001304": {
+		"example_address": "5001 Silver Hill Road",
+		"example_city": "Suitland-Silver Hill",
+		"example_state": "MD",
+		"zip5": "20746",
+		"zip4": "5215",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Anthony G. Brown"
+	},
+	"H001065": {
+		"example_address": "222 Sunset Avenue",
+		"example_city": "Asheboro",
+		"example_state": "NC",
+		"zip5": "27203",
+		"zip4": "5658",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "George Holding"
+	},
+	"B001295": {
+		"example_address": "201 East Nolen Street",
+		"example_city": "West Frankfort",
+		"example_state": "IL",
+		"zip5": "62896",
+		"zip4": "2437",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Bost"
+	},
+	"E000293": {
+		"example_address": "50 Washington Road",
+		"example_city": "Woodbury",
+		"example_state": "CT",
+		"zip5": "06051",
+		"zip4": "1012",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Elizabeth Esty"
+	},
+	"P000613": {
+		"example_address": "701 Ocean Street",
+		"example_city": "Santa Cruz",
+		"example_state": "CA",
+		"zip5": "95060",
+		"zip4": "4027",
+		"example_district": "20",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jimmy Panetta"
+	},
+	"E000296": {
+		"example_address": "6632 Germantown Avenue",
+		"example_city": "Philadelphia",
+		"example_state": "PA",
+		"zip5": "19119",
+		"zip4": "2250",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Dwight Evans"
+	},
+	"F000372": {
+		"example_address": "30 Schuyler Place",
+		"example_city": "Morristown",
+		"example_state": "NJ",
+		"zip5": "07960",
+		"zip4": "5193",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rodney Frelinghuysen"
+	},
+	"M001200": {
+		"example_address": "425 South Main Street",
+		"example_city": "Emporia",
+		"example_state": "VA",
+		"zip5": "23847",
+		"zip4": "2300",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "A. Donald McEachin"
+	},
+	"F000449": {
+		"example_address": "125 South 4th Street",
+		"example_city": "Norfolk",
+		"example_state": "NE",
+		"zip5": "68701",
+		"zip4": "5200",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jeff Fortenberry"
+	},
+	"F000450": {
+		"example_address": "6000 Meadowbrook Mall Court",
+		"example_city": "Clemmons",
+		"example_state": "NC",
+		"zip5": "27012",
+		"zip4": "8775",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Virginia Foxx"
+	},
+	"F000466": {
+		"example_address": "1717 Newtown Pike",
+		"example_city": "Langhorne",
+		"example_state": "PA",
+		"zip5": "19047",
+		"zip4": "1086",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brian K. Fitzpatrick"
+	},
+	"F000454": {
+		"example_address": "2701 Black Road",
+		"example_city": "Joliet",
+		"example_state": "IL",
+		"zip5": "60435",
+		"zip4": "8412",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Foster"
+	},
+	"F000455": {
+		"example_address": "4834 Richmond Road",
+		"example_city": "Warrensville Heights",
+		"example_state": "OH",
+		"zip5": "44128",
+		"zip4": "6408",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Marcia Fudge"
+	},
+	"J000299": {
+		"example_address": "6425 Youree Drive",
+		"example_city": "Shreveport",
+		"example_state": "LA",
+		"zip5": "71105",
+		"zip4": "4634",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Johnson"
+	},
+	"K000392": {
+		"example_address": "7975 Stage Hills Boulevard",
+		"example_city": "Memphis",
+		"example_state": "TN",
+		"zip5": "38133",
+		"zip4": "4036",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Kustoff"
+	},
+	"F000459": {
+		"example_address": "200 Administration Road",
+		"example_city": "Oak Ridge",
+		"example_state": "TN",
+		"zip5": "37303",
+		"zip4": "8823",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Charles Fleischmann"
+	},
+	"F000460": {
+		"example_address": "1501 East Mockingbird Lane",
+		"example_city": "Victoria",
+		"example_state": "TX",
+		"zip5": "77904",
+		"zip4": "2194",
+		"example_district": "27",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Blake Farenthold"
+	},
+	"F000461": {
+		"example_address": "600 Austin Avenue",
+		"example_city": "Waco",
+		"example_state": "TX",
+		"zip5": "76710",
+		"zip4": "2018",
+		"example_district": "17",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Flores"
+	},
+	"F000462": {
+		"example_address": "3111 South Dixie Highway",
+		"example_city": "West Palm Beach",
+		"example_state": "FL",
+		"zip5": "33405",
+		"zip4": "1553",
+		"example_district": "22",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lois Frankel"
+	},
+	"G000289": {
+		"example_address": "7 Court Square",
+		"example_city": "Staunton",
+		"example_state": "VA",
+		"zip5": "24401",
+		"zip4": "4281",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bob Goodlatte"
+	},
+	"G000410": {
+		"example_address": "256 North Sam Houston Parkway East",
+		"example_city": "Houston",
+		"example_state": "TX",
+		"zip5": "77060",
+		"zip4": "2028",
+		"example_district": "29",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gene Green"
+	},
+	"G000535": {
+		"example_address": "3240 W. Fullerton Ave",
+		"example_city": "Chicago",
+		"example_state": "IL",
+		"zip5": "60647",
+		"zip4": "2512",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Luis Gutierrez"
+	},
+	"G000546": {
+		"example_address": "201 South 8th Street",
+		"example_city": "St. Joseph",
+		"example_state": "MO",
+		"zip5": "64501",
+		"zip4": "2275",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sam Graves"
+	},
+	"G000583": {
+		"example_address": "266 Harristown Road",
+		"example_city": "Glen Rock",
+		"example_state": "NJ",
+		"zip5": "07452",
+		"zip4": "3321",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Josh Gottheimer"
+	},
+	"C001106": {
+		"example_address": "840 North Park Road",
+		"example_city": "Wyomissing",
+		"example_state": "PA",
+		"zip5": "19610",
+		"zip4": "1307",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ryan Costello"
+	},
+	"L000583": {
+		"example_address": "219 Roswell Street",
+		"example_city": "Marietta",
+		"example_state": "GA",
+		"zip5": "30060",
+		"zip4": "2063",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Barry Loudermilk"
+	},
+	"G000551": {
+		"example_address": "738 North 5th Avenue",
+		"example_city": "Tucson",
+		"example_state": "AZ",
+		"zip5": "85705",
+		"zip4": "8485",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Raúl M. Grijalva"
+	},
+	"G000552": {
+		"example_address": "1121 East Southeast Loop 323",
+		"example_city": "Tyler",
+		"example_state": "TX",
+		"zip5": "75701",
+		"zip4": "9660",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Louie Gohmert"
+	},
+	"G000553": {
+		"example_address": "3003 South Loop West Freeway",
+		"example_city": "Houston",
+		"example_state": "TX",
+		"zip5": "77054",
+		"zip4": "1301",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Al Green"
+	},
+	"S001200": {
+		"example_address": "101 North Church Street",
+		"example_city": "Kissimmee",
+		"example_state": "FL",
+		"zip5": "34741",
+		"zip4": "5054",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Darren Soto"
+	},
+	"G000558": {
+		"example_address": "411 West Lincoln Trail Boulevard",
+		"example_city": "Radcliff",
+		"example_state": "KY",
+		"zip5": "40160",
+		"zip4": "2046",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brett Guthrie"
+	},
+	"G000559": {
+		"example_address": "712 Main Street",
+		"example_city": "Woodland",
+		"example_state": "CA",
+		"zip5": "95695",
+		"zip4": "3478",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Garamendi"
+	},
+	"G000560": {
+		"example_address": "600 East 1st Street",
+		"example_city": "Rome",
+		"example_state": "GA",
+		"zip5": "30161",
+		"zip4": "3149",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom Graves"
+	},
+	"B001297": {
+		"example_address": "109 South 3rd Street",
+		"example_city": "Sterling",
+		"example_state": "CO",
+		"zip5": "80751",
+		"zip4": "4220",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ken Buck"
+	},
+	"G000563": {
+		"example_address": "810 Otsego Avenue",
+		"example_city": "Coshocton",
+		"example_state": "OH",
+		"zip5": "43005",
+		"zip4": "0002",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bob Gibbs"
+	},
+	"F000464": {
+		"example_address": "2 Hudson St",
+		"example_city": "Kinderhook",
+		"example_state": "NY",
+		"zip5": "12106",
+		"zip4": "2003",
+		"example_district": "19",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John J. Faso"
+	},
+	"G000565": {
+		"example_address": "240 South Montezuma Street",
+		"example_city": "Prescott",
+		"example_state": "AZ",
+		"zip5": "86303",
+		"zip4": "4712",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Paul Gosar"
+	},
+	"G000566": {
+		"example_address": "101 West Saint John Street",
+		"example_city": "Spartanburg",
+		"example_state": "SC",
+		"zip5": "29306",
+		"zip4": "5167",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Trey Gowdy"
+	},
+	"H001072": {
+		"example_address": "1501 North University Avenue",
+		"example_city": "Little Rock",
+		"example_state": "AR",
+		"zip5": "72207",
+		"zip4": "5242",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "French Hill"
+	},
+	"G000568": {
+		"example_address": "323 West Main Street",
+		"example_city": "Abingdon",
+		"example_state": "VA",
+		"zip5": "24210",
+		"zip4": "2605",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "H. Griffith"
+	},
+	"D000625": {
+		"example_address": "265 New Dorp Lane",
+		"example_city": "Staten Island",
+		"example_state": "NY",
+		"zip5": "10306",
+		"zip4": "3005",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Daniel Donovan"
+	},
+	"G000571": {
+		"example_address": "300 Ala Moana Blvd",
+		"example_city": "Honolulu",
+		"example_state": "HI",
+		"zip5": "96850",
+		"zip4": "0001",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tulsi Gabbard"
+	},
+	"H001073": {
+		"example_address": "103 West Callaghan Street",
+		"example_city": "Fort Stockton",
+		"example_state": "TX",
+		"zip5": "79735",
+		"zip4": "7104",
+		"example_district": "23",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Will Hurd"
+	},
+	"C001107": {
+		"example_address": "12851 Southwest 42nd Street",
+		"example_city": "Miami",
+		"example_state": "FL",
+		"zip5": "33175",
+		"zip4": "3436",
+		"example_district": "26",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Carlos Curbelo"
+	},
+	"R000601": {
+		"example_address": "4303 Texas Boulevard",
+		"example_city": "Texarkana",
+		"example_state": "TX",
+		"zip5": "75503",
+		"zip4": "3094",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Ratcliffe"
+	},
+	"H000324": {
+		"example_address": "1755 Tiffany Drive East",
+		"example_city": "West Palm Beach",
+		"example_state": "FL",
+		"zip5": "33407",
+		"zip4": "3224",
+		"example_district": "20",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Alcee Hastings"
+	},
+	"N000189": {
+		"example_address": "402 East Yakima Avenue",
+		"example_city": "Yakima",
+		"example_state": "WA",
+		"zip5": "98901",
+		"zip4": "5410",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Dan Newhouse"
+	},
+	"G000581": {
+		"example_address": "100 South Austin Street",
+		"example_city": "Seguin",
+		"example_state": "TX",
+		"zip5": "78155",
+		"zip4": "5702",
+		"example_district": "15",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Vicente Gonzalez Jr."
+	},
+	"H000874": {
+		"example_address": "401 Post Office Road",
+		"example_city": "Waldorf",
+		"example_state": "MD",
+		"zip5": "20602",
+		"zip4": "2738",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steny Hoyer"
+	},
+	"W000822": {
+		"example_address": "50 Washington Rd",
+		"example_city": "West Windsor",
+		"example_state": "NJ",
+		"zip5": "08550",
+		"zip4": "1031",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bonnie Watson Coleman"
+	},
+	"K000389": {
+		"example_address": "39300 Civic Center Drive",
+		"example_city": "Fremont",
+		"example_state": "CA",
+		"zip5": "94538",
+		"zip4": "2324",
+		"example_district": "17",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ro Khanna"
+	},
+	"H001036": {
+		"example_address": "6510 Abrams Road",
+		"example_city": "Dallas",
+		"example_state": "TX",
+		"zip5": "75231",
+		"zip4": "7278",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jeb Hensarling"
+	},
+	"H001038": {
+		"example_address": "726 Exchange Street, Suite 601",
+		"example_city": "Buffalo",
+		"example_state": "NY",
+		"zip5": "14210",
+		"zip4": "1433",
+		"example_district": "26",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brian Higgins"
+	},
+	"H001045": {
+		"example_address": "1 Research Boulevard",
+		"example_city": "Starkville",
+		"example_state": "MS",
+		"zip5": "39759",
+		"zip4": "8749",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gregg Harper"
+	},
+	"H001047": {
+		"example_address": "888 Washington Boulevard",
+		"example_city": "Stamford",
+		"example_state": "CT",
+		"zip5": "06901",
+		"zip4": "2902",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "James Himes"
+	},
+	"H001048": {
+		"example_address": "41000 Main St.",
+		"example_city": "Temecula",
+		"example_state": "CA",
+		"zip5": "92590",
+		"zip4": "2764",
+		"example_district": "50",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Duncan Hunter"
+	},
+	"H001050": {
+		"example_address": "300 Ala Moana Boulevard",
+		"example_city": "Honolulu",
+		"example_state": "HI",
+		"zip5": "96850",
+		"zip4": "5104",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Colleen Hanabusa"
+	},
+	"T000478": {
+		"example_address": "131 Main Street",
+		"example_city": "Oneida",
+		"example_state": "NY",
+		"zip5": "13421",
+		"zip4": "1641",
+		"example_district": "22",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Claudia Tenney"
+	},
+	"H001052": {
+		"example_address": "212 West Main Street",
+		"example_city": "Salisbury",
+		"example_state": "MD",
+		"zip5": "21801",
+		"zip4": "5026",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Andy Harris"
+	},
+	"H001053": {
+		"example_address": "415 South Ohio Avenue",
+		"example_city": "Sedalia",
+		"example_state": "MO",
+		"zip5": "65301",
+		"zip4": "4435",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Vicky Hartzler"
+	},
+	"R000608": {
+		"example_address": "8485 West Sunset Road",
+		"example_city": "Las Vegas",
+		"example_state": "NV",
+		"zip5": "89113",
+		"zip4": "2251",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jacky Rosen"
+	},
+	"H001056": {
+		"example_address": "750 Anderson Street",
+		"example_city": "Vancouver",
+		"example_state": "WA",
+		"zip5": "98661",
+		"zip4": "3853",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jaime Herrera Beutler"
+	},
+	"M001198": {
+		"example_address": "119 West Iron Avenue",
+		"example_city": "Salina",
+		"example_state": "KS",
+		"zip5": "67402",
+		"zip4": "2600",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Roger W. Marshall"
+	},
+	"H001058": {
+		"example_address": "900 3rd Street",
+		"example_city": "Muskegon",
+		"example_state": "MI",
+		"zip5": "49440",
+		"zip4": "1135",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Huizenga"
+	},
+	"H001059": {
+		"example_address": "1797 West State Street",
+		"example_city": "Geneva",
+		"example_state": "IL",
+		"zip5": "60134",
+		"zip4": "4710",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Randy Hultgren"
+	},
+	"G000580": {
+		"example_address": "1301 Kings Highway",
+		"example_city": "Keysville",
+		"example_state": "VA",
+		"zip5": "22901",
+		"zip4": "3136",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Thomas A. Garrett Jr."
+	},
+	"B001300": {
+		"example_address": "140 W 6TH ST",
+		"example_city": "San Pedro",
+		"example_state": "CA",
+		"zip5": "90731",
+		"zip4": "3314",
+		"example_district": "44",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Nanette Diaz Barragan"
+	},
+	"H001064": {
+		"example_address": "420 College St SE",
+		"example_city": "Lacey",
+		"example_state": "WA",
+		"zip5": "98503",
+		"zip4": "1238",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Denny Heck"
+	},
+	"B001305": {
+		"example_address": "1300 Saint Marys Street",
+		"example_city": "Raleigh",
+		"example_state": "NC",
+		"zip5": "27605",
+		"zip4": "1276",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ted Budd"
+	},
+	"K000390": {
+		"example_address": "2250 Las Vegas Blvd. North",
+		"example_city": "North Las Vegas",
+		"example_state": "NV",
+		"zip5": "89030",
+		"zip4": "5877",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ruben Kihuen"
+	},
+	"H001067": {
+		"example_address": "230 East Franklin Street",
+		"example_city": "Rockingham",
+		"example_state": "NC",
+		"zip5": "28379",
+		"zip4": "3627",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Richard Hudson"
+	},
+	"H001068": {
+		"example_address": "1050 Northgate Drive",
+		"example_city": "San Rafael",
+		"example_state": "CA",
+		"zip5": "94903",
+		"zip4": "2580",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jared Huffman"
+	},
+	"I000056": {
+		"example_address": "1800 Thibodo Road",
+		"example_city": "Vista",
+		"example_state": "CA",
+		"zip5": "92081",
+		"zip4": "7515",
+		"example_district": "49",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Darrell Issa"
+	},
+	"S001201": {
+		"example_address": "534 Broad Hollow Road",
+		"example_city": "Melville",
+		"example_state": "NY",
+		"zip5": "11747",
+		"zip4": "3673",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Thomas R. Suozzi"
+	},
+	"J000032": {
+		"example_address": "6719 West Montgomery Road",
+		"example_city": "Houston",
+		"example_state": "TX",
+		"zip5": "77091",
+		"zip4": "3105",
+		"example_district": "18",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sheila Jackson Lee"
+	},
+	"J000126": {
+		"example_address": "3102 Maple Avenue",
+		"example_city": "Dallas",
+		"example_state": "TX",
+		"zip5": "75201",
+		"zip4": "1236",
+		"example_district": "30",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Eddie Johnson"
+	},
+	"J000174": {
+		"example_address": "2929 North Central Expressway",
+		"example_city": "Richardson",
+		"example_state": "TX",
+		"zip5": "75080",
+		"zip4": "2000",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sam Johnson"
+	},
+	"J000255": {
+		"example_address": "201 North Front Street",
+		"example_city": "Wilmington",
+		"example_state": "NC",
+		"zip5": "28401",
+		"zip4": "5093",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Walter Jones"
+	},
+	"J000288": {
+		"example_address": "3469 Lawrenceville Highway",
+		"example_city": "Tucker",
+		"example_state": "GA",
+		"zip5": "30084",
+		"zip4": "5866",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Henry Johnson"
+	},
+	"J000289": {
+		"example_address": "11 East Main Street",
+		"example_city": "Norwalk",
+		"example_state": "OH",
+		"zip5": "44857",
+		"zip4": "1512",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jim Jordan"
+	},
+	"J000290": {
+		"example_address": "3550 Southwest 5th Street",
+		"example_city": "Topeka",
+		"example_state": "KS",
+		"zip5": "66606",
+		"zip4": "1998",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lynn Jenkins"
+	},
+	"J000292": {
+		"example_address": "258 Front Street",
+		"example_city": "Marietta",
+		"example_state": "OH",
+		"zip5": "45750",
+		"zip4": "2908",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Johnson"
+	},
+	"J000294": {
+		"example_address": "10408 Flatlands Avenue ",
+		"example_city": "Brooklyn",
+		"example_state": "NY",
+		"zip5": "11236",
+		"zip4": "2806",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Hakeem Jeffries"
+	},
+	"J000295": {
+		"example_address": "10075 Ravenna Road",
+		"example_city": "Twinsburg",
+		"example_state": "OH",
+		"zip5": "44087",
+		"zip4": "1718",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Joyce"
+	},
+	"C001111": {
+		"example_address": "9210 113th Street",
+		"example_city": "Seminole",
+		"example_state": "FL",
+		"zip5": "33772",
+		"zip4": "2800",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Charlie Crist"
+	},
+	"K000009": {
+		"example_address": "205 West 20th Street",
+		"example_city": "Lorain",
+		"example_state": "OH",
+		"zip5": "44052",
+		"zip4": "3777",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Marcy Kaptur"
+	},
+	"K000188": {
+		"example_address": "205 5th Avenue South",
+		"example_city": "La Crosse",
+		"example_state": "WI",
+		"zip5": "54601",
+		"zip4": "4059",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ron Kind"
+	},
+	"K000210": {
+		"example_address": "1003 Park Boulevard",
+		"example_city": "Massapequa Park",
+		"example_state": "NY",
+		"zip5": "11762",
+		"zip4": "2758",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Peter King"
+	},
+	"C001103": {
+		"example_address": "1 Diamond Causeway",
+		"example_city": "Savannah",
+		"example_state": "GA",
+		"zip5": "31406",
+		"zip4": "7434",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Buddy Carter"
+	},
+	"K000362": {
+		"example_address": "800 Oneida Street",
+		"example_city": "Storm Lake",
+		"example_state": "IA",
+		"zip5": "50588",
+		"zip4": "3209",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve King"
+	},
+	"L000587": {
+		"example_address": "350 West Burnsville Parkway",
+		"example_city": "Burnsville",
+		"example_state": "MN",
+		"zip5": "55337",
+		"zip4": "2585",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jason Lewis"
+	},
+	"O000171": {
+		"example_address": "211 North Florence Street",
+		"example_city": "Casa Grande",
+		"example_state": "AZ",
+		"zip5": "85122",
+		"zip4": "4414",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom O'Halleran"
+	},
+	"K000375": {
+		"example_address": "2 Court St",
+		"example_city": "Plymouth",
+		"example_state": "MA",
+		"zip5": "02360",
+		"zip4": "3347",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "William Keating"
+	},
+	"K000376": {
+		"example_address": "208 East Bayfront Parkway",
+		"example_city": "Erie",
+		"example_state": "PA",
+		"zip5": "16507",
+		"zip4": "2405",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Kelly"
+	},
+	"K000378": {
+		"example_address": "415 South Mulford Road",
+		"example_city": "Rockford",
+		"example_state": "IL",
+		"zip5": "61108",
+		"zip4": "3011",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Adam Kinzinger"
+	},
+	"K000379": {
+		"example_address": "29 Crafts Street",
+		"example_city": "Newton",
+		"example_state": "MA",
+		"zip5": "02458",
+		"zip4": "1275",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joseph Kennedy"
+	},
+	"K000380": {
+		"example_address": "258 1st Street",
+		"example_city": "Fenton",
+		"example_state": "MI",
+		"zip5": "48502",
+		"zip4": "4636",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Daniel Kildee"
+	},
+	"K000381": {
+		"example_address": "1019 Pacific Avenue",
+		"example_city": "Tacoma",
+		"example_state": "WA",
+		"zip5": "98402",
+		"zip4": "4486",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Derek Kilmer"
+	},
+	"K000382": {
+		"example_address": "18 North Main Street",
+		"example_city": "Concord",
+		"example_state": "NH",
+		"zip5": "03301",
+		"zip4": "2424",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ann Kuster"
+	},
+	"K000385": {
+		"example_address": "17926 South Halsted Street",
+		"example_city": "Homewood",
+		"example_state": "IL",
+		"zip5": "60430",
+		"zip4": "2029",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robin Kelly"
+	},
+	"Y000066": {
+		"example_address": "300 East Locust Street",
+		"example_city": "Des Moines",
+		"example_state": "IA",
+		"zip5": "50309",
+		"zip4": "1825",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Young"
+	},
+	"L000263": {
+		"example_address": "27085 Gratiot Avenue",
+		"example_city": "Roseville",
+		"example_state": "MI",
+		"zip5": "48066",
+		"zip4": "2947",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sander Levin"
+	},
+	"L000287": {
+		"example_address": "100 Peachtree Street Northwest",
+		"example_city": "Atlanta",
+		"example_state": "GA",
+		"zip5": "30303",
+		"zip4": "1906",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Lewis"
+	},
+	"L000397": {
+		"example_address": "635 North 1st Street",
+		"example_city": "San Jose",
+		"example_state": "CA",
+		"zip5": "95112",
+		"zip4": "5110",
+		"example_district": "19",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Zoe Lofgren"
+	},
+	"L000480": {
+		"example_address": "222 Mamaroneck Avenue",
+		"example_city": "White Plains",
+		"example_state": "NY",
+		"zip5": "10605",
+		"zip4": "1316",
+		"example_district": "17",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Nita Lowey"
+	},
+	"L000491": {
+		"example_address": "10952 Northwest Expressway",
+		"example_city": "Yukon",
+		"example_state": "OK",
+		"zip5": "73099",
+		"zip4": "8214",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Frank Lucas"
+	},
+	"L000551": {
+		"example_address": "1301 Clay Street",
+		"example_city": "Oakland",
+		"example_state": "CA",
+		"zip5": "94612",
+		"zip4": "5233",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Barbara Lee"
+	},
+	"L000554": {
+		"example_address": "5914 Main Street",
+		"example_city": "Mays Landing",
+		"example_state": "NJ",
+		"zip5": "08330",
+		"zip4": "1746",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Frank LoBiondo"
+	},
+	"L000557": {
+		"example_address": "221 Main Street",
+		"example_city": "Hartford",
+		"example_state": "CT",
+		"zip5": "06106",
+		"zip4": "1890",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Larson"
+	},
+	"L000559": {
+		"example_address": "300 Centerville Rd",
+		"example_city": "Warwick",
+		"example_state": "RI",
+		"zip5": "02886",
+		"zip4": "0200",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "James Langevin"
+	},
+	"L000560": {
+		"example_address": "2930 Wetmore Avenue",
+		"example_city": "Everett",
+		"example_state": "WA",
+		"zip5": "98201",
+		"zip4": "4070",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rick Larsen"
+	},
+	"L000562": {
+		"example_address": "1250 Hancock Street",
+		"example_city": "Quincy",
+		"example_state": "MA",
+		"zip5": "02169",
+		"zip4": "4331",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Stephen Lynch"
+	},
+	"L000563": {
+		"example_address": "5309 West 95th Street",
+		"example_city": "Oak Lawn",
+		"example_state": "IL",
+		"zip5": "60453",
+		"zip4": "2444",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Daniel Lipinski"
+	},
+	"L000564": {
+		"example_address": "1271 Kelly Johnson Boulevard",
+		"example_city": "Colorado Springs",
+		"example_state": "CO",
+		"zip5": "80920",
+		"zip4": "3965",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Doug Lamborn"
+	},
+	"L000565": {
+		"example_address": "1 2nd Street",
+		"example_city": "Calamus",
+		"example_state": "IA",
+		"zip5": "08861",
+		"zip4": "4517",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Loebsack"
+	},
+	"L000566": {
+		"example_address": "100 East Main Cross Street",
+		"example_city": "Findlay",
+		"example_state": "OH",
+		"zip5": "45840",
+		"zip4": "4888",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robert Latta"
+	},
+	"L000567": {
+		"example_address": "425 North Avenue East",
+		"example_city": "Westfield",
+		"example_state": "NJ",
+		"zip5": "07090",
+		"zip4": "1537",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Leonard Lance"
+	},
+	"L000569": {
+		"example_address": "516 Jefferson Street",
+		"example_city": "Washington",
+		"example_state": "MO",
+		"zip5": "63090",
+		"zip4": "2706",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Blaine Luetkemeyer"
+	},
+	"L000570": {
+		"example_address": "811 Saint Michaels Drive",
+		"example_city": "Santa Fe",
+		"example_state": "NM",
+		"zip5": "87505",
+		"zip4": "7640",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ben Lujan"
+	},
+	"C001109": {
+		"example_address": "45 East Loucks Street",
+		"example_city": "Sheridan",
+		"example_state": "WY",
+		"zip5": "82801",
+		"zip4": "6331",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Liz Cheney"
+	},
+	"L000573": {
+		"example_address": "33 East Broadway Avenue",
+		"example_city": "Meridian",
+		"example_state": "ID",
+		"zip5": "83642",
+		"zip4": "2619",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Raúl Labrador"
+	},
+	"R000604": {
+		"example_address": "1015 North Broadway Avenue",
+		"example_city": "Oklahoma City",
+		"example_state": "OK",
+		"zip5": "73102",
+		"zip4": "5849",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Russell"
+	},
+	"L000576": {
+		"example_address": "5500 Palisades Avenue",
+		"example_city": "Battlefield",
+		"example_state": "MO",
+		"zip5": "07093",
+		"zip4": "2124",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Billy Long"
+	},
+	"L000578": {
+		"example_address": "280 Hemsted Drive",
+		"example_city": "Redding",
+		"example_state": "CA",
+		"zip5": "96002",
+		"zip4": "0164",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Doug LaMalfa"
+	},
+	"L000579": {
+		"example_address": "100 West Broadway",
+		"example_city": "Long Beach",
+		"example_state": "CA",
+		"zip5": "90802",
+		"zip4": "4486",
+		"example_district": "47",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Alan Lowenthal"
+	},
+	"L000580": {
+		"example_address": "3211 Coors Boulevard Southwest",
+		"example_city": "Albuquerque",
+		"example_state": "NM",
+		"zip5": "87121",
+		"zip4": "5255",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michelle Lujan Grisham"
+	},
+	"M000087": {
+		"example_address": "1651 3rd Avenue",
+		"example_city": "New York",
+		"example_state": "NY",
+		"zip5": "10128",
+		"zip4": "3679",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Carolyn Maloney"
+	},
+	"R000602": {
+		"example_address": "300 Garden City Plaza",
+		"example_city": "Garden City",
+		"example_state": "NY",
+		"zip5": "11530",
+		"zip4": "3338",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kathleen Rice"
+	},
+	"M000312": {
+		"example_address": "558 Pleasant Street",
+		"example_city": "Northampton",
+		"example_state": "MA",
+		"zip5": "01060",
+		"zip4": "6246",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "James McGovern"
+	},
+	"J000298": {
+		"example_address": "18560 1st Avenue Northeast",
+		"example_city": "Shoreline",
+		"example_state": "WA",
+		"zip5": "98155",
+		"zip4": "2150",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Pramila Jayapal"
+	},
+	"R000603": {
+		"example_address": "201 North East Street",
+		"example_city": "Roseboro",
+		"example_state": "NC",
+		"zip5": "28451",
+		"zip4": "1520",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Rouzer"
+	},
+	"K000387": {
+		"example_address": "26650 The Old Road",
+		"example_city": "Valencia",
+		"example_state": "CA",
+		"zip5": "91381",
+		"zip4": "0750",
+		"example_district": "25",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Knight"
+	},
+	"M001202": {
+		"example_address": "2461 West State Road 426",
+		"example_city": "Oviedo",
+		"example_state": "FL",
+		"zip5": "32765",
+		"zip4": "4508",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Stephanie N. Murphy"
+	},
+	"D000623": {
+		"example_address": "1981 North Broadway",
+		"example_city": "Walnut Creek",
+		"example_state": "CA",
+		"zip5": "94596",
+		"zip4": "3877",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mark DeSaulnier"
+	},
+	"B001292": {
+		"example_address": "333 N. Fairfax St",
+		"example_city": "Arlington",
+		"example_state": "VA",
+		"zip5": "22314",
+		"zip4": "2647",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Don Beyer"
+	},
+	"M001137": {
+		"example_address": "90-16 Rockaway Beach Boulevard",
+		"example_city": "Queens",
+		"example_state": "NY",
+		"zip5": "11693",
+		"zip4": "1530",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gregory Meeks"
+	},
+	"A000371": {
+		"example_address": "1150 Brookside Avenue",
+		"example_city": "Redlands",
+		"example_state": "CA",
+		"zip5": "92373",
+		"zip4": "6314",
+		"example_district": "31",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Pete Aguilar"
+	},
+	"L000584": {
+		"example_address": "240 East Morris Avenue",
+		"example_city": "Salt Lake City",
+		"example_state": "UT",
+		"zip5": "84115",
+		"zip4": "3296",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mia Love"
+	},
+	"M001143": {
+		"example_address": "6043 Hudson Road",
+		"example_city": "Woodbury",
+		"example_state": "MN",
+		"zip5": "55125",
+		"zip4": "1004",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Betty McCollum"
+	},
+	"G000578": {
+		"example_address": "4300 Bayou Boulevard",
+		"example_city": "Pensacola",
+		"example_state": "FL",
+		"zip5": "32503",
+		"zip4": "2679",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Matt Gaetz"
+	},
+	"P000611": {
+		"example_address": "6 State Street",
+		"example_city": "Bangor",
+		"example_state": "ME",
+		"zip5": "04401",
+		"zip4": "5112",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bruce Poliquin"
+	},
+	"M001201": {
+		"example_address": "48701 Van Dyke Avenue",
+		"example_city": "Shelby Township",
+		"example_state": "MI",
+		"zip5": "48317",
+		"zip4": "2560",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Paul Mitchell"
+	},
+	"M001156": {
+		"example_address": "311 East Marion Street",
+		"example_city": "Shelby",
+		"example_state": "NC",
+		"zip5": "28151",
+		"zip4": "4611",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Patrick McHenry"
+	},
+	"M001157": {
+		"example_address": "990 Village Square Drive",
+		"example_city": "Tomball",
+		"example_state": "TX",
+		"zip5": "77375",
+		"zip4": "4269",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michael McCaul"
+	},
+	"M001158": {
+		"example_address": "9901 Valley Ranch Parkway East",
+		"example_city": "Irving",
+		"example_state": "TX",
+		"zip5": "75063",
+		"zip4": "7186",
+		"example_district": "24",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kenny Marchant"
+	},
+	"M001159": {
+		"example_address": "29 South Palouse Street",
+		"example_city": "Walla Walla",
+		"example_state": "WA",
+		"zip5": "99362",
+		"zip4": "1925",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Cathy McMorris Rodgers"
+	},
+	"M001160": {
+		"example_address": "219 North Milwaukee Street",
+		"example_city": "Milwaukee",
+		"example_state": "WI",
+		"zip5": "53202",
+		"zip4": "5818",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gwen Moore"
+	},
+	"M001163": {
+		"example_address": "600 I Street",
+		"example_city": "Sacramento",
+		"example_state": "CA",
+		"zip5": "95814",
+		"zip4": "4778",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Doris Matsui"
+	},
+	"M001165": {
+		"example_address": "4100 Empire Drive",
+		"example_city": "Bakersfield",
+		"example_state": "CA",
+		"zip5": "93309",
+		"zip4": "0409",
+		"example_district": "23",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kevin McCarthy"
+	},
+	"M001166": {
+		"example_address": "2222 Grand Canal Boulevard",
+		"example_city": "Stockton",
+		"example_state": "CA",
+		"zip5": "95207",
+		"zip4": "6671",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jerry McNerney"
+	},
+	"K000386": {
+		"example_address": "100 South Clinton Street",
+		"example_city": "Syracuse",
+		"example_state": "NY",
+		"zip5": "13261",
+		"zip4": "6100",
+		"example_district": "24",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Katko"
+	},
+	"M001177": {
+		"example_address": "8700 Auburn Folsom Road",
+		"example_city": "Auburn",
+		"example_state": "CA",
+		"zip5": "95746",
+		"zip4": "8501",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom McClintock"
+	},
+	"M001179": {
+		"example_address": "1000 Commerce Park Drive",
+		"example_city": "Williamsport",
+		"example_state": "PA",
+		"zip5": "17701",
+		"zip4": "5475",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom Marino"
+	},
+	"M001180": {
+		"example_address": "1125 Chapline Street",
+		"example_city": "Wheeling",
+		"example_state": "WV",
+		"zip5": "26003",
+		"zip4": "2976",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David McKinley"
+	},
+	"M001181": {
+		"example_address": "107 Old Airport Road",
+		"example_city": "Douglassville",
+		"example_state": "PA",
+		"zip5": "19064",
+		"zip4": "1255",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Patrick Meehan"
+	},
+	"N000190": {
+		"example_address": "1456 Ebenezer Road",
+		"example_city": "Rock Hill",
+		"example_state": "SC",
+		"zip5": "29732",
+		"zip4": "2339",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ralph Norman"
+	},
+	"M001184": {
+		"example_address": "400 North Main Street",
+		"example_city": "Williamstown",
+		"example_state": "KY",
+		"zip5": "41097",
+		"zip4": "1026",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Thomas Massie"
+	},
+	"M001185": {
+		"example_address": "16 James Street",
+		"example_city": "Middletown",
+		"example_state": "NY",
+		"zip5": "10940",
+		"zip4": "5787",
+		"example_district": "18",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Sean Maloney"
+	},
+	"M001187": {
+		"example_address": "125 Bonnie Lane",
+		"example_city": "Sylva",
+		"example_state": "NC",
+		"zip5": "28779",
+		"zip4": "8552",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mark Meadows"
+	},
+	"M001188": {
+		"example_address": "80-02 Kew Gardens Road",
+		"example_city": "Queens",
+		"example_state": "NY",
+		"zip5": "11415",
+		"zip4": "3605",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Grace Meng"
+	},
+	"M001189": {
+		"example_address": "107 West Charles Street",
+		"example_city": "Muncie",
+		"example_state": "IN",
+		"zip5": "47305",
+		"zip4": "2804",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Luke Messer"
+	},
+	"M001190": {
+		"example_address": "431 West Broadway Street",
+		"example_city": "Muskogee",
+		"example_state": "OK",
+		"zip5": "74401",
+		"zip4": "6614",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Markwayne Mullin"
+	},
+	"M001199": {
+		"example_address": "171 Southwest Flagler Avenue",
+		"example_city": "Stuart",
+		"example_state": "FL",
+		"zip5": "34994",
+		"zip4": "2139",
+		"example_district": "18",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brian J. Mast"
+	},
+	"A000374": {
+		"example_address": "1900 Stubbs Avenue",
+		"example_city": "Monroe",
+		"example_state": "LA",
+		"zip5": "71201",
+		"zip4": "5751",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ralph Abraham"
+	},
+	"N000002": {
+		"example_address": "201 Varick Street",
+		"example_city": "New York",
+		"example_state": "NY",
+		"zip5": "10014",
+		"zip4": "7069",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jerrold Nadler"
+	},
+	"N000015": {
+		"example_address": "300 State Street",
+		"example_city": "Springfield",
+		"example_state": "MA",
+		"zip5": "01105",
+		"zip4": "1686",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Richard Neal"
+	},
+	"N000127": {
+		"example_address": "6448 Main Street",
+		"example_city": "North Branch",
+		"example_state": "MN",
+		"zip5": "55056",
+		"zip4": "7068",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Richard Nolan"
+	},
+	"N000147": {
+		"example_address": "90 K Street, NE",
+		"example_city": "Washington",
+		"example_state": "DC",
+		"zip5": "20001",
+		"zip4": "4203",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Eleanor Holmes Norton"
+	},
+	"N000179": {
+		"example_address": "510 East Foothill Boulevard",
+		"example_city": "San Dimas",
+		"example_state": "CA",
+		"zip5": "91773",
+		"zip4": "1254",
+		"example_district": "32",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Grace Napolitano"
+	},
+	"N000181": {
+		"example_address": "113 North Church Street",
+		"example_city": "Visalia",
+		"example_state": "CA",
+		"zip5": "93291",
+		"zip4": "6300",
+		"example_district": "22",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Devin Nunes"
+	},
+	"A000375": {
+		"example_address": "611 University Avenue",
+		"example_city": "Lubbock",
+		"example_state": "TX",
+		"zip5": "79401",
+		"zip4": "2206",
+		"example_district": "19",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jodey C. Arrington"
+	},
+	"N000184": {
+		"example_address": "505 12th Street Southeast",
+		"example_city": "Watertown",
+		"example_state": "SD",
+		"zip5": "57201",
+		"zip4": "4973",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kristi Noem"
+	},
+	"W000806": {
+		"example_address": "115 Southeast 25th Avenue",
+		"example_city": "Ocala",
+		"example_state": "FL",
+		"zip5": "34471",
+		"zip4": "9179",
+		"example_district": "11",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Daniel Webster"
+	},
+	"K000388": {
+		"example_address": "337 East Main Street",
+		"example_city": "Tupelo",
+		"example_state": "MS",
+		"zip5": "38804",
+		"zip4": "4025",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Trent Kelly"
+	},
+	"T000474": {
+		"example_address": "4959 Palo Verde Street",
+		"example_city": "Montclair",
+		"example_state": "CA",
+		"zip5": "91763",
+		"zip4": "2331",
+		"example_district": "35",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Norma Torres"
+	},
+	"O000168": {
+		"example_address": "1650 Highway 6",
+		"example_city": "Sugar Land",
+		"example_state": "TX",
+		"zip5": "77478",
+		"zip4": "4921",
+		"example_district": "22",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Pete Olson"
+	},
+	"S001196": {
+		"example_address": "120 Washington Street",
+		"example_city": "Watertown",
+		"example_state": "NY",
+		"zip5": "13601",
+		"zip4": "3370",
+		"example_district": "21",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Elise Stefanik"
+	},
+	"O000170": {
+		"example_address": "310 North Mesa Street",
+		"example_city": "El Paso",
+		"example_state": "TX",
+		"zip5": "79901",
+		"zip4": "1301",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Beto O'Rourke"
+	},
+	"P000034": {
+		"example_address": "69 Church St",
+		"example_city": "New Brunswick",
+		"example_state": "NJ",
+		"zip5": "08901",
+		"zip4": "1242",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Frank Pallone"
+	},
+	"P000096": {
+		"example_address": "200 Federal Plaza",
+		"example_city": "Paterson",
+		"example_state": "NJ",
+		"zip5": "07505",
+		"zip4": "1953",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Pascrell"
+	},
+	"G000574": {
+		"example_address": "411 North Central Avenue",
+		"example_city": "Phoenix",
+		"example_state": "AZ",
+		"zip5": "85004",
+		"zip4": "2120",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ruben Gallego"
+	},
+	"P000197": {
+		"example_address": "90 7th Street",
+		"example_city": "San Francisco",
+		"example_state": "CA",
+		"zip5": "94103",
+		"zip4": "6701",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Nancy Pelosi"
+	},
+	"P000258": {
+		"example_address": "320 4th Street Southwest",
+		"example_city": "Willmar",
+		"example_state": "MN",
+		"zip5": "56201",
+		"zip4": "3300",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Collin Peterson"
+	},
+	"G000576": {
+		"example_address": "2390 Highway 44",
+		"example_city": "Oshkosh",
+		"example_state": "WI",
+		"zip5": "54904",
+		"zip4": "6438",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Glenn Grothman"
+	},
+	"S001199": {
+		"example_address": "PO Box 837 ",
+		"example_city": "Unionville",
+		"example_state": "PA",
+		"zip5": "19375",
+		"zip4": "0837",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lloyd Smucker"
+	},
+	"P000523": {
+		"example_address": "5400 Trinity Road",
+		"example_city": "Raleigh",
+		"example_state": "NC",
+		"zip5": "27607",
+		"zip4": "3815",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Price"
+	},
+	"P000588": {
+		"example_address": "1717 West 2nd Street",
+		"example_city": "Roswell",
+		"example_state": "NM",
+		"zip5": "88201",
+		"zip4": "2029",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Stevan Pearce"
+	},
+	"H001078": {
+		"example_address": "3730 Roswell Road",
+		"example_city": "Marietta",
+		"example_state": "GA",
+		"zip5": "30062",
+		"zip4": "8818",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Karen Handel"
+	},
+	"P000592": {
+		"example_address": "1801 Kingwood Drive",
+		"example_city": "Humble",
+		"example_state": "TX",
+		"zip5": "77339",
+		"zip4": "3058",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ted Poe"
+	},
+	"P000593": {
+		"example_address": "1200 East 78th Avenue",
+		"example_city": "Denver",
+		"example_state": "CO",
+		"zip5": "80229",
+		"zip4": "5930",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ed Perlmutter"
+	},
+	"P000594": {
+		"example_address": "250 Prairie Center Drive",
+		"example_city": "Eden Prairie",
+		"example_state": "MN",
+		"zip5": "55344",
+		"zip4": "7904",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Erik Paulsen"
+	},
+	"L000581": {
+		"example_address": "400 Monroe Street",
+		"example_city": "Detroit",
+		"example_state": "MI",
+		"zip5": "48226",
+		"zip4": "2944",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brenda Lawrence"
+	},
+	"G000582": {
+		"example_address": "157 Ave. de la Constitucion",
+		"example_city": "San Juan",
+		"example_state": "PR",
+		"zip5": "00901",
+		"zip4": "2102",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jenniffer Gonzalez-Colon"
+	},
+	"P000597": {
+		"example_address": "2 Portland Fish Pier",
+		"example_city": "Portland",
+		"example_state": "ME",
+		"zip5": "04101",
+		"zip4": "4633",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Chellie Pingree"
+	},
+	"P000598": {
+		"example_address": "123 North College Avenue",
+		"example_city": "Fort Collins",
+		"example_state": "CO",
+		"zip5": "80524",
+		"zip4": "2489",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jared Polis"
+	},
+	"P000599": {
+		"example_address": "2725 Judge Fran Jamieson Way",
+		"example_city": "Melbourne",
+		"example_state": "FL",
+		"zip5": "32940",
+		"zip4": "6605",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Posey"
+	},
+	"P000601": {
+		"example_address": "701 Main Street",
+		"example_city": "Hattiesburg",
+		"example_state": "MS",
+		"zip5": "39401",
+		"zip4": "3478",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steven Palazzo"
+	},
+	"E000298": {
+		"example_address": "155 North Market Street",
+		"example_city": "Wichita",
+		"example_state": "KS",
+		"zip5": "67202",
+		"zip4": "1818",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ron Estes"
+	},
+	"P000604": {
+		"example_address": "13 Municipal Plaza",
+		"example_city": "Bloomfield",
+		"example_state": "NJ",
+		"zip5": "07003",
+		"zip4": "3470",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Donald Payne"
+	},
+	"P000605": {
+		"example_address": "2209 East Market Street",
+		"example_city": "East York",
+		"example_state": "PA",
+		"zip5": "17402",
+		"zip4": "2853",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Scott Perry"
+	},
+	"P000606": {
+		"example_address": "6525 Morrison Boulevard",
+		"example_city": "Charlotte",
+		"example_state": "NC",
+		"zip5": "28211",
+		"zip4": "0501",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robert Pittenger"
+	},
+	"P000607": {
+		"example_address": "10 East Doty Street",
+		"example_city": "Madison",
+		"example_state": "WI",
+		"zip5": "53703",
+		"zip4": "5103",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mark Pocan"
+	},
+	"P000608": {
+		"example_address": "4350 Executive Drive",
+		"example_city": "San Diego",
+		"example_state": "CA",
+		"zip5": "92121",
+		"zip4": "2115",
+		"example_district": "52",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Scott Peters"
+	},
+	"Q000023": {
+		"example_address": "1057 West Belmont Avenue",
+		"example_city": "Chicago",
+		"example_state": "IL",
+		"zip5": "60657",
+		"zip4": "3327",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Quigley"
+	},
+	"J000297": {
+		"example_address": "220 Dingess Street",
+		"example_city": "Logan",
+		"example_state": "WV",
+		"zip5": "25601",
+		"zip4": "3626",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Evan Jenkins"
+	},
+	"E000297": {
+		"example_address": "163 West 125th Street",
+		"example_city": "New York",
+		"example_state": "NY",
+		"zip5": "10027",
+		"zip4": "4404",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Adriano Espaillat"
+	},
+	"R000409": {
+		"example_address": "610 Newport Center Drive",
+		"example_city": "Newport Beach",
+		"example_state": "CA",
+		"zip5": "92660",
+		"zip4": "8034",
+		"example_district": "48",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Dana Rohrabacher"
+	},
+	"R000435": {
+		"example_address": "4960 Southwest 72nd Avenue",
+		"example_city": "Miami",
+		"example_state": "FL",
+		"zip5": "33155",
+		"zip4": "5544",
+		"example_district": "27",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ileana Ros-Lehtinen"
+	},
+	"R000486": {
+		"example_address": "4716 East Cesar E Chavez Avenue",
+		"example_city": "East Los Angeles",
+		"example_state": "CA",
+		"zip5": "90022",
+		"zip4": "1210",
+		"example_district": "40",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lucille Roybal-Allard"
+	},
+	"R000487": {
+		"example_address": "1800 East Lambert Road",
+		"example_city": "Brea",
+		"example_state": "CA",
+		"zip5": "92821",
+		"zip4": "4396",
+		"example_district": "39",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Edward Royce"
+	},
+	"R000515": {
+		"example_address": "3235 147th Street",
+		"example_city": "Midlothian",
+		"example_state": "IL",
+		"zip5": "60445",
+		"zip4": "3656",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bobby Rush"
+	},
+	"R000570": {
+		"example_address": "216 6th Street",
+		"example_city": "Racine",
+		"example_state": "WI",
+		"zip5": "53403",
+		"zip4": "1216",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Paul Ryan"
+	},
+	"B001293": {
+		"example_address": "1000 West Saint Joseph Street",
+		"example_city": "Lansing",
+		"example_state": "MI",
+		"zip5": "48915",
+		"zip4": "2552",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Bishop"
+	},
+	"R000575": {
+		"example_address": "1819 Pepperell Parkway",
+		"example_city": "Opelika",
+		"example_state": "AL",
+		"zip5": "36801",
+		"zip4": "5476",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Rogers"
+	},
+	"R000576": {
+		"example_address": "375 West Padonia Road",
+		"example_city": "Lutherville-Timonium",
+		"example_state": "MD",
+		"zip5": "21093",
+		"zip4": "2130",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "C. Ruppersberger"
+	},
+	"R000577": {
+		"example_address": "241 West Federal Street",
+		"example_city": "Youngstown",
+		"example_state": "OH",
+		"zip5": "44503",
+		"zip4": "1207",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tim Ryan"
+	},
+	"R000578": {
+		"example_address": "2 1st Street SE",
+		"example_city": "Auburn",
+		"example_state": "WA",
+		"zip5": "98001",
+		"zip4": "5453",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Reichert"
+	},
+	"R000580": {
+		"example_address": "6262 Route 83",
+		"example_city": "Willowbrook",
+		"example_state": "IL",
+		"zip5": "60527",
+		"zip4": "2987",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Peter Roskam"
+	},
+	"R000582": {
+		"example_address": "1609 College Park Drive",
+		"example_city": "Morristown",
+		"example_state": "TN",
+		"zip5": "37813",
+		"zip4": "1659",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Roe"
+	},
+	"R000583": {
+		"example_address": "226 Taylor Street",
+		"example_city": "Punta Gorda",
+		"example_state": "FL",
+		"zip5": "33950",
+		"zip4": "4459",
+		"example_district": "17",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Thomas Rooney"
+	},
+	"R000585": {
+		"example_address": "2 East 2nd Street",
+		"example_city": "Jamestown",
+		"example_state": "NY",
+		"zip5": "14701",
+		"zip4": "5206",
+		"example_district": "23",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom Reed"
+	},
+	"R000586": {
+		"example_address": "7904 Day Drive",
+		"example_city": "Parma",
+		"example_state": "OH",
+		"zip5": "44129",
+		"zip4": "5637",
+		"example_district": "16",
+		"type": "Rep",
+		"mark": "true",
+		"name": "James Renacci"
+	},
+	"G000579": {
+		"example_address": "333 West College Avenue",
+		"example_city": "Appleton",
+		"example_state": "WI",
+		"zip5": "54911",
+		"zip4": "5898",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Gallagher"
+	},
+	"R000588": {
+		"example_address": "2021 Lakeshore Drive",
+		"example_city": "New Orleans",
+		"example_state": "LA",
+		"zip5": "70122",
+		"zip4": "3501",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Cedric Richmond"
+	},
+	"T000477": {
+		"example_address": "4772 Euclid Road",
+		"example_city": "Virginia Beach",
+		"example_state": "VA",
+		"zip5": "23462",
+		"zip4": "3800",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Scott Taylor"
+	},
+	"R000591": {
+		"example_address": "7550 Halcyon Summit Drive",
+		"example_city": "Montgomery",
+		"example_state": "AL",
+		"zip5": "36117",
+		"zip4": "7008",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Martha Roby"
+	},
+	"R000592": {
+		"example_address": "2680 West Main Street",
+		"example_city": "Pittsboro",
+		"example_state": "IN",
+		"zip5": "46167",
+		"zip4": "2829",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Todd Rokita"
+	},
+	"R000593": {
+		"example_address": "110 West Reynolds Street",
+		"example_city": "Plant City",
+		"example_state": "FL",
+		"zip5": "33563",
+		"zip4": "3377",
+		"example_district": "15",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Dennis Ross"
+	},
+	"M001193": {
+		"example_address": "4167 Church Road",
+		"example_city": "Mount Laurel",
+		"example_state": "NJ",
+		"zip5": "08054",
+		"zip4": "2220",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom MacArthur"
+	},
+	"R000597": {
+		"example_address": "1800 North Oak Street",
+		"example_city": "Myrtle Beach",
+		"example_state": "SC",
+		"zip5": "29577",
+		"zip4": "3141",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tom Rice"
+	},
+	"R000598": {
+		"example_address": "118 West Main Street",
+		"example_city": "Somerset",
+		"example_state": "PA",
+		"zip5": "15501",
+		"zip4": "2047",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Keith Rothfus"
+	},
+	"R000599": {
+		"example_address": "707 East Tahquitz Canyon Way",
+		"example_city": "Palm Springs",
+		"example_state": "CA",
+		"zip5": "92262",
+		"zip4": "0101",
+		"example_district": "36",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Raul Ruiz"
+	},
+	"B001302": {
+		"example_address": "207 North Gilbert Road",
+		"example_city": "Gilbert",
+		"example_state": "AZ",
+		"zip5": "85234",
+		"zip4": "5812",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Andy Biggs"
+	},
+	"C001110": {
+		"example_address": "1110 East Chapman Avenue",
+		"example_city": "Orange",
+		"example_state": "CA",
+		"zip5": "92866",
+		"zip4": "2145",
+		"example_district": "46",
+		"type": "Rep",
+		"mark": "true",
+		"name": "J. Luis Correa"
+	},
+	"S000051": {
+		"example_address": "2000 Sam Rittenberg Boulevard",
+		"example_city": "Charleston",
+		"example_state": "SC",
+		"zip5": "29407",
+		"zip4": "4631",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Marshall Sanford"
+	},
+	"S000185": {
+		"example_address": "400 North 8th Street",
+		"example_city": "Richmond",
+		"example_state": "VA",
+		"zip5": "23219",
+		"zip4": "1321",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robert Scott"
+	},
+	"S000244": {
+		"example_address": "120 Bishops Way",
+		"example_city": "Brookfield",
+		"example_state": "WI",
+		"zip5": "53005",
+		"zip4": "6294",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "F. Sensenbrenner"
+	},
+	"S000248": {
+		"example_address": "1231 Lafayette Avenue",
+		"example_city": "Bronx",
+		"example_state": "NY",
+		"zip5": "10474",
+		"zip4": "5331",
+		"example_district": "15",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jose Serrano"
+	},
+	"S000250": {
+		"example_address": "12750 Merit Drive",
+		"example_city": "Dallas",
+		"example_state": "TX",
+		"zip5": "75251",
+		"zip4": "1229",
+		"example_district": "32",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Pete Sessions"
+	},
+	"S000344": {
+		"example_address": "5000 Van Nuys Boulevard",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "91403",
+		"zip4": "1791",
+		"example_district": "30",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brad Sherman"
+	},
+	"S000364": {
+		"example_address": "120 South Fair Street",
+		"example_city": "Olney",
+		"example_state": "IL",
+		"zip5": "62450",
+		"zip4": "2258",
+		"example_district": "15",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Shimkus"
+	},
+	"S000480": {
+		"example_address": "1280 Titus Avenue",
+		"example_city": "Rochester",
+		"example_state": "NY",
+		"zip5": "14617",
+		"zip4": "4125",
+		"example_district": "25",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Louise Slaughter"
+	},
+	"S000510": {
+		"example_address": "2737 78th Avenue Southeast",
+		"example_city": "Mercer Island",
+		"example_state": "WA",
+		"zip5": "98040",
+		"zip4": "2843",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Adam Smith"
+	},
+	"S000522": {
+		"example_address": "1540 Kuser Road",
+		"example_city": "Hamilton Township",
+		"example_state": "NJ",
+		"zip5": "08619",
+		"zip4": "3828",
+		"example_district": "4",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Christopher Smith"
+	},
+	"S000583": {
+		"example_address": "1100 Northeast Interstate 410 Loop",
+		"example_city": "San Antonio",
+		"example_state": "TX",
+		"zip5": "78209",
+		"zip4": "1530",
+		"example_district": "21",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Lamar Smith"
+	},
+	"B001291": {
+		"example_address": "420 Green Avenue",
+		"example_city": "Orange",
+		"example_state": "TX",
+		"zip5": "77630",
+		"zip4": "5803",
+		"example_district": "36",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brian Babin"
+	},
+	"S001145": {
+		"example_address": "820 Davis Street",
+		"example_city": "Evanston",
+		"example_state": "IL",
+		"zip5": "60201",
+		"zip4": "4400",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Janice Schakowsky"
+	},
+	"S001148": {
+		"example_address": "1341 Fillmore Street",
+		"example_city": "Twin Falls",
+		"example_state": "ID",
+		"zip5": "83301",
+		"zip4": "3392",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michael Simpson"
+	},
+	"S001150": {
+		"example_address": "1910 Sunset Boulevard",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90026",
+		"zip4": "3445",
+		"example_district": "28",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Adam Schiff"
+	},
+	"S001154": {
+		"example_address": "20 North Gallatin Avenue",
+		"example_city": "Uniontown",
+		"example_state": "PA",
+		"zip5": "15401",
+		"zip4": "3545",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bill Shuster"
+	},
+	"S001156": {
+		"example_address": "11627 Telegraph Road",
+		"example_city": "Whittier",
+		"example_state": "CA",
+		"zip5": "90670",
+		"zip4": "6810",
+		"example_district": "38",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Linda Sanchez"
+	},
+	"S001157": {
+		"example_address": "888 Concord Road Southeast",
+		"example_city": "Smyrna",
+		"example_state": "GA",
+		"zip5": "30080",
+		"zip4": "4202",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Scott"
+	},
+	"B001296": {
+		"example_address": "706 West Avenue",
+		"example_city": "Jenkintown",
+		"example_state": "PA",
+		"zip5": "19046",
+		"zip4": "2710",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brendan F. Boyle"
+	},
+	"S001165": {
+		"example_address": "800 Anna Street",
+		"example_city": "Elizabeth",
+		"example_state": "NJ",
+		"zip5": "07201",
+		"zip4": "2811",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Albio Sires"
+	},
+	"S001168": {
+		"example_address": "600 Baltimore Avenue",
+		"example_city": "Towson",
+		"example_state": "MD",
+		"zip5": "21204",
+		"zip4": "4022",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Sarbanes"
+	},
+	"S001170": {
+		"example_address": "14 Hancock Street",
+		"example_city": "Portsmouth",
+		"example_state": "NH",
+		"zip5": "03801",
+		"zip4": "4669",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Carol Shea-Porter"
+	},
+	"S001172": {
+		"example_address": "416 Valley View Drive",
+		"example_city": "Scottsbluff",
+		"example_state": "NE",
+		"zip5": "69361",
+		"zip4": "1445",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Adrian Smith"
+	},
+	"S001175": {
+		"example_address": "400 South El Camino Real",
+		"example_city": "San Mateo",
+		"example_state": "CA",
+		"zip5": "94402",
+		"zip4": "1761",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jackie Speier"
+	},
+	"S001176": {
+		"example_address": "110 Veterans Memorial Boulevard",
+		"example_city": "Metairie",
+		"example_state": "LA",
+		"zip5": "70005",
+		"zip4": "4970",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Scalise"
+	},
+	"S001177": {
+		"example_address": "P.O. Box 1361",
+		"example_city": "Rota",
+		"example_state": "MP",
+		"zip5": "96951",
+		"zip4": "1361",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Gregorio Kilili Camacho Sablan"
+	},
+	"S001180": {
+		"example_address": "494 State Street",
+		"example_city": "Salem",
+		"example_state": "OR",
+		"zip5": "97301",
+		"zip4": "3830",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kurt Schrader"
+	},
+	"S001183": {
+		"example_address": "10603 North Hayden Road",
+		"example_city": "Scottsdale",
+		"example_state": "AZ",
+		"zip5": "85260",
+		"zip4": "5571",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Schweikert"
+	},
+	"S001185": {
+		"example_address": "1118 Greensboro Avenue",
+		"example_city": "Tuscaloosa",
+		"example_state": "AL",
+		"zip5": "35401",
+		"zip4": "2861",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Terri Sewell"
+	},
+	"D000628": {
+		"example_address": "3116 Capital Circle Northeast",
+		"example_city": "Tallahassee",
+		"example_state": "FL",
+		"zip5": "32308",
+		"zip4": "7791",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Neal P. Dunn"
+	},
+	"S001187": {
+		"example_address": "61 East Main Street",
+		"example_city": "Wilmington",
+		"example_state": "OH",
+		"zip5": "45177",
+		"zip4": "2330",
+		"example_district": "15",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Stivers"
+	},
+	"B001299": {
+		"example_address": "700 Park Avenue",
+		"example_city": "Winona Lake",
+		"example_state": "IN",
+		"zip5": "46590",
+		"zip4": "1066",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jim Banks"
+	},
+	"S001189": {
+		"example_address": "230 Margie Drive",
+		"example_city": "Warner Robins",
+		"example_state": "GA",
+		"zip5": "31088",
+		"zip4": "7813",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Austin Scott"
+	},
+	"S001190": {
+		"example_address": "650 Dundee Road",
+		"example_city": "Northbrook",
+		"example_state": "IL",
+		"zip5": "60062",
+		"zip4": "2757",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bradley Scott Schneider"
+	},
+	"S001191": {
+		"example_address": "2400 East Arizona Biltmore Circle",
+		"example_city": "Phoenix",
+		"example_state": "AZ",
+		"zip5": "85016",
+		"zip4": "2195",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kyrsten Sinema"
+	},
+	"S001192": {
+		"example_address": "136 E South Temple",
+		"example_city": "Salt Lake City",
+		"example_state": "UT",
+		"zip5": "84111",
+		"zip4": "1180",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Chris Stewart"
+	},
+	"S001193": {
+		"example_address": "5776 Stoneridge Mall Road",
+		"example_city": "Pleasanton",
+		"example_state": "CA",
+		"zip5": "94588",
+		"zip4": "2836",
+		"example_district": "15",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Eric Swalwell"
+	},
+	"S001195": {
+		"example_address": "35 Court Square",
+		"example_city": "West Plains",
+		"example_state": "MO",
+		"zip5": "65775",
+		"zip4": "3453",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jason Smith"
+	},
+	"T000193": {
+		"example_address": "509 U.S. 82",
+		"example_city": "Greenwood",
+		"example_state": "MS",
+		"zip5": "38930",
+		"zip4": "5030",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Bennie Thompson"
+	},
+	"T000238": {
+		"example_address": "4245 Kemp Boulevard",
+		"example_city": "Wichita Falls",
+		"example_state": "TX",
+		"zip5": "76308",
+		"zip4": "2829",
+		"example_district": "13",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mac Thornberry"
+	},
+	"M001196": {
+		"example_address": "17 Peabody Square",
+		"example_city": "Peabody",
+		"example_state": "MA",
+		"zip5": "01960",
+		"zip4": "5646",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Seth Moulton"
+	},
+	"B001298": {
+		"example_address": "11717 Burt Street",
+		"example_city": "Omaha",
+		"example_state": "NE",
+		"zip5": "68154",
+		"zip4": "1500",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Don Bacon"
+	},
+	"T000460": {
+		"example_address": "375 G Street",
+		"example_city": "Vallejo",
+		"example_state": "CA",
+		"zip5": "95403",
+		"zip4": "3013",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mike Thompson"
+	},
+	"T000463": {
+		"example_address": "120 West 3rd Street",
+		"example_city": "Dayton",
+		"example_state": "OH",
+		"zip5": "45402",
+		"zip4": "1819",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Michael Turner"
+	},
+	"T000465": {
+		"example_address": "33 Lowell Street",
+		"example_city": "Andover",
+		"example_state": "MA",
+		"zip5": "01840",
+		"zip4": "1641",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Niki Tsongas"
+	},
+	"T000467": {
+		"example_address": "127 West Spring Street",
+		"example_city": "Titusville",
+		"example_state": "PA",
+		"zip5": "16354",
+		"zip4": "1727",
+		"example_district": "5",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Glenn Thompson"
+	},
+	"T000468": {
+		"example_address": "2340 Paseo Del Prado",
+		"example_city": "Las Vegas",
+		"example_state": "NV",
+		"zip5": "89102",
+		"zip4": "4340",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Dina Titus"
+	},
+	"T000469": {
+		"example_address": "105 Jay Street",
+		"example_city": "Schenectady",
+		"example_state": "NY",
+		"zip5": "12305",
+		"zip4": "1905",
+		"example_district": "20",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Paul Tonko"
+	},
+	"T000470": {
+		"example_address": "503 North Main Street",
+		"example_city": "Pueblo",
+		"example_state": "CO",
+		"zip5": "81003",
+		"zip4": "3132",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Scott Tipton"
+	},
+	"T000472": {
+		"example_address": "3400 Central Avenue",
+		"example_city": "Riverside",
+		"example_state": "CA",
+		"zip5": "92506",
+		"zip4": "2163",
+		"example_district": "41",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Mark Takano"
+	},
+	"U000031": {
+		"example_address": "800 Ship Street",
+		"example_city": "St. Joseph",
+		"example_state": "MI",
+		"zip5": "49085",
+		"zip4": "2182",
+		"example_district": "6",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Fred Upton"
+	},
+	"V000081": {
+		"example_address": "16 Court Street",
+		"example_city": "Brooklyn",
+		"example_state": "NY",
+		"zip5": "11241",
+		"zip4": "1010",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Nydia Velazquez"
+	},
+	"V000108": {
+		"example_address": "100 East Michigan Boulevard",
+		"example_city": "Michigan City",
+		"example_state": "IN",
+		"zip5": "46360",
+		"zip4": "3271",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Peter Visclosky"
+	},
+	"R000606": {
+		"example_address": "412 Malcolm Drive",
+		"example_city": "Westminster",
+		"example_state": "MD",
+		"zip5": "21157",
+		"zip4": "6174",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jamie Raskin"
+	},
+	"V000129": {
+		"example_address": "2700 M Street",
+		"example_city": "Bakersfield",
+		"example_state": "CA",
+		"zip5": "93301",
+		"zip4": "2374",
+		"example_district": "21",
+		"type": "Rep",
+		"mark": "true",
+		"name": "David Valadao"
+	},
+	"V000130": {
+		"example_address": "333 F Street",
+		"example_city": "Chula Vista",
+		"example_state": "CA",
+		"zip5": "91910",
+		"zip4": "2624",
+		"example_district": "51",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Juan Vargas"
+	},
+	"V000131": {
+		"example_address": "1100 Circle Drive",
+		"example_city": "Fort Worth",
+		"example_state": "TX",
+		"zip5": "76119",
+		"zip4": "8111",
+		"example_district": "33",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Marc Veasey"
+	},
+	"V000132": {
+		"example_address": "1805 East Ruben M Torres Sr Boulevard",
+		"example_city": "Brownsville",
+		"example_state": "TX",
+		"zip5": "78521",
+		"zip4": "1115",
+		"example_district": "34",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Filemón Bartolomé Vela Jr."
+	},
+	"W000187": {
+		"example_address": "10124 Broadway",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90003",
+		"zip4": "4353",
+		"example_district": "43",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Maxine Waters"
+	},
+	"L000582": {
+		"example_address": "8436 West 3rd Street",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90048",
+		"zip4": "4183",
+		"example_district": "33",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ted Lieu"
+	},
+	"C001108": {
+		"example_address": "200 North Main Street",
+		"example_city": "Tompkinsville",
+		"example_state": "KY",
+		"zip5": "42167",
+		"zip4": "1548",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "James Comer"
+	},
+	"C001105": {
+		"example_address": "110 North Cameron Street",
+		"example_city": "Winchester",
+		"example_state": "VA",
+		"zip5": "22601",
+		"zip4": "4730",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Barbara Comstock"
+	},
+	"W000791": {
+		"example_address": "843 East Main Street",
+		"example_city": "Medford",
+		"example_state": "OR",
+		"zip5": "97504",
+		"zip4": "7137",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Greg Walden"
+	},
+	"W000795": {
+		"example_address": "PO Box 2381 ",
+		"example_city": "West Columbia",
+		"example_state": "SC",
+		"zip5": "29801",
+		"zip4": "0009",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Joe Wilson"
+	},
+	"F000465": {
+		"example_address": "1601 Highway 34",
+		"example_city": "Newnan",
+		"example_state": "GA",
+		"zip5": "30265",
+		"zip4": "1325",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "A. Drew Ferguson IV"
+	},
+	"W000797": {
+		"example_address": "9293 Harding Avenue",
+		"example_city": "Surfside",
+		"example_state": "FL",
+		"zip5": "33154",
+		"zip4": "3009",
+		"example_district": "23",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Debbie Wasserman Schultz"
+	},
+	"W000798": {
+		"example_address": "23 East Front Street",
+		"example_city": "Monroe",
+		"example_state": "MI",
+		"zip5": "48161",
+		"zip4": "2256",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Tim Walberg"
+	},
+	"W000799": {
+		"example_address": "1134 7th Street Northwest",
+		"example_city": "Rochester",
+		"example_state": "MN",
+		"zip5": "55901",
+		"zip4": "1732",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Timothy Walz"
+	},
+	"W000800": {
+		"example_address": "32 Main Street",
+		"example_city": "Burlington",
+		"example_state": "VT",
+		"zip5": "05401",
+		"zip4": "4072",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Peter Welch"
+	},
+	"W000804": {
+		"example_address": "4904 George Washington Memorial Highway",
+		"example_city": "Yorktown",
+		"example_state": "VA",
+		"zip5": "23692",
+		"zip4": "2769",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Robert Wittman"
+	},
+	"D000627": {
+		"example_address": "300 West Plant Street",
+		"example_city": "Winter Garden",
+		"example_state": "FL",
+		"zip5": "34787",
+		"zip4": "3009",
+		"example_district": "10",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Val Butler Demings"
+	},
+	"W000808": {
+		"example_address": "10100 Pines Boulevard",
+		"example_city": "Pembroke Pines",
+		"example_state": "FL",
+		"zip5": "33025",
+		"zip4": "6577",
+		"example_district": "24",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Frederica Wilson"
+	},
+	"W000809": {
+		"example_address": "3333 South Pinnacle Hills Parkway",
+		"example_city": "Rogers",
+		"example_state": "AR",
+		"zip5": "72758",
+		"zip4": "8979",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Steve Womack"
+	},
+	"W000810": {
+		"example_address": "75 Langley Drive",
+		"example_city": "Lawrenceville",
+		"example_state": "GA",
+		"zip5": "30046",
+		"zip4": "6935",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Rob Woodall"
+	},
+	"W000812": {
+		"example_address": "8764 Manchester Road",
+		"example_city": "Brentwood",
+		"example_state": "MO",
+		"zip5": "63144",
+		"zip4": "2735",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ann Wagner"
+	},
+	"W000813": {
+		"example_address": "207 East Colfax Avenue",
+		"example_city": "South Bend",
+		"example_state": "IN",
+		"zip5": "46601",
+		"zip4": "1606",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Jackie Walorski"
+	},
+	"W000814": {
+		"example_address": "122 West Way Street",
+		"example_city": "Lake Jackson",
+		"example_state": "TX",
+		"zip5": "77566",
+		"zip4": "5245",
+		"example_district": "14",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Randy Weber"
+	},
+	"W000815": {
+		"example_address": "602 Chillicothe Street",
+		"example_city": "Portsmouth",
+		"example_state": "OH",
+		"zip5": "45662",
+		"zip4": "4262",
+		"example_district": "2",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Brad Wenstrup"
+	},
+	"W000816": {
+		"example_address": "115 South Main Street",
+		"example_city": "Cleburne",
+		"example_state": "TX",
+		"zip5": "76033",
+		"zip4": "5501",
+		"example_district": "25",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Roger Williams"
+	},
+	"Y000033": {
+		"example_address": "540 Water Street",
+		"example_city": "Ketchikan",
+		"example_state": "AK",
+		"zip5": "99901",
+		"zip4": "6378",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Don Young"
+	},
+	"Y000062": {
+		"example_address": "7219 Dixie Highway",
+		"example_city": "Louisville",
+		"example_state": "KY",
+		"zip5": "40258",
+		"zip4": "3756",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "John Yarmuth"
+	},
+	"Y000063": {
+		"example_address": "500 State Avenue",
+		"example_city": "Kansas City",
+		"example_state": "KS",
+		"zip5": "66101",
+		"zip4": "2409",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Kevin Yoder"
+	},
+	"H001074": {
+		"example_address": "Quartermaster Court",
+		"example_city": "Jeffersonville",
+		"example_state": "IN",
+		"zip5": "47130",
+		"zip4": "3669",
+		"example_district": "9",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Trey Hollingsworth"
+	},
+	"Y000065": {
+		"example_address": "1726 Kingsley Avenue",
+		"example_city": "Orange Park",
+		"example_state": "FL",
+		"zip5": "32073",
+		"zip4": "4411",
+		"example_district": "3",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Ted Yoho"
+	},
+	"A000360": {
+		"example_address": "900 Georgia Avenue",
+		"example_city": "Chattanooga",
+		"example_state": "TN",
+		"zip5": "37402",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Lamar Alexander"
+	},
+	"H001076": {
+		"example_address": "1200 Elm Street",
+		"example_city": "Manchester",
+		"example_state": "NH",
+		"zip5": "03101",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Margaret Wood Hassan"
+	},
+	"B000575": {
+		"example_address": "911 Main Street",
+		"example_city": "Kansas City",
+		"example_state": "MO",
+		"zip5": "64105",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Roy Blunt"
+	},
+	"H001075": {
+		"example_address": "4322 Wilshire Boulevard",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90010",
+		"zip4": "3794",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Kamala D. Harris"
+	},
+	"B000944": {
+		"example_address": "1301 East Ninth St.",
+		"example_city": "Cleveland",
+		"example_state": "OH",
+		"zip5": "44114",
+		"zip4": "2330",
+		"example_district": "",
+		"example_county": "Crawford",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Sherrod Brown"
+	},
+	"B001135": {
+		"example_address": "151 Patton Avenue",
+		"example_city": "Asheville",
+		"example_state": "NC",
+		"zip5": "28801",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Richard Burr"
+	},
+	"B001230": {
+		"example_address": "402 Graham Street",
+		"example_city": "Eau Claire",
+		"example_state": "WI",
+		"zip5": "54701",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Tammy Baldwin"
+	},
+	"B001236": {
+		"example_address": "300 South Church St.",
+		"example_city": "Jonesboro",
+		"example_state": "AR",
+		"zip5": "72401",
+		"zip4": "1726",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Boozman"
+	},
+	"B001261": {
+		"example_address": "100 East B Street",
+		"example_city": "Casper",
+		"example_state": "WY",
+		"zip5": "82601",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Barrasso"
+	},
+	"S001198": {
+		"example_address": "510 L St",
+		"example_city": "Anchorage",
+		"example_state": "AK",
+		"zip5": "99501",
+		"zip4": "6378",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Dan Sullivan"
+	},
+	"B001267": {
+		"example_address": "835 East 2nd Avenue",
+		"example_city": "Durango",
+		"example_state": "CO",
+		"zip5": "81301",
+		"zip4": "4051",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Michael Bennet"
+	},
+	"B001277": {
+		"example_address": "90 State House Square",
+		"example_city": "Hartford",
+		"example_state": "CT",
+		"zip5": "06103",
+		"zip4": "4051",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Richard Blumenthal"
+	},
+	"B001288": {
+		"example_address": "108 Lacey Road",
+		"example_city": "Lacey Township",
+		"example_state": "NJ",
+		"zip5": "08759",
+		"zip4": "1331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Cory Booker"
+	},
+	"C000127": {
+		"example_address": "2930 Wetmore Ave.",
+		"example_city": "Everett",
+		"example_state": "WA",
+		"zip5": "98201",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Maria Cantwell"
+	},
+	"C000141": {
+		"example_address": "100 S. Charles Street",
+		"example_city": "Baltimore",
+		"example_state": "MD",
+		"zip5": "21201",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Benjamin Cardin"
+	},
+	"C000174": {
+		"example_address": "301 North Walnut Street",
+		"example_city": "Wilmington",
+		"example_state": "DE",
+		"zip5": "19801",
+		"zip4": "4051",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Thomas Carper"
+	},
+	"P000612": {
+		"example_address": "100 Galleria Parkway",
+		"example_city": "Atlanta",
+		"example_state": "GA",
+		"zip5": "30339",
+		"zip4": "1906",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "David Perdue"
+	},
+	"Y000064": {
+		"example_address": "10 West Market Street",
+		"example_city": "Indianapolis",
+		"example_state": "IN",
+		"zip5": "46204",
+		"zip4": "5476",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Todd Young"
+	},
+	"L000575": {
+		"example_address": "1800 South Baltimore",
+		"example_city": "Tulsa",
+		"example_state": "OK",
+		"zip5": "74119",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "James Lankford"
+	},
+	"C000880": {
+		"example_address": "251 E. Front St.",
+		"example_city": "Boise",
+		"example_state": "ID",
+		"zip5": "83702",
+		"zip4": "1890",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Michael Crapo"
+	},
+	"C001035": {
+		"example_address": "25 Sweden Street",
+		"example_city": "Caribou",
+		"example_state": "ME",
+		"zip5": "04736",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Susan Collins"
+	},
+	"C001056": {
+		"example_address": "5300 Memorial Drive",
+		"example_city": "Houston",
+		"example_state": "TX",
+		"zip5": "77007",
+		"zip4": "1115",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Cornyn"
+	},
+	"C001070": {
+		"example_address": "22 S. Third Street",
+		"example_city": "Harrisburg",
+		"example_state": "PA",
+		"zip5": "17101",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Robert Casey"
+	},
+	"C001071": {
+		"example_address": "900 Georgia Avenue",
+		"example_city": "Chattanooga",
+		"example_state": "TN",
+		"zip5": "37402",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Bob Corker"
+	},
+	"C001088": {
+		"example_address": "301 North Walnut Street",
+		"example_city": "Wilmington",
+		"example_state": "DE",
+		"zip5": "19801",
+		"zip4": "4051",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Chris Coons"
+	},
+	"C001098": {
+		"example_address": "5300 Memorial Drive",
+		"example_city": "Houston",
+		"example_state": "TX",
+		"zip5": "77007",
+		"zip4": "1115",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Ted Cruz"
+	},
+	"D000563": {
+		"example_address": "230 S Dearborn St.",
+		"example_city": "Chicago",
+		"example_state": "IL",
+		"zip5": "60604",
+		"zip4": "3656",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Richard Durbin"
+	},
+	"D000607": {
+		"example_address": "10 West Market Street",
+		"example_city": "Indianapolis",
+		"example_state": "IN",
+		"zip5": "46204",
+		"zip4": "5476",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Joe Donnelly"
+	},
+	"E000285": {
+		"example_address": "100 East B Street",
+		"example_city": "Casper",
+		"example_state": "WY",
+		"zip5": "82601",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Michael Enzi"
+	},
+	"F000062": {
+		"example_address": "4322 Wilshire Boulevard",
+		"example_city": "Los Angeles",
+		"example_state": "CA",
+		"zip5": "90010",
+		"zip4": "3794",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Dianne Feinstein"
+	},
+	"F000444": {
+		"example_address": "2200 East Camelback Road",
+		"example_city": "Phoenix",
+		"example_state": "AZ",
+		"zip5": "85016",
+		"zip4": "1726",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Jeff Flake"
+	},
+	"F000463": {
+		"example_address": "20 West 23rd Street",
+		"example_city": "Kearney",
+		"example_state": "NE",
+		"zip5": "68847",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Deb Fischer"
+	},
+	"G000359": {
+		"example_address": "508 Hampton Street",
+		"example_city": "Columbia",
+		"example_state": "SC",
+		"zip5": "29201",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Lindsey Graham"
+	},
+	"G000386": {
+		"example_address": "210 Walnut Street",
+		"example_city": "Des Moines",
+		"example_state": "IA",
+		"zip5": "50309",
+		"zip4": "1890",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Charles Grassley"
+	},
+	"G000555": {
+		"example_address": "1231 Lafayette Avenue",
+		"example_city": "Bronx",
+		"example_state": "NY",
+		"zip5": "10474",
+		"zip4": "5331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Kirsten Gillibrand"
+	},
+	"E000295": {
+		"example_address": "210 Walnut Street",
+		"example_city": "Des Moines",
+		"example_state": "IA",
+		"zip5": "50309",
+		"zip4": "1890",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Joni Ernst"
+	},
+	"H000338": {
+		"example_address": "125 South State Street",
+		"example_city": "Salt Lake City",
+		"example_state": "UT",
+		"zip5": "84138",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Orrin Hatch"
+	},
+	"H001041": {
+		"example_address": "8930 West Sunset Road",
+		"example_city": "Las Vegas",
+		"example_state": "NV",
+		"zip5": "89148",
+		"zip4": "1331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Dean Heller"
+	},
+	"H001042": {
+		"example_address": "300 Ala Moana Blvd.",
+		"example_city": "Honolulu",
+		"example_state": "HI",
+		"zip5": "96850",
+		"zip4": "1890",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Mazie Hirono"
+	},
+	"H001046": {
+		"example_address": "505 South Main St.",
+		"example_city": "Las Cruces",
+		"example_state": "NM",
+		"zip5": "88001",
+		"zip4": "1331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Martin Heinrich"
+	},
+	"T000476": {
+		"example_address": "151 Patton Avenue",
+		"example_city": "Asheville",
+		"example_state": "NC",
+		"zip5": "28801",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Thom Tillis"
+	},
+	"H001061": {
+		"example_address": "102 North Fourth Street",
+		"example_city": "Grand Forks",
+		"example_state": "ND",
+		"zip5": "58203",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Hoeven"
+	},
+	"H001069": {
+		"example_address": "102 North Fourth Street",
+		"example_city": "Grand Forks",
+		"example_state": "ND",
+		"zip5": "58203",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Heidi Heitkamp"
+	},
+	"I000024": {
+		"example_address": "1800 South Baltimore",
+		"example_city": "Tulsa",
+		"example_state": "OK",
+		"zip5": "74119",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "James Inhofe"
+	},
+	"I000055": {
+		"example_address": "100 Galleria Parkway",
+		"example_city": "Atlanta",
+		"example_state": "GA",
+		"zip5": "30339",
+		"zip4": "1906",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Isakson"
+	},
+	"R000605": {
+		"example_address": "320 S. First St.",
+		"example_city": "Aberdeen",
+		"example_state": "SD",
+		"zip5": "57401",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Mike Rounds"
+	},
+	"S001197": {
+		"example_address": "20 West 23rd Street",
+		"example_city": "Kearney",
+		"example_state": "NE",
+		"zip5": "68847",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Ben Sasse"
+	},
+	"J000293": {
+		"example_address": "402 Graham Street",
+		"example_city": "Eau Claire",
+		"example_state": "WI",
+		"zip5": "54701",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Ron Johnson"
+	},
+	"D000622": {
+		"example_address": "230 S Dearborn St.",
+		"example_city": "Chicago",
+		"example_state": "IL",
+		"zip5": "60604",
+		"zip4": "3656",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Tammy Duckworth"
+	},
+	"K000367": {
+		"example_address": "60 East Plato Blvd",
+		"example_city": "Saint Paul",
+		"example_state": "MN",
+		"zip5": "55107",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Amy Klobuchar"
+	},
+	"K000383": {
+		"example_address": "25 Sweden Street",
+		"example_city": "Caribou",
+		"example_state": "ME",
+		"zip5": "04736",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Angus King"
+	},
+	"K000384": {
+		"example_address": "756 Park Avenue, N.W.",
+		"example_city": "Norton",
+		"example_state": "VA",
+		"zip5": "24273",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Timothy Kaine"
+	},
+	"L000174": {
+		"example_address": "199 Main Street",
+		"example_city": "Burlington",
+		"example_state": "VT",
+		"zip5": "05401",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Patrick Leahy"
+	},
+	"P000595": {
+		"example_address": "477 Michigan Avenue",
+		"example_city": "Detroit",
+		"example_state": "MI",
+		"zip5": "48226",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Gary Peters"
+	},
+	"C001075": {
+		"example_address": "300 Fannin St.",
+		"example_city": "Shreveport",
+		"example_state": "LA",
+		"zip5": "71101",
+		"zip4": "3501",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Bill Cassidy"
+	},
+	"L000577": {
+		"example_address": "125 South State Street",
+		"example_city": "Salt Lake City",
+		"example_state": "UT",
+		"zip5": "84138",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Mike Lee"
+	},
+	"M000133": {
+		"example_address": "222 Milliken Boulevard",
+		"example_city": "Fall River",
+		"example_state": "MA",
+		"zip5": "02721",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Edward Markey"
+	},
+	"M000303": {
+		"example_address": "2200 East Camelback Road",
+		"example_city": "Phoenix",
+		"example_state": "AZ",
+		"zip5": "85016",
+		"zip4": "1726",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John McCain"
+	},
+	"M000355": {
+		"example_address": "1029 State Street",
+		"example_city": "Bowling Green",
+		"example_state": "KY",
+		"zip5": "42101",
+		"zip4": "5476",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Mitch McConnell"
+	},
+	"M000639": {
+		"example_address": "108 Lacey Road",
+		"example_city": "Lacey Township",
+		"example_state": "NJ",
+		"zip5": "08759",
+		"zip4": "1331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Robert Menendez"
+	},
+	"V000128": {
+		"example_address": "100 S. Charles Street",
+		"example_city": "Baltimore",
+		"example_state": "MD",
+		"zip5": "21201",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Chris Van Hollen"
+	},
+	"M000934": {
+		"example_address": "306 N. Broadway",
+		"example_city": "Pittsburg",
+		"example_state": "KS",
+		"zip5": "66762",
+		"zip4": "5476",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Jerry Moran"
+	},
+	"M001111": {
+		"example_address": "2930 Wetmore Ave.",
+		"example_city": "Everett",
+		"example_state": "WA",
+		"zip5": "98201",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Patty Murray"
+	},
+	"M001153": {
+		"example_address": "510 L St",
+		"example_city": "Anchorage",
+		"example_state": "AK",
+		"zip5": "99501",
+		"zip4": "6378",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Lisa Murkowski"
+	},
+	"M001169": {
+		"example_address": "90 State House Square",
+		"example_city": "Hartford",
+		"example_state": "CT",
+		"zip5": "06103",
+		"zip4": "4051",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Christopher Murphy"
+	},
+	"M001170": {
+		"example_address": "911 Main Street",
+		"example_city": "Kansas City",
+		"example_state": "MO",
+		"zip5": "64105",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Claire McCaskill"
+	},
+	"M001176": {
+		"example_address": "131 NW Hawthorne Ave.",
+		"example_city": "Bend",
+		"example_state": "OR",
+		"zip5": "97701",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Jeff Merkley"
+	},
+	"M001183": {
+		"example_address": "900 Pennsylvania Avenue",
+		"example_city": "Charleston",
+		"example_state": "WV",
+		"zip5": "25302",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Joe Manchin"
+	},
+	"N000032": {
+		"example_address": "3416 South University Drive",
+		"example_city": "Fort Lauderdale",
+		"example_state": "FL",
+		"zip5": "33328",
+		"zip4": "8600",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Bill Nelson"
+	},
+	"P000449": {
+		"example_address": "1301 East Ninth St.",
+		"example_city": "Cleveland",
+		"example_state": "OH",
+		"zip5": "44114",
+		"zip4": "2330",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Robert Portman"
+	},
+	"C001095": {
+		"example_address": "300 South Church St.",
+		"example_city": "Jonesboro",
+		"example_state": "AR",
+		"zip5": "72401",
+		"zip4": "1726",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Tom Cotton"
+	},
+	"P000603": {
+		"example_address": "1029 State Street",
+		"example_city": "Bowling Green",
+		"example_state": "KY",
+		"zip5": "42101",
+		"zip4": "5476",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Rand Paul"
+	},
+	"R000122": {
+		"example_address": "1000 Chapel View Boulevard",
+		"example_city": "Cranston",
+		"example_state": "RI",
+		"zip5": "02920",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Reed"
+	},
+	"C001113": {
+		"example_address": "8930 West Sunset Road",
+		"example_city": "Las Vegas",
+		"example_state": "NV",
+		"zip5": "89148",
+		"zip4": "1331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Catherine Cortez Masto"
+	},
+	"R000307": {
+		"example_address": "306 N. Broadway",
+		"example_city": "Pittsburg",
+		"example_state": "KS",
+		"zip5": "66762",
+		"zip4": "5476",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Pat Roberts"
+	},
+	"C001047": {
+		"example_address": "900 Pennsylvania Avenue",
+		"example_city": "Charleston",
+		"example_state": "WV",
+		"zip5": "25302",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Shelley Moore Capito"
+	},
+	"R000584": {
+		"example_address": "251 E. Front St.",
+		"example_city": "Boise",
+		"example_state": "ID",
+		"zip5": "83702",
+		"zip4": "1890",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "James Risch"
+	},
+	"R000595": {
+		"example_address": "3416 South University Drive",
+		"example_city": "Fort Lauderdale",
+		"example_state": "FL",
+		"zip5": "33328",
+		"zip4": "8600",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Marco Rubio"
+	},
+	"S000033": {
+		"example_address": "199 Main Street",
+		"example_city": "Burlington",
+		"example_state": "VT",
+		"zip5": "05401",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Bernard Sanders"
+	},
+	"S000148": {
+		"example_address": "1231 Lafayette Avenue",
+		"example_city": "Bronx",
+		"example_state": "NY",
+		"zip5": "10474",
+		"zip4": "5331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Charles Schumer"
+	},
+	"S000320": {
+		"example_address": "1800 5th Avenue North",
+		"example_city": "Birmingham",
+		"example_state": "AL",
+		"zip5": "35203",
+		"zip4": "1726",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Richard C. Shelby"
+	},
+	"S000770": {
+		"example_address": "477 Michigan Avenue",
+		"example_city": "Detroit",
+		"example_state": "MI",
+		"zip5": "48226",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Debbie Stabenow"
+	},
+	"S001181": {
+		"example_address": "1200 Elm Street",
+		"example_city": "Manchester",
+		"example_state": "NH",
+		"zip5": "03101",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Jeanne Shaheen"
+	},
+	"S001184": {
+		"example_address": "508 Hampton Street",
+		"example_city": "Columbia",
+		"example_state": "SC",
+		"zip5": "29201",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Tim Scott"
+	},
+	"S001194": {
+		"example_address": "300 Ala Moana Blvd.",
+		"example_city": "Honolulu",
+		"example_state": "HI",
+		"zip5": "96850",
+		"zip4": "1890",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Brian Schatz"
+	},
+	"T000250": {
+		"example_address": "320 S. First St.",
+		"example_city": "Aberdeen",
+		"example_state": "SD",
+		"zip5": "57401",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Thune"
+	},
+	"T000461": {
+		"example_address": "22 S. Third Street",
+		"example_city": "Harrisburg",
+		"example_state": "PA",
+		"zip5": "17101",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Patrick Toomey"
+	},
+	"T000464": {
+		"example_address": "2900 4th Ave N",
+		"example_city": "Billings",
+		"example_state": "MT",
+		"zip5": "59101",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Jon Tester"
+	},
+	"G000562": {
+		"example_address": "835 East 2nd Avenue",
+		"example_city": "Durango",
+		"example_state": "CO",
+		"zip5": "81301",
+		"zip4": "4051",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Cory Gardner"
+	},
+	"U000039": {
+		"example_address": "505 South Main St.",
+		"example_city": "Las Cruces",
+		"example_state": "NM",
+		"zip5": "88001",
+		"zip4": "1331",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Tom Udall"
+	},
+	"K000393": {
+		"example_address": "300 Fannin St.",
+		"example_city": "Shreveport",
+		"example_state": "LA",
+		"zip5": "71101",
+		"zip4": "3501",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "John Kennedy"
+	},
+	"W000437": {
+		"example_address": "190 East Capitol Street",
+		"example_city": "Jackson",
+		"example_state": "MS",
+		"zip5": "39201",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Roger Wicker"
+	},
+	"W000779": {
+		"example_address": "131 NW Hawthorne Ave.",
+		"example_city": "Bend",
+		"example_state": "OR",
+		"zip5": "97701",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Ron Wyden"
+	},
+	"W000802": {
+		"example_address": "1000 Chapel View Boulevard",
+		"example_city": "Cranston",
+		"example_state": "RI",
+		"zip5": "02920",
+		"zip4": "2624",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Sheldon Whitehouse"
+	},
+	"W000805": {
+		"example_address": "756 Park Avenue, N.W.",
+		"example_city": "Norton",
+		"example_state": "VA",
+		"zip5": "24273",
+		"zip4": "4411",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Mark Warner"
+	},
+	"W000817": {
+		"example_address": "222 Milliken Boulevard",
+		"example_city": "Fall River",
+		"example_state": "MA",
+		"zip5": "02721",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Elizabeth Warren"
+	},
+	"D000618": {
+		"example_address": "2900 4th Ave N",
+		"example_city": "Billings",
+		"example_state": "MT",
+		"zip5": "59101",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+		"name": "Steve Daines"
+	},
+	"R000607": {
+		"example_address": "804 Nicholas Parkway East ",
+		"example_city": "Cape Coral",
+		"example_state": "FL",
+		"zip5": "33990",
+		"zip4": "2811",
+		"example_district": "19",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Francis Rooney"
+	},
+	"state_ca_sldl_44_state_rep_jacqui_irwin": {
+		"mark": "true",
+		"name": "Jacqui Irwin",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:44",
+		"state": "CA"
+	},
+	"state_ca_sldl_51_state_rep_jimmy_gomez": {
+		"mark": "true",
+		"name": "Jimmy Gomez",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:51",
+		"state": "CA"
+	},
+	"state_ca_sldl_73_state_rep_william_p_brough": {
+		"mark": "true",
+		"name": "William P. Brough",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:73",
+		"state": "CA"
+	},
+	"state_ca_sldl_3_state_rep_james_gallagher": {
+		"mark": "true",
+		"name": "James Gallagher",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:3",
+		"state": "CA"
+	},
+	"state_ca_sldl_74_state_rep_matthew_harper": {
+		"mark": "true",
+		"name": "Matthew Harper",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:74",
+		"state": "CA"
+	},
+	"SWe00310": {
+		"mark": "true",
+		"name": "Matt Mead",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:wy",
+		"state": "WY"
+	},
+	"SWe00304": {
+		"mark": "true",
+		"name": "Jim Justice",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:wv",
+		"state": "WV"
+	},
+	"SWe00289": {
+		"mark": "true",
+		"name": "Jay Inslee",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:wa",
+		"state": "WA"
+	},
+	"SWe00283": {
+		"mark": "true",
+		"name": "Phil Scott",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:vt",
+		"state": "VT"
+	},
+	"state_tx_gov_greg_abbott": {
+		"mark": "true",
+		"name": "Greg Abbott",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:tx",
+		"state": "TX"
+	},
+	"SWe00255": {
+		"mark": "true",
+		"name": "Dennis Daugaard",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:sd",
+		"state": "SD"
+	},
+	"SLe005849": {
+		"mark": "true",
+		"name": "Anne J. Thayer",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:9",
+		"state": "SC"
+	},
+	"SLe005836": {
+		"mark": "true",
+		"name": "Beth E. Bernstein",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:78",
+		"state": "SC"
+	},
+	"SLe005845": {
+		"mark": "true",
+		"name": "Bill Taylor",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:86",
+		"state": "SC"
+	},
+	"SLe005858": {
+		"mark": "true",
+		"name": "Christopher J. \"Chris\" Murphy",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:98",
+		"state": "SC"
+	},
+	"SLe005831": {
+		"mark": "true",
+		"name": "Christopher R. \"Chris\" Hart",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:73",
+		"state": "SC"
+	},
+	"SLe005748": {
+		"mark": "true",
+		"name": "Craig A. Gagnon",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:11",
+		"state": "SC"
+	},
+	"SLe005773": {
+		"mark": "true",
+		"name": "Daniel P. \"Dan\" Hamilton",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:20",
+		"state": "SC"
+	},
+	"SLe005840": {
+		"mark": "true",
+		"name": "Don L. Wells",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:81",
+		"state": "SC"
+	},
+	"SLe005738": {
+		"mark": "true",
+		"name": "Sylleste H. Davis",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:100",
+		"state": "SC"
+	},
+	"SLe005787": {
+		"mark": "true",
+		"name": "Edward R. \"Eddie\" Tallon, Sr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:33",
+		"state": "SC"
+	},
+	"SLe005798": {
+		"mark": "true",
+		"name": "F. Gregory \"Greg\" Delleney, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:43",
+		"state": "SC"
+	},
+	"SLe005751": {
+		"mark": "true",
+		"name": "F. Michael \"Mike\" Sottile",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:112",
+		"state": "SC"
+	},
+	"SLe005824": {
+		"mark": "true",
+		"name": "G. Murrell Smith, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:67",
+		"state": "SC"
+	},
+	"SLe005823": {
+		"mark": "true",
+		"name": "Gilda Cobb-Hunter",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:66",
+		"state": "SC"
+	},
+	"SLe005785": {
+		"mark": "true",
+		"name": "Harold Mitchell, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:31",
+		"state": "SC"
+	},
+	"SLe005749": {
+		"mark": "true",
+		"name": "Harry B. \"Chip\" Limehouse, III",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:110",
+		"state": "SC"
+	},
+	"SLe005825": {
+		"mark": "true",
+		"name": "Heather Ammons Crawford",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:68",
+		"state": "SC"
+	},
+	"SLe005786": {
+		"mark": "true",
+		"name": "J. Derham Cole, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:32",
+		"state": "SC"
+	},
+	"SLe005813": {
+		"mark": "true",
+		"name": "J. Wayne George",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:57",
+		"state": "SC"
+	},
+	"SLe005811": {
+		"mark": "true",
+		"name": "Jackie E. \"Coach\" Hayes",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:55",
+		"state": "SC"
+	},
+	"SLe005830": {
+		"mark": "true",
+		"name": "James E. Smith, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:72",
+		"state": "SC"
+	},
+	"SLe005822": {
+		"mark": "true",
+		"name": "James H. \"Jay\" Lucas",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:65",
+		"state": "SC"
+	},
+	"SLe005769": {
+		"mark": "true",
+		"name": "James Mikell \"Mike\" Burns",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:17",
+		"state": "SC"
+	},
+	"SLe005855": {
+		"mark": "true",
+		"name": "Jerry N. Govan, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:95",
+		"state": "SC"
+	},
+	"SLe005839": {
+		"mark": "true",
+		"name": "Ed.D. Jimmy C. Bales",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:80",
+		"state": "SC"
+	},
+	"SLe005835": {
+		"mark": "true",
+		"name": "Joseph A. \"Joe\" McEachern",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:77",
+		"state": "SC"
+	},
+	"SLe005828": {
+		"mark": "true",
+		"name": "Joseph H. \"Joe\" Neal",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:70",
+		"state": "SC"
+	},
+	"SLe005737": {
+		"mark": "true",
+		"name": "Joshua A. Putnam",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:10",
+		"state": "SC"
+	},
+	"SLe005848": {
+		"mark": "true",
+		"name": "Kenneth A. \"Kenny\" Bingham",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:89",
+		"state": "SC"
+	},
+	"SLe005743": {
+		"mark": "true",
+		"name": "Kevin Hardee",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:105",
+		"state": "SC"
+	},
+	"SLe005833": {
+		"mark": "true",
+		"name": "Kirkman Finlay, III",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:75",
+		"state": "SC"
+	},
+	"SLe005778": {
+		"mark": "true",
+		"name": "Leola C. Robinson-Simpson",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:25",
+		"state": "SC"
+	},
+	"SLe005758": {
+		"mark": "true",
+		"name": "Leonidas E. \"Leon\" Stavrinakis",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:119",
+		"state": "SC"
+	},
+	"SLe005799": {
+		"mark": "true",
+		"name": "Mandy Powers Norrell",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:44",
+		"state": "SC"
+	},
+	"SLe005796": {
+		"mark": "true",
+		"name": "MaryGail K. Douglas",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:41",
+		"state": "SC"
+	},
+	"SLe005847": {
+		"mark": "true",
+		"name": "McLain R. \"Mac\" Toole",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:88",
+		"state": "SC"
+	},
+	"SLe005790": {
+		"mark": "true",
+		"name": "Merita A. \"Rita\" Allison",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:36",
+		"state": "SC"
+	},
+	"SLe005837": {
+		"mark": "true",
+		"name": "Mia S. McLeod",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:79",
+		"state": "SC"
+	},
+	"SLe005797": {
+		"mark": "true",
+		"name": "Michael A. \"Mike\" Anthony",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:42",
+		"state": "SC"
+	},
+	"SLe005827": {
+		"mark": "true",
+		"name": "Michael W. \"Mike\" Gambrell",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:7",
+		"state": "SC"
+	},
+	"SLe005812": {
+		"mark": "true",
+		"name": "Mike Ryhal",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:56",
+		"state": "SC"
+	},
+	"SLe005792": {
+		"mark": "true",
+		"name": "Norman D. \"Doug\" Brannon",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:38",
+		"state": "SC"
+	},
+	"SLe005788": {
+		"mark": "true",
+		"name": "P. Michael \"Mike\" Forrester",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:34",
+		"state": "SC"
+	},
+	"SLe005754": {
+		"mark": "true",
+		"name": "Peter M. McCoy, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:115",
+		"state": "SC"
+	},
+	"SLe005765": {
+		"mark": "true",
+		"name": "R. Shannon Riley",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:13",
+		"state": "SC"
+	},
+	"SLe005793": {
+		"mark": "true",
+		"name": "Ralph Shealy Kennedy, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:39",
+		"state": "SC"
+	},
+	"SLe005803": {
+		"mark": "true",
+		"name": "Ralph W. Norman",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:48",
+		"state": "SC"
+	},
+	"SLe005779": {
+		"mark": "true",
+		"name": "Raye Felder",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:26",
+		"state": "SC"
+	},
+	"SLe005826": {
+		"mark": "true",
+		"name": "Rick Quinn",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:69",
+		"state": "SC"
+	},
+	"SLe005821": {
+		"mark": "true",
+		"name": "Robert L. Ridgeway, III",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:64",
+		"state": "SC"
+	},
+	"SLe005853": {
+		"mark": "true",
+		"name": "Russell L. Ott",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:93",
+		"state": "SC"
+	},
+	"SLe005767": {
+		"mark": "true",
+		"name": "Samuel Rivers, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:15",
+		"state": "SC"
+	},
+	"SLe005746": {
+		"mark": "true",
+		"name": "Stephen L. Goldfinch, Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:108",
+		"state": "SC"
+	},
+	"SLe005846": {
+		"mark": "true",
+		"name": "Todd K. Atwater",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:87",
+		"state": "SC"
+	},
+	"SLe005784": {
+		"mark": "true",
+		"name": "V. Stephen \"Steve\" Moss",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:30",
+		"state": "SC"
+	},
+	"SLe005841": {
+		"mark": "true",
+		"name": "William \"Bill\" Clyburn",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:82",
+		"state": "SC"
+	},
+	"SLe005756": {
+		"mark": "true",
+		"name": "William E. \"Bill\" Crosby",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:117",
+		"state": "SC"
+	},
+	"SLe005772": {
+		"mark": "true",
+		"name": "William E. \"Bill\" Sandifer, III",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:2",
+		"state": "SC"
+	},
+	"SLe005757": {
+		"mark": "true",
+		"name": "William G. \"Bill\" Herbkersman",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:118",
+		"state": "SC"
+	},
+	"SLe005762": {
+		"mark": "true",
+		"name": "William K. \"Bill\" Bowers",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:122",
+		"state": "SC"
+	},
+	"SLe005789": {
+		"mark": "true",
+		"name": "William M. \"Bill\" Chumley",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:35",
+		"state": "SC"
+	},
+	"SLe005842": {
+		"mark": "true",
+		"name": "William M. \"Bill\" Hixon",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:83",
+		"state": "SC"
+	},
+	"SLe005736": {
+		"mark": "true",
+		"name": "William R. \"Bill\" Whitmire",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:1",
+		"state": "SC"
+	},
+	"SLe005760": {
+		"mark": "true",
+		"name": "Wm. Weston J. Newton",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:sc/sldl:120",
+		"state": "SC"
+	},
+	"SWe00246": {
+		"mark": "true",
+		"name": "Nikki Haley",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:sc",
+		"state": "SC"
+	},
+	"SLe005408": {
+		"mark": "true",
+		"name": "Daniel T. McNeill",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:pa/sldl:133",
+		"state": "PA"
+	},
+	"SLe005451": {
+		"mark": "true",
+		"name": "Kevin J. Boyle",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:pa/sldl:172",
+		"state": "PA"
+	},
+	"SLe005568": {
+		"mark": "true",
+		"name": "Kevin J. Schreiber",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:pa/sldl:95",
+		"state": "PA"
+	},
+	"SLe005407": {
+		"mark": "true",
+		"name": "Michael H. Schlossberg",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:pa/sldl:132",
+		"state": "PA"
+	},
+	"SLe005496": {
+		"mark": "true",
+		"name": "Ryan A. Bizzarro",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:pa/sldl:3",
+		"state": "PA"
+	},
+	"SLe005431": {
+		"mark": "true",
+		"name": "Stephen McCarter",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:pa/sldl:154",
+		"state": "PA"
+	},
+	"state_or_gov_kate_brown": {
+		"mark": "true",
+		"name": "Kate Brown",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:or",
+		"state": "OR"
+	},
+	"SWe00213": {
+		"mark": "true",
+		"name": "John R. Kasich",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:oh",
+		"state": "OH"
+	},
+	"SWe00209": {
+		"mark": "true",
+		"name": "Andrew M. Cuomo",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ny",
+		"state": "NY"
+	},
+	"SWe00203": {
+		"mark": "true",
+		"name": "Brian Sandoval",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:nv",
+		"state": "NV"
+	},
+	"SWe00196": {
+		"mark": "true",
+		"name": "Susana Martinez",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:nm",
+		"state": "NM"
+	},
+	"SWe00194": {
+		"mark": "true",
+		"name": "Phil Murphy",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:nj",
+		"state": "NJ"
+	},
+	"SWe00188": {
+		"mark": "true",
+		"name": "Chris Sununu",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:nh",
+		"state": "NH"
+	},
+	"state_ne_gov_pete_ricketts": {
+		"mark": "true",
+		"name": "Pete Ricketts",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ne",
+		"state": "NE"
+	},
+	"SWe00159": {
+		"mark": "true",
+		"name": "Roy Cooper",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:nc",
+		"state": "NC"
+	},
+	"state_mo_sldu_12_state_sen_dan_hegeman": {
+		"mark": "true",
+		"name": "Dan Hegeman",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:12",
+		"state": "MO"
+	},
+	"SLe003495": {
+		"mark": "true",
+		"name": "Brian Munzlinger",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:18",
+		"state": "MO"
+	},
+	"SLe003498": {
+		"mark": "true",
+		"name": "David Pearce",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:21",
+		"state": "MO"
+	},
+	"SLe003506": {
+		"mark": "true",
+		"name": "David Sater",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:29",
+		"state": "MO"
+	},
+	"SLe003502": {
+		"mark": "true",
+		"name": "Doug Libla",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:25",
+		"state": "MO"
+	},
+	"SLe003508": {
+		"mark": "true",
+		"name": "Ed Emery",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:31",
+		"state": "MO"
+	},
+	"SLe003480": {
+		"mark": "true",
+		"name": "Gary Romine",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:3",
+		"state": "MO"
+	},
+	"SLe003490": {
+		"mark": "true",
+		"name": "Gina Walsh",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:13",
+		"state": "MO"
+	},
+	"SLe003497": {
+		"mark": "true",
+		"name": "Jay Wasson",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:20",
+		"state": "MO"
+	},
+	"SLe003481": {
+		"mark": "true",
+		"name": "Joseph Keaveny",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:4",
+		"state": "MO"
+	},
+	"SLe003496": {
+		"mark": "true",
+		"name": "Kurt Schaefer",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:19",
+		"state": "MO"
+	},
+	"SLe003483": {
+		"mark": "true",
+		"name": "Mike Kehoe",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:6",
+		"state": "MO"
+	},
+	"SLe003511": {
+		"mark": "true",
+		"name": "Rob Schaaf",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:34",
+		"state": "MO"
+	},
+	"SLe003486": {
+		"mark": "true",
+		"name": "S. Kiki Curls",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mo/sldu:9",
+		"state": "MO"
+	},
+	"SWe00139": {
+		"mark": "true",
+		"name": "Eric Greitens",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:mo",
+		"state": "MO"
+	},
+	"SWe00134": {
+		"mark": "true",
+		"name": "Mark Dayton",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:mn",
+		"state": "MN"
+	},
+	"state_md_gov_larry_hogan": {
+		"mark": "true",
+		"name": "Larry Hogan",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:md",
+		"state": "MD"
+	},
+	"state_ma_gov_charlie_baker": {
+		"mark": "true",
+		"name": "Charlie Baker",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ma",
+		"state": "MA"
+	},
+	"SWe00107": {
+		"mark": "true",
+		"name": "Jon Bel Edwards",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:la",
+		"state": "LA"
+	},
+	"SLe002223": {
+		"mark": "true",
+		"name": "Reginald Thomas",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ky/sldu:13",
+		"state": "KY"
+	},
+	"SWe00094": {
+		"mark": "true",
+		"name": "Sam Brownback",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ks",
+		"state": "KS"
+	},
+	"SLe001721": {
+		"mark": "true",
+		"name": "Adam Brown",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:il/sldl:102",
+		"state": "IL"
+	},
+	"SLe001723": {
+		"mark": "true",
+		"name": "Chad Hays",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:il/sldl:104",
+		"state": "IL"
+	},
+	"SLe001760": {
+		"mark": "true",
+		"name": "Thomas Cullerton",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:il/sldu:23",
+		"state": "IL"
+	},
+	"state_il_gov_bruce_rauner": {
+		"mark": "true",
+		"name": "Bruce Rauner",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:il",
+		"state": "IL"
+	},
+	"SWe00074": {
+		"mark": "true",
+		"name": "C.L. \"Butch\" Otter",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:id",
+		"state": "ID"
+	},
+	"SWe00053": {
+		"mark": "true",
+		"name": "Rick Scott",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:fl",
+		"state": "FL"
+	},
+	"SLe000806": {
+		"mark": "true",
+		"name": "Gary A. Holder-Winfield",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ct/sldu:10",
+		"state": "CT"
+	},
+	"SWe00036": {
+		"mark": "true",
+		"name": "John Hickenlooper",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:co",
+		"state": "CO"
+	},
+	"SLe000446": {
+		"mark": "true",
+		"name": "Adam C. Gray",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:21",
+		"state": "CA"
+	},
+	"SLe000471": {
+		"mark": "true",
+		"name": "Adrin Nazarian",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:46",
+		"state": "CA"
+	},
+	"state_ca_sldl_66_state_rep_david_hadley": {
+		"mark": "true",
+		"name": "David Hadley",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:66",
+		"state": "CA"
+	},
+	"SLe000521": {
+		"mark": "true",
+		"name": "Andy Vidak",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:14",
+		"state": "CA"
+	},
+	"SLe000488": {
+		"mark": "true",
+		"name": "Anthony Rendon",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:63",
+		"state": "CA"
+	},
+	"SLe000545": {
+		"mark": "true",
+		"name": "Ben Hueso",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:40",
+		"state": "CA"
+	},
+	"SLe000431": {
+		"mark": "true",
+		"name": "Beth Gaines",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:6",
+		"state": "CA"
+	},
+	"SLe000522": {
+		"mark": "true",
+		"name": "Bill Monning",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:17",
+		"state": "CA"
+	},
+	"SLe000445": {
+		"mark": "true",
+		"name": "Bill Quirk",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:20",
+		"state": "CA"
+	},
+	"SLe000450": {
+		"mark": "true",
+		"name": "Bob Wieckowski",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:10",
+		"state": "CA"
+	},
+	"state_ca_sldl_70_state_rep_patrick_o_donnell": {
+		"mark": "true",
+		"name": "Patrick O'Donnell",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:70",
+		"state": "CA"
+	},
+	"SLe000426": {
+		"mark": "true",
+		"name": "Brian Dahle",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:1",
+		"state": "CA"
+	},
+	"SLe000502": {
+		"mark": "true",
+		"name": "Brian Maienschein",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:77",
+		"state": "CA"
+	},
+	"state_ca_sldl_42_state_rep_chad_mayes": {
+		"mark": "true",
+		"name": "Chad Mayes",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:42",
+		"state": "CA"
+	},
+	"SLe000510": {
+		"mark": "true",
+		"name": "Cathleen Galgiani",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:5",
+		"state": "CA"
+	},
+	"SLe000472": {
+		"mark": "true",
+		"name": "Cheryl R. Brown",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:47",
+		"state": "CA"
+	},
+	"SLe000466": {
+		"mark": "true",
+		"name": "Chris R. Holden",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:41",
+		"state": "CA"
+	},
+	"state_ca_sldl_26_state_rep_devon_mathis": {
+		"mark": "true",
+		"name": "Devon J. Mathis",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:26",
+		"state": "CA"
+	},
+	"SLe000483": {
+		"mark": "true",
+		"name": "Cristina Garcia",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:58",
+		"state": "CA"
+	},
+	"state_ca_sldl_55_state_rep_ling_ling_chang": {
+		"mark": "true",
+		"name": "Ling Ling Chang",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:55",
+		"state": "CA"
+	},
+	"SLe000462": {
+		"mark": "true",
+		"name": "Das Williams",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:37",
+		"state": "CA"
+	},
+	"SLe000493": {
+		"mark": "true",
+		"name": "Donald P. Wagner",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:68",
+		"state": "CA"
+	},
+	"SLe000474": {
+		"mark": "true",
+		"name": "Ed Chau",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:49",
+		"state": "CA"
+	},
+	"SLe000485": {
+		"mark": "true",
+		"name": "Eric Linder",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:60",
+		"state": "CA"
+	},
+	"SLe000430": {
+		"mark": "true",
+		"name": "Frank Bigelow",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:5",
+		"state": "CA"
+	},
+	"SLe000477": {
+		"mark": "true",
+		"name": "Freddie Rodriguez",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:52",
+		"state": "CA"
+	},
+	"SLe000524": {
+		"mark": "true",
+		"name": "Hannah-Beth Jackson",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:19",
+		"state": "CA"
+	},
+	"SLe000531": {
+		"mark": "true",
+		"name": "Holly J. Mitchell",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:30",
+		"state": "CA"
+	},
+	"SLe000482": {
+		"mark": "true",
+		"name": "Ian C. Calderon",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:57",
+		"state": "CA"
+	},
+	"SLe000489": {
+		"mark": "true",
+		"name": "Isadore Hall III",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:35",
+		"state": "CA"
+	},
+	"SLe000518": {
+		"mark": "true",
+		"name": "Jerry Hill",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:13",
+		"state": "CA"
+	},
+	"SLe000520": {
+		"mark": "true",
+		"name": "Jim Beall",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:15",
+		"state": "CA"
+	},
+	"SLe000436": {
+		"mark": "true",
+		"name": "Jim Frazier",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:11",
+		"state": "CA"
+	},
+	"SLe000509": {
+		"mark": "true",
+		"name": "Jim Nielsen",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:4",
+		"state": "CA"
+	},
+	"SLe000448": {
+		"mark": "true",
+		"name": "Jim Patterson",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:23",
+		"state": "CA"
+	},
+	"SLe000476": {
+		"mark": "true",
+		"name": "Not Seated Right Now",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:51",
+		"state": "CA"
+	},
+	"state_ca_sldl_16_state_rep_chatharine_b_baker": {
+		"mark": "true",
+		"name": "Catharine B. Baker",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:16",
+		"state": "CA"
+	},
+	"state_ca_sldl_53_state_rep_miguel_santiago": {
+		"mark": "true",
+		"name": "Miguel Santiago",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:53",
+		"state": "CA"
+	},
+	"SLe000486": {
+		"mark": "true",
+		"name": "Jose Medina",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:61",
+		"state": "CA"
+	},
+	"SLe000433": {
+		"mark": "true",
+		"name": "Ken Cooley",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:8",
+		"state": "CA"
+	},
+	"SLe000527": {
+		"mark": "true",
+		"name": "Kevin de Leon",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:24",
+		"state": "CA"
+	},
+	"SLe000447": {
+		"mark": "true",
+		"name": "Kevin Mullin",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:22",
+		"state": "CA"
+	},
+	"SLe000437": {
+		"mark": "true",
+		"name": "Kristin Olsen",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:12",
+		"state": "CA"
+	},
+	"SLe000505": {
+		"mark": "true",
+		"name": "Lorena S. Gonzalez",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:80",
+		"state": "CA"
+	},
+	"SLe000435": {
+		"mark": "true",
+		"name": "Marc Levine",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:10",
+		"state": "CA"
+	},
+	"SLe000500": {
+		"mark": "true",
+		"name": "Marie Waldron",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:75",
+		"state": "CA"
+	},
+	"state_ca_sldl_4_state_rep_bill_dodd": {
+		"mark": "true",
+		"name": "Bill Dodd",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:4",
+		"state": "CA"
+	},
+	"SLe000512": {
+		"mark": "true",
+		"name": "Steven M. Glazer",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:7",
+		"state": "CA"
+	},
+	"SLe000454": {
+		"mark": "true",
+		"name": "Mark Stone",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:29",
+		"state": "CA"
+	},
+	"SLe000544": {
+		"mark": "true",
+		"name": "Marty Block",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:39",
+		"state": "CA"
+	},
+	"SLe000470": {
+		"mark": "true",
+		"name": "Matthew Dababneh",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:45",
+		"state": "CA"
+	},
+	"SLe000492": {
+		"mark": "true",
+		"name": "Melissa A. Melendez",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:67",
+		"state": "CA"
+	},
+	"state_ca_sldu_37_state_sen_john_moorlach": {
+		"mark": "true",
+		"name": "John M. W. Moorlach",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:37",
+		"state": "CA"
+	},
+	"state_ca_sldl_15_state_rep_tony_thurmond": {
+		"mark": "true",
+		"name": "Tony Thurmond",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:15",
+		"state": "CA"
+	},
+	"SLe000452": {
+		"mark": "true",
+		"name": "Nora Campos",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:27",
+		"state": "CA"
+	},
+	"state_ca_sldl_28_state_rep_evan_low": {
+		"mark": "true",
+		"name": "Evan Low",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:28",
+		"state": "CA"
+	},
+	"state_ca_sldl_39_state_rep_patty_lopez": {
+		"mark": "true",
+		"name": "Patty Lopez",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:39",
+		"state": "CA"
+	},
+	"state_ca_sldl_40_state_rep_marc_steinorth": {
+		"mark": "true",
+		"name": "Marc Steinorth",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:40",
+		"state": "CA"
+	},
+	"SLe000484": {
+		"mark": "true",
+		"name": "Reginald B. Jones-Sawyer Sr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:59",
+		"state": "CA"
+	},
+	"SLe000538": {
+		"mark": "true",
+		"name": "Ricardo Lara",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:33",
+		"state": "CA"
+	},
+	"SLe000475": {
+		"mark": "true",
+		"name": "Richard Bloom",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:50",
+		"state": "CA"
+	},
+	"SLe000536": {
+		"mark": "true",
+		"name": "Richard D. Roth",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:31",
+		"state": "CA"
+	},
+	"SLe000434": {
+		"mark": "true",
+		"name": "Richard Pan",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:6",
+		"state": "CA"
+	},
+	"SLe000449": {
+		"mark": "true",
+		"name": "Richard S. Gordon",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:24",
+		"state": "CA"
+	},
+	"SLe000443": {
+		"mark": "true",
+		"name": "Rob Bonta",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:18",
+		"state": "CA"
+	},
+	"SLe000501": {
+		"mark": "true",
+		"name": "Rocky J. Chavez",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:76",
+		"state": "CA"
+	},
+	"state_ca_sldl_7_state_rep_kevin_mccarty": {
+		"mark": "true",
+		"name": "Kevin McCarty",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:7",
+		"state": "CA"
+	},
+	"state_ca_sldl_9_state_rep_jim_cooper": {
+		"mark": "true",
+		"name": "Jim Cooper",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:9",
+		"state": "CA"
+	},
+	"state_ca_sldl_31_state_rep_joaquin_arambula": {
+		"mark": "true",
+		"name": "Joaquin Arambula",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:31",
+		"state": "CA"
+	},
+	"SLe000457": {
+		"mark": "true",
+		"name": "Rudy Salas Jr.",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:32",
+		"state": "CA"
+	},
+	"SLe000463": {
+		"mark": "true",
+		"name": "Scott Wilk",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:38",
+		"state": "CA"
+	},
+	"SLe000479": {
+		"mark": "true",
+		"name": "Sebastian Ridley-Thomas",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:54",
+		"state": "CA"
+	},
+	"SLe000459": {
+		"mark": "true",
+		"name": "Shannon L. Grove",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:34",
+		"state": "CA"
+	},
+	"state_ca_sldl_65_state_rep_young_o_kim": {
+		"mark": "true",
+		"name": "Young O. Kim",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:65",
+		"state": "CA"
+	},
+	"SLe000504": {
+		"mark": "true",
+		"name": "Shirley N. Weber",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:79",
+		"state": "CA"
+	},
+	"state_ca_sldl_36_state_rep_tom_lackey": {
+		"mark": "true",
+		"name": "Tom Lackey",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:36",
+		"state": "CA"
+	},
+	"state_ca_sldu_21_state_sen_sharon_runner": {
+		"mark": "true",
+		"name": "Sharon Runner",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:21",
+		"state": "CA"
+	},
+	"state_ca_sldl_62_state_rep_autumn_r_burke": {
+		"mark": "true",
+		"name": "Autumn R. Burke",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:62",
+		"state": "CA"
+	},
+	"state_ca_sldl_64_state_rep_mike_a_gipson": {
+		"mark": "true",
+		"name": "Mike A. Gipson",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:64",
+		"state": "CA"
+	},
+	"SLe000439": {
+		"mark": "true",
+		"name": "Susan A. Bonilla",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:14",
+		"state": "CA"
+	},
+	"SLe000438": {
+		"mark": "true",
+		"name": "Susan Talamantes Eggman",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:13",
+		"state": "CA"
+	},
+	"state_ca_sldl_17_state_rep_david_chu": {
+		"mark": "true",
+		"name": "David Chiu",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:17",
+		"state": "CA"
+	},
+	"state_ca_sldl_25_state_rep_kansen_chu": {
+		"mark": "true",
+		"name": "Kansen Chu",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:25",
+		"state": "CA"
+	},
+	"SLe000494": {
+		"mark": "true",
+		"name": "Tom Daly",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:69",
+		"state": "CA"
+	},
+	"SLe000497": {
+		"mark": "true",
+		"name": "Travis Allen",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:72",
+		"state": "CA"
+	},
+	"state_ca_sldl_56_state_rep_eduardo_garcia": {
+		"mark": "true",
+		"name": "Eduardo Garcia",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:56",
+		"state": "CA"
+	},
+	"state_ca_sldl_2_state_rep_jim_wood": {
+		"mark": "true",
+		"name": "Jim Wood",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:2",
+		"state": "CA"
+	},
+	"SWe00028": {
+		"mark": "true",
+		"name": "Edmund G. Brown Jr.",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ca",
+		"state": "CA"
+	},
+	"state_az_gov_doug_ducey": {
+		"mark": "true",
+		"name": "Doug Ducey",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:az",
+		"state": "AZ"
+	},
+	"state_ar_gov_asa_hutchinson": {
+		"mark": "true",
+		"name": "Asa Hutchinson",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ar",
+		"state": "AR"
+	},
+	"SWe00003": {
+		"mark": "true",
+		"name": "Kay Ivey",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:al",
+		"state": "AL"
+	},
+	"state_sc_sldu_4_state_sen_william_h_odell": {
+		"mark": "true",
+		"name": "Mike Gambrell",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:sc/sldu:4",
+		"state": "SC"
+	},
+	"state_ca_sldu_23_state_sen_mike_morrell": {
+		"mark": "true",
+		"name": "Mike Morrell",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:23",
+		"state": "CA"
+	},
+	"A000370": {
+		"example_address": "1230 W. Morehead St.",
+		"example_city": "Charlotte",
+		"example_state": "NC",
+		"zip5": "28208",
+		"zip4": "5205",
+		"example_district": "12",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Alma Adams"
+	},
+	"B001290": {
+		"example_address": "4201 Dominion Blvd",
+		"example_city": "Glen Allen",
+		"example_state": "VA",
+		"zip5": "23060",
+		"zip4": "6743",
+		"example_district": "7",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Dave Brat"
+	},
+	"N000188": {
+		"example_address": "515 Grove Street",
+		"example_city": "Haddon Heights",
+		"example_state": "NJ",
+		"zip5": "08035",
+		"zip4": "1734",
+		"example_district": "1",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Donald Norcross"
+	},
+	"state_ca_sldu_2_state_sen_mike_mcguire": {
+		"mark": "true",
+		"name": "Mike McGuire",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:2",
+		"state": "CA"
+	},
+	"state_ca_sldu_18_state_sen_robert_m_hertzberg": {
+		"mark": "true",
+		"name": "Robert M. Hertzberg",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:18",
+		"state": "CA"
+	},
+	"state_ca_sldu_20_state_sen_connie_m_leyva": {
+		"mark": "true",
+		"name": "Connie M. Leyva",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:20",
+		"state": "CA"
+	},
+	"state_ca_sldu_26_state_sen_benjamin_allen": {
+		"mark": "true",
+		"name": "Benjamin Allen",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:26",
+		"state": "CA"
+	},
+	"state_ca_sldu_28_state_sen_jeff_stone": {
+		"mark": "true",
+		"name": "Jeff Stone",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:28",
+		"state": "CA"
+	},
+	"state_ca_sldu_32_state_sen_tony_mendoza": {
+		"mark": "true",
+		"name": "Tony Mendoza",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:32",
+		"state": "CA"
+	},
+	"state_ca_sldu_34_state_sen_janet_nguyen": {
+		"mark": "true",
+		"name": "Janet Nguyen",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:34",
+		"state": "CA"
+	},
+	"state_ca_sldu_36_state_sen_patricia_c_bates": {
+		"mark": "true",
+		"name": "Patricia C. Bates",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:36",
+		"state": "CA"
+	},
+	"state_il_sldu_52_state_sen_scott_m_bennett": {
+		"mark": "true",
+		"name": "Scott M. Bennett",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:il/sldu:52",
+		"state": "IL"
+	},
+	"state_il_sldu_22_state_sen_cristina_castro": {
+		"mark": "true",
+		"name": "Cristina Castro",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:il/sldu:22",
+		"state": "IL"
+	},
+	"state_il_sldu_47_state_sen_jil_tracy": {
+		"mark": "true",
+		"name": "Jil Tracy",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:il/sldu:47",
+		"state": "IL"
+	},
+	"R000600": {
+		"example_address": "PO Box 5859",
+		"example_city": "Pago Pago",
+		"example_state": "AS",
+		"zip5": "96799",
+		"zip4": "5859",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Anmua Amata Radewagen"
+	},
+	"P000610": {
+		"example_address": "9100 Port of Sale Mall",
+		"example_city": "St. Thomas",
+		"example_state": "VI",
+		"zip5": "00802",
+		"zip4": "3602",
+		"example_district": "0",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Stacey Plasket"
+	},
+	"L000585": {
+		"example_address": "3130 Chatham Road",
+		"example_city": "Springfield",
+		"example_state": "IL",
+		"zip5": "62704",
+		"zip4": "5379",
+		"example_district": "18",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Darin M. LaHood"
+	},
+	"state_il_sldu_28_state_sen_laura_murphy": {
+		"mark": "true",
+		"name": "Laura M. Murphy",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:il/sldu:28",
+		"state": "IL"
+	},
+	"state_il_sldl_97_state_rep_mark_batinick": {
+		"mark": "true",
+		"name": "Mark Batinick",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:il/sldl:97",
+		"state": "IL"
+	},
+	"state_il_sldl_106_state_rep_tom_bennett": {
+		"mark": "true",
+		"name": "Thomas M. Bennett",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:il/sldl:106",
+		"state": "IL"
+	},
+	"SWe00087": {
+		"mark": "true",
+		"name": "Eric Holcomb",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:in",
+		"state": "IN"
+	},
+	"state_va_gov_terry_mcauliffe": {
+		"mark": "true",
+		"name": "Ralph Northam",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:va",
+		"state": "VA"
+	},
+	"state_ok_governor_mary_fallin": {
+		"mark": "true",
+		"name": "Mary Fallin",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ok",
+		"state": "OK"
+	},
+	"D000626": {
+		"example_address": "12 S. Plum Street",
+		"example_city": "Troy",
+		"example_state": "OH",
+		"zip5": "45373",
+		"zip4": "3282",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Warren Davidson"
+	},
+	"state_mi_sldu_25_state_sen_phillip_pavlov": {
+		"mark": "true",
+		"name": "Phillip Pavlov",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:mi/sldu:25",
+		"state": "MI"
+	},
+	"state_ca_sldl_43_state_rep_laura_friedman": {
+		"mark": "true",
+		"name": "Laura Friedman",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:43",
+		"state": "CA"
+	},
+	"state_ca_sldl_78_state_rep_todd_gloria": {
+		"mark": "true",
+		"name": "Todd Gloria",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:78",
+		"state": "CA"
+	},
+	"state_oh_sldl_24_state_rep_jim_hughes": {
+		"mark": "true",
+		"name": "Jim Hughes",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:24",
+		"state": "OH"
+	},
+	"state_oh_sldl_23_state_rep_laura_lanese": {
+		"mark": "true",
+		"name": "Laura Lanese",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:23",
+		"state": "OH"
+	},
+	"state_oh_sldl_25_state_rep_bernadine_kennedy_kent": {
+		"mark": "true",
+		"name": "Bernadine Kennedy Kent",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:25",
+		"state": "OH"
+	},
+	"state_oh_sldl_87_state_rep_wes_goodman": {
+		"mark": "true",
+		"name": "Wes Goodman",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:87",
+		"state": "OH"
+	},
+	"state_ca_sldl_48_state_rep_blanca_rubio": {
+		"mark": "true",
+		"name": "Blanca E. Rubio",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:48",
+		"state": "CA"
+	},
+	"state_oh_sldl_1_state_rep_scott_wiggam": {
+		"mark": "true",
+		"name": "Scott Wiggam",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:1",
+		"state": "OH"
+	},
+	"state_oh_sldl_3_state_rep_theresa_gavarone": {
+		"mark": "true",
+		"name": "Theresa Gavarone",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:3",
+		"state": "OH"
+	},
+	"state_oh_sldl_7_state_rep_thomas_patton": {
+		"mark": "true",
+		"name": "Thomas F. Patton",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:7",
+		"state": "OH"
+	},
+	"state_oh_sldl_17_state_rep_adam_miller": {
+		"mark": "true",
+		"name": "Adam Miller",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:17",
+		"state": "OH"
+	},
+	"state_oh_sldl_16_state_rep_dave_greenspan": {
+		"mark": "true",
+		"name": "Dave Greenspan",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:16",
+		"state": "OH"
+	},
+	"state_oh_sldl_30_state_rep_bill_seitz": {
+		"mark": "true",
+		"name": "Bill Seitz",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:30",
+		"state": "OH"
+	},
+	"state_oh_sldl_32_state_rep_catherine_ingram": {
+		"mark": "true",
+		"name": "Catherine Ingram",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:32",
+		"state": "OH"
+	},
+	"state_oh_sldl_31_state_rep_brigid_kelly": {
+		"mark": "true",
+		"name": "Brigid Kelly",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:31",
+		"state": "OH"
+	},
+	"state_oh_sldl_47_state_rep_derek_merrin": {
+		"mark": "true",
+		"name": "Derek Merrin",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:47",
+		"state": "OH"
+	},
+	"state_oh_sldl_49_state_rep_thomas_west": {
+		"mark": "true",
+		"name": "Thomas E. West",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:49",
+		"state": "OH"
+	},
+	"state_oh_sldl_53_state_rep_candice_keller": {
+		"mark": "true",
+		"name": "Candice Keller",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:53",
+		"state": "OH"
+	},
+	"state_oh_sldl_57_state_rep_dick_stein": {
+		"mark": "true",
+		"name": "Dick Stein",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:57",
+		"state": "OH"
+	},
+	"state_oh_sldl_63_state_rep_glenn_holmes": {
+		"mark": "true",
+		"name": "Glenn W. Holmes",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:63",
+		"state": "OH"
+	},
+	"state_oh_sldl_68_state_rep_rick_carfagna": {
+		"mark": "true",
+		"name": "Rick Carfagna",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:68",
+		"state": "OH"
+	},
+	"state_oh_sldl_62_state_rep_scott_lipps": {
+		"mark": "true",
+		"name": "Scott Lipps",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:62",
+		"state": "OH"
+	},
+	"state_oh_sldl_72_state_rep_larry_householder": {
+		"mark": "true",
+		"name": "Larry Householder",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:72",
+		"state": "OH"
+	},
+	"state_oh_sldl_70_state_rep_darrell_kick": {
+		"mark": "true",
+		"name": "Darrell D. Kick",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:70",
+		"state": "OH"
+	},
+	"state_oh_sldl_82_state_rep_craig_riedel": {
+		"mark": "true",
+		"name": "Craig Riedel",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:82",
+		"state": "OH"
+	},
+	"state_oh_sldl_94_state_rep_jay_edwards": {
+		"mark": "true",
+		"name": "Jay Edwards",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:oh/sldl:94",
+		"state": "OH"
+	},
+	"state_ca_sldu_29_state_sen_josh_newman": {
+		"mark": "true",
+		"name": "Josh Newman",
+		"type": "Sen",
+		"ocd_id": "ocd-division/country:us/state:ca/sldu:29",
+		"state": "CA"
+	},
+	"state_pa_gov_thomas_wolf": {
+		"mark": "true",
+		"name": "Thomas Wolf",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:pa",
+		"state": "PA"
+	},
+	"state_de_gov_john_carney": {
+		"mark": "true",
+		"name": "John C Carney Jr",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:de",
+		"state": "DE"
+	},
+	"state_ak_gov_bill_walker": {
+		"mark": "true",
+		"name": "Bill Walker",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ak",
+		"state": "AK"
+	},
+	"state_nd_gov_doug_burgum": {
+		"mark": "true",
+		"name": "Doug Burgum",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:nd",
+		"state": "ND"
+	},
+	"state_ca_sldl_19_state_rep_phillip_ting": {
+		"mark": "true",
+		"name": "Philip Y. Ting",
+		"type": "Rep",
+		"ocd_id": "ocd-division/country:us/state:ca/sldl:19",
+		"state": "CA"
+	},
+	"state_ga_gov_nathan_deal": {
+		"mark": "true",
+		"name": "Nathan Deal",
+		"type": "Gov",
+		"ocd_id": "ocd-division/country:us/state:ga",
+		"state": "GA"
+	},
+    "J000300": {
+ 		"example_address": "200 Clinton Avenue",
+ 		"example_city": "Huntsville",
+ 		"example_state": "AL",
+ 		"zip5": "35801",
+ 		"zip4": "4932",
+ 		"example_district": "",
+ 		"type": "Sen",
+ 		"mark": "true",
+ 		"name": "Doug Jones"
+ 	},
+ 	"S001203": {
+ 		"example_address": "60 East Plato Blvd",
+		"example_city": "Saint Paul",
+		"example_state": "MN",
+		"zip5": "55107",
+		"zip4": "3377",
+		"example_district": "",
+		"type": "Sen",
+		"mark": "true",
+ 		"name": "Tina Smith"
+ 	},
+ 	"L000589": {
+		"example_address": "7121 West Bell Road",
+		"example_city": "Glendale",
+		"example_state": "AZ",
+		"zip5": "85308",
+		"zip4": "8549",
+		"example_district": "8",
+		"type": "Rep",
+		"mark": "true",
+		"name": "Debbie Lesko"
+	}
+}
