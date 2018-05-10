@@ -54,7 +54,7 @@
 
 <template>
   <div class="battle-stats">
-    <div class="stat" v-for="stat in stats" :key="stat.label">
+    <div class="stat" v-for="(stat, key) of stats" :key="key">
       <div class="value">
         <div class="flex-center">
           {{ stat.value | formatNumber }}
@@ -70,31 +70,49 @@
 </template>
 
 <script>
-import stats from '~/assets/data/battle-stats.json'
-
-const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
+import axios from 'axios'
 
 export default {
-  computed: {
-    stats() {
-      return [
-        {
-          value: rand(1000, 10000000),
+  data() {
+    return {
+      stats: {
+        email: {
+          value: null,
           label: 'Emails sent to Congress'
         },
-        {
-          value: rand(1000, 10000000),
+        call: {
+          value: null,
           label: 'Phone calls made to Congress'
         },
-        {
-          value: rand(1000, 10000000),
+        sms: {
+          value: null,
           label: 'Messages sent to Congress by text'
         },
-        {
-          value: stats.bizCount,
+        biz: {
+          value: null,
           label: 'Businesses supporting the CRA'
         }
-      ]
+      }
+    }
+  },
+
+  created() {
+    this.fetchStats()
+    this.statsInterval = setInterval(this.fetchStats, 3000)
+  },
+
+  destroyed() {
+    clearInterval(this.statsInterval)
+  },
+
+  methods: {
+    async fetchStats() {
+      const { data } = await axios.get('https://signatures-api.herokuapp.com/stats.json')
+      for (let key of Object.keys(data)) {
+        if (this.stats[key]) {
+          this.stats[key].value = data[key]
+        }
+      }
     }
   }
 }

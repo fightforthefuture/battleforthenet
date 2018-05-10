@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 var formatNumber = function(x) {
-  return x ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
+  return x || x === 0 ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
 };
 
 var pluralize = function(number, singular, plural=null){

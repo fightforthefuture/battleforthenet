@@ -64,7 +64,7 @@ form {
 
 <script>
 import axios from 'axios'
-import { postFormData } from '~/assets/js/helpers'
+import { pingCounter, postFormData } from '~/assets/js/helpers'
 import CallScript from '~/components/CallScript'
 import settings from '~/assets/data/callpower.json'
 
@@ -190,6 +190,7 @@ export default {
         this.hasCalled = true
         this.modalVisible = true
         this.$trackEvent('call_form', 'submit')
+        pingCounter('call')
       }
       catch (err) {
         this.isSending = false

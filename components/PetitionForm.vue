@@ -153,7 +153,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { sendToMothership, startTextFlow } from '~/assets/js/helpers'
+import { pingCounter, sendToMothership, startTextFlow } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
 
 // battle-for-the-net-action-4
@@ -241,6 +241,8 @@ export default {
         if (this.phone && this.org === 'fftf') {
           this.startTextFlow()
         }
+
+        pingCounter('email')
       }
       catch (err) {
         self.isSending = false

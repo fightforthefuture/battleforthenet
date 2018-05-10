@@ -368,7 +368,7 @@ import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import CallForm from '~/components/CallForm'
 import BattleStats from '~/components/BattleStats'
-import { createMetaTags, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
+import { createMetaTags, pingCounter, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
 import axios from 'axios'
 
 // red-alert-action
@@ -519,6 +519,8 @@ export default {
           phone: this.phone
         })
       }
+
+      pingCounter('email')
     },
 
     async signActionPetition() {
