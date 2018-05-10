@@ -283,7 +283,7 @@ iframe.events-map {
     <header class="page-header" id="top">
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
-        <h1 class="upcase" ref="titleTest">{{ $t('redalert.title') }}</h1>
+        <h1 class="upcase">{{ $t('redalert.title') }}</h1>
         <div v-html="$t('redalert.intro_html')"></div>
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
@@ -300,7 +300,16 @@ iframe.events-map {
             <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
             <span v-else>{{ $t('redalert.form.button_cta') }}</span>
           </button>
-          <disclaimer :sms="true"></disclaimer>
+          <no-ssr>
+            <experiment name="redalert-disclaimer-test">
+              <variant slot="long">
+                <disclaimer :sms="true"></disclaimer>
+              </variant>
+              <variant slot="short">
+                <disclaimer :sms="false"></disclaimer>
+              </variant>
+            </experiment>
+          </no-ssr>
         </form>
       </div>
     </header>
@@ -325,6 +334,7 @@ iframe.events-map {
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import CallForm from '~/components/CallForm'
@@ -391,6 +401,8 @@ export default {
   },
 
   computed: {
+    ...mapState(['org']),
+
     shareURL() {
       return this.$t('redalert.sharing.url')
     },
@@ -432,7 +444,9 @@ export default {
   methods: {
     async submitForm() {
       this.isSending = true
-      this.$trackEvent('redalert_form', 'submit')
+      const variant = localStorage.getItem('exp.redalert-disclaimer-test')
+      const variantLabel = `redalert-disclaimer-test-${variant}`
+      this.$trackEvent('redalert_form', 'submit', variantLabel)
 
       try {
         const response = await sendToMothership({
@@ -453,6 +467,8 @@ export default {
           an_tags: "[\"net-neutrality\"]",
           an_petition_id: contactCongressPetitionId,
           action_comment: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."
+        }, {
+          variant: variantLabel
         })
 
         this.isSending = false
@@ -466,7 +482,7 @@ export default {
 
       this.signActionPetition()
 
-      if (this.org === 'fftf') {
+      if (this.org === 'fftf' && this.phone && variant === 'long') {
         startTextFlow({
           flow: textFlowId,
           phone: this.phone
