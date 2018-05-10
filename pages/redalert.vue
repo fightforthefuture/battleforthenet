@@ -275,43 +275,16 @@ iframe.events-map {
     height: 200px;
   }
 }
-
-// remove this after the redalert-header-content test is done
-.page-header {
-  // min-height: 651px;
-  min-height: 500px;
-
-  .container {
-    animation: fade-in .3s;
-  }
-
-  [data-variant="b"] {
-    h1 {
-      font-size: 4rem;
-      margin-top: 4rem;
-    }
-  }
-}
 </style>
 
 <template>
   <div class="red-alert text-center">
     <div class="top-gradient"><div class="container"></div></div>
     <header class="page-header" id="top">
-      <div class="container" v-show="isLoaded">
-        <no-ssr>
-          <experiment name="redalert-header-content">
-            <variant slot="a">
-              <img class="logo" src="~/assets/images/warning.svg" alt="">
-              <h1 class="upcase" ref="titleTest">{{ $t('redalert.content_test.a.title') }}</h1>
-              <div v-html="$t('redalert.content_test.a.intro_html')"></div>
-            </variant>
-            <variant slot="b">
-              <h1 class="upcase" ref="titleTest">{{ $t('redalert.content_test.b.title') }}</h1>
-              <div v-html="$t('redalert.content_test.b.intro_html')"></div>
-            </variant>
-          </experiment>
-        </no-ssr>
+      <div class="container">
+        <img class="logo" src="~/assets/images/warning.svg" alt="">
+        <h1 class="upcase" ref="titleTest">{{ $t('redalert.title') }}</h1>
+        <div v-html="$t('redalert.intro_html')"></div>
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
@@ -459,9 +432,7 @@ export default {
   methods: {
     async submitForm() {
       this.isSending = true
-
-      const variant = localStorage.getItem('exp.redalert-header-content')
-      this.$trackEvent('redalert_form', 'submit', this.$refs.titleTest.innerText)
+      this.$trackEvent('redalert_form', 'submit')
 
       try {
         const response = await sendToMothership({
@@ -482,8 +453,6 @@ export default {
           an_tags: "[\"net-neutrality\"]",
           an_petition_id: contactCongressPetitionId,
           action_comment: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."
-        }, {
-          variant: `redalert-header-content_${variant}`
         })
 
         this.isSending = false
