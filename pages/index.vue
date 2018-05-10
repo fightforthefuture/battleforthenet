@@ -19,6 +19,12 @@ img.app-store {
       <petition-form v-else />
     </section>
 
+    <section id="stats">
+      <h2>Together, we're making a difference</h2>
+      <p>Since the FCC voted to remove Title II protections for net neutrality, we've been working hard to convince our lawmakers to use the Congressional Review Act (CRA) to overrule the FCC's disastrous decision ... and the American public has responded!  Here's what we've been able to accomplish so far:</p>
+      <battle-stats></battle-stats>
+    </section>
+
     <section id="join">
       <h2>Do you run a website? Use it to join the Red Alert.</h2>
       <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. Sites will go on Red Alert from May 9th until the Senate votes a week or so later. Can you join us for all or some of it?</p>
@@ -30,7 +36,7 @@ img.app-store {
           class="rounded">
       </div>
     </section>
-    
+
     <section id="onemorevote">
       <h2>The Senate is about to vote on whether to save net neutrality or let it die.</h2>
       <p>Ajit Pai's FCC wants to let cable companies control which websites and apps you use, where you get your news, how you listen to music and watch videos -- everything you do on the Internet. But the US Senate will vote in mid-May on a resolution to block the FCC's repeal of net neutrality and keep the web free and open. <b><a href="/redalert">Starting May 9th through the vote itself, we're calling on websites and social media users to "go red" as part of our Red Alert for Net Neutrality to help sound the alarm. Join us!</a></b></p>
@@ -113,7 +119,7 @@ img.app-store {
       <p><strong>Net neutrality</strong> is the principle that Internet providers like Comcast &amp; Verizon should not control what we see and do online. In 2015, startups, Internet freedom groups, and 3.7 million commenters won strong net neutrality rules from the US Federal Communication Commission (FCC). The rules prohibit Internet providers from blocking, throttling, and paid prioritization&mdash;"fast lanes" for sites that pay, and slow lanes for everyone else. Want to learn more? Watch these videos!</p>
       <video-roll></video-roll>
     </section>
-    
+
     <section id="extra-reading">
       <h2>Extra Reading</h2>
       <p>Here are some excellent articles for additional depth. They cover the issue, its political history, the struggles we've overcome, and the fight ahead in Congress and at the FCC.</p>
@@ -157,6 +163,7 @@ import Scoreboard from '~/components/Scoreboard/Scoreboard'
 import VideoRoll from '~/components/VideoRoll'
 import SocialSidebar from '~/components/SocialSidebar'
 import PersistentButton from '~/components/PersistentButton'
+import BattleStats from '~/components/BattleStats'
 
 export default {
   components: {
@@ -166,7 +173,8 @@ export default {
     Scoreboard,
     VideoRoll,
     SocialSidebar,
-    PersistentButton
+    PersistentButton,
+    BattleStats
   },
 
   computed: {
