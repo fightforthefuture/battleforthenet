@@ -76,10 +76,10 @@ export function postFormData(url, data={}) {
   })
 }
 
-export function sendToMothership(data={}) {
+export function sendToMothership(data={}, submission={}) {
   const member = data.member || {}
 
-  logSubmission({
+  logSubmission(Object.assign({
     name: member.first_name,
     email: member.email,
     zip_code: member.postcode,
@@ -88,7 +88,7 @@ export function sendToMothership(data={}) {
     comments: data.action_comment,
     petition_id: data.an_petition_id,
     org: data.org
-  })
+  }, submission))
 
   return postFormData('https://queue.fightforthefuture.org/action', data)
 }

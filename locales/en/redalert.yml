@@ -30,6 +30,21 @@ tweet_text: |
   neutrality. Join millions of other every day Americans demanding freedom on
   the Internet.
 
+content_test:
+  a:
+    title: Red Alert for Net Neutrality
+    intro_html: |
+      Breaking: the Senate is about to vote on a resolution to save net neutrality
+      and stop ISPs from ruining the Internet. Starting May 9th, put your website,
+      app, or social profile on "Red Alert" to help sound the alarm. **Fill out the form
+      to contact your lawmakers and get everything you need to join the protest!**
+  b:
+    title: Contact your lawmakers to save net neutrality
+    intro_html: |
+      The Senate is about to vote on net neutrality.  Tell your lawmakers, “Please
+      co-sponsor, sign the discharge petition, and vote for the CRA to restore net
+      neutrality.”
+
 form:
   generic_error: That didn't work for some reason 😞
   name_placeholder: Name*

@@ -126,6 +126,10 @@ a {
   border-radius: $border-radius;
 }
 
+.fade-in {
+  animation: fade-in .4s;
+}
+
 input, textarea {
   border: none;
   font-size: 1.7rem;
