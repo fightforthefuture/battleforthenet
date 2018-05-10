@@ -44,11 +44,11 @@ form:
 # they're listed. The section key (website, social, etc.) will be used to create
 # an anchor link (social = https://battleforthenet.com/redalert#social)
 sections:
-  # stats:
-  #   title: Together, we're making a difference
-  #   body_html: |
-  #     Since the FCC voted to remove Title II protections for net neutrality, we've been working hard to convince our lawmakers to use the Congressional Review Act (CRA) to overrule the FCC's disastrous decision ... and the American public has responded! Here's what we've been able to accomplish so far:
-  #     <!-- stats will go here -->
+  stats:
+    title: Together, we're making a difference
+    body_html: |
+      Since the FCC voted to remove Title II protections for net neutrality, we've been working hard to convince our lawmakers to use the Congressional Review Act (CRA) to overrule the FCC's disastrous decision ... and the American public has responded! Here's what we've been able to accomplish so far:
+      <!-- stats will go here -->
   participants:
     title: Participants
     body_html: |
