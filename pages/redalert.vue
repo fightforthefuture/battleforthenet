@@ -266,6 +266,34 @@ section {
       }
     }
   }
+
+  .battle-stats .stat {
+    font-family: $title-font;
+    font-size: 2.4rem;
+
+    .value {
+      color: #ff0000;
+      background-color: #f6f6f6;
+      font-size: 110%;
+    }
+
+    .label {
+      background-color: #000;
+      line-height: 1.1;
+
+      &:after {
+        border-right-color: #000;
+      }
+    }
+
+    @include small-screen {
+      font-size: 2rem;
+    }
+  }
+
+  section:nth-child(odd) .battle-stats .stat .value {
+    background-color: #fff;
+  }
 }
 
 iframe.events-map {
@@ -318,6 +346,7 @@ iframe.events-map {
       <div class="container">
         <h2>{{ section.title }}</h2>
         <div v-html="section.body_html"></div>
+        <battle-stats v-if="id == 'stats'"></battle-stats>
       </div>
     </section>
 
@@ -338,7 +367,8 @@ import { mapState } from 'vuex'
 import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import CallForm from '~/components/CallForm'
-import { createMetaTags, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
+import BattleStats from '~/components/BattleStats'
+import { createMetaTags, pingCounter, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
 import axios from 'axios'
 
 // red-alert-action
@@ -375,7 +405,8 @@ export default {
   components: {
     PersistentButton,
     SocialSidebar,
-    CallForm
+    CallForm,
+    BattleStats
   },
 
   data() {
@@ -488,6 +519,8 @@ export default {
           phone: this.phone
         })
       }
+
+      pingCounter('email')
     },
 
     async signActionPetition() {

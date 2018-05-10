@@ -193,3 +193,14 @@ export async function logSubmission(params) {
     //
   }
 }
+
+export async function pingCounter(counter) {
+  const axios = require('axios')
+
+  try {
+    await axios.post(`https://signatures-api.herokuapp.com/ping/${counter}`)
+  }
+  catch (error) {
+    //
+  }
+}
