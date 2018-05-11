@@ -18,12 +18,12 @@ img.app-store {
       <call-form v-if="isCallPage" page="call"></call-form>
       <petition-form v-else />
     </section>
-<!--
+
     <section id="stats">
       <h2>Together, we're making a difference</h2>
       <p>Since the FCC voted to remove Title II protections for net neutrality, we've been working hard to convince our lawmakers to use the Congressional Review Act (CRA) to overrule the FCC's disastrous decision ... and the American public has responded!  Here's what we've been able to accomplish so far:</p>
       <battle-stats></battle-stats>
-    </section> -->
+    </section>
 
     <section id="join">
       <h2>Do you run a website? Use it to join the Red Alert.</h2>

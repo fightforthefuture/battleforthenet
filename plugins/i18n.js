@@ -31,7 +31,10 @@ Vue.use(VueI18n)
 export default ({ app, store }) => {
   const messages = formatStrings({
     en: {
-      redalert: require('~/locales/en/redalert.yml')
+      redalert: require('~/locales/en/redalert.yml'),
+      components: {
+        BattleStats: require('~/locales/en/components/BattleStats.yml')
+      }
     }
   })
 
