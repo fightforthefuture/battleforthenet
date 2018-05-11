@@ -57,7 +57,8 @@
     <div class="stat" v-for="(stat, key) of stats" :key="key">
       <div class="value">
         <div class="flex-center">
-          {{ stat.value | formatNumber }}
+          <span v-if="stat.value">{{ stat.value | formatNumber }}</span>
+          <span v-else>{{ $lt('placeholder') }}</span>
         </div>
       </div>
       <div class="label">
@@ -78,19 +79,23 @@ export default {
       stats: {
         email: {
           value: null,
-          label: 'Emails sent to Congress'
+          label: this.$lt('email')
         },
         call: {
           value: null,
-          label: 'Phone calls made to Congress'
+          label: this.$lt('call')
         },
         sms: {
           value: null,
-          label: 'Messages sent to Congress by text'
+          label: this.$lt('sms')
+        },
+        sigs: {
+          value: null,
+          label: this.$lt('sigs')
         },
         biz: {
           value: null,
-          label: 'Businesses supporting the CRA'
+          label: this.$lt('biz')
         }
       }
     }
@@ -106,6 +111,10 @@ export default {
   },
 
   methods: {
+    $lt(key) {
+      return this.$t(`components.BattleStats.${key}`)
+    },
+
     async fetchStats() {
       const { data } = await axios.get('https://signatures-api.herokuapp.com/stats.json')
       for (let key of Object.keys(data)) {
