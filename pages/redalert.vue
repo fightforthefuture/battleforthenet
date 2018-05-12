@@ -354,7 +354,7 @@ iframe.events-map {
       <a class="flex-center" href="#top" @click.prevent="scrollToTop()"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $t('redalert.persistent_button') }}</span></a>
     </persistent-button>
 
-    <social-sidebar :twitter-url="twitterShareURL" :facebook-url="facebookShareURL"></social-sidebar>
+    <social-sidebar></social-sidebar>
 
     <modal v-if="modalVisible">
       <call-form :in-modal="true" :default-phone="phone" :default-zip="zipCode"></call-form>
@@ -432,20 +432,7 @@ export default {
   },
 
   computed: {
-    ...mapState(['org']),
-
-    shareURL() {
-      return this.$t('redalert.sharing.url')
-    },
-
-    facebookShareURL() {
-      return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.shareURL)}`
-    },
-
-    twitterShareURL: function() {
-      const tweetText = this.$t('redalert.tweet_text')
-      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(this.shareURL)}`
-    },
+    ...mapState(['org'])
   },
 
   beforeCreate() {
