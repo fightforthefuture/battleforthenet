@@ -11,7 +11,7 @@
       padding-bottom: 100px;
       background-image: url('~/assets/images/arrow.svg');
       background-repeat: no-repeat;
-      background-position: 300px 370px;
+      background-position: 300px 335px;
       background-size: 120px auto;
     }
 
