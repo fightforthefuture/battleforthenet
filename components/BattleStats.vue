@@ -89,10 +89,10 @@ export default {
           value: null,
           label: this.$lt('sms')
         },
-        sigs: {
-          value: null,
-          label: this.$lt('sigs')
-        },
+        // sigs: {
+        //   value: null,
+        //   label: this.$lt('sigs')
+        // },
         biz: {
           value: null,
           label: this.$lt('biz')
@@ -103,7 +103,7 @@ export default {
 
   created() {
     this.fetchStats()
-    this.statsInterval = setInterval(this.fetchStats, 3000)
+    // this.statsInterval = setInterval(this.fetchStats, 3000)
   },
 
   destroyed() {
