@@ -21,7 +21,7 @@ img.app-store {
 
     <section id="stats">
       <h2>Together, we're making a difference</h2>
-      <p>Since the FCC voted to remove Title II protections for net neutrality, we've been working hard to convince our lawmakers to use the Congressional Review Act (CRA) to overrule the FCC's disastrous decision ... and the American public has responded!  Here's what we've been able to accomplish so far:</p>
+      <p>Ever since the FCC began working to destroy Title II net neutrality protections, we've been working twice as hard to show our government how much the American public supports a truly free and open internet ... without censorship, unfair fees or throttling.  Here's what we've been able to accomplish so far:</p>
       <battle-stats></battle-stats>
     </section>
 
