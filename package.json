@@ -11,10 +11,12 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "pregenerate": "npm run generate-politicians",
+    "pregenerate": "npm run generate-strings && npm run generate-politicians",
     "generate-politicians": "node scripts/generate-politicians.js",
+    "generate-strings": "node scripts/generate-strings.js",
     "deploy": "aws s3 sync dist s3://www.battleforthenet.com --delete",
-    "deploy-branch": "bash scripts/deploy-branch.sh"
+    "deploy-branch": "bash scripts/deploy-branch.sh",
+    "analyze": "nuxt build --analyze"
   },
   "dependencies": {
     "nuxt": "^1.0.0"
@@ -27,6 +29,7 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
+    "js-yaml": "^3.11.0",
     "lodash": "^4.17.5",
     "node-sass": "^4.8.3",
     "normalize.css": "^8.0.0",

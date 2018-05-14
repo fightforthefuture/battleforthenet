@@ -58,6 +58,12 @@ module.exports = {
         // include: path.resolve('data'),
         loader: 'json-loader!yaml-loader',
       })
+
+      if (!isDev) {
+        config.externals = {
+          'showdown': 'showdown'
+        }
+      }
     },
 
     vendor: [
