@@ -103,7 +103,7 @@ export default {
 
   created() {
     this.fetchStats()
-    // this.statsInterval = setInterval(this.fetchStats, 3000)
+    this.statsInterval = setInterval(this.fetchStats, 3000)
   },
 
   destroyed() {
@@ -116,7 +116,7 @@ export default {
     },
 
     async fetchStats() {
-      const { data } = await axios.get('https://signatures-api.herokuapp.com/stats.json')
+      const { data } = await axios.get('https://data.battleforthenet.com/stats.json')
       for (let key of Object.keys(data)) {
         if (this.stats[key]) {
           this.stats[key].value = data[key]
