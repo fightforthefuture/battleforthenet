@@ -143,7 +143,7 @@
       </no-ssr>
     </form>
     <div class="petition-copy">
-      The FCC voted to kill net neutrality and let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But the Senate is about to vote on a resolution to overrule them and save the Internet using the Congressional Review Act (CRA). We only need one more vote to win. <strong>Write your lawmakers now!</strong>
+      Breaking: On Wednesday, May 16th, the Senate will vote on a resolution to save net neutrality. This is our best chance to stop the FCC from letting Internet providers like Comcast and Verizon ruin the Internet with throttling, censorship, and expensive new fees. <strong>Write your lawmakers now!</strong>
     </div>
     <modal v-if="modalVisible">
       <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
