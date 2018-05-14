@@ -89,10 +89,10 @@ export default {
           value: null,
           label: this.$lt('sms')
         },
-        // sigs: {
-        //   value: null,
-        //   label: this.$lt('sigs')
-        // },
+        web: {
+          value: null,
+          label: this.$lt('web')
+        },
         biz: {
           value: null,
           label: this.$lt('biz')
