@@ -89,6 +89,7 @@ sections:
         <li><img src="/images/logos/deviantart.png" alt="DeviantArt"></li>
         <li><img src="/images/logos/picsart.png" alt="PicsArt"></li>
         <li><img src="/images/logos/ccia.png" alt="CCIA"></li>
+        <li><img src="/images/logos/OpenMedia_250.png" alt="Open Media"></li>
         <li><img src="/images/logos/pof-btn.png" alt="Plenty of Fish"></li>
         <li><img src="/images/logos/meetic-btn.png" alt="Meetic"></li>
         <li><img src="/images/logos/twoo-btn.png" alt="Twoo"></li>
@@ -101,22 +102,26 @@ sections:
         <li><img src="/images/logos/digitalocean.png" alt="DigitalOcean"></li>
         <li><img src="/images/logos/credo.png" alt="CREDO"></li>
         <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
+        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
         <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
+        <li><img src="/images/logos/corporate-accountability.png" alt="Corporate Accountability"></li>
         <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
         <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
+        <li><img src="/images/logos/courage.png" alt="Courage Campaign"></li>
         <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>
         <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
         <li><img src="/images/logos/ask.jpg" alt="Ask"></li>
         <li><img src="/images/logos/Investopedia.png" alt="Investopedia"></li>
         <li><img src="/images/logos/iac.png" alt="IAC"></li>
+        <li><img src="/images/logos/just-foreign-policy.jpg" alt="Just Foreign Policy"></li>
         <li><img src="/images/logos/lifewire.png" alt="Lifewire"></li>
         <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
         <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
         <li><img src="/images/logos/anchorfree.png" alt="AnchorFree"></li>
+        <li><img src="/images/logos/anchorfree.png" alt="AnchorFree"></li>
         <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
         <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
         <li><img src="/images/logos/18mr.png" alt="18MillionRising"></li>
-        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
         <li><img src="/images/logos/our-tIme-btn.png" alt="OurTime"></li>
         <li><img src="/images/logos/lovescout24-btn.png" alt="LoveScout24"></li>
         <li><img src="/images/logos/Pairs-Biger-BTN.png" alt="Pairs"></li>
@@ -133,6 +138,8 @@ sections:
         <li><img src="/images/logos/cpd-action.png" alt="CPD Action"></li>
         <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
         <li><img src="/images/logos/climatehawksvote.png" alt="Climate Hawks Vote"></li>
+        <li><img src="/images/logos/PeopleDemandingAction_250.png" alt="People Demanding Action"></li>
+        <li><img src="/images/logos/DFA-Logo-bottom-transparent-400.png" alt="Democracy for America"></li>
       </ul>
 
   what:
