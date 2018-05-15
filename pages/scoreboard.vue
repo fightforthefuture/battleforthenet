@@ -39,7 +39,7 @@ export default {
 
   created() {
     // store politician data in Vuex so Nuxt will pre-render it for this page
-    this.$store.commit('setPoliticians', politicians)
+    // this.$store.commit('setPoliticians', politicians)
   }
 }
 </script>
