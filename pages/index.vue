@@ -141,7 +141,7 @@ img.app-store {
           <em> &mdash; Medium</em>
         </li>
         <li>
-          <a href="https://www.donttreadonthe.net/" target="_blank">Net neutrality promotes competition in the free market and protects Americans from government and corporate censorship</a>
+          <a href="https://www.donttreadonthe.net/" target="_blank">Net neutrality promotes competition in the free market</a>
           <em> &mdash; Don't Tread on the Net</em>
         </li>
       </ul>
