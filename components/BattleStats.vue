@@ -57,7 +57,7 @@
     <div class="stat" v-for="(stat, key) of stats" :key="key">
       <div class="value">
         <div class="flex-center">
-          <span v-if="stat.value">{{ stat.value | formatNumber }}</span>
+          <countTo v-if="stat.startValue" :startVal="stat.startValue" :endVal="stat.endValue" :duration="3000"></countTo>
           <span v-else>{{ $lt('placeholder') }}</span>
         </div>
       </div>
@@ -72,30 +72,40 @@
 
 <script>
 import axios from 'axios'
+import countTo from 'vue-count-to'
 
 export default {
+  components: {
+    countTo
+  },
+
   data() {
     return {
       stats: {
         email: {
-          value: null,
-          label: this.$lt('email')
+          label: this.$lt('email'),
+          startValue: null,
+          endValue: null
         },
         call: {
-          value: null,
-          label: this.$lt('call')
+          label: this.$lt('call'),
+          startValue: null,
+          endValue: null
         },
         sms: {
-          value: null,
-          label: this.$lt('sms')
+          label: this.$lt('sms'),
+          startValue: null,
+          endValue: null
         },
         web: {
-          value: null,
-          label: this.$lt('web')
+          label: this.$lt('web'),
+          startValue: null,
+          endValue: null
         },
         biz: {
-          value: null,
-          label: this.$lt('biz')
+          label: this.$lt('biz'),
+          startValue: null,
+          endValue: null
         }
       }
     }
@@ -118,8 +128,10 @@ export default {
     async fetchStats() {
       const { data } = await axios.get('https://data.battleforthenet.com/stats.json')
       for (let key of Object.keys(data)) {
-        if (this.stats[key]) {
-          this.stats[key].value = data[key]
+        const stat = this.stats[key]
+        if (stat) {
+          stat.startValue = stat.endValue || data[key]
+          stat.endValue = data[key]
         }
       }
     }

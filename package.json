@@ -39,6 +39,7 @@
     "raven-js": "^3.24.2",
     "sass-loader": "^6.0.7",
     "showdown": "^1.8.6",
+    "vue-count-to": "^1.0.13",
     "vue-i18n": "^7.6.0",
     "yaml-loader": "^0.5.0"
   }
