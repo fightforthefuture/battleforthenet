@@ -55,7 +55,7 @@ img.app-store {
     </section>
 
     <section id="team-internet">
-      <h2>We are Team Internet. We support net neutrality, freedom of speech.</h2>
+      <h2>We are Team Internet. We support net neutrality and freedom of speech.</h2>
       <p>These companies and organizations have been champions of net neutrality and participated in campaigns to save it:</p>
       <ul class="logo-grid">
         <li><img src="/images/logos/fftf.png" alt="Fight for the Future"></li>
