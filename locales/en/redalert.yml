@@ -66,16 +66,19 @@ sections:
         <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
         <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
         <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
+        <li><img src="/images/logos/airbnb.png" alt="Airbnb"></li>
         <li><img src="/images/logos/match-btn.png" alt="Match"></li>
         <li><img src="/images/logos/tinder-btn.png" alt="Tinder"></li>
         <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
         <li><img src="/images/logos/tripadvisor.png" alt="TripAdvisor"></li>
         <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
         <li><img src="/images/logos/github.png" alt="GitHub"></li>
+        <li><img src="/images/logos/general-assembly.png" alt="General Assembly"></li>
         <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
         <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
         <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
         <li><img src="/images/logos/salesforce.png" alt="Salesforce"></li>
+        li><img src="/images/logos/dailykos-new.png" alt="Daily Kos"></li>
         <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
         <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
         <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
@@ -111,19 +114,25 @@ sections:
         <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
         <li><img src="/images/logos/anchorfree.png" alt="AnchorFree"></li>
         <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
+        <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
+        <li><img src="/images/logos/18mr.png" alt="18MillionRising"></li>
         <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
         <li><img src="/images/logos/our-tIme-btn.png" alt="OurTime"></li>
         <li><img src="/images/logos/lovescout24-btn.png" alt="LoveScout24"></li>
         <li><img src="/images/logos/Pairs-Biger-BTN.png" alt="Pairs"></li>
         <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
         <li><img src="/images/logos/pcaf.png" alt="Progressive Congress Action Fund"></li>
+        <li><img src="/images/logos/common-dreams.jpg" alt="Common Dreams"></li>
         <li><img src="/images/logos/fote.png" alt="Friends of the Earth"></li>
         <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
         <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
+        <li><img src="/images/logos/afv.png" alt="American Family Voices"></li>
         <li><img src="/images/logos/wakatime.png" alt="WakaTime"></li>
         <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
         <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
+        <li><img src="/images/logos/cpd-action.png" alt="CPD Action"></li>
         <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
+        <li><img src="/images/logos/climatehawksvote.png" alt="Climate Hawks Vote"></li>
       </ul>
 
   what:
