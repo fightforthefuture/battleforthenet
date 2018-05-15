@@ -24,7 +24,7 @@
       "sections": {
         "stats": {
           "title": "Together, we're making a difference",
-          "body_html": "<p>Since the FCC voted to remove Title II protections for net neutrality,\nwe've been working hard to convince our lawmakers to use the Congressional\nReview Act (CRA) to overrule the FCC's disastrous decision … and the\nAmerican public has responded! Here's what we've been able to accomplish\nso far:</p>"
+          "body_html": "<p>Ever since the FCC began working to destroy Title II net neutrality protections,\nwe've been working twice as hard to show our government how much the American \npublic supports a truly free and open internet … without censorship, unfair\nfees or throttling.  Here's what we've been able to accomplish so far:</p>"
         },
         "participants": {
           "title": "Participants",
@@ -58,6 +58,7 @@
         "call": "Phone calls made to Congress",
         "sms": "Messages sent to Congress by text",
         "sigs": "Petition signatures",
+        "web": "Websites sounding the alarm",
         "biz": "Businesses supporting the CRA",
         "placeholder": "🤔"
       }

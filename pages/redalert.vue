@@ -444,10 +444,6 @@ export default {
   },
 
   mounted() {
-    if (document.referrer.match(/pornhub\.com/)) {
-      location.href = '/';
-    }
-
     document.querySelectorAll('.demo-widget').forEach(el => {
       el.onclick = (event) => {
         event.preventDefault()
