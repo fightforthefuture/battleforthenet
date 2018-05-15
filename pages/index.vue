@@ -140,6 +140,10 @@ img.app-store {
           <a href="https://medium.com/@freepress/the-fcc-s-net-neutrality-order-protects-internet-freedom-by-restoring-the-law-9092f9f5a99f/" target="_blank">The FCC's Net Neutrality Order Protects Internet Freedom by Restoring the Law</a>
           <em> &mdash; Medium</em>
         </li>
+        <li>
+          <a href="https://www.donttreadonthe.net/" target="_blank">Net neutrality promotes competition in the free market and protects Americans from government and corporate censorship</a>
+          <em> &mdash; Don't Tread on the Net</em>
+        </li>
       </ul>
     </section>
 
