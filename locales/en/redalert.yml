@@ -46,12 +46,13 @@ form:
 sections:
   # The BattleStats component will be added at the end of this section automatically
   stats:
-    title: Together, we're making a difference
+    title: Congress, are you listening?
     body_html: |
-      Ever since the FCC began working to destroy Title II net neutrality protections,
-      we've been working twice as hard to show our government how much the American 
-      public supports a truly free and open internet ... without censorship, unfair
-      fees or throttling.  Here's what we've been able to accomplish so far:
+      Voters from across the political spectrum agree they don't want their cable company
+      to control what they see and do online.  The FCC's reckless repeal has sparked an
+      unprecedented backlash.  The numbers below are only what we know about through 
+      BattleForTheNet.com and partners.  These are constituents calling on lawmakers to 
+      stop the FCC and save net neutrality:
   participants:
     title: Participants
     body_html: |
