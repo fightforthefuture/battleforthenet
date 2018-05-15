@@ -20,8 +20,8 @@ img.app-store {
     </section>
 
     <section id="stats">
-      <h2>Together, we're making a difference</h2>
-      <p>Ever since the FCC began working to destroy Title II net neutrality protections, we've been working twice as hard to show our government how much the American public supports a truly free and open internet ... without censorship, unfair fees or throttling.  Here's what we've been able to accomplish so far:</p>
+      <h2>Congress, are you listening?</h2>
+      <p>Voters from across the political spectrum agree they don't want their cable company to control what they see and do online.  The FCC's reckless repeal has sparked an unprecedented backlash.  The numbers below are only what we know about through BattleForTheNet.com and partners.  These are constituents calling on lawmakers to stop the FCC and save net neutrality:</p>
       <battle-stats></battle-stats>
     </section>
 
