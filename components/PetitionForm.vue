@@ -143,7 +143,7 @@
       </no-ssr>
     </form>
     <div class="petition-copy">
-      Breaking: On Wednesday, May 16th, the Senate will vote on a resolution to save net neutrality. This is our best chance to stop the FCC from letting Internet providers like Comcast and Verizon ruin the Internet with throttling, censorship, and expensive new fees. <strong>Write your lawmakers now!</strong>
+      BREAKING NEWS: The Senate voted to save net neutrality.  Now we need the House of Representatives to do the same, or else the FCC will let ISPs like Comcast and Verizon ruin the internet with throttling, censorship and expensive new  fees.  <strong>Write your lawmakers now!</strong>
     </div>
     <modal v-if="modalVisible">
       <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
