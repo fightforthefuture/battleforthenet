@@ -111,7 +111,7 @@ img.app-store {
 
     <section id="videos">
       <h2>What is net neutrality? Why does it matter? Watch these videos!</h2>
-      <p><strong>Net neutrality</strong> is the principle that everyone should have fair access to websites and apps, preventing Internet providers like Comcast & Verizon from creating “fast lanes,” censoring content or throttling traffic to their competitor's products. This principle has guided the world wide web from the beginning, and has been protected by federal policy under Republican AND Democrat leadership <ahref="https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf">since the early 2000s.</a></p>
+      <p><strong>Net neutrality</strong> is the principle that everyone should have fair access to websites and apps, preventing Internet providers like Comcast & Verizon from creating “fast lanes,” censoring content or throttling traffic to their competitor's products. This principle has guided the world wide web from the beginning, and has been protected by federal policy under Republican AND Democrat leadership <a href="https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf">since the early 2000s.</a></p>
       <p>Unfortunately, Internet providers ignored this policy, blocking users from accessing FaceTime and forcing Netflix to pay millions to avoid having their traffic throttled. So in 2015, the US Federal Communications Commission (FCC) adopted net neutrality as regulations that can't be ignored. But under new leadership, the FCC has removed these regulations, threatening to end the web as we know it.</p>
       <p>Want to learn more? Watch these videos!</p>
       <video-roll></video-roll>
