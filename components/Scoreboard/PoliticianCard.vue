@@ -115,12 +115,19 @@ export default {
     tweetURL: function(pol) {
       var tweetText;
 
-      if (pol.yesOnCRA) {
+      if (pol.organization === 'Senate') {
+        if (pol.yesOnCRA) {
+          tweetText = `Thank you @${pol.twitter} for voting for the CRA to overrule the FCC and save our #NetNeutrality rules. Find out where your representatives stand and ask them to do the same! https://battleforthenet.com`
+        }
+        else {
+          tweetText = `@${pol.twitter}, why didn’t you vote for the CRA to overrule the FCC and save our #NetNeutrality rules? This issue matters to me! (Friends: find out where your representatives stand and contact them at https://battleforthenet.com)`
+        }
+      }
+      // House yes
+      else if (pol.yesOnCRA) {
         tweetText = 'I am delighted that @' + pol.twitter + ' will be voting for the CRA to overrule the FCC and save our #NetNeutrality rules. Find out where your representatives stand and ask them to do the same! https://battleforthenet.com';
       }
-      else if (pol.organization === 'House') {
-        tweetText = '@' + pol.twitter + ' why haven\'t you promised to co-sponsor, sign the discharge petition, and vote for the #NetNeutrality CRA to overrule the FCC? This issue matters to me! (Friends: find out where your representatives stand and contact them at https://battleforthenet.com)';
-      }
+      // House no
       else {
         tweetText = '@' + pol.twitter + ', why haven\'t you promised to vote for the CRA to overrule the FCC and save our #NetNeutrality rules? This issue matters to me! (Friends: find out where your representatives stand and contact them at https://battleforthenet.com)';
       }

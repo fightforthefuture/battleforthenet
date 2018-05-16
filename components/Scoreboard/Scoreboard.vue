@@ -53,18 +53,18 @@ a.view-all {
         </div>
       </no-ssr>
 
-      <div id="senate" class="politicians" v-if="!summary">
-        <h2>We need just <em>one</em> more vote in the Senate. Tweet them!</h2>
-        <team-legend></team-legend>
-        <p>(The green ones have already promised to vote for a CRA, so tweet at the ones who haven't yet!)</p>
-        <politician-card v-for="politician in senators" :politician="politician" v-if="politician.twitter" :key="politician.biocode"></politician-card>
-      </div>
-
       <div id="house" class="politicians" v-if="!summary">
         <h2>We need 218 votes to win the House.<br>We have {{ houseCRACount }}. {{ 218 - houseCRACount }} to go.</h2>
         <team-legend></team-legend>
         <p>(The green ones have already promised to vote for a CRA, so tweet at the ones who haven't yet!)</p>
         <politician-card v-for="politician in representatives" :politician="politician" v-if="politician.twitter" :key="politician.biocode"></politician-card>
+      </div>
+
+      <div id="senate" class="politicians" v-if="!summary">
+        <h2>We need just <em>one</em> more vote in the Senate. Tweet them!</h2>
+        <team-legend></team-legend>
+        <p>(The green ones have already promised to vote for a CRA, so tweet at the ones who haven't yet!)</p>
+        <politician-card v-for="politician in senators" :politician="politician" v-if="politician.twitter" :key="politician.biocode"></politician-card>
       </div>
     </div>
   </div>
