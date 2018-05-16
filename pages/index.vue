@@ -14,7 +14,7 @@ img.app-store {
 
     <section id="bftn-action-form">
       <loader-logo></loader-logo>
-      <h1 class="text-center">Red Alert for Net Neutrality!</h1>
+      <h1 class="text-center">The Senate just voted to save net neutrality</h1>
       <call-form v-if="isCallPage" page="call"></call-form>
       <petition-form v-else />
     </section>
@@ -27,8 +27,8 @@ img.app-store {
 
     <section id="join">
       <h2>Do you run a website? Use it to join the Red Alert.</h2>
-      <p>Congress can vote to stop the FCC, but to make that happen we need a massive volume of phone calls to Congress. Sites will go on Red Alert from May 9th until the Senate votes a week or so later. Can you join us for all or some of it?</p>
-      <p>If you have a website, you can display a prominent alert on your site that asks your visitors to contact Congress. <a href="https://www.fightforthefuture.org?redalert">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/redalert-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
+      <p>Our phone calls and emails to the Senate helped swing the vote to save net neutrality.  Now we need to focus our efforts on convincing the House of Representatives to support freedom on the Internet.</p>
+      <p>If you have a website, you can display our Red Alert widget on your site that asks your visitors to contact Congress. <a href="https://www.fightforthefuture.org?redalert">Click here for a demo</a>, <a href="https://github.com/fightforthefuture/redalert-widget">grab the code on GitHub</a>, or use <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g">one of these banners</a>. The alert will appear once per user per day and users can easily click away. You can link the banners directly to this website. <strong>Add this line of code to your site's header!</strong></p>
       <code>&lt;script src="https://redalert.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
       <div class="modals flex-center">
         <img src="/images/redalert/modal-minimized-preview@2x.jpg"
@@ -37,19 +37,14 @@ img.app-store {
       </div>
     </section>
 
-    <section id="onemorevote">
-      <h2>The Senate is about to vote on whether to save net neutrality or let it die.</h2>
-      <p>Ajit Pai's FCC wants to let cable companies control which websites and apps you use, where you get your news, how you listen to music and watch videos -- everything you do on the Internet. But the US Senate will vote in mid-May on a resolution to block the FCC's repeal of net neutrality and keep the web free and open. <b><a href="/redalert">Starting May 9th through the vote itself, we're calling on websites and social media users to "go red" as part of our Red Alert for Net Neutrality to help sound the alarm. Join us!</a></b></p>
-    </section>
-
     <section id="scoreboard">
       <h2>Contact Congress now to show your support for net neutrality.</h2>
-      <p>Below you'll find a list of your state's senators and representatives.  The ones in green support net neutrality, so let them know you appreciate their support.  The ones in red need to be convinced, so let them know how important this issue is to you.  Then target the <a href="/scoreboard/#senate">49 undecided senators</a>. Once we win the Senate, the fight moves to the House, where we need over 25 Republican votes to win. So please tweet and call your senators, then tweet and call your representatives!</p>
+      <p>Below you'll find a list of your state's senators and representatives.  The ones in green support net neutrality, so let them know you appreciate their support.  The ones in red need to be convinced, so let them know how important this issue is to you.  We already won in the Senate. Now we must win the House, where we need over 25 Republican votes to win. So please tweet and call your <a href="/scoreboard/#house">house representatives</a></p>
       <scoreboard :summary="true"></scoreboard>
     </section>
 
     <section id="events">
-      <h2>There are protests all over the country on Monday May 14th. Join one near you.</h2>
+      <h2>Join a protest or event in your area.</h2>
       <p><strong>Want to make your voice heard?</strong> Check out the map below to find a protest or a meeting with a representative in your state.  And if there are no events in your area, consider organizing one!</p>
       <iframe class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
     </section>
@@ -116,7 +111,9 @@ img.app-store {
 
     <section id="videos">
       <h2>What is net neutrality? Why does it matter? Watch these videos!</h2>
-      <p><strong>Net neutrality</strong> is the principle that Internet providers like Comcast &amp; Verizon should not control what we see and do online. In 2015, startups, Internet freedom groups, and 3.7 million commenters won strong net neutrality rules from the US Federal Communication Commission (FCC). The rules prohibit Internet providers from blocking, throttling, and paid prioritization&mdash;"fast lanes" for sites that pay, and slow lanes for everyone else. Want to learn more? Watch these videos!</p>
+      <p><strong>Net neutrality</strong> is the principle that everyone should have fair access to websites and apps, preventing Internet providers like Comcast & Verizon from creating “fast lanes,” censoring content or throttling traffic to their competitor's products. This principle has guided the world wide web from the beginning, and has been protected by federal policy under Republican AND Democrat leadership <ahref="https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf">since the early 2000s.</a></p>
+      <p>Unfortunately, Internet providers ignored this policy, blocking users from accessing FaceTime and forcing Netflix to pay millions to avoid having their traffic throttled. So in 2015, the US Federal Communications Commission (FCC) adopted net neutrality as regulations that can't be ignored. But under new leadership, the FCC has removed these regulations, threatening to end the web as we know it.</p>
+      <p>Want to learn more? Watch these videos!</p>
       <video-roll></video-roll>
     </section>
 
