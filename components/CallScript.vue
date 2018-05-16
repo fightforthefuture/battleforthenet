@@ -95,7 +95,7 @@ hr {
     <div class="buttons">
       <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
         <img src="~/assets/images/map-marker.svg" alt="">
-        Join an event near you on May 14th
+        Join an event near you
       </a>
       <div class="flex-row">
         <facebook-button @clicked="$trackEvent('call_script_facebook_button', 'click')">Share on Facebook</facebook-button>
