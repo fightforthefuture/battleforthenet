@@ -10,25 +10,23 @@
 # Twitter Card Validator (https://cards-dev.twitter.com/validator) after changing
 # these values.
 sharing:
-  title: Congress will vote to save net neutrality
+  title: The Senate voted to save net neutrality
   description: |
-    In mid-May, the U.S. Senate will vote on whether or not to save net
-    neutrality. Join millions of other every day Americans demanding freedom on
-    the Internet.
+    The U.S. Senate voted to save net neutrality. Join millions of other every day 
+    Americans demanding freedom on the Internet in the House of Representatives.
   image: https://www.battleforthenet.com/images/share_images/redalert.png
   url: https://www.battleforthenet.com
 
 title: Red Alert for Net Neutrality
 intro_html: |
-  Breaking: the Senate is about to vote on a resolution to save net neutrality
-  and stop ISPs from ruining the Internet. Starting May 9th, put your website,
-  app, or social profile on "Red Alert" to help sound the alarm. **Fill out the form
-  to contact your lawmakers and get everything you need to join the protest!**
+  BREAKING NEWS: The Senate voted to save net neutrality.  Now we need the House 
+  of Representatives to do the same, or else the FCC will let ISPs like Comcast 
+  and Verizon ruin the internet with throttling, censorship and unnecessary fees.  
+  **Write your lawmakers now!**
 persistent_button: Join the Protest
 tweet_text: |
-  In mid-May, the U.S. Senate will vote on whether or not to save net
-  neutrality. Join millions of other every day Americans demanding freedom on
-  the Internet.
+  The U.S. Senate voted to save net neutrality. Join millions of other every day 
+  Americans demanding freedom on the Internet in the House of Representatives.
 
 form:
   generic_error: That didn't work for some reason 😞
@@ -152,12 +150,12 @@ sections:
   what:
     title: What's happening?
     body_html: |
-      The US Senate is headed for a mid-May vote on a Congressional Review Act
-      (CRA) resolution to block the FCC’s repeal of net neutrality. Starting on
-      May 9th, and carrying through until the vote, the Internet will “go red”
-      to raise awareness and ensure that lawmakers hear from their constituents,
-      who overwhelmingly support restoring open Internet protections. Click to
-      jump to instructions for how to join with [your website](#join) or on
+      Starting on May 9th the Internet went on Red Alert contact Congress in 
+      support of net neutrality … and it worked.  The Senate voted to block 
+      the FCC’s repeal of net neutrality.  Because we still need the House of 
+      Representatives to block the FCC’s repeal, you can still put your website 
+      or social media accounts on Red Alert to raise awareness. Click to jump to 
+      instructions for how to join with [your website](#join) or on
       [social media](#social).
 
   join:
@@ -175,7 +173,7 @@ sections:
 
       <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
 
-      From now until May 9th, the widget will appear just like you see it here:
+      The widget will appear on your page just like you see it here:
 
       <img src="/images/redalert/modal-minimized-preview.jpg"
         srcset="/images/redalert/modal-minimized-preview.jpg 1x,
@@ -183,8 +181,8 @@ sections:
         alt="A screenshot of our Red Alert modal when minimized"
         class="rounded">
 
-      But on May 9th the widget will automatically expand to display an urgent
-      message to contact Congress in support of net neutrality:
+      When users click to TAKE ACTION, the widget will expand to display an urgent message to 
+      contact Congress in support of net neutrality:
 
       <img src="/images/redalert/modal-preview.jpg"
         srcset="/images/redalert/modal-preview.jpg 1x,
@@ -192,13 +190,8 @@ sections:
         alt="A screenshot of our Red Alert modal"
         class="rounded">
 
-      Then between May 9th and the vote (date TBD), the widget will shrink down to a
-      smaller size before expanding again the day before the vote.
-
-      And remember ... the widget does all of this automatically. All you have to do is
-      place the code on your website and we'll take care of the rest.  But if you'd like
-      to configure the appearance or change the location of the widget on your web pages,
-      just visit [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
+      If you'd like to configure the appearance or change the location of the widget on your 
+      web pages, just visit [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
       to learn how.
 
       Please feel free to create your own custom way to drive awareness of this important
