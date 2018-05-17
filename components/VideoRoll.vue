@@ -116,6 +116,10 @@
 
   .modal {
     background-color: transparent;
+
+    .close {
+      color: #fff;
+    }
   }
 
   .video-iframe-container {
