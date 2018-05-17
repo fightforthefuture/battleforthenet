@@ -12,19 +12,19 @@
 sharing:
   title: The Senate voted to save net neutrality
   description: |
-    The U.S. Senate voted to save net neutrality. Join millions of other every day 
+    The U.S. Senate voted to save net neutrality. Join millions of other every day
     Americans demanding freedom on the Internet in the House of Representatives.
   image: https://www.battleforthenet.com/images/share_images/redalert.png
   url: https://www.battleforthenet.com
 
 title: Red Alert for Net Neutrality
 intro_html: |
-  BREAKING NEWS: The Senate voted to save net neutrality.  Now we need the House 
-  of Representatives to do the same, or else the FCC will let ISPs like Comcast 
+  BREAKING NEWS: The Senate voted to save net neutrality.  Now we need the House
+  of Representatives to do the same, or else the FCC will let ISPs like Comcast
   and Verizon ruin the internet with throttling, censorship and unnecessary fees. **Write your lawmakers now!**
 persistent_button: Join the Protest
 tweet_text: |
-  The U.S. Senate voted to save net neutrality. Join millions of other every day 
+  The U.S. Senate voted to save net neutrality. Join millions of other every day
   Americans demanding freedom on the Internet in the House of Representatives.
 
 form:
@@ -47,8 +47,8 @@ sections:
     body_html: |
       Voters from across the political spectrum agree they don't want their cable company
       to control what they see and do online.  The FCC's reckless repeal has sparked an
-      unprecedented backlash.  The numbers below are only what we know about through 
-      BattleForTheNet.com and partners.  These are constituents calling on lawmakers to 
+      unprecedented backlash.  The numbers below are only what we know about through
+      BattleForTheNet.com and partners.  These are constituents calling on lawmakers to
       stop the FCC and save net neutrality:
   participants:
     title: Participants
@@ -56,105 +56,105 @@ sections:
       Below is a list of notable websites, companies, and organizations who have
       confirmed their participation in the RED ALERT action.
       <ul class="logo-grid">
-        <li><img src="/images/logos/demandprogress.png" alt="Demand Progress"></li>
-        <li><img src="/images/logos/fftf-light.svg" alt="Fight for the Future"></li>
-        <li><img src="/images/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
-        <li><img src="/images/logos/wikimedia.png" alt="Wikimedia Foundation"></li>
-        <li><img src="/images/logos/Etsy.png" alt="Etsy"></li>
-        <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
-        <li><img src="/images/logos/tumblr.png" alt="Tumblr"></li>
-        <li><img src="/images/logos/airbnb.png" alt="Airbnb"></li>
-        <li><img src="/images/logos/match-btn.png" alt="Match"></li>
-        <li><img src="/images/logos/tinder-btn.png" alt="Tinder"></li>
-        <li><img src="/images/logos/okcupid.png" alt="OKCupid"></li>
-        <li><img src="/images/logos/tripadvisor.png" alt="TripAdvisor"></li>
-        <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
-        <li><img src="/images/logos/github.png" alt="GitHub"></li>
-        <li><img src="/images/logos/general-assembly.png" alt="General Assembly"></li>
-        <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
-        <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
-        <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
-        <li><img src="/images/logos/salesforce.png" alt="Salesforce"></li>
-        <li><img src="/images/logos/dailykos-new.png" alt="Daily Kos"></li>
-        <li><img src="/images/logos/twilio.png" alt="Twilio"></li>
-        <li><img src="/images/logos/gandi.png" alt="Gandi"></li>
-        <li><img src="/images/logos/imgur.png" alt="Imgur"></li>
-        <li><img src="/images/logos/duckduckgo.png" alt="DuckDuckGo"></li>
-        <li><img src="/images/logos/bittorrent.png" alt="BitTorrent"></li>
-        <li><img src="/images/logos/pornhub.png" alt="Pornhub"></li>
-        <li><img src="/images/logos/funnyordie.png" alt="Funny or Die"></li>
-        <li><img src="/images/logos/deviantart.png" alt="DeviantArt"></li>
-        <li><img src="/images/logos/picsart.png" alt="PicsArt"></li>
-        <li><img src="/images/logos/ccia.png" alt="CCIA"></li>
-        <li><img src="/images/logos/OpenMedia_250.png" alt="Open Media"></li>
-        <li><img src="/images/logos/pof-btn.png" alt="Plenty of Fish"></li>
-        <li><img src="/images/logos/meetic-btn.png" alt="Meetic"></li>
-        <li><img src="/images/logos/twoo-btn.png" alt="Twoo"></li>
-        <li><img src="/images/logos/sonic.png" alt="Sonic"></li>
-        <li><img src="/images/logos/ting-revised.png" alt="Ting"></li>
-        <li><img src="/images/logos/chess.png" alt="Chess"></li>
-        <li><img src="/images/logos/fark.png" alt="Fark"></li>
-        <li><img src="/images/logos/consumerreports.png" alt="Consumer Reports"></li>
-        <li><img src="/images/logos/sonos.png" alt="Sonos"></li>
-        <li><img src="/images/logos/digitalocean.png" alt="DigitalOcean"></li>
-        <li><img src="/images/logos/credo.png" alt="CREDO"></li>
-        <li><img src="/images/logos/thenation.jpg" alt="The Nation"></li>
-        <li><img src="/images/logos/boingboing.png" alt="Boing Boing"></li>
-        <li><img src="/images/logos/freemusic.png" alt="Free Music Archive"></li>
-        <li><img src="/images/logos/corporate-accountability.png" alt="Corporate Accountability"></li>
-        <li><img src="/images/logos/native-public-media.png" alt="Native Public Media"></li>
-        <li><img src="/images/logos/publicknowledge.png" alt="Public Knowledge"></li>
-        <li><img src="/images/logos/courage.png" alt="Courage Campaign"></li>
-        <li><img src="/images/logos/newmode.png" alt="New/Mode"></li>
-        <li><img src="/images/logos/namecheap.png" alt="Namecheap"></li>
-        <li><img src="/images/logos/ask.jpg" alt="Ask"></li>
-        <li><img src="/images/logos/Investopedia.png" alt="Investopedia"></li>
-        <li><img src="/images/logos/iac.png" alt="IAC"></li>
-        <li><img src="/images/logos/just-foreign-policy.jpg" alt="Just Foreign Policy"></li>
-        <li><img src="/images/logos/lifewire.png" alt="Lifewire"></li>
-        <li><img src="/images/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
-        <li><img src="/images/logos/carbonite.png" alt="Carbonite"></li>
-        <li><img src="/images/logos/anchorfree.png" alt="AnchorFree"></li>
-        <li><img src="/images/logos/presente-2018.png" alt="Presente Action"></li>
-        <li><img src="/images/logos/colorofchange.jpg" alt="Color of Change"></li>
-        <li><img src="/images/logos/public-citizen.png" alt="Public Citizen"></li>
-        <li><img src="/images/logos/peoplefortheamericanway.png" alt="People for the American Way"></li> 
-        <li><img src="/images/logos/working-families.png" alt="Working Families"></li> 
-        <li><img src="/images/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
-        <li><img src="/images/logos/18mr.png" alt="18MillionRising"></li>
-        <li><img src="/images/logos/our-tIme-btn.png" alt="OurTime"></li>
-        <li><img src="/images/logos/lovescout24-btn.png" alt="LoveScout24"></li>
-        <li><img src="/images/logos/Pairs-Biger-BTN.png" alt="Pairs"></li>
-        <li><img src="/images/logos/mediaalliance.png" alt="Media Alliance"></li>
-        <li><img src="/images/logos/pcaf.png" alt="Progressive Congress Action Fund"></li>
-        <li><img src="/images/logos/common-dreams.jpg" alt="Common Dreams"></li>
-        <li><img src="/images/logos/fote.png" alt="Friends of the Earth"></li>
-        <li><img src="/images/logos/shapeways.png" alt="Shapeways"></li>
-        <li><img src="/images/logos/progress-america.png" alt="Progress America"></li>
-        <li><img src="/images/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
-        <li><img src="/images/logos/afv.png" alt="American Family Voices"></li>
-        <li><img src="/images/logos/wakatime.png" alt="WakaTime"></li>
-        <li><img src="/images/logos/winwithoutwar.png" alt="Win Without War"></li>
-        <li><img src="/images/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
-        <li><img src="/images/logos/common-cause.png" alt="Common Cause"></li>
-        <li><img src="/images/logos/cpd-action.png" alt="CPD Action"></li>
-        <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
-        <li><img src="/images/logos/climatehawksvote.png" alt="Climate Hawks Vote"></li>
-        <li><img src="/images/logos/PeopleDemandingAction_250.png" alt="People Demanding Action"></li>
-        <li><img src="/images/logos/DFA-Logo-bottom-transparent-400.png" alt="Democracy for America"></li>
-        <li><img src="/images/logos/RootsAction_250.png" alt="Roots Action"></li>
-        <li><img src="/images/logos/watchdog.png" alt="Watchdog"></li>
-        <li><img src="/images/logos/zerohour_250.png" alt="The Zero Hour"></li>
+        <li><img src="/images/redalert/logos/demandprogress.png" alt="Demand Progress"></li>
+        <li><img src="/images/redalert/logos/fftf-light.svg" alt="Fight for the Future"></li>
+        <li><img src="/images/redalert/logos/free-press-action-fund.png" alt="Free Press Action Fund"></li>
+        <li><img src="/images/redalert/logos/wikimedia.png" alt="Wikimedia Foundation"></li>
+        <li><img src="/images/redalert/logos/Etsy.png" alt="Etsy"></li>
+        <li><img src="/images/redalert/logos/reddit.png" alt="Reddit"></li>
+        <li><img src="/images/redalert/logos/tumblr.png" alt="Tumblr"></li>
+        <li><img src="/images/redalert/logos/airbnb.png" alt="Airbnb"></li>
+        <li><img src="/images/redalert/logos/match-btn.png" alt="Match"></li>
+        <li><img src="/images/redalert/logos/tinder-btn.png" alt="Tinder"></li>
+        <li><img src="/images/redalert/logos/okcupid.png" alt="OKCupid"></li>
+        <li><img src="/images/redalert/logos/tripadvisor.png" alt="TripAdvisor"></li>
+        <li><img src="/images/redalert/logos/mozilla.png" alt="Mozilla"></li>
+        <li><img src="/images/redalert/logos/github.png" alt="GitHub"></li>
+        <li><img src="/images/redalert/logos/general-assembly.png" alt="General Assembly"></li>
+        <li><img src="/images/redalert/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
+        <li><img src="/images/redalert/logos/postmates.png" alt="Postmates"></li>
+        <li><img src="/images/redalert/logos/vimeo.png" alt="Vimeo"></li>
+        <li><img src="/images/redalert/logos/salesforce.png" alt="Salesforce"></li>
+        <li><img src="/images/redalert/logos/dailykos-new.png" alt="Daily Kos"></li>
+        <li><img src="/images/redalert/logos/twilio.png" alt="Twilio"></li>
+        <li><img src="/images/redalert/logos/gandi.png" alt="Gandi"></li>
+        <li><img src="/images/redalert/logos/imgur.png" alt="Imgur"></li>
+        <li><img src="/images/redalert/logos/duckduckgo.png" alt="DuckDuckGo"></li>
+        <li><img src="/images/redalert/logos/bittorrent.png" alt="BitTorrent"></li>
+        <li><img src="/images/redalert/logos/pornhub.png" alt="Pornhub"></li>
+        <li><img src="/images/redalert/logos/funnyordie.png" alt="Funny or Die"></li>
+        <li><img src="/images/redalert/logos/deviantart.png" alt="DeviantArt"></li>
+        <li><img src="/images/redalert/logos/picsart.png" alt="PicsArt"></li>
+        <li><img src="/images/redalert/logos/ccia.png" alt="CCIA"></li>
+        <li><img src="/images/redalert/logos/OpenMedia_250.png" alt="Open Media"></li>
+        <li><img src="/images/redalert/logos/pof-btn.png" alt="Plenty of Fish"></li>
+        <li><img src="/images/redalert/logos/meetic-btn.png" alt="Meetic"></li>
+        <li><img src="/images/redalert/logos/twoo-btn.png" alt="Twoo"></li>
+        <li><img src="/images/redalert/logos/sonic.png" alt="Sonic"></li>
+        <li><img src="/images/redalert/logos/ting-revised.png" alt="Ting"></li>
+        <li><img src="/images/redalert/logos/chess.png" alt="Chess"></li>
+        <li><img src="/images/redalert/logos/fark.png" alt="Fark"></li>
+        <li><img src="/images/redalert/logos/consumerreports.png" alt="Consumer Reports"></li>
+        <li><img src="/images/redalert/logos/sonos.png" alt="Sonos"></li>
+        <li><img src="/images/redalert/logos/digitalocean.png" alt="DigitalOcean"></li>
+        <li><img src="/images/redalert/logos/credo.png" alt="CREDO"></li>
+        <li><img src="/images/redalert/logos/thenation.jpg" alt="The Nation"></li>
+        <li><img src="/images/redalert/logos/boingboing.png" alt="Boing Boing"></li>
+        <li><img src="/images/redalert/logos/freemusic.png" alt="Free Music Archive"></li>
+        <li><img src="/images/redalert/logos/corporate-accountability.png" alt="Corporate Accountability"></li>
+        <li><img src="/images/redalert/logos/native-public-media.png" alt="Native Public Media"></li>
+        <li><img src="/images/redalert/logos/publicknowledge.png" alt="Public Knowledge"></li>
+        <li><img src="/images/redalert/logos/courage.png" alt="Courage Campaign"></li>
+        <li><img src="/images/redalert/logos/newmode.png" alt="New/Mode"></li>
+        <li><img src="/images/redalert/logos/namecheap.png" alt="Namecheap"></li>
+        <li><img src="/images/redalert/logos/ask.jpg" alt="Ask"></li>
+        <li><img src="/images/redalert/logos/Investopedia.png" alt="Investopedia"></li>
+        <li><img src="/images/redalert/logos/iac.png" alt="IAC"></li>
+        <li><img src="/images/redalert/logos/just-foreign-policy.jpg" alt="Just Foreign Policy"></li>
+        <li><img src="/images/redalert/logos/lifewire.png" alt="Lifewire"></li>
+        <li><img src="/images/redalert/logos/wgaw.jpg" alt="Writer's Guild of America West"></li>
+        <li><img src="/images/redalert/logos/carbonite.png" alt="Carbonite"></li>
+        <li><img src="/images/redalert/logos/anchorfree.png" alt="AnchorFree"></li>
+        <li><img src="/images/redalert/logos/presente-2018.png" alt="Presente Action"></li>
+        <li><img src="/images/redalert/logos/colorofchange.jpg" alt="Color of Change"></li>
+        <li><img src="/images/redalert/logos/public-citizen.png" alt="Public Citizen"></li>
+        <li><img src="/images/redalert/logos/peoplefortheamericanway.png" alt="People for the American Way"></li>
+        <li><img src="/images/redalert/logos/working-families.png" alt="Working Families"></li>
+        <li><img src="/images/redalert/logos/centerformediajustice.png" alt="Center for Media Justice"></li>
+        <li><img src="/images/redalert/logos/18mr.png" alt="18MillionRising"></li>
+        <li><img src="/images/redalert/logos/our-tIme-btn.png" alt="OurTime"></li>
+        <li><img src="/images/redalert/logos/lovescout24-btn.png" alt="LoveScout24"></li>
+        <li><img src="/images/redalert/logos/Pairs-Biger-BTN.png" alt="Pairs"></li>
+        <li><img src="/images/redalert/logos/mediaalliance.png" alt="Media Alliance"></li>
+        <li><img src="/images/redalert/logos/pcaf.png" alt="Progressive Congress Action Fund"></li>
+        <li><img src="/images/redalert/logos/common-dreams.jpg" alt="Common Dreams"></li>
+        <li><img src="/images/redalert/logos/fote.png" alt="Friends of the Earth"></li>
+        <li><img src="/images/redalert/logos/shapeways.png" alt="Shapeways"></li>
+        <li><img src="/images/redalert/logos/progress-america.png" alt="Progress America"></li>
+        <li><img src="/images/redalert/logos/cdt-revised.png" alt="Center for Democracy & Technology"></li>
+        <li><img src="/images/redalert/logos/afv.png" alt="American Family Voices"></li>
+        <li><img src="/images/redalert/logos/wakatime.png" alt="WakaTime"></li>
+        <li><img src="/images/redalert/logos/winwithoutwar.png" alt="Win Without War"></li>
+        <li><img src="/images/redalert/logos/hpa-retro-hirez.png" alt="Harry Potter Alliance"></li>
+        <li><img src="/images/redalert/logos/common-cause.png" alt="Common Cause"></li>
+        <li><img src="/images/redalert/logos/cpd-action.png" alt="CPD Action"></li>
+        <li><img src="/images/redalert/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
+        <li><img src="/images/redalert/logos/climatehawksvote.png" alt="Climate Hawks Vote"></li>
+        <li><img src="/images/redalert/logos/PeopleDemandingAction_250.png" alt="People Demanding Action"></li>
+        <li><img src="/images/redalert/logos/DFA-Logo-bottom-transparent-400.png" alt="Democracy for America"></li>
+        <li><img src="/images/redalert/logos/RootsAction_250.png" alt="Roots Action"></li>
+        <li><img src="/images/redalert/logos/watchdog.png" alt="Watchdog"></li>
+        <li><img src="/images/redalert/logos/zerohour_250.png" alt="The Zero Hour"></li>
       </ul>
 
   what:
     title: What's happening?
     body_html: |
-      Starting on May 9th the Internet went on Red Alert contact Congress in 
-      support of net neutrality … and it worked.  The Senate voted to block 
-      the FCC’s repeal of net neutrality.  Because we still need the House of 
-      Representatives to block the FCC’s repeal, you can still put your website 
-      or social media accounts on Red Alert to raise awareness. Click to jump to 
+      Starting on May 9th the Internet went on Red Alert contact Congress in
+      support of net neutrality … and it worked.  The Senate voted to block
+      the FCC’s repeal of net neutrality.  Because we still need the House of
+      Representatives to block the FCC’s repeal, you can still put your website
+      or social media accounts on Red Alert to raise awareness. Click to jump to
       instructions for how to join with [your website](#join) or on
       [social media](#social).
 
@@ -181,7 +181,7 @@ sections:
         alt="A screenshot of our Red Alert modal when minimized"
         class="rounded">
 
-      When users click to TAKE ACTION, the widget will expand to display an urgent message to 
+      When users click to TAKE ACTION, the widget will expand to display an urgent message to
       contact Congress in support of net neutrality:
 
       <img src="/images/redalert/modal-preview.jpg"
@@ -190,7 +190,7 @@ sections:
         alt="A screenshot of our Red Alert modal"
         class="rounded">
 
-      If you'd like to configure the appearance or change the location of the widget on your 
+      If you'd like to configure the appearance or change the location of the widget on your
       web pages, just visit [our GitHub page](https://github.com/fightforthefuture/redalert-widget)
       to learn how.
 
