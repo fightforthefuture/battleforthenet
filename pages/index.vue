@@ -100,7 +100,7 @@ img.app-store {
     <section id="ooni">
       <h2>Want to use your Internet connection to help catch net neutrality violations? Get this app.</h2>
 
-      <p>ISPs like <a href="https://www.engadget.com/2017/08/22/verizon-video-throttling-net-neutrality-unfair-to-customers/">Verizon</a> and <a href="https://www.polygon.com/2017/2/9/14548880/time-warner-lawsuit-new-york-league-of-legends-netflix">Spectrum</a> already violate net neutrality rules, but it's hard to spot. <a href="https://ooni.torproject.org/">OONI</a>, part of the <a href="https://torproject.org/">Tor Project</a>, helps catch net neutrality violations and other kinds of online censorship. Can you install the app on your phone, and set it to run daily? <!-- Visit <a href="http://www.testyourinter.net/">TestYourInter.net</a> to learn more, or download the app now! --></p>
+      <p>ISPs like <a href="https://www.engadget.com/2017/08/22/verizon-video-throttling-net-neutrality-unfair-to-customers/">Verizon</a> and <a href="https://www.polygon.com/2017/2/9/14548880/time-warner-lawsuit-new-york-league-of-legends-netflix">Spectrum</a> already violate net neutrality rules, but it's hard to spot. <a href="https://ooni.torproject.org/">OONI</a>, part of the <a href="https://torproject.org/">Tor Project</a>, helps catch net neutrality violations and other kinds of online censorship. Can you install the app on your phone, and set it to run daily? Visit <a href="http://www.testyourinter.net/">TestYourInter.net</a> to learn more, or download the app now!</p>
 
       <p>
         <a href="https://itunes.apple.com/us/app/id1199566366"><img class="app-store" src="/images/app-store.png" alt="Download for iOS"></a>
