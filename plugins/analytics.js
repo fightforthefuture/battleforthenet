@@ -34,6 +34,10 @@ const MyPlugin = {
       if (window.ga) {
         ga('send', 'event', category, action, label)
       }
+
+      if (window._paq) {
+        _paq.push(['trackEvent', category, action, label])
+      }
     }
 
     // add click tracking convenience method
@@ -55,9 +59,24 @@ export default ({ app }) => {
 
   ga('create', settings.googleAnalyticsId, 'auto')
 
+  window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  // _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//analytics.fftf.cat/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+
   app.router.afterEach((to, from) => {
     ga('set', 'page', to.fullPath)
     ga('set', 'dimension0', getExperimentsString(to.query))
     ga('send', 'pageview')
+
+    _paq.push(['setDocumentTitle', to.fullPath]);
+    _paq.push(['trackPageView']);
   })
 }
