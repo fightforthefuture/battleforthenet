@@ -35,8 +35,13 @@ form {
 <template>
   <div class="call-form">
     <div v-if="!hasCalled || !inModal">
-      <h2 v-if="inModal"><strong>Thanks!</strong> Can you call?</h2>
-      <p>We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.</p>
+      <div v-if="inModal">
+        <h2 v-if="inModal"><strong>Thanks!</strong> Can you call?</h2>
+        <p>We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.</p>
+      </div>
+      <div v-else>
+        <p><strong>BREAKING NEWS:</strong> The Senate voted to save net neutrality. Now we need the House of Representatives to do the same, or else the FCC will let ISPs like Comcast and Verizon ruin the internet with throttling, censorship and expensive new fees. <strong>Call your lawmakers now!</strong></p>
+      </div>
       <form @submit.prevent="submitForm()">
         <input class="phone" type="tel" placeholder="Phone Number" v-model.trim="phone" required>
         <input class="zip" type="tel" placeholder="Zip Code" v-model.trim="zipCode" required>
