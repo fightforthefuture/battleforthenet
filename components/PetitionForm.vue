@@ -1,4 +1,4 @@
-<style lang="scss" scoped>
+<style lang="scss">
 .petition-form {
   .petition-copy {
     font-size: 2.7rem;
@@ -13,6 +13,10 @@
       background-repeat: no-repeat;
       background-position: bottom right;
       background-size: 120px auto;
+    }
+
+    p {
+      margin: 0;
     }
 
     strong {
@@ -124,27 +128,25 @@
 <template>
   <div class="petition-form clearfix">
     <form @submit.prevent="submitForm()">
-      <input v-model.trim="name" type="text" placeholder="Name*" required class="name">
-      <input v-model.trim="email" type="email" placeholder="E-mail*" required class="email">
-      <input v-model.trim="address" type="text" placeholder="Address*" required class="address">
-      <input v-model.trim="zipCode" type="tel" placeholder="Zip*" required class="zip-code">
-      <input v-model.trim="phone" type="tel" placeholder="Phone # (for text list)">
+      <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
+      <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
+      <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
+      <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
+      <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
       <div class="letter">
-        <label>Letter:</label>
+        <label>{{ $lt('letter_placeholder') }}</label>
         <textarea v-model="comments" ref="comments"></textarea>
-        <a href="#" class="clear" @click.prevent="clearComments()">Clear and write your own</a>
+        <a href="#" class="clear" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
       </div>
       <button class="btn btn-block btn-large" :disabled="isSending">
-        <span v-if="isSending">Saving...</span>
-        <span v-else>Write Congress</span>
+        <span v-if="isSending">{{ $lt('button_loading') }}</span>
+        <span v-else>{{ $lt('button_cta') }}</span>
       </button>
       <no-ssr>
         <disclaimer :sms="true"></disclaimer>
       </no-ssr>
     </form>
-    <div class="petition-copy">
-      The FCC voted to repeal net neutrality and let big cable companies control the Internet.  But after millions of us flooded Congress with emails and calls, the U.S. Senate voted to overturn the FCC’s disastrous decision. Now we need the House of Representatives to do the same. <strong>Tell your lawmakers you want freedom on the Internet now!</strong>
-    </div>
+    <div class="petition-copy" v-html="$t('pages.index.intro_html')"></div>
     <modal v-if="modalVisible">
       <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
     </modal>
@@ -158,16 +160,6 @@ import CallForm from '~/components/CallForm'
 
 // battle-for-the-net-action-4
 const petitionId = '25488448-4124-4359-8873-d1ef731ea5f4'
-
-const defaultLetter = `Last December's FCC vote to destroy the Net Neutrality protections cannot stand.
-
-I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
-
-The FCC's December decision willfully ignored the outcry of tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
-
-We need members of Congress to stand up for the open internet and for the digital rights of their constituents now. Please co-sponsor, sign the discharge petition for, and vote for the CRA Resolution of Disapproval that would overturn the FCC's December "Restoring Internet Freedom" vote.
-
-Thank you.`
 
 export default {
   components: {
@@ -183,7 +175,7 @@ export default {
       address: null,
       zipCode: null,
       phone: null,
-      comments: defaultLetter
+      comments: this.$lt('default_letter')
     }
   },
 
@@ -204,6 +196,10 @@ export default {
   },
 
   methods: {
+    $lt(key) {
+      return this.$t(`pages.index.form.${key}`)
+    },
+
     clearComments() {
       this.$trackEvent('clear_comments_button', 'click')
       this.comments = null
@@ -257,7 +253,7 @@ export default {
       this.address = null
       this.zipCode = null
       this.phone = null
-      this.comments = defaultLetter
+      this.comments = this.$lt('default_letter')
     },
 
     startTextFlow() {

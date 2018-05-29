@@ -9,9 +9,14 @@ export default ({ app, store, isDev }) => {
   // use YAML strings files in dev for live updates
   if (isDev) {
     const formatStrings = require('~/assets/js/format-strings')
+
+    // TODO: make these load automatically via directory structure
     messages = formatStrings({
       en: {
-        redalert: require('~/locales/en/redalert.yml'),
+        pages: {
+          index: require('~/locales/en/pages/index.yml'),
+          redalert: require('~/locales/en/pages/redalert.yml')
+        },
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml')
         }

@@ -311,22 +311,22 @@ iframe.events-map {
     <header class="page-header" id="top">
       <div class="container">
         <img class="logo" src="~/assets/images/warning.svg" alt="">
-        <h1 class="upcase">{{ $t('redalert.title') }}</h1>
-        <div v-html="$t('redalert.intro_html')"></div>
+        <h1 class="upcase">{{ $lt('title') }}</h1>
+        <div v-html="$lt('intro_html')"></div>
         <form @submit.prevent="submitForm()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="row">
-            <input v-model="name" :placeholder="$t('redalert.form.name_placeholder')" name="name" type="text" required>
-            <input v-model="email" :placeholder="$t('redalert.form.email_placeholder')" name="email" type="email" required>
+            <input v-model="name" :placeholder="$lt('form.name_placeholder')" name="name" type="text" required>
+            <input v-model="email" :placeholder="$lt('form.email_placeholder')" name="email" type="email" required>
           </div>
           <div class="row">
-            <input v-model="address" :placeholder="$t('redalert.form.address_placeholder')" name="address" type="text" required class="address">
-            <input v-model="zipCode" :placeholder="$t('redalert.form.zip_placeholder')" name="zip_code" type="tel" required class="zip">
-            <input v-model="phone" :placeholder="$t('redalert.form.phone_placeholder')" name="phone" type="tel" class="phone">
+            <input v-model="address" :placeholder="$lt('form.address_placeholder')" name="address" type="text" required class="address">
+            <input v-model="zipCode" :placeholder="$lt('form.zip_placeholder')" name="zip_code" type="tel" required class="zip">
+            <input v-model="phone" :placeholder="$lt('form.phone_placeholder')" name="phone" type="tel" class="phone">
           </div>
           <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
-            <span v-if="isSending">{{ $t('redalert.form.button_loading') }}</span>
-            <span v-else>{{ $t('redalert.form.button_cta') }}</span>
+            <span v-if="isSending">{{ $lt('form.button_loading') }}</span>
+            <span v-else>{{ $lt('form.button_cta') }}</span>
           </button>
           <no-ssr>
             <experiment name="redalert-disclaimer-test">
@@ -342,7 +342,7 @@ iframe.events-map {
       </div>
     </header>
 
-    <section v-for="(section, id) in $t('redalert.sections')" :id="id" :key="id">
+    <section v-for="(section, id) in $lt('sections')" :id="id" :key="id">
       <div class="container">
         <h2>{{ section.title }}</h2>
         <div v-html="section.body_html"></div>
@@ -351,7 +351,7 @@ iframe.events-map {
     </section>
 
     <persistent-button>
-      <a class="flex-center" href="#top" @click.prevent="scrollToTop()"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $t('redalert.persistent_button') }}</span></a>
+      <a class="flex-center" href="#top" @click.prevent="scrollToTop()"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $lt('persistent_button') }}</span></a>
     </persistent-button>
 
     <social-sidebar></social-sidebar>
@@ -384,7 +384,7 @@ export default {
 
   head() {
     return {
-      title: this.$t('redalert.title'),
+      title: this.$lt('title'),
 
       link: [
         {
@@ -394,10 +394,10 @@ export default {
       ],
 
       meta: createMetaTags({
-        title: this.$t('redalert.sharing.title'),
-        description: this.$t('redalert.sharing.description'),
-        image: this.$t('redalert.sharing.image'),
-        url: this.$t('redalert.sharing.url')
+        title: this.$lt('sharing.title'),
+        description: this.$lt('sharing.description'),
+        image: this.$lt('sharing.image'),
+        url: this.$lt('sharing.url')
       })
     }
   },
@@ -460,6 +460,10 @@ export default {
   },
 
   methods: {
+    $lt(key) {
+      return this.$t(`pages.redalert.${key}`)
+    },
+
     async submitForm() {
       this.isSending = true
       const variant = localStorage.getItem('exp.redalert-disclaimer-test')
@@ -495,7 +499,7 @@ export default {
       catch (error) {
         console.error(error)
         this.isSending = false
-        this.errorMessage = this.$t('redalert.form.generic_error')
+        this.errorMessage = this.$lt('form.generic_error')
       }
 
       this.signActionPetition()

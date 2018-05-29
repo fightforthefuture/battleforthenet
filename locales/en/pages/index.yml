@@ -1,0 +1,180 @@
+
+title: Net neutrality is freedom on the Internet
+intro_html: |
+  The FCC voted to repeal net neutrality and let big cable companies control the
+  Internet.  But after millions of us flooded Congress with emails and calls,
+  the U.S. Senate voted to overturn the FCC’s disastrous decision. Now we need
+  the House of Representatives to do the same. **Tell your lawmakers you want
+  freedom on the Internet now!**
+persistent_button: Write Congress
+
+form:
+  name_placeholder: Name*
+  email_placeholder: E-mail*
+  address_placeholder: Address*
+  zip_placeholder: Zip*
+  phone_placeholder: "Phone # (for text list)"
+  letter_placeholder: "Letter:"
+  clear_comments: Clear and write your own
+  button_loading: Saving...
+  button_cta: Write Congress
+  default_letter: |
+    Last December's FCC vote to destroy the Net Neutrality protections cannot stand.
+
+    I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
+
+    The FCC's December decision willfully ignored the outcry of tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
+
+    We need members of Congress to stand up for the open internet and for the digital rights of their constituents now. Please co-sponsor, sign the discharge petition for, and vote for the CRA Resolution of Disapproval that would overturn the FCC's December "Restoring Internet Freedom" vote.
+
+    Thank you.
+
+sections:
+  join:
+    title: Put the Internet on Red Alert for June 11th
+    body_html: |
+      The FCC’s repeal of net neutrality will officially take place on
+      <a href="https://www.reuters.com/article/us-usa-internet/u-s-net-neutrality-rules-will-end-on-june-11-fcc-idUSKBN1IB1UN"
+        target="_blank">June 11th</a>.  Don’t worry… the internet won’t suddenly
+      stop working on that day.  But if we don’t convince Congress to protect
+      net neutrality with strong laws, your cable companies will slowly begin
+      throttling traffic, imposing new unfair fees and threatening free speech
+      and free markets on the Internet.
+
+      That’s where you come in.  If you run a website, you can place our Red
+      Alert widget on your website.  The widget is a small — but powerful — way
+      to raise awareness and rally the public to contact Congress in support of
+      net neutrality.  Check it out:
+
+      <div class="modals flex-center">
+        <img src="/images/redalert/modal-minimized-preview@2x.jpg"
+          alt="A screenshot of our Red Alert modal when minimized"
+          class="rounded">
+      </div>
+
+      Users who click the TAKE ACTION button will be able to send a letter to
+      Congress from within the widget by entering their contact info.  Users who
+      the CLOSE button won’t see the widget on your site for 24 hours. Try it
+      out for yourself <a href="https://www.fightforthefuture.org?redalert"
+      target="_blank">here</a>.
+
+      It’s easy to use. Simply add the line of code below to your website’s
+      header. And don’t forget to
+      <a href="https://github.com/fightforthefuture/redalert-widget">visit our
+      GitHub page</a> to learn how to customize the widget for your site.
+
+      <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
+
+  social-media:
+    title: Spread the word online
+    body_html: |
+      We have a variety of banner ads that you can display on your website to
+      show your support for net neutrality.  And if you don’t run a website, you
+      can still help spread the word on social media by updating your Facebook
+      profile, Twitter account or Instagram story.  Click <a
+      href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+      target="_blank">here</a> to view all of the great content we’ve made.
+      <p class="text-center">
+        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank"><img src="/images/redalert/instagram-story.jpg"
+          srcset="/images/redalert/instagram-story.jpg 1x,
+                  /images/redalert/instagram-story@2x.jpg 2x"
+          alt="Instagram story screenshot"></a>
+      </p>
+      <p class="text-center">
+        <a class="btn"
+          href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          target="_blank">View all</a>
+      </p>
+
+  stats:
+    title: We are making Congress listen
+    body_html: |
+      Voters from across the political spectrum agree: they don't want their
+      cable company to control what they see and do online. The FCC's reckless
+      repeal of net neutrality has sparked an unprecedented backlash, as
+      millions of Americans have contacted their lawmakers in protest.  The
+      numbers below represent actions taken through BattleForTheNet.com and its
+      partners. Many more have taken action on other sites or contacted their
+      lawmakers directly.
+
+      To help convince the House, <a href="#bftn-action-form">contact congress
+      now</a> and add to these numbers.
+
+  scoreboard:
+    title: View the Congressional Scoreboard
+    body_html: |
+      We’re keeping track of who supports net neutrality … and who doesn’t. Now
+      you can, too.  Below you'll find a list of your state's Senators and
+      Representatives. The ones in green support net neutrality, so let them
+      know you appreciate their support. The ones in red need to be convinced,
+      so let them know how important this issue is to you.
+
+      We already won in the Senate. Now we must win the House. So please tweet
+      and call your <a href="/scoreboard/#house">House Representatives</a>.
+
+  events:
+    title: Attend an event in your area
+    body_html: |
+      Want to make your voice heard? Check out the map below to find a protest
+      or a meeting with a representative in your state. And if there are no
+      events in your area, consider organizing one!
+
+  net-neutrality:
+    title: What is net neutrality? Why does it matter?
+    body_html: |
+      Net neutrality is the principle that everyone should have access to
+      websites and apps, preventing Internet providers like Comcast & Verizon
+      from creating “<a
+      href="https://arstechnica.com/information-technology/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/"
+      target="_blank">fast lanes</a>,” <a
+      href="http://netneutrality.koumbit.org/en/node/5" target="_blank">censoring
+      content</a>,
+      <a href="https://www.extremetech.com/computing/186576-verizon-caught-throttling-netflix-traffic-even-after-its-pays-for-more-bandwidth"
+      target="_blank">throttling traffic</a> and even outright <a
+      href="http://www.washingtonpost.com/blogs/post-tech/post/fcc-fines-verizon-125m-for-blocking-tethering-apps/2012/07/31/gJQAXjRLNX_blog.html"
+      target="_blank">blocking access</a> to their competitor's products. This
+      principle has guided the world wide web from the beginning, and has been
+      protected by federal policy under Republican AND Democrat leadership since
+      the <a href="https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf"
+      target="_blank">early 2000s</a>.
+
+      Unfortunately, Internet providers ignored this policy and even actively
+      <a href="https://en.wikipedia.org/wiki/Verizon_Communications_Inc._v._FCC_(2014)"
+      target="_blank">sued the federal government</a> to destroy net neutrality
+      protections… and they won. Their anti-consumer practices finally convinced
+      the FCC to issue the Open Internet Order as a last resort in 2015. But
+      under new leadership, the FCC has removed these regulations, threatening
+      to end the web as we know it.
+
+      Want to learn more? Watch these videos!
+
+  team-internet:
+    title: We are Team Internet
+    body_html: |
+      Members of Team Internet support free speech and free markets online
+      through meaningful, enforceable net neutrality laws. We are millions of
+      everyday Americans from
+      <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules"
+      target="_blank">across the political spectrum</a>. We are
+      <a href="https://www.businessesfornetneutrality.com/" target="_blank">thousands
+      of small business owners</a>.  We are
+      <a href="https://twitter.com/netflix/status/941373853216915456" target="_blank">large
+      corporations</a> and <a href="https://www.aclu.org/issues/free-speech/internet-speech/net-neutrality"
+      target="_blank">powerful non-profits</a>. Check out the list below to see
+      who’s taken action to save net neutrality:
+
+  team-cable:
+    title: They are Team Cable
+    body_html: |
+      Team Cable wants to end net neutrality so they can control and tax the
+      Internet. Team Cable <a
+      href="https://www.wired.com/story/the-fcc-says-net-neutrality-cripples-investment-thats-not-true/"
+      target="_blank">lies about the effects of net neutrality</a> on the free
+      market and <a
+      href="https://gizmodo.com/senators-demand-fcc-answer-for-fake-comments-after-real-1826213294"
+      target="_blank">ignores blatant corruption</a> in the regulatory process.
+      If they get their way, we will all pay more money for worse Internet
+      access. Independent voices <a href="https://www.donttreadonthe.net/"
+      target="_blank">will be stifled</a>. And innovative start-ups will
+      struggle to compete in the online marketplace.
