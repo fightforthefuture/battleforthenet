@@ -11,7 +11,10 @@ function loadStrings(filePath) {
 
 const messages = formatStrings({
   en: {
-    redalert: loadStrings('redalert.yml'),
+    pages: {
+      redalert: loadStrings('pages/redalert.yml'),
+      index: loadStrings('pages/index.yml'),
+    },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml')
     }
