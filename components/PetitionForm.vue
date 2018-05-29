@@ -8,10 +8,10 @@
     width: 60%;
 
     @include big-screen {
-      padding-bottom: 100px;
+      padding-bottom: 60px;
       background-image: url('~/assets/images/arrow.svg');
       background-repeat: no-repeat;
-      background-position: 300px 335px;
+      background-position: bottom right;
       background-size: 120px auto;
     }
 
@@ -143,7 +143,7 @@
       </no-ssr>
     </form>
     <div class="petition-copy">
-      BREAKING NEWS: The Senate voted to save net neutrality.  Now we need the House of Representatives to do the same, or else the FCC will let ISPs like Comcast and Verizon ruin the internet with throttling, censorship and expensive new  fees.  <strong>Write your lawmakers now!</strong>
+      The FCC voted to repeal net neutrality and let big cable companies control the Internet.  But after millions of us flooded Congress with emails and calls, the U.S. Senate voted to overturn the FCC’s disastrous decision. Now we need the House of Representatives to do the same. <strong>Tell your lawmakers you want freedom on the Internet now!</strong>
     </div>
     <modal v-if="modalVisible">
       <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
