@@ -30,20 +30,24 @@ form:
 
 sections:
   join:
-    title: Put the Internet on Red Alert for June 11th
+    title: Net Neutrality ends on June 11th, but the fight has just begun
     body_html: |
       The FCC’s repeal of net neutrality will officially take place on
       <a href="https://www.reuters.com/article/us-usa-internet/u-s-net-neutrality-rules-will-end-on-june-11-fcc-idUSKBN1IB1UN"
-        target="_blank">June 11th</a>.  Don’t worry… the internet won’t suddenly
+        target="_blank">June 11th</a>.  Don’t worry … the internet won’t suddenly
       stop working on that day.  But if we don’t convince Congress to protect
       net neutrality with strong laws, your cable companies will slowly begin
       throttling traffic, imposing new unfair fees and threatening free speech
-      and free markets on the Internet.
+      and free markets on the Internet.  So we're giving our lawmakers an 
+      ultimatum: support net neutrality or become the target of a fierce summer 
+      activism campaign including ad buys, in-district protests, small business 
+      pressure, and a river of angry constituent phone calls ahead of the mid-term
+      elections.
 
-      That’s where you come in.  If you run a website, you can place our Red
-      Alert widget on your website.  The widget is a small — but powerful — way
-      to raise awareness and rally the public to contact Congress in support of
-      net neutrality.  Check it out:
+      We need your help to make this happen. If you run a website, you can place 
+      our small — but powerful — widget on your website to raise awareness and 
+      rally the public to contact Congress in support ofnet neutrality.  Check it 
+      out:
 
       <div class="modals flex-center">
         <img src="/images/redalert/modal-minimized-preview@2x.jpg"
@@ -52,10 +56,10 @@ sections:
       </div>
 
       <div class="modal-tip">
-        <p>Users who click the TAKE ACTION button will be able to send a letter to
-        Congress from within the widget by entering their contact info.  Users who
-        the CLOSE button won’t see the widget on your site for 24 hours. Try it
-        out for yourself by clicking the button below:</p>
+        <p>Users who take action will be able to send a letter to Congress from within 
+        the widget by entering their contact info.  Users who close the widget won’t 
+        see it again for 24 hours. Try it out for yourself by clicking the button 
+        below:</p>
         <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?redalert"
         target="_blank">Try it out</a></p>
         <p>It’s easy to use. Simply add the line of code below to your website’s
