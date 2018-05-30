@@ -38,35 +38,37 @@ sections:
       stop working on that day.  But if we don’t convince Congress to protect
       net neutrality with strong laws, your cable companies will slowly begin
       throttling traffic, imposing new unfair fees and threatening free speech
-      and free markets on the Internet.  So we're giving our lawmakers an 
-      ultimatum: support net neutrality or become the target of a fierce summer 
-      activism campaign including ad buys, in-district protests, small business 
+      and free markets on the Internet.  So we're giving our lawmakers an
+      ultimatum: support net neutrality or become the target of a fierce summer
+      activism campaign including ad buys, in-district protests, small business
       pressure, and a river of angry constituent phone calls ahead of the mid-term
       elections.
 
-      We need your help to make this happen. If you run a website, you can place 
-      our small — but powerful — widget on your website to raise awareness and 
-      rally the public to contact Congress in support ofnet neutrality.  Check it 
+      We need your help to make this happen. If you run a website, you can place
+      our small — but powerful — widget on your website to raise awareness and
+      rally the public to contact Congress in support ofnet neutrality.  Check it
       out:
 
       <div class="modals flex-center">
-        <img src="/images/redalert/modal-minimized-preview@2x.jpg"
-          alt="A screenshot of our Red Alert modal when minimized"
-          class="rounded">
+        <img src="/images/june11-widget-screenshot.jpg"
+             srcset="/images/june11-widget-screenshot.jpg 1x,
+                     /images/june11-widget-screenshot@2x.jpg 2x"
+             alt="A screenshot of our widget when minimized"
+             class="rounded">
       </div>
 
       <div class="modal-tip">
-        <p>Users who take action will be able to send a letter to Congress from within 
-        the widget by entering their contact info.  Users who close the widget won’t 
-        see it again for 24 hours. Try it out for yourself by clicking the button 
+        <p>Users who take action will be able to send a letter to Congress from within
+        the widget by entering their contact info.  Users who close the widget won’t
+        see it again for 24 hours. Try it out for yourself by clicking the button
         below:</p>
-        <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?redalert"
+        <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?widget=june11"
         target="_blank">Try it out</a></p>
         <p>It’s easy to use. Simply add the line of code below to your website’s
         header. And don’t forget to
-        <a href="https://github.com/fightforthefuture/redalert-widget">visit our
+        <a href="https://github.com/fightforthefuture/june11-widget">visit our
         GitHub page</a> to learn how to customize the widget for your site.</p>
-        <code>&lt;script src="https://redalert.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
+        <code>&lt;script src="https://june11.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
       </div>
 
   social-media:
