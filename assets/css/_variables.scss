@@ -37,6 +37,12 @@ $container-width: 600px;
   }
 }
 
+@mixin daytons-lenovo {
+  @media only screen and (max-height: 700px) and (min-width: 1000px) {
+    @content;
+  }
+}
+
 @mixin btn-icon($icon-url, $width, $height) {
   display: inline-flex;
   justify-content: center;

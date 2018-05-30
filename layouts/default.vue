@@ -104,8 +104,31 @@ strong {
     width: auto;
   }
 
+  .page-header .intro p {
+    font-size: 1.8rem;
+  }
+}
+
+@include daytons-lenovo {
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  h2.section-title {
+    font-size: 3.2rem;
+  }
+
   section {
-    padding: 3rem 0;
+    padding: 4rem;
+  }
+
+  .page-header {
+    padding-top: 4rem;
+
+    .intro p {
+      font-size: 1.8rem;
+    }
   }
 }
 </style>
