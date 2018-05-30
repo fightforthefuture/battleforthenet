@@ -107,6 +107,10 @@ strong {
   .page-header .intro p {
     font-size: 1.8rem;
   }
+
+  section {
+    padding: 3rem 0;
+  }
 }
 
 @include daytons-lenovo {

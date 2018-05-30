@@ -1350,7 +1350,7 @@
     "stateCode": "CO",
     "yesOnCRA": false,
     "twitter": "SenCoryGardner",
-    "calls": 5217
+    "calls": 5218
   },
   {
     "biocode": "G000580",
@@ -1592,7 +1592,7 @@
     "stateCode": "UT",
     "yesOnCRA": false,
     "twitter": "SenOrrinHatch",
-    "calls": 3603
+    "calls": 3604
   },
   {
     "biocode": "H001041",
@@ -2241,7 +2241,7 @@
     "stateCode": "KY",
     "yesOnCRA": false,
     "twitter": "McConnellPress",
-    "calls": 79906
+    "calls": 79907
   },
   {
     "biocode": "M001156",
@@ -2549,7 +2549,7 @@
     "stateCode": "OH",
     "yesOnCRA": false,
     "twitter": "SenRobPortman",
-    "calls": 3734
+    "calls": 3735
   },
   {
     "biocode": "P000599",
@@ -4614,7 +4614,7 @@
     "stateCode": "MN",
     "yesOnCRA": true,
     "twitter": "amyklobuchar",
-    "calls": 3662
+    "calls": 3663
   },
   {
     "biocode": "K000391",
@@ -5207,7 +5207,7 @@
     "stateCode": "MN",
     "yesOnCRA": true,
     "twitter": "CollinPeterson",
-    "calls": 822
+    "calls": 823
   },
   {
     "biocode": "P000597",
@@ -5449,7 +5449,7 @@
     "stateCode": "NY",
     "yesOnCRA": true,
     "twitter": "SenSchumer",
-    "calls": 37235
+    "calls": 37236
   },
   {
     "biocode": "S000185",
@@ -5887,7 +5887,7 @@
     "stateCode": "MN",
     "yesOnCRA": true,
     "twitter": "tinaflintsmith",
-    "calls": 217
+    "calls": 218
   },
   {
     "biocode": "S000033",
@@ -5920,7 +5920,7 @@
     "stateCode": "LA",
     "yesOnCRA": true,
     "twitter": "SenJohnKennedy",
-    "calls": 1702
+    "calls": 1703
   },
   {
     "biocode": "M001153",
@@ -5931,6 +5931,6 @@
     "stateCode": "AK",
     "yesOnCRA": true,
     "twitter": "LisaMurkowski",
-    "calls": 750
+    "calls": 751
   }
 ]
