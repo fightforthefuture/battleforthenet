@@ -1,12 +1,13 @@
 /* This file is injected into every Vue component */
 
 $body-font: "Open Sans", sans-serif;
-$title-font: Montserrat, sans-serif;
-$body-color: #CCCAEA;
+$title-font: "Poppins", sans-serif;
+$body-color: #fefefe;
 $body-bg-color: #171629;
+$alt-bg-color: #201b2c;
 $border-color: #393558;
-$link-color: #6388ed;
-$header-color: #fd4935;
+$link-color: #26afff;
+$header-color: #fff;
 $secondary-header-color: #fff;
 $facebook-blue: #3C5A96;
 $twitter-blue: #2ecbf8;
@@ -14,9 +15,9 @@ $team-internet-green: #45bcc0;
 $team-cable-red: #ff1a09;
 $muted-text-color: #717093;
 $muted-link-color: #b1aedc;
-$button-primary: #f94220;
-$border-radius: 4px;
-$container-width: 800px;
+$button-primary: #352d47;
+$border-radius: 5px;
+$container-width: 600px;
 
 @mixin mobile {
   @media only screen and (max-width: 480px) {

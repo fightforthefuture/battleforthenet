@@ -18,14 +18,6 @@
 .loading {
   margin: 50px auto;
 }
-
-a.view-all {
-  font-size: 2.6rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  display: block;
-  text-align: center;
-}
 </style>
 
 <template>
@@ -49,7 +41,7 @@ a.view-all {
           <div v-else-if="selectedState && !isLoadingState">
             <h3>Sorry, but we don't have any data for your state yet.</h3>
           </div>
-          <router-link v-if="summary" to="/scoreboard" class="view-all">View all</router-link>
+          <router-link v-if="summary" to="/scoreboard" class="btn">View all</router-link>
         </div>
       </no-ssr>
 

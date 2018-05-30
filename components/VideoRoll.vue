@@ -2,6 +2,11 @@
 .video-roll {
   position: relative;
 
+  @include big-screen {
+    width: 130%;
+    margin-left: -15%;
+  }
+
   .video-scroller {
     overflow: hidden;
     width: 100%;
@@ -54,7 +59,7 @@
 
       .circle {
         border: 3px solid #fff;
-        background-color: #515470;
+        background-color: #58497c;
         width: 7.5rem;
         height: 7.5rem;
         border-radius: 100%;
@@ -88,7 +93,7 @@
     }
 
     .circle {
-      background: #494476;
+      background: #58497c;
       border-radius: 100%;
       width: 4.2rem;
       height: 4.2rem;

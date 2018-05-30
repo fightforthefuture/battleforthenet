@@ -6,7 +6,7 @@ intro_html: |
   the U.S. Senate voted to overturn the FCC’s disastrous decision. Now we need
   the House of Representatives to do the same. **Tell your lawmakers you want
   freedom on the Internet now!**
-persistent_button: Write Congress
+persistent_button: Contact Congress
 
 form:
   name_placeholder: Name*
@@ -14,8 +14,7 @@ form:
   address_placeholder: Address*
   zip_placeholder: Zip*
   phone_placeholder: "Phone # (for text list)"
-  letter_placeholder: "Letter:"
-  clear_comments: Clear and write your own
+  clear_comments: Clear letter
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
@@ -52,18 +51,19 @@ sections:
           class="rounded">
       </div>
 
-      Users who click the TAKE ACTION button will be able to send a letter to
-      Congress from within the widget by entering their contact info.  Users who
-      the CLOSE button won’t see the widget on your site for 24 hours. Try it
-      out for yourself <a href="https://www.fightforthefuture.org?redalert"
-      target="_blank">here</a>.
-
-      It’s easy to use. Simply add the line of code below to your website’s
-      header. And don’t forget to
-      <a href="https://github.com/fightforthefuture/redalert-widget">visit our
-      GitHub page</a> to learn how to customize the widget for your site.
-
-      <code><script src="https://redalert.battleforthenet.com/widget.js" async></script></code>
+      <div class="modal-tip">
+        <p>Users who click the TAKE ACTION button will be able to send a letter to
+        Congress from within the widget by entering their contact info.  Users who
+        the CLOSE button won’t see the widget on your site for 24 hours. Try it
+        out for yourself by clicking the button below:</p>
+        <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?redalert"
+        target="_blank">Try it out</a></p>
+        <p>It’s easy to use. Simply add the line of code below to your website’s
+        header. And don’t forget to
+        <a href="https://github.com/fightforthefuture/redalert-widget">visit our
+        GitHub page</a> to learn how to customize the widget for your site.</p>
+        <code>&lt;script src="https://redalert.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
+      </div>
 
   social-media:
     title: Spread the word online
@@ -86,6 +86,76 @@ sections:
           href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
           target="_blank">View all</a>
       </p>
+
+  cra:
+    title: Here’s how we get Congress save net neutrality
+    body_html: |
+      Our elected officials in Congress can overrule the FCC and save net
+      neutrality using the Congressional Review Act (CRA). But they’ll only do
+      it if we make them. The CRA resolution <a
+      href="https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545"
+      target="_blank">passed the Senate 52-47</a> in a historic upset. But now
+      we’re fighting an uphill battle to get the House of Representatives to do
+      the same. It’s not going to be easy, but if the whole Internet comes
+      together to fight, we can win. Here’s how:
+
+      In the House, we’ll need 218 lawmakers to sign on to a “<a
+      href="https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help"
+      target="_blank">discharge petition</a>” in order to force a vote past
+      leadership to the floor. That means we’ll need to convince all the Democrats,
+      and about 25 Republicans, to support the CRA. And the clock is ticking —
+      if the CRA resolution doesn’t get a vote this year, it dies when the new
+      Congress comes into session.
+
+      <h3>
+        <a href="https://www.battleforthenet.com/how-we-won/">We've done it before.</a>
+        <br>
+        Here’s how we’ll do it this time:
+      </h3>
+
+      <ul>
+        <li class="calls">
+          <h4>
+            <img src="/images/gradient-calls.png" alt="">
+            <span>Flood them with calls and emails</span>
+          </h4>
+          <p>
+            When millions of people call and
+            email their representatives, Congress listens. That’s why we developed
+            a widget that website owners can place on their site, giving their
+            site’s users the opportunity to contact Congress. And we’ve created
+            art assets that will allow individuals to spread the word on powerful
+            social media platforms.
+          </p>
+        </li>
+        <li class="constituents">
+          <h4>
+            <img src="/images/gradient-constituents.png" alt="">
+            <span>In-district constituent pressure</span>
+          </h4>
+          <p>
+            It’s important for lawmakers to see
+            the people who support net neutrality.  We’ll Two short sentences here
+            about in-person events, protests, meetings, and canvassing --
+            mobilizing constituencies that move republicans like veterans.
+          </p>
+        </li>
+        <li class="business">
+          <h4>
+            <img src="/images/gradient-business.png" alt="">
+            <span>Mobilizing small businesses</span>
+          </h4>
+          <p>
+            In Washington, money talks. So lawmakers
+            listen to the small business owners in their districts because those
+            business owners are vital to the local economy. We need to reach out to
+            small business owners to ask them to sign our <a
+            href="https://www.businessesfornetneutrality.com/">petition</a> in
+            support of net neutrality, then we hand-deliver this petition to our
+            politicians.
+          </p>
+        </li>
+      </ul>
 
   stats:
     title: We are making Congress listen
@@ -139,7 +209,8 @@ sections:
       the <a href="https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf"
       target="_blank">early 2000s</a>.
 
-      Unfortunately, Internet providers ignored this policy and even actively
+      Unfortunately, Internet providers ignored this polic
+      white-space: nowrap;y and even actively
       <a href="https://en.wikipedia.org/wiki/Verizon_Communications_Inc._v._FCC_(2014)"
       target="_blank">sued the federal government</a> to destroy net neutrality
       protections… and they won. Their anti-consumer practices finally convinced
@@ -147,7 +218,7 @@ sections:
       under new leadership, the FCC has removed these regulations, threatening
       to end the web as we know it.
 
-      Want to learn more? Watch these videos!
+      ### Want to learn more? Watch these videos!
 
   team-internet:
     title: We are Team Internet

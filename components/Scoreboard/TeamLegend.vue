@@ -1,17 +1,40 @@
 <style lang="scss" scoped>
-h3.legend {
-  color: #fff;
+.legend {
+  font-size: 1.8rem;
+  background-color: #171321;
+  border-radius: $border-radius;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
 
-  .red {
-    color: $team-cable-red;
+  label {
+    color: #fff;
+    padding: .5rem 1.5rem;
+    font-weight: 600;
+    border-radius: $border-radius;
   }
 
-  .green {
-    color: $team-internet-green;
+  .team-cable {
+    color: #ff2a2a;
+
+    label {
+      background: linear-gradient(90deg, rgba(255,74,74,1) 0%, rgba(255,56,56,1) 100%);
+    }
+  }
+
+  .team-internet {
+    color: #0cdbb1;
+
+    label {
+      background: linear-gradient(90deg, rgba(55,191,164,1) 0%, rgba(53,118,173,1) 100%);
+    }
   }
 }
 </style>
 
 <template>
-  <h3 class="legend"><span class="red">Red</span> = Team Cable (no stance) &nbsp; <span class="green">Green</span> = Team Internet (voting!)</h3>
+  <div class="legend">
+    <span class="team-cable"><label>Red</label> = Team Cable</span>
+    <span class="team-internet"><label>Blue</label> = Team Internet</span>
+  </div>
 </template>

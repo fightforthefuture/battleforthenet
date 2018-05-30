@@ -9,11 +9,21 @@
 
     .btn {
       display: block;
-      white-space: nowrap;
+      letter-spacing: 0.25rem;
       font-size: 4rem;
-      padding: 1.5rem;
+      padding: 3rem 2rem;
+      white-space: normal;
+      width: 35rem;
       box-shadow: .5rem .5rem 3.5rem rgba(0, 0, 0, 1.0);
       transition: box-shadow 0.3s ease-in;
+      background: linear-gradient(106deg, rgba(31,90,208,1) 0%, rgba(104,28,179,1) 36%, rgba(165,59,91,1) 76%);
+
+      @include small-screen {
+        white-space: nowrap;
+        font-size: 2.5rem;
+        padding: 1.5rem 0;
+        width: 100%;
+      }
 
       &.btn-phone {
         background-image: url('~/assets/images/phone.svg');

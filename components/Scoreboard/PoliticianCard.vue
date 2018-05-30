@@ -1,14 +1,14 @@
 <style lang="scss" scoped>
 .politician {
   display: inline-block;
-  margin: 1.5rem;
+  margin: 1rem;
   position: relative;
 
   @include mobile {
     margin: 0.75rem;
   }
 
-  img, .cover {
+  img, .cover, .yes-bg {
     width: 10rem;
     height: 12.2rem;
     border-radius: $border-radius;
@@ -54,23 +54,45 @@
     padding: .7rem .5rem;
     margin-bottom: 0.5rem;
     display: block;
+    background-color: transparent;
+    border-radius: $border-radius * 1.2;
+  }
+
+  .btn-twitter {
+    border: 1px solid #2a94c8;
+    color: #2a94c8;
   }
 
   .btn-twitter:before {
     content: none;
   }
 
+  .btn-call {
+    color: #ff2a2a;
+    border: 1px solid #ff2a2a;
+  }
+
+  .yes-bg {
+    display: none;
+  }
+
   &.vote-yes {
     .cover {
-      background-color: rgba(75,205,207,0.5);
+      background: none;
     }
 
-    a.btn-call {
-      background-color: $team-internet-green;
+    .yes-bg {
+      background: linear-gradient(90deg, rgba(55,191,164,1) 0%, rgba(53,118,173,1) 100%);
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+    }
 
-      &:hover {
-        background-color: darken($team-internet-green, 10%);
-      }
+    h5 {
+      z-index: 2;
     }
   }
 }
@@ -80,6 +102,7 @@
   <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
     <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
     <div class="cover" @click="openTweetURL(politician)">
+      <div class="yes-bg"></div>
       <h5>
         {{ politician.name }}
         <small>

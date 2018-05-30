@@ -1,21 +1,33 @@
 <style lang="scss">
 .bftn-footer {
-  background-color: #1f1c35;
+  background: rgb(31,90,208);
+  background: linear-gradient(106deg, rgba(31,90,208,1) 0%, rgba(104,28,179,1) 36%, rgba(165,59,91,1) 76%);
   padding: 3rem 3rem 0;
-  margin-top: 10rem;
+
+  a {
+    color: #09a0ff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   .logos {
-    padding: 2rem 0 3rem;
-    border-bottom: .2rem solid $border-color;
-    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #7f6bae;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
 
-    img {
-      max-width: 240px;
-      margin: 0 2rem;
+    a {
+      flex: 1;
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     @include small-screen {
@@ -28,16 +40,7 @@
     float: left;
     padding-top: 1rem;
     font-weight: bold;
-    color: $muted-text-color;
-
-    h3 {
-      color: $secondary-header-color;
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
+    text-align: left;
 
     @include small-screen {
       width: auto;
@@ -59,19 +62,14 @@
     .btn {
       display: block;
       width: 100%;
-      font-weight: bold;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       position: relative;
       color: #FFF;
       text-decoration: none;
       cursor: pointer;
       height: 5rem;
-      padding: 0 4.5rem 0 1.5rem;
+      padding: 0 4.7rem 0 1.5rem;
       line-height: 5rem;
-      border-radius: 2.5rem;
-      text-transform: uppercase;
-      text-align: center;
-      background-image: none;
       white-space: nowrap;
 
       &:before {
@@ -86,7 +84,7 @@
         position: absolute;
         height: 4rem;
         top: .5rem;
-        right: 1.5rem;
+        right: 1rem;
       }
 
       &:first-child {
@@ -101,18 +99,17 @@
   }
 
   .built-by {
-    font-weight: bold;
-    text-align: center;
     width: 30rem;
     margin: 4rem auto 0;
-    background-color: $body-bg-color;
-    padding: 2rem 0 3rem;
-    color: $muted-text-color;
+    background-color: #521a93;
+    padding: 2rem 0;
     border-radius: $border-radius $border-radius 0 0;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 
     span {
-      margin-right: .5rem;
+      display: block;
+      text-transform: uppercase;
     }
 
     img {
@@ -162,9 +159,8 @@
         </div>
       </div>
       <div class="built-by">
-        <div class="flex-center">
-          <span>Built by:</span> <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">
-        </div>
+        <span>Built by:</span>
+        <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">
       </div>
     </div>
   </footer>

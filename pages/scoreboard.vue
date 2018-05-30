@@ -2,23 +2,36 @@
 .scoreboard {
   margin-bottom: 10rem;
 }
+
+.container {
+  width: 800px;
+}
+
+.page-header {
+  h1 {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 </style>
 
 <template>
-  <div class="container text-center">
-    <section>
-      <h1>We can make Congress save net neutrality.</h1>
-      <p>To save net neutrality, we need to get every member of Congress to
-      promise to vote to overrule the FCC vote. Use this page to track them,
-      call them and tweet them. <em>We won the Senate and now we need to win in the House. Help us get those votes!</em></p>
+  <div>
+    <section class="page-header">
+      <div class="container">
+        <h1>We can make Congress save net neutrality.</h1>
+        <div class="intro"><p>To save net neutrality, we need to get every member of Congress to
+        promise to vote to overrule the FCC vote. Use this page to track them,
+        call them and tweet them. <em>We won the Senate and now we need to win in the House. Help us get those votes!</em></p></div>
+      </div>
     </section>
 
     <section>
-      <scoreboard></scoreboard>
-      <h2>Done tweeting? Be sure to <router-link to="/">email and call</router-link> your members of Congress too!</h2>
+      <div class="container">
+        <scoreboard></scoreboard>
+        <h2>Done tweeting? Be sure to <router-link to="/">email and call</router-link> your members of Congress too!</h2>
+      </div>
     </section>
-
-    <social-sidebar></social-sidebar>
   </div>
 </template>
 

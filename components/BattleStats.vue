@@ -2,24 +2,27 @@
 .battle-stats {
   .stat {
     color: #fff;
-    font-size: 2.8rem;
+    font-size: 2rem;
     text-align: center;
     font-family: $title-font;
+    font-weight: 600;
     margin-top: 1rem;
     display: flex;
 
     .value {
       font-weight: 700;
-      background-color: #1cc89a;
+      background-color: #493c66;
       padding: 2rem;
       width: 30%;
+      border-radius: $border-radius 0 0 $border-radius;
     }
 
     .label {
       width: 70%;
       padding: 2rem;
       position: relative;
-      background-color: #333358;
+      background-color: #2a233b;
+      border-radius: 0 $border-radius $border-radius 0;
 
       &:after {
         right: 100%;
@@ -31,7 +34,7 @@
         position: absolute;
         pointer-events: none;
         border-color: rgba(136, 183, 213, 0);
-        border-right-color: #333358;
+        border-right-color: #2a233b;
         border-width: 10px;
         margin-top: -10px;
       }
@@ -42,10 +45,12 @@
 
       .value {
         width: 40%;
+        padding: 1.5rem;
       }
 
       .label {
         width: 60%;
+        padding: 1.5rem;
       }
     }
   }

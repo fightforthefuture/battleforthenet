@@ -1,144 +1,103 @@
 <style lang="scss">
 .petition-form {
-  .petition-copy {
-    font-size: 2.7rem;
-    line-height: 1.5;
-    color: #fff;
-    float: left;
-    width: 60%;
+  > form {
+    margin: 3rem auto 0;
 
     @include big-screen {
-      padding-bottom: 60px;
-      background-image: url('~/assets/images/arrow.svg');
-      background-repeat: no-repeat;
-      background-position: bottom right;
-      background-size: 120px auto;
+      border: 1px solid #2e273e;
+      border-radius: $border-radius;
+      padding: 3rem;
     }
-
-    p {
-      margin: 0;
-    }
-
-    strong {
-      color: $header-color;
-      font-weight: normal;
-    }
-  }
-
-  form {
-    width: 35%;
-    float: right;
 
     .flex-row {
-      margin-bottom: 0;
-    }
+      margin-bottom: 0.8rem;
 
-    input {
-      margin-bottom: 0.6rem;
-    }
+      > * {
+        margin-right: 0.8rem;
 
-    input.address {
-      width: 64%;
-      margin-right: 2%;
-    }
-
-    input.zip-code {
-      width: 34%;
-    }
-
-    .letter {
-      label {
-        color: #777;
-        font-family: $title-font;
-        font-weight: bold;
-        font-size: 1.7rem;
-        content: "Letter:";
-        background-color: #fff;
-        display: block;
-        border-radius: $border-radius $border-radius 0 0;
-        padding: 1rem 1rem 0;
-      }
-
-      textarea {
-        min-width: 26.5rem;
-        height: 10rem;
-        border-radius: 0;
-      }
-
-      a.clear {
-        background-color: #ccc;
-        color: #999;
-        font-family: $title-font;
-        font-weight: bold;
-        text-transform: uppercase;
-        display: block;
-        text-decoration: none;
-        font-size: 1.2rem;
-        text-align: center;
-        border-radius: 0 0 $border-radius $border-radius;
-        margin: -0.65rem 0 .6rem;
-        padding: .5rem;
-
-        &:hover {
-          color: darken(#999, 10%);
-          background-color: darken(#ccc, 10%);
-          transition: background-color .1s;
+        &:last-child {
+          margin-right: 0;
         }
       }
     }
 
-    .btn {
-      font-size: 1.8rem;
+    input, textarea {
+      font-family: $body-font;
+      font-weight: 300;
+      padding: 1rem 1.5rem;
+
+      &::placeholder {
+        // color: #201b2c;
+        font-weight: 300;
+      }
+    }
+
+    input.zip-code {
+      flex-grow: 0.5;
+    }
+
+    .letter {
+      position: relative;
+      margin-bottom: 0.8rem;
+
+      textarea {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 5rem;
+        height: 5rem;
+        padding-right: 12rem;
+      }
+
+      a.clear {
+        position: absolute;
+        right: 2rem;
+        bottom: 1.6rem;
+        background-color: #ebe7f4;
+        color: #89819d;
+        font-size: 1.2rem;
+        margin: 0;
+        letter-spacing: 0;
+
+        &:hover {
+          background-color: darken(#ebe7f4, 5%);
+        }
+      }
+    }
+
+    .btn-large {
+      font-size: 2.6rem;
       margin: 0;
+      letter-spacing: 0.3rem;
     }
 
     .disclaimer {
       // min-height: 80px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
       animation: fade-in .2s;
-    }
-  }
-
-  @include small-screen {
-    .petition-copy,
-    form {
-      float: none;
-      width: auto;
-    }
-
-    form {
-      margin-bottom: 3rem;
-
-      input.name {
-        width: 49%;
-        margin-right: 2%;
-      }
-
-      input.email {
-        width: 49%;
-      }
-
-      textarea {
-        min-width: none;
-      }
     }
   }
 }
 </style>
 
 <template>
-  <div class="petition-form clearfix">
+  <div class="petition-form">
     <form @submit.prevent="submitForm()">
-      <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
-      <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
-      <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
-      <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
-      <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
-      <div class="letter">
-        <label>{{ $lt('letter_placeholder') }}</label>
-        <textarea v-model="comments" ref="comments"></textarea>
-        <a href="#" class="clear" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
+      <div class="flex-row">
+        <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
+        <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
       </div>
-      <button class="btn btn-block btn-large" :disabled="isSending">
+      <div class="flex-row">
+        <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
+        <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
+        <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
+      </div>
+      <div class="letter">
+        <textarea v-model="comments" ref="comments"></textarea>
+        <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
+      </div>
+      <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
         <span v-if="isSending">{{ $lt('button_loading') }}</span>
         <span v-else>{{ $lt('button_cta') }}</span>
       </button>
@@ -146,7 +105,6 @@
         <disclaimer :sms="true"></disclaimer>
       </no-ssr>
     </form>
-    <div class="petition-copy" v-html="$t('pages.index.intro_html')"></div>
     <modal v-if="modalVisible">
       <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
     </modal>

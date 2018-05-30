@@ -26,6 +26,6 @@
       <li><img src="/images/logos/discord.png" alt="Discord"></li>
       <li><img src="/images/logos/automattic.png" alt="Automattic"></li>
     </ul>
-    <p class="text-center"><a href="/july12/#participants">View all</a></p>
+    <p class="text-center"><a href="/july12/#participants" class="btn">View all</a></p>
   </div>
 </template>
