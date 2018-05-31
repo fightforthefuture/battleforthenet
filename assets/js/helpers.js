@@ -198,7 +198,7 @@ export async function pingCounter(counter) {
   const axios = require('axios')
 
   try {
-    await axios.post(`https://signatures-api.herokuapp.com/ping/${counter}`)
+    await axios.post(`https://counter.battleforthenet.com/ping/${counter}`)
   }
   catch (error) {
     //
