@@ -3,9 +3,9 @@ title: Net neutrality is freedom on the Internet
 intro_html: |
   The FCC voted to repeal net neutrality and let big cable companies control the
   Internet.  But after millions of us flooded Congress with emails and calls,
-  the U.S. Senate voted to overturn the FCC’s disastrous decision. Now we need
-  the House of Representatives to do the same. **Tell your lawmakers you want
-  freedom on the Internet now!**
+  the Senate overturned the FCC’s disastrous decision. Now we need the House of 
+  Representatives to do the same. **Tell your lawmakers you want freedom on the 
+  Internet now!**
 persistent_button: Contact Congress
 
 form:
@@ -36,10 +36,10 @@ sections:
       <a href="https://www.reuters.com/article/us-usa-internet/u-s-net-neutrality-rules-will-end-on-june-11-fcc-idUSKBN1IB1UN"
         target="_blank">June 11th</a>.  Don’t worry … the internet won’t suddenly
       stop working on that day.  But if we don’t convince Congress to protect
-      net neutrality with strong laws, your cable companies will slowly begin
+      net neutrality with strong laws, cable companies will slowly begin
       throttling traffic, imposing new unfair fees and threatening free speech
       and free markets on the Internet.  So we're giving our lawmakers an
-      ultimatum: support Net Neutrality or become the target of a fierce summer
+      ultimatum: support net neutrality or become the target of a fierce summer
       activism campaign including ad buys, in-district protests, small business
       pressure, and a river of angry constituent phone calls ahead of the mid-term
       elections.
@@ -77,11 +77,9 @@ sections:
       We have a variety of banner ads that you can display on your website to
       show your support for net neutrality.  And if you don’t run a website, you
       can still help spread the word on social media by updating your Facebook
-      profile, Twitter account or Instagram story.  Click <a
-      href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
-      target="_blank">here</a> to view all of the great content we’ve made.
+      profile, Twitter account or Instagram story.  
       <p class="text-center">
-        <a href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+        <a href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
           target="_blank"><img src="/images/redalert/instagram-story.jpg"
           srcset="/images/redalert/instagram-story.jpg 1x,
                   /images/redalert/instagram-story@2x.jpg 2x"
@@ -89,7 +87,7 @@ sections:
       </p>
       <p class="text-center">
         <a class="btn"
-          href="https://drive.google.com/drive/folders/1pseCi3ZSuYBIkCgLpthrPF2ss5RSCtCM"
+          href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
           target="_blank">View all</a>
       </p>
 
@@ -107,14 +105,13 @@ sections:
 
       In the House, we’ll need 218 lawmakers to sign on to a “<a
       href="https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help"
-      target="_blank">discharge petition</a>” in order to force a vote past
-      leadership to the floor. That means we’ll need to convince all the Democrats,
-      and about 25 Republicans, to support the CRA. And the clock is ticking —
-      if the CRA resolution doesn’t get a vote this year, it dies when the new
-      Congress comes into session.
+      target="_blank">discharge petition</a>” in order to force a vote past leadership 
+      to the floor. That means we’ll need to convince all the Democrats and about 25 
+      Republicans to support the CRA. The clock is ticking — if the CRA resolution 
+      doesn’t get a vote this year, it dies when the new Congress comes into session.
+      <a href="https://www.battleforthenet.com/how-we-won/">We've done it before.</a>
 
       <h3>
-        <a href="https://www.battleforthenet.com/how-we-won/">We've done it before.</a>
         <br>
         Here’s how we’ll do it this time:
       </h3>
@@ -142,8 +139,8 @@ sections:
           <p>
             It’s important for lawmakers to see
             the people who support net neutrality.  We’ll Two short sentences here
-            about in-person events, protests, meetings, and canvassing --
-            mobilizing constituencies that move republicans like veterans.
+            about in-person events, protests, meetings, and canvassing -
+            mobilizing constituencies (like veterans) that move republicans.
           </p>
         </li>
         <li class="business">
@@ -164,7 +161,7 @@ sections:
       </ul>
 
   stats:
-    title: We are making Congress listen
+    title: We're making Congress listen
     body_html: |
       Voters from across the political spectrum agree: they don't want their
       cable company to control what they see and do online. The FCC's reckless
@@ -219,7 +216,7 @@ sections:
       white-space: nowrap;y and even actively
       <a href="https://en.wikipedia.org/wiki/Verizon_Communications_Inc._v._FCC_(2014)"
       target="_blank">sued the federal government</a> to destroy net neutrality
-      protections… and they won. Their anti-consumer practices finally convinced
+      protections … and they won. Their anti-consumer practices finally convinced
       the FCC to issue the Open Internet Order as a last resort in 2015. But
       under new leadership, the FCC has removed these regulations, threatening
       to end the web as we know it.
