@@ -2,7 +2,7 @@
   "homePage": {
     "stateCampaigns": [
       {
-        "id": "RED_ALERT_BattleForTheNet_2RSens_House",
+        "id": "RED_ALERT_BattleForTheNet_House_2Sens",
         "states": ["ID", "UT", "AZ", "AK", "WY", "SD", "NE", "KS", "OK", "TX", "IA", "AR", "LA", "TN", "KY", "GA", "SC", "NC", "CO", "NV", "MT", "ND", "MO", "WI", "IN", "AL", "FL", "PA", "OH", "WV", "ME"]
       },
       {
@@ -10,12 +10,12 @@
         "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
       }
     ],
-    "defaultCampaign": "RED_ALERT_BattleForTheNet_2RSens_House"
+    "defaultCampaign": "RED_ALERT_BattleForTheNet_House_2Sens"
   },
   "callPage": {
     "stateCampaigns": [
       {
-        "id": "RED_ALERT_BattleForTheNet_Call_2RSens_House",
+        "id": "RED_ALERT_BattleForTheNet_Call_House_2Sens",
         "states": ["ID", "UT", "AZ", "AK", "WY", "SD", "NE", "KS", "OK", "TX", "IA", "AR", "LA", "TN", "KY", "GA", "SC", "NC", "CO", "NV", "MT", "ND", "MO", "WI", "IN", "AL", "FL", "PA", "OH", "WV", "ME"]
       },
       {
@@ -23,6 +23,6 @@
         "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
       }
     ],
-    "defaultCampaign": "RED_ALERT_BattleForTheNet_Call_2RSens_House"
+    "defaultCampaign": "RED_ALERT_BattleForTheNet_Call_House_2Sens"
   }
 }
