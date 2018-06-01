@@ -33,21 +33,33 @@ sections:
     title: Net neutrality ends June 11th, but the fight has just begun
     body_html: |
       The FCC’s repeal of net neutrality will officially take place on
-      <a href="https://www.reuters.com/article/us-usa-internet/u-s-net-neutrality-rules-will-end-on-june-11-fcc-idUSKBN1IB1UN"
-        target="_blank">June 11th</a>.  Don’t worry … the internet won’t suddenly
-      stop working on that day.  But if we don’t convince Congress to protect
-      net neutrality with strong laws, cable companies will slowly begin
-      throttling traffic, imposing new unfair fees and threatening free speech
-      and free markets on the Internet.  So we're giving our lawmakers an
-      ultimatum: support net neutrality or become the target of a fierce summer
-      activism campaign including ad buys, in-district protests, small business
-      pressure, and a river of angry constituent phone calls ahead of the mid-term
-      elections.
+      <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
+        target="_blank">June 11th</a>.  Starting that day, Internet providers like Comcast will legally be 
+        allowed to censor websites, block apps and services, and charge us extra fees to access online content. 
+        The Internet as we know it won’t suddenly end. But with each second that passes until net neutrality is 
+        restored, it will be slowly dying.
+        
+        People will be angry. And rightly so. We need to channel that anger productively and flood House 
+        lawmakers with calls and emails demanding that they use the Congressional Review Act (CRA) to overrule 
+        the FCC.
+        
+        So on June 11th, take whatever corner of the Internet that you control, whether it’s a major platform or 
+        a personal instagram account, and harness its reach to pressure Congress. Here’s how:
 
-      We need your help to make this happen. If you run a website, you can place
-      our small — but powerful — widget on your website to raise awareness and
-      rally the public to contact Congress in support of net neutrality.  Check it
-      out:
+        <ul>
+          <li>Change your social media avatars and profile pics to help sound the alarm, there’s bunch of graphics 
+          in a shared folder <a href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
+          target="_blank">here.</a></li>
+          <li>If you make videos, consider making a video about net neutrality, or use our simple 
+          <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzY1FKTlAzS1NOVTg"
+          target=_blank">video bumper</a> to help spread the word.</li>
+          <li>Link back to BattleForTheNet.com whenever you can so people can easily contact their lawmakers.</li>
+          <li>If you run a website or blog, deploy our updated <a h ref="https://github.com/fightforthefuture/june11-widget"
+          target=_blank">widget</a> to let your users contact Congress without ever leaving your site. You can see 
+          a demo <a href="https://www.fightforthefuture.org/?widget=june11"
+          target=_blank">here</a>. There are also banners and ads of various sizes you can use 
+          <a href="https://www.battleforthenet.com/redalert/#banners">here</a>.</li> 
+        </ul>
 
       <div class="modals flex-center">
         <img src="/images/june11-widget-screenshot.jpg"
@@ -70,26 +82,6 @@ sections:
         GitHub page</a> to learn how to customize the widget for your site.</p>
         <code>&lt;script src="https://june11.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
       </div>
-
-  social-media:
-    title: Spread the word online
-    body_html: |
-      We have a variety of banner ads that you can display on your website to
-      show your support for net neutrality.  And if you don’t run a website, you
-      can still help spread the word on social media by updating your Facebook
-      profile, Twitter account or Instagram story.  
-      <p class="text-center">
-        <a href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
-          target="_blank"><img src="/images/redalert/instagram-story.jpg"
-          srcset="/images/redalert/instagram-story.jpg 1x,
-                  /images/redalert/instagram-story@2x.jpg 2x"
-          alt="Instagram story screenshot"></a>
-      </p>
-      <p class="text-center">
-        <a class="btn"
-          href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
-          target="_blank">View all</a>
-      </p>
 
   cra:
     title: Here’s how we get Congress save net neutrality
