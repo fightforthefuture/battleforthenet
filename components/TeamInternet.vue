@@ -11,6 +11,7 @@
       <li><img src="/images/logos/netflix.jpg" alt="Netflix"></li>
       <li><img src="/images/logos/twitter.png" alt="Twitter"></li>
       <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
+      <li><img src="/images/logos/changeorg.png" alt="Change.org"></li>
       <li><img src="/images/logos/boingboing.png" alt="BoingBoing"></li>
       <li><img src="/images/logos/privateinternetaccess.png" alt="Private Internet Access"></li>
       <li><img src="/images/logos/reddit.png" alt="Reddit"></li>
@@ -24,7 +25,6 @@
       <li><img src="/images/logos/accessnow.png" alt="accessnow"></li>
       <li><img src="/images/logos/aclu.jpg" alt="ACLU"></li>
       <li><img src="/images/logos/discord.png" alt="Discord"></li>
-      <li><img src="/images/logos/automattic.png" alt="Automattic"></li>
     </ul>
     <p class="text-center"><a href="/july12/#participants" class="btn">View all</a></p>
   </div>
