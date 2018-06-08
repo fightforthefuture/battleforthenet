@@ -80,6 +80,15 @@ section {
   }
 }
 
+ul.basic-list {
+  text-align: left;
+  padding: 0 5rem;
+
+  li {
+    margin-bottom: 1.5rem;
+  }
+}
+
 strong {
   color: #fff;
 }

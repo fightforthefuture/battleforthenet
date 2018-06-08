@@ -69,9 +69,8 @@ img.app-store {
   height: 5rem;
 }
 
-.modals a {
-  width: 50%;
-  padding: 1rem;
+.modals {
+  margin-top: 3rem;
 }
 
 .persistent-button img {
