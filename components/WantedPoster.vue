@@ -44,11 +44,13 @@ export default {
 
   watch: {
     async zipCode() {
-      if (this.zipCode.length >= 5) {
+      if (!this.zipCode) {
+        this.reps = []
+      }
+      else if (this.zipCode.length >= 5) {
         const { data } = await axios.get(`https://data.battleforthenet.com/wanted/${this.zipCode.substr(0, 5)}.json`)
         this.reps = data
       }
-      console.log(this.zipCode)
     }
   },
 
