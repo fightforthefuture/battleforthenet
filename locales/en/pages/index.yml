@@ -130,9 +130,9 @@ sections:
           </h4>
           <p>
             It’s important for lawmakers to see
-            the people who support net neutrality.  We’ll Two short sentences here
-            about in-person events, protests, meetings, and canvassing -
-            mobilizing constituencies (like veterans) that move republicans.
+            the people who support net neutrality.  We’ll help schedule in-person events, 
+            protests, meetings, and canvassing to mobilize constituencies (like veterans) 
+            that move republicans.
           </p>
         </li>
         <li class="business">
@@ -170,12 +170,13 @@ sections:
     title: View the Congressional Scoreboard
     body_html: |
       We’re keeping track of who supports net neutrality … and who doesn’t. Now
-      you can, too.  Below you'll find a list of your state's Senators and
-      Representatives. The ones in green support net neutrality, so let them
-      know you appreciate their support. The ones in red need to be convinced,
-      so let them know how important this issue is to you.
+      you can, too.  Below you'll find a link to a list of your state's Senators 
+      and Representatives. The ones in green have signed a discharge petition in 
+      support of net neutrality, so let them know you appreciate their support. 
+      The ones in red need to be convinced, so let them know how important this 
+      issue is to you.
 
-      We already won in the Senate. Now we must win the House. So please tweet
+      We already won in the Senate. Now we must win in the House. So please tweet
       and call your <a href="/scoreboard/#house">House Representatives</a>.
 
   events:
@@ -190,8 +191,7 @@ sections:
     body_html: |
       Net neutrality is the principle that everyone should have access to
       websites and apps, preventing Internet providers like Comcast & Verizon
-      from creating “<a
-      href="https://arstechnica.com/information-technology/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/"
+      from creating “<a href="https://arstechnica.com/information-technology/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/"
       target="_blank">fast lanes</a>,” <a
       href="http://netneutrality.koumbit.org/en/node/5" target="_blank">censoring
       content</a>,
@@ -204,8 +204,7 @@ sections:
       the <a href="https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf"
       target="_blank">early 2000s</a>.
 
-      Unfortunately, Internet providers ignored this polic
-      white-space: nowrap;y and even actively
+      Unfortunately, Internet providers ignored this policy and even actively
       <a href="https://en.wikipedia.org/wiki/Verizon_Communications_Inc._v._FCC_(2014)"
       target="_blank">sued the federal government</a> to destroy net neutrality
       protections … and they won. Their anti-consumer practices finally convinced
