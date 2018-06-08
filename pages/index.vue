@@ -106,6 +106,7 @@ img.app-store {
         <video-roll v-else-if="id == 'net-neutrality'"></video-roll>
         <team-internet v-else-if="id == 'team-internet'"></team-internet>
         <team-cable v-else-if="id == 'team-cable'"></team-cable>
+        <wanted-poster v-else-if="id == 'wanted'"></wanted-poster>
       </div>
     </section>
 
@@ -125,6 +126,7 @@ import PersistentButton from '~/components/PersistentButton'
 import BattleStats from '~/components/BattleStats'
 import TeamInternet from '~/components/TeamInternet'
 import TeamCable from '~/components/TeamCable'
+import WantedPoster from '~/components/WantedPoster'
 
 export default {
   components: {
@@ -137,7 +139,8 @@ export default {
     PersistentButton,
     BattleStats,
     TeamInternet,
-    TeamCable
+    TeamCable,
+    WantedPoster
   },
 
   computed: {

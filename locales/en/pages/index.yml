@@ -178,6 +178,15 @@ sections:
       We already won in the Senate. Now we must win the House. So please tweet
       and call your <a href="/scoreboard/#house">House Representatives</a>.
 
+  wanted:
+    title: Your Rep is Wanted
+    body_html: |
+      June 11th marks the day that net neutrality is being stolen from you. And
+      we have a warrant out for each and every House of Representative lawmaker
+      that did not sign to reinstate net neutrality rules. Find your Rep below
+      to let them know they are wanted and we want our net neutrality back.
+
+
   events:
     title: Attend an event in your area
     body_html: |
