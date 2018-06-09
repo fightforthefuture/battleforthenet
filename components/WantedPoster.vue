@@ -25,6 +25,10 @@ input, textarea {
   .rep {
     width: 50%;
     padding: 1rem;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   .buttons {
