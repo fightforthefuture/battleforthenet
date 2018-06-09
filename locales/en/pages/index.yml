@@ -179,6 +179,17 @@ sections:
       We already won in the Senate. Now we must win in the House. So please tweet
       and call your <a href="/scoreboard/#house">House Representatives</a>.
 
+  wanted:
+    title: Your Rep is Wanted
+    body_html: |
+      The FCC killed net neutrality. But they didn’t act alone. Their
+      accomplices are Team Cable, the members of Congress sitting idly by
+      allowing the free and open Internet to be stolen from us. We can’t let
+      them get away with it. So we made WANTED posters for every rep that’s
+      helping the FCC get away with murder. Let’s make sure they have nowhere
+      to hide -- put these up everywhere online: as your profile image, as a
+      post, on your site, everywhere.
+
   events:
     title: Attend an event in your area
     body_html: |
