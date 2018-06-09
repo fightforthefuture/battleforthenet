@@ -140,7 +140,7 @@ export default {
   },
 
   created() {
-    if (this.$route.query.wanted) {
+    if (this.$route.query.wanted && this.$route.query.wanted !== '00000') {
       this.zipCode = this.$route.query.wanted
     }
     else if (process.browser && localStorage.zipCode) {
@@ -149,7 +149,7 @@ export default {
   },
 
   mounted() {
-    if (process.browser && this.$route.query.wanted) {
+    if (process.browser && this.$route.query.wanted !== undefined) {
       location.hash = 'wanted'
     }
   },
