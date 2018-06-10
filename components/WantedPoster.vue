@@ -81,7 +81,7 @@ input, textarea {
       </div>
       <div class="reps" v-if="badReps.length > 0">
         <div class="rep" v-for="rep in badReps" :key="rep.biocode">
-          <a :href="postImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_main_image', 'click', rep.name)"><img :src="postImageSrc(rep)" alt=""></a>
+          <a :href="postImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_main_image', 'click', rep.name)"><img :src="postImageSrc(rep)" alt="" @load="setHash()"></a>
           <ul class="buttons">
             <li><a class="btn" :href="profileImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_profile_image_button', 'click', rep.name)">Profile Image</a></li>
             <li><a class="btn" :href="postImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_post_image_button', 'click', rep.name)">Post Image</a></li>
@@ -153,12 +153,16 @@ export default {
   },
 
   mounted() {
-    if (process.browser && this.$route.query.wanted !== undefined) {
-      location.hash = 'wanted'
-    }
+    setTimeout(this.setHash, 1000)
   },
 
   methods: {
+    setHash() {
+      if (process.browser && this.$route.query.wanted !== undefined) {
+        location.hash = 'wanted'
+      }
+    },
+
     postImageSrc({ biocode }) {
       return `https://data.battleforthenet.com/wanted-posters/post/${biocode}.jpg`
     },
