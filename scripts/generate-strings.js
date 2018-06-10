@@ -16,7 +16,8 @@ const messages = formatStrings({
       index: loadStrings('pages/index.yml'),
     },
     components: {
-      BattleStats: loadStrings('components/BattleStats.yml')
+      BattleStats: loadStrings('components/BattleStats.yml'),
+      WantedPoster: loadStrings('components/WantedPoster.yml')
     }
   }
 })

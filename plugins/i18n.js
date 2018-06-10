@@ -18,7 +18,8 @@ export default ({ app, store, isDev }) => {
           redalert: require('~/locales/en/pages/redalert.yml')
         },
         components: {
-          BattleStats: require('~/locales/en/components/BattleStats.yml')
+          BattleStats: require('~/locales/en/components/BattleStats.yml'),
+          WantedPoster: require('~/locales/en/components/WantedPoster.yml')
         }
       }
     })

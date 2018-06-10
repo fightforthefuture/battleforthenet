@@ -1,0 +1,10 @@
+zip_placeholder: Enter your Zip Code to find your Rep
+profile_image_button: Profile Image
+post_image_button: Post Image
+facebook_button: Share
+twitter_button: Tweet
+no_bad_reps_html: |
+  Don’t see your Rep here? Congratulations! Share this page with your friends and followers to put their reps on high alert.
+no_reps_html: |
+  Sorry, but we couldn't find any Reps for your zip code.
+tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: battleforthenet.com #battleforthenet #netneutrality #savethenet"

@@ -43,9 +43,9 @@ input, textarea {
       width: 50%;
       padding: 0.2rem;
 
-      &:last-child {
-        width: 100%;
-      }
+      // &:last-child {
+      //   width: 100%;
+      // }
     }
 
     .btn {
@@ -77,25 +77,21 @@ input, textarea {
   <no-ssr>
     <div class="wanted-poster">
       <div class="form">
-        <input type="tel" v-model="zipCode" placeholder="Enter your Zip Code to find your Rep" class="zip">
+        <input type="tel" v-model="zipCode" :placeholder="$lt('zip_placeholder')" class="zip">
       </div>
       <div class="reps" v-if="badReps.length > 0">
         <div class="rep" v-for="rep in badReps" :key="rep.biocode">
           <a :href="postImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_main_image', 'click', rep.name)"><img :src="postImageSrc(rep)" alt="" @load="setHash()"></a>
           <ul class="buttons">
-            <li><a class="btn" :href="profileImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_profile_image_button', 'click', rep.name)">Profile Image</a></li>
-            <li><a class="btn" :href="postImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_post_image_button', 'click', rep.name)">Post Image</a></li>
-            <!-- <li><facebook-button :url="facebookURL(rep)" @clicked="$trackEvent('wanted_poster_share_button', 'click', rep.name)">Share</facebook-button></li> -->
-            <li><twitter-button :url="twitterURL(rep)" @clicked="$trackEvent('wanted_poster_tweet_button', 'click', rep.twitter)">Tweet</twitter-button></li>
+            <li><a class="btn" :href="profileImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_profile_image_button', 'click', rep.name)">{{ $lt('profile_image_button') }}</a></li>
+            <li><a class="btn" :href="postImageSrc(rep)" target="_blank" @click="$trackEvent('wanted_poster_post_image_button', 'click', rep.name)">{{ $lt('post_image_button') }}</a></li>
+            <li><facebook-button :url="facebookURL(rep)" @clicked="$trackEvent('wanted_poster_share_button', 'click', rep.name)">{{ $lt('facebook_button') }}</facebook-button></li>
+            <li><twitter-button :url="twitterURL(rep)" @clicked="$trackEvent('wanted_poster_tweet_button', 'click', rep.twitter)">{{ $lt('twitter_button') }}</twitter-button></li>
           </ul>
         </div>
       </div>
-      <div v-else-if="reps.length > 0">
-        <p>Don’t see your Rep here? Congratulations! Share this page with your friends and followers to put their reps on high alert.</p>
-      </div>
-      <div v-else-if="zipCode && zipCode.length > 4">
-        <p>Sorry, but we couldn't find any Reps for your zip code.</p>
-      </div>
+      <div v-else-if="reps.length > 0" v-html="$lt('no_bad_reps_html')"></div>
+      <div v-else-if="zipCode && zipCode.length > 4" v-html="$lt('no_reps_html')"></div>
     </div>
   </no-ssr>
 </template>
@@ -157,6 +153,10 @@ export default {
   },
 
   methods: {
+    $lt(key, vars={}) {
+      return this.$t(`components.WantedPoster.${key}`, vars)
+    },
+
     setHash() {
       if (process.browser && this.$route.query.wanted !== undefined) {
         location.hash = 'wanted'
@@ -171,16 +171,12 @@ export default {
       return `https://data.battleforthenet.com/wanted-posters/profile/${biocode}.jpg`
     },
 
-    shareURL({ state, district }) {
-      return `https://wanted.battleforthenet.com/${state}-${district}`
-    },
-
     tweetText({ twitter }) {
-      return `.@${twitter} is currently allowing internet companies to censor and manipulate us. We can stop them: battleforthenet.com #battleforthenet #netneutrality #savethenet`
+      return this.$lt('tweet_text', { twitter: twitter })
     },
 
-    facebookURL(rep) {
-      const url = this.shareURL(rep)
+    facebookURL({ state, district }) {
+      const url = `https://wanted.battleforthenet.com/${state}-${district}.html`
       return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
     },
 
