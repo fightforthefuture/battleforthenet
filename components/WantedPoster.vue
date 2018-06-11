@@ -1,7 +1,10 @@
 <style lang="scss" scoped>
 .form {
-  width: 90%;
   margin: 1rem auto;
+
+  @include big-screen {
+    width: 80%;
+  }
 }
 
 input, textarea {
