@@ -1,8 +1,10 @@
+# HTML document title (shows in browser tab)
+document_title: Join the Battle for Net Neutrality
 
 title: Congress can still save net neutrality
 intro_html: |
   The FCC just officially gutted the open internet. Now your cable company can
-  scam you for more money, censor websites, and slow down online content. **But 
+  scam you for more money, censor websites, and slow down online content. **But
   Congress can still stop this. We already won in the Senate. Contact your House
   reps now!**
 persistent_button: Write Congress
@@ -129,8 +131,8 @@ sections:
           </h4>
           <p>
             It’s important for lawmakers to see
-            the people who support net neutrality.  We’ll help schedule in-person events, 
-            protests, meetings, and canvassing to mobilize constituencies (like veterans) 
+            the people who support net neutrality.  We’ll help schedule in-person events,
+            protests, meetings, and canvassing to mobilize constituencies (like veterans)
             that move republicans.
           </p>
         </li>
@@ -169,10 +171,10 @@ sections:
     title: View the Congressional Scoreboard
     body_html: |
       We’re keeping track of who supports net neutrality … and who doesn’t. Now
-      you can, too.  Below you'll find a link to a list of your state's Senators 
-      and Representatives. The ones in green have signed a discharge petition in 
-      support of net neutrality, so let them know you appreciate their support. 
-      The ones in red need to be convinced, so let them know how important this 
+      you can, too.  Below you'll find a link to a list of your state's Senators
+      and Representatives. The ones in green have signed a discharge petition in
+      support of net neutrality, so let them know you appreciate their support.
+      The ones in red need to be convinced, so let them know how important this
       issue is to you.
 
       We already won in the Senate. Now we must win in the House. So please tweet

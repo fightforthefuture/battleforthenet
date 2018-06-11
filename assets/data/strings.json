@@ -54,8 +54,9 @@
         }
       },
       "index": {
+        "document_title": "Join the Battle for Net Neutrality",
         "title": "Congress can still save net neutrality",
-        "intro_html": "<p>The FCC just officially gutted the open internet. Now your cable company can\nscam you for more money, censor websites, and slow down online content. <strong>But \nCongress can still stop this. We already won in the Senate. Contact your House\nreps now!</strong></p>",
+        "intro_html": "<p>The FCC just officially gutted the open internet. Now your cable company can\nscam you for more money, censor websites, and slow down online content. <strong>But\nCongress can still stop this. We already won in the Senate. Contact your House\nreps now!</strong></p>",
         "persistent_button": "Write Congress",
         "form": {
           "name_placeholder": "Name*",
@@ -75,7 +76,7 @@
           },
           "cra": {
             "title": "Here’s how we get Congress to save net neutrality",
-            "body_html": "<p>Our elected officials in Congress can overrule the FCC and save net\nneutrality using the Congressional Review Act (CRA). But they’ll only do\nit if we make them. The CRA resolution <a\nhref=\"https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545\"\ntarget=\"_blank\">passed the Senate 52-47</a> in a historic upset. But now\nwe’re fighting an uphill battle to get the House of Representatives to do\nthe same. It’s not going to be easy, but if the whole Internet comes\ntogether to fight, we can win. Here’s how:</p>\n<p>In the House, we’ll need 218 lawmakers to sign on to a “<a\nhref=\"https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help\"\ntarget=\"_blank\">discharge petition</a>” in order to force a vote past leadership\nto the floor. That means we’ll need to convince all the Democrats and about 25\nRepublicans to support the CRA. The clock is ticking — if the CRA resolution\ndoesn’t get a vote this year, it dies when the new Congress comes into session.\n<a href=\"https://www.battleforthenet.com/how-we-won/\">We've done it before.</a></p>\n<h3>\n  <br>\n  Here’s how we’ll do it this time:\n</h3>\n<ul>\n  <li class=\"calls\">\n    <h4>\n      <img src=\"/images/gradient-calls.png\" alt=\"\">\n      <span>Flood them with calls and emails</span>\n    </h4>\n    <p>\n      When millions of people call and\n      email their representatives, Congress listens. That’s why we developed\n      a widget that website owners can place on their site, giving their\n      site’s users the opportunity to contact Congress. And we’ve created\n      art assets that will allow individuals to spread the word on powerful\n      social media platforms.\n    </p>\n  </li>\n  <li class=\"constituents\">\n    <h4>\n      <img src=\"/images/gradient-constituents.png\" alt=\"\">\n      <span>In-district constituent pressure</span>\n    </h4>\n    <p>\n      It’s important for lawmakers to see\n      the people who support net neutrality.  We’ll help schedule in-person events, \n      protests, meetings, and canvassing to mobilize constituencies (like veterans) \n      that move republicans.\n    </p>\n  </li>\n  <li class=\"business\">\n    <h4>\n      <img src=\"/images/gradient-business.png\" alt=\"\">\n      <span>Mobilizing small businesses</span>\n    </h4>\n    <p>\n      In Washington, money talks. So lawmakers\n      listen to the small business owners in their districts because those\n      business owners are vital to the local economy. We need to reach out to\n      small business owners to ask them to sign our <a\n      href=\"https://www.businessesfornetneutrality.com/\">petition</a> in\n      support of net neutrality, then we hand-deliver this petition to our\n      politicians.\n    </p>\n  </li>\n</ul>"
+            "body_html": "<p>Our elected officials in Congress can overrule the FCC and save net\nneutrality using the Congressional Review Act (CRA). But they’ll only do\nit if we make them. The CRA resolution <a\nhref=\"https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545\"\ntarget=\"_blank\">passed the Senate 52-47</a> in a historic upset. But now\nwe’re fighting an uphill battle to get the House of Representatives to do\nthe same. It’s not going to be easy, but if the whole Internet comes\ntogether to fight, we can win. Here’s how:</p>\n<p>In the House, we’ll need 218 lawmakers to sign on to a “<a\nhref=\"https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help\"\ntarget=\"_blank\">discharge petition</a>” in order to force a vote past leadership\nto the floor. That means we’ll need to convince all the Democrats and about 25\nRepublicans to support the CRA. The clock is ticking — if the CRA resolution\ndoesn’t get a vote this year, it dies when the new Congress comes into session.\n<a href=\"https://www.battleforthenet.com/how-we-won/\">We've done it before.</a></p>\n<h3>\n  <br>\n  Here’s how we’ll do it this time:\n</h3>\n<ul>\n  <li class=\"calls\">\n    <h4>\n      <img src=\"/images/gradient-calls.png\" alt=\"\">\n      <span>Flood them with calls and emails</span>\n    </h4>\n    <p>\n      When millions of people call and\n      email their representatives, Congress listens. That’s why we developed\n      a widget that website owners can place on their site, giving their\n      site’s users the opportunity to contact Congress. And we’ve created\n      art assets that will allow individuals to spread the word on powerful\n      social media platforms.\n    </p>\n  </li>\n  <li class=\"constituents\">\n    <h4>\n      <img src=\"/images/gradient-constituents.png\" alt=\"\">\n      <span>In-district constituent pressure</span>\n    </h4>\n    <p>\n      It’s important for lawmakers to see\n      the people who support net neutrality.  We’ll help schedule in-person events,\n      protests, meetings, and canvassing to mobilize constituencies (like veterans)\n      that move republicans.\n    </p>\n  </li>\n  <li class=\"business\">\n    <h4>\n      <img src=\"/images/gradient-business.png\" alt=\"\">\n      <span>Mobilizing small businesses</span>\n    </h4>\n    <p>\n      In Washington, money talks. So lawmakers\n      listen to the small business owners in their districts because those\n      business owners are vital to the local economy. We need to reach out to\n      small business owners to ask them to sign our <a\n      href=\"https://www.businessesfornetneutrality.com/\">petition</a> in\n      support of net neutrality, then we hand-deliver this petition to our\n      politicians.\n    </p>\n  </li>\n</ul>"
           },
           "stats": {
             "title": "We're making Congress listen",
@@ -83,7 +84,7 @@
           },
           "scoreboard": {
             "title": "View the Congressional Scoreboard",
-            "body_html": "<p>We’re keeping track of who supports net neutrality … and who doesn’t. Now\nyou can, too.  Below you'll find a link to a list of your state's Senators \nand Representatives. The ones in green have signed a discharge petition in \nsupport of net neutrality, so let them know you appreciate their support. \nThe ones in red need to be convinced, so let them know how important this \nissue is to you.</p>\n<p>We already won in the Senate. Now we must win in the House. So please tweet\nand call your <a href=\"/scoreboard/#house\">House Representatives</a>.</p>"
+            "body_html": "<p>We’re keeping track of who supports net neutrality … and who doesn’t. Now\nyou can, too.  Below you'll find a link to a list of your state's Senators\nand Representatives. The ones in green have signed a discharge petition in\nsupport of net neutrality, so let them know you appreciate their support.\nThe ones in red need to be convinced, so let them know how important this\nissue is to you.</p>\n<p>We already won in the Senate. Now we must win in the House. So please tweet\nand call your <a href=\"/scoreboard/#house\">House Representatives</a>.</p>"
           },
           "wanted": {
             "title": "Is your representative wanted?",
@@ -109,8 +110,12 @@
       },
       "call": {
         "california": {
-          "title": "Net neutrality is dead, but California can save it",
-          "body_html": "<p>California legislators have proposed the strongest and most comprehensive state level net neutrality bill in the country: SB-822. But the bill could be gutted if lawmakers in the California Assembly cave to pressure from AT&amp;T and other ISPs. A crucial vote is set for Wednesday, June 13th and lawmakers need to hear from Internet user. Call your state representatives and tell them to support SB-822 as soon as possible.</p>"
+          "title": "California can save net neutrality",
+          "body_html": "<p>California legislators have proposed the strongest and most comprehensive state level net neutrality bill in the country: SB-822. But the bill could be gutted if lawmakers in the California Assembly cave to pressure from AT&amp;T and other ISPs. A crucial vote is set for Wednesday, June 13th and lawmakers need to hear from Internet users like you. </br></br><strong>Call your California representatives and tell them to support SB-822 as soon as possible.</strong></p>",
+          "share_title": "California can save net neutrality",
+          "share_description": "A crucial vote is set for Wednesday, June 13th and lawmakers need to hear from Internet users like you.",
+          "share_image": "https://www.battleforthenet.com/images/share_images/urgent.png",
+          "share_url": "https://www.battleforthenet.com/call/california"
         }
       }
     },
@@ -134,6 +139,13 @@
         "no_reps_html": "<p>Sorry, but we couldn't find any representatives for your zip code.</p>",
         "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
       }
+    },
+    "social": {
+      "share_title": "Congress can still save net neutrality",
+      "share_description": "Congress can use a Resolution of Disapproval to overrule the FCC. We have to make them.",
+      "share_image": "https://www.battleforthenet.com/images/share_images/urgent.png",
+      "share_url": "https://www.battleforthenet.com",
+      "tweet_text": "Hey\n\ntwitter\n\nthis\n\nis\n\nnot\n\na\n\ndrill\n\nthe\n\nFCC\n\njust\n\nannounced\n\nthat\n\n#NetNeutrality\n\nends\n\non\n\nJune 11\n\nunless\n\nwe\n\nget\n\nCongress\n\nto\n\nstop\n\nit\n\nretweet\n\nto\n\nsound\n\nthe\n\nalarm\n\nhttps://www.battleforthenet.com?s=t0\n"
     }
   }
 }

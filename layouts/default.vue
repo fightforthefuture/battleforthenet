@@ -162,22 +162,22 @@ export default {
     BFTNFooter
   },
 
-  head: {
-    title: "Join the Battle for Net Neutrality",
-
-    link: [
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,600|Poppins:600,700'
-      }
-    ],
-
-    meta: createMetaTags({
-      title: "Net Neutrality is *not* dead yet. Call Congress to overrule the FCC vote.",
-      description: "Congress can use a Resolution of Disapproval to overrule the FCC. We have to make them.",
-      image: "https://www.battleforthenet.com/images/share_images/urgent.png",
-      url: "https://www.battleforthenet.com"
-    })
+  head() {
+    return {
+      title: this.$t('pages.index.document_title'),
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,600|Poppins:600,700'
+        }
+      ],
+      meta: createMetaTags({
+        title: this.$t('social.share_title'),
+        description: this.$t('social.share_description'),
+        image: this.$t('social.share_image'),
+        url: this.$t('social.share_url')
+      })
+    }
   }
 }
 </script>

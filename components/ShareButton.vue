@@ -25,13 +25,16 @@ export default {
 
   computed: {
     shareURL() {
-      if (this.url) {
-        return this.url
+      let url = this.url || this.$t('social.share_url')
+
+      if (this.network.toLowerCase() === 'facebook' && !url.match(/facebook\.com\/sharer/)) {
+        url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+      }
+      else if (this.network.toLowerCase() === 'twitter' && !url.match(/twitter\.com\/intent\/tweet/)) {
+        url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.$t('social.tweet_text').trim())}`
       }
 
-      if (this.network) {
-        return settings[`${this.network.toLowerCase()}ShareURL`]
-      }
+      return url
     }
   },
 

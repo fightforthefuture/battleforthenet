@@ -23,7 +23,8 @@ export default ({ app, store, isDev }) => {
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),
           WantedPoster: require('~/locales/en/components/WantedPoster.yml')
-        }
+        },
+        social: require('~/locales/en/social.yml')
       }
     })
   }
