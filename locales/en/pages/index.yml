@@ -1,12 +1,11 @@
 
-title: Net neutrality is freedom on the Internet
+title: Congress can still save net neutrality
 intro_html: |
-  The FCC voted to repeal net neutrality and let big cable companies control the
-  Internet.  But after millions of us flooded Congress with emails and calls,
-  the Senate overturned the FCC’s disastrous decision. Now we need the House of
-  Representatives to do the same. **Tell your lawmakers you want freedom on the
-  Internet now!**
-persistent_button: Contact Congress
+  The FCC just officially gutted teh open internet. Now your cable company can
+  scam you for more money, censor websites, and slow down online content. **But 
+  Congress can still stop this. We already won in the Senate. Contact your House
+  reps now!**
+persistent_button: Write Congress
 
 form:
   name_placeholder: Name*
@@ -84,7 +83,7 @@ sections:
       </div>
 
   cra:
-    title: Here’s how we get Congress save net neutrality
+    title: Here’s how we get Congress to save net neutrality
     body_html: |
       Our elected officials in Congress can overrule the FCC and save net
       neutrality using the Congressional Review Act (CRA). But they’ll only do
