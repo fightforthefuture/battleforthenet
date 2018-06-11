@@ -1,7 +1,6 @@
 <style lang="scss" scoped>
 .form {
-  width: 80%;
-  max-width: 350px;
+  width: 90%;
   margin: 1rem auto;
 }
 
