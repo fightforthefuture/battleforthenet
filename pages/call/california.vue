@@ -57,6 +57,7 @@ import CallForm from '~/components/CallForm'
 import VideoRoll from '~/components/VideoRoll'
 import TeamInternet from '~/components/TeamInternet'
 import TeamCable from '~/components/TeamCable'
+import { createMetaTags } from '~/assets/js/helpers'
 
 export default {
   components: {
@@ -64,6 +65,18 @@ export default {
     VideoRoll,
     TeamInternet,
     TeamCable
+  },
+
+  head() {
+    return {
+      title: this.$lt('title'),
+      meta: createMetaTags({
+        title: this.$lt('share_title'),
+        description: this.$lt('share_description'),
+        image: this.$lt('share_image'),
+        url: this.$lt('share_url')
+      })
+    }
   },
 
   methods: {
