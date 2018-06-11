@@ -173,13 +173,16 @@ export default {
       return `https://data.battleforthenet.com/wanted-posters/profile/${biocode}.jpg`
     },
 
-    tweetText({ twitter }) {
-      return this.$lt('tweet_text', { twitter: twitter })
+    shareURL({ state, district }) {
+      return `https://wanted.battleforthenet.com/${state}-${district}.html`
     },
 
-    facebookURL({ state, district }) {
-      const url = `https://wanted.battleforthenet.com/${state}-${district}.html`
-      return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+    tweetText(rep) {
+      return this.$lt('tweet_text', { twitter: rep.twitter, url:  this.shareURL(rep)})
+    },
+
+    facebookURL(rep) {
+      return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(this.shareURL(rep))}`
     },
 
     twitterURL(rep) {
