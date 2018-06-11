@@ -50,12 +50,14 @@ export function createMetaTags(tags={}) {
   for (let key of Object.keys(tags)) {
     if (key.match(/^og\:/)) {
       meta[key] = {
+        hid: key,
         property: key,
         content: tags[key]
       }
     }
     else if (!fakeTagNames.includes(key)) {
       meta[key] = {
+        hid: key,
         name: key,
         content: tags[key]
       }
