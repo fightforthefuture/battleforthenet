@@ -76,6 +76,7 @@ export default {
 
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
+    document.body.classList.add('has-persistent-button')
   },
 
   beforeDestroy() {

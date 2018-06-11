@@ -45,6 +45,10 @@
     @include small-screen {
       width: auto;
       float: none;
+
+      h3 {
+        font-size: 1.6rem;
+      }
     }
   }
 
@@ -115,10 +119,12 @@
     img {
       width: 14.4rem;
     }
+  }
+}
 
-    @include small-screen {
-      padding-bottom: 10rem;
-    }
+@include small-screen {
+  body.has-persistent-button .bftn-footer .built-by {
+    padding-bottom: 10rem;
   }
 }
 </style>

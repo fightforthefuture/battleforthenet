@@ -125,12 +125,7 @@ export default {
 
   computed: {
     campaignData() {
-      if (this.page === 'call') {
-        return settings.callPage
-      }
-      else {
-        return settings.homePage
-      }
+      return settings[`${this.page}Page`]
     },
 
     stateCampaign() {

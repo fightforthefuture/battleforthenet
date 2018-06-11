@@ -116,7 +116,6 @@ img.app-store {
 
 <script>
 import { createMetaTags } from '~/assets/js/helpers'
-import LoaderLogo from '~/components/LoaderLogo'
 import CallForm from '~/components/CallForm'
 import PetitionForm from '~/components/PetitionForm'
 import Scoreboard from '~/components/Scoreboard/Scoreboard'
@@ -130,7 +129,6 @@ import WantedPoster from '~/components/WantedPoster'
 
 export default {
   components: {
-    LoaderLogo,
     CallForm,
     PetitionForm,
     Scoreboard,

@@ -15,7 +15,10 @@ export default ({ app, store, isDev }) => {
       en: {
         pages: {
           index: require('~/locales/en/pages/index.yml'),
-          redalert: require('~/locales/en/pages/redalert.yml')
+          redalert: require('~/locales/en/pages/redalert.yml'),
+          call: {
+            california: require('~/locales/en/pages/call/california.yml')
+          }
         },
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),

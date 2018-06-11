@@ -18,6 +18,7 @@ $muted-link-color: #b1aedc;
 $button-primary: #352d47;
 $border-radius: 5px;
 $container-width: 600px;
+$footer-height: 496px;
 
 @mixin mobile {
   @media only screen and (max-width: 480px) {

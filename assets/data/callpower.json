@@ -24,5 +24,9 @@
       }
     ],
     "defaultCampaign": "RED_ALERT_BattleForTheNet_Call_House_2Sens"
+  },
+  "californiaPage": {
+    "stateCampaigns": [],
+    "defaultCampaign": "California-SB-822 ROUND 2"
   }
 }

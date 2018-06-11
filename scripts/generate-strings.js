@@ -14,6 +14,9 @@ const messages = formatStrings({
     pages: {
       redalert: loadStrings('pages/redalert.yml'),
       index: loadStrings('pages/index.yml'),
+      call: {
+        california: loadStrings('pages/call/california.yml')
+      }
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),
