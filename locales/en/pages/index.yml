@@ -47,7 +47,7 @@ sections:
         So on June 11th, take whatever corner of the Internet that you control, whether it’s a major platform or
         a personal instagram account, and harness its reach to pressure Congress. Here’s how:
 
-        <ul class="basic-list">
+        <ol>
           <li>Change your social media avatars and profile pics to help sound the alarm, there’s bunch of graphics
           in a shared folder <a href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
           target="_blank">here.</a></li>
@@ -55,12 +55,11 @@ sections:
           <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzY1FKTlAzS1NOVTg"
           target=_blank">video bumper</a> to help spread the word.</li>
           <li>Link back to BattleForTheNet.com whenever you can so people can easily contact their lawmakers.</li>
-          <li>If you run a website or blog, deploy our updated <a h ref="https://github.com/fightforthefuture/june11-widget"
-          target=_blank">widget</a> to let your users contact Congress without ever leaving your site. You can see
+          <li>If you run a website or blog, deploy our updated <a href="https://github.com/fightforthefuture/june11-widget" target="_blank">widget</a> to let your users contact Congress without ever leaving your site. You can see
           a demo <a href="https://www.fightforthefuture.org/?widget=june11"
           target=_blank">here</a>. There are also banners and ads of various sizes you can use
           <a href="https://www.battleforthenet.com/redalert/#banners">here</a>.</li>
-        </ul>
+        </ol>
 
       <div class="modals flex-center">
         <img src="/images/june11-widget-screenshot.jpg"
@@ -154,7 +153,9 @@ sections:
       </ul>
 
   stats:
-    title: We're making Congress listen
+    title: |
+      We're making
+      Congress listen
     body_html: |
       Voters from across the political spectrum agree: they don't want their
       cable company to control what they see and do online. The FCC's reckless

@@ -1,4 +1,5 @@
-zip_placeholder: Enter your Zip Code to find your representative
+zip_label: "Enter your ZIP Code to find your representative:"
+zip_placeholder: ZIP Code
 profile_image_button: Profile Image
 post_image_button: Post Image
 facebook_button: Share

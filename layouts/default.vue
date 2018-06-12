@@ -14,9 +14,13 @@ b, strong {
   font-weight: 600;
 }
 
+h1, h2.section-title {
+  white-space: pre-line;
+}
+
 h1 {
-  margin: 0 0 3rem;
-  font-size: 6rem;
+  margin: 0 0 2rem;
+  font-size: 7rem;
 }
 
 h2.section-title {
@@ -25,7 +29,7 @@ h2.section-title {
   background-repeat: no-repeat;
   background-size: 15rem auto;
   background-position: center bottom;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .container {
@@ -78,6 +82,43 @@ section {
   &:nth-child(even) {
     background-color: $alt-bg-color;
   }
+
+  ol {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border: 1px solid #544090;
+      border-radius: 0.4rem;
+      padding: 1rem 3rem;
+      font-size: 90%;
+      margin: 1rem;
+      position: relative;
+
+      &:before {
+        content: "1";
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        font-weight: 700;
+        text-align: center;
+        background-color: #544090;
+        position: absolute;
+        left: -1.5rem;
+        line-height: 3rem;
+        top: 23%;
+        font-size: 1.5rem;
+      }
+
+      @for $i from 2 through 8 {
+        &:nth-child(#{$i}):before {
+          content: "#{$i}";
+        }
+      }
+    }
+  }
 }
 
 ul.basic-list {
@@ -125,7 +166,6 @@ strong {
 @include daytons-lenovo {
   h1 {
     font-size: 5rem;
-    margin-bottom: 2rem;
   }
 
   h2.section-title {

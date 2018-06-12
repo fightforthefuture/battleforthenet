@@ -1,9 +1,13 @@
 <style lang="scss" scoped>
 .form {
-  margin: 1rem auto;
+  label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+  }
 
-  @include big-screen {
-    width: 80%;
+  input {
+    width: 15rem;
   }
 }
 
@@ -79,7 +83,8 @@ input, textarea {
   <no-ssr>
     <div class="wanted-poster">
       <div class="form">
-        <input type="tel" v-model="zipCode" :placeholder="$lt('zip_placeholder')" class="zip">
+        <label for="wanted_zip">{{ $lt('zip_label') }}</label>
+        <input type="tel" v-model="zipCode" :placeholder="$lt('zip_placeholder')" class="zip" id="wanted_zip">
       </div>
       <div class="reps" v-if="badReps.length > 0">
         <div class="rep" v-for="rep in badReps" :key="rep.biocode">
