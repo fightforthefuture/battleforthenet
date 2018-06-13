@@ -1,4 +1,7 @@
 <style lang="scss" scoped>
+$tweet-btn-color: #2a94c8;
+$call-btn-color: #ff2a2a;
+
 .politician {
   display: inline-block;
   margin: 1rem;
@@ -59,17 +62,29 @@
   }
 
   .btn-twitter {
-    border: 1px solid #2a94c8;
-    color: #2a94c8;
-  }
+    border: 1px solid $tweet-btn-color;
+    color: $tweet-btn-color;
 
-  .btn-twitter:before {
-    content: none;
+    &:hover {
+      color: darken($tweet-btn-color, 15%);
+      border-color: darken($tweet-btn-color, 15%);
+      transition: all .3s;
+    }
+
+    &:before {
+      content: none;
+    }
   }
 
   .btn-call {
-    color: #ff2a2a;
-    border: 1px solid #ff2a2a;
+    color: $call-btn-color;
+    border: 1px solid $call-btn-color;
+
+    &:hover {
+      color: rgba($call-btn-color, 0.7);
+      border-color: rgba($call-btn-color, 0.7);
+      transition: all .3s;
+    }
   }
 
   .yes-bg {

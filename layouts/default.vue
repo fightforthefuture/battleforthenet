@@ -134,9 +134,31 @@ strong {
   color: #fff;
 }
 
+$light-blue: rgba(58,255,227,1);
+$blue: rgba(62,147,218,1);
+$purple: rgba(148,53,224,1);
+$light-orange: rgba(241,99,90,1);
+$orange: rgba(254,91,47,1);
+$step: 6%;
+
+@keyframes cta-hover {
+  @for $i from 0 through 10 {
+    #{$i*10%} {
+      background: linear-gradient(#{106 - ($i*6)}deg, #{$light-blue} 0%, #{$blue} #{$i*$step}, #{$purple} #{$i*$step + 29%}, #{$light-orange} #{$i*$step + 79%}, #{$orange} 100%);
+    }
+  }
+}
+
 .btn-cta {
   background: rgb(62,147,218);
   background: linear-gradient(106deg, rgba(62,147,218,1) 0%, rgba(148,53,224,1) 29%, rgba(241,99,90,1) 79%, rgba(254,91,47,1) 100%);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    animation: cta-hover .2s;
+    animation-fill-mode: forwards;
+    animation-delay: .1s;
+  }
 }
 
 @include small-screen {
