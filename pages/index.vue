@@ -31,7 +31,7 @@ section#cra {
   background-color: #2f2940;
   padding: 1rem 2rem;
   border-radius: $border-radius;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   position: relative;
 
   // arrow

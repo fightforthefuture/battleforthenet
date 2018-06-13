@@ -62,9 +62,7 @@ sections:
         </ol>
 
       <div class="modals flex-center">
-        <img src="/images/june11-widget-screenshot.jpg"
-             srcset="/images/june11-widget-screenshot.jpg 1x,
-                     /images/june11-widget-screenshot@2x.jpg 2x"
+        <img src="/images/june11-browser-screenshot@2x.png"
              alt="A screenshot of our widget when minimized"
              class="rounded">
       </div>
