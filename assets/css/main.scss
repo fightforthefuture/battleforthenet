@@ -255,30 +255,6 @@ button {
   margin: auto;
 }
 
-ul.logo-cloud {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: row wrap;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    width: 25%;
-    padding: 2rem;
-
-    @include mobile {
-      width: 50%;
-      padding: 0 1.5rem;
-    }
-
-    img {
-      object-fit: contain;
-    }
-  }
-}
-
 ul.logo-grid {
   display: flex;
   justify-content: center;
