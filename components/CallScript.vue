@@ -85,7 +85,7 @@ hr {
       Calling you now...
     </h2>
     <p><b>Introduce yourself, be polite, and say:</b></p>
-    <p>I'm calling to ask my lawmakers to support the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you.</p>
+    <p>{{ callScript }}</p>
     <div class="warning">
       <img src="~/assets/images/warning-circle.svg" alt="">
       If lines are busy, we may call you in a few minutes.
@@ -93,7 +93,7 @@ hr {
     <hr>
     <h3>Done calling? Do these things, too!</h3>
     <div class="buttons">
-      <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
+      <a v-if="page != 'california'" class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
         <img src="~/assets/images/map-marker.svg" alt="">
         Join an event near you
       </a>
@@ -110,8 +110,19 @@ hr {
 import { mapState } from 'vuex'
 
 export default {
+  props: [ 'page' ],
+
   computed: {
-    ...mapState(['org'])
+    ...mapState(['org']),
+
+    callScript() {
+      if (this.page === 'california') {
+        return "I'm calling to ask the Assembly member to support SB 822 as written, and resist attempts to weaken it. SB 822 is the only bill that ensures real net neutrality protections for all Californians."
+      }
+      else {
+        return "I'm calling to ask my lawmakers to support the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you."
+      }
+    }
   }
 }
 </script>

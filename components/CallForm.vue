@@ -55,10 +55,10 @@ form {
     <!-- Show call script after form has been submitted -->
     <div v-if="hasCalled">
       <!-- If we're in a modal already, put the call script right here -->
-      <call-script v-if="inModal"></call-script>
+      <call-script v-if="inModal" :page="page"></call-script>
       <!-- Otherwise, put the call script inside a modal -->
       <modal v-else-if="modalVisible">
-        <call-script></call-script>
+        <call-script :page="page"></call-script>
       </modal>
     </div>
   </div>
