@@ -102,7 +102,7 @@ img.app-store {
         <div v-html="section.body_html"></div>
         <battle-stats v-if="id == 'stats'"></battle-stats>
         <scoreboard v-else-if="id == 'scoreboard'" :summary="true"></scoreboard>
-        <iframe v-else-if="id == 'events'" class="events-map" src="https://events.battleforthenet.com/iframe"></iframe>
+        <!-- <iframe v-else-if="id == 'events'" class="events-map" src="https://events.battleforthenet.com/iframe"></iframe> -->
         <video-roll v-else-if="id == 'net-neutrality'"></video-roll>
         <team-internet v-else-if="id == 'team-internet'"></team-internet>
         <team-cable v-else-if="id == 'team-cable'"></team-cable>

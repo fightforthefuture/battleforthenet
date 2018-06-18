@@ -197,6 +197,10 @@ sections:
       or a meeting with a representative in your state. And if there are no
       events in your area, consider organizing one!
 
+      <a href="/map/"><img src="https://data.battleforthenet.com/events.png" alt="Events Map" class="rounded"></a>
+
+      <a class="btn" href="/map/">View Full Map</a>
+
   net-neutrality:
     title: What is net neutrality? Why does it matter?
     body_html: |
