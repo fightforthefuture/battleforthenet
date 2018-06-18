@@ -310,12 +310,7 @@ export default {
       }
       else if (newValue.length >= 5) {
         if (this.$route.query.zip !== newValue) {
-          this.$router.replace({
-            name: 'map',
-            query: {
-              zip: newValue
-            }
-          })
+          history.replaceState({}, document.title, '/map/?zip=' + newValue)
         }
 
         await this.geocodeZip()
