@@ -22,7 +22,7 @@
       <li><img src="/images/logos/18mr.png" alt="18 Million Rising"></li>
       <li><img src="/images/logos/ycombinator.png" alt="Y Combinator"></li>
       <li><img src="/images/logos/aall.png" alt="AALL"></li>
-      <li><img src="/images/logos/accessnow.png" alt="accessnow"></li>
+      <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
       <li><img src="/images/logos/aclu.jpg" alt="ACLU"></li>
       <li><img src="/images/logos/discord.png" alt="Discord"></li>
     </ul>
