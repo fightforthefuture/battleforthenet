@@ -307,6 +307,7 @@ export default {
     async zipCode(newValue) {
       if (!newValue) {
         this.coords = []
+        history.replaceState({}, document.title, '/map/')
       }
       else if (newValue.length >= 5) {
         if (this.$route.query.zip !== newValue) {
