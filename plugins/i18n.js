@@ -18,7 +18,8 @@ export default ({ app, store, isDev }) => {
           redalert: require('~/locales/en/pages/redalert.yml'),
           call: {
             california: require('~/locales/en/pages/call/california.yml')
-          }
+          },
+          map: require('~/locales/en/pages/map.yml')
         },
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),

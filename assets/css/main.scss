@@ -142,7 +142,7 @@ input, textarea {
   width: 100%;
 
   &::placeholder {
-    color: #13161c;
+    color: lighten(#13161c, 30%);
     font-weight: 300;
   }
 }
