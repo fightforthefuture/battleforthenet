@@ -83,6 +83,10 @@ body.map-page {
     input {
       width: auto;
     }
+
+    .btn {
+      margin-left: 2rem;
+    }
   }
 
   .event-map {
@@ -223,6 +227,7 @@ body.map-page {
       <div class="flex-center">
         <h2>{{ $lt('title') }}</h2>
         <input type="tel" :placeholder="$lt('zip_placeholder')" v-model="zipCode">
+        <a class="btn btn-cta" @click="modalVisible = true">Host an Event</a>
       </div>
       <div class="divider"></div>
     </nav>
@@ -245,6 +250,10 @@ body.map-page {
         </li>
       </ul>
     </div>
+
+    <modal v-if="modalVisible">
+      <create-event></create-event>
+    </modal>
   </div>
 </template>
 
@@ -253,8 +262,13 @@ import axios from 'axios'
 import haversine from 'haversine'
 import { smoothScrollTo } from '~/assets/js/helpers'
 import settings from '~/config.json'
+import CreateEvent from '~/components/CreateEvent'
 
 export default {
+  components: {
+    CreateEvent
+  },
+
   head() {
     return {
       link: [
@@ -275,7 +289,8 @@ export default {
     return {
       events: [],
       zipCode: null,
-      coords: []
+      coords: [],
+      modalVisible: false
     }
   },
 

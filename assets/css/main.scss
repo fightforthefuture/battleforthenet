@@ -20,7 +20,7 @@ html {
 }
 
 h1, h2, h3, h4, h5,
-input, textarea, .btn {
+input, textarea, .btn, select {
   font-family: $title-font;
   font-weight: 700;
   line-height: 1.2;
@@ -133,13 +133,14 @@ a {
   animation: fade-in .4s;
 }
 
-input, textarea {
+input, textarea, select {
   border: none;
   font-size: 1.7rem;
   padding: 1.5rem 1rem;
   border-radius: $border-radius;
   font-weight: bold;
   width: 100%;
+  background-color: #fff;
 
   &::placeholder {
     color: lighten(#13161c, 30%);

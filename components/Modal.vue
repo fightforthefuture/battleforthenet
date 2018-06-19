@@ -57,9 +57,10 @@ body.modal-open {
     font-size: 2rem;
   }
 
-  input {
+  input, textarea, select {
     border: .2rem solid #111;
     padding: 2rem;
+    font-size: 1.7rem;
   }
 
   .btn-cta {
