@@ -85,7 +85,7 @@ body.map-page {
     }
 
     .btn {
-      margin-left: 2rem;
+      margin: 0 2rem;
     }
   }
 
@@ -227,7 +227,7 @@ body.map-page {
       <div class="flex-center">
         <h2>{{ $lt('title') }}</h2>
         <input type="tel" :placeholder="$lt('zip_placeholder')" v-model="zipCode">
-        <a class="btn btn-cta" @click="modalVisible = true">Host an Event</a>
+        <a class="btn btn-cta" @click="hostEvent()">{{ $lt('host_cta') }}</a>
       </div>
       <div class="divider"></div>
     </nav>
@@ -246,7 +246,7 @@ body.map-page {
             </div>
           </div>
           <!-- <div class="description" v-html="event.description"></div> -->
-          <a :href="event.url" class="btn rsvp-btn" target="_blank">{{ $lt('event_cta') }}</a>
+          <a :href="event.url" class="btn rsvp-btn" target="_blank" @click="$trackEvent('map_list_rsvp_button', 'click')">{{ $lt('event_cta') }}</a>
         </li>
       </ul>
     </div>
@@ -440,6 +440,11 @@ export default {
         this.map.setView(ll, zoom)
         this.openPopup(event)
       }
+    },
+
+    hostEvent() {
+      this.modalVisible = true
+      this.$trackEvent('host_event_button', 'click')
     }
   }
 }

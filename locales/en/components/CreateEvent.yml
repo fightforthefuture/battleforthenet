@@ -1,0 +1,24 @@
+title: Create an Event
+contact_info_legend: Contact Info (this will be public)
+name_placeholder: Host name*
+email_placeholder: Email*
+phone_placeholder: Phone
+event_details_legend: Event Details
+title_placeholder: Title of your event*
+description_placeholder: Event description*
+start_date_legend: Start Date & Time
+start_date_placeholder: Start date*
+start_time_placeholder: Start time*
+location_legend: Location
+location_name_placeholder: Venue name*
+street_placeholder: Street address*
+city_placeholder: City*
+state_placeholder: Select state*
+zip_placeholder: ZIP Code*
+instructions_legend: Instructions for your attendees (visible after signup)
+instructions_placeholder: Attendee instructions*
+cta_button: Create Event
+loading_button: Saving...
+thanks_html: |
+  Thanks! We'll be in touch.
+done_button: Done

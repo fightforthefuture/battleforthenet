@@ -20,61 +20,61 @@ input, textarea, select {
 
 <template>
   <div>
-    <h2>Create an Event</h2>
-    <div v-if="hasCreated">
-      <p>Thanks! We'll be in touch.</p>
-      <button class="btn" @click="$parent.close()">Done</button>
+    <h2>{{ $lt('title') }}</h2>
+    <div v-if="isDone">
+      <div v-html="$lt('thanks_html')"></div>
+      <button class="btn" @click="$parent.close()">{{ $lt('done_button') }}</button>
     </div>
     <form v-else @submit.prevent="submitForm()">
       <fieldset>
-        <legend>Contact Info (this will be public)</legend>
+        <legend>{{ $lt('contact_info_legend') }}</legend>
         <div class="flex-row">
-          <input type="text" v-model="name" placeholder="Host name*" required>
-          <input type="email" v-model="email" placeholder="Email*" required>
-          <input type="tel" v-model="phone" placeholder="Phone" required>
+          <input type="text" v-model="name" :placeholder="$lt('name_placeholder')" required>
+          <input type="email" v-model="email" :placeholder="$lt('email_placeholder')" required>
+          <input type="tel" v-model="phone" :placeholder="$lt('phone_placeholder')">
         </div>
       </fieldset>
       <fieldset>
-        <legend>Event Details</legend>
+        <legend>{{ $lt('event_details_legend') }}</legend>
         <div class="flex-row">
-          <input type="text" v-model="title" placeholder="Title of your event*" required>
+          <input type="text" v-model="title" :placeholder="$lt('title_placeholder')" required>
         </div>
         <div class="flex-row">
-          <textarea placeholder="Event description*" v-model="description" required></textarea>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Start Date &amp; Time</legend>
-        <div class="flex-row">
-          <input type="date" v-model="start_date" placeholder="Start date*" required>
-          <input type="time" v-model="start_time" placeholder="Start time*" required>
+          <textarea :placeholder="$lt('description_placeholder')" v-model="description" required></textarea>
         </div>
       </fieldset>
       <fieldset>
-        <legend>Location</legend>
+        <legend>{{ $lt('start_date_legend') }}</legend>
         <div class="flex-row">
-          <input type="text" v-model="location_name" placeholder="Venue Name*" required>
-          <input type="text" v-model="street" placeholder="Street Address*" required>
+          <input type="date" v-model="start_date" :placeholder="$lt('start_date_placeholder')" required>
+          <input type="time" v-model="start_time" :placeholder="$lt('start_time_placeholder')" required>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>{{ $lt('location_legend') }}</legend>
+        <div class="flex-row">
+          <input type="text" v-model="location_name" :placeholder="$lt('location_name_placeholder')" required>
+          <input type="text" v-model="street" :placeholder="$lt('street_placeholder')" required>
         </div>
         <div class="flex-row">
-          <input type="text" v-model="city" placeholder="City*" required>
+          <input type="text" v-model="city" :placeholder="$lt('city_placeholder')" required>
           <select v-model="state" required>
-            <option :value="null">Select state*</option>
+            <option :value="null">{{ $lt('state_placeholder') }}</option>
             <option v-for="(name, code) in states" :key="code" :value="code">{{ name }}</option>
           </select>
-          <input type="tel" v-model="zip" placeholder="ZIP Code*" required>
+          <input type="tel" v-model="zip" :placeholder="$lt('zip_placeholder')" required>
         </div>
       </fieldset>
       <fieldset>
-        <legend>Instructions for your attendees (visible after signup)</legend>
+        <legend>{{ $lt('instructions_legend') }}</legend>
         <div class="flex-row">
-          <textarea placeholder="Attendee instructions*" v-model="instructions" required></textarea>
+          <textarea :placeholder="$lt('instructions_placeholder')" v-model="instructions" required></textarea>
         </div>
       </fieldset>
       <div class="flex-row">
         <button class="btn btn-cta btn-large" :disabled="isSending">
-          <span v-if="!isSending">Create Event</span>
-          <span v-else>Saving...</span>
+          <span v-if="!isSending">{{ $lt('cta_button') }}</span>
+          <span v-else>{{ $lt('loading_button') }}</span>
         </button>
       </div>
     </form>
@@ -102,7 +102,7 @@ export default {
       state: null,
       zip: null,
       isSending: false,
-      hasCreated: false
+      isDone: false
     }
   },
 
@@ -111,6 +111,10 @@ export default {
   },
 
   methods: {
+    $lt(key) {
+      return this.$t(`components.CreateEvent.${key}`)
+    },
+
     async submitForm() {
       if (this.isSending) return
 
@@ -138,11 +142,7 @@ export default {
         console.error(error)
       }
 
-      // this.resetForm()
-      this.hasCreated = true
-    },
-
-    resetForm() {
+      this.isDone = true
       this.isSending = false
     }
   }
