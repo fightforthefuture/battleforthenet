@@ -148,6 +148,10 @@ input, textarea, select {
   }
 }
 
+select {
+  width: auto;
+}
+
 textarea {
   font-size: 1.4rem;
 }
