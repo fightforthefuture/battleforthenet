@@ -5,6 +5,7 @@
   // }
 
   h1 {
+    font-size: 3.5rem;
     @include small-screen {
       font-size: 3.2rem;
       margin-bottom: 0;
