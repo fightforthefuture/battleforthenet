@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" scoped>
 section#cra {
   ul {
     list-style-type: none;
@@ -87,7 +87,7 @@ img.app-store {
 
 <template>
   <div>
-    <section id="bftn-action-form" class="page-header">
+    <section id="bftn-action-form" class="page-header bg-image">
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
         <div v-html="$lt('intro_html')" class="intro"></div>

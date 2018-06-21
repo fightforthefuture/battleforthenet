@@ -19,13 +19,15 @@ const messages = formatStrings({
       },
       map: loadStrings('pages/map.yml'),
       scoreboard: {
-        index: loadStrings('pages/scoreboard/index.yml')
+        index: loadStrings('pages/scoreboard/index.yml'),
+        all: loadStrings('pages/scoreboard/all.yml')
       }
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),
       WantedPoster: loadStrings('components/WantedPoster.yml'),
-      CreateEvent: loadStrings('components/CreateEvent.yml')
+      CreateEvent: loadStrings('components/CreateEvent.yml'),
+      ScoreboardPhoto: loadStrings('components/ScoreboardPhoto.yml'),
     },
     social: loadStrings('social.yml')
   }

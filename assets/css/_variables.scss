@@ -19,6 +19,7 @@ $button-primary: #352d47;
 $border-radius: 5px;
 $container-width: 600px;
 $footer-height: 496px;
+$default-btn-color: lighten(#544090, 20%);
 
 @mixin mobile {
   @media only screen and (max-width: 480px) {

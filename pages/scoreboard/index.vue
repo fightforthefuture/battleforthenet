@@ -1,7 +1,8 @@
 <style lang="scss">
 .scoreboard-index {
   .page-header {
-    // min-height: 100vh;
+    background-color: $alt-bg-color;
+    min-height: 100vh;
 
     .intro {
       margin-bottom: 2rem;

@@ -20,7 +20,7 @@ a.twitter-timeline {
 
 <template>
   <div>
-    <section class="page-header">
+    <section class="page-header bg-image">
       <div class="container">
         <h1>Small businesses can<br> save net neutrality</h1>
         <div class="intro">
