@@ -81,7 +81,7 @@
 </style>
 
 <template>
-  <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
+  <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }" @click="showCard(politician)">
     <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
     <div class="cover">
       <div class="yes-bg"></div>
@@ -93,7 +93,7 @@
       </h5>
     </div>
     <div class="actions">
-      <nuxt-link :to="`/scoreboard/${politician.biocode}`" class="btn btn-default">{{ $lt('view_button') }}</nuxt-link>
+      <a class="btn btn-default" href="#" @click.prevent="showCard(politician)">{{ $lt('view_button') }}</a>
     </div>
   </div>
 </template>
@@ -115,6 +115,15 @@ export default {
 
     isLong: function(name) {
       return name.indexOf(' ') === -1 && name.length > 11;
+    },
+
+    showCard({ biocode }) {
+      this.$router.push({
+        name: 'scoreboard-id',
+        params: {
+          id: biocode
+        }
+      })
     }
   }
 }
