@@ -17,7 +17,10 @@ const messages = formatStrings({
       call: {
         california: loadStrings('pages/call/california.yml')
       },
-      map: loadStrings('pages/map.yml')
+      map: loadStrings('pages/map.yml'),
+      scoreboard: {
+        index: loadStrings('pages/scoreboard/index.yml')
+      }
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),

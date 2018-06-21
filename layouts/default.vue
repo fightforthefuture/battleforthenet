@@ -119,6 +119,12 @@ section {
       }
     }
   }
+
+  &.fill-height {
+    @include big-screen {
+      min-height: calc(100vh - #{$footer-height});
+    }
+  }
 }
 
 ul.basic-list {

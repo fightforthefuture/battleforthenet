@@ -1,0 +1,10 @@
+title: Does your representative support net neutrality?
+intro_html: |
+  We need 218 votes in support of net neutrality to win in the House.  We currently have 171, but we need 47 more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.
+address_placeholder: Street address*
+zip_placeholder: ZIP Code*
+cta_button: Let’s go!
+loading_button: Searching...
+disclaimer: Your information will only be used to look up your representative.
+view_all: View Full Scoreboard
+error_rep_not_found: Oh no! We couldn’t find a representative for your address.

@@ -19,7 +19,10 @@ export default ({ app, store, isDev }) => {
           call: {
             california: require('~/locales/en/pages/call/california.yml')
           },
-          map: require('~/locales/en/pages/map.yml')
+          map: require('~/locales/en/pages/map.yml'),
+          scoreboard: {
+            index: require('~/locales/en/pages/scoreboard/index.yml')
+          }
         },
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),
