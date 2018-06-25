@@ -20,14 +20,14 @@ const messages = formatStrings({
       map: loadStrings('pages/map.yml'),
       scoreboard: {
         index: loadStrings('pages/scoreboard/index.yml'),
-        all: loadStrings('pages/scoreboard/all.yml')
+        all: loadStrings('pages/scoreboard/all.yml'),
+        id: loadStrings('pages/scoreboard/id.yml')
       }
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),
       WantedPoster: loadStrings('components/WantedPoster.yml'),
-      CreateEvent: loadStrings('components/CreateEvent.yml'),
-      ScoreboardPhoto: loadStrings('components/ScoreboardPhoto.yml'),
+      CreateEvent: loadStrings('components/CreateEvent.yml')
     },
     social: loadStrings('social.yml')
   }

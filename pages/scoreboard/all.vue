@@ -95,6 +95,19 @@ section {
 .persistent-button .btn {
   font-size: 3rem;
 }
+
+.politician {
+  display: inline-block;
+  margin: 1rem;
+
+  .btn {
+    display: block;
+  }
+
+  @include mobile {
+    margin: 0.75rem;
+  }
+}
 </style>
 
 <template>
@@ -126,7 +139,10 @@ section {
     <section v-for="state in sortedStateNames" :key="state" :id="sectionId(state)">
       <div class="container">
         <h2>{{ state }}</h2>
-        <scoreboard-photo :politician="pol" v-for="pol in politiciansByState[state]" :key="pol.biocode"></scoreboard-photo>
+        <div class="politician" v-for="pol in politiciansByState[state]" :key="pol.biocode" @click="showPolitician(pol)">
+          <scoreboard-photo :rep="pol"></scoreboard-photo>
+          <a class="btn btn-default" href="#" @click.prevent="showPolitician(pol)">{{ $lt('view_button') }}</a>
+        </div>
       </div>
     </section>
 
@@ -135,7 +151,8 @@ section {
 </template>
 
 <script>
-import politicians from '~/assets/data/politicians'
+import axios from 'axios'
+import states from '~/assets/data/states'
 import { smoothScrollTo } from '~/assets/js/helpers'
 import ScoreboardPhoto from '~/components/ScoreboardPhoto'
 import PersistentButton from '~/components/PersistentButton'
@@ -155,6 +172,23 @@ export default {
   data() {
     return {
       selectedState: null
+    }
+  },
+
+  async asyncData() {
+    let politicians = []
+
+    try {
+      const { data } = await axios.get('https://data.battleforthenet.com/scoreboard/all.json')
+      politicians = data
+    }
+    catch (error) {
+      //
+      console.error(error)
+    }
+
+    return {
+      politicians: politicians
     }
   },
 
@@ -180,19 +214,21 @@ export default {
     politiciansByState() {
       const politiciansByState = {}
 
-      for (let pol of politicians) {
-        if (!politiciansByState[pol.state]) {
-          politiciansByState[pol.state] = []
+      for (let pol of this.politicians) {
+        const key = states[pol.state]
+
+        if (!politiciansByState[key]) {
+          politiciansByState[key] = []
         }
 
-        politiciansByState[pol.state].push(pol)
+        politiciansByState[key].push(pol)
       }
 
       return politiciansByState
     },
 
     houseCRACount() {
-      return politicians.filter(p => p.organization === 'House' && p.yesOnCRA).length
+      return this.politicians.filter(p => p.organization === 'House' && p.yesOnCRA).length
     },
 
     introHTML() {
@@ -216,6 +252,15 @@ export default {
 
     scrollToTop() {
       smoothScrollTo(0, 0, 500)
+    },
+
+    showPolitician({ bioguide_id }) {
+      this.$router.push({
+        name: 'scoreboard-id',
+        params: {
+          id: bioguide_id
+        }
+      })
     }
   }
 }

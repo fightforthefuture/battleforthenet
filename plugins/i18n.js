@@ -22,14 +22,14 @@ export default ({ app, store, isDev }) => {
           map: require('~/locales/en/pages/map.yml'),
           scoreboard: {
             index: require('~/locales/en/pages/scoreboard/index.yml'),
-            all: require('~/locales/en/pages/scoreboard/all.yml')
+            all: require('~/locales/en/pages/scoreboard/all.yml'),
+            id: require('~/locales/en/pages/scoreboard/id.yml')
           }
         },
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),
           WantedPoster: require('~/locales/en/components/WantedPoster.yml'),
-          CreateEvent: require('~/locales/en/components/CreateEvent.yml'),
-          ScoreboardPhoto: require('~/locales/en/components/ScoreboardPhoto.yml')
+          CreateEvent: require('~/locales/en/components/CreateEvent.yml')
         },
         social: require('~/locales/en/social.yml')
       }

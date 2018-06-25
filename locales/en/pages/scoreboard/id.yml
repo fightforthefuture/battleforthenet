@@ -1,0 +1,45 @@
+supports:
+  title_html: My {title}<br> **SUPPORTS** net neutrality
+  description_html: |
+    {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
+  tweet_text: ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet"
+  facebook_button: Share on Facebook
+  twitter_button: Share on Twitter
+  volunteer_button: Volunteer
+
+against:
+  title_html: My {title}<br> is **AGAINST** net neutrality
+  description_html: |
+    {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+  tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+  call_button: Call
+  write_button: Write
+  tweet_button: Tweet
+
+action_team:
+  title: Join a Local Action Team
+  description: Work with other net neutrality supporters in your area to convince your representative to support net neutrality.
+  cta_button: Get Involved
+  stats: "{count} already joined"
+
+boxes:
+  events:
+    title: Attend an Event
+    description: Join a protest in your city … or organize one!
+    cta_button: Attend
+
+  business:
+    title: Local Businesses Care
+    description: "{count} businesses in your area have signed our open letter to Congress in support of net neutrality.  Will you?"
+    cta_button: Sign on
+
+  donate:
+    title: Donate to the Cause
+    description: Every dollar counts.  We’ll use your contributions to fund events, billboards and workers to help fight for net neutrality.
+    cta_button: Donate
+
+  share:
+    title: Share this Page
+    description: Spread the word on social media so your friends and family can take action.
+    facebook_button: Share
+    twitter_button: Tweet

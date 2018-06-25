@@ -1,16 +1,14 @@
-<style lang="scss" scoped>
-.politician {
-  display: inline-block;
-  margin: 1rem;
+<style lang="scss">
+.scoreboard-photo {
   position: relative;
-
-  @include mobile {
-    margin: 0.75rem;
-  }
+  border-radius: $border-radius;
+  display: inline-block;
+  width: 10rem;
+  height: 12.2rem;
 
   img, .cover, .yes-bg {
-    width: 10rem;
-    height: 12.2rem;
+    width: 100%;
+    height: 100%;
     border-radius: $border-radius;
   }
 
@@ -50,10 +48,6 @@
     bottom: .9rem;
   }
 
-  .btn {
-    display: block;
-  }
-
   .yes-bg {
     display: none;
   }
@@ -81,49 +75,42 @@
 </style>
 
 <template>
-  <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }" @click="showCard(politician)">
-    <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
+  <div :class="{ 'scoreboard-photo': true, 'vote-yes': rep.supports_cra, 'long-name': hasLongName }">
+    <img :src="imageURL" alt="">
     <div class="cover">
       <div class="yes-bg"></div>
       <h5>
-        {{ politician.name }}
+        {{ rep.last_name }}
         <small>
-          (<span v-if="politician.organization == 'Senate'">{{ $lt('senator_label') }} </span><b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
+          (<span v-if="rep.organization == 'Senate'">SEN </span><b v-if="rep.party">{{ partyCode }} - </b>{{ rep.state }})
         </small>
       </h5>
-    </div>
-    <div class="actions">
-      <a class="btn btn-default" href="#" @click.prevent="showCard(politician)">{{ $lt('view_button') }}</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: [
-    'politician'
-  ],
+  props: {
+    rep: Object
+  },
 
-  methods: {
-    $lt(key, vars={}) {
-      return this.$t(`components.ScoreboardPhoto.${key}`, vars)
+  computed: {
+    partyCode() {
+      if (this.rep.party) {
+        return this.rep.party.substr(0, 1).toUpperCase()
+      }
+
+      return ''
     },
 
-    imageURL: function(pol, suffix='_x1') {
-      return 'https://www.fightforthefuture.org/congress-images/' +  pol.biocode + suffix + '.jpg';
+    hasLongName() {
+      const str = this.rep.last_name || ''
+      return str.indexOf(' ') === -1 && str.length > 11;
     },
 
-    isLong: function(name) {
-      return name.indexOf(' ') === -1 && name.length > 11;
-    },
-
-    showCard({ biocode }) {
-      this.$router.push({
-        name: 'scoreboard-id',
-        params: {
-          id: biocode
-        }
-      })
+    imageURL() {
+      return `https://www.fightforthefuture.org/congress-images/${this.rep.bioguide_id}_x2.jpg`
     }
   }
 }
