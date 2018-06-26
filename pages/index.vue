@@ -1,92 +1,94 @@
-<style lang="scss" scoped>
-section#cra {
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+<style lang="scss">
+.index-page {
+  section#cra {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
 
-    li {
-      border: 1px solid #574b74;
-      background-color: #241e31;
-      padding: 2rem;
-      border-radius: $border-radius;
-      margin: 2rem;
-    }
+      li {
+        border: 1px solid #574b74;
+        background-color: #241e31;
+        padding: 2rem;
+        border-radius: $border-radius;
+        margin: 2rem;
+      }
 
-    h4 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 110%;
+      h4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 110%;
 
-      img {
-        height: 4rem;
-        margin-right: 2rem;
+        img {
+          height: 4rem;
+          margin-right: 2rem;
+        }
       }
     }
   }
-}
 
-.modal-tip {
-  background-color: #2f2940;
-  padding: 1rem 2rem;
-  border-radius: $border-radius;
-  margin-top: 2.5rem;
-  position: relative;
+  .modal-tip {
+    background-color: #2f2940;
+    padding: 1rem 2rem;
+    border-radius: $border-radius;
+    margin-top: 2.5rem;
+    position: relative;
 
-  // arrow
-  &:after {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-bottom-color: #2f2940;
-    border-width: 1.5rem;
-    margin-left: -1.5rem;
-  }
+    // arrow
+    &:after {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #2f2940;
+      border-width: 1.5rem;
+      margin-left: -1.5rem;
+    }
 
-  code {
-    color: #8a7cae;
-    background-color: #262035;
-  }
+    code {
+      color: #8a7cae;
+      background-color: #262035;
+    }
 
-  .btn {
-    background-color: #7652d1;
-    letter-spacing: 0.25rem;
-    font-size: 2rem;
+    .btn {
+      background-color: #7652d1;
+      letter-spacing: 0.25rem;
+      font-size: 2rem;
 
-    &:hover {
-      background-color: darken(#7652d1, 5%);
+      &:hover {
+        background-color: darken(#7652d1, 5%);
+      }
     }
   }
-}
 
-img.app-store {
-  height: 5rem;
-}
+  img.app-store {
+    height: 5rem;
+  }
 
-.modals {
-  margin-top: 3rem;
-}
+  .modals {
+    margin-top: 3rem;
+  }
 
-.persistent-button img {
-  height: 1.9rem;
-  width: 12.5rem;
-  display: block;
-  margin: 0.5rem auto 0;
+  .persistent-button img {
+    height: 1.9rem;
+    width: 12.5rem;
+    display: block;
+    margin: 0.5rem auto 0;
 
-  @include small-screen {
-    display: none;
+    @include small-screen {
+      display: none;
+    }
   }
 }
 </style>
 
 <template>
-  <div>
+  <div class="index-page">
     <section id="bftn-action-form" class="page-header bg-image">
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
