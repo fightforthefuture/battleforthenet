@@ -83,7 +83,6 @@ export default {
       const data = await this.fetchReps()
 
       if (data.rep) {
-        console.log(data)
         this.$router.push({
           name: 'scoreboard-id',
           params: {

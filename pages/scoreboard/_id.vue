@@ -105,6 +105,22 @@
       width: 45rem;
     }
   }
+
+  .modal {
+    h2 {
+      font-size: 3.7rem;
+    }
+  }
+
+  .petition-form {
+    border: 0;
+    padding: 0;
+
+    .disclaimer {
+      width: 96%;
+      text-align: center;
+    }
+  }
 }
 
 .scoreboard-card {
@@ -301,14 +317,14 @@
           <div class="scoreboard-card">
             <scoreboard-photo :rep="rep"></scoreboard-photo>
             <div class="buttons">
-              <button class="call">
+              <button class="call" @click="call()">
                 <span class="value" v-if="rep.call_count">{{ rep.call_count | formatNumber }}</span>
                 <span class="label">
                   <img src="~/assets/images/scoreboard-call-icon.svg" alt="">
                   {{ $lt('against.call_button') }}
                 </span>
               </button>
-              <button class="write">
+              <button class="write" @click="write()">
                 <span class="value" v-if="rep.letter_count">{{ rep.letter_count | formatNumber }}</span>
                 <span class="label">
                   <img src="~/assets/images/scoreboard-write-icon.svg" alt="">
@@ -372,6 +388,11 @@
         </scoreboard-action-box>
       </div>
     </section>
+
+    <modal v-if="modalVisible">
+      <call-form v-if="modal == 'call'" :in-modal="true" page="scoreboard" :title="$lt('call_form_title')"></call-form>
+      <petition-form v-else :in-modal="true" :title="$lt('petition_form_title')"></petition-form>
+    </modal>
   </div>
 </template>
 
@@ -380,6 +401,8 @@ import axios from 'axios'
 import { formatNumber, openPopup } from '~/assets/js/helpers'
 import ScoreboardPhoto from '~/components/ScoreboardPhoto'
 import ScoreboardActionBox from '~/components/ScoreboardActionBox'
+import CallForm from '~/components/CallForm'
+import PetitionForm from '~/components/PetitionForm'
 
 async function fetchRep(bioguideId) {
   try {
@@ -404,7 +427,16 @@ async function fetchBusinessCount(state) {
 export default {
   components: {
     ScoreboardPhoto,
-    ScoreboardActionBox
+    ScoreboardActionBox,
+    CallForm,
+    PetitionForm
+  },
+
+  data() {
+    return {
+      modalVisible: false,
+      modal: null
+    }
   },
 
   async asyncData(context) {
@@ -479,6 +511,16 @@ export default {
   methods: {
     $lt(key, vars={}) {
       return this.$t(`pages.scoreboard.id.${key}`, vars)
+    },
+
+    call() {
+      this.modal = 'call'
+      this.modalVisible = true
+    },
+
+    write() {
+      this.modal = 'write'
+      this.modalVisible = true
     },
 
     tweet() {

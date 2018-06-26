@@ -1,113 +1,118 @@
 <style lang="scss">
 .petition-form {
-  > form {
-    margin: 3rem auto 0;
+  margin: 3rem auto 0;
 
-    @include big-screen {
-      border: 1px solid #2e273e;
-      border-radius: $border-radius;
-      padding: 3rem;
-    }
+  @include big-screen {
+    border: 1px solid #2e273e;
+    border-radius: $border-radius;
+    padding: 3rem;
+  }
 
-    .flex-row {
-      margin-bottom: 0.8rem;
+  .flex-row {
+    margin-bottom: 0.8rem;
 
-      > * {
-        margin-right: 0.8rem;
+    > * {
+      margin-right: 0.8rem;
 
-        &:last-child {
-          margin-right: 0;
-        }
+      &:last-child {
+        margin-right: 0;
       }
     }
+  }
 
-    input, textarea {
-      font-family: $body-font;
+  input, textarea {
+    font-family: $body-font;
+    font-weight: 300;
+    padding: 1rem 1.5rem;
+
+    &::placeholder {
+      // color: #201b2c;
       font-weight: 300;
-      padding: 1rem 1.5rem;
+    }
+  }
 
-      &::placeholder {
-        // color: #201b2c;
-        font-weight: 300;
-      }
+  input.zip-code {
+    flex-grow: 0.5;
+  }
+
+  .letter {
+    position: relative;
+    margin-bottom: 0.8rem;
+
+    textarea {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 5rem;
+      height: 5rem;
+      padding-right: 12rem;
     }
 
-    input.zip-code {
-      flex-grow: 0.5;
-    }
-
-    .letter {
-      position: relative;
-      margin-bottom: 0.8rem;
-
-      textarea {
-        min-width: 100%;
-        max-width: 100%;
-        min-height: 5rem;
-        height: 5rem;
-        padding-right: 12rem;
-      }
-
-      a.clear {
-        position: absolute;
-        right: 2rem;
-        bottom: 1.6rem;
-        background-color: #ebe7f4;
-        color: #89819d;
-        font-size: 1.2rem;
-        margin: 0;
-        letter-spacing: 0;
-
-        &:hover {
-          background-color: darken(#ebe7f4, 5%);
-        }
-      }
-    }
-
-    .btn-large {
-      font-size: 2.6rem;
+    a.clear {
+      position: absolute;
+      right: 2rem;
+      bottom: 1.6rem;
+      background-color: #ebe7f4;
+      color: #89819d;
+      font-size: 1.2rem;
       margin: 0;
-      letter-spacing: 0.3rem;
-    }
+      letter-spacing: 0;
 
-    .disclaimer {
-      // min-height: 80px;
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fade-in .2s;
+      &:hover {
+        background-color: darken(#ebe7f4, 5%);
+      }
     }
+  }
+
+  .btn-large {
+    font-size: 2.6rem;
+    margin: 0;
+    letter-spacing: 0.3rem;
+  }
+
+  .disclaimer {
+    // min-height: 80px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fade-in .2s;
   }
 }
 </style>
 
 <template>
-  <div class="petition-form">
-    <form @submit.prevent="submitForm()">
-      <div class="flex-row">
-        <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
-        <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
-      </div>
-      <div class="flex-row">
-        <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
-        <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
-        <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
-      </div>
-      <div class="letter">
-        <textarea v-model="comments" ref="comments"></textarea>
-        <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
-      </div>
-      <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
-        <span v-if="isSending">{{ $lt('button_loading') }}</span>
-        <span v-else>{{ $lt('button_cta') }}</span>
-      </button>
-      <no-ssr>
-        <disclaimer :sms="true"></disclaimer>
-      </no-ssr>
-    </form>
-    <modal v-if="modalVisible">
-      <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
-    </modal>
+  <div>
+    <div v-if="!hasSigned || !inModal">
+      <h2 v-if="title">{{ title }}</h2>
+      <form class="petition-form" @submit.prevent="submitForm()">
+        <div class="flex-row">
+          <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
+          <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
+        </div>
+        <div class="flex-row">
+          <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
+          <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
+          <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
+        </div>
+        <div class="letter">
+          <textarea v-model="comments" ref="comments"></textarea>
+          <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
+        </div>
+        <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
+          <span v-if="isSending">{{ $lt('button_loading') }}</span>
+          <span v-else>{{ $lt('button_cta') }}</span>
+        </button>
+        <no-ssr>
+          <disclaimer :sms="true"></disclaimer>
+        </no-ssr>
+      </form>
+    </div>
+
+    <div v-if="hasSigned">
+      <call-form v-if="inModal" :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
+      <modal v-else-if="modalVisible">
+        <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
+      </modal>
+    </div>
   </div>
 </template>
 
@@ -124,9 +129,19 @@ export default {
     CallForm
   },
 
+  props: {
+    title: String,
+
+    inModal: {
+      type: Boolean,
+      default: false
+    },
+  },
+
   data() {
     return {
       isSending: false,
+      hasSigned: false,
       modalVisible: false,
       name: null,
       email: null,
@@ -191,6 +206,7 @@ export default {
         this.$trackEvent('petition_form', 'submit')
         this.isSending = false
         this.modalVisible = true
+        this.hasSigned = true
 
         if (this.phone && this.org === 'fftf') {
           this.startTextFlow()
