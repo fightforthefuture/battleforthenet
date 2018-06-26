@@ -25,6 +25,12 @@
       }
     }
   }
+
+  @include mobile {
+    h2 {
+      font-size: 3rem;
+    }
+  }
 }
 </style>
 

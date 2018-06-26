@@ -2,7 +2,7 @@
 @mixin scoreboard-card-btn($value-bg-color, $label-bg-color, $img-height) {
   background-color: $label-bg-color;
 
-  .value {
+  .value-bg {
     background-color: $value-bg-color;
 
     &:after {
@@ -20,7 +20,7 @@
     cursor: pointer;
     transition: background-color .2s;
 
-    .value {
+    .value-bg {
       background-color: darken($value-bg-color, $percentage);
       transition: background-color .2s;
 
@@ -119,13 +119,17 @@
   background-color: #322b45;
   border-radius: $border-radius;
   padding: 1.2rem;
-  width: 45rem;
+  max-width: 45rem;
   margin: auto;
   display: flex;
 
   .scoreboard-photo {
     width: 17rem;
-    height: 19.5rem;
+    height: auto;
+
+    @include mobile {
+      width: 15rem;
+    }
 
     h5 {
       font-size: 1.8rem;
@@ -139,8 +143,11 @@
   .buttons {
     width: 29rem;
     padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
 
     button, .btn {
+      flex: 1;
       border-radius: $border-radius;
       font-size: 2.2rem;
       font-weight: 700;
@@ -148,14 +155,13 @@
       text-transform: uppercase;
       border: none;
       background: transparent;
-      width: 100%;
-      display: block;
       margin-bottom: 0.6rem;
       padding: 0;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       &:last-child {
         margin-bottom: 0;
@@ -165,16 +171,13 @@
         cursor: pointer;
       }
 
-      .value, .label {
-        display: block;
-        float: left;
-        padding: 1.8rem 1.5rem;
-      }
-
-      .value {
-        width: 40%;
+      .value-bg {
         border-radius: $border-radius 0 0 $border-radius;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 36%;
 
         &:after {
           left: 100%;
@@ -192,8 +195,13 @@
         }
       }
 
+      .value {
+        width: 36%;
+        position: relative;
+      }
+
       .label {
-        width: 60%;
+        flex: 2;
         border-radius: 0 $border-radius $border-radius 0;
         position: relative;
         letter-spacing: 0.1rem;
@@ -218,7 +226,6 @@
       }
 
       &.btn-facebook, &.btn-twitter, &.btn-volunteer {
-        padding: 2rem 1.5rem;
         font-size: 1.8rem;
 
         &:before {
@@ -296,6 +303,7 @@
           </div>
           <div class="buttons" v-else>
             <button class="call" @click="call()">
+              <span class="value-bg" v-if="rep.call_count"></span>
               <span class="value" v-if="rep.call_count">{{ rep.call_count | formatNumber }}</span>
               <span class="label">
                 <img src="~/assets/images/scoreboard-call-icon.svg" alt="">
@@ -303,6 +311,7 @@
               </span>
             </button>
             <button class="write" @click="write()">
+              <span class="value-bg" v-if="rep.letter_count"></span>
               <span class="value" v-if="rep.letter_count">{{ rep.letter_count | formatNumber }}</span>
               <span class="label">
                 <img src="~/assets/images/scoreboard-write-icon.svg" alt="">
@@ -310,6 +319,7 @@
               </span>
             </button>
             <button class="tweet" @click="tweet()">
+              <span class="value-bg" v-if="rep.tweet_count"></span>
               <span class="value" v-if="rep.tweet_count">{{ rep.tweet_count | formatNumber }}</span>
               <span class="label">
                 <img src="~/assets/images/scoreboard-tweet-icon.svg" alt="">
