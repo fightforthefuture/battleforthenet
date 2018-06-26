@@ -92,7 +92,7 @@
           },
           "events": {
             "title": "Attend an event in your area",
-            "body_html": "<p>Want to make your voice heard? Check out the map below to find a protest\nor a meeting with a representative in your state. And if there are no\nevents in your area, consider organizing one!</p>"
+            "body_html": "<p>Want to make your voice heard? Check out the map below to find a protest\nor a meeting with a representative in your state. And if there are no\nevents in your area, consider organizing one!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
           },
           "net-neutrality": {
             "title": "What is net neutrality? Why does it matter?",
@@ -121,7 +121,83 @@
       "map": {
         "title": "Net Neutrality Events",
         "zip_placeholder": "Search by ZIP Code",
-        "event_cta": "Info & RSVP"
+        "event_cta": "Info & RSVP",
+        "host_cta": "Host an Event"
+      },
+      "scoreboard": {
+        "index": {
+          "title": "Does your representative support net neutrality?",
+          "intro_html": "<p>We need 218 votes in support of net neutrality to win in the House.  We currently have 171, but we need 47 more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
+          "address_placeholder": "Street address*",
+          "zip_placeholder": "ZIP Code*",
+          "cta_button": "Let’s go!",
+          "loading_button": "Searching...",
+          "disclaimer": "Your information will only be used to look up your representative.",
+          "view_all": "View Full Scoreboard",
+          "error_rep_not_found": "Oh no! We couldn’t find a representative for your address."
+        },
+        "all": {
+          "title": "Here's how every Congressperson voted on net neutrality",
+          "intro_html": "<p>We need {totalVotes} votes in support of net neutrality to win in the House.  We currently have {craCount}, but we need {votesNeeded} more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
+          "legend": {
+            "against_label": "Red",
+            "against_description": "Against the petition to restore net neutrality",
+            "for_label": "Blue",
+            "for_description": "Supports the petition to restore net neutrality"
+          },
+          "state_placeholder": "Select state",
+          "view_button": "View",
+          "persistent_button": "Back to top ☝️"
+        },
+        "id": {
+          "supports": {
+            "title_html": "<p>My {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
+            "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
+            "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet",
+            "facebook_button": "Share on Facebook",
+            "twitter_button": "Share on Twitter",
+            "volunteer_button": "Volunteer"
+          },
+          "against": {
+            "title_html": "<p>My {title}<br> is <strong>AGAINST</strong> net neutrality</p>",
+            "description_html": "<p>{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
+            "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet",
+            "call_button": "Call",
+            "write_button": "Write",
+            "tweet_button": "Tweet"
+          },
+          "action_team": {
+            "title": "Join a Local Action Team",
+            "description": "Work with other net neutrality supporters in your area to convince your representative to support net neutrality.",
+            "cta_button": "Get Involved",
+            "stats": "{count} already joined"
+          },
+          "boxes": {
+            "events": {
+              "title": "Attend an Event",
+              "description": "Join a protest in your city … or organize one!",
+              "cta_button": "Attend"
+            },
+            "business": {
+              "title": "Local Businesses Care",
+              "description": "{count} businesses in your area have signed our open letter to Congress in support of net neutrality.  Will you?",
+              "cta_button": "Sign on"
+            },
+            "donate": {
+              "title": "Donate to the Cause",
+              "description": "Every dollar counts.  We’ll use your contributions to fund events, billboards and workers to help fight for net neutrality.",
+              "cta_button": "Donate"
+            },
+            "share": {
+              "title": "Share this Page",
+              "description": "Spread the word on social media so your friends and family can take action.",
+              "facebook_button": "Share",
+              "twitter_button": "Tweet"
+            }
+          },
+          "call_form_title": "Congress can save net neutrality",
+          "petition_form_title": "Congress can save net neutrality"
+        }
       }
     },
     "components": {
@@ -144,6 +220,31 @@
         "no_bad_reps_html": "<p>Don’t see your representative here? Good news … they already support net neutrality! But many others don't.  So share this page with your friends and followers so they can put their representatives on high alert.</p>",
         "no_reps_html": "<p>Sorry, but we couldn't find any representatives for your zip code.</p>",
         "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+      },
+      "CreateEvent": {
+        "title": "Create an Event",
+        "contact_info_legend": "Contact Info (this will be public)",
+        "name_placeholder": "Host name*",
+        "email_placeholder": "Email*",
+        "phone_placeholder": "Phone",
+        "event_details_legend": "Event Details",
+        "title_placeholder": "Title of your event*",
+        "description_placeholder": "Event description*",
+        "start_date_legend": "Start Date & Time",
+        "start_date_placeholder": "Start date*",
+        "start_time_placeholder": "Start time*",
+        "location_legend": "Location",
+        "location_name_placeholder": "Venue name*",
+        "street_placeholder": "Street address*",
+        "city_placeholder": "City*",
+        "state_placeholder": "Select state*",
+        "zip_placeholder": "ZIP Code*",
+        "instructions_legend": "Instructions for your attendees (visible after signup)",
+        "instructions_placeholder": "Attendee instructions*",
+        "cta_button": "Create Event",
+        "loading_button": "Saving...",
+        "thanks_html": "<p>Thanks! We'll be in touch.</p>",
+        "done_button": "Done"
       }
     },
     "social": {

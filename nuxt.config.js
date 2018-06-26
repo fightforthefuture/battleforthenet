@@ -1,5 +1,6 @@
 const path = require('path')
 const settings = require(path.resolve(__dirname, 'config.json'))
+const routes = require(path.resolve(__dirname, 'assets', 'data', 'routes.json'))
 
 module.exports = {
   /*
@@ -91,5 +92,9 @@ module.exports = {
     '~/plugins/i18n.js',
     { src: '~/plugins/hash-link-fix.js', ssr: false },
     { src: '~/plugins/shareprogress.js', ssr: false }
-  ]
+  ],
+
+  generate: {
+    routes: routes
+  }
 }
