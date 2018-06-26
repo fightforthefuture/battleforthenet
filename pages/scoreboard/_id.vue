@@ -360,7 +360,7 @@
           :title="$lt('boxes.donate.title') "
           :description="$lt('boxes.donate.description')"
           :cta_button="$lt('boxes.donate.cta_button')"
-          cta_url="https://donate.fightforthefuture.org"
+          :cta_url="donateURL"
         />
 
         <scoreboard-action-box v-if="!rep.supports_cra"
@@ -385,7 +385,7 @@
 
 <script>
 import axios from 'axios'
-import { createMetaTags, formatNumber, openPopup } from '~/assets/js/helpers'
+import { createMetaTags, formatNumber, getDonateLink, openPopup } from '~/assets/js/helpers'
 import ScoreboardPhoto from '~/components/ScoreboardPhoto'
 import ScoreboardActionBox from '~/components/ScoreboardActionBox'
 import CallForm from '~/components/CallForm'
@@ -522,6 +522,10 @@ export default {
       return this.$lt('boxes.business.description', {
         count: bizCount
       })
+    },
+
+    donateURL() {
+      return getDonateLink(this.$store.state.org)
     }
   },
 
