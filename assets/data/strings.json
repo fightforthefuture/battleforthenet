@@ -151,6 +151,11 @@
         },
         "id": {
           "supports": {
+            "page_title": "{name} supports net neutrality",
+            "sharing": {
+              "title": "{name} supports net neutrality",
+              "description": "{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.\n"
+            },
             "title_html": "<p>My {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
             "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
             "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet",
@@ -159,6 +164,11 @@
             "volunteer_button": "Volunteer"
           },
           "against": {
+            "page_title": "{name} is against net neutrality",
+            "sharing": {
+              "title": "{name} is against net neutrality",
+              "description": "{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.\n"
+            },
             "title_html": "<p>My {title}<br> is <strong>AGAINST</strong> net neutrality</p>",
             "description_html": "<p>{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
             "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet",
