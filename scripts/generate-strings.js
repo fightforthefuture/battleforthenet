@@ -28,7 +28,8 @@ const messages = formatStrings({
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),
       WantedPoster: loadStrings('components/WantedPoster.yml'),
-      CreateEvent: loadStrings('components/CreateEvent.yml')
+      CreateEvent: loadStrings('components/CreateEvent.yml'),
+      ScoreboardForm: loadStrings('components/ScoreboardForm.yml')
     },
     social: loadStrings('social.yml')
   }

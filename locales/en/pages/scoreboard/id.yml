@@ -1,9 +1,5 @@
 supports:
-  page_title: "{name} supports net neutrality"
-  sharing:
-    title: "{name} supports net neutrality"
-    description: |
-      {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
+  document_title: "{name} supports net neutrality"
   title_html: My {title}<br> **SUPPORTS** net neutrality
   description_html: |
     {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
@@ -13,11 +9,7 @@ supports:
   volunteer_button: Volunteer
 
 against:
-  page_title: "{name} is against net neutrality"
-  sharing:
-    title: "{name} is against net neutrality"
-    description: |
-      {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+  document_title: "{name} is against net neutrality"
   title_html: My {title}<br> is **AGAINST** net neutrality
   description_html: |
     {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
@@ -47,6 +39,11 @@ boxes:
     title: Donate to the Cause
     description: Every dollar counts.  We’ll use your contributions to fund events, billboards and workers to help fight for net neutrality.
     cta_button: Donate
+
+  scoreboard:
+    title: See the full scoreboard
+    description: Find out where every member of Congress stands on net neutrality.
+    cta_button: View Scoreboard
 
   share:
     title: Share this Page

@@ -367,14 +367,21 @@
           :cta_url="donateURL"
         />
 
+        <scoreboard-action-box
+          :title="$lt('boxes.scoreboard.title')"
+          :description="$lt('boxes.scoreboard.description')"
+          :cta_button="$lt('boxes.scoreboard.cta_button')"
+          cta_url="/scoreboard/all"
+        />
+
         <scoreboard-action-box v-if="!rep.supports_cra"
           :title="$lt('boxes.share.title') "
           :description="$lt('boxes.share.description')"
           class="share-box"
         >
           <div class="share-buttons flex-row">
-            <facebook-button :url="shareURL">{{ $lt('boxes.share.facebook_button') }}</facebook-button>
-            <twitter-button :url="twitterURL">{{ $lt('boxes.share.twitter_button') }}</twitter-button>
+            <facebook-button :url="shareURL" @clicked="$trackEvent('scoreboard_rep_facebook_share_button', 'click')">{{ $lt('boxes.share.facebook_button') }}</facebook-button>
+            <twitter-button :url="twitterURL" @clicked="$trackEvent('scoreboard_rep_twitter_share_button', 'click')">{{ $lt('boxes.share.twitter_button') }}</twitter-button>
           </div>
         </scoreboard-action-box>
       </div>
@@ -392,6 +399,7 @@ import axios from 'axios'
 import { createMetaTags, formatNumber, getDonateLink, openPopup } from '~/assets/js/helpers'
 import ScoreboardPhoto from '~/components/ScoreboardPhoto'
 import ScoreboardActionBox from '~/components/ScoreboardActionBox'
+import ScoreboardForm from '~/components/ScoreboardForm'
 import CallForm from '~/components/CallForm'
 import PetitionForm from '~/components/PetitionForm'
 
@@ -419,6 +427,7 @@ export default {
   components: {
     ScoreboardPhoto,
     ScoreboardActionBox,
+    ScoreboardForm,
     CallForm,
     PetitionForm
   },
@@ -430,7 +439,7 @@ export default {
     }
 
     return {
-      title: this.$lt(`${this.status}.page_title`, vars),
+      title: this.$lt(`${this.status}.document_title`, vars),
       meta: createMetaTags({
         title: this.$t('pages.scoreboard.social.title'),
         description: this.$t('pages.scoreboard.social.description'),
@@ -545,16 +554,19 @@ export default {
     },
 
     call() {
+      this.$trackEvent('scoreboard_rep_call_button', 'click')
       this.modal = 'call'
       this.modalVisible = true
     },
 
     write() {
+      this.$trackEvent('scoreboard_rep_write_button', 'click')
       this.modal = 'write'
       this.modalVisible = true
     },
 
     tweet() {
+      this.$trackEvent('scoreboard_rep_tweet_button', 'click')
       openPopup(this.twitterURL, 'share')
     }
   }

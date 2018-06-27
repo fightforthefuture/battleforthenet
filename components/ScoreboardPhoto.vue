@@ -17,10 +17,6 @@
     top: 0;
     left: 0;
     background-color: rgba(255,26,9,0.5);
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   h5 {

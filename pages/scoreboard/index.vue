@@ -40,22 +40,7 @@
       <div class="container">
         <h2>{{ $lt('title') }}</h2>
         <div class="intro" v-html="$lt('intro_html')"></div>
-        <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
-        <form @submit.prevent="submitForm()">
-          <div class="flex-row">
-            <input type="text" v-model="street" :placeholder="$lt('address_placeholder')" required class="street">
-            <input type="tel" v-model="zipCode" :placeholder="$lt('zip_placeholder')" required class="zip">
-          </div>
-          <div class="flex-row">
-            <button class="btn btn-large btn-cta" :disabled="isLoading">
-              <span v-if="!isLoading">{{ $lt('cta_button') }}</span>
-              <span v-else>{{ $lt('loading_button') }}</span>
-            </button>
-          </div>
-          <p class="disclaimer">
-            <small>{{ $lt('disclaimer') }}</small>
-          </p>
-        </form>
+        <scoreboard-form btn-class="btn btn-large btn-cta"></scoreboard-form>
         <div class="view-all">
           <nuxt-link to="/scoreboard/all">{{ $lt('view_all') }}</nuxt-link>
         </div>
@@ -65,10 +50,14 @@
 </template>
 
 <script>
-import axios from 'axios'
 import { createMetaTags } from '~/assets/js/helpers'
+import ScoreboardForm from '~/components/ScoreboardForm'
 
 export default {
+  components: {
+    ScoreboardForm
+  },
+
   head() {
     return {
       title: this.$lt('title'),
@@ -81,70 +70,9 @@ export default {
     }
   },
 
-  data() {
-    return {
-      isLoading: false,
-      errorMessage: null
-    }
-  },
-
-  computed: {
-    zipCode: {
-      get() {
-        return this.$store.state.zipCode
-      },
-
-      set(value) {
-        this.$store.commit('setZipCode', value)
-      }
-    },
-
-    street: {
-      get() {
-        return this.$store.state.streetAddress
-      },
-
-      set(value) {
-        this.$store.commit('setStreetAddress', value)
-      }
-    }
-  },
-
   methods: {
     $lt(key, vars={}) {
       return this.$t(`pages.scoreboard.index.${key}`, vars)
-    },
-
-    async submitForm() {
-      this.isLoading = true
-      this.errorMessage = null
-
-      const data = await this.fetchReps()
-
-      if (data.rep) {
-        this.$router.push({
-          name: 'scoreboard-id',
-          params: {
-            id: data.rep.bioguide_id
-          }
-        })
-      }
-      else {
-        this.errorMessage = this.$lt('error_rep_not_found')
-      }
-
-      this.isLoading = false
-    },
-
-    async fetchReps() {
-      try {
-        const address = `${this.street} ${this.zipCode}`
-        const { data } = await axios.get(`https://5spfbwv3p5.execute-api.us-east-1.amazonaws.com/v1/reps?address=${encodeURIComponent(address)}`)
-        return data
-      }
-      catch (error) {
-        return {}
-      }
     }
   }
 }

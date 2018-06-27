@@ -30,7 +30,8 @@ export default ({ app, store, isDev }) => {
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),
           WantedPoster: require('~/locales/en/components/WantedPoster.yml'),
-          CreateEvent: require('~/locales/en/components/CreateEvent.yml')
+          CreateEvent: require('~/locales/en/components/CreateEvent.yml'),
+          ScoreboardForm: require('~/locales/en/components/ScoreboardForm.yml')
         },
         social: require('~/locales/en/social.yml')
       }
