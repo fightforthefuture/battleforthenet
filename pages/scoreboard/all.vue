@@ -139,9 +139,9 @@ section {
     <section v-for="state in sortedStateNames" :key="state" :id="sectionId(state)">
       <div class="container">
         <h2>{{ state }}</h2>
-        <div class="politician" v-for="pol in politiciansByState[state]" :key="pol.biocode" @click="showPolitician(pol)">
-          <scoreboard-photo :rep="pol"></scoreboard-photo>
-          <a class="btn btn-default" href="#" @click.prevent="showPolitician(pol)">{{ $lt('view_button') }}</a>
+        <div class="politician" v-for="pol in politiciansByState[state]" :key="pol.biocode">
+          <nuxt-link :to="`/scoreboard/${pol.bioguide_id}`"><scoreboard-photo :rep="pol"></scoreboard-photo></nuxt-link>
+          <nuxt-link class="btn btn-default" :to="`/scoreboard/${pol.bioguide_id}`">{{ $lt('view_button') }}</nuxt-link>
         </div>
       </div>
     </section>
@@ -184,7 +184,6 @@ export default {
     }
     catch (error) {
       //
-      console.error(error)
     }
 
     return {
@@ -228,7 +227,7 @@ export default {
     },
 
     houseCRACount() {
-      return this.politicians.filter(p => p.organization === 'House' && p.yesOnCRA).length
+      return this.politicians.filter(p => p.organization === 'House' && p.supports_cra).length
     },
 
     introHTML() {
@@ -252,15 +251,6 @@ export default {
 
     scrollToTop() {
       smoothScrollTo(0, 0, 500)
-    },
-
-    showPolitician({ bioguide_id }) {
-      this.$router.push({
-        name: 'scoreboard-id',
-        params: {
-          id: bioguide_id
-        }
-      })
     }
   }
 }
