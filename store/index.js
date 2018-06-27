@@ -4,7 +4,10 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       org: 'fftf',
-      politicians: []
+      politicians: [],
+      zipCode: null,
+      phone: null,
+      streetAddress: null
     },
 
     mutations: {
@@ -14,6 +17,18 @@ const createStore = () => {
 
       setOrg(state, value) {
         state.org = value
+      },
+
+      setZipCode(state, value) {
+        state.zipCode = value
+      },
+
+      setPhone(state, value) {
+        state.phone = value
+      },
+
+      setStreetAddress(state, value) {
+        state.streetAddress = value
       }
     }
   })

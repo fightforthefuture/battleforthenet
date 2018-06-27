@@ -87,16 +87,6 @@ export default {
     page: {
       type: String,
       default: 'home'
-    },
-
-    defaultZip: {
-      type: String,
-      default: null
-    },
-
-    defaultPhone: {
-      type: String,
-      default: null
     }
   },
 
@@ -110,8 +100,6 @@ export default {
 
   data() {
     return {
-      phone: this.defaultPhone,
-      zipCode: this.defaultZip,
       stateCode: null,
       isSending: false,
       hasCalled: false,
@@ -171,6 +159,26 @@ export default {
       }
       else {
         return "https://call-congress.fightforthefuture.org/create"
+      }
+    },
+
+    zipCode: {
+      get() {
+        return this.$store.state.zipCode
+      },
+
+      set(value) {
+        this.$store.commit('setZipCode', value)
+      }
+    },
+
+    phone: {
+      get() {
+        return this.$store.state.phone
+      },
+
+      set(value) {
+        this.$store.commit('setPhone', value)
       }
     }
   },

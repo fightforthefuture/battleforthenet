@@ -346,7 +346,7 @@
           :title="$lt('boxes.events.title') "
           :description="$lt('boxes.events.description')"
           :cta_button="$lt('boxes.events.cta_button')"
-          cta_url="https://www.battleforthenet.com/map"
+          :cta_url="mapURL"
         />
 
         <scoreboard-action-box
@@ -526,6 +526,16 @@ export default {
 
     donateURL() {
       return getDonateLink(this.$store.state.org)
+    },
+
+    mapURL() {
+      let url = 'https://www.battleforthenet.com/map/'
+
+      if (this.$store.state.zipCode) {
+        url += `?zip=${this.$store.state.zipCode}`
+      }
+
+      return url
     }
   },
 

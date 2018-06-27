@@ -108,9 +108,9 @@
     </div>
 
     <div v-if="hasSigned">
-      <call-form v-if="inModal" :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
+      <call-form v-if="inModal" :in-modal="true" />
       <modal v-else-if="modalVisible">
-        <call-form :in-modal="true" :default-zip="zipCode" :default-phone="phone"></call-form>
+        <call-form :in-modal="true" />
       </modal>
     </div>
   </div>
@@ -145,9 +145,6 @@ export default {
       modalVisible: false,
       name: null,
       email: null,
-      address: null,
-      zipCode: null,
-      phone: null,
       comments: this.$lt('default_letter')
     }
   },
@@ -165,6 +162,36 @@ export default {
 
     actionComment() {
       return `${this.comments}\n\n(The sender of this message generated it using tools available at BattleForTheNet.com on ${new Date()}.)`
+    },
+
+    zipCode: {
+      get() {
+        return this.$store.state.zipCode
+      },
+
+      set(value) {
+        this.$store.commit('setZipCode', value)
+      }
+    },
+
+    phone: {
+      get() {
+        return this.$store.state.phone
+      },
+
+      set(value) {
+        this.$store.commit('setPhone', value)
+      }
+    },
+
+    address: {
+      get() {
+        return this.$store.state.streetAddress
+      },
+
+      set(value) {
+        this.$store.commit('setStreetAddress', value)
+      }
     }
   },
 

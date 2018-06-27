@@ -70,10 +70,30 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      street: null,
-      zipCode: null,
       isLoading: false,
       errorMessage: null
+    }
+  },
+
+  computed: {
+    zipCode: {
+      get() {
+        return this.$store.state.zipCode
+      },
+
+      set(value) {
+        this.$store.commit('setZipCode', value)
+      }
+    },
+
+    street: {
+      get() {
+        return this.$store.state.streetAddress
+      },
+
+      set(value) {
+        this.$store.commit('setStreetAddress', value)
+      }
     }
   },
 
