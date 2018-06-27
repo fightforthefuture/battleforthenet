@@ -234,6 +234,11 @@ body.map-page {
     <div class="event-map" id="event-map" ref="map"></div>
     <div class="event-list">
       <ul>
+        <li v-if="events.length < 1">
+          <h4>{{ $lt('no_events_title') }}</h4>
+          <p>{{ $lt('no_events_description') }}</p>
+        </li>
+
         <li v-for="event in sortedEvents" :key="event.id" :id="`event-${event.id}`" @mouseover="openPopup(event)" @mouseout="closePopup(event)">
           <p v-if="event.image"><img :src="event.image" alt="[Event banner image]"></p>
           <h4>{{ event.title }}</h4>
@@ -309,6 +314,11 @@ export default {
 
   watch: {
     events() {
+      if (this.events.length === 0) {
+        this.map.setView([42.35, -71.08], 13)
+        return
+      }
+
       this.bounds = L.latLngBounds()
 
       for (let event of this.events) {
