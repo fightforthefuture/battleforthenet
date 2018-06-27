@@ -115,22 +115,25 @@ $call-btn-color: #ff2a2a;
 
 <template>
   <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
-    <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
-    <div class="cover" @click="openTweetURL(politician)">
-      <div class="yes-bg"></div>
-      <h5>
-        {{ politician.name }}
-        <small>
-          (<span v-if="politician.organization == 'Senate'">SEN </span><b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
-        </small>
-      </h5>
-    </div>
+    <nuxt-link :to="`/scoreboard/${politician.biocode}`">
+      <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
+      <div class="cover">
+        <div class="yes-bg"></div>
+        <h5>
+          {{ politician.name }}
+          <small>
+            (<span v-if="politician.organization == 'Senate'">SEN </span><b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
+          </small>
+        </h5>
+      </div>
+    </nuxt-link>
     <div class="actions">
-      <a v-if="politician.twitter" class="btn btn-twitter" :href="tweetURL(politician)" target="_blank">Tweet</a>
+      <nuxt-link :to="`/scoreboard/${politician.biocode}`" class="btn btn-default">View</nuxt-link>
+<!--       <a v-if="politician.twitter" class="btn btn-twitter" :href="tweetURL(politician)" target="_blank">Tweet</a>
       <a href="/call" class="btn btn-call">
         <span v-if="politician.calls">{{ politician.calls | pluralize('call') }}</span>
         <span v-else>No call data</span>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>

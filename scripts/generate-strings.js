@@ -17,12 +17,19 @@ const messages = formatStrings({
       call: {
         california: loadStrings('pages/call/california.yml')
       },
-      map: loadStrings('pages/map.yml')
+      map: loadStrings('pages/map.yml'),
+      scoreboard: {
+        index: loadStrings('pages/scoreboard/index.yml'),
+        all: loadStrings('pages/scoreboard/all.yml'),
+        id: loadStrings('pages/scoreboard/id.yml'),
+        social: loadStrings('pages/scoreboard/social.yml')
+      }
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),
       WantedPoster: loadStrings('components/WantedPoster.yml'),
-      CreateEvent: loadStrings('components/CreateEvent.yml')
+      CreateEvent: loadStrings('components/CreateEvent.yml'),
+      ScoreboardForm: loadStrings('components/ScoreboardForm.yml')
     },
     social: loadStrings('social.yml')
   }

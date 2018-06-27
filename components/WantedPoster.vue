@@ -109,7 +109,6 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      zipCode: null,
       reps: []
     }
   },
@@ -117,31 +116,16 @@ export default {
   computed: {
     badReps() {
       return this.reps.filter(r => !r.cra)
-    }
-  },
+    },
 
-  watch: {
-    async zipCode() {
-      if (!this.zipCode) {
-        this.reps = []
-      }
-      else if (this.zipCode.length >= 5) {
-        try {
-          const { data } = await axios.get(`https://data.battleforthenet.com/wanted/${this.zipCode.substr(0, 5)}.json`)
-          this.reps = data
-        }
-        catch (error) {
-          this.reps = []
-        }
-      }
+    zipCode: {
+      get() {
+        return this.$store.state.zipCode
+      },
 
-      if (process.browser) {
-        if (this.zipCode) {
-          localStorage.zipCode = this.zipCode
-        }
-        else {
-          localStorage.removeItem('zipCode')
-        }
+      set(value) {
+        this.$store.commit('setZipCode', value)
+        this.fetchReps()
       }
     }
   },
@@ -149,9 +133,6 @@ export default {
   created() {
     if (this.$route.query.wanted && this.$route.query.wanted !== '00000') {
       this.zipCode = this.$route.query.wanted
-    }
-    else if (process.browser && localStorage.zipCode) {
-      this.zipCode = localStorage.zipCode
     }
   },
 
@@ -193,6 +174,21 @@ export default {
     twitterURL(rep) {
       const tweetText = this.tweetText(rep)
       return `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`
+    },
+
+    async fetchReps() {
+      if (!this.zipCode) {
+        this.reps = []
+      }
+      else if (this.zipCode.length >= 5) {
+        try {
+          const { data } = await axios.get(`https://data.battleforthenet.com/wanted/${this.zipCode.substr(0, 5)}.json`)
+          this.reps = data
+        }
+        catch (error) {
+          this.reps = []
+        }
+      }
     }
   }
 }

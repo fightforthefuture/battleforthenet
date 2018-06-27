@@ -169,6 +169,15 @@ export function smoothScrollTo(endX, endY, duration) {
   }, 1000 / 60); // 60 fps
 };
 
+export function smoothScrollToElement(el, duration) {
+  duration = typeof duration !== 'undefined' ? duration : 500;
+  el = typeof el === 'string' ? document.querySelector(el) : el;
+
+  if (el) {
+    smoothScrollTo(el.offsetLeft, el.offsetTop, duration)
+  }
+}
+
 export async function startTextFlow({ flow, phone }) {
   const axios = require('axios')
 
@@ -205,4 +214,8 @@ export async function pingCounter(counter) {
   catch (error) {
     //
   }
+}
+
+export function formatNumber(x) {
+  return x || x === 0 ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
 }

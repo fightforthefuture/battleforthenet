@@ -28,5 +28,9 @@
   "californiaPage": {
     "stateCampaigns": [],
     "defaultCampaign": "California-SB-822 ROUND 2"
+  },
+  "scoreboardPage": {
+    "stateCampaigns": [],
+    "defaultCampaign": "RED_ALERT_BattleForTheNet_Call_House_2Sens"
   }
 }

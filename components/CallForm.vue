@@ -36,7 +36,8 @@ form {
   <div class="call-form">
     <div v-if="!hasCalled || !inModal">
       <div v-if="inModal">
-        <h2 v-if="inModal"><strong>Thanks!</strong> Can you call?</h2>
+        <h2 v-if="title">{{ title }}</h2>
+        <h2 v-else><strong>Thanks!</strong> Can you call?</h2>
         <p>We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.</p>
       </div>
       <form @submit.prevent="submitForm()">
@@ -76,6 +77,8 @@ export default {
   },
 
   props: {
+    title: String,
+
     inModal: {
       type: Boolean,
       default: false
@@ -84,16 +87,6 @@ export default {
     page: {
       type: String,
       default: 'home'
-    },
-
-    defaultZip: {
-      type: String,
-      default: null
-    },
-
-    defaultPhone: {
-      type: String,
-      default: null
     }
   },
 
@@ -107,8 +100,6 @@ export default {
 
   data() {
     return {
-      phone: this.defaultPhone,
-      zipCode: this.defaultZip,
       stateCode: null,
       isSending: false,
       hasCalled: false,
@@ -168,6 +159,26 @@ export default {
       }
       else {
         return "https://call-congress.fightforthefuture.org/create"
+      }
+    },
+
+    zipCode: {
+      get() {
+        return this.$store.state.zipCode
+      },
+
+      set(value) {
+        this.$store.commit('setZipCode', value)
+      }
+    },
+
+    phone: {
+      get() {
+        return this.$store.state.phone
+      },
+
+      set(value) {
+        this.$store.commit('setPhone', value)
       }
     }
   },

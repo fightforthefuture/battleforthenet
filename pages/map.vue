@@ -69,7 +69,7 @@ body.map-page {
     }
 
     .divider {
-      background-image: url('~/assets/images/top-bg.png');
+      background-image: url('~/assets/images/gradient-divider.png');
       background-position: 0 0;
       background-size: 100% auto;
       background-repeat: no-repeat;

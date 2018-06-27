@@ -37,16 +37,11 @@ h2.section-title {
 }
 
 .page-header {
-  background-image: url('~/assets/images/top-bg.png');
+  background-image: url('~/assets/images/gradient-divider.png');
   background-position: top center;
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-color: #282236;
-  position: relative;
-
-  @media only screen and (min-width: 1001px) {
-    background-image: url('~/assets/images/top-bg@2x.png');
-  }
 
   h1 {
     width: 140%;
@@ -73,6 +68,15 @@ h2.section-title {
   //   border-width: 2.5rem;
   //   margin-left: -2.5rem;
   // }
+
+  &.bg-image {
+    background-image: url('~/assets/images/top-bg.png');
+    background-size: cover;
+
+    @media only screen and (min-width: 1001px) {
+      background-image: url('~/assets/images/top-bg@2x.png');
+    }
+  }
 }
 
 section {
@@ -119,6 +123,12 @@ section {
       }
     }
   }
+
+  &.fill-height {
+    @include big-screen {
+      min-height: calc(100vh - #{$footer-height});
+    }
+  }
 }
 
 ul.basic-list {
@@ -158,6 +168,19 @@ $step: 6%;
     animation: cta-hover .2s;
     animation-fill-mode: forwards;
     animation-delay: .1s;
+  }
+}
+
+.btn-default {
+  border: 1px solid $default-btn-color;
+  color: $default-btn-color;
+  background-color: transparent;
+  transition: all .2s;
+
+  &:hover {
+    color: rgba($default-btn-color, 0.75);
+    border-color: rgba($default-btn-color, 0.75);
+    background-color: transparent;
   }
 }
 

@@ -1,0 +1,6 @@
+address_placeholder: Street address*
+zip_placeholder: ZIP Code*
+cta_button: Let’s go!
+loading_button: Searching...
+disclaimer: Your information will only be used to look up your representative.
+error_rep_not_found: Oh no! We couldn’t find a representative for your address.
