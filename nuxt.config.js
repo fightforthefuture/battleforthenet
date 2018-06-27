@@ -95,6 +95,7 @@ module.exports = {
   ],
 
   generate: {
-    routes: routes
+    routes: routes,
+    interval: 100
   }
 }
