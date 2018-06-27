@@ -66,8 +66,21 @@
 
 <script>
 import axios from 'axios'
+import { createMetaTags } from '~/assets/js/helpers'
 
 export default {
+  head() {
+    return {
+      title: this.$lt('title'),
+      meta: createMetaTags({
+        title: this.$t('pages.scoreboard.social.title'),
+        description: this.$t('pages.scoreboard.social.description'),
+        image: this.$t('pages.scoreboard.social.image'),
+        url: this.$t('pages.scoreboard.social.url')
+      })
+    }
+  },
+
   data() {
     return {
       isLoading: false,

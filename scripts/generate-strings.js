@@ -21,7 +21,8 @@ const messages = formatStrings({
       scoreboard: {
         index: loadStrings('pages/scoreboard/index.yml'),
         all: loadStrings('pages/scoreboard/all.yml'),
-        id: loadStrings('pages/scoreboard/id.yml')
+        id: loadStrings('pages/scoreboard/id.yml'),
+        social: loadStrings('pages/scoreboard/social.yml')
       }
     },
     components: {

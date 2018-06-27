@@ -23,7 +23,8 @@ export default ({ app, store, isDev }) => {
           scoreboard: {
             index: require('~/locales/en/pages/scoreboard/index.yml'),
             all: require('~/locales/en/pages/scoreboard/all.yml'),
-            id: require('~/locales/en/pages/scoreboard/id.yml')
+            id: require('~/locales/en/pages/scoreboard/id.yml'),
+            social: require('~/locales/en/pages/scoreboard/social.yml')
           }
         },
         components: {

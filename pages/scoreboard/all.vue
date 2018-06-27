@@ -153,14 +153,20 @@ section {
 <script>
 import axios from 'axios'
 import states from '~/assets/data/states'
-import { smoothScrollTo } from '~/assets/js/helpers'
+import { createMetaTags, smoothScrollTo } from '~/assets/js/helpers'
 import ScoreboardPhoto from '~/components/ScoreboardPhoto'
 import PersistentButton from '~/components/PersistentButton'
 
 export default {
   head() {
     return {
-      title: 'Net Neutrality Scoreboard'
+      title: this.$lt('document_title'),
+      meta: createMetaTags({
+        title: this.$t('pages.scoreboard.social.title'),
+        description: this.$t('pages.scoreboard.social.description'),
+        image: this.$t('pages.scoreboard.social.image'),
+        url: this.$t('pages.scoreboard.social.url')
+      })
     }
   },
 

@@ -38,6 +38,10 @@
 
     h1 {
       font-size: 4rem;
+
+      strong {
+        font-weight: bold;
+      }
     }
 
     .description {
@@ -428,10 +432,10 @@ export default {
     return {
       title: this.$lt(`${this.status}.page_title`, vars),
       meta: createMetaTags({
-        title: this.$lt(`${this.status}.sharing.title`, vars),
-        description: this.$lt(`${this.status}.sharing.description`, vars),
-        image: this.$t('social.share_image'),
-        url: this.shareURL
+        title: this.$t('pages.scoreboard.social.title'),
+        description: this.$t('pages.scoreboard.social.description'),
+        image: this.$t('pages.scoreboard.social.image'),
+        url: this.$t('pages.scoreboard.social.url')
       })
     }
   },
@@ -468,12 +472,8 @@ export default {
     },
 
     repTitleAndName() {
-      if (this.rep.organization === 'Senate') {
-        return `Senator ${this.rep.last_name}`
-      }
-      else {
-        return `Rep. ${this.rep.last_name}`
-      }
+      const title = this.rep.organization === 'Senate' ? 'Senator' : 'Rep.'
+      return `${title} ${this.rep.first_name} ${this.rep.last_name}`
     },
 
     titleHTML() {
