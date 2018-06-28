@@ -506,7 +506,7 @@ export default {
     },
 
     shareURL() {
-      return `https://www.battleforthenet.com/scoreboard/${this.rep.bioguide_id}`
+      return `https://www.battleforthenet.com/scoreboard/${this.rep.bioguide_id}/`
     },
 
     tweetText() {
