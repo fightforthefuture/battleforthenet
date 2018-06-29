@@ -87,7 +87,7 @@ export default {
     async fetchReps() {
       try {
         const address = `${this.street} ${this.zipCode}`
-        const { data } = await axios.get(`https://5spfbwv3p5.execute-api.us-east-1.amazonaws.com/v1/reps?address=${encodeURIComponent(address)}`)
+        const { data } = await axios.get(`https://07myr1bkfa.execute-api.us-east-1.amazonaws.com/v1/reps?address=${encodeURIComponent(address)}`)
         return data
       }
       catch (error) {
