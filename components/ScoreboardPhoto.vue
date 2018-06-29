@@ -77,9 +77,7 @@
       <div class="yes-bg"></div>
       <h5>
         {{ rep.last_name }}
-        <small>
-          (<span v-if="rep.organization == 'Senate'">SEN </span><b v-if="rep.party">{{ partyCode }} - </b>{{ rep.state }})
-        </small>
+        <small>{{ subtitle }}</small>
       </h5>
     </div>
   </div>
@@ -92,12 +90,20 @@ export default {
   },
 
   computed: {
-    partyCode() {
-      if (this.rep.party) {
-        return this.rep.party.substr(0, 1).toUpperCase()
+    subtitle() {
+      let str = '('
+
+      if (this.rep.organization == 'Senate') {
+        str += 'SEN '
       }
 
-      return ''
+      if (this.rep.party) {
+        str += this.rep.party.substr(0, 1).toUpperCase()
+      }
+
+      str += ` - ${this.rep.state})`
+
+      return str
     },
 
     hasLongName() {
