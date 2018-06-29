@@ -79,19 +79,6 @@ export function postFormData(url, data={}) {
 }
 
 export function sendToMothership(data={}, submission={}) {
-  const member = data.member || {}
-
-  logSubmission(Object.assign({
-    name: member.first_name,
-    email: member.email,
-    zip_code: member.postcode,
-    phone: member.phone_number,
-    address: member.street_address,
-    comments: data.action_comment,
-    petition_id: data.an_petition_id,
-    org: data.org
-  }, submission))
-
   return postFormData('https://queue.fightforthefuture.org/action', data)
 }
 
@@ -191,17 +178,6 @@ export async function startTextFlow({ flow, phone }) {
   }
   catch (error) {
     return {}
-  }
-}
-
-export async function logSubmission(params) {
-  const axios = require('axios')
-
-  try {
-    await axios.post('https://signatures-api.herokuapp.com/signatures', params)
-  }
-  catch (error) {
-    //
   }
 }
 
