@@ -269,6 +269,9 @@ import { smoothScrollTo } from '~/assets/js/helpers'
 import settings from '~/config.json'
 import CreateEvent from '~/components/CreateEvent'
 
+// the production build breaks this somehow unless it's global
+let markers = []
+
 export default {
   components: {
     CreateEvent
@@ -401,7 +404,7 @@ export default {
       this.zoomCount = 0
       this.map.on('zoomend', e => this.zoomCount++)
 
-      this.markers = []
+      markers = []
     },
 
     addMarker(event) {
@@ -413,7 +416,7 @@ export default {
 
       marker.eventId = event.id
       marker.on('click', this.clickMarker)
-      this.markers.push(marker)
+      markers.push(marker)
       this.bounds.extend(ll)
     },
 
@@ -424,11 +427,13 @@ export default {
     },
 
     openPopup({ id }) {
-      this.markers.find(m => m.eventId === id).openPopup()
+      const marker = markers.find(m => m.eventId === id)
+      if (marker) marker.openPopup()
     },
 
     closePopup({ id }) {
-      this.markers.find(m => m.eventId === id).closePopup()
+      const marker = markers.find(m => m.eventId === id)
+      if (marker) marker.closePopup()
     },
 
     async geocodeZip() {
