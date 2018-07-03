@@ -234,7 +234,7 @@ body.map-page {
     <div class="event-map" id="event-map" ref="map"></div>
     <div class="event-list">
       <ul>
-        <li v-if="events.length < 1">
+        <li v-if="hasLoadedEvents && events.length < 1">
           <h4>{{ $lt('no_events_title') }}</h4>
           <p>{{ $lt('no_events_description') }}</p>
         </li>
@@ -269,8 +269,11 @@ import { smoothScrollTo } from '~/assets/js/helpers'
 import settings from '~/config.json'
 import CreateEvent from '~/components/CreateEvent'
 
-// the production build breaks this somehow unless it's global
+// the production build breaks when this stuff isn't global
+// TODO: figure out why that is
 let markers = []
+let map
+let zoomCount = 0
 
 export default {
   components: {
@@ -298,7 +301,8 @@ export default {
       events: [],
       zipCode: null,
       coords: [],
-      modalVisible: false
+      modalVisible: false,
+      hasLoadedEvents: false
     }
   },
 
@@ -318,7 +322,7 @@ export default {
   watch: {
     events() {
       if (this.events.length === 0) {
-        this.map.setView([42.35, -71.08], 13)
+        map.setView([42.35, -71.08], 13)
         return
       }
 
@@ -328,7 +332,7 @@ export default {
         this.addMarker(event)
       }
 
-      this.map.fitBounds(this.bounds)
+      map.fitBounds(this.bounds)
       this.showNearestEvent()
     },
 
@@ -384,6 +388,8 @@ export default {
       catch (error) {
         this.events = []
       }
+
+      this.hasLoadedEvents = true
     },
 
     createMap() {
@@ -396,13 +402,12 @@ export default {
           attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       })
 
-      this.map = L.map('event-map', {
+      map = L.map('event-map', {
           scrollWheelZoom: false
         })
         .addLayer(mapboxTiles)
 
-      this.zoomCount = 0
-      this.map.on('zoomend', e => this.zoomCount++)
+      map.on('zoomend', e => zoomCount++)
 
       markers = []
     },
@@ -411,7 +416,7 @@ export default {
       const ll = [event.location.location.latitude, event.location.location.longitude]
 
       const marker = L.marker(ll)
-        .addTo(this.map)
+        .addTo(map)
         .bindPopup(`<h5>${event.title}</h5><div class="date">${event.formatted_start_date }</div><div class="address"><address>${event.address}</address></div><a class="btn rsvp-btn" href="${event.url}" target="_blank">${this.$lt('event_cta')}</a>`)
 
       marker.eventId = event.id
@@ -451,8 +456,8 @@ export default {
         const event = this.sortedEvents[0]
         const ll = [event.location.location.latitude, event.location.location.longitude]
         const startingZoom = 9
-        const zoom = this.zoomCount > 1 ? this.map.getZoom() : startingZoom
-        this.map.setView(ll, zoom)
+        const zoom = zoomCount > 1 ? map.getZoom() : startingZoom
+        map.setView(ll, zoom)
         this.openPopup(event)
       }
     },
