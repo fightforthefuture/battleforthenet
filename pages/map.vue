@@ -265,7 +265,7 @@ body.map-page {
 <script>
 import axios from 'axios'
 import haversine from 'haversine'
-import { smoothScrollTo } from '~/assets/js/helpers'
+import { createMetaTags, smoothScrollTo } from '~/assets/js/helpers'
 import settings from '~/config.json'
 import CreateEvent from '~/components/CreateEvent'
 
@@ -292,7 +292,9 @@ export default {
         {
           src: 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'
         }
-      ]
+      ],
+
+      meta: createMetaTags(settings.mapPageMeta)
     }
   },
 
