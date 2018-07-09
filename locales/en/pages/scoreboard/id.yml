@@ -1,6 +1,6 @@
 supports:
   document_title: "{name} supports net neutrality"
-  title_html: My {title}<br> **SUPPORTS** net neutrality
+  title_html: Your {title}<br> **SUPPORTS** net neutrality
   description_html: |
     {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
   tweet_text: ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet"
@@ -10,7 +10,7 @@ supports:
 
 against:
   document_title: "{name} is against net neutrality"
-  title_html: My {title}<br> is **AGAINST** net neutrality
+  title_html: Your {title}<br> is **AGAINST** net neutrality
   description_html: |
     {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
   tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
