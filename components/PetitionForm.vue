@@ -112,7 +112,7 @@
         </div>
         <div class="biz-row">
           <label>{{ $lt('business_owner_label') }}</label>
-          <fancy-toggle :on="isBusinessOwner" @change="isBusinessOwner = !isBusinessOwner"></fancy-toggle>
+          <fancy-toggle :on="isBusinessOwner" @change="setBusinessOwner"></fancy-toggle>
         </div>
         <div v-if="isBusinessOwner" class="flex-row">
           <input v-model.trim="companyName" type="text" :placeholder="$lt('company_name_placeholder')">
@@ -228,6 +228,10 @@ export default {
   methods: {
     $lt(key) {
       return this.$t(`pages.index.form.${key}`)
+    },
+
+    setBusinessOwner(flag) {
+      this.isBusinessOwner = flag;
     },
 
     clearComments() {

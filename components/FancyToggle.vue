@@ -40,6 +40,10 @@
     transition: all .2s;
     z-index: 2;
 
+  }
+
+  &.yes span.no,
+  &.no span.yes {
     &:hover {
       color: #fff;
       cursor: pointer;
@@ -56,8 +60,8 @@
 <template>
   <div class="fancy-toggle" :class="on ? 'yes' : 'no'">
     <div class="bg"></div>
-    <span class="yes" @click="$emit('change', true)">Yes</span>
-    <span class="no" @click="$emit('change', false)">No</span>
+    <span class="yes" @click="doChange(true)">Yes</span>
+    <span class="no" @click="doChange(false)">No</span>
   </div>
 </template>
 
@@ -67,6 +71,12 @@ export default {
     on: {
       type: Boolean,
       default: false
+    }
+  },
+
+  methods: {
+    doChange(flag) {
+      this.$emit("change", flag);
     }
   }
 }
