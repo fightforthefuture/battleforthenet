@@ -294,7 +294,7 @@ export default {
         }
       ],
 
-      meta: createMetaTags(settings.mapPageMeta)
+      meta: createMetaTags(this.$lt('social'))
     }
   },
 
