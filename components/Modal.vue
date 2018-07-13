@@ -26,6 +26,8 @@ body.modal-open {
   padding: 4rem 3rem 3rem;
   border-radius: $border-radius;
   text-align: left;
+  max-height: 96vh;
+  overflow: auto;
 
   .close {
     position: absolute;
