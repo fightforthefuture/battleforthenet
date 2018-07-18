@@ -3,9 +3,9 @@ document_title: Join the Battle for Net Neutrality
 
 title: Does your rep support net neutrality?
 intro_html: |
-  The FCC officially gutted the open internet, allowing your cable company to scam 
-  you for more money, censor websites, and slow down online content. Congress can 
-  stop this, but many lawmakers are in the pocket of Big Cable. **Fill out the form 
+  The FCC officially gutted the open internet, allowing your cable company to scam
+  you for more money, censor websites, and slow down online content. Congress can
+  stop this, but many lawmakers are in the pocket of Big Cable. **Fill out the form
   to contact Congress and find out whether your reps sold you out.**
 persistent_button: Write Congress
 
@@ -38,9 +38,9 @@ sections:
     body_html: |
         The FCC’s repeal of net neutrality officially kicked in on
         <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
-        target="_blank">June 11th</a>. The Internet as we know it won’t end overnight. But with each second 
-        that passes until net neutrality is restored, it will be slowly dying as Internet providers like AT&T, 
-        Verizon and Comcast 
+        target="_blank">June 11th</a>. The Internet as we know it won’t end overnight. But with each second
+        that passes until net neutrality is restored, it will be slowly dying as Internet providers like AT&T,
+        Verizon and Comcast
         <a href="https://www.fool.com/investing/2018/07/14/wireless-service-prices-are-climbing-across-the-bo.aspx"
         target="_blank">raise prices</a>,
         <a href="https://www.fastcompany.com/40588895/atts-time-warner-deal-and-net-neutralitys-end-gave-us-watchtv"
@@ -48,64 +48,64 @@ sections:
         <a href="https://www.eff.org/deeplinks/2018/06/while-net-neutrality-fight-continues-congress-and-states-att-and-verizon-are"
         target="_blank">eliminate competition</a>.
 
-        People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers 
+        People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers
         with calls and emails demanding that they use the Congressional Review Act (CRA) to overrule the FCC.
 
-        So take whatever corner of the Internet that you control — whether it’s a major platform or a personal 
+        So take whatever corner of the Internet that you control — whether it’s a major platform or a personal
         Instagram account — and harness its reach to pressure Congress. Here’s how:
 
         <ol>
-          <li>Change your social media avatars and profile pics to help sound the alarm. You can find great 
+          <li>Change your social media avatars and profile pics to help sound the alarm. You can find great
           artwork in our gallery <a href="https://drive.google.com/drive/u/0/folders/11kwhEk1nqK7jTs9eWQe597iZqhIT4PLM"
           target="_blank">here.</a></li>
           <li>If you make videos, consider making a video about net neutrality, or use our simple
           <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzY1FKTlAzS1NOVTg"
           target=_blank">video bumper</a> to help spread the word.</li>
-          <li>If you run a website or blog, post our banner ads to let your visitors know you support net neutrality.  
-          We’ve provided examples in our gallery 
-          <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g" 
+          <li>If you run a website or blog, post our banner ads to let your visitors know you support net neutrality.
+          We’ve provided examples in our gallery
+          <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g"
           target="_blank">here</a>.
           Link back to BattleForTheNet.com whenever you can so people can easily contact their lawmakers.</li>
-          <li>If you run a website or blog, deploy our updated widget to let your users contact Congress without ever 
+          <li>If you run a website or blog, deploy our updated widget to let your users contact Congress without ever
           leaving your site. Details below.</li>
         </ol>
 
-      <div class="modals flex-center">
-        <img src="/images/june11-browser-screenshot@2x.png"
-             alt="A screenshot of our widget when minimized"
-             class="rounded">
-      </div>
+        <div class="modals flex-center">
+          <img src="/images/june11-browser-screenshot@2x.png"
+               alt="A screenshot of our widget when minimized"
+               class="rounded">
+        </div>
 
-      <div class="modal-tip">
-        <p>This widget will allow your site's users to send a letter to Congress by entering their 
-        contact info.  Users who close the widget won’t see it again for 24 hours. Try it out for 
-        yourself by clicking the button below:</p>
-        <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?widget=june11"
-        target="_blank">Try it out</a></p>
-        <p>It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to
-        <a href="https://github.com/fightforthefuture/june11-widget">visit our
-        GitHub page</a> to learn how to customize the widget for your site.</p>
-        <code>&lt;script src="https://june11.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
-      </div>
+        <div class="modal-tip">
+          <p>This widget will allow your site's users to send a letter to Congress by entering their
+          contact info.  Users who close the widget won’t see it again for 24 hours. Try it out for
+          yourself by clicking the button below:</p>
+          <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?widget=june11"
+          target="_blank">Try it out</a></p>
+          <p>It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to
+          <a href="https://github.com/fightforthefuture/june11-widget">visit our
+          GitHub page</a> to learn how to customize the widget for your site.</p>
+          <code>&lt;script src="https://june11.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
+        </div>
 
   cra:
     title: Here’s how we get Congress to save net neutrality
     body_html: |
       Our elected officials in Congress can overrule the FCC and save net
       neutrality using the Congressional Review Act (CRA). But they’ll only do
-      it if we make them. The CRA resolution 
+      it if we make them. The CRA resolution
       <a href="https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545"
       target="_blank">passed the Senate 52-47</a> in a historic upset. But now
       we’re fighting an uphill battle to get the House of Representatives to do
       the same. It’s not going to be easy, but if the whole Internet comes
-      together to fight, we can win. 
+      together to fight, we can win.
 
       In the House, we’ll need a simple majority of sign on to a “
       <a href="https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help"
       target="_blank">discharge petition</a>” in order to force a vote past leadership
       to the floor. That means we’ll need to convince all the Democrats and about 25
       Republicans to support the CRA. The clock is ticking — if the CRA resolution
-      doesn’t get a vote this year, it dies when the new Congress comes into session 
+      doesn’t get a vote this year, it dies when the new Congress comes into session
       in Fall 2018.
 
       <h3>
@@ -120,8 +120,8 @@ sections:
             <span>Flood them with calls and emails</span>
           </h4>
           <p>
-            When millions of people call and email their representatives, Congress listens. 
-            That’s why we developed a widget that website owners can place on their site, 
+            When millions of people call and email their representatives, Congress listens.
+            That’s why we developed a widget that website owners can place on their site,
             giving their site’s users the opportunity to contact Congress. And we’ve created
             art assets that will allow individuals to spread the word on powerful
             social media platforms.
@@ -133,8 +133,8 @@ sections:
             <span>In-district constituent pressure</span>
           </h4>
           <p>
-            It’s important for lawmakers to see the people who support net neutrality.  We’ll 
-            help schedule in-person events, protests, meetings, and canvassing to mobilize 
+            It’s important for lawmakers to see the people who support net neutrality.  We’ll
+            help schedule in-person events, protests, meetings, and canvassing to mobilize
             constituencies (
             <a href="https://www.vetsforthe.net/"target="_blank">like veterans</a>
             ) that lawmakers listen to.
@@ -149,7 +149,7 @@ sections:
             In Washington, money talks. So lawmakers
             listen to the small business owners in their districts because those
             business owners are vital to the local economy. We need to reach out to
-            small business owners to ask them to sign our 
+            small business owners to ask them to sign our
             <a href="https://www.businessesfornetneutrality.com/">petition</a> in
             support of net neutrality, then we hand-deliver this petition to our
             politicians.
@@ -227,13 +227,13 @@ sections:
   team-internet:
     title: We are Team Internet
     body_html: |
-      Members of Team Internet support free speech and free markets online through 
+      Members of Team Internet support free speech and free markets online through
       meaningful, enforceable net neutrality laws. We are everyday Americans from
       <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules"
       target="_blank">across the political spectrum</a>. We are
       <a href="https://www.businessesfornetneutrality.com/" target="_blank">thousands
-      of small business owners</a>.  We are startups, tech giants and grassroots 
-      organizations with millions of members. Check out the list below to see who’s 
+      of small business owners</a>.  We are startups, tech giants and grassroots
+      organizations with millions of members. Check out the list below to see who’s
       taken action to save net neutrality:
 
   team-cable:
