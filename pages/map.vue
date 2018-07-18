@@ -135,6 +135,15 @@ body.map-page {
 
       h4 {
         margin: 0;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+
+          &:hover {
+            color: $link-color;
+          }
+        }
       }
 
       .details {
@@ -241,7 +250,7 @@ body.map-page {
 
         <li v-for="event in sortedEvents" :key="event.id" :id="`event-${event.id}`" @mouseover="openPopup(event)" @mouseout="closePopup(event)">
           <p v-if="event.image"><img :src="event.image" alt="[Event banner image]"></p>
-          <h4>{{ event.title }}</h4>
+          <h4><a :href="event.url" @click="$trackClick('map_list_event_title')">{{ event.title }}</a></h4>
           <div class="details">
             <div class="date">
               <span>{{ event.formatted_start_date }}</span>
@@ -251,7 +260,7 @@ body.map-page {
             </div>
           </div>
           <!-- <div class="description" v-html="event.description"></div> -->
-          <a :href="event.url" class="btn rsvp-btn" target="_blank" @click="$trackEvent('map_list_rsvp_button', 'click')">{{ $lt('event_cta') }}</a>
+          <a :href="event.url" class="btn rsvp-btn" target="_blank" @click="$trackClick('map_list_rsvp_button')">{{ $lt('event_cta') }}</a>
         </li>
       </ul>
     </div>
