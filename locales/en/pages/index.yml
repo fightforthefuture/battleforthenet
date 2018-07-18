@@ -5,7 +5,7 @@ title: Does your rep support net neutrality?
 intro_html: |
   The FCC officially gutted the open internet, allowing your cable company to scam 
   you for more money, censor websites, and slow down online content. Congress can 
-  stop this, but many of them are in the pocket of Big Cable. **Fill out the form 
+  stop this, but many lawmakers are in the pocket of Big Cable. **Fill out the form 
   to contact Congress and find out whether your reps sold you out.**
 persistent_button: Write Congress
 
@@ -36,23 +36,23 @@ sections:
   join:
     title: Net neutrality was repealed, but the fight has just begun
     body_html: |
-      The FCC’s repeal of net neutrality officially kicked in on
-      <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
-      target="_blank">June 11th</a>.  The Internet as we know it won’t end overnight. But with each second 
-      that passes until net neutrality is restored, it will be slowly dying as Internet providers like AT&T, 
-      Verizon and Comcast 
-      <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
-      target="_blank">raise prices</a>,
-      <a href="https://www.fastcompany.com/40588895/atts-time-warner-deal-and-net-neutralitys-end-gave-us-watchtv"
-      target="_blank">prioritize data</a>, and
-       <a href="https://www.eff.org/deeplinks/2018/06/while-net-neutrality-fight-continues-congress-and-states-att-and-verizon-are"
-      target="_blank">eliminate competition</a>.
+        The FCC’s repeal of net neutrality officially kicked in on
+        <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
+        target="_blank">June 11th</a>. The Internet as we know it won’t end overnight. But with each second 
+        that passes until net neutrality is restored, it will be slowly dying as Internet providers like AT&T, 
+        Verizon and Comcast 
+        <a href="https://www.fool.com/investing/2018/07/14/wireless-service-prices-are-climbing-across-the-bo.aspx"
+        target="_blank">raise prices</a>,
+        <a href="https://www.fastcompany.com/40588895/atts-time-warner-deal-and-net-neutralitys-end-gave-us-watchtv"
+        target="_blank">prioritize data</a>, and
+        <a href="https://www.eff.org/deeplinks/2018/06/while-net-neutrality-fight-continues-congress-and-states-att-and-verizon-are"
+        target="_blank">eliminate competition</a>.
 
-      People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers 
-      with calls and emails demanding that they use the Congressional Review Act (CRA) to overrule the FCC.
+        People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers 
+        with calls and emails demanding that they use the Congressional Review Act (CRA) to overrule the FCC.
 
-      So take whatever corner of the Internet that you control — whether it’s a major platform or a personal 
-      Instagram account — and harness its reach to pressure Congress. Here’s how:
+        So take whatever corner of the Internet that you control — whether it’s a major platform or a personal 
+        Instagram account — and harness its reach to pressure Congress. Here’s how:
 
         <ol>
           <li>Change your social media avatars and profile pics to help sound the alarm. You can find great 
@@ -62,7 +62,9 @@ sections:
           <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzY1FKTlAzS1NOVTg"
           target=_blank">video bumper</a> to help spread the word.</li>
           <li>If you run a website or blog, post our banner ads to let your visitors know you support net neutrality.  
-          We’ve provided examples in our gallery <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g" target="_blank">here</a>.
+          We’ve provided examples in our gallery 
+          <a href="https://drive.google.com/drive/folders/1OM5CZ5qGpRc3RdD8AfHwWuVOajZorw-g" 
+          target="_blank">here</a>.
           Link back to BattleForTheNet.com whenever you can so people can easily contact their lawmakers.</li>
           <li>If you run a website or blog, deploy our updated widget to let your users contact Congress without ever 
           leaving your site. Details below.</li>
@@ -75,14 +77,12 @@ sections:
       </div>
 
       <div class="modal-tip">
-        <p>This widget will allow your site's users to send a letter to Congress 
-        by entering their contact info.  Users who close the widget won’t
-        see it again for 24 hours. Try it out for yourself by clicking the button
-        below:</p>
+        <p>This widget will allow your site's users to send a letter to Congress by entering their 
+        contact info.  Users who close the widget won’t see it again for 24 hours. Try it out for 
+        yourself by clicking the button below:</p>
         <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?widget=june11"
         target="_blank">Try it out</a></p>
-        <p>It’s easy to use. Simply add the line of code below to your website’s
-        header. And don’t forget to
+        <p>It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to
         <a href="https://github.com/fightforthefuture/june11-widget">visit our
         GitHub page</a> to learn how to customize the widget for your site.</p>
         <code>&lt;script src="https://june11.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
@@ -100,8 +100,8 @@ sections:
       the same. It’s not going to be easy, but if the whole Internet comes
       together to fight, we can win. 
 
-      In the House, we’ll need a simple majority of sign on to a “<a
-      href="https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help"
+      In the House, we’ll need a simple majority of sign on to a “
+      <a href="https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help"
       target="_blank">discharge petition</a>” in order to force a vote past leadership
       to the floor. That means we’ll need to convince all the Democrats and about 25
       Republicans to support the CRA. The clock is ticking — if the CRA resolution
@@ -149,8 +149,8 @@ sections:
             In Washington, money talks. So lawmakers
             listen to the small business owners in their districts because those
             business owners are vital to the local economy. We need to reach out to
-            small business owners to ask them to sign our <a
-            href="https://www.businessesfornetneutrality.com/">petition</a> in
+            small business owners to ask them to sign our 
+            <a href="https://www.businessesfornetneutrality.com/">petition</a> in
             support of net neutrality, then we hand-deliver this petition to our
             politicians.
           </p>
