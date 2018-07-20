@@ -5,6 +5,10 @@ intro_html: |
   stop this, but many lawmakers are in the pocket of Big Cable. **Change your social media avatars and profile pics to help sound the alarm.**
 download_button: Download Image
 
+#
+# Section ids map to the image gallery folder name and the hash link on the page. So, images in the /static/media/social
+# folder will show up in the social section at https://www.battleforthenet.com/media/#social
+# 
 sections:
   social:
     title: Social Media
