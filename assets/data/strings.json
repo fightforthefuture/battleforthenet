@@ -113,8 +113,8 @@
       },
       "call": {
         "california": {
-          "title": "AT&T-funded state lawmakers just gutted the California net neutrality bill",
-          "body_html": "<p>California had proposed the strongest and most comprehensive state level net neutrality legislation in the country: SB 822. \n<strong>But a corrupt committee &mdash; led by a chairman who counts AT&T as a top donor &mdash; added gaping loopholes to\nallow ISP abuses.</strong> </br>\n</br>\nCall the California Assembly. Tell them you want REAL net neutrality. Stop gutting SB 822 and pass the bill in its \noriginal form.</p>",
+          "title": "California can still save net neutrality",
+          "body_html": "<p>Telecom giants like AT&amp;T and Comcast tried everything to water down the best state level net neutrality bill in the \ncountry, California’s SB 822, but they failed. The bill has been restored and is now headed for a vote on the Assembly \nfloor. But the ISPs are still lobbying fiercely to defeat it. <strong>Call the California Assembly right now and tell them to \npass SB 822 and restore net neutrality!</strong></p>",
           "share_title": "Help California save net neutrality",
           "share_description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
           "share_image": "https://www.battleforthenet.com/images/share_images/CA-Flag.jpg",
@@ -127,7 +127,13 @@
         "event_cta": "Info & RSVP",
         "host_cta": "Host an Event",
         "no_events_title": "No events found 😐",
-        "no_events_description": "We don't have any events scheduled at the moment. Perhaps you'd like to host one?"
+        "no_events_description": "We don't have any events scheduled at the moment. Perhaps you'd like to host one?",
+        "social": {
+          "title": "Join an important letter delivery to save net neutrality July 19th",
+          "description": "Attending an in-person delivery is the most important thing you can do to help save the open Internet.",
+          "image": "https://data.battleforthenet.com/events.png",
+          "url": "https://www.battleforthenet.com/map/"
+        }
       },
       "scoreboard": {
         "index": {
@@ -152,7 +158,7 @@
         "id": {
           "supports": {
             "document_title": "{name} supports net neutrality",
-            "title_html": "<p>My {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
+            "title_html": "<p>Your {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
             "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
             "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet",
             "facebook_button": "Share on Facebook",
@@ -161,7 +167,7 @@
           },
           "against": {
             "document_title": "{name} is against net neutrality",
-            "title_html": "<p>My {title}<br> is <strong>AGAINST</strong> net neutrality</p>",
+            "title_html": "<p>Your {title}<br> is <strong>AGAINST</strong> net neutrality</p>",
             "description_html": "<p>{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
             "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet",
             "call_button": "Call",

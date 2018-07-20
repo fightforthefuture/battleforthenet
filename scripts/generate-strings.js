@@ -23,7 +23,8 @@ const messages = formatStrings({
         all: loadStrings('pages/scoreboard/all.yml'),
         id: loadStrings('pages/scoreboard/id.yml'),
         social: loadStrings('pages/scoreboard/social.yml')
-      }
+      },
+      social: loadStrings('pages/social.yml')
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),
