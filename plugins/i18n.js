@@ -25,7 +25,8 @@ export default ({ app, store, isDev }) => {
             all: require('~/locales/en/pages/scoreboard/all.yml'),
             id: require('~/locales/en/pages/scoreboard/id.yml'),
             social: require('~/locales/en/pages/scoreboard/social.yml')
-          }
+          },
+          social: require('~/locales/en/pages/social.yml')
         },
         components: {
           BattleStats: require('~/locales/en/components/BattleStats.yml'),
