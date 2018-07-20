@@ -2,11 +2,7 @@
 $item-width: 25rem;
 $item-padding: 2rem;
 
-.social-page {
-  .page-header {
-    min-height: 100vh;
-  }
-
+.media-page {
   .gallery {
     width: 90%;
     max-width: ($item-width + $item-padding) * 3;
@@ -32,15 +28,15 @@ $item-padding: 2rem;
       label {
         position: absolute;
         top: 1rem;
-        left: 2rem;
-        right: 2rem;
+        left: $item-padding;
+        right: $item-padding;
         font-size: 1.2rem;
-        width: $item-width - 4rem;
+        width: $item-width - ($item-padding * 2);
       }
 
       img {
-        max-width: 16rem;
-        max-height: 16rem;
+        max-width: $item-width * .64;
+        max-height: $item-width * .64;
         margin-bottom: 3rem;
         margin-top: 1rem;
       }
@@ -51,8 +47,8 @@ $item-padding: 2rem;
         font-size: 1.3rem;
         position: absolute;
         bottom: 1.2rem;
-        left: 2rem;
-        right: 2rem;
+        left: $item-padding;
+        right: $item-padding;
         padding: 1rem;
         display: flex;
         justify-content: center;
@@ -86,14 +82,20 @@ $item-padding: 2rem;
 </style>
 
 <template>
-  <div class="social-page">
+  <div class="media-page">
     <section class="page-header">
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
         <div v-html="$lt('intro_html')" class="intro"></div>
       </div>
+    </section>
+    <section v-for="(section, id) in $lt('sections')" :key="id" :id="id">
+      <div class="container" v-if="section.title">
+        <h2>{{ section.title }}</h2>
+        <div v-html="section.body_html" v-if="section.body_html"></div>
+      </div>
       <div class="gallery">
-        <a v-for="image in images" :key="image" class="item flex-center" :href="image" target="_blank">
+        <a v-for="image in galleries[id]" :key="image" class="item flex-center" :href="image" target="_blank">
           <label class="truncate">{{ imageLabel(image) }}</label>
           <img :src="`${image}`" :alt="image">
           <span class="btn">{{ $lt('download_button') }}</span>
@@ -104,16 +106,16 @@ $item-padding: 2rem;
 </template>
 
 <script>
-import images from '~/assets/data/social-media-assets'
+import galleries from '~/assets/data/media'
 
 export default {
   computed: {
-    images: () => images
+    galleries: () => galleries
   },
 
   methods: {
     $lt(key, vars={}) {
-      return this.$t(`pages.social.${key}`, vars)
+      return this.$t(`pages.media.${key}`, vars)
     },
 
     imageLabel(image) {

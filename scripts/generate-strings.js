@@ -24,7 +24,7 @@ const messages = formatStrings({
         id: loadStrings('pages/scoreboard/id.yml'),
         social: loadStrings('pages/scoreboard/social.yml')
       },
-      social: loadStrings('pages/social.yml')
+      media: loadStrings('pages/media.yml')
     },
     components: {
       BattleStats: loadStrings('components/BattleStats.yml'),

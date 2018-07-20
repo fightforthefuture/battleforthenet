@@ -4,3 +4,12 @@ intro_html: |
   you for more money, censor websites, and slow down online content. Congress can
   stop this, but many lawmakers are in the pocket of Big Cable. **Change your social media avatars and profile pics to help sound the alarm.**
 download_button: Download Image
+
+sections:
+  social:
+    title: Social Media
+    body_html: |
+      Change your social media avatars and profile pics to help sound the alarm.
+  banners:
+    title: Banner Ads
+    body_html: If you run a website or blog, post our banner ads to let your visitors know you support net neutrality.
