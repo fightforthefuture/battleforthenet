@@ -129,9 +129,10 @@
     </div>
 
     <div v-if="hasSigned">
-      <call-form v-if="inModal" :in-modal="true" />
+      <CallForm v-if="inModal" :in-modal="true" />
       <modal v-else-if="modalVisible">
-        <call-form :in-modal="true" />
+        <RepInterstitial v-if="rep" :rep="rep" />
+        <CallForm v-else :in-modal="true" />
       </modal>
     </div>
   </div>
@@ -139,9 +140,10 @@
 
 <script>
 import { mapState } from 'vuex'
-import { pingCounter, sendToMothership, startTextFlow } from '~/assets/js/helpers'
+import { fetchRepScoreboard, pingCounter, sendToMothership, startTextFlow } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
 import FancyToggle from '~/components/FancyToggle'
+import RepInterstitial from '~/components/RepInterstitial'
 import axios from 'axios'
 
 // battle-for-the-net-action-4
@@ -153,7 +155,8 @@ const bizPetitionId = '94ac8142-99b8-411f-83af-133d02649af1'
 export default {
   components: {
     CallForm,
-    FancyToggle
+    FancyToggle,
+    RepInterstitial
   },
 
   props: {
@@ -175,7 +178,8 @@ export default {
       comments: this.$lt('default_letter'),
       isBusinessOwner: false,
       companyName: null,
-      companyURL: null
+      companyURL: null,
+      rep: null
     }
   },
 
@@ -263,6 +267,10 @@ export default {
           an_petition_id: petitionId,
           action_comment: this.comments
         })
+
+        if (!this.inModal) {
+          this.rep = await fetchRepScoreboard(`${this.address} ${this.zipCode}`)
+        }
 
         this.$trackEvent('petition_form', 'submit')
         this.isSending = false

@@ -39,7 +39,7 @@
     flex: 1;
     transition: all .2s;
     z-index: 2;
-
+    text-align: center;
   }
 
   &.yes span.no,

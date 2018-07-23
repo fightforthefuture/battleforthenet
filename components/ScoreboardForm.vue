@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { fetchRepScoreboard } from '~/assets/js/helpers'
 
 export default {
   props: {
@@ -67,13 +67,13 @@ export default {
       this.isLoading = true
       this.errorMessage = null
 
-      const data = await this.fetchReps()
+      const rep = await fetchRepScoreboard(`${this.street} ${this.zipCode}`)
 
-      if (data.rep && data.rep.bioguide_id) {
+      if (rep) {
         this.$router.push({
           name: 'scoreboard-id',
           params: {
-            id: data.rep.bioguide_id
+            id: rep.bioguide_id
           }
         })
       }
@@ -82,17 +82,6 @@ export default {
       }
 
       this.isLoading = false
-    },
-
-    async fetchReps() {
-      try {
-        const address = `${this.street} ${this.zipCode}`
-        const { data } = await axios.get(`https://07myr1bkfa.execute-api.us-east-1.amazonaws.com/v1/reps?address=${encodeURIComponent(address)}`)
-        return data
-      }
-      catch (error) {
-        return {}
-      }
     }
   }
 }
