@@ -95,7 +95,7 @@ $item-padding: 2rem;
         <div v-html="section.body_html" v-if="section.body_html"></div>
       </div>
       <div class="gallery">
-        <a v-for="image in galleries[id]" :key="image" class="item flex-center" :href="image" target="_blank">
+        <a v-for="image in galleries[id]" :key="image" class="item flex-center" :href="image" target="_blank" @click="$trackClick(id + '_image_gallery', image.split('/').pop())">
           <label class="truncate">{{ imageLabel(image) }}</label>
           <img :src="`${image}`" :alt="image">
           <span class="btn">{{ $lt('download_button') }}</span>

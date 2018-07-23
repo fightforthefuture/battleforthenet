@@ -1,12 +1,33 @@
 {
   "banners": [
+    "/media/banners/300x200 BIG CABLE.png",
+    "/media/banners/300x200 SELL OUT.png",
+    "/media/banners/300x250 BIG CABLE.png",
+    "/media/banners/300x250 SELL OUT.png",
+    "/media/banners/300x300 BIG CABLE.png",
+    "/media/banners/300x300 SELL OUT.png",
+    "/media/banners/300x600 BIG CABLE.png",
+    "/media/banners/300x600 SELL OUT.png",
+    "/media/banners/600x450 BIG CABLE.png",
+    "/media/banners/600x450 SELL OUT.png",
+    "/media/banners/600x500 BIG CABLE.png",
+    "/media/banners/600x500 SELL OUT.png",
+    "/media/banners/600x600 BIG CABLE.png",
+    "/media/banners/600x600 SELL OUT.png",
+    "/media/banners/940x788 BIG CABLE.png",
+    "/media/banners/940x788 SELL OUT.png",
+    "/media/banners/970x90 BIG CABLE.png",
+    "/media/banners/970x90 SELL OUT.png",
     "/media/banners/Facebook sharing 1200 x 630@2x.png"
   ],
   "social": [
-    "/media/social/Facebook Avatar 360x360 @2x.png",
-    "/media/social/Facebook sharing 1200 x 630@2x.png",
-    "/media/social/Instagram Story 1080x1920 v1@2x.png",
-    "/media/social/Instagram Story 1080x1920 v2@2x.png",
-    "/media/social/Twitter _ Facebook Avatar 851x315 @2x.png"
+    "/media/social/Facebook Cover BIG CABLE.png",
+    "/media/social/Facebook Cover SELL OUT.png",
+    "/media/social/Instagram Story BIG CABLE.png",
+    "/media/social/Instagram Story SELL OUT.png",
+    "/media/social/Profile Picture BIG CABLE.png",
+    "/media/social/Profile Picture SELL OUT.png",
+    "/media/social/Sharing BIG CABLE.png",
+    "/media/social/Sharing SELL OUT.png"
   ]
 }
