@@ -370,8 +370,8 @@ export default {
       const zipPoint = { latitude: this.coords[0], longitude: this.coords[1] }
 
       return this.events.slice().sort((a, b) => {
-        const aDistance = haversine(zipPoint, a.location.location)
-        const bDistance = haversine(zipPoint, b.location.location)
+        const aDistance = haversine(zipPoint, a)
+        const bDistance = haversine(zipPoint, b)
 
         if (aDistance < bDistance) {
           return -1
@@ -424,7 +424,7 @@ export default {
     },
 
     addMarker(event) {
-      const ll = [event.location.location.latitude, event.location.location.longitude]
+      const ll = [event.latitude, event.longitude]
 
       const marker = L.marker(ll)
         .addTo(map)
@@ -465,7 +465,7 @@ export default {
     showNearestEvent() {
       if (this.coords.length > 0 && this.events.length > 0) {
         const event = this.sortedEvents[0]
-        const ll = [event.location.location.latitude, event.location.location.longitude]
+        const ll = [event.latitude, event.longitude]
         const startingZoom = 9
         const zoom = zoomCount > 1 ? map.getZoom() : startingZoom
         map.setView(ll, zoom)
