@@ -9,7 +9,6 @@
       <li><img src="/images/logos/Etsy_logo-correct.png" alt="Etsy"></li>
       <li><img src="/images/logos/kickstarter-logo-light.png" alt="Kickstarter"></li>
       <li><img src="/images/logos/netflix.jpg" alt="Netflix"></li>
-      <li><img src="/images/logos/twitter.png" alt="Twitter"></li>
       <li><img src="/images/logos/vimeo.png" alt="Vimeo"></li>
       <li><img src="/images/logos/changeorg.png" alt="Change.org"></li>
       <li><img src="/images/logos/boingboing.png" alt="BoingBoing"></li>
@@ -21,6 +20,7 @@
       <li><img src="/images/logos/okcupid.png" alt="OkCupid"></li>
       <li><img src="/images/logos/18mr.png" alt="18 Million Rising"></li>
       <li><img src="/images/logos/ycombinator.png" alt="Y Combinator"></li>
+      <li><img src="/images/logos/dropbox.png" alt="Dropbox"></li>
       <li><img src="/images/logos/aall.png" alt="AALL"></li>
       <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
       <li><img src="/images/logos/aclu.jpg" alt="ACLU"></li>
