@@ -13,6 +13,8 @@ against:
   title_html: Your {title}<br> is **AGAINST** net neutrality
   description_html: |
     {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+  no_amount_description_html: |
+    {name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
   tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
   call_button: Call
   write_button: Write

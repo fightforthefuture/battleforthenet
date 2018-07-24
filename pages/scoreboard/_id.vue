@@ -492,10 +492,17 @@ export default {
     },
 
     descriptionHTML() {
-      return this.$lt(`${this.status}.description_html`, {
-        name: this.repTitleAndName,
-        amount: this.formattedContributions
-      })
+      if (!this.rep.supports_cra && !this.rep.cable_contributions) {
+        return this.$lt('against.no_amount_description_html', {
+          name: this.repTitleAndName
+        })
+      }
+      else {
+        return this.$lt(`${this.status}.description_html`, {
+          name: this.repTitleAndName,
+          amount: this.formattedContributions
+        })
+      }
     },
 
     formattedContributions() {
