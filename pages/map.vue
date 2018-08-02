@@ -252,7 +252,7 @@ body.map-page {
           <p v-if="event.image"><img :src="event.image" alt="[Event banner image]"></p>
           <h4><a :href="event.url" @click="$trackClick('map_list_event_title')">{{ event.title }}</a></h4>
           <div class="details">
-            <div class="date">
+            <div class="date" v-if="event.category == 'event'">
               <span>{{ event.formatted_start_date }}</span>
             </div>
             <div class="address">
@@ -260,7 +260,7 @@ body.map-page {
             </div>
           </div>
           <!-- <div class="description" v-html="event.description"></div> -->
-          <a :href="event.url" class="btn rsvp-btn" target="_blank" @click="$trackClick('map_list_rsvp_button')">{{ $lt('event_cta') }}</a>
+          <a :href="event.url" class="btn rsvp-btn" target="_blank" @click="$trackClick('map_list_rsvp_button')">{{ $lt(`${event.category}_cta`) }}</a>
         </li>
       </ul>
     </div>
@@ -426,9 +426,17 @@ export default {
     addMarker(event) {
       const ll = [event.latitude, event.longitude]
 
+      let html = `<h5>${event.title}</h5>`
+
+      if (event.category === 'event') {
+        html += `<div class="date">${event.formatted_start_date }</div>`
+      }
+
+      html += `<div class="address"><address>${event.address}</address></div><a class="btn rsvp-btn" href="${event.url}" target="_blank">${this.$lt(`${event.category}_cta`)}</a>`
+
       const marker = L.marker(ll)
         .addTo(map)
-        .bindPopup(`<h5>${event.title}</h5><div class="date">${event.formatted_start_date }</div><div class="address"><address>${event.address}</address></div><a class="btn rsvp-btn" href="${event.url}" target="_blank">${this.$lt('event_cta')}</a>`)
+        .bindPopup(html)
 
       marker.eventId = event.id
       marker.on('click', this.clickMarker)
