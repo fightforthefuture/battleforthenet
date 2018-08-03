@@ -1,4 +1,4 @@
-<style lang="scss" scoped>
+<style lang="scss">
 .scoreboard-all {
   padding-bottom: 20rem;
   background-color: $alt-bg-color;
@@ -88,10 +88,6 @@ section {
   }
 }
 
-.state-selector {
-  margin: 3rem 0 0;
-}
-
 .persistent-button .btn {
   font-size: 3rem;
 }
@@ -102,7 +98,7 @@ section {
     <section class="page-header">
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
-        <div class="intro" v-html="introHTML"></div>
+        <div class="intro" v-html="$lt('intro_html')"></div>
         <div class="legend">
           <div class="team-cable">
             <label>{{ $lt('legend.against_label') }}</label>
@@ -115,16 +111,10 @@ section {
             <span>{{ $lt('legend.for_description') }}</span>
           </div>
         </div>
-        <div class="state-selector">
-          <select v-model="selectedState">
-            <option :value="null">{{ $lt('state_placeholder') }}</option>
-            <option v-for="state in sortedStateNames" :key="state" :value="state">{{ state }}</option>
-          </select>
-        </div>
       </div>
     </section>
-    <section v-for="state in sortedStateNames" :key="state" :id="sectionId(state)">
-      <ScoreboardGroup :title="state" :politicians="politiciansByState[state]" class="container" />
+    <section v-for="org in organizations" :key="org" :id="sectionId(org)">
+      <ScoreboardGroup :title="org" :politicians="politicians[org]" class="container" />
     </section>
     <persistent-button><a class="btn" href="#" @click.prevent="scrollToTop()">{{ $lt('persistent_button') }}</a></persistent-button>
   </div>
@@ -132,7 +122,6 @@ section {
 
 <script>
 import axios from 'axios'
-import states from '~/assets/data/states'
 import { createMetaTags, smoothScrollTo } from '~/assets/js/helpers'
 import ScoreboardGroup from '~/components/ScoreboardGroup'
 import PersistentButton from '~/components/PersistentButton'
@@ -165,70 +154,35 @@ export default {
     let politicians = []
 
     try {
-      const { data } = await axios.get('https://data.battleforthenet.com/scoreboard/all.json')
+      const { data } = await axios.get('https://data.battleforthenet.com/scoreboard/california.json')
       politicians = data
+      console.log(data)
     }
     catch (error) {
       //
+      console.error(error)
+    }
+
+    const politiciansByOrg = {}
+
+    for (let org of [ 'Senate', 'Assembly' ]) {
+      politiciansByOrg[org] = politicians.filter(p => p.organization === org)
     }
 
     return {
-      politicians: politicians
-    }
-  },
-
-  watch: {
-    selectedState(newValue) {
-      if (newValue) {
-        const sectionId = this.sectionId(newValue)
-        const el = document.getElementById(sectionId)
-
-        if (el) {
-          smoothScrollTo(el.offsetLeft, el.offsetTop, 500)
-          location.hash = `#${sectionId}`
-        }
-      }
+      politicians: politiciansByOrg
     }
   },
 
   computed: {
-    sortedStateNames() {
-      return Object.keys(this.politiciansByState).sort()
-    },
-
-    politiciansByState() {
-      const politiciansByState = {}
-
-      for (let pol of this.politicians) {
-        const key = states[pol.state]
-
-        if (!politiciansByState[key]) {
-          politiciansByState[key] = []
-        }
-
-        politiciansByState[key].push(pol)
-      }
-
-      return politiciansByState
-    },
-
-    houseCRACount() {
-      return this.politicians.filter(p => p.organization === 'House' && p.supports_cra).length
-    },
-
-    introHTML() {
-      const totalVotesNeeded = 218
-      return this.$lt('intro_html', {
-        totalVotes: totalVotesNeeded,
-        craCount: this.houseCRACount,
-        votesNeeded: totalVotesNeeded - this.houseCRACount
-      })
+    organizations() {
+      return [ 'Senate', 'Assembly' ]
     }
   },
 
   methods: {
     $lt(key, vars={}) {
-      return this.$t(`pages.scoreboard.all.${key}`, vars)
+      return this.$t(`pages.scoreboard.ca.all.${key}`, vars)
     },
 
     sectionId(name) {

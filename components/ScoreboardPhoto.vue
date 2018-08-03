@@ -12,6 +12,11 @@
     border-radius: $border-radius;
   }
 
+  img {
+    filter: grayscale(100%);
+    object-fit: cover;
+  }
+
   .cover {
     position: absolute;
     top: 0;
@@ -112,7 +117,7 @@ export default {
     },
 
     imageURL() {
-      return `https://www.fightforthefuture.org/congress-images/${this.rep.bioguide_id}_x2.jpg`
+      return `https://data.battleforthenet.com/scoreboard-images/${this.rep.bioguide_id}.jpg`
     }
   }
 }
