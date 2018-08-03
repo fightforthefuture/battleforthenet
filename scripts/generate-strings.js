@@ -13,6 +13,7 @@ const messages = formatStrings({
   en: {
     pages: {
       redalert: loadStrings('pages/redalert.yml'),
+      augustrecess: loadStrings('pages/augustrecess.yml'),
       index: loadStrings('pages/index.yml'),
       call: {
         california: loadStrings('pages/call/california.yml')
