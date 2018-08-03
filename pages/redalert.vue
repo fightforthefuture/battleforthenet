@@ -350,6 +350,8 @@ iframe.events-map {
       </div>
     </section>
 
+    <PageFooter/>
+
     <persistent-button>
       <a class="flex-center" href="#top" @click.prevent="scrollToTop()"><img src="~/assets/images/warning.svg" alt=""> <span>{{ $lt('persistent_button') }}</span></a>
     </persistent-button>
@@ -368,6 +370,7 @@ import PersistentButton from '~/components/PersistentButton'
 import SocialSidebar from '~/components/SocialSidebar'
 import CallForm from '~/components/CallForm'
 import BattleStats from '~/components/BattleStats'
+import PageFooter from '~/components/PageFooter'
 import { createMetaTags, pingCounter, sendToMothership, smoothScrollTo, startTextFlow } from '~/assets/js/helpers'
 import axios from 'axios'
 
@@ -406,7 +409,8 @@ export default {
     PersistentButton,
     SocialSidebar,
     CallForm,
-    BattleStats
+    BattleStats,
+    PageFooter
   },
 
   data() {
