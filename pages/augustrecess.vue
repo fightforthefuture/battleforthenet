@@ -631,9 +631,9 @@ export default {
       zipCode: null,
       phone: null,
       comments: null,
-      canAttendMeetings: null,
-      isBusinessOwner: null,
-      isVeteran: null,
+      canAttendMeetings: "No",
+      isBusinessOwner: "No",
+      isVeteran: "No",
       isSending: false,
       message: null,
       events: []
