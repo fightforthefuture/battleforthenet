@@ -16,6 +16,7 @@ export default ({ app, store, isDev }) => {
         pages: {
           index: require('~/locales/en/pages/index.yml'),
           redalert: require('~/locales/en/pages/redalert.yml'),
+          augustrecess: require('~/locales/en/pages/augustrecess.yml'),
           call: {
             california: require('~/locales/en/pages/call/california.yml')
           },

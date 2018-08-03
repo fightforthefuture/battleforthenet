@@ -1,0 +1,123 @@
+#
+# This file contains the strings used in https://battleforthenet.com/augustrecess
+#
+# Keys with _html suffixes allow Markdown and HTML markup. Everything else will
+# be rendered as plain text.
+#
+
+# These are used for FB and Twitter sharing previews. Make sure to run the URL
+# through the FB Debugger (https://developers.facebook.com/tools/debug/) and
+# Twitter Card Validator (https://cards-dev.twitter.com/validator) after changing
+# these values.
+sharing:
+  title: Join the People’s Lobby for Net Neutrality
+  description: |
+    Join the People’s Lobby for Net Neutrality to meet with your lawmakers
+    during the August congressional recess
+  image: https://www.battleforthenet.com/images/share_images/august-recess-social.jpg
+  url: https://www.battleforthenet.com/augustrecess
+
+title: Join the People’s Lobby for Net Neutrality
+intro_html: |
+  The antidote to Big Cable’s campaign to destroy the open Internet is real,
+  everyday people joining forces to hold Congress accountable. That’s why we’re
+  organizing and training people passionate about net neutrality to meet with
+  their representatives in-district during August recess. The dates and times
+  of the meetings are still being set. If you're interested in attending, please
+  fill-in the information below.
+cta_button: Sign up
+tweet_text: |
+  Join the People’s Lobby for Net Neutrality to meet with your lawmakers during
+  the August congressional recess
+
+form:
+  title: "Sign Up"
+  description_html: |
+    <p>
+      We’re working to set up meetings with lawmakers around the country. The
+      dates and times are still TBD, so if you're interested in attending,
+      please fill in the information below.  We’ll get back to you soon with
+      more details.
+    </p>
+  success: You’ve successfully signed up! Check out the Facebook groups below.
+  generic_error: That didn't work for some reason 😞
+  firstname_placeholder: First name*
+  lastname_placeholder: Last name*
+  email_placeholder: Email*
+  address_placeholder: Address*
+  zip_placeholder: ZIP*
+  phone_placeholder: Phone*
+  comments_placeholder: Why does net neutrality matter to you?
+  meeting_question: |
+    Can you attend a meeting that is scheduled between business hours
+    Monday-Friday?
+  business_owner_question: Are you a small business owner?
+  veteran_question: Are you a veteran?
+  button_loading: Saving...
+  button_cta: Sign up
+  yes: Yes
+  no: No
+  disclaimer_html: |
+    <a target="_blank" href="https://www.fightforthefuture.org">
+      Fight for the Future</a>,
+    <a target="_blank" href="https://www.demandprogress.org">
+      Demand Progress</a>,
+    and <a href="https://www.freepress.net">Free Press Action Fund</a>
+    will email you updates, and you can unsubscribe at any time. If you enter
+    your number (it’s optional) we will follow up by SMS. Message &amp; data
+    rates apply. You can always text STOP to stop receiving messages.
+    <a target="_blank" href="/privacy">Privacy Policy</a>
+
+# New sections created here will be added dynamically to the page in the order
+# they're listed. The section key (website, social, etc.) will be used to create
+# an anchor link (social = https://battleforthenet.com/augustrecess#social)
+sections:
+  what:
+    title: What’s happening?
+    body_html: |
+      <p>
+        Members of Congress have packed up and left Washington, returning to
+        their home districts for August recess. There’s one big problem, though:
+        Lawmakers have left their constituents out to dry by failing to restore
+        crucial net neutrality protections gutted by the Federal Communications
+        Commission (FCC). After a groundswell of activism, the Senate passed a
+        Congressional Review Act resolution this spring to reverse the FCC.
+      </p>
+      <p>
+        Now the resolution has moved to the House, where it needs just 40 more
+        votes to pass—so we’re organizing meetings between key representatives
+        and their constituents to demand they publicly support the CRA. But the
+        clock is ticking — if the CRA resolution doesn’t get a vote this year,
+        it dies when the new Congress comes into session in January 2019.
+      </p>
+
+  plan:
+    title: "Here’s the plan:"
+    body_html: |
+      <p>
+        If lawmakers hear directly from enough passionate constituents, we can
+        get the 40 remaining votes we need to overturn the FCC’s net neutrality
+        repeal. That’s why we’re organizing and training people passionate about
+        net neutrality to meet with their representative or staff in district
+        during August recess.
+      </p>
+      <p>
+        We’ll provide all the support you need to make this meeting a success,
+        and we’ll recruit others to attend too—just fill in your information,
+        and we’ll be in touch!
+      </p>
+      <p>
+        The dates and times of the meetings are still being set. If you are
+        interested in attending a meeting and can help put in a request for a
+        date and time with your representative's office, please fill in the
+        information below.
+      </p>
+
+events:
+  title: Stay Up-to-Date
+  body_html: |
+    <p>
+      Join a regional Facebook group to help keep the pressure on your
+      representative:
+    </p>
+
