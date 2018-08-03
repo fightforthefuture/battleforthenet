@@ -350,8 +350,13 @@ form .disclaimer small {
     background: $body-bg-color-alt-1;
 
     img {
-      height: 3rem;
+      height: 3.5rem;
       margin: 1rem 3rem;
+    }
+
+    img.fftf {
+      height: 2.5rem;
+      margin: 1.5rem 3rem;
     }
 
     &:after {
@@ -560,7 +565,7 @@ form .disclaimer small {
       <div class="logos">
         <a href="https://www.fightforthefuture.org">
           <img src="~/assets/images/fftf-white-logo.png"
-               alt="Fight for the Future">
+               alt="Fight for the Future" class="fftf">
         </a>
         <a href="https://www.demandprogress.org">
           <img src="~/assets/images/demand-progress-white-logo.png"
