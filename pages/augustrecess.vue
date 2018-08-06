@@ -390,12 +390,11 @@ form .disclaimer small {
       <h1 class="upcase">{{ $lt('title') }}</h1>
       <div class="container push-top-3">
         <div v-html="$lt('intro_html')"></div>
-        <a class="btn btn-large btn-block push-top-3" href="#sign-up">
+        <a class="btn btn-large btn-block push-top-3" href="#sign-up" @click.prevent="scrollTo('#sign-up')">
           {{ $lt('cta_button') }}
         </a>
       </div> <!-- .container -->
-      <img src="~assets/images/arrow-down.svg" alt="see below arrow"
-           class="arrow">
+      <a href="#sign-up" @click.prevent="scrollTo('#sign-up')"><img src="~assets/images/arrow-down.svg" alt="see below arrow" class="arrow"></a>
       <div class="group-photos">Photos of Net Neutrality protestors</div>
     </header>
 
@@ -601,7 +600,7 @@ form .disclaimer small {
 </template>
 
 <script>
-import { createMetaTags } from '~/assets/js/helpers'
+import { createMetaTags, smoothScrollToElement } from '~/assets/js/helpers'
 import axios from 'axios'
 
 export default {
@@ -640,28 +639,39 @@ export default {
       isBusinessOwner: "No",
       isVeteran: "No",
       isSending: false,
-      message: null,
-      events: []
+      message: null
     }
   },
 
-  async created() {
-    this.fetchEvents()
+  async asyncData() {
+    let events = []
+
+    try {
+      const { data } = await axios.get('https://data.battleforthenet.com/events.json')
+      events = data.sort((a, b) => {
+        if (a.address < b.address) {
+          return -1
+        }
+        else if (a.address > b.address) {
+          return 1
+        }
+        else {
+          return 0
+        }
+      })
+    }
+    catch (error) {
+      //
+    }
+
+    return {
+      events: events
+    }
   },
 
   methods: {
     $lt(key) {
       return this.$t(`pages.augustrecess.${key}`)
-    },
-
-    async fetchEvents() {
-      try {
-        const { data } = await axios.get('https://data.battleforthenet.com/events.json')
-        this.events = data
-      }
-      catch (error) {
-        this.events = []
-      }
     },
 
     async submitForm() {
@@ -709,6 +719,14 @@ export default {
       this.canAttendMeetings = null
       this.isBusinessOwner = null
       this.isVeteran = null
+    },
+
+    scrollTo(hash) {
+      const duration = 500
+      smoothScrollToElement(hash, duration)
+      setTimeout(() => {
+        location.hash = hash
+      }, duration)
     }
   }
 }
