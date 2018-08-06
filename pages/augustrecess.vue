@@ -311,18 +311,13 @@ form .disclaimer small {
   flex-wrap: wrap;
 
   li {
-    width: 100%;
+    width: 50%;
+    padding: 0 0.25rem;
     word-wrap: break-word;
 
     @include big-screen {
-      width: 30%;
-    }
-
-    &:nth-of-type(3n+1),
-    &:nth-of-type(3n+2) {
-      @include big-screen {
-        margin-right: 3.33%;
-      }
+      width: 33.3%;
+      padding: 0 1rem;
     }
   }
 }
@@ -551,7 +546,7 @@ form .disclaimer small {
 
         <ul class="events-list">
           <li v-for="(event, index) in events" :key="`event-${index}`">
-            <a :href="event.url" target="_blank" class="btn btn-block btn-hollow">
+            <a :href="event.url" target="_blank" class="btn btn-block btn-hollow truncate">
               <img src="~assets/images/map-pin-fb.svg" alt="Facebook map pin"
                    class="icon-left">
               {{ event.address }}
