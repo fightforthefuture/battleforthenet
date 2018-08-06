@@ -168,6 +168,7 @@ form .row {
 
   input {
     margin-right: 1.5%;
+    min-width: 0;
 
     &:last-child {
       margin-right: 0;
