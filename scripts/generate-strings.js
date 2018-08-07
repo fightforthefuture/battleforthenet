@@ -15,6 +15,7 @@ const messages = formatStrings({
       redalert: loadStrings('pages/redalert.yml'),
       augustrecess: loadStrings('pages/augustrecess.yml'),
       index: loadStrings('pages/index.yml'),
+      california: loadStrings('pages/california.yml'),
       call: {
         california: loadStrings('pages/call/california.yml')
       },
@@ -23,11 +24,7 @@ const messages = formatStrings({
         index: loadStrings('pages/scoreboard/index.yml'),
         all: loadStrings('pages/scoreboard/all.yml'),
         id: loadStrings('pages/scoreboard/id.yml'),
-        social: loadStrings('pages/scoreboard/social.yml'),
-        ca: {
-          index: loadStrings('pages/scoreboard/ca/index.yml'),
-          all: loadStrings('pages/scoreboard/ca/all.yml')
-        }
+        social: loadStrings('pages/scoreboard/social.yml')
       },
       media: loadStrings('pages/media.yml')
     },
@@ -36,7 +33,8 @@ const messages = formatStrings({
       WantedPoster: loadStrings('components/WantedPoster.yml'),
       CreateEvent: loadStrings('components/CreateEvent.yml'),
       ScoreboardForm: loadStrings('components/ScoreboardForm.yml'),
-      RepInterstitial: loadStrings('components/RepInterstitial.yml')
+      RepInterstitial: loadStrings('components/RepInterstitial.yml'),
+      ScoreboardLegend: loadStrings('components/ScoreboardLegend.yml')
     },
     social: loadStrings('social.yml')
   }

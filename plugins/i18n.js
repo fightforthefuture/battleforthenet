@@ -17,6 +17,7 @@ export default ({ app, store, isDev }) => {
           index: require('~/locales/en/pages/index.yml'),
           redalert: require('~/locales/en/pages/redalert.yml'),
           augustrecess: require('~/locales/en/pages/augustrecess.yml'),
+          california: require('~/locales/en/pages/california.yml'),
           call: {
             california: require('~/locales/en/pages/call/california.yml')
           },
@@ -25,11 +26,7 @@ export default ({ app, store, isDev }) => {
             index: require('~/locales/en/pages/scoreboard/index.yml'),
             all: require('~/locales/en/pages/scoreboard/all.yml'),
             id: require('~/locales/en/pages/scoreboard/id.yml'),
-            social: require('~/locales/en/pages/scoreboard/social.yml'),
-            ca: {
-              index: require('~/locales/en/pages/scoreboard/ca/index.yml'),
-              all: require('~/locales/en/pages/scoreboard/ca/all.yml')
-            }
+            social: require('~/locales/en/pages/scoreboard/social.yml')
           },
           media: require('~/locales/en/pages/media.yml')
         },
@@ -38,7 +35,8 @@ export default ({ app, store, isDev }) => {
           WantedPoster: require('~/locales/en/components/WantedPoster.yml'),
           CreateEvent: require('~/locales/en/components/CreateEvent.yml'),
           ScoreboardForm: require('~/locales/en/components/ScoreboardForm.yml'),
-          RepInterstitial: require('~/locales/en/components/RepInterstitial.yml')
+          RepInterstitial: require('~/locales/en/components/RepInterstitial.yml'),
+          ScoreboardLegend: require('~/locales/en/components/ScoreboardLegend.yml')
         },
         social: require('~/locales/en/social.yml')
       }

@@ -41,12 +41,12 @@
     small {
       display: block;
       font-size: 1rem;
+      margin-top: 0.1rem;
     }
   }
 
   &.long-name h5 {
-    font-size: 0.95rem;
-    bottom: .9rem;
+    font-size: 0.9rem;
   }
 
   .yes-bg {
@@ -112,8 +112,7 @@ export default {
     },
 
     hasLongName() {
-      const str = this.rep.last_name || ''
-      return str.indexOf(' ') === -1 && str.length > 11;
+      return (this.rep.last_name || '').length > 11
     },
 
     imageURL() {

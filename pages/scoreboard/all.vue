@@ -31,63 +31,6 @@ section {
   }
 }
 
-.legend {
-  font-size: 1.8rem;
-  background-color: #171321;
-  border-radius: $border-radius;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  @include small-screen {
-    display: block;
-
-    .team-cable {
-      margin-bottom: 1rem;
-    }
-  }
-
-  label {
-    color: #fff;
-    padding: .5rem 1.5rem;
-    font-weight: 600;
-    border-radius: $border-radius;
-    min-width: 7rem;
-  }
-
-  .team-cable, .team-internet {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-
-    span {
-      line-height: 1.1;
-      display: inline-block;
-      font-size: 1.6rem;
-      padding-left: 1rem;
-      text-align: left;
-    }
-  }
-
-  .team-cable {
-    color: #ff2a2a;
-
-    label {
-      background: linear-gradient(90deg, rgba(255,74,74,1) 0%, rgba(255,56,56,1) 100%);
-    }
-  }
-
-  .team-internet {
-    color: #0cdbb1;
-
-    label {
-      background: linear-gradient(90deg, rgba(55,191,164,1) 0%, rgba(53,118,173,1) 100%);
-    }
-  }
-}
-
 .state-selector {
   margin: 3rem 0 0;
 }
@@ -103,18 +46,7 @@ section {
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
         <div class="intro" v-html="introHTML"></div>
-        <div class="legend">
-          <div class="team-cable">
-            <label>{{ $lt('legend.against_label') }}</label>
-            <span>=</span>
-            <span>{{ $lt('legend.against_description') }}</span>
-          </div>
-          <div class="team-internet">
-            <label>{{ $lt('legend.for_label') }}</label>
-            <span>=</span>
-            <span>{{ $lt('legend.for_description') }}</span>
-          </div>
-        </div>
+        <ScoreboardLegend />
         <div class="state-selector">
           <select v-model="selectedState">
             <option :value="null">{{ $lt('state_placeholder') }}</option>
@@ -135,6 +67,7 @@ import axios from 'axios'
 import states from '~/assets/data/states'
 import { createMetaTags, smoothScrollTo } from '~/assets/js/helpers'
 import ScoreboardGroup from '~/components/ScoreboardGroup'
+import ScoreboardLegend from '~/components/ScoreboardLegend'
 import PersistentButton from '~/components/PersistentButton'
 
 export default {
@@ -152,6 +85,7 @@ export default {
 
   components: {
     ScoreboardGroup,
+    ScoreboardLegend,
     PersistentButton
   },
 
