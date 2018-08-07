@@ -4,7 +4,7 @@
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
         <div v-html="$lt('intro_html')" class="intro"></div>
-        <call-form page="california"></call-form>
+        <CallForm page="california" />
       </div>
     </section>
     <section id="rep">
@@ -116,6 +116,8 @@ export default {
     },
 
     async fetchRep() {
+      this.isLoading = true
+
       let rep
 
       try {
@@ -137,6 +139,7 @@ export default {
       }
       else {
         this.errorMessage = this.$lt('scoreboard_form.error_rep_not_found')
+        this.isLoading = false
       }
     }
   }

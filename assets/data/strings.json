@@ -154,6 +154,32 @@
           }
         }
       },
+      "california": {
+        "title": "California can still save net neutrality",
+        "intro_html": "<p>Telecom giants like AT&amp;T and Comcast tried everything to water down the best state level net neutrality bill in the country, California’s SB 822, but they failed. The bill has been restored and is now headed for a vote on the Assembly floor. But the ISPs are still lobbying fiercely to defeat it. <strong>Call the California Assembly right now and tell them to pass SB 822 and restore net neutrality!</strong></p>",
+        "scoreboard_form": {
+          "title": "Does your representative support net neutrality?",
+          "body_html": "<p>Enter your information below to see if your California Assembly member supports net neutrality, and learn what you can do to help.</p>",
+          "address_placeholder": "Street address*",
+          "zip_placeholder": "ZIP Code*",
+          "cta_button": "Let’s go!",
+          "loading_button": "Searching...",
+          "disclaimer": "Your information will only be used to look up your representative.",
+          "error_rep_not_found": "Oh no! We couldn’t find a California Assembly member for your address."
+        },
+        "scoreboard": {
+          "title": "State Assembly Scoreboard",
+          "body_html": "<p>This is where every member of the California State Assembly stands on SB 822.</p>",
+          "legend_against": "Against the bill to restore net neutrality",
+          "legend_supports": "Supports the bill to restore net neutrality"
+        },
+        "social": {
+          "title": "Help California save net neutrality",
+          "description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
+          "image": "https://www.battleforthenet.com/images/share_images/CA-Flag.jpg",
+          "url": "https://www.battleforthenet.com/california/"
+        }
+      },
       "call": {
         "california": {
           "title": "California can still save net neutrality",
@@ -200,6 +226,29 @@
           "persistent_button": "Back to top ☝️"
         },
         "id": {
+          "california": {
+            "call_form_title": "California can save net neutrality",
+            "supports": {
+              "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
+              "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #savethenet"
+            },
+            "against": {
+              "description_html": "<p>{name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
+              "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+            },
+            "boxes": {
+              "facebook_group": {
+                "title": "Join our Facebook Group",
+                "description": "Join our California for Net Neutrality Facebook Group to connect with other net neutrality supporters in your state.",
+                "cta_button": "Join Group"
+              },
+              "scoreboard": {
+                "title": "See the full scoreboard",
+                "description": "Find out where every member of the California State Assembly stands on net neutrality.",
+                "cta_button": "View Scoreboard"
+              }
+            }
+          },
           "supports": {
             "document_title": "{name} supports net neutrality",
             "title_html": "<p>Your {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
@@ -261,26 +310,6 @@
           "description": "We need 47 more votes to win in the House. Find out where your rep stands.",
           "image": "https://www.battleforthenet.com/images/share_images/take.png",
           "url": "https://www.battleforthenet.com/scoreboard/"
-        },
-        "ca": {
-          "index": {
-            "title": "Does your representative support net neutrality?",
-            "intro_html": "<p>In the House of Representatives, we need a simple majority in support of net neutrality to force a vote.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help</p>",
-            "view_all": "View Full Scoreboard"
-          },
-          "all": {
-            "document_title": "California Net Neutrality Scoreboard",
-            "title": "Here's how every Congressperson voted on net neutrality",
-            "intro_html": "<p>We need {totalVotes} votes in support of net neutrality to win in the House.  We currently have {craCount}, but we need {votesNeeded} more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
-            "legend": {
-              "against_label": "Red",
-              "against_description": "Against the petition to restore net neutrality",
-              "for_label": "Blue",
-              "for_description": "Supports the petition to restore net neutrality"
-            },
-            "state_placeholder": "Select state",
-            "persistent_button": "Back to top ☝️"
-          }
         }
       },
       "media": {
@@ -361,6 +390,12 @@
         "events_button": "Attend an Event",
         "donate_button": "Donate",
         "call_form_title": "Enter your information below"
+      },
+      "ScoreboardLegend": {
+        "against_label": "Red",
+        "against_description": "Against the petition to restore net neutrality",
+        "supports_label": "Blue",
+        "supports_description": "Supports the petition to restore net neutrality"
       }
     },
     "social": {

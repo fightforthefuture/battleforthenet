@@ -18,15 +18,13 @@
         <h2 v-else><strong>Thanks!</strong> Can you call?</h2>
         <p>We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.</p>
       </div>
-      <form @submit.prevent="submitForm()">
-        <div class="flex-row">
-          <input class="phone flex-2" type="tel" placeholder="Phone Number*" v-model.trim="phone" required>
-          <input class="zip" type="tel" placeholder="ZIP Code*" v-model.trim="zipCode" required>
-          <button class="btn btn-cta btn-large btn-call">
-            <span v-if="isSending">Saving...</span>
-            <span v-else>Call</span>
-          </button>
-        </div>
+      <form @submit.prevent="submitForm()" class="flex-row">
+        <input class="phone flex-2" type="tel" placeholder="Phone Number*" v-model.trim="phone" required>
+        <input class="zip" type="tel" placeholder="ZIP Code*" v-model.trim="zipCode" required>
+        <button class="btn btn-cta btn-large btn-call">
+          <span v-if="isSending">Saving...</span>
+          <span v-else>Call</span>
+        </button>
       </form>
       <p class="disclaimer">
         <small>Your number will only be used for this call and will never be shared with third parties. <a href="/privacy" target="_blank">Privacy Policy</a></small>
