@@ -261,6 +261,26 @@
           "description": "We need 47 more votes to win in the House. Find out where your rep stands.",
           "image": "https://www.battleforthenet.com/images/share_images/take.png",
           "url": "https://www.battleforthenet.com/scoreboard/"
+        },
+        "ca": {
+          "index": {
+            "title": "Does your representative support net neutrality?",
+            "intro_html": "<p>In the House of Representatives, we need a simple majority in support of net neutrality to force a vote.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help</p>",
+            "view_all": "View Full Scoreboard"
+          },
+          "all": {
+            "document_title": "California Net Neutrality Scoreboard",
+            "title": "Here's how every Congressperson voted on net neutrality",
+            "intro_html": "<p>We need {totalVotes} votes in support of net neutrality to win in the House.  We currently have {craCount}, but we need {votesNeeded} more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
+            "legend": {
+              "against_label": "Red",
+              "against_description": "Against the petition to restore net neutrality",
+              "for_label": "Blue",
+              "for_description": "Supports the petition to restore net neutrality"
+            },
+            "state_placeholder": "Select state",
+            "persistent_button": "Back to top ☝️"
+          }
         }
       },
       "media": {
