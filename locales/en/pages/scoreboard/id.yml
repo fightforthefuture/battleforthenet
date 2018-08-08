@@ -4,11 +4,11 @@ california:
   call_form_title: California can save net neutrality
   supports:
     description_html: |
-      {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
-    tweet_text: ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #savethenet"
+      Asm. {name} supports SB 822, either by co-sponsoring the bill or via an explicit public statement. Please take a second to say thank you or to volunteer.
+    tweet_text: ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #savethenet"
   against:
     description_html: |
-      {name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+      Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
     tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
 
   boxes:
@@ -24,21 +24,21 @@ california:
 
 supports:
   document_title: "{name} supports net neutrality"
-  title_html: Your {title}<br> **SUPPORTS** net neutrality
+  title_html: Your lawmaker <br> **SUPPORTS** net neutrality
   description_html: |
-    {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
-  tweet_text: ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet"
+   Asm. {name} supports SB 822, either by co-sponsoring the bill or via an explicit public statement. Please take a second to say thank you or to volunteer.
+  tweet_text: ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet"
   facebook_button: Share on Facebook
   twitter_button: Share on Twitter
   volunteer_button: Volunteer
 
 against:
   document_title: "{name} is against net neutrality"
-  title_html: Your {title}<br> is **AGAINST** net neutrality
+  title_html: Your lawmaker<br> is **AGAINST** net neutrality
   description_html: |
-    {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+    Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
   no_amount_description_html: |
-    {name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+    Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
   tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
   call_button: Call
   write_button: Write
