@@ -502,11 +502,14 @@ export default {
     },
 
     repTitle() {
-      if (this.rep.organization === 'Senate') {
-        return 'senator'
-      }
-      else {
-        return 'representative'
+      switch (this.rep.organization) {
+        case 'Senate':
+          return 'senator'
+        case 'Assembly':
+          return 'assembly member'
+        case 'House':
+        default:
+          return 'representative'
       }
     },
 
