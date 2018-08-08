@@ -18,7 +18,7 @@ scoreboard:
   title: State Assembly Scoreboard
   body_html: |
     This is where every member of the California State Assembly stands on SB 822.
-  legend_against: Against the bill to restore net neutrality
+  legend_against: Doesn't support the bill to restore net neutrality
   legend_supports: Supports the bill to restore net neutrality
 
 social:
