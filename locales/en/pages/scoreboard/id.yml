@@ -33,8 +33,8 @@ supports:
   volunteer_button: Volunteer
 
 against:
-  document_title: "{name} is against net neutrality"
-  title_html: Your lawmaker<br> is **AGAINST** net neutrality
+  document_title: "{name} does not support net neutrality"
+  title_html: Your lawmaker<br> does **NOT** support net neutrality
   description_html: |
     Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
   no_amount_description_html: |
