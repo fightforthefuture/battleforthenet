@@ -117,7 +117,7 @@ export default {
 
     callScript() {
       if (this.page === 'california') {
-        return "I'm calling to ask the Assembly member to support SB 822 as written, and resist attempts to weaken it. SB 822 is the only bill that ensures real net neutrality protections for all Californians."
+        return "I'm calling to ask my assembly member to support SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
       }
       else {
         return "I'm calling to ask my lawmakers to support the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you."
