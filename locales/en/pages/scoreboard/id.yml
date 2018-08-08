@@ -27,7 +27,7 @@ supports:
   title_html: Your lawmaker <br> **SUPPORTS** net neutrality
   description_html: |
    Asm. {name} supports SB 822, either by co-sponsoring the bill or via an explicit public statement. Please take a second to say thank you or to volunteer.
-  tweet_text: ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet"
+  tweet_text: ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #PassSB822"
   facebook_button: Share on Facebook
   twitter_button: Share on Twitter
   volunteer_button: Volunteer
@@ -39,7 +39,7 @@ against:
     Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
   no_amount_description_html: |
     Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
-  tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+  tweet_text: ".@{twitter} is not supporting #SB822, which stops ISPs like AT&T and Comcast from censoring and manipulating us. We can stop them: {url} #battleforthenet #netneutrality #PassSB822"
   call_button: Call
   write_button: Write
   tweet_button: Tweet
