@@ -9,7 +9,7 @@ california:
   against:
     description_html: |
       Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
-    tweet_text: ".@{twitter} is not supporting #SB822, which stops ISPs like AT&T and Comcast from censoring and manipulating us. We can stop them: {url} #battleforthenet #netneutrality #PassSB822"
+    tweet_text: ".@{twitter} has not yet supported #SB822, which stops ISPs like AT&T and Comcast from censoring and manipulating us. We can stop them: {url} #battleforthenet #netneutrality #PassSB822"
 
   boxes:
     facebook_group:
