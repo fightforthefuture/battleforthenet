@@ -35,7 +35,7 @@ supports:
 
 against:
   document_title: "{name} does not support net neutrality"
-  title_html: Your lawmaker **DOES NOT** <br>support net neutrality
+  title_html: Your lawmaker has **NOT** yet <br> supported net neutrality
   description_html: |
     {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
   no_amount_description_html: |
