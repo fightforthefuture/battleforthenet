@@ -529,7 +529,13 @@ export default {
     },
 
     titleHTML() {
-      return this.$lt(`${this.status}.title_html`, {
+      let key = `${this.status}.title_html`
+
+      if (this.isCalifornia) {
+        key = `california.${key}`
+      }
+
+      return this.$lt(key, {
         title: this.repTitle
       })
     },
