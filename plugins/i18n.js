@@ -15,6 +15,7 @@ export default ({ app, store, isDev }) => {
       en: {
         pages: {
           index: require('~/locales/en/pages/index.yml'),
+          privacy: require('~/locales/en/pages/privacy.yml'),
           redalert: require('~/locales/en/pages/redalert.yml'),
           augustrecess: require('~/locales/en/pages/augustrecess.yml'),
           call: {
