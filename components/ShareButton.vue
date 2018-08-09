@@ -6,7 +6,6 @@
 
 <script>
 import { openPopup } from '~/assets/js/helpers'
-import settings from '~/config.json'
 
 export default {
   props: {
@@ -25,12 +24,13 @@ export default {
 
   computed: {
     shareURL() {
-      let url = this.url || this.$t('social.share_url')
+      const network = this.network.toLowerCase()
+      let url = this.url || this.$store.state[`${network}ShareURL`] || this.$t('social.share_url')
 
-      if (this.network.toLowerCase() === 'facebook' && !url.match(/facebook\.com\/sharer/)) {
+      if (network === 'facebook' && !url.match(/facebook\.com\/sharer/)) {
         url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
       }
-      else if (this.network.toLowerCase() === 'twitter' && !url.match(/twitter\.com\/intent\/tweet/)) {
+      else if (network === 'twitter' && !url.match(/twitter\.com\/intent\/tweet/)) {
         url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(this.$t('social.tweet_text').trim())}`
       }
 

@@ -486,6 +486,20 @@ export default {
     }
   },
 
+  created() {
+    if (this.isCalifornia) {
+      this.$store.commit('setFacebookShareURL', this.shareURL)
+      this.$store.commit('setTwitterShareURL', this.twitterURL)
+    }
+  },
+
+  destroyed() {
+    if (this.isCalifornia) {
+      this.$store.commit('setFacebookShareURL', null)
+      this.$store.commit('setTwitterShareURL', null)
+    }
+  },
+
   async asyncData(context) {
     const rep = await fetchRep(context.route.params.id)
     const bizCount = await fetchBusinessCount(rep.state)
