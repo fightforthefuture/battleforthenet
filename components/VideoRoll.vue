@@ -166,10 +166,10 @@
       </div>
     </div>
     <button class="prev" @click="prevPage()" :disabled="page < 1">
-      <div class="circle"><img src="~/assets/images/chevron-left.svg" alt="Previous"></div>
+      <div class="circle"><img src="~/assets/images/arrow-left.svg" alt="Previous"></div>
     </button>
     <button class="next" @click="nextPage()" :disabled="page >= lastPage">
-      <div class="circle"><img src="~/assets/images/chevron-right.svg" alt="Next"></div>
+      <div class="circle"><img src="~/assets/images/arrow-right.svg" alt="Next"></div>
     </button>
 
     <modal v-if="modalVideo">
