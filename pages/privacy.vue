@@ -3,7 +3,7 @@ section p {
   text-align: left;
 }
 section img {
-  max-width: 350px;
+  max-width: 300px;
 }
 </style>
 
@@ -19,9 +19,9 @@ section img {
       <div class="container">
         <img v-if="id === 'fftf'" src="~assets/images/fftf-dark.svg"
              :alt="section.title"/>
-        <img v-if="id === 'dp'" src="~assets/images/demand-progress-white-logo.png"
+        <img v-if="id === 'dp'" src="/images/v2/footer-demandprogress-logo-x2.png"
              :alt="section.title"/>
-        <img v-if="id === 'fp'" src="~assets/images/free-press-white-logo.png"
+        <img v-if="id === 'fp'" src="~assets/images/fp-footer-logo.png"
              :alt="section.title"/>
         <div v-html="section.body_html"></div>
       </div> <!-- .container -->
