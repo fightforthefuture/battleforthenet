@@ -14,7 +14,7 @@
   }
 
   .logos {
-    padding: 2rem 0;
+    padding-bottom: 2rem;
     border-bottom: 1px solid #7f6bae;
     display: flex;
     align-items: center;
@@ -132,6 +132,7 @@
 <template>
   <footer class="bftn-footer">
     <div class="container">
+      <h3><a href="/">Battle for the Net</a> is a project of:</h3>
       <div class="logos">
         <a class="fftf" href="https://www.fightforthefuture.org/">
           <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">

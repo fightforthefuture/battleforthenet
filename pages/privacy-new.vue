@@ -26,10 +26,6 @@ section img {
         <div v-html="section.body_html"></div>
       </div> <!-- .container -->
     </section>
-
-    <section>
-      <h2>Back to <a href="/">Battle for the Net</a></h2>
-    </section>
   </div>
 </template>
 
