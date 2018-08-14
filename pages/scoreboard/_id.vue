@@ -322,7 +322,7 @@
                 {{ $lt('against.write_button') }}
               </span>
             </button>
-            <button class="tweet" @click="tweet()">
+            <button class="tweet" @click="tweet()" v-if="rep.twitter">
               <span class="value-bg" v-if="rep.tweet_count"></span>
               <span class="value" v-if="rep.tweet_count">{{ rep.tweet_count | formatNumber }}</span>
               <span class="label">
@@ -346,33 +346,61 @@
 
     <section class="boxes">
       <div class="container">
-        <scoreboard-action-box
-          :title="$lt('boxes.events.title') "
-          :description="$lt('boxes.events.description')"
-          :cta_button="$lt('boxes.events.cta_button')"
-          :cta_url="mapURL"
-        />
 
-        <scoreboard-action-box
-          :title="$lt('boxes.business.title') "
-          :description="businessBoxDescription"
-          :cta_button="$lt('boxes.business.cta_button')"
-          cta_url="https://www.businessesfornetneutrality.com"
-         />
+        <!-- California scoreboard page -->
+        <div v-if="isCalifornia">
+          <scoreboard-action-box
+            :title="$lt('california.boxes.facebook_group.title') "
+            :description="$lt('california.boxes.facebook_group.description')"
+            :cta_button="$lt('california.boxes.facebook_group.cta_button')"
+            cta_url="https://www.facebook.com/groups/2079387388948963/"
+          />
 
-        <scoreboard-action-box
-          :title="$lt('boxes.donate.title') "
-          :description="$lt('boxes.donate.description')"
-          :cta_button="$lt('boxes.donate.cta_button')"
-          :cta_url="donateURL"
-        />
+          <scoreboard-action-box
+            :title="$lt('boxes.donate.title') "
+            :description="$lt('boxes.donate.description')"
+            :cta_button="$lt('boxes.donate.cta_button')"
+            :cta_url="donateURL"
+          />
 
-        <scoreboard-action-box
-          :title="$lt('boxes.scoreboard.title')"
-          :description="$lt('boxes.scoreboard.description')"
-          :cta_button="$lt('boxes.scoreboard.cta_button')"
-          cta_url="/scoreboard/all"
-        />
+          <scoreboard-action-box
+            :title="$lt('california.boxes.scoreboard.title')"
+            :description="$lt('california.boxes.scoreboard.description')"
+            :cta_button="$lt('california.boxes.scoreboard.cta_button')"
+            cta_url="/california/#scoreboard"
+          />
+        </div>
+
+        <!-- Regular scoreboard page -->
+        <div v-else>
+          <scoreboard-action-box
+            :title="$lt('boxes.events.title') "
+            :description="$lt('boxes.events.description')"
+            :cta_button="$lt('boxes.events.cta_button')"
+            :cta_url="mapURL"
+          />
+
+          <scoreboard-action-box
+            :title="$lt('boxes.business.title') "
+            :description="businessBoxDescription"
+            :cta_button="$lt('boxes.business.cta_button')"
+            cta_url="https://www.businessesfornetneutrality.com"
+           />
+
+           <scoreboard-action-box
+             :title="$lt('boxes.donate.title') "
+             :description="$lt('boxes.donate.description')"
+             :cta_button="$lt('boxes.donate.cta_button')"
+             :cta_url="donateURL"
+           />
+
+           <scoreboard-action-box
+             :title="$lt('boxes.scoreboard.title')"
+             :description="$lt('boxes.scoreboard.description')"
+             :cta_button="$lt('boxes.scoreboard.cta_button')"
+             cta_url="/scoreboard/all"
+           />
+        </div>
 
         <scoreboard-action-box v-if="!rep.supports_cra"
           :title="$lt('boxes.share.title') "
@@ -388,7 +416,7 @@
     </section>
 
     <modal v-if="modalVisible">
-      <call-form v-if="modal == 'call'" :in-modal="true" page="scoreboard" :title="$lt('call_form_title')"></call-form>
+      <call-form v-if="modal == 'call'" :in-modal="true" :page="callFormPage" :title="callFormTitle"></call-form>
       <petition-form v-else :in-modal="true" :title="$lt('petition_form_title')"></petition-form>
     </modal>
   </div>
@@ -438,13 +466,15 @@ export default {
       amount: this.formattedContributions
     }
 
+    const page = this.isCalifornia ? 'california' : 'scoreboard'
+
     return {
       title: this.$lt(`${this.status}.document_title`, vars),
       meta: createMetaTags({
-        title: this.$t('pages.scoreboard.social.title'),
-        description: this.$t('pages.scoreboard.social.description'),
-        image: this.$t('pages.scoreboard.social.image'),
-        url: this.$t('pages.scoreboard.social.url')
+        title: this.$t(`pages.${page}.social.title`),
+        description: this.$t(`pages.${page}.social.description`),
+        image: this.$t(`pages.${page}.social.image`),
+        url: this.$t(`pages.${page}.social.url`)
       })
     }
   },
@@ -453,6 +483,20 @@ export default {
     return {
       modalVisible: false,
       modal: null
+    }
+  },
+
+  created() {
+    if (this.isCalifornia) {
+      this.$store.commit('setFacebookShareURL', this.shareURL)
+      this.$store.commit('setTwitterShareURL', this.twitterURL)
+    }
+  },
+
+  destroyed() {
+    if (this.isCalifornia) {
+      this.$store.commit('setFacebookShareURL', null)
+      this.$store.commit('setTwitterShareURL', null)
     }
   },
 
@@ -472,27 +516,51 @@ export default {
     },
 
     repTitle() {
-      if (this.rep.organization === 'Senate') {
-        return 'senator'
-      }
-      else {
-        return 'representative'
+      switch (this.rep.organization) {
+        case 'Senate':
+          return 'senator'
+        case 'Assembly':
+          return 'assembly member'
+        case 'House':
+        default:
+          return 'representative'
       }
     },
 
     repTitleAndName() {
-      const title = this.rep.organization === 'Senate' ? 'Senator' : 'Rep.'
+      let title = ''
+
+      switch (this.rep.organization) {
+        case 'Senate':
+          title = 'Senator'
+          break
+        case 'House':
+          title = 'Rep.'
+          break
+      }
+
       return `${title} ${this.rep.first_name} ${this.rep.last_name}`
     },
 
     titleHTML() {
-      return this.$lt(`${this.status}.title_html`, {
+      let key = `${this.status}.title_html`
+
+      if (this.isCalifornia) {
+        key = `california.${key}`
+      }
+
+      return this.$lt(key, {
         title: this.repTitle
       })
     },
 
     descriptionHTML() {
-      if (!this.rep.supports_cra && !this.rep.cable_contributions) {
+      if (this.isCalifornia) {
+        return this.$lt(`california.${this.status}.description_html`, {
+          name: this.repTitleAndName
+        })
+      }
+      else if (!this.rep.supports_cra && !this.rep.cable_contributions) {
         return this.$lt('against.no_amount_description_html', {
           name: this.repTitleAndName
         })
@@ -517,7 +585,16 @@ export default {
     },
 
     tweetText() {
-      return this.$lt(`${this.status}.tweet_text`, { twitter: this.rep.twitter, url: this.shareURL})
+      let key = `${this.status}.tweet_text`
+
+      if (this.isCalifornia) {
+        key = `california.${key}`
+      }
+
+      return this.$lt(key, {
+        twitter: this.rep.twitter,
+        url: this.shareURL
+      })
     },
 
     twitterURL() {
@@ -530,7 +607,12 @@ export default {
     },
 
     volunteerURL() {
-      return 'https://act.demandprogress.org/sign/sign-up-text-team-internet/'
+      if (this.isCalifornia) {
+        return 'https://www.facebook.com/groups/2079387388948963/'
+      }
+      else {
+        return 'https://act.demandprogress.org/sign/sign-up-text-team-internet/'
+      }
     },
 
     businessBoxDescription() {
@@ -552,6 +634,28 @@ export default {
       }
 
       return url
+    },
+
+    isCalifornia() {
+      return !!this.$route.params.id.match(/^CA-/)
+    },
+
+    callFormPage() {
+      if (this.isCalifornia) {
+        return 'california'
+      }
+      else {
+        return 'scoreboard'
+      }
+    },
+
+    callFormTitle() {
+      if (this.isCalifornia) {
+        return this.$lt('california.call_form_title')
+      }
+      else {
+        return this.$lt('call_form_title')
+      }
     }
   },
 
@@ -568,8 +672,15 @@ export default {
 
     write() {
       this.$trackEvent('scoreboard_rep_write_button', 'click')
-      this.modal = 'write'
-      this.modalVisible = true
+
+      if (this.isCalifornia) {
+        const district = this.rep.bioguide_id.replace(/^CA-/, '')
+        openPopup(`https://lcmspubcontact.lc.ca.gov/PublicLCMS/ContactPopup.php?district=${district}&inframe=Y`, 'write', 640, 600)
+      }
+      else {
+        this.modal = 'write'
+        this.modalVisible = true
+      }
     },
 
     tweet() {

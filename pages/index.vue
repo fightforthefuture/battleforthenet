@@ -112,7 +112,11 @@
       </div>
     </section>
 
-    <persistent-button><a class="btn" href="#bftn-action-form">{{ $lt('persistent_button') }} <img src="~/assets/images/persistent-button-arrow.svg" alt=""></a></persistent-button>
+    <persistent-button>
+      <a class="btn" href="#bftn-action-form">{{ $lt('persistent_button') }}
+        <img src="~/assets/images/arrow-right.svg" alt="">
+      </a>
+    </persistent-button>
   </div>
 </template>
 

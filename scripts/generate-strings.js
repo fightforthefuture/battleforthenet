@@ -16,6 +16,7 @@ const messages = formatStrings({
       privacy: loadStrings('pages/privacy.yml'),
       redalert: loadStrings('pages/redalert.yml'),
       augustrecess: loadStrings('pages/augustrecess.yml'),
+      california: loadStrings('pages/california.yml'),
       call: {
         california: loadStrings('pages/call/california.yml')
       },
@@ -33,7 +34,8 @@ const messages = formatStrings({
       WantedPoster: loadStrings('components/WantedPoster.yml'),
       CreateEvent: loadStrings('components/CreateEvent.yml'),
       ScoreboardForm: loadStrings('components/ScoreboardForm.yml'),
-      RepInterstitial: loadStrings('components/RepInterstitial.yml')
+      RepInterstitial: loadStrings('components/RepInterstitial.yml'),
+      ScoreboardLegend: loadStrings('components/ScoreboardLegend.yml')
     },
     social: loadStrings('social.yml')
   }

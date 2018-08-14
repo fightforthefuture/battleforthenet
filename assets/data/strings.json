@@ -53,6 +53,53 @@
           }
         }
       },
+      "augustrecess": {
+        "sharing": {
+          "title": "Join the People’s Lobby for Net Neutrality",
+          "description": "Join the People’s Lobby for Net Neutrality to meet with your lawmakers\nduring the August congressional recess\n",
+          "image": "https://www.battleforthenet.com/images/share_images/august-recess-social.jpg",
+          "url": "https://www.battleforthenet.com/augustrecess"
+        },
+        "title": "Join the People’s Lobby for Net Neutrality",
+        "intro_html": "<p>The antidote to Big Cable’s campaign to destroy the open Internet is real,\neveryday people joining forces to hold Congress accountable. That’s why we’re\norganizing and training people passionate about net neutrality to meet with\ntheir representatives in-district during August recess. The dates and times\nof the meetings are still being set. If you're interested in attending, please\nfill-in the information below.</p>",
+        "cta_button": "Sign up",
+        "tweet_text": "Join the People’s Lobby for Net Neutrality to meet with your lawmakers during\nthe August congressional recess\n",
+        "form": {
+          "title": "Sign Up",
+          "description_html": "<p>\n  We’re working to set up meetings with lawmakers around the country. The\n  dates and times are still TBD, so if you're interested in attending,\n  please fill in the information below.  We’ll get back to you soon with\n  more details.\n</p>",
+          "success": "You’ve successfully signed up! Check out the Facebook groups below.",
+          "generic_error": "That didn't work for some reason 😞",
+          "firstname_placeholder": "First name*",
+          "lastname_placeholder": "Last name*",
+          "email_placeholder": "Email*",
+          "address_placeholder": "Address*",
+          "zip_placeholder": "ZIP*",
+          "phone_placeholder": "Phone*",
+          "comments_placeholder": "Why does net neutrality matter to you?",
+          "meeting_question": "Can you attend a meeting that is scheduled between business hours\nMonday-Friday?\n",
+          "business_owner_question": "Are you a small business owner?",
+          "veteran_question": "Are you a veteran?",
+          "button_loading": "Saving...",
+          "button_cta": "Sign up",
+          "yes": "Yes",
+          "no": "No",
+          "disclaimer_html": "<p><a target=\"_blank\" href=\"https://www.fightforthefuture.org\">\n  Fight for the Future</a>,\n<a target=\"_blank\" href=\"https://www.demandprogress.org\">\n  Demand Progress</a>,\nand <a href=\"https://www.freepress.net\">Free Press Action Fund</a>\nwill email you updates, and you can unsubscribe at any time. If you enter\nyour number (it’s optional) we will follow up by SMS. Message &amp; data\nrates apply. You can always text STOP to stop receiving messages.\n<a target=\"_blank\" href=\"/privacy\">Privacy Policy</a></p>"
+        },
+        "sections": {
+          "what": {
+            "title": "What’s happening?",
+            "body_html": "<p>\n  Members of Congress have packed up and left Washington, returning to\n  their home districts for August recess. There’s one big problem, though:\n  Lawmakers have left their constituents out to dry by failing to restore\n  crucial net neutrality protections gutted by the Federal Communications\n  Commission (FCC). After a groundswell of activism, the Senate passed a\n  Congressional Review Act resolution this spring to reverse the FCC.\n</p>\n<p>\n  Now the resolution has moved to the House, where it needs just 40 more\n  votes to pass—so we’re organizing meetings between key representatives\n  and their constituents to demand they publicly support the CRA. But the\n  clock is ticking — if the CRA resolution doesn’t get a vote this year,\n  it dies when the new Congress comes into session in January 2019.\n</p>"
+          },
+          "plan": {
+            "title": "Here’s the plan:",
+            "body_html": "<p>\n  If lawmakers hear directly from enough passionate constituents, we can\n  get the 40 remaining votes we need to overturn the FCC’s net neutrality\n  repeal. That’s why we’re organizing and training people passionate about\n  net neutrality to meet with their representative or staff in district\n  during August recess.\n</p>\n<p>\n  We’ll provide all the support you need to make this meeting a success,\n  and we’ll recruit others to attend too—just fill in your information,\n  and we’ll be in touch!\n</p>\n<p>\n  The dates and times of the meetings are still being set. If you are\n  interested in attending a meeting and can help put in a request for a\n  date and time with your representative's office, please fill in the\n  information below.\n</p>"
+          }
+        },
+        "events": {
+          "title": "Stay Up-to-Date",
+          "body_html": "<p>\n  Join a regional Facebook group to help keep the pressure on your\n  representative:\n</p>"
+        }
+      },
       "index": {
         "document_title": "Join the Battle for Net Neutrality",
         "title": "Does your rep support net neutrality?",
@@ -79,7 +126,7 @@
           },
           "cra": {
             "title": "Here’s how we get Congress to save net neutrality",
-            "body_html": "<p>Our elected officials in Congress can overrule the FCC and save net\nneutrality using the Congressional Review Act (CRA). But they’ll only do\nit if we make them. The CRA resolution\n<a href=\"https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545\"\ntarget=\"_blank\">passed the Senate 52-47</a> in a historic upset. But now\nwe’re fighting an uphill battle to get the House of Representatives to do\nthe same. It’s not going to be easy, but if the whole Internet comes\ntogether to fight, we can win.</p>\n<p>In the House, we’ll need a simple majority of sign on to a\n\"<a href=\"https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help\"\ntarget=\"_blank\">discharge petition</a>” in order to force a vote past leadership\nto the floor. That means we’ll need to convince all the Democrats and about 25\nRepublicans to support the CRA. The clock is ticking — if the CRA resolution\ndoesn’t get a vote this year, it dies when the new Congress comes into session\nin Fall 2018.</p>\n<h3>\n  <br>\n  Here’s how we’ll do it this time:\n</h3>\n<ul>\n  <li class=\"calls\">\n    <h4>\n      <img src=\"/images/gradient-calls.png\" alt=\"\">\n      <span>Flood them with calls and emails</span>\n    </h4>\n    <p>\n      When millions of people call and email their representatives, Congress listens.\n      That’s why we developed a widget that website owners can place on their site,\n      giving their site’s users the opportunity to contact Congress. And we’ve created\n      art assets that will allow individuals to spread the word on powerful\n      social media platforms.\n    </p>\n  </li>\n  <li class=\"constituents\">\n    <h4>\n      <img src=\"/images/gradient-constituents.png\" alt=\"\">\n      <span>In-district constituent pressure</span>\n    </h4>\n    <p>\n      It’s important for lawmakers to see the people who support net neutrality.  We’ll\n      help schedule in-person events, protests, meetings, and canvassing to mobilize\n      constituencies (\n      <a href=\"https://www.vetsforthe.net/\"target=\"_blank\">like veterans</a>\n      ) that lawmakers listen to.\n    </p>\n  </li>\n  <li class=\"business\">\n    <h4>\n      <img src=\"/images/gradient-business.png\" alt=\"\">\n      <span>Mobilizing small businesses</span>\n    </h4>\n    <p>\n      In Washington, money talks. So lawmakers\n      listen to the small business owners in their districts because those\n      business owners are vital to the local economy. We need to reach out to\n      small business owners to ask them to sign our\n      <a href=\"https://www.businessesfornetneutrality.com/\">petition</a> in\n      support of net neutrality, then we hand-deliver this petition to our\n      politicians.\n    </p>\n  </li>\n</ul>"
+            "body_html": "<p>Our elected officials in Congress can overrule the FCC and save net\nneutrality using the Congressional Review Act (CRA). But they’ll only do\nit if we make them. The CRA resolution\n<a href=\"https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545\"\ntarget=\"_blank\">passed the Senate 52-47</a> in a historic upset. But now\nwe’re fighting an uphill battle to get the House of Representatives to do\nthe same. It’s not going to be easy, but if the whole Internet comes\ntogether to fight, we can win.</p>\n<p>In the House, we’ll need a simple majority of sign on to a\n\"<a href=\"https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help\"\ntarget=\"_blank\">discharge petition</a>” in order to force a vote past leadership\nto the floor. That means we’ll need to convince all the Democrats and about 25\nRepublicans to support the CRA. The clock is ticking — if the CRA resolution\ndoesn’t get a vote this year, it dies when the new Congress comes into session\nin January 2019.</p>\n<h3>\n  <br>\n  Here’s how we’ll do it this time:\n</h3>\n<ul>\n  <li class=\"calls\">\n    <h4>\n      <img src=\"/images/gradient-calls.png\" alt=\"\">\n      <span>Flood them with calls and emails</span>\n    </h4>\n    <p>\n      When millions of people call and email their representatives, Congress listens.\n      That’s why we developed a widget that website owners can place on their site,\n      giving their site’s users the opportunity to contact Congress. And we’ve created\n      art assets that will allow individuals to spread the word on powerful\n      social media platforms.\n    </p>\n  </li>\n  <li class=\"constituents\">\n    <h4>\n      <img src=\"/images/gradient-constituents.png\" alt=\"\">\n      <span>In-district constituent pressure</span>\n    </h4>\n    <p>\n      It’s important for lawmakers to see the people who support net neutrality.  We’ll\n      help schedule in-person events, protests, meetings, and canvassing to mobilize\n      constituencies (\n      <a href=\"https://www.vetsforthe.net/\"target=\"_blank\">like veterans</a>\n      ) that lawmakers listen to.\n    </p>\n  </li>\n  <li class=\"business\">\n    <h4>\n      <img src=\"/images/gradient-business.png\" alt=\"\">\n      <span>Mobilizing small businesses</span>\n    </h4>\n    <p>\n      In Washington, money talks. So lawmakers\n      listen to the small business owners in their districts because those\n      business owners are vital to the local economy. We need to reach out to\n      small business owners to ask them to sign our\n      <a href=\"https://www.businessesfornetneutrality.com/\">petition</a> in\n      support of net neutrality, then we hand-deliver this petition to our\n      politicians.\n    </p>\n  </li>\n</ul>"
           },
           "stats": {
             "title": "We're making Congress listen\n",
@@ -107,6 +154,32 @@
           }
         }
       },
+      "california": {
+        "title": "California can still save net neutrality",
+        "intro_html": "<p>Telecom giants like AT&amp;T and Comcast tried everything to water down the best state level net neutrality bill in the country, California’s SB 822, but they failed. The bill has been restored and is now headed for a vote on the Assembly floor. But the ISPs are still lobbying fiercely to defeat it. <strong>Call the California Assembly right now and tell them to pass SB 822 and restore net neutrality!</strong></p>",
+        "scoreboard_form": {
+          "title": "Does your representative support net neutrality?",
+          "body_html": "<p>Enter your information below to see if your California Assembly member supports net neutrality, and learn what you can do to help.</p>",
+          "address_placeholder": "Street address*",
+          "zip_placeholder": "ZIP Code*",
+          "cta_button": "Let’s go!",
+          "loading_button": "Searching...",
+          "disclaimer": "Your information will only be used to look up your representative.",
+          "error_rep_not_found": "Oh no! We couldn’t find a California Assembly member for your address."
+        },
+        "scoreboard": {
+          "title": "State Assembly Scoreboard",
+          "body_html": "<p>This is where every member of the California State Assembly stands on SB 822.</p>",
+          "legend_against": "Against the bill to restore net neutrality",
+          "legend_supports": "Supports the bill to restore net neutrality"
+        },
+        "social": {
+          "title": "Help California save net neutrality",
+          "description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
+          "image": "https://www.battleforthenet.com/images/share_images/CA-Flag.jpg",
+          "url": "https://www.battleforthenet.com/california/"
+        }
+      },
       "call": {
         "california": {
           "title": "California can still save net neutrality",
@@ -121,6 +194,7 @@
         "title": "Net Neutrality Events",
         "zip_placeholder": "Search by ZIP Code",
         "event_cta": "Info & RSVP",
+        "facebook_group_cta": "Join Facebook Group",
         "host_cta": "Host an Event",
         "no_events_title": "No events found 😐",
         "no_events_description": "We don't have any events scheduled at the moment. Perhaps you'd like to host one?",
@@ -152,6 +226,29 @@
           "persistent_button": "Back to top ☝️"
         },
         "id": {
+          "california": {
+            "call_form_title": "California can save net neutrality",
+            "supports": {
+              "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
+              "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #savethenet"
+            },
+            "against": {
+              "description_html": "<p>{name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
+              "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+            },
+            "boxes": {
+              "facebook_group": {
+                "title": "Join our Facebook Group",
+                "description": "Join our California for Net Neutrality Facebook Group to connect with other net neutrality supporters in your state.",
+                "cta_button": "Join Group"
+              },
+              "scoreboard": {
+                "title": "See the full scoreboard",
+                "description": "Find out where every member of the California State Assembly stands on net neutrality.",
+                "cta_button": "View Scoreboard"
+              }
+            }
+          },
           "supports": {
             "document_title": "{name} supports net neutrality",
             "title_html": "<p>Your {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
@@ -165,6 +262,7 @@
             "document_title": "{name} is against net neutrality",
             "title_html": "<p>Your {title}<br> is <strong>AGAINST</strong> net neutrality</p>",
             "description_html": "<p>{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
+            "no_amount_description_html": "<p>{name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
             "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet",
             "call_button": "Call",
             "write_button": "Write",
@@ -283,6 +381,21 @@
         "loading_button": "Searching...",
         "disclaimer": "Your information will only be used to look up your representative.",
         "error_rep_not_found": "Oh no! We couldn’t find a representative for your address."
+      },
+      "RepInterstitial": {
+        "supports_headline_html": "<p>Your message to Congress has been sent. Your representative <strong>SUPPORTS</strong> net neutrality, but you can do more to help out:</p>",
+        "against_headline_html": "<p>Your message to Congress has been sent, but your representative is <strong>AGAINST</strong> net neutrality.</p>",
+        "call_button": "Call",
+        "volunteer_button": "Volunteer",
+        "events_button": "Attend an Event",
+        "donate_button": "Donate",
+        "call_form_title": "Enter your information below"
+      },
+      "ScoreboardLegend": {
+        "against_label": "Red",
+        "against_description": "Against the petition to restore net neutrality",
+        "supports_label": "Blue",
+        "supports_description": "Supports the petition to restore net neutrality"
       }
     },
     "social": {

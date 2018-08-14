@@ -7,7 +7,9 @@ const createStore = () => {
       politicians: [],
       zipCode: null,
       phone: null,
-      streetAddress: null
+      streetAddress: null,
+      facebookShareURL: null,
+      twitterShareURL: null,
     },
 
     mutations: {
@@ -29,6 +31,14 @@ const createStore = () => {
 
       setStreetAddress(state, value) {
         state.streetAddress = value
+      },
+
+      setFacebookShareURL(state, value) {
+        state.facebookShareURL = value
+      },
+
+      setTwitterShareURL(state, value) {
+        state.twitterShareURL = value
       }
     }
   })

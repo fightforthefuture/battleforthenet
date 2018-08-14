@@ -150,24 +150,47 @@ $purple: rgba(148,53,224,1);
 $light-orange: rgba(241,99,90,1);
 $orange: rgba(254,91,47,1);
 $step: 6%;
-
-@keyframes cta-hover {
+// NOTE: this mixin is a workaround because CSS animations can't be restarted
+@mixin button-gradient-animation {
   @for $i from 0 through 10 {
     #{$i*10%} {
-      background: linear-gradient(#{106 - ($i*6)}deg, #{$light-blue} 0%, #{$blue} #{$i*$step}, #{$purple} #{$i*$step + 29%}, #{$light-orange} #{$i*$step + 79%}, #{$orange} 100%);
+      background: linear-gradient(
+        #{106 - ($i*6)}deg,
+        #{$light-blue} 0%,
+        #{$blue} #{$i*$step},
+        #{$purple} #{$i*$step + 29%},
+        #{$light-orange} #{$i*$step + 79%},
+        #{$orange} 100%
+      );
     }
   }
 }
 
+@keyframes cta-hover {
+  @include button-gradient-animation;
+}
+@keyframes cta-mouseout {
+  @include button-gradient-animation;
+}
+
 .btn-cta {
   background: rgb(62,147,218);
-  background: linear-gradient(106deg, rgba(62,147,218,1) 0%, rgba(148,53,224,1) 29%, rgba(241,99,90,1) 79%, rgba(254,91,47,1) 100%);
+  background: linear-gradient(
+    106deg,
+    $blue 0%,
+    $purple 29%,
+    $light-orange 79%,
+    $orange 100%
+  );
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  animation: cta-mouseout .2s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
 
   &:hover {
     animation: cta-hover .2s;
     animation-fill-mode: forwards;
-    animation-delay: .1s;
+    animation-direction: normal;
   }
 }
 

@@ -1,33 +1,11 @@
 <style lang="scss" scoped>
-form {
-  display: flex;
-
-  input, button {
-    width: 33%;
-    flex-grow: 1;
-  }
-
-  input {
-    margin-right: 0.5rem;
-  }
-
-  button {
-    font-size: 2rem;
-
-    span {
-      background-image: url('~/assets/images/phone.svg');
-      background-repeat: no-repeat;
-      background-size: 2.2rem auto;
-      background-position: bottom left;
-      padding-left: 2.5rem;
-    }
-  }
-
-  @include big-screen {
-    button, input.zip {
-      width: 25%;
-      flex: none;
-    }
+.btn-call {
+  span {
+    background-image: url('~/assets/images/phone.svg');
+    background-repeat: no-repeat;
+    background-size: 2.2rem auto;
+    background-position: center left;
+    padding-left: 2.5rem;
   }
 }
 </style>
@@ -40,10 +18,10 @@ form {
         <h2 v-else><strong>Thanks!</strong> Can you call?</h2>
         <p>We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.</p>
       </div>
-      <form @submit.prevent="submitForm()">
-        <input class="phone" type="tel" placeholder="Phone Number" v-model.trim="phone" required>
-        <input class="zip" type="tel" placeholder="Zip Code" v-model.trim="zipCode" required>
-        <button class="btn btn-cta">
+      <form @submit.prevent="submitForm()" class="flex-row">
+        <input class="phone flex-2" type="tel" placeholder="Phone Number*" v-model.trim="phone" required>
+        <input class="zip" type="tel" placeholder="ZIP Code*" v-model.trim="zipCode" required>
+        <button class="btn btn-cta btn-large btn-call">
           <span v-if="isSending">Saving...</span>
           <span v-else>Call</span>
         </button>
