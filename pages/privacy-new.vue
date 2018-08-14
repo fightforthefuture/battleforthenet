@@ -9,7 +9,7 @@ section img {
 
 <template>
   <div>
-    <section class="title">
+    <section class="page-header">
       <div class="container">
         <h1><strong>{{$lt('title')}}</strong></h1>
       </div>
