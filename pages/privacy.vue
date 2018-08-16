@@ -1,17 +1,19 @@
 <style lang="scss">
-section p {
-  text-align: left;
-}
-section img {
-  max-width: 300px;
+.privacy-page {
+  section p {
+    text-align: left;
+  }
+  section img {
+    max-width: 30rem;
+  }
 }
 </style>
 
 <template>
-  <div>
+  <div class="privacy-page">
     <section class="page-header">
       <div class="container">
-        <h1><strong>{{$lt('title')}}</strong></h1>
+        <h1>{{ $lt('title') }}</h1>
       </div>
     </section>
 
@@ -30,19 +32,10 @@ section img {
 </template>
 
 <script>
-import { createMetaTags } from '~/assets/js/helpers'
-
 export default {
   head() {
     return {
-      title: this.$lt('title'),
-
-      meta: createMetaTags({
-        title: this.$lt('sharing.title'),
-        description: this.$lt('sharing.description'),
-        image: this.$lt('sharing.image'),
-        url: this.$lt('sharing.url')
-      })
+      title: this.$lt('title')
     }
   },
   methods: {

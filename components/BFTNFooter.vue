@@ -132,7 +132,7 @@
 <template>
   <footer class="bftn-footer">
     <div class="container">
-      <h3><a href="/">Battle for the Net</a> is a project of:</h3>
+      <h3><nuxt-link to="/">Battle for the Net</nuxt-link> is a project of:</h3>
       <div class="logos">
         <a class="fftf" href="https://www.fightforthefuture.org/">
           <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">
@@ -167,7 +167,7 @@
       </div>
       <div class="built-by">
         <span>Built by:</span>
-        <img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future">
+        <a href="https://www.fightforthefuture.org/"><img src="~/assets/images/fftf-dark.svg" alt="Fight for the Future"></a>
       </div>
     </div>
   </footer>
