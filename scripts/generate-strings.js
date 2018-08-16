@@ -12,9 +12,10 @@ function loadStrings(filePath) {
 const messages = formatStrings({
   en: {
     pages: {
+      index: loadStrings('pages/index.yml'),
+      privacy: loadStrings('pages/privacy.yml'),
       redalert: loadStrings('pages/redalert.yml'),
       augustrecess: loadStrings('pages/augustrecess.yml'),
-      index: loadStrings('pages/index.yml'),
       california: loadStrings('pages/california.yml'),
       call: {
         california: loadStrings('pages/call/california.yml')
