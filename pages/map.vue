@@ -365,7 +365,9 @@ export default {
 
   computed: {
     sortedEvents() {
-      if (!this.coords) return this.events()
+      if (this.coords.length === 0) {
+        return this.events
+      }
 
       const zipPoint = { latitude: this.coords[0], longitude: this.coords[1] }
 

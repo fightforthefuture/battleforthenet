@@ -257,7 +257,7 @@ $step: 6%;
 <template>
   <div>
     <nuxt/>
-    <BFTNFooter/>
+    <BFTNFooter v-if="hasFooter" />
   </div>
 </template>
 
@@ -285,6 +285,12 @@ export default {
         image: this.$t('social.share_image'),
         url: this.$t('social.share_url')
       })
+    }
+  },
+
+  computed: {
+    hasFooter() {
+      return this.$route.name !== 'map'
     }
   }
 }
