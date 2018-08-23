@@ -386,7 +386,7 @@ form .disclaimer small {
       <h1 class="upcase">{{ $lt('title') }}</h1>
       <div class="container push-top-3">
         <div v-html="$lt('intro_html')"></div>
-        <a class="btn btn-large btn-block push-top-3" href="#sign-up" @click.prevent="scrollTo('#sign-up')">
+        <a class="btn btn-large btn-block push-top-3" href="/map/" @click="$trackClick('august_recess_cta_rsvp')">
           {{ $lt('cta_button') }}
         </a>
       </div> <!-- .container -->
@@ -541,8 +541,8 @@ form .disclaimer small {
       <div class="container">
         <h2>{{ $lt('events.title') }}</h2>
         <div v-html="$lt('events.body_html')"></div>
-        <img src="https://data.battleforthenet.com/events.png" alt="Events map"
-             class="push-top-2">
+        <a href="/map/" @click="$trackClick('august_recess_map_image')"><img src="https://data.battleforthenet.com/events.png" alt="Events map"
+             class="push-top-2"></a>
 
         <ul class="events-list">
           <li v-for="(event, index) in events" :key="`event-${index}`">
