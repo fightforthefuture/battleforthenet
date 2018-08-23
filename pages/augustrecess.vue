@@ -644,7 +644,8 @@ export default {
 
     try {
       const { data } = await axios.get('https://data.battleforthenet.com/events.json')
-      events = data.sort((a, b) => {
+
+      events = data.filter(e => e.category === 'facebook_group').sort((a, b) => {
         if (a.address < b.address) {
           return -1
         }
