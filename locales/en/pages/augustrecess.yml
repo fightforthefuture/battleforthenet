@@ -114,10 +114,9 @@ sections:
       </p>
 
 events:
-  title: Stay Up-to-Date
+  title: Find an Upcoming Meeting
   body_html: |
-    <p>
-      Join a regional Facebook group to help keep the pressure on your
-      representative:
-    </p>
+    Click on the map below to find an upcoming meeting near you. Be sure to
+    also join a regional Facebook group to help keep the pressure on your
+    representative:
 
