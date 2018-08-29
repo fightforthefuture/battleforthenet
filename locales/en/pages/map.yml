@@ -7,7 +7,7 @@ no_events_title: No events found 😐
 no_events_description: We don't have any events scheduled at the moment. Perhaps you'd like to host one?
 
 social:
-  title: Join an important letter delivery to save net neutrality July 19th
-  description: Attending an in-person delivery is the most important thing you can do to help save the open Internet.
+  title: Click here to find a net neutrality event near you.
+  description: Find town halls, meetings, or other events near you and RSVP to help save the open Internet.
   image: https://data.battleforthenet.com/events.png
   url: https://www.battleforthenet.com/map/
