@@ -35,7 +35,8 @@ const messages = formatStrings({
       CreateEvent: loadStrings('components/CreateEvent.yml'),
       ScoreboardForm: loadStrings('components/ScoreboardForm.yml'),
       RepInterstitial: loadStrings('components/RepInterstitial.yml'),
-      ScoreboardLegend: loadStrings('components/ScoreboardLegend.yml')
+      ScoreboardLegend: loadStrings('components/ScoreboardLegend.yml'),
+      Scoreboard: loadStrings('components/Scoreboard.yml')
     },
     social: loadStrings('social.yml')
   }

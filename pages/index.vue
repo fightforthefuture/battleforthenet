@@ -124,7 +124,7 @@
 import { createMetaTags } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
 import PetitionForm from '~/components/PetitionForm'
-import Scoreboard from '~/components/Scoreboard/Scoreboard'
+import Scoreboard from '~/components/Scoreboard'
 import VideoRoll from '~/components/VideoRoll'
 import SocialSidebar from '~/components/SocialSidebar'
 import PersistentButton from '~/components/PersistentButton'

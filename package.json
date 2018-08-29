@@ -13,7 +13,6 @@
     "precommit": "npm run lint",
     "pregenerate": "npm run generate-strings && npm run generate-routes && npm run generate-media",
     "postgenerate": "node scripts/patch-redalert.js",
-    "generate-politicians": "node scripts/generate-politicians.js",
     "generate-strings": "node scripts/generate-strings.js",
     "generate-routes": "node scripts/generate-routes.js",
     "generate-media": "node scripts/generate-media.js",

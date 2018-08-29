@@ -37,7 +37,8 @@ export default ({ app, store, isDev }) => {
           CreateEvent: require('~/locales/en/components/CreateEvent.yml'),
           ScoreboardForm: require('~/locales/en/components/ScoreboardForm.yml'),
           RepInterstitial: require('~/locales/en/components/RepInterstitial.yml'),
-          ScoreboardLegend: require('~/locales/en/components/ScoreboardLegend.yml')
+          ScoreboardLegend: require('~/locales/en/components/ScoreboardLegend.yml'),
+          Scoreboard: require('~/locales/en/components/Scoreboard.yml')
         },
         social: require('~/locales/en/social.yml')
       }
