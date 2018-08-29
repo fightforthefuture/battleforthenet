@@ -1,6 +1,6 @@
 title: California can still save net neutrality
 intro_html: |
-  Telecom giants like AT&T and Comcast tried everything to water down the best state level net neutrality bill in the country, California’s SB 822, but they failed. The bill has been restored and is now headed for a vote on the Assembly floor. But the ISPs are still lobbying fiercely to defeat it. **Call the California Assembly right now and tell them to pass SB 822 and restore net neutrality!**
+  Telecom giants like AT&T and Comcast tried everything to kill the best state level net neutrality bill in the country, California’s SB 822, but they failed. The bill just passed the Assembly. But now the Senate must approve it, and ISPs are still lobbying fiercely to defeat it. **Call the California Senate right now and tell them to pass SB 822 and restore net neutrality!**
 
 scoreboard_form:
   title: Do your California lawmakers support net neutrality?
@@ -17,12 +17,14 @@ scoreboard_form:
 scoreboard:
   title: State Assembly Scoreboard
   body_html: |
-    This is where every member of the California State Assembly stands on SB 822.
-  legend_against: Doesn't support the bill to restore net neutrality
-  legend_supports: Supports the bill to restore net neutrality
+    This is how every member of the California State Assembly voted on SB 822.
+
+    (Senate scoreboard coming soon.)
+  legend_against: Voted against the bill to save net neutrality.
+  legend_supports: Voted for the bill to save net neutrality.
 
 social:
-  title: Help California save net neutrality
-  description: After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.
+  title: The California legislature is about to vote on net neutrality
+  description: Are your lawmakers going to sell you out to AT&T and Comcast?
   image: https://www.battleforthenet.com/images/share_images/CA-Flag.jpg
   url: https://www.battleforthenet.com/california/

@@ -5,12 +5,12 @@ california:
   supports:
     title_html: Your lawmaker <br> **SUPPORTS** net neutrality
     description_html: |
-      Asm. {name} supports SB 822, either by co-sponsoring the bill or via an explicit public statement. Please take a second to say thank you or to volunteer.
+      Asm. {name}  supports net neutrality and voted for SB 822, the bill to restore open Internet protections in California. Please take a second to say thank you, and join the Facebook group to stay involved. [The Senate votes next, contact your Senator now.](/california/)
     tweet_text: ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #PassSB822"
   against:
     title_html: Your lawmaker has **NOT** yet <br> supported net neutrality
     description_html: |
-      Asm. {name} hasn’t come out in support of SB 822’s strong net neutrality protections. Companies like Comcast and AT&T are spending and donating millions of dollars to convince legislators to vote against or not vote for SB 822. Let Asm. {name} know that you are watching and that siding with Team Cable is a betrayal of Californians.
+      Asm. {name} sold you out by voting against net neutrality bill SB 822. Companies like Comcast and AT&T are spending and donating millions of dollars to buy off California state legislators so they can squeeze you for even more money. Let Asm. {name} know that you’re outraged your elected official sided with big telecom companies over constituents. [Then contact your Senator.](/california/)
     tweet_text: ".@{twitter} has not yet supported #SB822, which stops ISPs like AT&T and Comcast from censoring and manipulating us. We can stop them: {url} #battleforthenet #netneutrality #PassSB822"
 
   boxes:
