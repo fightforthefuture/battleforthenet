@@ -8,6 +8,6 @@ no_events_description: We don't have any events scheduled at the moment. Perhaps
 
 social:
   title: Click here to find a net neutrality event near you.
-  description: Find town halls, meetings, or other events near you and RSVP to help save the open Internet.
+  description: Find events near you and RSVP to help save the open Internet.
   image: https://data.battleforthenet.com/events.png
   url: https://www.battleforthenet.com/map/
