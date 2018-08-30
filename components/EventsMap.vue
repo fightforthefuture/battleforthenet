@@ -251,7 +251,7 @@ $btn-color: lighten(#544090, 20%);
   <div class="map-wrapper">
     <nav class="navbar" ref="navbar">
       <div class="flex-center">
-        <h2>{{ $lt('title') }}</h2>
+        <h2 v-text="title ? title : $lt('title')"></h2>
         <input type="tel" :placeholder="$lt('zip_placeholder')" v-model="zipCode">
         <a class="btn btn-cta" @click="hostEvent()">{{ $lt('host_cta') }}</a>
       </div>
@@ -291,7 +291,7 @@ $btn-color: lighten(#544090, 20%);
 <script>
 import axios from 'axios'
 import haversine from 'haversine'
-import { createMetaTags, smoothScrollWithinElement } from '~/assets/js/helpers'
+import { smoothScrollWithinElement } from '~/assets/js/helpers'
 import settings from '~/config.json'
 import CreateEvent from '~/components/CreateEvent'
 
@@ -320,6 +320,10 @@ export default {
         }
       ]
     }
+  },
+
+  props: {
+    title: String
   },
 
   data() {

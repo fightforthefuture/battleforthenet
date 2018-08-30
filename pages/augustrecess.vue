@@ -557,7 +557,7 @@ form .disclaimer small {
         </ul>
       </div> <!-- .container -->
 
-      <EventsMap />
+      <EventsMap :title="$lt('events.map_title')" />
     </section>
 
     <footer class="page-footer">
