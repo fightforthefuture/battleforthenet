@@ -5,7 +5,7 @@ california:
   supports:
     title_html: Your lawmaker <br> **SUPPORTS** net neutrality
     description_html: |
-      Asm. {name}  supports net neutrality and voted for SB 822, the bill to restore open Internet protections in California. Please take a second to say thank you, and join the Facebook group to stay involved. [The Senate votes next, contact your Senator now.](/california/)
+      Asm. {name} supports net neutrality and voted for SB 822, the bill to restore open Internet protections in California. Please take a second to say thank you, and join the Facebook group to stay involved. [The Senate votes next, contact your Senator now.](/california/)
     tweet_text: ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #PassSB822"
   against:
     title_html: Your lawmaker has **NOT** yet <br> supported net neutrality
