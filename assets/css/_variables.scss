@@ -33,6 +33,12 @@ $default-btn-color: lighten(#544090, 20%);
   }
 }
 
+@mixin medium-screen {
+  @media only screen and (max-width: 900px) {
+    @content;
+  }
+}
+
 @mixin small-screen {
   @media only screen and (max-width: $container-width - 1px) {
     @content;

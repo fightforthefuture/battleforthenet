@@ -94,9 +94,14 @@ $white: #FFF;
       padding-right: 3rem;
       padding-left:  3rem;
 
-      @include small-screen {
-        font-size: 1rem;
+      @include medium-screen {
         padding: 1rem;
+        font-size: 1.3rem;
+      }
+
+      @include small-screen {
+        padding: 1rem;
+        font-size: 1rem;
       }
     }
   }
@@ -195,7 +200,7 @@ $white: #FFF;
     }
   }
 
-  @media only screen and (max-width: 699px) {
+  @include medium-screen {
     h2 {
       font-size: 2.5rem;
     }
