@@ -31,7 +31,7 @@ body {
 
 // Typography
 
-h1, h2, h3, h4, .btn {
+h1, h2, h3, h4, h5, .btn {
   font-family: $title-font;
 }
 
@@ -289,39 +289,6 @@ form .disclaimer small {
   font-size: $font-size-3;
 }
 
-.btn-hollow {
-  padding-left:  1.2rem;
-  padding-right: 1.2rem;
-  background: transparent;
-  border: 1px solid $white;
-  font-size: $font-size-4;
-}
-
-.btn-hollow:hover,
-.btn-hollow:focus,
-.btn-hollow:active {
-  border-color:     $body-bg-color;
-  background-color: $body-bg-color;
-}
-
-// Lists
-
-.events-list {
-  display: flex;
-  flex-wrap: wrap;
-
-  li {
-    width: 50%;
-    padding: 0 0.25rem;
-    word-wrap: break-word;
-
-    @include big-screen {
-      width: 33.3%;
-      padding: 0 1rem;
-    }
-  }
-}
-
 // Footer
 
 .page-footer {
@@ -543,21 +510,9 @@ form .disclaimer small {
       <div class="container">
         <h2>{{ $lt('events.title') }}</h2>
         <div v-html="$lt('events.body_html')"></div>
-        <a href="/map/" @click="$trackClick('august_recess_map_image')"><img src="https://data.battleforthenet.com/events.png" alt="Events map"
-             class="push-top-2"></a>
-
-        <ul class="events-list">
-          <li v-for="(event, index) in events" :key="`event-${index}`">
-            <a :href="event.url" target="_blank" class="btn btn-block btn-hollow truncate">
-              <img src="~assets/images/map-pin-fb.svg" alt="Facebook map pin"
-                   class="icon-left">
-              {{ event.address }}
-            </a>
-          </li>
-        </ul>
       </div> <!-- .container -->
 
-      <EventsMap :title="$lt('events.map_title')" />
+      <EventsMap :title="$lt('events.map_title')" theme="generic" />
     </section>
 
     <footer class="page-footer">

@@ -1,25 +1,22 @@
 <style lang="scss">
 $btn-color: lighten(#544090, 20%);
+$map-bg-color: transparentize(#000, 0.7);
+$map-bg-color-alt: transparentize(#000, 0.8);
+$map-pin-bg-color: transparentize(#000, 0.1);
+$white: #FFF;
 
 .map-wrapper {
   position: relative;
   height: 500px;
   overflow: hidden;
-  background: $body-bg-color;
-  font-size: 12px;
+  font-size: 1.25rem;
 
   .rsvp-btn {
-    border: 1px solid $btn-color;
-    color: $btn-color;
+    border: 1px solid transparent;
     background-color: transparent;
     transition: all .2s;
     padding: 7px 14px;
-    font-size: 12px;
-
-    &:hover {
-      color: rgba($btn-color, 0.75);
-      border-color: rgba($btn-color, 0.75);
-    }
+    font-size: 1.2rem;
   }
 
   address {
@@ -62,14 +59,12 @@ $btn-color: lighten(#544090, 20%);
     top: 0;
     left: 0;
     right: 0;
-    background-color: #171629;
 
     .flex-center {
       height: 77px;
     }
 
     .divider {
-      background-image: url('~/assets/images/gradient-divider.png');
       background-position: 0 0;
       background-size: 100% auto;
       background-repeat: no-repeat;
@@ -131,17 +126,8 @@ $btn-color: lighten(#544090, 20%);
       margin: 0;
       padding: 2rem;
 
-      &:nth-child(odd) {
-        background-color: #241e31;
-      }
-
       img {
-        border-radius: $border-radius;
-      }
-
-      .inner {
-        border: 1px solid #544090;
-        padding: 2rem;
+        display: block;
         border-radius: $border-radius;
       }
 
@@ -151,7 +137,7 @@ $btn-color: lighten(#544090, 20%);
 
       h4 {
         margin: 0;
-        font-size: 15px;
+        font-size: 1.5rem;
         text-transform: none;
 
         a {
@@ -166,7 +152,7 @@ $btn-color: lighten(#544090, 20%);
 
       .details {
         margin-bottom: 1rem;
-        font-size: 12px;
+        font-size: 1.25rem;
         line-height: 1.5;
       }
 
@@ -186,12 +172,8 @@ $btn-color: lighten(#544090, 20%);
     }
   }
 
-  .leaflet-popup-content-wrapper {
-    background-color: #241e31;
-  }
-
   .leaflet-popup-tip {
-    border-top: 10px solid #241e31;
+    border-top: 10px solid transparent;
   }
 
   .leaflet-popup-content {
@@ -245,10 +227,79 @@ $btn-color: lighten(#544090, 20%);
     }
   }
 }
+
+.map-wrapper.theme-default {
+  background: $body-bg-color;
+
+  .navbar {
+    background-color: $body-bg-color;
+  }
+
+  .navbar .divider {
+    background-image: url('~/assets/images/gradient-divider.png');
+  }
+
+  .event-list ul li:nth-child(odd) {
+    background-color: #241E31;
+  }
+
+  .rsvp-btn {
+    border-color: $btn-color;
+    color:        $btn-color;
+
+    &:hover {
+      border-color: rgba($btn-color, 0.75);
+      color:        rgba($btn-color, 0.75);
+    }
+  }
+
+  .leaflet-popup-content-wrapper {
+    background-color: #241e31;
+  }
+
+  .leaflet-popup-tip {
+    border-top-color: #241e31;
+  }
+}
+
+.map-wrapper.theme-generic {
+  background: $map-bg-color;
+
+  .navbar {
+    background-color: $map-bg-color;
+  }
+
+  .navbar .divider {
+    background-color: transparentize($white, 0.7);
+  }
+
+  .event-list ul li:nth-child(odd) {
+    background-color: $map-bg-color-alt;
+  }
+
+  .rsvp-btn {
+    border-color: $white;
+    color:        $white;
+
+    &:hover {
+      border-color: transparentize($white, 0.25);
+      color:        transparentize($white, 0.25);
+    }
+  }
+
+  .leaflet-popup-content-wrapper {
+    background-color: $map-pin-bg-color;
+  }
+
+  .leaflet-popup-tip {
+    border-top-color: $map-pin-bg-color;
+  }
+
+}
 </style>
 
 <template>
-  <div class="map-wrapper">
+  <div class="map-wrapper" :class="[`theme-${theme}`]">
     <nav class="navbar" ref="navbar">
       <div class="flex-center">
         <h2 v-text="title ? title : $lt('title')"></h2>
@@ -323,7 +374,11 @@ export default {
   },
 
   props: {
-    title: String
+    title: String,
+    theme: {
+      type: String,
+      default: 'default'
+    }
   },
 
   data() {
