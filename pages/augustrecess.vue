@@ -556,6 +556,8 @@ form .disclaimer small {
           </li>
         </ul>
       </div> <!-- .container -->
+
+      <EventsMap />
     </section>
 
     <footer class="page-footer">
@@ -600,8 +602,13 @@ form .disclaimer small {
 <script>
 import { createMetaTags, smoothScrollToElement } from '~/assets/js/helpers'
 import axios from 'axios'
+import EventsMap from '~/components/EventsMap'
 
 export default {
+  components: {
+    EventsMap,
+  },
+
   layout: 'basic',
 
   head() {
