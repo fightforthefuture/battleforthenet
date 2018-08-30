@@ -10,7 +10,11 @@
     <section id="live">
       <div class="container">
         <h2 class="section-title">Live Stream of the Vote</h2>
-        <p>The California Assembly is currently in session and expected to vote on SB 822 soon. SB 822 is item number 223 in this <a href="https://leginfo.legislature.ca.gov/faces/billResultsClient.xhtml?location=AFLOOR&agendadate=08%2F30%2F2018&description=Assembly+Floor+Session" target="_blank">agenda</a>.</p>
+        <p>
+          The California Assembly is currently in session and expected to vote
+          on SB 822 soon. SB 822 is item number 223 in this
+          <a href="https://leginfo.legislature.ca.gov/faces/billResultsClient.xhtml?location=AFLOOR&agendadate=08%2F30%2F2018&description=Assembly+Floor+Session" target="_blank">agenda</a>.
+        </p>
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffightfortheftr%2Fvideos%2F2175719599342507%2F&show_text=0&width=476" width="476" height="476" style="border:none;overflow:hidden;max-width:100%" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
       </div>
     </section>
