@@ -390,7 +390,9 @@ form .disclaimer small {
           {{ $lt('cta_button') }}
         </a>
       </div> <!-- .container -->
-      <a href="#sign-up" @click.prevent="scrollTo('#sign-up')"><img src="~assets/images/arrow-down.svg" alt="see below arrow" class="arrow"></a>
+      <a href="#sign-up" @click.prevent="scrollTo('#sign-up')">
+        <img src="~assets/images/arrow-down.svg" alt="see below arrow" class="arrow" />
+      </a>
       <div class="group-photos">Photos of Net Neutrality protestors</div>
     </header>
 
@@ -530,9 +532,9 @@ form .disclaimer small {
             <span v-if="isSending">{{ $lt('form.button_loading') }}</span>
             <span v-else>{{ $lt('form.button_cta') }}</span>
           </button>
-          <p class="disclaimer">
+          <div class="disclaimer">
             <small v-html="$lt('form.disclaimer_html')"></small>
-          </p>
+          </div> <!-- .disclaimer -->
         </form>
       </div> <!-- .container -->
     </section>
