@@ -5,6 +5,10 @@ $map-bg-color-alt: transparentize(#000, 0.8);
 $map-pin-bg-color: transparentize(#000, 0.1);
 $white: #FFF;
 
+.leaflet-container {
+  font-family: $body-font;
+}
+
 .map-wrapper {
   position: relative;
   height: 500px;
