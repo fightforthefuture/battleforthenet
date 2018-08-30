@@ -216,7 +216,7 @@ $btn-color: lighten(#544090, 20%);
   }
 
   @include small-screen {
-    height: 700px;
+    height: 600px;
 
     .navbar {
       top: 300px;
@@ -242,10 +242,6 @@ $btn-color: lighten(#544090, 20%);
       width: auto;
       float: none;
       top: 380px;
-    }
-
-    .bftn-footer {
-      display: block !important;
     }
   }
 }
