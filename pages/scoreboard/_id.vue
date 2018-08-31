@@ -537,6 +537,9 @@ export default {
         case 'House':
           title = 'Rep.'
           break
+        case 'Assembly':
+          title = 'Asm.'
+          break
       }
 
       return `${title} ${this.rep.first_name} ${this.rep.last_name}`
