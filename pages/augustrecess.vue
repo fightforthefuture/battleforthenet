@@ -289,6 +289,15 @@ form .disclaimer small {
   font-size: $font-size-3;
 }
 
+// Map
+// TODO: move?
+
+.map-wrapper {
+  position: relative;
+  min-height: 500px;
+  // TODO: fix width
+}
+
 // Footer
 
 .page-footer {
@@ -510,9 +519,10 @@ form .disclaimer small {
       <div class="container">
         <h2>{{ $lt('events.title') }}</h2>
         <div v-html="$lt('events.body_html')"></div>
+        <div class="map-wrapper">
+          <Map :events="events" />
+        </div> <!-- .map-wrapper -->
       </div> <!-- .container -->
-
-      <EventsMap :title="$lt('events.map_title')" theme="generic" />
     </section>
 
     <footer class="page-footer">
@@ -557,11 +567,11 @@ form .disclaimer small {
 <script>
 import { createMetaTags, smoothScrollToElement } from '~/assets/js/helpers'
 import axios from 'axios'
-import EventsMap from '~/components/EventsMap'
+import Map from '~/components/Map'
 
 export default {
   components: {
-    EventsMap,
+    Map
   },
 
   layout: 'basic',

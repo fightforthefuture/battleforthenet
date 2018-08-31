@@ -317,7 +317,7 @@ $white: #FFF;
       </div>
       <div class="divider"></div>
     </nav>
-    <div class="event-map" id="event-map" ref="map"></div>
+    <Map :events="events" ref="map" />
     <div class="event-list" ref="list">
       <ul>
         <li v-if="hasLoadedEvents && events.length < 1">
@@ -325,7 +325,11 @@ $white: #FFF;
           <p>{{ $lt('no_events_description') }}</p>
         </li>
 
-        <li v-for="event in sortedEvents" :key="event.id" :id="`event-${event.id}`" @mouseover="openPopup(event)" @mouseout="closePopup(event)">
+        <li v-for="event in sortedEvents"
+            :key="event.id"
+            :id="`event-${event.id}`"
+            @mouseover="setCurrentEvent(event)"
+            @mouseout="clearCurrentEvent(event)">
           <p v-if="event.image"><img :src="event.image" alt="[Event banner image]"></p>
           <h4><a :href="event.url" @click="$trackClick('map_list_event_title')">{{ event.title }}</a></h4>
           <div class="details">
@@ -353,33 +357,13 @@ import axios from 'axios'
 import haversine from 'haversine'
 import { smoothScrollWithinElement } from '~/assets/js/helpers'
 import settings from '~/config.json'
+import Map from '~/components/Map'
 import CreateEvent from '~/components/CreateEvent'
-
-// the production build breaks when this stuff isn't global
-// TODO: figure out why that is
-let markers = []
-let map
-let zoomCount = 0
 
 export default {
   components: {
+    Map,
     CreateEvent
-  },
-
-  head() {
-    return {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css'
-        }
-      ],
-      script: [
-        {
-          src: 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'
-        }
-      ]
-    }
   },
 
   props: {
@@ -408,25 +392,12 @@ export default {
     this.fetchEvents()
   },
 
-  mounted() {
-    this.createMap()
-  },
-
   watch: {
-    events() {
-      if (this.events.length === 0) {
-        map.setView([42.35, -71.08], 13)
-        return
+    currentEvent(newValue) {
+      if (newValue && newValue.id && newValue.type == 'map-marker') {
+        console.log('new currentEvent.id:', newValue.id)
+        this.scrollToCurrentEvent(newValue.id)
       }
-
-      this.bounds = L.latLngBounds()
-
-      for (let event of this.events) {
-        this.addMarker(event)
-      }
-
-      map.fitBounds(this.bounds)
-      this.showNearestEvent()
     },
 
     async zipCode(newValue) {
@@ -467,6 +438,16 @@ export default {
           return 0
         }
       })
+    },
+    currentEvent: {
+      get() {
+        console.log('getting currentEvent:', this.$store.state.map.currentPin)
+        return this.$store.state.map.currentPin
+      },
+      set(newVal) {
+        console.log('setting currentEvent:', newVal)
+        this.$store.commit('setMapCurrentPin', newVal)
+      }
     }
   },
 
@@ -487,60 +468,21 @@ export default {
       this.hasLoadedEvents = true
     },
 
-    createMap() {
-      L.mapbox.accessToken = settings.mapboxToken
 
-      // see https://www.mapbox.com/api-documentation/#introduction
-      const mapId = 'mapbox.light'
-
-      const mapboxTiles = L.tileLayer(`https://api.mapbox.com/v4/${mapId}/{z}/{x}/{y}.png?access_token=${L.mapbox.accessToken}`, {
-          attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      })
-
-      map = L.map('event-map', {
-          scrollWheelZoom: false
-        })
-        .addLayer(mapboxTiles)
-
-      map.on('zoomend', e => zoomCount++)
-
-      markers = []
-    },
-
-    addMarker(event) {
-      const ll = [event.latitude, event.longitude]
-
-      let html = `<h5>${event.title}</h5>`
-
-      if (event.category === 'event') {
-        html += `<div class="date">${event.formatted_start_date }</div>`
-      }
-
-      html += `<div class="address"><address>${event.address}</address></div><a class="btn rsvp-btn" href="${event.url}" target="_blank">${this.$lt(`${event.category}_cta`)}</a>`
-
-      const marker = L.marker(ll)
-        .addTo(map)
-        .bindPopup(html)
-
-      marker.eventId = event.id
-      marker.on('click', this.clickMarker)
-      markers.push(marker)
-      this.bounds.extend(ll)
-    },
-
-    clickMarker(event) {
-      const el = document.getElementById(`event-${event.target.eventId}`)
+    scrollToCurrentEvent(id) {
+      console.log('scroll to current event:', id)
+      const el = document.getElementById(`event-${id}`)
       smoothScrollWithinElement(this.$refs.list, el.offsetTop, 500)
     },
 
-    openPopup({ id }) {
-      const marker = markers.find(m => m.eventId === id)
-      if (marker) marker.openPopup()
+    setCurrentEvent(event) {
+      console.log('Set current from event list:', event.id)
+      this.$store.commit('setMapCurrentPin', event)
     },
 
-    closePopup({ id }) {
-      const marker = markers.find(m => m.eventId === id)
-      if (marker) marker.closePopup()
+    clearCurrentEvent() {
+      console.log('Remove current from event list')
+      this.$store.commit('setMapCurrentPin', null)
     },
 
     async geocodeZip() {
@@ -554,13 +496,12 @@ export default {
     },
 
     showNearestEvent() {
+      console.log('trying to show nearest...')
       if (this.coords.length > 0 && this.events.length > 0) {
         const event = this.sortedEvents[0]
-        const ll = [event.latitude, event.longitude]
-        const startingZoom = 9
-        const zoom = zoomCount > 1 ? map.getZoom() : startingZoom
-        map.setView(ll, zoom)
-        this.openPopup(event)
+        console.log('show nearest to:', event)
+        this.setCurrentEvent(event)
+        this.$store.commit('setMapZoom', 9)
       }
     },
 
