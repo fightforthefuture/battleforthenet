@@ -117,7 +117,7 @@ export default {
 
     callScript() {
       if (this.page === 'california') {
-        return "I'm calling to ask my Senator to support SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
+        return "I'm calling to ask my Governor to support SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
       }
       else {
         return "I'm calling to ask my lawmakers to support the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you."
