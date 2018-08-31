@@ -290,12 +290,10 @@ form .disclaimer small {
 }
 
 // Map
-// TODO: move?
 
 .map-wrapper {
   position: relative;
-  min-height: 500px;
-  // TODO: fix width
+  min-height: 450px;
 }
 
 // Footer
@@ -520,7 +518,7 @@ form .disclaimer small {
         <h2>{{ $lt('events.title') }}</h2>
         <div v-html="$lt('events.body_html')"></div>
         <div class="map-wrapper">
-          <Map :events="events" />
+          <Map :events="events" theme="generic" />
         </div> <!-- .map-wrapper -->
       </div> <!-- .container -->
     </section>

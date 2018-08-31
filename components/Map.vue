@@ -1,16 +1,139 @@
 <style lang="scss">
+$btn-color: lighten(#544090, 20%);
+$map-pin-bg-color: transparentize(#000, 0.1);
+// $white: #FFF;
+
+.leaflet-container {
+  font-family: $body-font;
+  color: $body-color;
+}
+
 .event-map {
   position: absolute;
-  top: 80px; // FIXME
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  width: 70%; // FIXME
+  width: 100%;
+
+  .btn {
+    padding: 7px 14px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    font-size: 1.2rem;
+    transition: all .2s;
+  }
+
+  address {
+    font-style: normal;
+    white-space: pre-line;
+  }
+
+  .address, .date {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 0.5rem 0;
+    line-height: 1.1;
+    color: darken($body-color, 20%);
+
+    img {
+      height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+
+    &:before {
+      content: "";
+      background-image: url("~/assets/images/map-pin.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.5rem;
+      padding: 0.75rem;
+    }
+  }
+
+  .date:before {
+    background-image: url("~/assets/images/calendar.svg");
+  }
+
+  .leaflet-popup-close-button {
+    color: $body-color;
+    text-indent: 0;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .leaflet-popup-tip {
+    border-top: 10px solid transparent;
+  }
+
+  .leaflet-popup-content {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    font-family: $body-font;
+    color: $body-color;
+
+    h5 {
+      margin-bottom: 0;
+    }
+
+    .address {
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
 }
+
+// Themes
+.theme-default {
+  .btn {
+    border-color: $btn-color;
+    color:        $btn-color;
+
+    &:hover {
+      border-color: rgba($btn-color, 0.75);
+      color:        rgba($btn-color, 0.75);
+    }
+  }
+
+  .leaflet-popup-content-wrapper {
+    background-color: #241e31;
+  }
+
+  .leaflet-popup-tip {
+    border-top-color: #241e31;
+  }
+}
+
+.theme-generic {
+  .btn {
+    border-color: $body-color;
+    color:        $body-color;
+
+    &:hover {
+      border-color: transparentize($body-color, 0.25);
+      color:        transparentize($body-color, 0.25);
+    }
+  }
+
+  .leaflet-popup-content-wrapper {
+    background-color: $map-pin-bg-color;
+  }
+
+  .leaflet-popup-tip {
+    border-top-color: $map-pin-bg-color;
+  }
+}
+
 </style>
 
 <template>
-  <div class="event-map" id="event-map"></div>
+  <div id="js-event-map" class="event-map" :class="[`theme-${theme}`]"></div>
 </template>
 
 <script>
@@ -40,7 +163,11 @@ export default {
   },
 
   props: {
-    events: Array
+    events: Array,
+    theme: {
+      type: String,
+      default: 'default'
+    }
   },
 
   mounted() {
@@ -110,7 +237,7 @@ export default {
           attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       })
 
-      map = L.map('event-map', {
+      map = L.map('js-event-map', {
           scrollWheelZoom: false
         })
         .addLayer(mapboxTiles)
@@ -150,7 +277,7 @@ export default {
         html += `<div class="date">${event.formatted_start_date }</div>`
       }
 
-      html += `<div class="address"><address>${event.address}</address></div><a class="btn rsvp-btn" href="${event.url}" target="_blank">${this.$lt(`${event.category}_cta`)}</a>`
+      html += `<div class="address"><address>${event.address}</address></div><a class="btn btn-small" href="${event.url}" target="_blank">${this.$lt(`${event.category}_cta`)}</a>`
 
       const marker = L.marker(ll)
         .addTo(map)

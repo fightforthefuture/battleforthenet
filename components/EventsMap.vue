@@ -1,26 +1,25 @@
 <style lang="scss">
 $btn-color: lighten(#544090, 20%);
-$map-bg-color: transparentize(#000, 0.7);
-$map-bg-color-alt: transparentize(#000, 0.8);
-$map-pin-bg-color: transparentize(#000, 0.1);
-$white: #FFF;
-
-.leaflet-container {
-  font-family: $body-font;
-}
 
 .map-wrapper {
   position: relative;
   height: 500px;
   overflow: hidden;
+  background: $body-bg-color;
   font-size: 1.25rem;
 
   .rsvp-btn {
-    border: 1px solid transparent;
-    background-color: transparent;
-    transition: all .2s;
     padding: 7px 14px;
+    background-color: transparent;
+    border: 1px solid $btn-color;
+    color: $btn-color;
     font-size: 1.2rem;
+    transition: all .2s;
+
+    &:hover {
+      border-color: rgba($btn-color, 0.75);
+      color:        rgba($btn-color, 0.75);
+    }
   }
 
   address {
@@ -63,12 +62,14 @@ $white: #FFF;
     top: 0;
     left: 0;
     right: 0;
+    background-color: $body-bg-color;
 
     .flex-center {
       height: 77px;
     }
 
     .divider {
+      background-image: url('~/assets/images/gradient-divider.png');
       background-position: 0 0;
       background-size: 100% auto;
       background-repeat: no-repeat;
@@ -109,9 +110,6 @@ $white: #FFF;
   .event-map {
     position: absolute;
     top: 80px;
-    left: 0;
-    bottom: 0;
-    right: 0;
     width: 70%;
   }
 
@@ -134,6 +132,11 @@ $white: #FFF;
     li {
       margin: 0;
       padding: 2rem;
+
+
+      &:nth-child(odd) {
+        background-color: #241E31;
+      }
 
       img {
         display: block;
@@ -169,34 +172,6 @@ $white: #FFF;
         margin: 1rem 0;
         font-size: 92%;
       }
-    }
-  }
-
-  .leaflet-popup-close-button {
-    color: $body-color;
-    text-indent: 0;
-
-    &:hover {
-      background-color: transparent;
-    }
-  }
-
-  .leaflet-popup-tip {
-    border-top: 10px solid transparent;
-  }
-
-  .leaflet-popup-content {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    font-family: $body-font;
-    color: $body-color;
-
-    h5 {
-      margin-bottom: 0;
-    }
-
-    .address {
-      margin-bottom: 1.5rem;
     }
   }
 
@@ -236,79 +211,10 @@ $white: #FFF;
     }
   }
 }
-
-.map-wrapper.theme-default {
-  background: $body-bg-color;
-
-  .navbar {
-    background-color: $body-bg-color;
-  }
-
-  .navbar .divider {
-    background-image: url('~/assets/images/gradient-divider.png');
-  }
-
-  .event-list ul li:nth-child(odd) {
-    background-color: #241E31;
-  }
-
-  .rsvp-btn {
-    border-color: $btn-color;
-    color:        $btn-color;
-
-    &:hover {
-      border-color: rgba($btn-color, 0.75);
-      color:        rgba($btn-color, 0.75);
-    }
-  }
-
-  .leaflet-popup-content-wrapper {
-    background-color: #241e31;
-  }
-
-  .leaflet-popup-tip {
-    border-top-color: #241e31;
-  }
-}
-
-.map-wrapper.theme-generic {
-  background: $map-bg-color;
-
-  .navbar {
-    background-color: $map-bg-color;
-  }
-
-  .navbar .divider {
-    background-color: transparentize($white, 0.7);
-  }
-
-  .event-list ul li:nth-child(odd) {
-    background-color: $map-bg-color-alt;
-  }
-
-  .rsvp-btn {
-    border-color: $white;
-    color:        $white;
-
-    &:hover {
-      border-color: transparentize($white, 0.25);
-      color:        transparentize($white, 0.25);
-    }
-  }
-
-  .leaflet-popup-content-wrapper {
-    background-color: $map-pin-bg-color;
-  }
-
-  .leaflet-popup-tip {
-    border-top-color: $map-pin-bg-color;
-  }
-
-}
 </style>
 
 <template>
-  <div class="map-wrapper" :class="[`theme-${theme}`]">
+  <div class="map-wrapper">
     <nav class="navbar" ref="navbar">
       <div class="flex-center">
         <h2 v-text="title ? title : $lt('title')"></h2>
@@ -341,7 +247,12 @@ $white: #FFF;
             </div>
           </div>
           <!-- <div class="description" v-html="event.description"></div> -->
-          <a :href="event.url" class="btn rsvp-btn" target="_blank" @click="$trackClick('map_list_rsvp_button')">{{ $lt(`${event.category}_cta`) }}</a>
+          <a :href="event.url"
+             class="btn rsvp-btn"
+             target="_blank"
+             @click="$trackClick('map_list_rsvp_button')">
+            {{ $lt(`${event.category}_cta`) }}
+          </a>
         </li>
       </ul>
     </div>
@@ -367,11 +278,7 @@ export default {
   },
 
   props: {
-    title: String,
-    theme: {
-      type: String,
-      default: 'default'
-    }
+    title: String
   },
 
   data() {
