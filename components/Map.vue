@@ -15,6 +15,7 @@ $map-pin-bg-color: transparentize(#000, 0.1);
   bottom: 0;
   right: 0;
   width: 100%;
+  height: 100%;
 
   .btn {
     padding: 7px 14px;
@@ -252,7 +253,6 @@ export default {
     },
 
     addEventsToMap() {
-      // TODO: check initial bounds on full page map
       if (this.events.length === 0) {
         map.setView([42.35, -71.08], 13)
         return

@@ -46,12 +46,10 @@ const createStore = () => {
       },
 
       setMapZoom(state, value) {
-        console.log('set map in store:', value)
         state.map.zoom = value
       },
 
       setMapCurrentPin(state, value) {
-        console.log('set map in store:', value)
         state.map.currentPin = value
       }
     }

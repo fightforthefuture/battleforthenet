@@ -108,7 +108,7 @@ $btn-color: lighten(#544090, 20%);
   }
 
   .event-map {
-    position: absolute;
+    position: fixed;
     top: 80px;
     width: 70%;
   }
