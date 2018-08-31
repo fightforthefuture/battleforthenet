@@ -15,13 +15,16 @@ scoreboard_form:
 
 
 scoreboard:
-  title: State Assembly Scoreboard
+  title: State Legislature Scoreboard
   body_html: |
-    This is how every member of the California State Assembly voted on SB 822.
-
-    (Senate scoreboard coming soon.)
+    This is how every member of the California State Legislature voted on SB 822.
   legend_against: Voted against the bill to save net neutrality.
   legend_supports: Voted for the bill to save net neutrality.
+  vote_filter: "Show me legislators who:"
+  voted_yes: Voted Yes
+  voted_no: Voted No
+  assembly: Assembly Members
+  senators: Senators
 
 social:
   title: The California legislature is about to vote on net neutrality

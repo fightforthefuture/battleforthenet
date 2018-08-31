@@ -46,7 +46,18 @@
           :against="$lt('scoreboard.legend_against')"
           :supports="$lt('scoreboard.legend_supports')"
           />
-        <ScoreboardGroup :politicians="politicians" />
+
+        <select v-model="voteFilter" class="push-top-3">
+          <option value>{{ $lt('scoreboard.vote_filter') }}</option>
+          <option value="true">{{ $lt('scoreboard.voted_yes') }}</option>
+          <option value="false">{{ $lt('scoreboard.voted_no') }}</option>
+        </select>
+
+        <h2 class="push-top-4">{{ $lt('scoreboard.assembly') }}</h2>
+        <ScoreboardGroup :politicians="filteredAssemblyMembers" />
+
+        <h2 class="push-top-4">{{ $lt('scoreboard.senators') }}</h2>
+        <ScoreboardGroup :politicians="filteredSenators" />
       </div>
     </section>
     <section id="net-neutrality">
@@ -91,7 +102,8 @@ export default {
     return {
       isLoading: false,
       errorMessage: null,
-      street: null
+      street: null,
+      voteFilter: ''
     }
   },
 
@@ -104,21 +116,49 @@ export default {
       set(value) {
         this.$store.commit('setZipCode', value)
       }
+    },
+    filteredAssemblyMembers () {
+      if (this.voteFilter) {
+        return this.assemblyMembers.filter(p => p.supports_cra.toString() === this.voteFilter)
+      } else {
+        return this.assemblyMembers
+      }
+    },
+    filteredSenators () {
+      if (this.voteFilter) {
+        return this.senators.filter(p => p.supports_cra.toString() === this.voteFilter)
+      } else {
+        return this.senators
+      }
     }
   },
 
   async asyncData() {
-    let politicians = []
+    let assemblyMembers = []
+    let senators = []
 
     try {
       const { data } = await axios.get('https://data.battleforthenet.com/scoreboard/california.json')
-      politicians = data.filter(p => p.organization === 'Assembly')
+      assemblyMembers = data.filter(p => p.organization === 'Assembly')
+      senators = data.filter(p => p.organization === 'Senate')
     }
     catch (error) {
       console.error(error)
     }
 
-    return { politicians: politicians }
+    return { assemblyMembers: assemblyMembers, senators: senators }
+  },
+
+  created() {
+    if (this.$route.query.vote) {
+      let initVote = this.$route.query.vote.toLowerCase()
+
+      if (initVote === 'yes') {
+        this.voteFilter = 'true'
+      } else if (initVote === 'no') {
+        this.voteFilter = 'false'
+      }
+    }
   },
 
   methods: {
