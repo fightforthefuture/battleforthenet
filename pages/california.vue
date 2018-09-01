@@ -14,8 +14,15 @@
         <form @submit.prevent="fetchRep()">
           <p class="error" v-if="errorMessage">{{ errorMessage }}</p>
           <div class="flex-row">
-            <input type="text" v-model="street" :placeholder="$lt('scoreboard_form.address_placeholder')" required class="flex-2">
-            <input type="tel" v-model="zipCode" :placeholder="$lt('scoreboard_form.zip_placeholder')" required>
+            <input type="text"
+                   v-model="street"
+                   :placeholder="$lt('scoreboard_form.address_placeholder')"
+                   class="flex-2"
+                   required>
+            <input type="tel"
+                   v-model="zipCode"
+                   :placeholder="$lt('scoreboard_form.zip_placeholder')"
+                   required>
             <button class="btn btn-cta btn-large" :disabled="isLoading">
               <span v-if="!isLoading">{{ $lt('scoreboard_form.cta_button') }}</span>
               <span v-else>{{ $lt('scoreboard_form.loading_button') }}</span>
