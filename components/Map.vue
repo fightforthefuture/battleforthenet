@@ -141,7 +141,7 @@ $map-pin-bg-color: transparentize(#000, 0.1);
   <div id="js-event-map"
        class="event-map"
        :class="[`theme-${theme}`, {'is-rounded': isStandalone}]">
- </div>
+  </div>
 </template>
 
 <script>
@@ -195,7 +195,10 @@ export default {
     currentPin(newValue, oldValue) {
       console.log('Old currentPin:', oldValue)
       if (oldValue) {
-        this.closePopup(oldValue)
+        // Close popup only if the "new" current pin is legitimately different
+        if (this.currentPin === null || this.currentPin.id !== oldValue.id) {
+          this.closePopup(oldValue)
+        }
       }
       console.log('New currentPin:', newValue)
       if (newValue) {
@@ -224,11 +227,11 @@ export default {
     },
     currentPin: {
       get() {
-        console.log('getting currentPin:', this.$store.state.map.currentPin)
+        console.log('MAP getting currentEvent:', this.$store.state.map.currentPin)
         return this.$store.state.map.currentPin
       },
       set(newVal) {
-        console.log('setting currentPin:', newVal)
+        console.log('MAP setting currentEvent:', newVal)
         this.$store.commit('setMapCurrentPin', newVal)
       }
     }
@@ -256,7 +259,7 @@ export default {
 
       map.on('zoomend', e => zoomCount++)
       map.on('zoom', this.updateZoomLevel)
-      map.on('popupclose', this.clearCurrentPin)
+      map.on('popupclose', this.handlePopupClose)
 
       markers = []
 
@@ -322,8 +325,15 @@ export default {
       if (marker) marker.closePopup()
     },
 
-    clearCurrentPin() {
-      this.$store.commit('setMapCurrentPin', null)
+    handlePopupClose(event) {
+      console.log('event target id:', event.popup._source.eventId)
+      console.log('current pin from store:', this.currentPin ? this.currentPin.id : 'null pin')
+      if (this.currentPin && (event.popup._source.eventId === this.currentPin.id)) {
+        console.log('CLOSE SAME EVENT?', event.popup._source.eventId === this.currentPin.id)
+        if (event.popup._source.eventId === this.currentPin.id) {
+          this.$store.commit('setMapCurrentPin', null)
+        }
+      }
     },
 
     updateZoomLevel() {

@@ -234,8 +234,8 @@ $btn-color: lighten(#544090, 20%);
         <li v-for="event in sortedEvents"
             :key="event.id"
             :id="`event-${event.id}`"
-            @mouseover="setCurrentEvent(event)"
-            @mouseout="clearCurrentEvent(event)">
+            @mouseenter="setCurrentEvent(event)"
+            @mouseleave="clearCurrentEvent(event)">
           <p v-if="event.image"><img :src="event.image" alt="[Event banner image]"></p>
           <h4><a :href="event.url" @click="$trackClick('map_list_event_title')">{{ event.title }}</a></h4>
           <div class="details">
