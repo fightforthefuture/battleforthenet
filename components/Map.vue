@@ -8,6 +8,10 @@ $map-pin-bg-color: transparentize(#000, 0.1);
   color: $body-color;
 }
 
+.is-rounded {
+  border-radius: $border-radius;
+}
+
 .event-map {
   position: absolute;
   top: 0;
@@ -134,7 +138,10 @@ $map-pin-bg-color: transparentize(#000, 0.1);
 </style>
 
 <template>
-  <div id="js-event-map" class="event-map" :class="[`theme-${theme}`]"></div>
+  <div id="js-event-map"
+       class="event-map"
+       :class="[`theme-${theme}`, {'is-rounded': isStandalone}]">
+ </div>
 </template>
 
 <script>
@@ -168,6 +175,10 @@ export default {
     theme: {
       type: String,
       default: 'default'
+    },
+    isStandalone: {
+      type: Boolean,
+      default: true
     }
   },
 

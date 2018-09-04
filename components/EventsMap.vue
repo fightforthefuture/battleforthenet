@@ -223,7 +223,7 @@ $btn-color: lighten(#544090, 20%);
       </div>
       <div class="divider"></div>
     </nav>
-    <Map :events="events" ref="map" />
+    <Map :events="events" :is-standalone="false" ref="map" />
     <div class="event-list" ref="list">
       <ul>
         <li v-if="hasLoadedEvents && events.length < 1">
