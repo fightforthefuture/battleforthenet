@@ -330,9 +330,7 @@ export default {
       console.log('current pin from store:', this.currentPin ? this.currentPin.id : 'null pin')
       if (this.currentPin && (event.popup._source.eventId === this.currentPin.id)) {
         console.log('CLOSE SAME EVENT?', event.popup._source.eventId === this.currentPin.id)
-        if (event.popup._source.eventId === this.currentPin.id) {
-          this.$store.commit('setMapCurrentPin', null)
-        }
+        this.$store.commit('setMapCurrentPin', null)
       }
     },
 
