@@ -145,6 +145,21 @@ $map-pin-bg-color: transparentize(#000, 0.1);
 </template>
 
 <script>
+// SETUP:
+//
+// In store/index.js requires:
+//
+// ```
+// map: {
+//   zoom: null,
+//   currentPin: null
+// }
+// ```
+//
+// In package.json dependencies requires: `"leaflet": "^1.3.1"`
+//
+// In the `map.yml` file add `${event.category}_cta` text for all categories
+
 import settings from '~/config.json'
 
 // the production build breaks when this stuff isn't global
@@ -192,6 +207,10 @@ export default {
       this.addEventsToMap()
     },
 
+    // Watchers for computed props
+    // These do not cause a re-render when the values from the store change
+    // because the props are not present in the template, if they were the map
+    // tiles would unload
     currentPin(newValue, oldValue) {
       console.log('Old currentPin:', oldValue)
       if (oldValue) {
@@ -328,6 +347,8 @@ export default {
     handlePopupClose(event) {
       console.log('event target id:', event.popup._source.eventId)
       console.log('current pin from store:', this.currentPin ? this.currentPin.id : 'null pin')
+      // Set the current pin to null, unless the popup close was triggered by
+      // this or another component updating the current pin value
       if (this.currentPin && (event.popup._source.eventId === this.currentPin.id)) {
         console.log('CLOSE SAME EVENT?', event.popup._source.eventId === this.currentPin.id)
         this.$store.commit('setMapCurrentPin', null)
@@ -341,7 +362,7 @@ export default {
 
     zoomMap(newZoom) {
       console.log('zooming map:', newZoom)
-      // TODO: should this always center on the pin?
+      // Center the map on the current pin (if one is selected) or the current map center
       const ll = this.currentPin ? [this.currentPin.latitude, this.currentPin.longitude] : map.getCenter()
       const zoom = newZoom
 
