@@ -198,7 +198,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.events.length)
     this.createMap()
   },
 
@@ -212,21 +211,18 @@ export default {
     // because the props are not present in the template, if they were the map
     // tiles would unload
     currentPin(newValue, oldValue) {
-      console.log('Old currentPin:', oldValue)
       if (oldValue) {
         // Close popup only if the "new" current pin is legitimately different
         if (this.currentPin === null || this.currentPin.id !== oldValue.id) {
           this.closePopup(oldValue)
         }
       }
-      console.log('New currentPin:', newValue)
       if (newValue) {
         this.openPopup(newValue)
       }
     },
 
     zoomLevel(newValue) {
-      console.log('New zoom:', newValue)
       if (newValue) {
         this.zoomMap(newValue)
       }
@@ -236,21 +232,17 @@ export default {
   computed: {
     zoomLevel: {
       get() {
-        console.log('getting zoomLevel:', this.$store.state.map.zoom)
         return this.$store.state.map.zoom
       },
       set(newVal) {
-        console.log('setting zoomLevel:', newVal)
         this.$store.commit('setMapZoom', newVal)
       }
     },
     currentPin: {
       get() {
-        console.log('MAP getting currentEvent:', this.$store.state.map.currentPin)
         return this.$store.state.map.currentPin
       },
       set(newVal) {
-        console.log('MAP setting currentEvent:', newVal)
         this.$store.commit('setMapCurrentPin', newVal)
       }
     }
@@ -301,7 +293,6 @@ export default {
     },
 
     addMarker(event) {
-      console.log('Add marker:', event)
       const ll = [event.latitude, event.longitude]
 
       let html = `<h5>${event.title}</h5>`
@@ -323,7 +314,6 @@ export default {
     },
 
     clickMarker(event) {
-      console.log('Click marker:', event)
       this.$store.commit('setMapCurrentPin', {
         id: event.target.eventId,
         latitude: event.latlng.lat,
@@ -333,40 +323,32 @@ export default {
     },
 
     openPopup({ id }) {
-      console.log('Open popup:', id)
       const marker = markers.find(m => m.eventId === id)
       if (marker) marker.openPopup()
     },
 
     closePopup({ id }) {
-      console.log('Close popup:', id)
       const marker = markers.find(m => m.eventId === id)
       if (marker) marker.closePopup()
     },
 
     handlePopupClose(event) {
-      console.log('event target id:', event.popup._source.eventId)
-      console.log('current pin from store:', this.currentPin ? this.currentPin.id : 'null pin')
       // Set the current pin to null, unless the popup close was triggered by
       // this or another component updating the current pin value
       if (this.currentPin && (event.popup._source.eventId === this.currentPin.id)) {
-        console.log('CLOSE SAME EVENT?', event.popup._source.eventId === this.currentPin.id)
         this.$store.commit('setMapCurrentPin', null)
       }
     },
 
     updateZoomLevel() {
       this.$store.commit('setMapZoom', map.getZoom())
-      console.log('updated zoom level', this.zoomLevel)
     },
 
     zoomMap(newZoom) {
-      console.log('zooming map:', newZoom)
       // Center the map on the current pin (if one is selected) or the current map center
       const ll = this.currentPin ? [this.currentPin.latitude, this.currentPin.longitude] : map.getCenter()
       const zoom = newZoom
 
-      console.log('set zoom:', ll, zoom)
       map.setView(ll, zoom)
     }
   }

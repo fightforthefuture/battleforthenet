@@ -302,7 +302,6 @@ export default {
   watch: {
     currentEvent(newValue) {
       if (newValue && newValue.id && newValue.type == 'map-marker') {
-        console.log('new currentEvent.id:', newValue.id)
         this.scrollToCurrentEvent(newValue.id)
       }
     },
@@ -348,11 +347,9 @@ export default {
     },
     currentEvent: {
       get() {
-        console.log('getting currentEvent:', this.$store.state.map.currentPin)
         return this.$store.state.map.currentPin
       },
       set(newVal) {
-        console.log('setting currentEvent:', newVal)
         this.$store.commit('setMapCurrentPin', newVal)
       }
     }
@@ -377,18 +374,15 @@ export default {
 
 
     scrollToCurrentEvent(id) {
-      console.log('scroll to current event:', id)
       const el = document.getElementById(`event-${id}`)
       smoothScrollWithinElement(this.$refs.list, el.offsetTop, 500)
     },
 
     setCurrentEvent(event) {
-      console.log('Set current from event list:', event.id)
       this.$store.commit('setMapCurrentPin', event)
     },
 
     clearCurrentEvent() {
-      console.log('Remove current from event list')
       this.$store.commit('setMapCurrentPin', null)
     },
 
@@ -403,10 +397,8 @@ export default {
     },
 
     showNearestEvent() {
-      console.log('trying to show nearest...')
       if (this.coords.length > 0 && this.events.length > 0) {
         const event = this.sortedEvents[0]
-        console.log('show nearest to:', event)
         this.setCurrentEvent(event)
         this.$store.commit('setMapZoom', 9)
       }
