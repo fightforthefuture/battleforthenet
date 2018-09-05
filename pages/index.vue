@@ -28,44 +28,6 @@
     }
   }
 
-  .modal-tip {
-    background-color: #2f2940;
-    padding: 1rem 2rem;
-    border-radius: $border-radius;
-    margin-top: 2.5rem;
-    position: relative;
-
-    // arrow
-    &:after {
-      bottom: 100%;
-      left: 50%;
-      border: solid transparent;
-      content: " ";
-      height: 0;
-      width: 0;
-      position: absolute;
-      pointer-events: none;
-      border-bottom-color: #2f2940;
-      border-width: 1.5rem;
-      margin-left: -1.5rem;
-    }
-
-    code {
-      color: #8a7cae;
-      background-color: #262035;
-    }
-
-    .btn {
-      background-color: #7652d1;
-      letter-spacing: 0.25rem;
-      font-size: 2rem;
-
-      &:hover {
-        background-color: darken(#7652d1, 5%);
-      }
-    }
-  }
-
   img.app-store {
     height: 5rem;
   }
@@ -103,6 +65,7 @@
         <h2 class="section-title">{{ section.title }}</h2>
         <div v-html="section.body_html"></div>
         <battle-stats v-if="id == 'stats'"></battle-stats>
+        <widget-instructions v-if="id == 'join'"></widget-instructions>
         <scoreboard v-else-if="id == 'scoreboard'" :summary="true"></scoreboard>
         <!-- <iframe v-else-if="id == 'events'" class="events-map" src="https://events.battleforthenet.com/iframe"></iframe> -->
         <video-roll v-else-if="id == 'net-neutrality'"></video-roll>
@@ -132,6 +95,7 @@ import BattleStats from '~/components/BattleStats'
 import TeamInternet from '~/components/TeamInternet'
 import TeamCable from '~/components/TeamCable'
 import WantedPoster from '~/components/WantedPoster'
+import WidgetInstructions from '~/components/WidgetInstructions'
 
 export default {
   components: {
@@ -144,7 +108,8 @@ export default {
     BattleStats,
     TeamInternet,
     TeamCable,
-    WantedPoster
+    WantedPoster,
+    WidgetInstructions
   },
 
   computed: {
