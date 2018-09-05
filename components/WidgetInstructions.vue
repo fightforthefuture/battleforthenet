@@ -1,4 +1,4 @@
-<style lang="scss">
+<style lang="scss" scoped>
 .modal-tip {
   background-color: #2f2940;
   padding: 1rem 2rem;
