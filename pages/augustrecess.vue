@@ -31,7 +31,7 @@ body {
 
 // Typography
 
-h1, h2, h3, h4, .btn {
+h1, h2, h3, h4, h5, .btn {
   font-family: $title-font;
 }
 
@@ -304,6 +304,19 @@ form .disclaimer small {
   background-color: $body-bg-color;
 }
 
+// Map
+
+.map-wrapper {
+  position: relative;
+  min-height: 300px;
+
+  @include big-screen {
+    min-height: 450px;
+    margin-left:  1rem;
+    margin-right: 1rem;
+  }
+}
+
 // Lists
 
 .events-list {
@@ -315,7 +328,7 @@ form .disclaimer small {
     padding: 0 0.25rem;
     word-wrap: break-word;
 
-    @include big-screen {
+     @include big-screen {
       width: 33.3%;
       padding: 0 1rem;
     }
@@ -390,7 +403,9 @@ form .disclaimer small {
           {{ $lt('cta_button') }}
         </a>
       </div> <!-- .container -->
-      <a href="#sign-up" @click.prevent="scrollTo('#sign-up')"><img src="~assets/images/arrow-down.svg" alt="see below arrow" class="arrow"></a>
+      <a href="#sign-up" @click.prevent="scrollTo('#sign-up')">
+        <img src="~assets/images/arrow-down.svg" alt="see below arrow" class="arrow" />
+      </a>
       <div class="group-photos">Photos of Net Neutrality protestors</div>
     </header>
 
@@ -530,9 +545,9 @@ form .disclaimer small {
             <span v-if="isSending">{{ $lt('form.button_loading') }}</span>
             <span v-else>{{ $lt('form.button_cta') }}</span>
           </button>
-          <p class="disclaimer">
+          <div class="disclaimer">
             <small v-html="$lt('form.disclaimer_html')"></small>
-          </p>
+          </div> <!-- .disclaimer -->
         </form>
       </div> <!-- .container -->
     </section>
@@ -541,10 +556,11 @@ form .disclaimer small {
       <div class="container">
         <h2>{{ $lt('events.title') }}</h2>
         <div v-html="$lt('events.body_html')"></div>
-        <a href="/map/" @click="$trackClick('august_recess_map_image')"><img src="https://data.battleforthenet.com/events.png" alt="Events map"
-             class="push-top-2"></a>
+        <div class="map-wrapper push-top-2">
+          <Map :events="events" theme="generic" />
+        </div> <!-- .map-wrapper -->
 
-        <ul class="events-list">
+        <ul class="events-list push-top-1">
           <li v-for="(event, index) in events" :key="`event-${index}`">
             <a :href="event.url" target="_blank" class="btn btn-block btn-hollow truncate">
               <img src="~assets/images/map-pin-fb.svg" alt="Facebook map pin"
@@ -598,8 +614,13 @@ form .disclaimer small {
 <script>
 import { createMetaTags, smoothScrollToElement } from '~/assets/js/helpers'
 import axios from 'axios'
+import Map from '~/components/Map'
 
 export default {
+  components: {
+    Map
+  },
+
   layout: 'basic',
 
   head() {

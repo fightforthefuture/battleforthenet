@@ -10,6 +10,10 @@ const createStore = () => {
       streetAddress: null,
       facebookShareURL: null,
       twitterShareURL: null,
+      map: {
+        zoom: null,
+        currentPin: null
+      }
     },
 
     mutations: {
@@ -39,6 +43,14 @@ const createStore = () => {
 
       setTwitterShareURL(state, value) {
         state.twitterShareURL = value
+      },
+
+      setMapZoom(state, value) {
+        state.map.zoom = value
+      },
+
+      setMapCurrentPin(state, value) {
+        state.map.currentPin = value
       }
     }
   })
