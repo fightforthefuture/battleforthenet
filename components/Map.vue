@@ -1,7 +1,6 @@
 <style lang="scss">
 $btn-color: lighten(#544090, 20%);
 $map-pin-bg-color: transparentize(#000, 0.1);
-// $white: #FFF;
 
 .leaflet-container {
   font-family: $body-font;
