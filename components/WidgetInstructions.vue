@@ -1,4 +1,4 @@
-<style lang="scss" scoped>
+<style lang="scss">
 .modal-tip {
   background-color: #2f2940;
   padding: 1rem 2rem;
@@ -22,26 +22,12 @@
   }
 
   .embed-code {
-    position: relative;
-    margin: 1.5rem 0;
-    overflow: hidden;
-
     input {
-      padding-right: 75px; // NOTE: Magic number
       background-color: #262035;
       color: #8a7cae;
-      font-family: monospace;
-      font-size: 1.4rem;
-      word-wrap: break-word;
     }
 
     .btn-copy {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
       background-color: #433C57;
 
       &:hover,
@@ -73,23 +59,20 @@
         {{ $lt('try_button_text') }}
       </a>
     </p>
-    <p v-html="$lt('widget_explainer_part_2_html')"></p>
+    <div v-html="$lt('widget_explainer_part_2_html')"></div>
 
-    <div class="embed-code">
-      <button
-        v-clipboard
-        :data-clipboard-text="$lt('embed_code')"
-        class="btn btn-copy"
-        v-text="$lt('copy_button_text')">
-      </button>
-
-      <input type="text" :value="$lt('embed_code')" readonly />
-    </div> <!-- .embed-code -->
+    <CopyToClipboard :text-to-copy="$lt('embed_code')" />
   </div> <!-- .modal-tip -->
 </template>
 
 <script>
+import CopyToClipboard from '~/components/CopyToClipboard'
+
 export default {
+  components: {
+    CopyToClipboard
+  },
+
   methods: {
     $lt(key) {
       return this.$t(`components.WidgetInstructions.${key}`)

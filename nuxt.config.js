@@ -91,8 +91,7 @@ module.exports = {
     { src: '~/plugins/raven.js', ssr: false },
     '~/plugins/i18n.js',
     { src: '~/plugins/hash-link-fix.js', ssr: false },
-    { src: '~/plugins/shareprogress.js', ssr: false },
-    { src: '~/plugins/clipboard-directive.js', ssr: false }
+    { src: '~/plugins/shareprogress.js', ssr: false }
   ],
 
   generate: {
