@@ -74,18 +74,6 @@ sections:
                class="rounded">
         </div>
 
-        <div class="modal-tip">
-          <p>This widget will allow your site's users to send a letter to Congress by entering their
-          contact info.  Users who close the widget won’t see it again for 24 hours. Try it out for
-          yourself by clicking the button below:</p>
-          <p><a class="btn btn-large btn-block" href="https://www.fightforthefuture.org?widget=july23"
-          target="_blank">Try it out</a></p>
-          <p>It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to
-          <a href="https://github.com/fightforthefuture/july23-widget">visit our
-          GitHub page</a> to learn how to customize the widget for your site.</p>
-          <code>&lt;script src="https://july23.battleforthenet.com/widget.js" async&gt;&lt;/script&gt;</code>
-        </div>
-
   cra:
     title: Here’s how we get Congress to save net neutrality
     body_html: |

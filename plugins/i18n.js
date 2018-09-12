@@ -38,7 +38,9 @@ export default ({ app, store, isDev }) => {
           ScoreboardForm: require('~/locales/en/components/ScoreboardForm.yml'),
           RepInterstitial: require('~/locales/en/components/RepInterstitial.yml'),
           ScoreboardLegend: require('~/locales/en/components/ScoreboardLegend.yml'),
-          Scoreboard: require('~/locales/en/components/Scoreboard.yml')
+          Scoreboard: require('~/locales/en/components/Scoreboard.yml'),
+          CopyToClipboard: require('~/locales/en/components/CopyToClipboard.yml'),
+          WidgetInstructions: require('~/locales/en/components/WidgetInstructions.yml')
         },
         social: require('~/locales/en/social.yml')
       }

@@ -36,7 +36,9 @@ const messages = formatStrings({
       ScoreboardForm: loadStrings('components/ScoreboardForm.yml'),
       RepInterstitial: loadStrings('components/RepInterstitial.yml'),
       ScoreboardLegend: loadStrings('components/ScoreboardLegend.yml'),
-      Scoreboard: loadStrings('components/Scoreboard.yml')
+      Scoreboard: loadStrings('components/Scoreboard.yml'),
+      CopyToClipboard: loadStrings('components/CopyToClipboard.yml'),
+      WidgetInstructions: loadStrings('components/WidgetInstructions.yml')
     },
     social: loadStrings('social.yml')
   }
