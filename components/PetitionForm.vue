@@ -327,8 +327,12 @@ export default {
 
     startTextFlow() {
       startTextFlow({
-        flow: '9a1fe2d7-0647-4133-88ec-6bf7097228e8',
-        phone: this.phone
+        opt_in_path: 'OP5953C0BBD1870756CE4041DD8F00C7C1',
+        phone: this.phone,
+        name: this.name,
+        email: this.email,
+        zip_code: this.zipCode,
+        street: this.street
       })
     }
   }
