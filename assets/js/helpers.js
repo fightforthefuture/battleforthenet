@@ -191,15 +191,11 @@ export function smoothScrollToElement(el, duration) {
   }
 }
 
-export async function startTextFlow({ flow, phone }) {
+export async function startTextFlow(params) {
   const axios = require('axios')
 
   try {
-    const { data } = await axios.post('https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts', {
-      flow: flow,
-      phone: phone
-    })
-
+    const { data } = await axios.post('https://text-flow-starter.fftf.xyz/opt-ins', params)
     return data
   }
   catch (error) {
