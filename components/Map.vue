@@ -196,13 +196,30 @@ export default {
     }
   },
 
+  data() {
+    return {
+      mapCreated: false,
+    }
+  },
+
   mounted() {
-    this.createMap()
+    console.log('[Map mounted] events', this.events.length)
+    if (!this.mapCreated && this.events.length) {
+      this.createMap()
+      this.addEventsToMap()
+    }
   },
 
   watch: {
-    events() {
-      this.addEventsToMap()
+    events(newValue) {
+      console.log('[Map watch] events', newValue.length)
+      if(newValue.length) {
+        if (!this.mapCreated) {
+          this.createMap()
+        }
+
+        this.addEventsToMap()
+      }
     },
 
     // Watchers for computed props
@@ -210,13 +227,16 @@ export default {
     // because the props are not present in the template, if they were the map
     // tiles would unload
     currentPin(newValue, oldValue) {
+      console.log('[Map watch] currentPin triggered')
       if (oldValue) {
         // Close popup only if the "new" current pin is legitimately different
         if (this.currentPin === null || this.currentPin.id !== oldValue.id) {
+          console.log('[Map watch] currentPin new (triggers close)', this.currentPin, oldValue)
           this.closePopup(oldValue)
         }
       }
       if (newValue) {
+        console.log('[Map watch] currentPin new (triggers open)', newValue)
         this.openPopup(newValue)
       }
     },
@@ -239,9 +259,11 @@ export default {
     },
     currentPin: {
       get() {
+        console.log('[Map computed] get currentPin')
         return this.$store.state.map.currentPin
       },
       set(newVal) {
+        console.log('[Map computed] set currentPin')
         this.$store.commit('setMapCurrentPin', newVal)
       }
     }
@@ -253,6 +275,7 @@ export default {
     },
 
     createMap() {
+      console.log('[Map methods] create map', this.mapCreated)
       L.mapbox.accessToken = settings.mapboxToken
 
       // see https://www.mapbox.com/api-documentation/#introduction
@@ -272,11 +295,12 @@ export default {
       map.on('popupclose', this.handlePopupClose)
 
       markers = []
-
-      this.addEventsToMap()
+      this.mapCreated = true
+      console.log('[Map methods] create map, map created', this.mapCreated)
     },
 
     addEventsToMap() {
+      console.log('[Map methods] add events to map', this.events)
       if (this.events.length === 0) {
         map.setView([42.35, -71.08], 13)
         return
@@ -313,6 +337,7 @@ export default {
     },
 
     clickMarker(event) {
+      console.log('[Map methods] click marker', event.target.eventId)
       this.$store.commit('setMapCurrentPin', {
         id: event.target.eventId,
         latitude: event.latlng.lat,
@@ -322,28 +347,35 @@ export default {
     },
 
     openPopup({ id }) {
+      console.log('[Map methods] open popup', id)
       const marker = markers.find(m => m.eventId === id)
       if (marker) marker.openPopup()
     },
 
     closePopup({ id }) {
+      console.log('[Map methods] close popup', id)
       const marker = markers.find(m => m.eventId === id)
       if (marker) marker.closePopup()
     },
 
     handlePopupClose(event) {
+      console.log('[Map methods] handle popup close', event)
+      console.log('[Map methods] handle popup close - current pin', this.currentPin)
       // Set the current pin to null, unless the popup close was triggered by
       // this or another component updating the current pin value
       if (this.currentPin && (event.popup._source.eventId === this.currentPin.id)) {
+        console.log('[Map methods] handle popup close - set to null', event.popup._source.eventId, this.currentPin, this.currentPin.id)
         this.$store.commit('setMapCurrentPin', null)
       }
     },
 
     updateZoomLevel() {
+      console.log('[Map methods] updateZoomLevel')
       this.$store.commit('setMapZoom', map.getZoom())
     },
 
     zoomMap(newZoom) {
+      console.log('[Map methods] zoomMap')
       // Center the map on the current pin (if one is selected) or the current map center
       const ll = this.currentPin ? [this.currentPin.latitude, this.currentPin.longitude] : map.getCenter()
       const zoom = newZoom
