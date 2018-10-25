@@ -196,13 +196,33 @@ export default {
     }
   },
 
+  data() {
+    return {
+      mapCreated: false,
+    }
+  },
+
   mounted() {
-    this.createMap()
+    // If events are available right away, create the map
+    // In the production env only, creating the map too early ends up creating
+    // multiple maps whose events compete with eachother
+    if (!this.mapCreated && this.events.length) {
+      this.createMap()
+      this.addEventsToMap()
+    }
   },
 
   watch: {
-    events() {
-      this.addEventsToMap()
+    events(newValue) {
+      if(newValue.length) {
+        // Create the map the first time events are present
+        if (!this.mapCreated) {
+          this.createMap()
+        }
+
+        // Sync the map any time events are updated
+        this.addEventsToMap()
+      }
     },
 
     // Watchers for computed props
@@ -272,8 +292,7 @@ export default {
       map.on('popupclose', this.handlePopupClose)
 
       markers = []
-
-      this.addEventsToMap()
+      this.mapCreated = true
     },
 
     addEventsToMap() {
