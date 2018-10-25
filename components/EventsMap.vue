@@ -301,9 +301,7 @@ export default {
 
   watch: {
     currentEvent(newValue) {
-      console.log('[EventsMap watch] currentEvent triggered')
       if (newValue && newValue.id && newValue.type == 'map-marker') {
-        console.log('[EventsMap watch] currentEvent new', newValue.id)
         this.scrollToCurrentEvent(newValue.id)
       }
     },
@@ -349,11 +347,9 @@ export default {
     },
     currentEvent: {
       get() {
-        console.log('[EventsMap computed] get event')
         return this.$store.state.map.currentPin
       },
       set(newVal) {
-        console.log('[EventsMap computed] set event')
         this.$store.commit('setMapCurrentPin', newVal)
       }
     }
@@ -378,18 +374,15 @@ export default {
 
 
     scrollToCurrentEvent(id) {
-      console.log('[EventsMap method] scrollToCurrentEvent', id)
       const el = document.getElementById(`event-${id}`)
       smoothScrollWithinElement(this.$refs.list, el.offsetTop, 500)
     },
 
     setCurrentEvent(event) {
-      console.log('[EventsMap method] setCurrentEvent', event)
       this.$store.commit('setMapCurrentPin', event)
     },
 
     clearCurrentEvent() {
-      console.log('[EventsMap method] clearCurrentEvent')
       this.$store.commit('setMapCurrentPin', null)
     },
 

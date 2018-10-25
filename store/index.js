@@ -50,7 +50,6 @@ const createStore = () => {
       },
 
       setMapCurrentPin(state, value) {
-        console.log('[store mutations] setMapCurrentPin', value)
         state.map.currentPin = value
       }
     }
