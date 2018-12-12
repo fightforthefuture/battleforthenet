@@ -269,7 +269,10 @@ export default {
         })
 
         if (!this.inModal) {
-          this.rep = await fetchRepScoreboard(`${this.address} ${this.zipCode}`)
+          this.rep = await fetchRepScoreboard({
+            street: this.address,
+            zip: this.zipCode
+          })
         }
 
         this.$trackEvent('petition_form', 'submit')

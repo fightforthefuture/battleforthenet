@@ -67,7 +67,10 @@ export default {
       this.isLoading = true
       this.errorMessage = null
 
-      const rep = await fetchRepScoreboard(`${this.street} ${this.zipCode}`)
+      const rep = await fetchRepScoreboard({
+        street: this.street,
+        zip: this.zipCode
+      })
 
       if (rep) {
         this.$router.push({

@@ -218,11 +218,13 @@ export function formatNumber(x) {
   return x || x === 0 ? x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '';
 }
 
-export async function fetchRepScoreboard(address) {
+export async function fetchRepScoreboard(params) {
   const axios = require('axios')
 
   try {
-    const { data } = await axios.get(`https://07myr1bkfa.execute-api.us-east-1.amazonaws.com/v1/rep-scoreboard?address=${encodeURIComponent(address)}`)
+    const { data } = await axios.get(`https://07myr1bkfa.execute-api.us-east-1.amazonaws.com/v1/rep-scoreboard`, {
+      params: params
+    })
     return data
   }
   catch (error) {
