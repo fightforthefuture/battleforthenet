@@ -79,7 +79,7 @@ export function postFormData(url, data={}) {
 }
 
 export function sendToMothership(data={}, submission={}) {
-  return postFormData('https://queue.fftf.xyz/action', data)
+  return postFormData('https://queue.fightforthefuture.org/action', data)
 }
 
 export function getDonateLink(org) {
