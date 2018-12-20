@@ -207,7 +207,7 @@ export async function pingCounter(counter) {
   const axios = require('axios')
 
   try {
-    await axios.post(`https://counter.battleforthenet.com/ping/${counter}`)
+    await axios.post(`https://counter.fftf.xyz/ping/${counter}`)
   }
   catch (error) {
     //
