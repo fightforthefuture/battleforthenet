@@ -130,6 +130,7 @@
   .scoreboard-photo {
     width: 17rem;
     height: auto;
+    margin-bottom: 0;
 
     @include mobile {
       width: 15rem;
@@ -152,6 +153,7 @@
 
     button, .btn {
       flex: 1;
+      min-height: 6.158rem;
       border-radius: $border-radius;
       font-size: 2.2rem;
       font-weight: 700;
@@ -166,6 +168,10 @@
       align-items: center;
       justify-content: center;
       position: relative;
+
+      @include mobile {
+        min-height: 3.459rem;
+      }
 
       &:last-child {
         margin-bottom: 0;
