@@ -2,9 +2,10 @@
 .scoreboard-photo {
   position: relative;
   border-radius: $border-radius;
-  display: inline-block;
+  display: block;
   width: 10rem;
   height: 12.2rem;
+  margin-bottom: 1rem;
 
   img, .cover, .yes-bg {
     width: 100%;
