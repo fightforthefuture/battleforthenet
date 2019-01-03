@@ -1,14 +1,13 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: Write Congress to save net neutrality
-title_call: Call Congress to save net neutrality
+title: Tell the new Congress to save net neutrality
+title_call: Tell the new Congress to save net neutrality
 intro_html: |
-  Ajit Pai and the FCC gutted net neutrality protections.  Congress can still repeal
-  this decision, but time is running out.  When this Congressional session is over, 
-  it will be a lot harder to restore protections against ISPs blocking, throttling, 
-  and imposing new fees.  **Contact Congress now and tell your lawmakers to sign the 
-  CRA to support net neutrality.**
+  The FCC repealed net neutrality, but Congress can bring it back. We need our lawmakers 
+  to reject fake legislation pushed by telecom lobbyists and fight for real net neutrality 
+  that protects the public against throttling, censorship and unfair fees.  **Fill out the 
+  form below to contact Congress and demand they support net neutrality now.**
 persistent_button: Contact Congress
 
 form:
@@ -24,13 +23,11 @@ form:
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
-    Last December's FCC vote to destroy the net neutrality protections cannot stand.
+    The December 2017 FCC vote to destroy the net neutrality protections cannot stand. 
 
-    I’m calling on you to work with your colleagues to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's vote.
+    With just one willfully careless action, the FCC ignored the outcry of tens of millions of people, injuring our economy and free speech without so much as a single public hearing.
 
-    The FCC's December decision willfully ignored the outcry of tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.
-
-    We need members of Congress to stand up for the open internet and for the digital rights of their constituents now. Please co-sponsor, sign the discharge petition for, and vote for the CRA Resolution of Disapproval that would overturn the FCC's December "Restoring Internet Freedom" vote.
+    We need members of Congress to stand up for the open Internet and for the digital rights of their constituents. So I’m calling on you to work with your colleagues to restore net neutrality through legislation that will will protect the American public from throttling, censorship and unfair fees.
 
     Thank you.
 
@@ -40,18 +37,18 @@ sections:
     body_html: |
         The FCC’s repeal of net neutrality officially kicked in on
         <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
-        target="_blank">June 11th</a>. The Internet as we know it won’t end overnight. But with each second
-        that passes until net neutrality is restored, it will be slowly dying as Internet providers like AT&T,
-        Verizon and Comcast
+        target="_blank">June 11th, 2018</a>. The Internet as we know it didn’t end overnight. Internet providers 
+        like AT&T, Verizon and Comcast have already begun
         <a href="https://www.fool.com/investing/2018/07/14/wireless-service-prices-are-climbing-across-the-bo.aspx"
-        target="_blank">raise prices</a>,
+        target="_blank">raising prices</a>,
         <a href="https://www.fastcompany.com/40588895/atts-time-warner-deal-and-net-neutralitys-end-gave-us-watchtv"
-        target="_blank">prioritize data</a>, and
+        target="_blank">prioritizing data</a>, and
         <a href="https://www.eff.org/deeplinks/2018/06/while-net-neutrality-fight-continues-congress-and-states-att-and-verizon-are"
-        target="_blank">eliminate competition</a>.
+        target="_blank">eliminating competition</a>.
 
         People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers
-        with calls and emails demanding that they use the Congressional Review Act (CRA) to overrule the FCC.
+        with calls and emails demanding that they use demanding that they use their legislative powers to create 
+        protections against throttling, censorship and unfair fees.
 
         So take whatever corner of the Internet that you control — whether it’s a major platform or a personal
         Instagram account — and harness its reach to pressure Congress. Here’s how:
@@ -78,22 +75,19 @@ sections:
   cra:
     title: Here’s how we get Congress to save net neutrality
     body_html: |
-      Our elected officials in Congress can overrule the FCC and save net
-      neutrality using the Congressional Review Act (CRA). But they’ll only do
-      it if we make them. The CRA resolution
-      <a href="https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545"
-      target="_blank">passed the Senate 52-47</a> in a historic upset. But now
-      we’re fighting an uphill battle to get the House of Representatives to do
-      the same. It’s not going to be easy, but if the whole Internet comes
-      together to fight, we can win.
+      Our elected officials in Congress can overrule the FCC and save net neutrality by passing 
+      legislation that prevents Internet providers from throttling traffic, censoring online 
+      content, and imposing unfair fees on businesses and users alike.  
 
-      In the House, we’ll need a simple majority of sign on to a
-      "<a href="https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help"
-      target="_blank">discharge petition</a>” in order to force a vote past leadership
-      to the floor. That means we’ll need to convince all the Democrats and about 25
-      Republicans to support the CRA. The clock is ticking — if the CRA resolution
-      doesn’t get a vote this year, it dies when the new Congress comes into session
-      in January 2019.
+      This will require a bipartisan effort from lawmakers, which may seem like science fiction in 
+      these deeply divided political times.  But net neutrality is not a partisan issue.  In fact, 
+      an overwhelming majority of Americans 
+      <a href="https://www.prnewswire.com/news-releases/overwhelming-bipartisan-majority-opposes-repealing-net-neutrality-survey-finds-300569665.html"
+      target="_blank">support net neutrality</a>,
+      including Republicans, Democrats and Independents alike.  And we’ve successfully pushed 
+      lawmakers to 
+      <a href="https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/"
+      target="_blank">cross the aisle</a> in support of net neutrality efforts before.
 
       <h3>
         <br>
@@ -162,15 +156,15 @@ sections:
   scoreboard:
     title: View the Congressional Scoreboard
     body_html: |
-      We’re keeping track of who supports net neutrality … and who doesn’t. Now
-      you can, too.  Below you'll find a link to a list of your state's Senators
-      and Representatives. The ones in green have signed a discharge petition in
-      support of net neutrality, so let them know you appreciate their support.
-      The ones in red need to be convinced, so let them know how important this
-      issue is to you.
+      It can be hard to keep track of who supports net neutrality and who doesn’t … 
+      especially with cable companies and their lobbyists pushing for fake net 
+      neutrality legislation. So we’re here to help.
 
-      We already won in the Senate. Now we must win in the House. So please tweet
-      and call your <a href="/scoreboard/#house">representatives</a>.
+      Below you'll find a link to a list of your state's senators and representatives. 
+      The lawmakers in green signed a discharge petition to overturn the FCC’s net 
+      neutrality repeal, so tell them how much you appreciate their support on this 
+      important issue. The lawmakers in red failed to support the discharge petition, 
+      so contact their office to let them know that actions speak louder than words.  
 
   events:
     title: Attend an event in your area
