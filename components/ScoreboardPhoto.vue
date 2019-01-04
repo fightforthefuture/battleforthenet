@@ -117,7 +117,7 @@ export default {
     },
 
     imageURL() {
-      return `https://data.battleforthenet.com/scoreboard-images/${this.rep.bioguide_id}.jpg`
+      return `https://congress-photos.fightforthefuture.org/225x275/${this.rep.bioguide_id}.jpg`
     }
   }
 }
