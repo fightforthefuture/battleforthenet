@@ -22,7 +22,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(255,26,9,0.5);
+    background-color: rgba(100,100,100,0.5);
   }
 
   h5 {
@@ -48,6 +48,12 @@
 
   &.long-name h5 {
     font-size: 0.9rem;
+  }
+
+  &.vote-no {
+    .cover {
+      background-color: rgba(255,26,9,0.5);
+    }
   }
 
   .yes-bg {
@@ -77,7 +83,12 @@
 </style>
 
 <template>
-  <div :class="{ 'scoreboard-photo': true, 'vote-yes': rep.supports_cra, 'long-name': hasLongName }">
+  <div :class="{
+        'scoreboard-photo': true,
+        'vote-yes': rep.supports_net_neutrality === true,
+        'vote-no': rep.supports_net_neutrality === false,
+        'long-name': hasLongName
+      }">
     <img :src="imageURL" alt="">
     <div class="cover">
       <div class="yes-bg"></div>
