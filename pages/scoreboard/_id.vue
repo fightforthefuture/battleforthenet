@@ -306,7 +306,7 @@
 
         <div class="scoreboard-card">
           <scoreboard-photo :rep="rep"></scoreboard-photo>
-          <div class="buttons" v-if="rep.supports_cra">
+          <div class="buttons" v-if="rep.supports_net_neutrality === true">
             <facebook-button :url="shareURL">{{ $lt('supports.facebook_button') }}</facebook-button>
             <twitter-button :url="twitterURL">{{ $lt('supports.twitter_button') }}</twitter-button>
             <a class="btn btn-volunteer" :href="volunteerURL">{{ $lt('supports.volunteer_button') }}</a>
@@ -408,7 +408,7 @@
            />
         </div>
 
-        <scoreboard-action-box v-if="!rep.supports_cra"
+        <scoreboard-action-box v-if="rep.supports_net_neutrality === false"
           :title="$lt('boxes.share.title') "
           :description="$lt('boxes.share.description')"
           class="share-box"
@@ -518,7 +518,14 @@ export default {
 
   computed: {
     status() {
-      return this.rep.supports_cra ? 'supports' : 'against'
+      const stance = this.rep.supports_net_neutrality
+      if (stance === true) {
+        return 'supports'
+      } else if (stance === false) {
+        return 'against'
+      } else {
+        return 'neutral'
+      }
     },
 
     repTitle() {
@@ -569,8 +576,8 @@ export default {
           name: this.repTitleAndName
         })
       }
-      else if (!this.rep.supports_cra && !this.rep.cable_contributions) {
-        return this.$lt('against.no_amount_description_html', {
+      else if (this.rep.supports_net_neutrality !== true && !this.rep.cable_contributions) {
+        return this.$lt(`${this.status}.no_amount_description_html`, {
           name: this.repTitleAndName
         })
       }
