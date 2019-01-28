@@ -590,8 +590,7 @@ form .disclaimer small {
       <div class="container">
         <h4>For Press inquiries, please contact us at:</h4>
         <p>
-          <a href="tel://19788526457">978-852-6457</a> or
-          <a href="tel://19788526457">978-852-6457</a> or
+          <a href="tel://5084745248">508-474-5248</a> or
           <a href="mailto:press@fightforthefuture.org">
             press@fightforthefuture.org
           </a>
