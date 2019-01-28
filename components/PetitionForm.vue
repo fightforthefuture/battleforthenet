@@ -146,8 +146,8 @@ import FancyToggle from '~/components/FancyToggle'
 import RepInterstitial from '~/components/RepInterstitial'
 import axios from 'axios'
 
-// battle-for-the-net-action-4
-const petitionId = '25488448-4124-4359-8873-d1ef731ea5f4'
+// New BFTN petition for 2019
+const petitionId = '8305bb2c-2e17-47eb-91ad-28b0ce02e353'
 
 // BFNN petition
 const bizPetitionId = '94ac8142-99b8-411f-83af-133d02649af1'
