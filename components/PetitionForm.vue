@@ -268,12 +268,14 @@ export default {
           action_comment: this.comments
         })
 
+/* Quick hack to disable incorrect rep data
         if (!this.inModal) {
           this.rep = await fetchRepScoreboard({
             street: this.address,
             zip: this.zipCode
           })
         }
+        */
 
         this.$trackEvent('petition_form', 'submit')
         this.isSending = false
