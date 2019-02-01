@@ -7,9 +7,11 @@ intro_html: |
 
 legend:
   against_label: Red
-  against_description: Against the petition to restore net neutrality
+  against_description: Against net neutrality
   for_label: Blue
-  for_description: Supports the petition to restore net neutrality
+  for_description: Supports net neutrality
+  neutral_label: Grey
+  neutral_description: No stance on net neutrality
 state_placeholder: Select state
 view_button: View
 persistent_button: Back to top ☝️

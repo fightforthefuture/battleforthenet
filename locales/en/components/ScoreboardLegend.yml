@@ -1,4 +1,6 @@
 against_label: Red
-against_description: Against the petition to restore net neutrality
+against_description: Against net neutrality
 supports_label: Blue
-supports_description: Supports the petition to restore net neutrality
+supports_description: Supports net neutrality
+neutral_label: Grey
+neutral_description: No stance on net neutrality

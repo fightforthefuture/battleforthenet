@@ -38,10 +38,7 @@
       <div class="container">
         <h2 class="section-title">{{ $lt('scoreboard.title') }}</h2>
         <div v-html="$lt('scoreboard.body_html')"></div>
-        <ScoreboardLegend
-          :against="$lt('scoreboard.legend_against')"
-          :supports="$lt('scoreboard.legend_supports')"
-          />
+        <ScoreboardLegend :neutral="false" />
 
         <select v-model="voteFilter" class="push-top-3">
           <option value>{{ $lt('scoreboard.vote_filter') }}</option>

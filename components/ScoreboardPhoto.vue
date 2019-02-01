@@ -128,7 +128,13 @@ export default {
     },
 
     imageURL() {
-      return `https://congress-photos.fightforthefuture.org/225x275/${this.rep.bioguide_id}.jpg`
+      // california scoreboard photos are still in the old bucket
+      if (this.rep.bioguide_id.match(/^CA-/)) {
+        return `https://data.battleforthenet.com/scoreboard-images/${this.rep.bioguide_id}.jpg`
+      }
+      else {
+        return `https://congress-photos.fightforthefuture.org/225x275/${this.rep.bioguide_id}.jpg`
+      }
     }
   }
 }

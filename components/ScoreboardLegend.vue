@@ -10,10 +10,6 @@
 
   @include small-screen {
     display: block;
-
-    .team-cable {
-      margin-bottom: 1rem;
-    }
   }
 
   label {
@@ -24,7 +20,7 @@
     min-width: 7rem;
   }
 
-  .team-cable, .team-internet {
+  > div {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -37,6 +33,21 @@
       font-size: 1.6rem;
       padding-left: 1rem;
       text-align: left;
+    }
+
+    @include small-screen {
+      margin-bottom: 1.5rem;
+      display: block;
+      text-align: left;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      label {
+        display: inline-block;
+        text-align: center;
+      }
     }
   }
 
@@ -55,6 +66,14 @@
       background: linear-gradient(90deg, rgba(55,191,164,1) 0%, rgba(53,118,173,1) 100%);
     }
   }
+
+  .team-nothing {
+    color: #ccc;
+
+    label {
+      background: linear-gradient(90deg, rgba(100, 100, 100, .5) 0%, rgba(100, 100, 100, 1) 100%);
+    }
+  }
 }
 </style>
 
@@ -70,12 +89,17 @@
       <span>=</span>
       <span>{{ supportsDescription }}</span>
     </div>
+    <div class="team-nothing" v-if="this.neutral !== false">
+      <label>{{ $lt('neutral_label') }}</label>
+      <span>=</span>
+      <span>{{ neutralDescription }}</span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'against', 'supports' ],
+  props: [ 'against', 'supports', 'neutral' ],
 
   computed: {
     againstDescription() {
@@ -84,6 +108,10 @@ export default {
 
     supportsDescription() {
       return this.supports || this.$lt('supports_description')
+    },
+
+    neutralDescription() {
+      return this.neutral || this.$lt('neutral_description')
     }
   },
 
