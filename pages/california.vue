@@ -41,9 +41,9 @@
         <ScoreboardLegend :neutral="false" />
 
         <select v-model="voteFilter" class="push-top-3">
-          <option value>{{ $lt('scoreboard.vote_filter') }}</option>
-          <option value="true">{{ $lt('scoreboard.voted_yes') }}</option>
-          <option value="false">{{ $lt('scoreboard.voted_no') }}</option>
+          <option :value="null">{{ $lt('scoreboard.vote_filter') }}</option>
+          <option :value="true">{{ $lt('scoreboard.voted_yes') }}</option>
+          <option :value="false">{{ $lt('scoreboard.voted_no') }}</option>
         </select>
 
         <h2 class="push-top-4">{{ $lt('scoreboard.assembly') }}</h2>
@@ -96,7 +96,7 @@ export default {
       isLoading: false,
       errorMessage: null,
       street: null,
-      voteFilter: ''
+      voteFilter: null
     }
   },
 
@@ -110,19 +110,13 @@ export default {
         this.$store.commit('setZipCode', value)
       }
     },
-    filteredAssemblyMembers () {
-      if (this.voteFilter) {
-        return this.assemblyMembers.filter(p => p.supports_cra.toString() === this.voteFilter)
-      } else {
-        return this.assemblyMembers
-      }
+
+    filteredAssemblyMembers() {
+      return this.applyVoteFilter(this.assemblyMembers)
     },
-    filteredSenators () {
-      if (this.voteFilter) {
-        return this.senators.filter(p => p.supports_cra.toString() === this.voteFilter)
-      } else {
-        return this.senators
-      }
+
+    filteredSenators() {
+      return this.applyVoteFilter(this.senators)
     }
   },
 
@@ -148,12 +142,12 @@ export default {
 
   created() {
     if (this.$route.query.vote) {
-      let initVote = this.$route.query.vote.toLowerCase()
+      const initVote = this.$route.query.vote.toLowerCase()
 
       if (initVote === 'yes') {
-        this.voteFilter = 'true'
+        this.voteFilter = true
       } else if (initVote === 'no') {
-        this.voteFilter = 'false'
+        this.voteFilter = false
       }
     }
   },
@@ -188,6 +182,15 @@ export default {
       else {
         this.errorMessage = this.$lt('scoreboard_form.error_rep_not_found')
         this.isLoading = false
+      }
+    },
+
+    applyVoteFilter(politicians) {
+      if (this.voteFilter !== null) {
+        return politicians.filter(p => p.supports_net_neutrality === this.voteFilter)
+      }
+      else {
+        return politicians
       }
     }
   }
