@@ -581,7 +581,7 @@ export default {
           name: this.repTitleAndName
         })
       }
-      else if (this.rep.supports_net_neutrality !== true && !this.rep.cable_contributions) {
+      else if (this.rep.supports_net_neutrality === false && !this.rep.cable_contributions) {
         return this.$lt(`${this.status}.no_amount_description_html`, {
           name: this.repTitleAndName
         })
