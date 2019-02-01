@@ -45,7 +45,7 @@ section {
     <section class="page-header">
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
-        <div class="intro" v-html="introHTML"></div>
+        <div class="intro" v-html="$lt('intro_html')"></div>
         <ScoreboardLegend />
         <div class="state-selector">
           <select v-model="selectedState">
@@ -144,19 +144,6 @@ export default {
       }
 
       return politiciansByState
-    },
-
-    houseCRACount() {
-      return this.politicians.filter(p => p.organization === 'House' && p.supports_cra).length
-    },
-
-    introHTML() {
-      const totalVotesNeeded = 218
-      return this.$lt('intro_html', {
-        totalVotes: totalVotesNeeded,
-        craCount: this.houseCRACount,
-        votesNeeded: totalVotesNeeded - this.houseCRACount
-      })
     }
   },
 

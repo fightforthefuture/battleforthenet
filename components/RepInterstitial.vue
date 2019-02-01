@@ -53,7 +53,7 @@
   <div class="rep-interstitial">
     <CallForm v-if="callFormIsVisible" :in-modal="true" :title="$lt('call_form_title')" />
     <div v-else class="scorecard">
-      <div class="supports" v-if="rep.supports_cra">
+      <div class="supports" v-if="rep.supports_net_neutrality === true">
         <h3 v-html="$lt('supports_headline_html')"></h3>
         <div class="flex-center">
           <ScoreboardPhoto :rep="rep" />
@@ -64,14 +64,27 @@
           </div>
         </div>
       </div>
-      <div class="against" v-else>
+
+      <div class="against" v-if="rep.supports_net_neutrality === false">
         <h3 v-html="$lt('against_headline_html')"></h3>
         <div class="flex-center">
           <ScoreboardPhoto :rep="rep" />
           <div class="buttons">
             <a class="btn btn-large btn-cta" href="#" @click.prevent="$trackClick('rep_interstitial_call_button'); callFormIsVisible = true">{{ $lt('call_button') }}</a>
-            <a class="btn btn-large" href="https://actionnetwork.org/forms/sign-up-to-attend-an-event-during-august-recess-to-help-save-net-neutrality/" @click="$trackClick('rep_interstitial_events_button', 'supports')">{{ $lt('events_button') }}</a>
+            <a class="btn btn-large" href="https://actionnetwork.org/forms/sign-up-to-attend-an-event-during-august-recess-to-help-save-net-neutrality/" @click="$trackClick('rep_interstitial_events_button', 'against')">{{ $lt('events_button') }}</a>
             <DonateButton class="btn btn-large" @clicked="$trackClick('rep_interstitial_donate_button', 'against')">{{ $lt('donate_button')}}</DonateButton>
+          </div>
+        </div>
+      </div>
+
+      <div v-else>
+        <h3 v-html="$lt('neutral_headline_html')"></h3>
+        <div class="flex-center">
+          <ScoreboardPhoto :rep="rep" />
+          <div class="buttons">
+            <a class="btn btn-large btn-cta" href="#" @click.prevent="$trackClick('rep_interstitial_call_button'); callFormIsVisible = true">{{ $lt('call_button') }}</a>
+            <a class="btn btn-large" href="https://actionnetwork.org/forms/sign-up-to-attend-an-event-during-august-recess-to-help-save-net-neutrality/" @click="$trackClick('rep_interstitial_events_button', 'neutral')">{{ $lt('events_button') }}</a>
+            <DonateButton class="btn btn-large" @clicked="$trackClick('rep_interstitial_donate_button', 'neutral')">{{ $lt('donate_button')}}</DonateButton>
           </div>
         </div>
       </div>

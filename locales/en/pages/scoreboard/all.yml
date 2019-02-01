@@ -1,7 +1,10 @@
 document_title: Net Neutrality Scoreboard
-title: Here's how every Congressperson voted on net neutrality
+title: Here's where every Congressperson stands on net neutrality
 intro_html: |
-  We need {totalVotes} votes in support of net neutrality to win in the House.  We currently have {craCount}, but we need {votesNeeded} more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.
+  Politicians like to talk big about their support for net neutrality, but it’s their actions that really count.  If a lawmaker voted to support the CRA to restore net neutrality — or pledged to support strong net neutrality protections going forward — we consider them a supporter.  But if a lawmaker voted against the the CRA to restore net neutrality — or has pushed for weak legislation written by telecom lobbyists — we’ve marked them as “against” net neutrality. Some lawmakers haven’t yet taken a stance on net neutrality, so we’ve labeled them “unknown” … for now.
+
+  Whatever your lawmaker’s stance is, it’s important for you to reach out and let them know where you stand on this vital issue.  So click on the links below and make your voice heard now.
+
 legend:
   against_label: Red
   against_description: Against the petition to restore net neutrality

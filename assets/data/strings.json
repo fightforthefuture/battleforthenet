@@ -213,8 +213,8 @@
         },
         "all": {
           "document_title": "Net Neutrality Scoreboard",
-          "title": "Here's how every Congressperson voted on net neutrality",
-          "intro_html": "<p>We need {totalVotes} votes in support of net neutrality to win in the House.  We currently have {craCount}, but we need {votesNeeded} more.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
+          "title": "Here's where every Congressperson stands on net neutrality",
+          "intro_html": "<p>Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
           "legend": {
             "against_label": "Red",
             "against_description": "Against the petition to restore net neutrality",
@@ -385,6 +385,7 @@
       "RepInterstitial": {
         "supports_headline_html": "<p>Your message to Congress has been sent. Your representative <strong>SUPPORTS</strong> net neutrality, but you can do more to help out:</p>",
         "against_headline_html": "<p>Your message to Congress has been sent, but your representative is <strong>AGAINST</strong> net neutrality.</p>",
+        "neutral_headline_html": "<p>Your message to Congress has been sent, but your representative has <strong>NO STANCE</strong> on net neutrality.</p>",
         "call_button": "Call",
         "volunteer_button": "Volunteer",
         "events_button": "Attend an Event",
