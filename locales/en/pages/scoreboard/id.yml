@@ -29,7 +29,7 @@ supports:
   document_title: "{name} supports net neutrality"
   title_html: Your {title}<br> **SUPPORTS** net neutrality
   description_html: |
-   {name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.
+    {name} supports net neutrality protections that would prevent companies like Comcast, Spectrum, and AT&T from throttling traffic, blocking access to apps, and imposing unfair fees. But they still need to hear messages of support from voters like you.  Reach out to thank them for their support.
   tweet_text: ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet"
   facebook_button: Share on Facebook
   twitter_button: Share on Twitter
@@ -39,9 +39,9 @@ against:
   document_title: "{name} does not support net neutrality"
   title_html: Your {title}<br> is **AGAINST** net neutrality
   description_html: |
-    {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+    {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes strong net neutrality protections that would prevent companies like Comcast, Verizon, Spectrum, and AT&T from throttling traffic, blocking access to apps, and imposing unfair fees. Contact your lawmaker now and let them know that your online freedom is more important than handouts to corporate monopolies.  Then share this page with everyone in your social network to turn up the pressure.
   no_amount_description_html: |
-    {name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
+    {name} opposes strong net neutrality protections that would prevent companies like Comcast, Verizon, Spectrum, and AT&T from throttling traffic, blocking access to apps, and imposing unfair fees. Contact your lawmaker now and let them know that your online freedom is more important than handouts to corporate monopolies.  Then share this page with everyone in your social network to turn up the pressure
   tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
   call_button: Call
   write_button: Write
@@ -51,10 +51,8 @@ neutral:
   document_title: "{name} has no stance on net neutrality"
   title_html: Your {title}<br> has **NO STANCE** on net neutrality
   description_html: |
-    {name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative has "no stance" on net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
-  no_amount_description_html: |
-    {name} has no stance on net neutrality protections that would prevent companies like Comcast, Charter and AT&T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.
-  tweet_text: ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+    {name} hasn’t yet taken a clear stance on net neutrality.  But you can help change that.  Contact your lawmaker now and let them know you want strong Title II protections for net neutrality that would prevent companies like Comcast, Spectrum, and AT&T from throttling traffic, blocking access to apps, and imposing unfair fees.
+  tweet_text: ".@{twitter} strong #NetNeutrality protections are important to me. Do you agree? {url} #battleforthenet"
   call_button: Call
   write_button: Write
   tweet_button: Tweet

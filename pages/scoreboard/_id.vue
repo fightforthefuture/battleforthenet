@@ -306,18 +306,22 @@
 
         <div class="scoreboard-card">
           <scoreboard-photo :rep="rep"></scoreboard-photo>
+
+          <!-- FOR -->
           <div class="buttons" v-if="rep.supports_net_neutrality === true">
             <facebook-button :url="shareURL">{{ $lt('supports.facebook_button') }}</facebook-button>
             <twitter-button :url="twitterURL">{{ $lt('supports.twitter_button') }}</twitter-button>
             <a class="btn btn-volunteer" :href="volunteerURL">{{ $lt('supports.volunteer_button') }}</a>
           </div>
+
+          <!-- AGAINST or NO STANCE -->
           <div class="buttons" v-else>
             <button class="call" @click="call()">
               <span class="value-bg" v-if="rep.call_count"></span>
               <span class="value" v-if="rep.call_count">{{ rep.call_count | formatNumber }}</span>
               <span class="label">
                 <img src="~/assets/images/scoreboard-call-icon.svg" alt="">
-                {{ $lt('against.call_button') }}
+                {{ $lt(`${status}.call_button`) }}
               </span>
             </button>
             <button class="write" @click="write()">
@@ -325,7 +329,7 @@
               <span class="value" v-if="rep.letter_count">{{ rep.letter_count | formatNumber }}</span>
               <span class="label">
                 <img src="~/assets/images/scoreboard-write-icon.svg" alt="">
-                {{ $lt('against.write_button') }}
+                {{ $lt(`${status}.write_button`) }}
               </span>
             </button>
             <button class="tweet" @click="tweet()" v-if="rep.twitter">
@@ -333,10 +337,11 @@
               <span class="value" v-if="rep.tweet_count">{{ rep.tweet_count | formatNumber }}</span>
               <span class="label">
                 <img src="~/assets/images/scoreboard-tweet-icon.svg" alt="">
-                {{ $lt('against.tweet_button') }}
+                {{ $lt(`${status}.tweet_button`) }}
               </span>
             </button>
           </div>
+
         </div>
 
         <div class="description" v-html="descriptionHTML"></div>
