@@ -1,13 +1,16 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: Tell the new Congress to save net neutrality
-title_call: Tell the new Congress to save net neutrality
+title: Urgent: Cable lobbyists introduce bills to undermine net neutrality
+title_call: Urgent: Cable lobbyists introduce bills to undermine net neutrality
 intro_html: |
-  The FCC repealed net neutrality, but Congress can bring it back. We need our lawmakers 
-  to reject fake legislation pushed by telecom lobbyists and fight for real net neutrality 
-  that protects the public against throttling, censorship, and unfair fees.  **Fill out the 
-  form below to contact Congress and demand they support net neutrality now.**
+  Lobbyists for big cable companies and their pawns in Congress have introduced 
+  THREE bills to 
+  <a href="https://www.freepress.net/news/press-releases/flurry-fake-net-neutrality-bills-are-more-smoke-and-mirrors-cable-backed"
+  target="_blank">undermine net neutrality</a> undermine net neutrality. These 
+  bills give ISPs the freedom to impose unfair fees and refuse Internet service 
+  to people without any repercussions  **Fill out the form below to contact 
+  Congress and demand they support net neutrality now.**
 persistent_button: Contact Congress
 
 form:
@@ -23,32 +26,36 @@ form:
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
-    The December 2017 FCC vote to destroy the net neutrality protections cannot stand. 
-
-    With just one willfully careless action, the FCC ignored the outcry of tens of millions of people, injuring our economy and free speech without so much as a single public hearing.
-
-    We need members of Congress to stand up for the open Internet and for the digital rights of their constituents. So I’m calling on you to work with your colleagues to restore net neutrality through legislation that will will protect the American public from throttling, censorship and unfair fees.
-
+    Hundreds of millions of people all across America support net neutrality, and I'm one of them. 
+    
+    Right now the cable industry is working with members of Congress to pass loophole-riddled net neutrality legislation that will allow Internet service providers (ISPs) to impose widespread throttling and extra fees. 
+    
+    No legislator in favor of an open Internet should support the fake net neutrality bills announced by Republican members of the Communications & Technology Subcommittee in February 2019. I'm calling on you to reject new proposals written by cable industry lobbyists and, instead, work to restore the strong protections for net neutrality and broadband access afforded by the FCC's now-repealed 2015 Open Internet Order.
+    
+    We expect nothing less than the net neutrality protections the FCC undemocratically repealed in 2017. Please work with your colleagues to pass legislation that genuinely protects the digital rights of your constituents.
+    
     Thank you.
 
 sections:
   join:
-    title: Net neutrality was repealed, but the fight has just begun
+    title: Don’t let the cable industry pull a fast one
     body_html: |
-        The FCC’s repeal of net neutrality officially kicked in on
-        <a href="https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79"
-        target="_blank">June 11th, 2018</a>. The Internet as we know it didn’t end overnight. Internet providers 
-        like AT&T, Verizon and Comcast have already begun
-        <a href="https://www.fool.com/investing/2018/07/14/wireless-service-prices-are-climbing-across-the-bo.aspx"
-        target="_blank">raising prices</a>,
-        <a href="https://www.fastcompany.com/40588895/atts-time-warner-deal-and-net-neutralitys-end-gave-us-watchtv"
-        target="_blank">prioritizing data</a>, and
-        <a href="https://www.eff.org/deeplinks/2018/06/while-net-neutrality-fight-continues-congress-and-states-att-and-verizon-are"
-        target="_blank">eliminating competition</a>.
-
-        People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers
-        with calls and emails demanding that they use their legislative powers to create 
-        protections against throttling, censorship and unfair fees.
+        <a href="https://blog.mozilla.org/blog/2018/04/23/new-mozilla-poll-support-for-net-neutrality-grows-as-trust-in-isps-dips/"
+        target="_blank">91% of Americans</a> believe consumers should be able to freely and quickly access their preferred content 
+        on the Internet. But big cable companies want to force us to use their products to watch their content. And if we don’t like 
+        it, too bad; with limited competition, they can charge us unfair fees and decide who does &mdash; and doesn’t &mdash; get 
+        Internet service.
+        
+        That’s why they’ve introduced 
+        <a href="https://gizmodo.com/gop-lawmakers-introduce-another-fake-net-neutrality-bil-1832431221"
+        target="_blank">fake net neutrality bills</a>. These bills talk about 
+        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1006/"
+        target="_blank">"Internet openness,"</a> but they actually seek to reclassify broadband providers to prevent the FCC from 
+        enforcing any rules at all.  This will allow Verizon to 
+        <a href="https://www.npr.org/2018/08/22/640815074/verizon-throttled-firefighters-data-as-mendocino-wildfire-raged-fire-chief-says"
+        target="_blank">throttle data speeds for firefighters</a> and enable AT&T to 
+        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1006/"
+        target="_blank">"sell your location to bounty hunters</a> without any repercussions. 
 
         So take whatever corner of the Internet that you control — whether it’s a major platform or a personal
         Instagram account — and harness its reach to pressure Congress. Here’s how:
@@ -75,9 +82,9 @@ sections:
   cra:
     title: Here’s how we get Congress to save net neutrality
     body_html: |
-      Our elected officials in Congress can overrule the FCC and save net neutrality by passing 
-      legislation that prevents Internet providers from throttling traffic, censoring online 
-      content, and imposing unfair fees on businesses and users alike.  
+      Our elected officials in Congress can save net neutrality by rejecting fake legislation and passing laws that 
+      prevent Internet providers from throttling traffic, censoring online content, and imposing unfair fees on 
+      businesses and users alike.   
 
       This will require a bipartisan effort from lawmakers, which may seem like science fiction in 
       these deeply divided political times.  But net neutrality is not a partisan issue.  In fact, 
