@@ -120,7 +120,7 @@ export default {
         return "I'm calling to ask Governor Jerry Brown to sign SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
       }
       else {
-        return "I'm calling to ask my lawmakers to sign the discharge petition and vote for the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you."
+        return "I'm calling to ask my lawmakers to reject proposals from Representatives Latta, McMorris Rodgers and Walden that will weaken net neutrality. I want real net neutrality protections, NOT laws written by cable company lobbyists. Thank you."
       }
     }
   }
