@@ -93,7 +93,7 @@ hr {
     <hr>
     <h3>Done calling? Do these things, too!</h3>
     <div class="buttons">
-      <a v-if="page != 'california'" class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
+      <a class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
         <img src="~/assets/images/map-marker.svg" alt="">
         Join an event near you
       </a>
@@ -116,12 +116,7 @@ export default {
     ...mapState(['org']),
 
     callScript() {
-      if (this.page === 'california') {
-        return "I'm calling to ask Governor Jerry Brown to sign SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
-      }
-      else {
-        return "I'm calling to ask my lawmakers to reject proposals from Representatives Latta, McMorris Rodgers and Walden that will weaken net neutrality. I want real net neutrality protections, NOT laws written by cable company lobbyists. Thank you."
-      }
+      return "I'm calling to ask my lawmakers to reject proposals from Representatives Latta, McMorris Rodgers and Walden that will weaken net neutrality. I want real net neutrality protections, NOT laws written by cable company lobbyists. Thank you."
     }
   }
 }

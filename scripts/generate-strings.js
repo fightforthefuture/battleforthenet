@@ -17,9 +17,6 @@ const messages = formatStrings({
       redalert: loadStrings('pages/redalert.yml'),
       augustrecess: loadStrings('pages/augustrecess.yml'),
       california: loadStrings('pages/california.yml'),
-      call: {
-        california: loadStrings('pages/call/california.yml')
-      },
       map: loadStrings('pages/map.yml'),
       scoreboard: {
         index: loadStrings('pages/scoreboard/index.yml'),
