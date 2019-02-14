@@ -17,10 +17,6 @@
       }
     ]
   },
-  "californiaPage": {
-    "stateCampaigns": [],
-    "defaultCampaign": "California-SB-822 ROUND 2"
-  },
   "scoreboardPage": {
     "stateCampaigns": [],
     "defaultCampaign": "BattleForTheNet_BadBills2019"

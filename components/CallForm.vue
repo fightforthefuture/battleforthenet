@@ -123,8 +123,6 @@ export default {
       switch (this.campaign) {
         case 'daily':
           return 1
-        case 'california':
-          return 'California-SB-822'
         case 'fftf':
         default:
           return this.campaign

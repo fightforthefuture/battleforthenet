@@ -4,7 +4,6 @@
       <div class="container">
         <h1>{{ $lt('title') }}</h1>
         <div v-html="$lt('intro_html')" class="intro"></div>
-        <CallForm page="california" />
       </div>
     </section>
     <section id="rep">
@@ -65,7 +64,6 @@
 
 <script>
 import axios from 'axios'
-import CallForm from '~/components/CallForm'
 import VideoRoll from '~/components/VideoRoll'
 import ScoreboardLegend from '~/components/ScoreboardLegend'
 import ScoreboardGroup from '~/components/ScoreboardGroup'
@@ -73,7 +71,6 @@ import { createMetaTags } from '~/assets/js/helpers'
 
 export default {
   components: {
-    CallForm,
     ScoreboardGroup,
     ScoreboardLegend,
     VideoRoll
