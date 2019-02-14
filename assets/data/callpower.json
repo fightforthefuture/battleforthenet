@@ -1,29 +1,21 @@
 {
   "homePage": {
-    "stateCampaigns": [
-      {
-        "id": "BattleForTheNet_BadBills2019",
-        "states": ["ID", "UT", "AZ", "AK", "WY", "SD", "NE", "KS", "OK", "TX", "IA", "AR", "LA", "TN", "KY", "GA", "SC", "NC", "CO", "NV", "MT", "ND", "MO", "WI", "IN", "AL", "FL", "PA", "OH", "WV", "ME"]
-      },
-      {
-        "id": "BattleForTheNet_BadBills2019",
-        "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
-      }
-    ],
+    "stateCampaigns": [],
     "defaultCampaign": "BattleForTheNet_BadBills2019"
   },
   "callPage": {
-    "stateCampaigns": [
+    "stateCampaigns": [],
+    "defaultCampaign": "BattleForTheNet_BadBills2019",
+    "stateCampaigns_DISABLED_BUT_LEFT_HERE_FOR_REFERENCE": [
       {
-        "id": "BattleForTheNet_BadBills2019",
+        "id": "STATE_SPECIFIC_CAMPAIGN_A",
         "states": ["ID", "UT", "AZ", "AK", "WY", "SD", "NE", "KS", "OK", "TX", "IA", "AR", "LA", "TN", "KY", "GA", "SC", "NC", "CO", "NV", "MT", "ND", "MO", "WI", "IN", "AL", "FL", "PA", "OH", "WV", "ME"]
       },
       {
-        "id": "RED_ALERT_BattleForTheNet_Call_House_2Sens",
+        "id": "STATE_SPECIFIC_CAMPAIGN_B",
         "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
       }
-    ],
-    "defaultCampaign": "BattleForTheNet_BadBills2019"
+    ]
   },
   "californiaPage": {
     "stateCampaigns": [],
