@@ -4,12 +4,12 @@ document_title: Join the Battle for Net Neutrality
 title: "Urgent: New bills undermine net neutrality"
 title_call: "Urgent: New bills undermine net neutrality"
 intro_html: |
-  Lobbyists for big cable companies and their pawns in Congress have introduced 
-  THREE bills to 
+  Lobbyists for big cable companies and their pawns in Congress have introduced
+  THREE bills to
   <a href="https://www.freepress.net/news/press-releases/flurry-fake-net-neutrality-bills-are-more-smoke-and-mirrors-cable-backed"
-  target="_blank">undermine net neutrality</a> undermine net neutrality. These 
-  bills give ISPs the freedom to impose unfair fees and refuse Internet service 
-  to people without any repercussions  **Fill out the form below to contact 
+  target="_blank">undermine net neutrality</a> undermine net neutrality. These
+  bills give ISPs the freedom to impose unfair fees and refuse Internet service
+  to people without any repercussions  **Fill out the form below to contact
   Congress and demand they support net neutrality now.**
 persistent_button: Contact Congress
 
@@ -26,14 +26,14 @@ form:
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
-    Hundreds of millions of people all across America support net neutrality, and I'm one of them. 
-    
-    Right now the cable industry is working with members of Congress to pass loophole-riddled net neutrality legislation that will allow Internet service providers (ISPs) to impose widespread throttling and extra fees. 
-    
+    Hundreds of millions of people all across America support net neutrality, and I'm one of them.
+
+    Right now the cable industry is working with members of Congress to pass loophole-riddled net neutrality legislation that will allow Internet service providers (ISPs) to impose widespread throttling and extra fees.
+
     No legislator in favor of an open Internet should support the fake net neutrality bills announced by Republican members of the Communications & Technology Subcommittee in February 2019. I'm calling on you to reject new proposals written by cable industry lobbyists and, instead, work to restore the strong protections for net neutrality and broadband access afforded by the FCC's now-repealed 2015 Open Internet Order.
-    
+
     We expect nothing less than the net neutrality protections the FCC undemocratically repealed in 2017. Please work with your colleagues to pass legislation that genuinely protects the digital rights of your constituents.
-    
+
     Thank you.
 
 sections:
@@ -41,21 +41,21 @@ sections:
     title: Don’t let the cable industry pull a fast one
     body_html: |
         <a href="https://blog.mozilla.org/blog/2018/04/23/new-mozilla-poll-support-for-net-neutrality-grows-as-trust-in-isps-dips/"
-        target="_blank">91% of Americans</a> believe consumers should be able to freely and quickly access their preferred content 
-        on the Internet. But big cable companies want to force us to use their products to watch their content. And if we don’t like 
-        it, too bad; with limited competition, they can charge us unfair fees and decide who does &mdash; and doesn’t &mdash; get 
+        target="_blank">91% of Americans</a> believe consumers should be able to freely and quickly access their preferred content
+        on the Internet. But big cable companies want to force us to use their products to watch their content. And if we don’t like
+        it, too bad; with limited competition, they can charge us unfair fees and decide who does &mdash; and doesn’t &mdash; get
         Internet service.
-        
-        That’s why they’ve introduced 
+
+        That’s why they’ve introduced
         <a href="https://gizmodo.com/gop-lawmakers-introduce-another-fake-net-neutrality-bil-1832431221"
-        target="_blank">fake net neutrality bills</a>. These bills talk about 
+        target="_blank">fake net neutrality bills</a>. These bills talk about
         <a href="https://www.congress.gov/bill/116th-congress/house-bill/1006/"
-        target="_blank">"Internet openness,"</a> but they actually seek to reclassify broadband providers to prevent the FCC from 
-        enforcing any rules at all.  This will allow Verizon to 
+        target="_blank">"Internet openness,"</a> but they actually seek to reclassify broadband providers to prevent the FCC from
+        enforcing any rules at all.  This will allow Verizon to
         <a href="https://www.npr.org/2018/08/22/640815074/verizon-throttled-firefighters-data-as-mendocino-wildfire-raged-fire-chief-says"
-        target="_blank">throttle data speeds for firefighters</a> and enable AT&T to 
+        target="_blank">throttle data speeds for firefighters</a> and enable AT&T to
         <a href="https://motherboard.vice.com/en_us/article/nepxbz/i-gave-a-bounty-hunter-300-dollars-located-phone-microbilt-zumigo-tmobile"
-        target="_blank">sell your location to bounty hunters</a> without any repercussions. 
+        target="_blank">sell your location to bounty hunters</a> without any repercussions.
 
         So take whatever corner of the Internet that you control — whether it’s a major platform or a personal
         Instagram account — and use it to pressure Congress. Here’s how:
@@ -74,7 +74,7 @@ sections:
         </ol>
 
         <div class="modals flex-center">
-          <img src="/images/july-23-widget-screenshot2.jpg"
+          <img src="/images/redalert-widget-screenshot.jpg"
                alt="A screenshot of our widget when minimized"
                class="rounded">
         </div>
@@ -82,17 +82,17 @@ sections:
   cra:
     title: Here’s how we get Congress to save net neutrality
     body_html: |
-      Our elected officials in Congress can save net neutrality by rejecting fake legislation and passing laws that 
-      prevent Internet providers from throttling traffic, censoring online content, and imposing unfair fees on 
-      businesses and users alike.   
+      Our elected officials in Congress can save net neutrality by rejecting fake legislation and passing laws that
+      prevent Internet providers from throttling traffic, censoring online content, and imposing unfair fees on
+      businesses and users alike.
 
-      This will require a bipartisan effort from lawmakers, which may seem like science fiction in 
-      these deeply divided political times.  But net neutrality is not a partisan issue.  In fact, 
-      an overwhelming majority of Americans 
+      This will require a bipartisan effort from lawmakers, which may seem like science fiction in
+      these deeply divided political times.  But net neutrality is not a partisan issue.  In fact,
+      an overwhelming majority of Americans
       <a href="https://www.prnewswire.com/news-releases/overwhelming-bipartisan-majority-opposes-repealing-net-neutrality-survey-finds-300569665.html"
       target="_blank">support net neutrality</a>,
-      including Republicans, Democrats and Independents alike.  And we’ve successfully pushed 
-      lawmakers to 
+      including Republicans, Democrats and Independents alike.  And we’ve successfully pushed
+      lawmakers to
       <a href="https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/"
       target="_blank">cross the aisle</a> in support of net neutrality efforts before.
 
@@ -163,15 +163,15 @@ sections:
   scoreboard:
     title: View the Congressional Scoreboard
     body_html: |
-      It can be hard to keep track of who supports net neutrality and who doesn’t … 
-      especially with cable companies and their lobbyists pushing for fake net 
+      It can be hard to keep track of who supports net neutrality and who doesn’t …
+      especially with cable companies and their lobbyists pushing for fake net
       neutrality legislation. So we’re here to help.
 
-      Below you'll find a link to a list of your state's senators and representatives. 
-      The lawmakers in green signed a discharge petition to overturn the FCC’s net 
-      neutrality repeal, so tell them how much you appreciate their support on this 
-      important issue. The lawmakers in red failed to support the discharge petition, 
-      so contact their office to let them know that actions speak louder than words.  
+      Below you'll find a link to a list of your state's senators and representatives.
+      The lawmakers in green signed a discharge petition to overturn the FCC’s net
+      neutrality repeal, so tell them how much you appreciate their support on this
+      important issue. The lawmakers in red failed to support the discharge petition,
+      so contact their office to let them know that actions speak louder than words.
 
   events:
     title: Attend an event in your area
