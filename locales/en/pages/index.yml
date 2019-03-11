@@ -162,10 +162,7 @@ sections:
   scoreboard:
     title: View the Congressional Scoreboard
     body_html: |
-      It can be hard to keep track of who supports net neutrality and who doesn’t …
-      especially with cable companies and their lobbyists pushing for fake net
-      neutrality legislation. So we’ve created the Congressional Scoreboard to help.
-
+      Our Congressional Scoreboard keeps track of who *really* supports net neutrality.  
       Members of Congress highlighted in blue are on Team Internet because they’ve 
       cosponsored the Save the Internet Act. Lawmakers highlighted in red are on Team 
       Cable because they’re not cosponsors and they refused to support strong protections 
