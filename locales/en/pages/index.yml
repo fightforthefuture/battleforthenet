@@ -162,9 +162,9 @@ sections:
   scoreboard:
     title: View the Congressional Scoreboard
     body_html: |
-      Our scoreboard keeps track of who *really* supports net neutrality.  Members of 
+      Our scoreboard keeps track of who <b>really</b> supports net neutrality.  Members of 
       Congress highlighted in blue are on Team Internet because they’ve cosponsored the 
-      <a href="https://energycommerce.house.gov/newsroom/press-releases/bicameral-democratic-leaders-unveil-save-the-internet-act-to-restore-net "target="_blank">Save the Internet Act</a>. 
+      <a href="https://energycommerce.house.gov/newsroom/press-releases/bicameral-democratic-leaders-unveil-save-the-internet-act-to-restore-net"target="_blank">Save the Internet Act</a>. 
       Lawmakers highlighted in red are on Team Cable because they’re not cosponsors and 
       they refused to support strong protections in 2018. New members of Congress and 
       members who supported strong net neutrality in 2018 but aren’t yet cosponsors of 
