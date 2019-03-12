@@ -57,6 +57,7 @@
         <div v-html="$lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
         <petition-form v-else />
+        <video-livestream v-if="isCallPage"></video-livestream>
       </div>
     </section>
 
@@ -85,6 +86,7 @@
 
 <script>
 import { createMetaTags } from '~/assets/js/helpers'
+import VideoLivestream from '~/components/VideoLivestream'
 import CallForm from '~/components/CallForm'
 import PetitionForm from '~/components/PetitionForm'
 import Scoreboard from '~/components/Scoreboard'
@@ -99,6 +101,7 @@ import WidgetInstructions from '~/components/WidgetInstructions'
 
 export default {
   components: {
+    VideoLivestream,
     CallForm,
     PetitionForm,
     Scoreboard,
