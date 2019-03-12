@@ -14,7 +14,8 @@
 
 <template>
   <div class="video-wrapper">
-    <iframe src="https://player.vimeo.com/video/323205772" frameborder="0"
+    <iframe src="https://www.youtube-nocookie.com/embed/Z94bOTBGLzM" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             webkitallowfullscreen mozallowfullscreen allowfullscreen>
     </iframe>
   </div>
