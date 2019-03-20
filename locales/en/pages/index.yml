@@ -1,15 +1,18 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "Our New Chance to Restore Net Neutrality"
-title_call: "Our New Chance to Restore Net Neutrality"
+title: "Tell Congress to Save the Internet"
+title_call: "Tell Congress to Save the Internet"
 intro_html: |
-  **BREAKING:** Congress 
-  <a href="https://www.nbcnews.com/think/opinion/trump-killed-net-neutrality-congressional-democrats-are-trying-make-internet-ncna979786"
-  target="_blank">introduced</a> the “Save the Internet Act” to overturn the FCC’s 
-  net neutrality repeal. Telecom lobbyists are gearing up to swarm Capitol Hill to 
-  stop the bill, so we need to push lawmakers extra hard to pass it. **Fill out the 
-  form below to demand Congress supports net neutrality.**
+  Lawmakers have introduced the
+  <a href="https://energycommerce.house.gov/sites/democrats.energycommerce.house.gov/files/documents/Save%20the%20Internet%20Act%20Legislative%20Text.pdf"
+  target="_blank">Save the Internet Act of 2019</a>.  This bill is our best chance to
+  <a href="https://techcrunch.com/2019/03/06/save-the-internet-act-would-bring-back-net-neutrality-plain-and-simple/"
+  target="_blank">bring back</a> net neutrality protections that keep ISPs from 
+  throttling traffic, blocking content, and imposing unfair fees. But telecom 
+  giants want to gut the bill by inserting bad amendments before a key committee 
+  vote next week. **Fill out the form below to demand Congress support the Save 
+  the Internet Act before it’s too late.**
 persistent_button: Contact Congress
 
 form:
@@ -37,41 +40,35 @@ form:
 
 sections:
   join:
-    title: Don’t let the cable industry pull a fast one
+    title: The Whole Internet Is Watching
     body_html: |
-        <a href="https://blog.mozilla.org/blog/2018/04/23/new-mozilla-poll-support-for-net-neutrality-grows-as-trust-in-isps-dips/"
-        target="_blank">91% of Americans</a> believe consumers should be able to freely and quickly access their preferred content
-        on the Internet. But big cable companies want to force us to use their products to watch their content. And if we don’t like
-        it, too bad; with limited competition, they can charge us unfair fees and decide who does &mdash; and doesn’t &mdash; get
-        Internet service.
+        Next week lawmakers are expected to vote on amendments to the Save The Internet Act to 
+        restore net neutrality.  Unfortunately, telecom lobbyists are pushing amendments to give 
+        ISPs new powers to block, throttle and charge Internet users new fees.  If we get the bill 
+        out of committee without any bad changes, we can win the next big vote on the House floor. 
+        But if it gets gutted next week, we’re back to square one.
 
-        That’s why they’ve introduced
-        <a href="https://gizmodo.com/gop-lawmakers-introduce-another-fake-net-neutrality-bil-1832431221"
-        target="_blank">fake net neutrality bills</a>. These bills talk about
-        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1006/"
-        target="_blank">"Internet openness,"</a> but they actually seek to reclassify broadband providers to prevent the FCC from
-        enforcing any rules at all.  This will allow Verizon to
-        <a href="https://www.npr.org/2018/08/22/640815074/verizon-throttled-firefighters-data-as-mendocino-wildfire-raged-fire-chief-says"
-        target="_blank">throttle data speeds for firefighters</a> and enable AT&T to
-        <a href="https://motherboard.vice.com/en_us/article/nepxbz/i-gave-a-bounty-hunter-300-dollars-located-phone-microbilt-zumigo-tmobile"
-        target="_blank">sell your location to bounty hunters</a> without any repercussions.
+        Starting Monday, March 25th, websites, Internet users, and online communities will work 
+        together to plaster the committee hearing livestream across the Internet on websites, social 
+        media accounts, blogs… basically everywhere! The hearing is expected early next week but the 
+        exact date and time are TBD.  When it starts we’ll stream it live so the whole Internet can 
+        watch.
 
-        So take whatever corner of the Internet that you control — whether it’s a major platform or a personal
-        Instagram account — and use it to pressure Congress. Here’s how:
+        **Here’s what you can do to make sure Congress knows the whole Internet is watching:**
 
         <ol>
-          <li>Change your social media avatars and profile pics to help sound the alarm. You can find great
-          artwork in our gallery <a href="/media/#social">here.</a></li>
-          <li>If you make videos, consider making a video about net neutrality, or use our simple
-          <a href="https://drive.google.com/drive/folders/0B7iKho2OIeVzY1FKTlAzS1NOVTg"
-          target=_blank">video bumper</a> to help spread the word.</li>
-          <li>If you run a website or blog, post our banner ads to let your visitors know you support net neutrality.
-          We’ve provided examples in our gallery <a href="/media/#banners">here</a>.
-          Link back to BattleForTheNet.com whenever you can so people can easily contact their lawmakers.</li>
-          <li>If you run a website or blog, deploy our updated widget to let your users contact Congress without ever
-          leaving your site. Details below.</li>
+          <li>**Join a <a href="/map/">protest happening near you</a> on March 21st.** We need you to 
+          show up at lawmakers’ district offices and speak out for net neutrality!</li>
+          <li>**Speak out on social media.** Here is some
+          <a href="https://docs.google.com/document/d/13mf9BpKFS0Z-Z4hXZ9lvy8EG7qVqe2tOxwyhlirk6Sc/edit#"
+          target=_blank">suggested copy</a> you can use to spread the word. And be sure to share our 
+          awesome graphics to get the word out.</li>
+          <li>**Add the livestream (when it’s live) and a link to BattleForTheNet.com on your homepage.** 
+          Use our widget anytime to start raising awareness ahead of the vote and we'll add the livestream 
+          to the Battle for the Net homepage as soon as it’s available. Check back for the widget code soon!</li>
         </ol>
 
+<---
         <div class="modals flex-center">
           <img src="/images/redalert-widget-screenshot.jpg"
                alt="A screenshot of our widget when minimized"
@@ -144,6 +141,7 @@ sections:
         </li>
       </ul>
 
+--->
   stats:
     title: |
       We're making Congress listen
