@@ -54,7 +54,7 @@
     <p v-text="$lt('widget_explainer_text')"></p>
     <p>
       <a class="btn btn-large btn-block"
-         href="https://www.fightforthefuture.org/?widget=redalert"
+         href="https://www.fightforthefuture.org/?widget=watch"
          target="_blank">
         {{ $lt('try_button_text') }}
       </a>
