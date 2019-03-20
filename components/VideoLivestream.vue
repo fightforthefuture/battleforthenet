@@ -72,12 +72,13 @@ $orange-color: #FF5627;
 </style>
 
 <template>
-  <div class="video-wrapper" v-if="timeUntilLive">
-    <div class="placeholder" v-if="timeUntilLive > 0">
+  <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">
+    <div class="placeholder" v-if="!isCountdownLive || timeUntilLive > 0">
       <p class="live">Live</p>
       <h2 class="heading">Lobbyists will push bad amendments</h2>
       <h2 class="countdown">
-        <transition name="fade">
+        <span v-if="!isCountdownLive">Next Week</span>
+        <transition v-else name="fade">
           <span v-if="now">{{ countdown }}</span>
         </transition>
       </h2> <!-- .countdown -->
@@ -102,13 +103,14 @@ export default {
 
   data() {
     return {
+      isCountdownLive: false,
       now: null
     }
   },
 
   computed: {
     endDateTime () {
-      return new Date('Fri Mar 22 2019 17:00:00 GMT+0000').getTime()
+      return new Date('Fri Mar 29 2019 17:00:00 GMT+0000').getTime() // Time is not real
     },
     timeUntilLive() {
       if (this.now) {
