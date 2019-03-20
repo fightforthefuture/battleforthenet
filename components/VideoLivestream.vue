@@ -63,11 +63,24 @@ $orange-color: #FF5627;
 
   h2.heading {
     margin: 6rem 0 5rem;
+
+    @include mobile {
+      min-height: 99px; // Require 3 lines on mobile
+    }
   }
 
   h2.countdown {
     min-height: 4rem;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
 
@@ -75,12 +88,12 @@ $orange-color: #FF5627;
   <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">
     <div class="placeholder" v-if="!isCountdownLive || timeUntilLive > 0">
       <p class="live">Live</p>
-      <h2 class="heading">Lobbyists will push bad amendments</h2>
+      <transition name="fade" mode="out-in">
+        <h2 class="heading" :key="headingIndex">{{ headings[headingIndex] }}</h2>
+      </transition>
       <h2 class="countdown">
         <span v-if="!isCountdownLive">Next Week</span>
-        <transition v-else name="fade">
-          <span v-if="now">{{ countdown }}</span>
-        </transition>
+        <span v-if="isCountdownLive && now">{{ countdown }}</span>
       </h2> <!-- .countdown -->
     </div> <!-- .placeholder -->
     <iframe v-else
@@ -104,7 +117,13 @@ export default {
   data() {
     return {
       isCountdownLive: false,
-      now: null
+      now: null,
+      headingIndex: 0,
+      headings: [
+        'Lobbyists will push bad amendments',
+        'Congress can restore net neutrality',
+        'Tell lawmakers to save the internet'
+      ]
     }
   },
 
@@ -141,7 +160,8 @@ export default {
   },
 
   created() {
-    this.startCountdown();
+    this.startCountdown()
+    this.headingTextRotation()
   },
 
   methods: {
@@ -149,6 +169,11 @@ export default {
       let secondCountdown = setInterval(() => {
         this.now = new Date().getTime()
       }, 1000);
+    },
+    headingTextRotation() {
+      let rotationCountdown = setInterval(() => {
+        this.headingIndex = this.headings.length-1 !== this.headingIndex ? this.headingIndex+1 : 0
+      }, 5000)
     }
   }
 }
