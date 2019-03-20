@@ -5,6 +5,6 @@ widget_explainer_text: |
 try_button_text: Try it out
 widget_explainer_part_2_html: |
   It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to
-  <a href="https://github.com/fightforthefuture/redalert-widget/">visit our
+  <a href="https://github.com/fightforthefuture/watch-widget/">visit our
   GitHub page</a> to learn how to customize the widget for your site.
-embed_code: <script src="https://redalert.battleforthenet.com/widget.js" async></script>
+embed_code: <script src="https://watch.battleforthenet.com/widget.js" async></script>

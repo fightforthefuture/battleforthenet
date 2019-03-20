@@ -8,10 +8,10 @@ intro_html: |
   <a href="https://energycommerce.house.gov/sites/democrats.energycommerce.house.gov/files/documents/Save%20the%20Internet%20Act%20Legislative%20Text.pdf"
   target="_blank">Save the Internet Act of 2019</a>.  This bill is our best chance to
   <a href="https://techcrunch.com/2019/03/06/save-the-internet-act-would-bring-back-net-neutrality-plain-and-simple/"
-  target="_blank">bring back</a> net neutrality protections that keep ISPs from 
-  throttling traffic, blocking content, and imposing unfair fees. But telecom 
-  giants want to gut the bill by inserting bad amendments before a key committee 
-  vote next week. **Fill out the form below to demand Congress support the Save 
+  target="_blank">bring back</a> net neutrality protections that keep ISPs from
+  throttling traffic, blocking content, and imposing unfair fees. But telecom
+  giants want to gut the bill by inserting bad amendments before a key committee
+  vote next week. **Fill out the form below to demand Congress support the Save
   the Internet Act before it’s too late.**
 persistent_button: Contact Congress
 
@@ -42,34 +42,34 @@ sections:
   join:
     title: The Whole Internet Is Watching
     body_html: |
-        Next week lawmakers are expected to vote on amendments to the Save The Internet Act to 
-        restore net neutrality.  Unfortunately, telecom lobbyists are pushing amendments to give 
-        ISPs new powers to block, throttle and charge Internet users new fees.  If we get the bill 
-        out of committee without any bad changes, we can win the next big vote on the House floor. 
+        Next week lawmakers are expected to vote on amendments to the Save The Internet Act to
+        restore net neutrality.  Unfortunately, telecom lobbyists are pushing amendments to give
+        ISPs new powers to block, throttle and charge Internet users new fees.  If we get the bill
+        out of committee without any bad changes, we can win the next big vote on the House floor.
         But if it gets gutted next week, we’re back to square one.
 
-        Starting Monday, March 25th, websites, Internet users, and online communities will work 
-        together to plaster the committee hearing livestream across the Internet on websites, social 
-        media accounts, blogs… basically everywhere! The hearing is expected early next week but the 
-        exact date and time are TBD.  When it starts we’ll stream it live so the whole Internet can 
+        Starting Monday, March 25th, websites, Internet users, and online communities will work
+        together to plaster the committee hearing livestream across the Internet on websites, social
+        media accounts, blogs… basically everywhere! The hearing is expected early next week but the
+        exact date and time are TBD.  When it starts we’ll stream it live so the whole Internet can
         watch.
 
         **Here’s what you can do to make sure Congress knows the whole Internet is watching:**
 
         <ol>
-          <li><strong>Join a <a href="/map/">protest happening near you</a> on March 21st.</strong> We need you to 
+          <li><strong>Join a <a href="/map/">protest happening near you</a> on March 21st.</strong> We need you to
           show up at lawmakers’ district offices and speak out for net neutrality!</li>
           <li><strong>Speak out on social media.</strong> Here is some
           <a href="https://docs.google.com/document/d/13mf9BpKFS0Z-Z4hXZ9lvy8EG7qVqe2tOxwyhlirk6Sc/edit#"
-          target=_blank">suggested copy</a> you can use to spread the word. And be sure to share our 
+          target=_blank">suggested copy</a> you can use to spread the word. And be sure to share our
           awesome graphics to get the word out.</li>
-          <li><strong>Add the livestream (when it’s live) and a link to BattleForTheNet.com on your homepage.</strong> 
-          Use our widget anytime to start raising awareness ahead of the vote and we'll add the livestream 
-          to the Battle for the Net homepage as soon as it’s available. Check back for the widget code soon!</li>
+          <li><strong>Add the livestream (when it’s live) and a link to BattleForTheNet.com on your homepage.</strong>
+          Use our widget anytime to start raising awareness ahead of the vote and we'll add the livestream
+          to the Battle for the Net homepage as soon as it’s available.</li>
         </ol>
 
         <div class="modals flex-center">
-          <img src="/images/redalert-widget-screenshot.jpg"
+          <img src="/images/watch-widget-screenshot.jpg"
                alt="A screenshot of our widget when minimized"
                class="rounded">
         </div>
@@ -92,12 +92,12 @@ sections:
   scoreboard:
     title: View the Congressional Scoreboard
     body_html: |
-      Our scoreboard keeps track of who <b>really</b> supports net neutrality.  Members of 
-      Congress highlighted in blue are on Team Internet because they’ve cosponsored the 
-      <a href="https://energycommerce.house.gov/newsroom/press-releases/bicameral-democratic-leaders-unveil-save-the-internet-act-to-restore-net"target="_blank">Save the Internet Act</a>. 
-      Lawmakers highlighted in red are on Team Cable because they’re not cosponsors and 
-      they refused to support strong protections in 2018. New members of Congress and 
-      members who supported strong net neutrality in 2018 but aren’t yet cosponsors of 
+      Our scoreboard keeps track of who <b>really</b> supports net neutrality.  Members of
+      Congress highlighted in blue are on Team Internet because they’ve cosponsored the
+      <a href="https://energycommerce.house.gov/newsroom/press-releases/bicameral-democratic-leaders-unveil-save-the-internet-act-to-restore-net"target="_blank">Save the Internet Act</a>.
+      Lawmakers highlighted in red are on Team Cable because they’re not cosponsors and
+      they refused to support strong protections in 2018. New members of Congress and
+      members who supported strong net neutrality in 2018 but aren’t yet cosponsors of
       the Save the Internet Act are highlighted in grey as neutral.
 
   events:
