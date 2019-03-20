@@ -68,7 +68,6 @@ sections:
           to the Battle for the Net homepage as soon as it’s available. Check back for the widget code soon!</li>
         </ol>
 
-<---
         <div class="modals flex-center">
           <img src="/images/redalert-widget-screenshot.jpg"
                alt="A screenshot of our widget when minimized"
@@ -141,7 +140,6 @@ sections:
         </li>
       </ul>
 
---->
   stats:
     title: |
       We're making Congress listen
