@@ -97,8 +97,7 @@ $orange-color: #FF5627;
       </h2> <!-- .countdown -->
     </div> <!-- .placeholder -->
     <iframe v-else
-            src="https://www.youtube-nocookie.com/embed/Z94bOTBGLzM" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            src="https://player.vimeo.com/video/325672146" frameborder="0"
             webkitallowfullscreen mozallowfullscreen allowfullscreen>
     </iframe>
   </div>
