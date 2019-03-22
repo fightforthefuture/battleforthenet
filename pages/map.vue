@@ -10,6 +10,7 @@ body.map-page {
     left: 0;
     height: 100%;
   }
+  
 
   .bftn-footer {
     display: none;
