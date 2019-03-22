@@ -18,10 +18,10 @@
       <li><img src="/images/logos/mozilla.png" alt="Mozilla"></li>
       <li><img src="/images/logos/EFF-logo-stack-RGB.png" alt="EFF"></li>
       <li><img src="/images/logos/okcupid.png" alt="OkCupid"></li>
-      <li><img src="/images/logos/18mr.png" alt="18 Million Rising"></li>
+      <li><img src="/images/logos/bitorrent.png" alt="BitTorrent"></li>
       <li><img src="/images/logos/ycombinator.png" alt="Y Combinator"></li>
       <li><img src="/images/logos/dropbox.png" alt="Dropbox"></li>
-      <li><img src="/images/logos/aall.png" alt="AALL"></li>
+      <li><img src="/images/logos/tron.png" alt="Tron"></li>
       <li><img src="/images/logos/postmates.png" alt="Postmates"></li>
       <li><img src="/images/logos/aclu.jpg" alt="ACLU"></li>
       <li><img src="/images/logos/discord.png" alt="Discord"></li>
