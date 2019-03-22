@@ -115,7 +115,7 @@ export default {
 
   data() {
     return {
-      isCountdownLive: false,
+      isCountdownLive: true,
       now: null,
       headingIndex: 0,
       headings: [
@@ -128,7 +128,7 @@ export default {
 
   computed: {
     endDateTime () {
-      return new Date('Fri Mar 29 2019 17:00:00 GMT+0000').getTime() // Time is not real
+      return new Date('Fri Mar 29 2019 17:00:00 GMT+0000').getTime() // FIXME
     },
     timeUntilLive() {
       if (this.now) {
