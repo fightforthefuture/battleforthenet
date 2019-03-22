@@ -128,7 +128,7 @@ export default {
 
   computed: {
     endDateTime () {
-      return new Date('Fri Mar 29 2019 17:00:00 GMT+0000').getTime() // FIXME
+      return new Date('Mon Mar 26 2019 14:00:00 GMT+0000').getTime()
     },
     timeUntilLive() {
       if (this.now) {
