@@ -117,6 +117,7 @@ export default {
     WidgetInstructions
   },
 
+
   computed: {
     isCallPage() {
       return this.$route.name === 'call' || this.$route.query.call
