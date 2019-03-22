@@ -89,11 +89,11 @@
       <span>=</span>
       <span>{{ supportsDescription }}</span>
     </div>
-    <div class="team-nothing" v-if="this.neutral !== false">
+<!--     <div class="team-nothing" v-if="this.neutral !== false">
       <label>{{ $lt('neutral_label') }}</label>
       <span>=</span>
       <span>{{ neutralDescription }}</span>
-    </div>
+    </div> -->
   </div>
 </template>
 
