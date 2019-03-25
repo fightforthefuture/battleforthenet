@@ -110,7 +110,7 @@
           <textarea v-model="comments" ref="comments"></textarea>
           <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
         </div>
-        <div class="biz-row">
+        <div class="biz-row" v-show="false">
           <label>{{ $lt('business_owner_label') }}</label>
           <fancy-toggle :on="isBusinessOwner" @change="setBusinessOwner"></fancy-toggle>
         </div>
