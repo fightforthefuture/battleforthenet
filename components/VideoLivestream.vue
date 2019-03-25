@@ -86,7 +86,7 @@ $orange-color: #FF5627;
 
 <template>
   <div id="watch">
-    <h3 class="push-top-3">
+    <h3 class="pad-top-3">
       Text WATCH to 687-88 to be reminded when the livestream begins
     </h3>
     <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">

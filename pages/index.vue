@@ -1,5 +1,8 @@
 <style lang="scss">
 .index-page {
+  h3 {
+    font-size: 1.7rem;
+  }
   section#cra {
     ul {
       list-style-type: none;
