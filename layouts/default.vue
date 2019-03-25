@@ -20,7 +20,7 @@ h1, h2.section-title {
 
 h1 {
   margin: 0 0 2rem;
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 h2.section-title {
@@ -232,10 +232,6 @@ $step: 6%;
 }
 
 @include daytons-lenovo {
-  h1 {
-    font-size: 5rem;
-  }
-
   h2.section-title {
     font-size: 3.2rem;
   }

@@ -85,21 +85,26 @@ $orange-color: #FF5627;
 </style>
 
 <template>
-  <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">
-    <div class="placeholder" v-if="!isCountdownLive || timeUntilLive > 0">
-      <p class="live">Live</p>
-      <transition name="fade" mode="out-in">
-        <h2 class="heading" :key="headingIndex">{{ headings[headingIndex] }}</h2>
-      </transition>
-      <h2 class="countdown">
-        <span v-if="!isCountdownLive">Next Week</span>
-        <span v-if="isCountdownLive && now">{{ countdown }}</span>
-      </h2> <!-- .countdown -->
-    </div> <!-- .placeholder -->
-    <iframe v-else
-            src="https://player.vimeo.com/video/325672146" frameborder="0"
-            webkitallowfullscreen mozallowfullscreen allowfullscreen>
-    </iframe>
+  <div id="watch">
+    <h3 class="push-top-3">
+      Text WATCH to 687-88 to be reminded when the livestream begins
+    </h3>
+    <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">
+      <div class="placeholder" v-if="!isCountdownLive || timeUntilLive > 0">
+        <p class="live">Live</p>
+        <transition name="fade" mode="out-in">
+          <h2 class="heading" :key="headingIndex">{{ headings[headingIndex] }}</h2>
+        </transition>
+        <h2 class="countdown">
+          <span v-if="!isCountdownLive">Next Week</span>
+          <span v-if="isCountdownLive && now">{{ countdown }}</span>
+        </h2> <!-- .countdown -->
+      </div> <!-- .placeholder -->
+      <iframe v-else
+              src="https://player.vimeo.com/video/325672146" frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen>
+      </iframe>
+    </div> <!-- .video-wrapper -->
   </div>
 </template>
 

@@ -57,9 +57,7 @@
         <div v-html="$lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
         <petition-form v-else />
-        <div id="watch">
-          <video-livestream></video-livestream>
-        </div>
+        <video-livestream></video-livestream>
       </div>
     </section>
 
