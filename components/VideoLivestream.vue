@@ -101,7 +101,7 @@ $orange-color: #FF5627;
         </h2> <!-- .countdown -->
       </div> <!-- .placeholder -->
       <iframe v-else
-              src="https://player.vimeo.com/video/326576684" frameborder="0"
+              src="https://player.vimeo.com/video/326610681" frameborder="0"
               webkitallowfullscreen mozallowfullscreen allowfullscreen>
       </iframe>
     </div> <!-- .video-wrapper -->
