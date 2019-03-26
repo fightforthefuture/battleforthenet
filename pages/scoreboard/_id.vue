@@ -632,7 +632,7 @@ export default {
         return 'https://www.facebook.com/groups/2079387388948963/'
       }
       else {
-        return 'https://act.demandprogress.org/sign/sign-up-text-team-internet/'
+        return '/map/'
       }
     },
 
