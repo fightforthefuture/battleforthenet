@@ -100,7 +100,7 @@ sections:
   scoreboard:
     title: View the Congressional Scoreboard
     body_html: |
-      Our scoreboard keeps track of who **really** supports net neutrality. Members of Congress highlighted in blue are on Team Internet because they’ve cosponsored the Save the Internet Act. Lawmakers highlighted in red are on Team Cable because they are not yet cosponsors.
+      Our scoreboard keeps track of who **really** supports net neutrality. Members of Congress highlighted in blue are on Team Internet because they’ve cosponsored or voted for the Save the Internet Act. Lawmakers highlighted in red are on Team Cable because they are not yet cosponsors or voted against the bill.
 
   events:
     title: Attend an event in your area
