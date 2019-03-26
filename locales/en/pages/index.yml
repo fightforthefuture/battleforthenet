@@ -1,18 +1,19 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "Key Net Neutrality Vote Today"
-title_call: "Key Net Neutrality Vote Today"
+title: "UPDATE: Net Neutrality Passes Key Vote"
+title_call: "UPDATE: Net Neutrality Passes Key Vote"
 intro_html: |
   Lawmakers have introduced the
   <a href="https://energycommerce.house.gov/sites/democrats.energycommerce.house.gov/files/documents/Save%20the%20Internet%20Act%20Legislative%20Text.pdf"
   target="_blank">Save the Internet Act of 2019</a>.  This bill is our best chance to
   <a href="https://techcrunch.com/2019/03/06/save-the-internet-act-would-bring-back-net-neutrality-plain-and-simple/"
   target="_blank">bring back</a> net neutrality protections that keep ISPs from
-  throttling traffic, blocking content, and imposing unfair fees. But telecom giants
-  want to gut the bill by inserting bad amendments before a key committee vote on March
-  26th. **Fill out the form to demand Congress support the Save the Internet Act
-  and <a href="#watch">watch</a> the hearing.**
+  throttling traffic, blocking content, and imposing unfair fees. The bill just
+  <a href="https://motherboard.vice.com/en_us/article/qvyqvm/bill-that-would-restore-net-neutrality-moves-forward-despite-telecoms-best-efforts-to-kill-it"
+  target="_blank">passed</a>
+  a key subcommittee vote but it will soon face a full committee and final House
+  vote. **Fill out the form to demand Congress pass the Save the Internet Act.**
 persistent_button: Contact Congress
 
 form:
