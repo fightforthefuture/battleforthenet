@@ -16,7 +16,7 @@
     "generate-strings": "node scripts/generate-strings.js",
     "generate-routes": "node scripts/generate-routes.js",
     "generate-media": "node scripts/generate-media.js",
-    "deploy": "aws s3 sync dist s3://www.battleforthenet.com --delete",
+    "deploy": "aws s3 sync dist s3://www.battleforthenet.com --acl public-read --delete",
     "deploy-branch": "bash scripts/deploy-branch.sh",
     "analyze": "nuxt build --analyze",
     "serve-static": "npm run generate && static dist"
