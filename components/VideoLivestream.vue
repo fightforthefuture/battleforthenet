@@ -101,8 +101,9 @@ $orange-color: #FF5627;
         </h2> <!-- .countdown -->
       </div> <!-- .placeholder -->
       <div v-else>
-        <iframe src="https://player.twitch.tv/?channel=fight_for_the_future" frameborder="0"
-                webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
+        <iframe src="https://player.twitch.tv/?channel=fight_for_the_future&muted=true"
+                frameborder="0" scrolling="no"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen>
         </iframe>
       </div>
     </div> <!-- .video-wrapper -->
