@@ -1,19 +1,14 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "UPDATE: Net Neutrality Bill Passes Key Vote"
-title_call: "UPDATE: Net Neutrality Bill Passes Key Vote"
+title: "Congress is Voting on Net Neutrality"
+title_call: "Congress is Voting on Net Neutrality"
 intro_html: |
-  Lawmakers have introduced the
-  <a href="https://energycommerce.house.gov/sites/democrats.energycommerce.house.gov/files/documents/Save%20the%20Internet%20Act%20Legislative%20Text.pdf"
-  target="_blank">Save the Internet Act of 2019</a>.  This bill is our best chance to
-  <a href="https://techcrunch.com/2019/03/06/save-the-internet-act-would-bring-back-net-neutrality-plain-and-simple/"
-  target="_blank">bring back</a> net neutrality protections that keep ISPs from
-  throttling traffic, blocking content, and imposing unfair fees. The bill just
-  <a href="https://motherboard.vice.com/en_us/article/qvyqvm/bill-that-would-restore-net-neutrality-moves-forward-despite-telecoms-best-efforts-to-kill-it"
-  target="_blank">passed</a>
-  a key subcommittee vote but it will soon face a full committee and final House
-  vote. **Fill out the form to demand Congress pass the Save the Internet Act.**
+  Wednesday, key lawmakers will vote on the Save the Internet Act. This bill is
+  our best chance to restore strong protections against blocking, throttling,
+  and new fees for Internet users, but lobbyists are working round the clock to
+  gut the bill. **Tell Congress to pass the Save the Internet Act with no bad
+  amendments.**
 persistent_button: Contact Congress
 
 form:
@@ -43,16 +38,19 @@ sections:
   join:
     title: The Whole Internet Is Watching
     body_html: |
-        On March 26th, lawmakers will vote on amendments to the Save The Internet Act to restore net
-        neutrality. Unfortunately, telecom lobbyists are pushing amendments to give ISPs new powers
-        to block, throttle and charge Internet users new fees. If we get the bill out of committee
-        without any bad changes, we can win the next big vote on the House floor. But if it gets
-        gutted in committee, we’re back to square one.
+        At the last subcommittee markup, over 300,000 people tuned in to watch.
+        Now, on April 3rd, the full House Energy and Commerce Committee will
+        vote on amendments to the Save The Internet Act to restore net neutrality.
+        Unfortunately, telecom lobbyists are pushing amendments to gut the bill.
+        If we get it out of committee without any bad changes, we can win the
+        next big vote on the House floor. But if it gets gutted in committee,
+        we’re back to square one.
 
-        Starting Monday, March 25th, websites, Internet users, and online communities will work
-        together to plaster the committee hearing livestream across the Internet on websites, social
-        media accounts, blogs… basically everywhere! When the committee meeting begins on Tuesday,
-        we'll stream it live so the whole Internet can watch.
+        On April 3rd, websites, Internet users, and online communities will work
+        together to plaster the full committee hearing livestream across the
+        Internet on websites, social media accounts, blogs… basically everywhere!
+        When the committee meeting begins, we'll stream it live so the whole
+        Internet can watch.
 
         **Here’s what you can do to make sure Congress knows we're watching:**
 
@@ -65,12 +63,12 @@ sections:
           <li><strong>Tell everyone to text WATCH to 687-88.</strong> They can set a reminder to watch the
           hearing and pressure their members of Congress to pass a clean bill from their smartphone.</li>
           <li><strong>Embed the hearing
-          <a href="https://vimeo.com/326610681"
+          <a href="https://www.twitch.tv/fight_for_the_future"
           target="_blank">livestream</a> into a blog or Tumblr post with a link back to BattleForTheNet.com.</strong>
-          Use the code below to post the hearing livestream on Monday and keep it up through Tuesday help
+          Use the code below to post the hearing livestream on Tuesday and keep it up through Wednesday help
           spread the word.
           <code style="background-color: #262035; color: #8a7cae; font-size: 1.3rem;">
-            &lt;iframe src=&quot;https://player.vimeo.com/video/326610681&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+            &lt;iframe src=&quot;https://player.twitch.tv/?channel=fight_for_the_future&muted=true&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
           </code></li>
           <li><strong>Add our hearing livestream alert widget to your homepage. </strong>Put it up now to
           start raising awareness ahead of the vote and we'll add the livestream to the Battle for the Net

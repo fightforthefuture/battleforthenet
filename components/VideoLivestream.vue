@@ -125,9 +125,9 @@ export default {
       now: null,
       headingIndex: 0,
       headings: [
-        'Lobbyists will push bad amendments',
-        'Congress can restore net neutrality',
-        'Tell lawmakers to save the internet'
+        'Crucial net neutrality vote Wednesday',
+        'Lobbyists are working to gut the bill',
+        'Tell Congress to pass a clean bill'
       ]
     }
   },
