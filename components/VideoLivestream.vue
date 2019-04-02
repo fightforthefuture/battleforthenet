@@ -100,12 +100,11 @@ $orange-color: #FF5627;
           <span v-if="isCountdownLive && now">{{ countdown }}</span>
         </h2> <!-- .countdown -->
       </div> <!-- .placeholder -->
-      <div v-else>
-        <iframe src="https://player.twitch.tv/?channel=fight_for_the_future&muted=true"
-                frameborder="0" scrolling="no"
-                webkitallowfullscreen mozallowfullscreen allowfullscreen>
-        </iframe>
-      </div>
+      <iframe v-else
+              src="https://player.twitch.tv/?channel=fight_for_the_future&muted=true"
+              frameborder="0" scrolling="no"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen>
+      </iframe>
     </div> <!-- .video-wrapper -->
   </div>
 </template>
