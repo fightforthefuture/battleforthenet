@@ -331,3 +331,30 @@ iframe.events-map {
     height: 250px;
   }
 }
+
+.letter-wrapper {
+  position: relative;
+  padding: 2rem;
+  background: $body-color;
+  color: $alt-bg-color;
+  text-align: left;
+}
+.letter-wrapper:before,
+.letter-wrapper:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+  border: 20px solid transparent;
+}
+.letter-wrapper:before {
+  border-bottom-color: $muted-link-color;
+  border-left-color:    $muted-link-color;
+}
+.letter-wrapper:after {
+  border-top-color:   $body-bg-color;
+  border-right-color: $body-bg-color;
+}

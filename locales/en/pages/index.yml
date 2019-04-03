@@ -4,11 +4,11 @@ document_title: Join the Battle for Net Neutrality
 title: "Congress is Voting on Net Neutrality"
 title_call: "Congress is Voting on Net Neutrality"
 intro_html: |
-  Wednesday, key lawmakers will vote on the Save the Internet Act. This bill is
-  our best chance to restore strong protections against blocking, throttling,
-  and new fees for Internet users, but lobbyists are working round the clock to
-  gut the bill. **Tell Congress to pass the Save the Internet Act with no bad
-  amendments.**
+  Wednesday, key lawmakers will vote on the
+  <a href="#bill">Save the Internet Act</a>. This bill is our best chance to
+  restore strong protections against blocking, throttling, and new fees for
+  Internet users, but lobbyists are working round the clock to gut the bill.
+  **Tell Congress to pass the Save the Internet Act with no bad amendments.**
 persistent_button: Contact Congress
 
 form:
@@ -80,6 +80,109 @@ sections:
                alt="A screenshot of our widget when minimized"
                class="rounded">
         </div>
+
+  bill:
+    title: |
+      Save the Internet Act of 2019
+    body_html: |
+      In 2015, the Federal Communications Commission (FCC) adopted the
+      <a href="https://www.federalregister.gov/documents/2015/04/13/2015-07841/protecting-and-promoting-the-open-internet"
+         target="_blank">
+        Open Internet Order</a>
+      to protect Internet users from ISPs throttling traffic, censoring content,
+      and imposing unfair fees. But just a few years later, a new chairman of the FCC
+      <a href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html"
+         target="_blank">
+        killed net neutrality</a>
+      by repealing the Open Internet order. Since then, cable companies like
+      <a href="https://www.publicknowledge.org/news-blog/blogs/broadband-providers-are-quietly-taking-advantage-of-an-internet-without-net-neutrality-protections?gclid=EAIaIQobChMI-qKqppy04QIVSJ7ACh2-ogPZEAAYASAAEgLyRvD_BwE"
+         target="_blank">
+        Comcast, AT&T, and Sprint</a>
+      have been rolling out Internet fast lanes and slowing down data being used
+      by competitors’ services.
+
+      <a href="https://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules"
+         target="_blank">
+        Americans want net neutrality</a>,
+      and we’ve demanded that our lawmakers pass strong legislation to prevent
+      unelected bureaucrats from changing the rules whenever they want to. And
+      our lawmakers have listened.
+
+      <a href="https://energycommerce.house.gov/sites/democrats.energycommerce.house.gov/files/documents/Save%20the%20Internet%20Act%20Legislative%20Text.pdf"
+         target="_blank">
+        The Save the Internet Act of 2019</a>
+      is a simple, three-page bill that would restore the Open Internet Order
+      by rolling back the FCC’s disastrous decision to destroy net neutrality.
+      If this bill passes the House and the Senate, it will enshrine net
+      neutrality into law. Plain and simple.
+
+      Read it for yourself below:
+
+      <div class="letter-wrapper push-top-3">
+        <h3 class="text-center">HR 1644 - The Save the Internet Act</h3>
+        <h3 class="text-center">A BILL</h3>
+        <p>
+          To restore the open internet order of the Federal
+          Communications Commission.
+        </p>
+        <p>
+          <em>Be it enacted by the Senate and House of Representatives of the
+          United States of America in Congress assembled,</em>
+        </p>
+        <h3>SECTION 1. SHORT TITLE.</h3>
+        <p>
+          This Act may be cited as the "Save the Internet Act of 2019".
+        </p>
+        <h3>SEC. 2. RESTORATION OF OPEN INTERNET ORDER.</h3>
+        <p>
+          (a) REPEAL OF RULE.—
+        </p>
+        <p>
+          (1) IN GENERAL.—The Declaratory Ruling, Re9 port and Order, and Order in
+          the matter of restoring internet freedom that was adopted by the
+          Commission on December 14, 2017 (FCC 17–166) shall have no force or effect.
+        </p>
+        <p>
+          (2) PROHIBITION ON REISSUED RULE OR NEW RULE.—The Declaratory Ruling,
+          Report and Order, and Order described in paragraph (1) may not be
+          reissued in substantially the same form, and a new rule that is
+          substantially the same as such Declaratory Ruling, Report and Order,
+          and Order may not be issued, unless the reissued or new rule is
+          specifically authorized by a law enacted after the date of the enactment
+          of this Act.
+        </p>
+        <p>
+          (b) RESTORATION OF REPEALED AND AMENDED RULES.—The following are restored
+          as in effect on January 19, 2017:
+        </p>
+        <p>
+          (1) The Report and Order on Remand, Declaratory Ruling, and Order in the
+          matter of protecting and promoting the open internet that was adopted by
+          the Commission on February 26, 2015 (FCC 15– 24). (2) Part 8 of title 47,
+          Code of Federal Regulations.
+        </p>
+        <p>
+          (3) Any other rule of the Commission that was amended or repealed by the
+          Declaratory Ruling, Report and Order, and Order described in subsection (a)(1).
+        </p>
+        <p>
+          (c) DEFINITIONS.—In this section:
+        </p>
+        <p>
+          (1) COMMISSION.—The term "Commission" means the Federal Communications Commission.
+        </p>
+        <p>
+          (2) RULE.—The term "rule" has the meaning given such term in section 804
+          of title 5, United States Code.
+        </p>
+        <p class="text-center">
+          <a class="btn"
+             href="https://energycommerce.house.gov/sites/democrats.energycommerce.house.gov/files/documents/Save%20the%20Internet%20Act%20Legislative%20Text.pdf"
+             target="_blank">
+            Download the PDF
+          </a>
+        </p>
+      </div>
 
   stats:
     title: |
