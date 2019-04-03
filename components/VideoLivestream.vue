@@ -87,7 +87,7 @@ $orange-color: #FF5627;
 <template>
   <div id="watch">
     <h3 class="pad-top-3 push-top-0">
-      Watch the archived live stream right here 👇
+      Watch the live stream right here 👇
     </h3>
     <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">
       <div class="placeholder" v-if="!isCountdownLive || timeUntilLive > 0">
@@ -101,7 +101,7 @@ $orange-color: #FF5627;
         </h2> <!-- .countdown -->
       </div> <!-- .placeholder -->
       <iframe v-else
-              src="https://player.twitch.tv/?video=FIXME&autoplay=false&muted=true"
+              src="https://player.twitch.tv/?channel=fight_for_the_future&muted=true"
               frameborder="0" scrolling="no"
               webkitallowfullscreen mozallowfullscreen allowfullscreen>
       </iframe>
