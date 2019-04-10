@@ -1,17 +1,14 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "Congress is Voting on Net Neutrality"
-title_call: "Congress is Voting on Net Neutrality"
+title: "VICTORY! House Votes to Restore Net Neutrality"
+title_call: "VICTORY! House Votes to Restore Net Neutrality"
 intro_html: |
-  The House of Representatives will
-  <a href="https://www.fightforthefuture.org/news/2019-04-03-breaking-bill-to-restore-net-neutrality-passes/">
-    vote</a> on the
-  <a href="#bill">Save the Internet Act</a> to restore net neutrality. But
-  telecom lobbyists are trying to gut the bill with bad amendments that would
-  allow ISPs to throttle traffic, censor content, and impose unfair fees.
-  **Tell Congress to pass the Save the Internet Act with no bad amendments
-  before the final House vote.**
+  **BREAKING:** The House of Representatives voted 231 to 190 to pass the Save the 
+  Internet Act to restore net neutrality. But now we need to focus on the U.S. Senate, 
+  where we’ll need the support of 60 Senators to win. **Tell your Senators to cosponsor 
+  the Save the Internet Act to block ISPs from throttling traffic, censoring content, 
+  and imposing unfair fees.**
 persistent_button: Contact Congress
 
 form:
