@@ -4,11 +4,12 @@ document_title: Join the Battle for Net Neutrality
 title: "VICTORY! House Votes to Restore Net Neutrality"
 title_call: "VICTORY! House Votes to Restore Net Neutrality"
 intro_html: |
-  **BREAKING:** The House of Representatives voted 231 to 190 to pass the Save the 
-  Internet Act to restore net neutrality. But now we need to focus on the U.S. Senate, 
-  where we’ll need the support of 60 Senators to win. **Tell your Senators to cosponsor 
-  the Save the Internet Act to block ISPs from throttling traffic, censoring content, 
-  and imposing unfair fees.**
+  **BREAKING:** The House of Representatives 
+  <a href="http://clerk.house.gov/evs/2019/roll167.xml"
+  target=_blank">voted</a> 231 to 190 to pass the Save the Internet Act to restore net 
+  neutrality. But now we need to focus on the U.S. Senate, where we’ll need the support 
+  of 60 Senators to win. **Tell your Senators to cosponsor the Save the Internet Act to 
+  block ISPs from throttling traffic, censoring content, and imposing unfair fees.**
 persistent_button: Contact Congress
 
 form:
@@ -38,17 +39,24 @@ sections:
   join:
     title: The Whole Internet Is Watching
     body_html: |
-        On Tuesday, April 9th, the US House of Representatives will vote on the
-        Save the Internet Act.  This is BIG.  If passed, this bill will enshrine net 
-        neutrality into law.  So we're getting the whole Internet to watch the vote 
-        and hold our government accountable.
+        On Tuesday, April 9th, the US House of Representatives voted to save the Internet
+        by passing
+        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644" 
+        target=_blank">HR-1644</a>, a bill that would restore Title II net neutrality
+        protections that keep cable companies from from throttling traffic, censoring 
+        content, and imposing unfair fees.  Now we need to win in the Senate.
         
-        Starting at 9:30am, we'll begin livestreaming all day to build excitement
-        and drive calls and emails to lawmakers ahead of the vote.  Tune in to hear 
-        tech industry bigwigs, digital policy experts, and members of Congress discuss
-        the future of net neutrality.
-
-        **Here’s what you can do to make sure Congress knows everyone is watching:**
+        To win the Senate, we'll need 60 votes in order to avoid a filibuster. That's
+        because the Speaker of the House has declared net neutrality 
+        <a href="https://www.reuters.com/article/us-usa-internet/senate-republican-leader-calls-net-neutrality-bill-dead-on-arrival-idUSKCN1RL2HE" 
+        target=_blank">"dead on arrival"</a>. That's okay; we like a challenge. After 
+        all, a nearly identical measure to restore net neutrality passed a Senate vote 
+         <a href="https://www.theverge.com/2018/5/16/17357592/net-neutrality-senate-vote-cra-reinstate-fcc-rules" 
+        target=_blank">"last year"</a>!  
+        
+        So we know that there are Senators on botsides of the aisle who are willing to 
+        listen to the American people. But we need help to make sure lawmakers in
+        Congress get the message. **Here’s what you can do:**
 
         <ol>
           <li><strong>Speak out on social media.</strong> Here is some
