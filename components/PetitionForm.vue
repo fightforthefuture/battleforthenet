@@ -20,6 +20,15 @@
     }
   }
 
+  label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
   input, textarea {
     font-family: $body-font;
     font-weight: 300;
@@ -98,15 +107,31 @@
       <h2 v-if="title">{{ title }}</h2>
       <form class="petition-form" @submit.prevent="submitForm()">
         <div class="flex-row">
-          <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
-          <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
+          <div>
+            <no-ssr><label v-if="showLabels">{{ $lt('name_placeholder') }}</label></no-ssr>
+            <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
+          </div>
+          <div>
+            <no-ssr><label v-if="showLabels">{{ $lt('email_placeholder') }}</label></no-ssr>
+            <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
+          </div>
         </div>
         <div class="flex-row">
-          <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
-          <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
-          <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
+          <div>
+            <no-ssr><label v-if="showLabels">{{ $lt('address_placeholder') }}</label></no-ssr>
+            <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
+          </div>
+          <div>
+            <no-ssr><label v-if="showLabels">{{ $lt('zip_placeholder') }}</label></no-ssr>
+            <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
+          </div>
+          <div>
+            <no-ssr><label v-if="showLabels">{{ $lt('phone_label') }}</label></no-ssr>
+            <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
+          </div>
         </div>
         <div class="letter">
+          <no-ssr><label v-if="showLabels">{{ $lt('comments_label') }}</label></no-ssr>
           <textarea v-model="comments" ref="comments"></textarea>
           <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
         </div>
@@ -192,7 +217,9 @@ export default {
   },
 
   computed: {
-    ...mapState(['org']),
+    ...mapState(['org', 'testVariant']),
+
+    showLabels() { return this.$store.state.testVariant === 'a' ? true : false },
 
     actionComment() {
       return `${this.comments}\n\n(The sender of this message generated it using tools available at BattleForTheNet.com on ${new Date()}.)`
@@ -277,7 +304,7 @@ export default {
         }
         */
 
-        this.$trackEvent('petition_form', 'submit')
+        this.$trackEvent(`petition_form_${this.showLabels ? 'labels' : 'placeholders'}`, 'submit')
         this.isSending = false
         this.modalVisible = true
         this.hasSigned = true

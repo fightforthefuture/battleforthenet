@@ -4,11 +4,11 @@ document_title: Join the Battle for Net Neutrality
 title: "The Senate Can Restore Net Neutrality"
 title_call: "The Senate Can Restore Net Neutrality"
 intro_html: |
-  The House of Representatives 
+  The House of Representatives
   <a href="http://clerk.house.gov/evs/2019/roll167.xml"
-  target=_blank">voted</a> 231 to 190 to pass the Save the Internet Act to restore net 
-  neutrality. But now we need to focus on the U.S. Senate, where we’ll need the support 
-  of 60 Senators to win. **Tell your Senators to cosponsor the Save the Internet Act to 
+  target=_blank">voted</a> 231 to 190 to pass the Save the Internet Act to restore net
+  neutrality. But now we need to focus on the U.S. Senate, where we’ll need the support
+  of 60 Senators to win. **Tell your Senators to cosponsor the Save the Internet Act to
   block ISPs from throttling traffic, censoring content, and imposing unfair fees.**
 persistent_button: Contact Congress
 
@@ -17,7 +17,9 @@ form:
   email_placeholder: E-mail*
   address_placeholder: Address*
   zip_placeholder: Zip*
+  phone_label: "Phone #"
   phone_placeholder: "Phone # (for text list)"
+  comments_label: "Comments"
   business_owner_label: Are you a business owner who supports net neutrality?
   company_name_placeholder: "Company Name"
   company_url_placeholder: "Company Website"
@@ -41,20 +43,20 @@ sections:
     body_html: |
         On Tuesday, April 9th, the US House of Representatives voted to save the Internet
         by passing
-        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644" 
+        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644"
         target=_blank">HR-1644</a>, a bill that would restore Title II net neutrality
-        protections that keep cable companies from from throttling traffic, censoring 
+        protections that keep cable companies from from throttling traffic, censoring
         content, and imposing unfair fees.  Now we need to win in the Senate.
-        
+
         To win the Senate, we'll need 60 votes in order to avoid a filibuster. That's
-        because the Speaker of the House has declared net neutrality 
-        <a href="https://www.reuters.com/article/us-usa-internet/senate-republican-leader-calls-net-neutrality-bill-dead-on-arrival-idUSKCN1RL2HE" 
-        target=_blank">"dead on arrival"</a>. That's okay; we like a challenge. After 
-        all, a nearly identical measure to restore net neutrality passed a Senate vote 
-         <a href="https://www.theverge.com/2018/5/16/17357592/net-neutrality-senate-vote-cra-reinstate-fcc-rules" 
-        target=_blank">"last year"</a>!  
-        
-        So we know that there are Senators on both sides of the aisle who are willing to 
+        because the Speaker of the House has declared net neutrality
+        <a href="https://www.reuters.com/article/us-usa-internet/senate-republican-leader-calls-net-neutrality-bill-dead-on-arrival-idUSKCN1RL2HE"
+        target=_blank">"dead on arrival"</a>. That's okay; we like a challenge. After
+        all, a nearly identical measure to restore net neutrality passed a Senate vote
+         <a href="https://www.theverge.com/2018/5/16/17357592/net-neutrality-senate-vote-cra-reinstate-fcc-rules"
+        target=_blank">"last year"</a>!
+
+        So we know that there are Senators on both sides of the aisle who are willing to
         listen to the American people. But we need help to make sure lawmakers in
         Congress get the message. **Here’s what you can do:**
 
