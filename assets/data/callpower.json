@@ -1,11 +1,11 @@
 {
   "homePage": {
     "stateCampaigns": [],
-    "defaultCampaign": "battleforthenet-2017-voices2"
+    "defaultCampaign": "BattleForTheNet-2019"
   },
   "callPage": {
     "stateCampaigns": [],
-    "defaultCampaign": "battleforthenet-2017-voices2",
+    "defaultCampaign": "BattleForTheNet-2019",
     "stateCampaigns_DISABLED_BUT_LEFT_HERE_FOR_REFERENCE": [
       {
         "id": "STATE_SPECIFIC_CAMPAIGN_A",
@@ -23,6 +23,6 @@
   },
   "scoreboardPage": {
     "stateCampaigns": [],
-    "defaultCampaign": "battleforthenet-2017-voices2"
+    "defaultCampaign": "BattleForTheNet-2019"
   }
 }
