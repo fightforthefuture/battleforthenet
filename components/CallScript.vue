@@ -120,7 +120,7 @@ export default {
         return "I'm calling to ask Governor Jerry Brown to sign SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
       }
       else {
-        return "I'm calling to tell my lawmakers I support strong net neutrality, and I want them to cosponsor and demand a vote on the Save the Internet Act in the Senate. Thank you."
+        return "I'm calling to tell my lawmakers I support strong net neutrality, and I want them to co-sponsor and demand a vote on the Save the Internet Act in the Senate. Thank you."
       }
     }
   }
