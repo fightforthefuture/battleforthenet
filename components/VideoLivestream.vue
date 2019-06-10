@@ -129,7 +129,7 @@ export default {
   data() {
     return {
       isCountdownLive: false,
-      isTwitchLive: false,
+      isTwitchLive: true,
       archivedVideoId: '409475111',
       now: null,
       headingIndex: 0,
