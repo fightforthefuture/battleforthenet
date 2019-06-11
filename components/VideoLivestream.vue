@@ -105,6 +105,9 @@ $orange-color: #FF5627;
                 frameborder="0" scrolling="no"
                 webkitallowfullscreen mozallowfullscreen allowfullscreen>
         </iframe>
+        <iframe src="https://www.twitch.tv/embed/fight_for_the_future/chat"
+                frameborder="0" scrolling="no">
+        </iframe>
       </div>
       <div v-else>
         <iframe :src="`https://player.twitch.tv/?video=${archivedVideoId}&autoplay=false`"
@@ -129,7 +132,7 @@ export default {
   data() {
     return {
       isCountdownLive: false,
-      isTwitchLive: false,
+      isTwitchLive: true,
       archivedVideoId: '409475111',
       now: null,
       headingIndex: 0,
