@@ -109,25 +109,34 @@
         <div class="flex-row">
           <div>
             <no-ssr><label v-if="showLabels">{{ $lt('name_placeholder') }}</label></no-ssr>
-            <input v-model.trim="name" type="text" :placeholder="$lt('name_placeholder')" required class="name">
+            <input v-model.trim="name" type="text"
+                   :placeholder="showLabels ? 'First Last' : $lt('name_placeholder')"
+                   required class="name">
           </div>
           <div>
             <no-ssr><label v-if="showLabels">{{ $lt('email_placeholder') }}</label></no-ssr>
-            <input v-model.trim="email" type="email" :placeholder="$lt('email_placeholder')" required class="email">
+            <input v-model.trim="email" type="email"
+                   :placeholder="showLabels ? 'me@example.com' : $lt('email_placeholder')"
+                   required class="email">
           </div>
         </div>
         <div class="flex-row">
           <div>
             <no-ssr><label v-if="showLabels">{{ $lt('address_placeholder') }}</label></no-ssr>
-            <input v-model.trim="address" type="text" :placeholder="$lt('address_placeholder')" required class="address">
+            <input v-model.trim="address" type="text"
+                   :placeholder="showLabels ? '# Street' : $lt('address_placeholder')"
+                   required class="address">
           </div>
           <div>
             <no-ssr><label v-if="showLabels">{{ $lt('zip_placeholder') }}</label></no-ssr>
-            <input v-model.trim="zipCode" type="tel" :placeholder="$lt('zip_placeholder')" required class="zip-code">
+            <input v-model.trim="zipCode" type="tel"
+                   :placeholder="showLabels ? '55555' : $lt('zip_placeholder')"
+                   required class="zip-code">
           </div>
           <div>
             <no-ssr><label v-if="showLabels">{{ $lt('phone_label') }}</label></no-ssr>
-            <input v-model.trim="phone" type="tel" :placeholder="$lt('phone_placeholder')">
+            <input v-model.trim="phone" type="tel"
+                   :placeholder="showLabels ? '222-333-4444' : $lt('phone_placeholder')">
           </div>
         </div>
         <div class="letter">

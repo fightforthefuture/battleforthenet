@@ -17,8 +17,8 @@ form:
   email_placeholder: E-mail*
   address_placeholder: Address*
   zip_placeholder: Zip*
-  phone_label: "Phone #"
-  phone_placeholder: "Phone # (for text list)"
+  phone_label: "Phone (for SMS)"
+  phone_placeholder: "Phone (for SMS)"
   comments_label: "Comments"
   business_owner_label: Are you a business owner who supports net neutrality?
   company_name_placeholder: "Company Name"
