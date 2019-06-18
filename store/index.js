@@ -13,7 +13,8 @@ const createStore = () => {
       map: {
         zoom: null,
         currentPin: null
-      }
+      },
+      testVariant: null
     },
 
     mutations: {
@@ -51,6 +52,10 @@ const createStore = () => {
 
       setMapCurrentPin(state, value) {
         state.map.currentPin = value
+      },
+
+      setTestVariant(state, value) {
+        state.testVariant = value
       }
     }
   })

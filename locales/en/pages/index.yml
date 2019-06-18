@@ -4,11 +4,11 @@ document_title: Join the Battle for Net Neutrality
 title: "The Senate Can Restore Net Neutrality"
 title_call: "The Senate Can Restore Net Neutrality"
 intro_html: |
-  In April, the House of Representatives passed the Save the Internet Act to restore 
-  net neutrality. But now, Mitch McConnell is declaring net neutrality “dead on 
-  arrival” in the Senate. We need to tell senators to get behind the push for 
-  neutrality now! **Tell your senators to cosponsor and demand McConnell allow a vote 
-  on the Save the Internet Act to keep Big Cable from throttling traffic, censoring 
+  In April, the House of Representatives passed the Save the Internet Act to restore
+  net neutrality. But now, Mitch McConnell is declaring net neutrality “dead on
+  arrival” in the Senate. We need to tell senators to get behind the push for
+  neutrality now! **Tell your senators to cosponsor and demand McConnell allow a vote
+  on the Save the Internet Act to keep Big Cable from throttling traffic, censoring
   content, and imposing unfair fees.**
 persistent_button: Contact Congress
 
@@ -17,7 +17,9 @@ form:
   email_placeholder: E-mail*
   address_placeholder: Address*
   zip_placeholder: Zip*
-  phone_placeholder: "Phone # (for text list)"
+  phone_label: "Phone (for SMS)"
+  phone_placeholder: "Phone (for SMS)"
+  comments_label: "Comments"
   business_owner_label: Are you a business owner who supports net neutrality?
   company_name_placeholder: "Company Name"
   company_url_placeholder: "Company Website"
@@ -41,20 +43,20 @@ sections:
     body_html: |
         On April 10th, the US House of Representatives voted to save the Internet
         by passing
-        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644" 
+        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644"
         target=_blank">HR-1644</a>, a bill that would restore Title II net neutrality
-        protections that keep cable companies from from throttling traffic, censoring 
+        protections that keep cable companies from from throttling traffic, censoring
         content, and imposing unfair fees.  Now we need to win in the Senate.
-        
+
         To win the Senate, we'll need 60 votes in order to avoid a filibuster. That's
-        because the Senate Majority Leader has declared net neutrality 
-        <a href="https://www.reuters.com/article/us-usa-internet/senate-republican-leader-calls-net-neutrality-bill-dead-on-arrival-idUSKCN1RL2HE" 
-        target=_blank">"dead on arrival"</a>. That's okay; we like a challenge. After 
-        all, a nearly identical measure to restore net neutrality passed a Senate vote 
-         <a href="https://www.theverge.com/2018/5/16/17357592/net-neutrality-senate-vote-cra-reinstate-fcc-rules" 
-        target=_blank">"last year"</a>!  
-        
-        So we know that there are Senators on both sides of the aisle who are willing to 
+        because the Senate Majority Leader has declared net neutrality
+        <a href="https://www.reuters.com/article/us-usa-internet/senate-republican-leader-calls-net-neutrality-bill-dead-on-arrival-idUSKCN1RL2HE"
+        target=_blank">"dead on arrival"</a>. That's okay; we like a challenge. After
+        all, a nearly identical measure to restore net neutrality passed a Senate vote
+         <a href="https://www.theverge.com/2018/5/16/17357592/net-neutrality-senate-vote-cra-reinstate-fcc-rules"
+        target=_blank">"last year"</a>!
+
+        So we know that there are Senators on both sides of the aisle who are willing to
         listen to the American people. But we need help to make sure lawmakers in
         Congress get the message. **Here’s what you can do:**
 
@@ -107,11 +109,11 @@ sections:
       <a href="https://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules"
          target="_blank">
         Americans want net neutrality</a>,
-      and we’ve demanded that our lawmakers pass strong legislation to protect 
-      our digital rights.  The FCC's leadership can be changed with every 
+      and we’ve demanded that our lawmakers pass strong legislation to protect
+      our digital rights.  The FCC's leadership can be changed with every
       election cycle, and recent history has proven that we can't count on
       these unlected bureaucrats to consistently defend our online freedoms.
-      
+
 
       <a href="https://www.congress.gov/116/bills/s682/BILLS-116s682is.pdf"
          target="_blank">
@@ -156,20 +158,20 @@ sections:
         </p>
         <p>
           (c) PROHIBITION ON REISSUED RULE OR NEW RULE.—The Commission may not
-          reissue the Declaratory Ruling, Report and Order, and Order described in 
-          subsection (b) in substantially the same form, or issue a new rule that 
+          reissue the Declaratory Ruling, Report and Order, and Order described in
+          subsection (b) in substantially the same form, or issue a new rule that
           is substantially the same as that Declaratory Ruling, Report and Order,
-          and Order, unless the reissued or new rule is specifically authorized by 
+          and Order, unless the reissued or new rule is specifically authorized by
           a law enacted after the date of the enactment of this Act.
         </p>
         <p>
-          (d) RESTORATION OF REPEALED AND AMENDED REGULATIONS.—The following are 
+          (d) RESTORATION OF REPEALED AND AMENDED REGULATIONS.—The following are
           restored as in effect on January 19, 2017:
         </p>
         <p>
           (1) The Report and Order on Remand, Declaratory Ruling, and Order in the
           matter of protecting and promoting the open internet that was adopted by
-          the Commission on February 26, 2015 (FCC 15–24). 
+          the Commission on February 26, 2015 (FCC 15–24).
         </p>
         <p>
           (2) Part 8 of title 47, Code of Federal Regulations.
