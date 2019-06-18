@@ -87,21 +87,30 @@ $orange-color: #FF5627;
 <template>
   <div id="watch">
     <h3 class="pad-top-3 push-top-0">
-      Watch the archived live stream right here 👇
+      Watch the <span v-if="!isCountdownLive && !isTwitchLive">archived</span>
+      live stream right here 👇
     </h3>
-    <div class="video-wrapper" v-if="!isCountdownLive || timeUntilLive">
-      <div class="placeholder" v-if="!isCountdownLive || timeUntilLive > 0">
+    <div class="video-wrapper">
+      <div class="placeholder" v-if="isCountdownLive && timeUntilLive > 0">
         <p class="live">Live</p>
         <transition name="fade" mode="out-in">
           <h2 class="heading" :key="headingIndex">{{ headings[headingIndex] }}</h2>
         </transition>
         <h2 class="countdown">
-          <span v-if="!isCountdownLive">Next Week</span>
           <span v-if="isCountdownLive && now">{{ countdown }}</span>
         </h2> <!-- .countdown -->
       </div> <!-- .placeholder -->
+      <div v-else-if="isTwitchLive">
+        <iframe src="https://player.twitch.tv/?channel=fight_for_the_future"
+                frameborder="0" scrolling="no"
+                webkitallowfullscreen mozallowfullscreen allowfullscreen>
+        </iframe>
+        <iframe src="https://www.twitch.tv/embed/fight_for_the_future/chat"
+                frameborder="0" scrolling="no">
+        </iframe>
+      </div>
       <div v-else>
-        <iframe src="https://player.twitch.tv/?video=408961125&autoplay=false"
+        <iframe :src="`https://player.twitch.tv/?video=${archivedVideoId}&autoplay=false`"
                 frameborder="0" scrolling="no"
                 webkitallowfullscreen mozallowfullscreen allowfullscreen>
         </iframe>
@@ -122,7 +131,9 @@ export default {
 
   data() {
     return {
-      isCountdownLive: true,
+      isCountdownLive: false,
+      isTwitchLive: false,
+      archivedVideoId: '437519775',
       now: null,
       headingIndex: 0,
       headings: [

@@ -58,7 +58,12 @@ section {
     <section v-for="state in sortedStateNames" :key="state" :id="sectionId(state)">
       <ScoreboardGroup :title="state" :politicians="politiciansByState[state]" class="container" />
     </section>
-    <persistent-button><a class="btn" href="#" @click.prevent="scrollToTop()">{{ $lt('persistent_button') }}</a></persistent-button>
+    <persistent-button>
+      <a class="btn" href="#"
+         @click.prevent="scrollToTop(); $trackClick('sticky_button_scoreboard');">
+        {{ $lt('persistent_button') }}
+      </a>
+    </persistent-button>
   </div>
 </template>
 
