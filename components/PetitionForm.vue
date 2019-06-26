@@ -265,6 +265,11 @@ export default {
     }
   },
 
+  // NOTE: Remove after A/B test is complete
+  mounted() {
+    this.$trackEvent(`petition_form_load_${this.showLabels ? 'labels' : 'placeholders'}`, 'load')
+  },
+
   methods: {
     $lt(key) {
       return this.$t(`pages.index.form.${key}`)
