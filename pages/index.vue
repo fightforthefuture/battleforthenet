@@ -68,7 +68,7 @@
         <h2 class="section-title">{{ section.title }}</h2>
         <div v-html="section.body_html"></div>
         <battle-stats v-if="id == 'stats'"></battle-stats>
-        <widget-instructions v-if="id == 'join'"></widget-instructions>
+        <!-- <widget-instructions v-if="id == 'join'"></widget-instructions> -->
         <scoreboard v-else-if="id == 'scoreboard'" :summary="true"></scoreboard>
         <!-- <iframe v-else-if="id == 'events'" class="events-map" src="https://events.battleforthenet.com/iframe"></iframe> -->
         <video-roll v-else-if="id == 'net-neutrality'"></video-roll>
