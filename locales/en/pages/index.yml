@@ -62,24 +62,21 @@ sections:
           target=_blank">awesome graphics</a> to get the word out.</li>
           <li><strong>Tell everyone to text WATCH to 687-88.</strong> They can set a reminder to watch the
           hearing and pressure their members of Congress to pass a clean bill from their smartphone.</li>
-          <li><strong>Embed the hearing
-          <a href="https://www.twitch.tv/fight_for_the_future"
-          target="_blank">livestream</a> into a blog or Tumblr post with a link back to BattleForTheNet.com.</strong>
-          Use the code below to post the hearing livestream and help spread the word.
-          <code style="background-color: #262035; color: #8a7cae; font-size: 1.3rem;">
-            &lt;iframe src=&quot;https://player.twitch.tv/?channel=fight_for_the_future&muted=true&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
-          </code></li>
+        <!--
           <li><strong>Add our hearing livestream alert widget to your homepage. </strong>Put it up now to
           start raising awareness ahead of the vote and we'll add the livestream to the Battle for the Net
           homepage as soon as it’s available.</li>
+        -->
         </ol>
 
+        <!--
         <div class="modals flex-center">
           <img src="/images/watch-widget-screenshot.jpg"
                alt="A screenshot of our widget when minimized"
                class="rounded">
         </div>
-
+        -->
+        
   bill:
     title: |
       Save the Internet Act of 2019
