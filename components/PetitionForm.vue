@@ -181,7 +181,7 @@ import RepInterstitial from '~/components/RepInterstitial'
 import axios from 'axios'
 
 // New BFTN petition for 2019
-const petitionId = '8305bb2c-2e17-47eb-91ad-28b0ce02e353'
+const petitionId = 'e4a7f24f-f17d-4aa2-802c-3000e4e7e21e'
 
 // BFNN petition
 const bizPetitionId = '94ac8142-99b8-411f-83af-133d02649af1'
