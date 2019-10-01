@@ -27,19 +27,17 @@ form:
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
-    Hundreds of millions of people all across America support net neutrality, and I'm one of them.
+    We need net neutrality now more than ever.  
+    
+    Since the FCC repealed net neutrality, Internet service providers (ISPs) have been routinely throttling Internet speeds ... something ISPs promised they wouldn't do. The truth is that we need strong, enforceable net neutrality laws to ensure that our online freedom is protected.
 
-    Right now the cable industry is working with members of Congress to pass loophole-riddled net neutrality legislation that will allow Internet service providers (ISPs) to impose widespread throttling and extra fees.
-
-    No legislator in favor of an open Internet should support the fake net neutrality bills announced by Republican members of the Communications & Technology Subcommittee in February 2019. I'm calling on you to reject new proposals written by cable industry lobbyists and, instead, ask you to co-sponsor the “Save the Internet Act” to reinstate the strong protections for net neutrality and broadband access afforded by the FCC's now-repealed 2015 Open Internet Order.
-
-    We expect nothing less than the net neutrality protections the FCC undemocratically repealed in 2017. Please work with your colleagues to pass legislation that genuinely protects the digital rights of your constituents.
-
+    Eighty percent of Americans support net neutrality, including Republicans, Democrats, and Independents. We urge you to do the same.  Please work with your colleagues to support the Save the Internet Act so that Americans can once again use the Internet without fear of throttling, censorship, or unfair fees.
+    
     Thank you.
 
 sections:
   join:
-    title: The Fight for Net Neutrality Is Back On
+    title: Fight for net neutrality
     body_html: |
         Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&T and 
         T-Mobile have been
