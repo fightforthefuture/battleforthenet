@@ -60,7 +60,6 @@
         <div v-html="$lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
         <petition-form v-else />
-        <video-livestream></video-livestream>
       </div>
     </section>
 
