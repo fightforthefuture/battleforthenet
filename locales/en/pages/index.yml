@@ -1,15 +1,15 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "The Senate Can Restore Net Neutrality"
-title_call: "The Senate Can Restore Net Neutrality"
+title: "BREAKING: Bombshell Net Neutrality Ruling
+title_call: "BREAKING: Bombshell Net Neutrality Ruling"
 intro_html: |
-  In April, the House of Representatives passed the Save the Internet Act to restore
-  net neutrality. But now, Mitch McConnell is declaring net neutrality “dead on
-  arrival” in the Senate. We need to tell senators to get behind the push for
-  neutrality now! **Tell your senators to cosponsor and demand McConnell allow a vote
-  on the Save the Internet Act to keep Big Cable from throttling traffic, censoring
-  content, and imposing unfair fees.**
+  A bombshell court decision just reignited the fight for net neutrality. Lobbyists for 
+  big cable companies are already swarming Congress to push bad legislation that will 
+  allow ISPs to continue throttling Internet speeds and imposing unfair fees. But we 
+  have a strategy to fight them in DC and at the state level and restore net neutrality 
+  once and for all. **Contact Congress now to demand your lawmakers pass the bipartisan
+  Save the Internet Act.**
 persistent_button: Contact Congress
 
 form:
@@ -39,26 +39,20 @@ form:
 
 sections:
   join:
-    title: The Whole Internet Is Watching
+    title: The Fight for Net Neutrality Is Back On
     body_html: |
-        On April 10th, the US House of Representatives voted to save the Internet
-        by passing
-        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644"
-        target=_blank">HR-1644</a>, a bill that would restore Title II net neutrality
-        protections that keep cable companies from from throttling traffic, censoring
-        content, and imposing unfair fees.  Now we need to win in the Senate.
-
-        To win the Senate, we'll need 60 votes in order to avoid a filibuster. That's
-        because the Senate Majority Leader has declared net neutrality
-        <a href="https://www.reuters.com/article/us-usa-internet/senate-republican-leader-calls-net-neutrality-bill-dead-on-arrival-idUSKCN1RL2HE"
-        target=_blank">"dead on arrival"</a>. That's okay; we like a challenge. After
-        all, a nearly identical measure to restore net neutrality passed a Senate vote
-         <a href="https://www.theverge.com/2018/5/16/17357592/net-neutrality-senate-vote-cra-reinstate-fcc-rules"
-        target=_blank">"last year"</a>!
-
-        So we know that there are Senators on both sides of the aisle who are willing to
-        listen to the American people. But we need help to make sure lawmakers in
-        Congress get the message. **Here’s what you can do:**
+        Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&T and 
+        T-Mobile have been
+        <a href="https://www.bloomberg.com/news/articles/2019-08-19/wireless-carrier-throttling-of-online-video-is-pervasive-study" target="_blank">
+        throttling traffic</a> "pretty much everywhere all the time." But on October 
+        1st, 2019, a federal court
+        <a href="https://thehill.com/policy/technology/463805-appeals-court-upholds-net-neutrality-repeal-but-rules-fcc-cant-block-state" target="_blank">
+        ruled</a> that the FCC's policy doesn't preempt net neutrality laws at the state
+        and national level. Big cable lobbyists are working overtime to push for bad
+        legislation, but we can stop them. The 
+        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644/text" target="_blank">
+        Save the Internet Act</a> has already passed the House of Representatives with bipartisan 
+        support, and now we need the Senate to do the same. **Here’s how you can help:**
 
         <ol>
           <li><strong>Speak out on social media.</strong> Here is some
@@ -244,7 +238,10 @@ sections:
       protections … and they won. Their anti-consumer practices finally convinced
       the FCC to issue the Open Internet Order as a last resort in 2015. But
       under new leadership, the FCC has removed these regulations, threatening
-      to end the web as we know it.
+      to end the web as we know it. A federal court ruling has opened up a path
+      for net neutrality laws at the state and national level, giving open Internet
+      supporters hope that the Save the Internet Act can enshrine net neutrality
+      into law once and for all.
 
       ### Want to learn more? Watch these videos!
 
