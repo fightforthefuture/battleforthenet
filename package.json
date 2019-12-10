@@ -27,7 +27,7 @@
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "babel-eslint": "^8.2.1",
     "babel-polyfill": "^6.26.0",
     "eslint": "^4.15.0",
@@ -35,15 +35,15 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0",
     "haversine": "^1.1.0",
-    "js-yaml": "^3.11.0",
-    "lodash": "^4.17.5",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.15",
     "node-sass": "^4.9.2",
     "normalize.css": "^8.0.0",
     "nuxt-sass-resources-loader": "^2.0.3",
     "qs": "^6.5.2",
     "raven-js": "^3.24.2",
     "sass-loader": "^7.0.3",
-    "showdown": "^1.8.6",
+    "showdown": "^1.9.1",
     "vue-count-to": "^1.0.13",
     "vue-i18n": "^7.6.0",
     "yaml-loader": "^0.5.0"
