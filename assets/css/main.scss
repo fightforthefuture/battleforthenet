@@ -202,7 +202,7 @@ code {
     display: block;
     font-size: 1.1rem;
     line-height: 1.33;
-    color: $muted-text-color;
+    color: lighten($muted-text-color, 10%);
 
     a {
       color: $muted-link-color;

@@ -63,12 +63,12 @@
       </div>
     </section>
 
-    <section id="livestream">
+<!--     <section id="livestream">
       <div class="container">
         <h2 class="section-title">LIVE: Save the Internet Act Unanimous Consent Request</h2>
         <VideoLivestream />
       </div>
-    </section>
+    </section> -->
 
     <section v-for="(section, id) in $lt('sections')" :id="id" :key="id">
       <div class="container">

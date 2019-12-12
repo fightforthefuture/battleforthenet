@@ -52,14 +52,14 @@
       min-width: 100%;
       max-width: 100%;
       min-height: 5rem;
-      height: 5rem;
+      height: 8rem;
       padding-right: 12rem;
     }
 
     a.clear {
       position: absolute;
       right: 2rem;
-      bottom: 1.6rem;
+      top: 3rem;
       background-color: #ebe7f4;
       color: #89819d;
       font-size: 1.2rem;
@@ -91,12 +91,13 @@
     letter-spacing: 0.3rem;
   }
 
-  .disclaimer {
-    // min-height: 80px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+  .disclaimer:not(.sms-disclaimer) {
     animation: fade-in .2s;
+  }
+
+  .sms-disclaimer {
+    text-align: left;
+    margin: -1rem 0;
   }
 }
 </style>
@@ -108,39 +109,42 @@
       <form class="petition-form" @submit.prevent="submitForm()">
         <div class="flex-row">
           <div>
-            <no-ssr><label v-if="showLabels">{{ $lt('name_placeholder') }}</label></no-ssr>
+            <label>{{ $lt('name_label') }}</label>
             <input v-model.trim="name" type="text"
-                   :placeholder="showLabels ? 'First Last' : $lt('name_placeholder')"
+                   :placeholder="`${$lt('name_placeholder')}`"
                    required class="name">
           </div>
           <div>
-            <no-ssr><label v-if="showLabels">{{ $lt('email_placeholder') }}</label></no-ssr>
+            <label>{{ $lt('email_label') }}</label>
             <input v-model.trim="email" type="email"
-                   :placeholder="showLabels ? 'me@example.com' : $lt('email_placeholder')"
+                   :placeholder="`${$lt('email_placeholder')}`"
                    required class="email">
           </div>
         </div>
         <div class="flex-row">
           <div>
-            <no-ssr><label v-if="showLabels">{{ $lt('address_placeholder') }}</label></no-ssr>
+            <label>{{ $lt('address_label') }}</label>
             <input v-model.trim="address" type="text"
-                   :placeholder="showLabels ? '# Street' : $lt('address_placeholder')"
+                   :placeholder="`${$lt('address_placeholder')}`"
                    required class="address">
           </div>
           <div>
-            <no-ssr><label v-if="showLabels">{{ $lt('zip_placeholder') }}</label></no-ssr>
+            <label>{{ $lt('zip_label') }}</label>
             <input v-model.trim="zipCode" type="tel"
-                   :placeholder="showLabels ? '55555' : $lt('zip_placeholder')"
+                   :placeholder="`${$lt('zip_placeholder')}`"
                    required class="zip-code">
           </div>
+        </div>
+        <div class="flex-row">
           <div>
-            <no-ssr><label v-if="showLabels">{{ $lt('phone_label') }}</label></no-ssr>
+            <label>{{ $lt('phone_label') }}</label>
             <input v-model.trim="phone" type="tel"
-                   :placeholder="showLabels ? '222-333-4444' : $lt('phone_placeholder')">
+                   :placeholder="`${$lt('phone_placeholder')}`">
+            <p class="disclaimer sms-disclaimer"><small v-html="$lt('sms_disclaimer_html')"></small></p>
           </div>
         </div>
         <div class="letter">
-          <no-ssr><label v-if="showLabels">{{ $lt('comments_label') }}</label></no-ssr>
+          <label>{{ $lt('comments_label') }}</label>
           <textarea v-model="comments" ref="comments"></textarea>
           <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
         </div>
@@ -157,7 +161,7 @@
           <span v-else>{{ $lt('button_cta') }}</span>
         </button>
         <no-ssr>
-          <disclaimer :sms="true"></disclaimer>
+          <disclaimer :sms="false"></disclaimer>
         </no-ssr>
       </form>
     </div>
@@ -228,8 +232,6 @@ export default {
   computed: {
     ...mapState(['org', 'testVariant']),
 
-    showLabels() { return this.$store.state.testVariant === 'a' ? true : false },
-
     actionComment() {
       return `${this.comments}\n\n(The sender of this message generated it using tools available at BattleForTheNet.com on ${new Date()}.)`
     },
@@ -263,11 +265,6 @@ export default {
         this.$store.commit('setStreetAddress', value)
       }
     }
-  },
-
-  // NOTE: Remove after A/B test is complete
-  mounted() {
-    this.$trackEvent(`petition_form_load_${this.showLabels ? 'labels' : 'placeholders'}`, 'load')
   },
 
   methods: {
@@ -318,7 +315,7 @@ export default {
         }
         */
 
-        this.$trackEvent(`petition_form_${this.showLabels ? 'labels' : 'placeholders'}`, 'submit')
+        this.$trackEvent('petition_form_labels', 'submit')
         this.isSending = false
         this.modalVisible = true
         this.hasSigned = true

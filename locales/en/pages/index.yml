@@ -4,21 +4,25 @@ document_title: Join the Battle for Net Neutrality
 title: "BREAKING: Bombshell Net Neutrality Ruling"
 title_call: "BREAKING: Bombshell Net Neutrality Ruling"
 intro_html: |
-  A bombshell court decision just reignited the fight for net neutrality. Lobbyists for 
-  big cable companies are already swarming Congress to push bad legislation that will 
-  allow ISPs to continue throttling Internet speeds and imposing unfair fees. But we 
-  have a strategy to fight them in DC and at the state level and restore net neutrality 
+  A bombshell court decision just reignited the fight for net neutrality. Lobbyists for
+  big cable companies are already swarming Congress to push bad legislation that will
+  allow ISPs to continue throttling Internet speeds and imposing unfair fees. But we
+  have a strategy to fight them in DC and at the state level and restore net neutrality
   once and for all. **Contact Congress now to demand your lawmakers pass the bipartisan
   Save the Internet Act.**
 persistent_button: Contact Congress
 
 form:
-  name_placeholder: Name*
-  email_placeholder: E-mail*
-  address_placeholder: Address*
-  zip_placeholder: Zip*
-  phone_label: "Phone (for SMS)"
-  phone_placeholder: "Phone (for SMS)"
+  name_label: Name*
+  name_placeholder: First Last
+  email_label: E-mail*
+  email_placeholder: me@example.com
+  address_label: Address*
+  address_placeholder: "# Street"
+  zip_label: ZIP*
+  zip_placeholder: "12345"
+  phone_label: "Phone (optional, to receive periodic campaign alerts)"
+  phone_placeholder: "555-555-5555"
   comments_label: "Comments"
   business_owner_label: Are you a business owner who supports net neutrality?
   company_name_placeholder: "Company Name"
@@ -27,29 +31,31 @@ form:
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
-    We need net neutrality now more than ever.  
-    
+    We need net neutrality now more than ever.
+
     Since the FCC repealed net neutrality, Internet service providers (ISPs) have been routinely throttling Internet speeds ... something ISPs promised they wouldn't do. The truth is that we need strong, enforceable net neutrality laws to ensure that our online freedom is protected.
 
     Eighty percent of Americans support net neutrality, including Republicans, Democrats, and Independents. We urge you to do the same.  Please work with your colleagues to support the Save the Internet Act so that Americans can once again use the Internet without fear of throttling, censorship, or unfair fees.
-    
+
     Thank you.
+  sms_disclaimer_html: >
+    Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target="_blank" href="https://www.fightforthefuture.org/privacy">Privacy Policy</a> and <a target="_blank" href="https://www.fightforthefuture.org/terms">Terms of Service</a>
 
 sections:
   join:
     title: Fight for net neutrality
     body_html: |
-        Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&T and 
+        Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&T and
         T-Mobile have been
         <a href="https://www.bloomberg.com/news/articles/2019-08-19/wireless-carrier-throttling-of-online-video-is-pervasive-study" target="_blank">
-        throttling traffic</a> "pretty much everywhere all the time." But on October 
+        throttling traffic</a> "pretty much everywhere all the time." But on October
         1st, 2019, a federal court
         <a href="https://thehill.com/policy/technology/463805-appeals-court-upholds-net-neutrality-repeal-but-rules-fcc-cant-block-state" target="_blank">
         ruled</a> that the FCC's policy doesn't preempt net neutrality laws at the state
         and national level. Big cable lobbyists are working overtime to push for bad
-        legislation, but we can stop them. The 
+        legislation, but we can stop them. The
         <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644/text" target="_blank">
-        Save the Internet Act</a> has already passed the House of Representatives with bipartisan 
+        Save the Internet Act</a> has already passed the House of Representatives with bipartisan
         support, and now we need the Senate to do the same. **Here’s how you can help:**
 
         <ol>
@@ -74,7 +80,7 @@ sections:
                class="rounded">
         </div>
         -->
-        
+
   bill:
     title: |
       Save the Internet Act of 2019
