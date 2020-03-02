@@ -125,6 +125,8 @@ export default {
           return 1
         case 'california':
           return 'California-SB-822'
+        case 'maryland':
+          return 'battleforthenetMD'
         case 'fftf':
         default:
           return this.campaign

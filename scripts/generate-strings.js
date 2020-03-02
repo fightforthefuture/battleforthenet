@@ -22,6 +22,7 @@ const messages = formatStrings({
         maryland: loadStrings('pages/call/maryland.yml')
       },
       map: loadStrings('pages/map.yml'),
+      maryland: loadStrings('pages/maryland.yml'),
       scoreboard: {
         index: loadStrings('pages/scoreboard/index.yml'),
         all: loadStrings('pages/scoreboard/all.yml'),
