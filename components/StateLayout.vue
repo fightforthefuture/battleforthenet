@@ -7,16 +7,25 @@
         <CallForm :page="state" />
       </div>
     </section>
+    <section id="net-neutrality">
+      <div class="container">
+        <h2 class="section-title">{{ $t('pages.index.sections.net-neutrality.title') }}</h2>
+        <div v-html="$t('pages.index.sections.net-neutrality.body_html')"></div>
+        <video-roll></video-roll>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import CallForm from '~/components/CallForm'
+import VideoRoll from '~/components/VideoRoll'
 import { createMetaTags } from '~/assets/js/helpers'
 
 export default {
   components: {
-    CallForm
+    CallForm,
+    VideoRoll
   },
 
   head() {
