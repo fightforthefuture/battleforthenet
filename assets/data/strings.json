@@ -1,6 +1,85 @@
 {
   "en": {
     "pages": {
+      "index": {
+        "document_title": "Join the Battle for Net Neutrality",
+        "title": "US APPEALS COURT ATTACKS NET NEUTRALITY",
+        "title_call": "US APPEALS COURT ATTACKS NET NEUTRALITY",
+        "intro_html": "<p>The FCC killed net neutrality at the federal level, and now a US appeals court has \n<a href=\"https://www.reuters.com/article/usa-internet/us-appeals-court-will-not-reconsider-net-neutrality-repeal-case-idUSL1N2A62BA\" target=\"_blank\">\nruled</a> in favor of the FCC's disastrous decision. As the courts turn against us, \nour last remaining hope is to pass strong net neutrality laws at the state level \nwhile building up support in Congress for national legislation. <strong>Contact your \nlawmakers now and urge them to save net neutrality.</strong></p>",
+        "persistent_button": "Contact Congress",
+        "form": {
+          "name_label": "Name*",
+          "name_placeholder": "First Last",
+          "email_label": "E-mail*",
+          "email_placeholder": "me@example.com",
+          "address_label": "Address*",
+          "address_placeholder": "# Street",
+          "zip_label": "ZIP*",
+          "zip_placeholder": "12345",
+          "phone_label": "Phone (optional, to receive periodic campaign alerts)",
+          "phone_placeholder": "555-555-5555",
+          "comments_label": "Comments",
+          "business_owner_label": "Are you a business owner who supports net neutrality?",
+          "company_name_placeholder": "Company Name",
+          "company_url_placeholder": "Company Website",
+          "clear_comments": "Clear letter",
+          "button_loading": "Saving...",
+          "button_cta": "Write Congress",
+          "default_letter": "We need net neutrality now more than ever.\n\nSince the FCC repealed net neutrality, Internet service providers (ISPs) have been routinely throttling Internet speeds ... something ISPs promised they wouldn't do. The truth is that we need strong, enforceable net neutrality laws to ensure that our online freedom is protected.\n\nEighty percent of Americans support net neutrality, including Republicans, Democrats, and Independents. We urge you to do the same.  Please work with your colleagues to support the Save the Internet Act so that Americans can once again use the Internet without fear of throttling, censorship, or unfair fees.\n\nThank you.\n",
+          "sms_disclaimer_html": "<p>Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target=\"_blank\" href=\"https://www.fightforthefuture.org/privacy\">Privacy Policy</a> and <a target=\"_blank\" href=\"https://www.fightforthefuture.org/terms\">Terms of Service</a></p>"
+        },
+        "sections": {
+          "join": {
+            "title": "Fight for net neutrality",
+            "body_html": "<p>Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&amp;T and\nT-Mobile have been\n<a href=\"https://www.bloomberg.com/news/articles/2019-08-19/wireless-carrier-throttling-of-online-video-is-pervasive-study\" target=\"_blank\">\nthrottling traffic</a> \"pretty much everywhere all the time.\" Worse yet, \nfederal courts have \n<a href=\"https://arstechnica.com/tech-policy/2020/02/ajit-pai-defeats-another-attempt-to-restore-fccs-net-neutrality-rules/\" target=\"_blank\">        \nrefused</a> to overturn the FCC's disastrous decision, leaving us with few\noptions to restore freedom online. \n<br>\n<br>\nOur last hope? Win net neutrality at the state level. This will show the \nfederal government that the \n<a href=\"https://thehill.com/policy/technology/435009-4-in-5-americans-say-they-support-net-neutrality-poll\" target=\"_blank\">\nmajority of Americans</a> demand a free and open Internet, pressuring our\nlawmakers to enshrine net neutrality into national law once and for all. \nWe've already won in \n<a href=\"https://www.nytimes.com/2019/10/02/opinion/net-neutrality-fcc-wheeler.html\" target=\"_blank\">\nCalifornia</a>, and we're going to win in other states, too. But we need your\nsupport, now more than ever. \n<br>\n<br>\n<strong>Here’s how you can help:</strong></p>\n<ol>\n  <li><strong>Speak out on social media.</strong> Here are some\n  <a href=\"https://docs.google.com/document/d/19_uSpp3EHXEepe82xFq9I2lpuDlNNtB41kMG7ixljVs\"\n  target=_blank\">suggestions</a> you can use to spread the word. And be sure to share our\n  <a href=\"/media\"\n  target=_blank\">awesome graphics</a> to get the word out.</li>\n  <li><strong>Tell everyone to text WATCH to 687-88.</strong> They can set a reminder to watch the\n  hearing and pressure their members of Congress to pass a clean bill from their smartphone.</li>\n<!--\n  <li><strong>Add our hearing livestream alert widget to your homepage. </strong>Put it up now to\n  start raising awareness ahead of the vote and we'll add the livestream to the Battle for the Net\n  homepage as soon as it’s available.</li>\n-->\n</ol>\n<!--\n<div class=\"modals flex-center\">\n  <img src=\"/images/watch-widget-screenshot.jpg\"\n       alt=\"A screenshot of our widget when minimized\"\n       class=\"rounded\">\n</div>\n-->"
+          },
+          "bill": {
+            "title": "Save the Internet Act of 2019\n",
+            "body_html": "<p>In 2015, the Federal Communications Commission (FCC) adopted the\n<a href=\"https://www.federalregister.gov/documents/2015/04/13/2015-07841/protecting-and-promoting-the-open-internet\"\n   target=\"_blank\">\n  Open Internet Order</a>\nto protect Internet users from ISPs throttling traffic, censoring content,\nand imposing unfair fees. But just a few years later, a new chairman of the FCC\n<a href=\"https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html\"\n   target=\"_blank\">\n  killed net neutrality</a>\nby repealing the Open Internet order. It's clear that we can't count on unlected \nbureaucrats to consistently defend our online freedoms, and we can't rely on the\ncourts to overrule disastrous policy decisions, either. We need strong legislation\nto protect net neutrality for as long as the Internet exists.</p>\n<p><a href=\"https://www.congress.gov/116/bills/s682/BILLS-116s682is.pdf\"\n   target=\"_blank\">\n  The Save the Internet Act of 2019</a>\nis a simple, three-page bill that would restore the Open Internet Order\nenshrining net neutrality into law. Plain and simple. Read it for yourself below, \nthen contact your Congressional lawmakers to urge them to suport this important \nlegislation:</p>\n<div class=\"letter-wrapper push-top-3\">\n  <h3 class=\"text-center\">S. 682 - The Save the Internet Act</h3>\n  <h3 class=\"text-center\">A BILL</h3>\n  <p>\n    To restore the open internet order of the Federal\n    Communications Commission.\n  </p>\n  <p>\n    <em>Be it enacted by the Senate and House of Representatives of the\n    United States of America in Congress assembled,</em>\n  </p>\n  <h3>SECTION 1. SHORT TITLE.</h3>\n  <p>\n    This Act may be cited as the \"Save the Internet Act of 2019\".\n  </p>\n  <h3>SEC. 2. RESTORATION OF OPEN INTERNET ORDER.</h3>\n  <p>\n    (a) DEFINITIONS.—In this section—\n  </p>\n  <p>\n    (1) the term \"Commission\" means the Federal Communications Commission, and\n  </p>\n  <p>\n    (2) the term \"rule\" has the meaning given such term in section 804\n    of title 5, United States Code.\n  </p>\n  <p>\n    (b) REPEAL OF RULE.—The Declaratory Ruling, Report and Order, and Order in\n    the matter of restoring internet freedom that was adopted by the\n    Commission on December 14, 2017 (FCC 17–166) shall have no force or effect.\n  </p>\n  <p>\n    (c) PROHIBITION ON REISSUED RULE OR NEW RULE.—The Commission may not\n    reissue the Declaratory Ruling, Report and Order, and Order described in\n    subsection (b) in substantially the same form, or issue a new rule that\n    is substantially the same as that Declaratory Ruling, Report and Order,\n    and Order, unless the reissued or new rule is specifically authorized by\n    a law enacted after the date of the enactment of this Act.\n  </p>\n  <p>\n    (d) RESTORATION OF REPEALED AND AMENDED REGULATIONS.—The following are\n    restored as in effect on January 19, 2017:\n  </p>\n  <p>\n    (1) The Report and Order on Remand, Declaratory Ruling, and Order in the\n    matter of protecting and promoting the open internet that was adopted by\n    the Commission on February 26, 2015 (FCC 15–24).\n  </p>\n  <p>\n    (2) Part 8 of title 47, Code of Federal Regulations.\n  </p>\n  <p>\n    (3) Any other rule of the Commission that was amended or repealed by the\n    Declaratory Ruling, Report and Order, and Order described in subsection (b).\n  </p>\n  <p class=\"text-center\">\n    <a class=\"btn\"\n       href=\"https://www.congress.gov/116/bills/s682/BILLS-116s682is.pdf\"\n       target=\"_blank\">\n      Download the PDF\n    </a>\n  </p>\n</div>"
+          },
+          "stats": {
+            "title": "We're making Congress listen\n",
+            "body_html": "<p>Voters from across the political spectrum agree: they don't want their\ncable company to control what they see and do online. The FCC's reckless\nrepeal of net neutrality has sparked an unprecedented backlash, as\nmillions of Americans have contacted their lawmakers in protest.  The\nnumbers below represent actions taken through BattleForTheNet.com and its\npartners. Many more have taken action on other sites or contacted their\nlawmakers directly.</p>\n<p>To help convince the House, <a href=\"#bftn-action-form\">contact congress\nnow</a> and add to these numbers.</p>"
+          },
+          "scoreboard": {
+            "title": "View the Congressional Scoreboard",
+            "body_html": "<p>Our scoreboard keeps track of who <strong>really</strong> supports net neutrality. Members of Congress highlighted in blue are on Team Internet because they’ve cosponsored or voted for the Save the Internet Act. Lawmakers highlighted in red are on Team Cable because they are not yet cosponsors or voted against the bill.</p>"
+          },
+          "events": {
+            "title": "Attend an event in your area",
+            "body_html": "<p>Want to make your voice heard? Check out the map below to find a protest\nor a meeting with a representative in your state. And if there are no\nevents in your area, consider organizing one!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
+          },
+          "net-neutrality": {
+            "title": "What is net neutrality? Why does it matter?",
+            "body_html": "<p>Net neutrality is the principle that everyone should have access to\nwebsites and apps, preventing Internet providers like Comcast &amp; Verizon\nfrom creating “<a href=\"https://arstechnica.com/information-technology/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/\"\ntarget=\"_blank\">fast lanes</a>,” <a\nhref=\"http://netneutrality.koumbit.org/en/node/5\" target=\"_blank\">censoring\ncontent</a>,\n<a href=\"https://www.extremetech.com/computing/186576-verizon-caught-throttling-netflix-traffic-even-after-its-pays-for-more-bandwidth\"\ntarget=\"_blank\">throttling traffic</a> and even outright <a\nhref=\"http://www.washingtonpost.com/blogs/post-tech/post/fcc-fines-verizon-125m-for-blocking-tethering-apps/2012/07/31/gJQAXjRLNX_blog.html\"\ntarget=\"_blank\">blocking access</a> to their competitor's products. This\nprinciple has guided the world wide web from the beginning, and has been\nprotected by federal policy under Republican AND Democrat leadership since\nthe <a href=\"https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf\"\ntarget=\"_blank\">early 2000s</a>.</p>\n<p>Unfortunately, Internet providers ignored this policy and even actively\n<a href=\"https://en.wikipedia.org/wiki/Verizon_Communications_Inc._v._FCC_(2014)\"\ntarget=\"_blank\">sued the federal government</a> to destroy net neutrality\nprotections … and they won. Their anti-consumer practices finally convinced\nthe FCC to issue the Open Internet Order as a last resort in 2015. But\nunder new leadership, the FCC has removed these regulations, threatening\nto end the web as we know it. A federal court ruling has opened up a path\nfor net neutrality laws at the state and national level, giving open Internet\nsupporters hope that the Save the Internet Act can enshrine net neutrality\ninto law once and for all.</p>\n<h3 id=\"wanttolearnmorewatchthesevideos\">Want to learn more? Watch these videos!</h3>"
+          },
+          "team-internet": {
+            "title": "We are Team Internet",
+            "body_html": "<p>Members of Team Internet support free speech and free markets online through\nmeaningful, enforceable net neutrality laws. We are everyday Americans from\n<a href=\"http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules\"\ntarget=\"_blank\">across the political spectrum</a>. We are\n<a href=\"https://www.businessesfornetneutrality.com/\" target=\"_blank\">thousands\nof small business owners</a>.  We are startups, tech giants and grassroots\norganizations with millions of members. Check out the list below to see who’s\ntaken action to save net neutrality:</p>"
+          },
+          "team-cable": {
+            "title": "They are Team Cable",
+            "body_html": "<p>Team Cable wants to end net neutrality so they can control and tax the\nInternet. Team Cable <a\nhref=\"https://www.wired.com/story/the-fcc-says-net-neutrality-cripples-investment-thats-not-true/\"\ntarget=\"_blank\">lies about the effects of net neutrality</a> on the free\nmarket and <a\nhref=\"https://gizmodo.com/senators-demand-fcc-answer-for-fake-comments-after-real-1826213294\"\ntarget=\"_blank\">ignores blatant corruption</a> in the regulatory process.\nIf they get their way, we will all pay more money for worse Internet\naccess. Independent voices <a href=\"https://www.donttreadonthe.net/\"\ntarget=\"_blank\">will be stifled</a>. And innovative start-ups will\nstruggle to compete in the online marketplace.</p>"
+          }
+        }
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "sections": {
+          "fftf": {
+            "title": "Fight for the Future",
+            "body_html": "<p>Fight for the Future is committed to protecting your privacy. If you\nsign onto one of our various mailing lists, petitions, or use our\ncontact tools, we retain the information you provided to primarily\nmanage our mailing lists, and secondarily to transmit only the\ninformation that is required to service providers and public officials\nwhen required to submit your communications with them.</p>\n<p>We do not sell our email list. We do not share or distribute your\ncontact information unless specifically stated so.</p>\n<p>If you sign up to volunteer or RSVP to a local event&mdash;for example\nby submitting your phone number in a volunteer signup field&mdash;we\nmay share your contact information with partner organizations, third\nparty services, or other volunteers, for the purposes of volunteer\ncoordination only.</p>\n<p>For petitions, open letters, or similar public communications that\nyou’ve signed or completed, we treat your name, city, state, and\ncomments as public information. We will not make your street address\npublicly available, but we may transmit it to public officials as part\nof a petition or open letter, and they may make it public.</p>\n<p>If you enter your information as part of a clearly-labeled “joint\naction” with another organization, we may share your name, email and\nother information you have entered with the partner organization(s) for\nthat particular action. If you are submitting your information to one of\nthese campaigns or websites, you are opting into the sharing of your\ninformation for the stated purposes and will be treated as so.</p>\n<p>We sometimes carry out our business or operate our website using third\nparty tools or services. Information may be shared with the operators of\nthose tools or services in connection with our use of those tools or\nservices to carry out business or operate our website.</p>\n<p><strong>Last changed: 7/10/2017</strong></p>"
+          },
+          "dp": {
+            "title": "Demand Progress",
+            "body_html": "<p><a href=\"https://demandprogress.org/\">Demand Progress/Demand Progress Action</a>\ntakes your privacy very seriously. We do not share your email address or\nother personal information with unauthorized entities without your\npermission.</p>\n<p>We use the information we collect to inform you of news, activism\nopportunities, and other matters that relate to Demand Progress/Demand\nProgress Action, and to deliver petition signatures, emails/letters,\nand similar communications to designated targets.</p>\n<p>For petitions, emails/letters, or similar public communications that\nyou’ve signed or completed, we treat your name, city, state, and\ncomments as public information. We will not make your street or email\naddress publicly available, but we may transmit such information to\npublic officials/petition targets as part of a petition, open letter,\nor similar correspondence. (For instance, this information must be\nincluded to enable delivery of emails to members of Congress or comments\nto administrative agencies.)</p>\n<p>DP (501(c)3 arm) and DPA (our 501(c)4 arm) have a resource sharing\nagreement that enables each to contact activists whose contact\ninformation was gathered by the other. Our 501(c4) arm and our 527\nentity (also called Demand Progress) also have such a resource sharing\nagreement.</p>\n<p>DP/DPA owns and administers the Watchdog.net site. And as of the summer\nof 2013, DP/DPA owns and administers Rootstrikers.org. DP/DPA may\ncontact subscribers to the Watchdog.net and Rootstrikers.org sublists.\nYou may unsubscribe from email alerts from any or all of DP/DPA,\nRootstrikers.org, or Watchdog.net at any time.</p>\n<p>If you enter your information as part of an action that is organized in\npartnership with one or more other organizations, and labeled as such,\nthen we may share your name, email, and other information you have\nentered with the partner organization(s) for that particular action. We\nhouse data in accounts we hold with vendors such as ActionKit and Action\nNetwork. We sometimes enlist third-party vendors to help us manage data.\nWe may use cookies from third parties such as Google Adwords to serve\nads based on usage of this site.</p>\n<p>If you sign up to volunteer &mdash; for example by submitting your phone\nnumber in a volunteer signup field &mdash; we may share your contact\ninformation with partner organizations, third party services, or other\nvolunteers, for the purposes of volunteer coordination.</p>\n<p>DP is a fiscally sponsored project of the New Venture Fund, and DPA is\na fiscally sponsored project of the New Venture Fund.</p>\n<p>If you have any questions about our privacy policy, don’t hesitate to\ncontact us.</p>"
+          },
+          "fp": {
+            "title": "Free Press",
+            "body_html": "<p><a href=\"http://freepress.net/\">Free Press and the Free Press Action Fund</a>\nare committed to protecting the privacy of visitors to our website, as\nwell as that of our members and activists. In fact, we support enhanced\nprotections for everyone’s electronic and Internet privacy.</p>\n<p>In this policy, “Free Press” refers to both Free Press and Free Press\nAction Fund staff, board members, cooperating attorneys, interns,\nvolunteers and consultants.</p>\n<p>In general, Free Press and our software partners treat your contact\ninformation as private and confidential. Free Press will not give, sell,\nrent, exchange or otherwise share your information with anyone else\nwithout your prior consent except as compelled by law (see below).</p>\n<p>We will notify users of updates to this policy by noting the date of new\nchanges directly below this statement.</p>\n<p>This policy was last amended on July 10, 2017.</p>\n<p>Policy effective May 1, 2003.</p>\n<p><strong>Website Policies</strong></p>\n<p>Free Press and third-party vendor servers may record the IP address of\nyour computer; the browser software you use and your operating system;\nthe date and time you access our site; and the Internet address of the\nwebsite from which you linked to our site.</p>\n<p>We use this information to measure the number of visitors to different\nsections of the site, to diagnose and correct system errors and to\nimprove the site. We do not connect this information to your name or\nidentity, and we do not retain this information permanently.</p>\n<p>Information that is not provided with the express intent of\nsubscription, ordering, membership or donation will not be captured for\nuse in other communications unless otherwise noted. We (and our vendors)\nrestrict the use of “cookies” on this site primarily to convenience\nfeatures such as auto login, surveys and polls. We typically delete\nthese cookies as soon as is reasonably possible.</p>\n<p><strong>External Links</strong></p>\n<p>Free Press has not reviewed all of the sites linked to this site and is\nnot responsible for the privacy practices or the content of any off-site\npages or any other sites linked to this site, whether or not they are\naffiliated with Free Press or the Free Press Action Fund. Such linked\nsites are for your convenience only and you access them at your own\nrisk. Free Press makes no representations or warranties as to the\naccuracy or functioning of any such link. That another website is linked\nto our site does not constitute endorsement from Free Press or the Free\nPress Action Fund of the owner of the other site, the content of its\nsite or its products or services.</p>\n<p><strong>Electronic Mailing List Policies</strong></p>\n<p>Free Press offers several electronic mailing lists. If you choose to\nsubscribe to any of these lists, we may ask for personal information\nsuch as your name, ZIP code and email address. We use this information\nsolely to manage our lists (for example, we may use your ZIP code for a\ntargeted mailing on an issue affecting your area). We do not sell or\nrent our electronic mailing lists.</p>\n<p>If you sign up to volunteer—for example by submitting your phone number\nin a volunteer signup field on a website form —we may share your contact\ninformation with partner organizations, third party services, or other\nvolunteers, for the purposes of volunteer coordination.</p>\n<p>There are a number of ways to subscribe to Free Press’ electronic\nmailing lists, including submitting a form on our website, opting in\nwhen you engage in online or offline activism, or mailing or completing\na sign-up form from a paper petition, brochure or flier. When you\nsubscribe, you will typically receive a confirmation message welcoming\nyou.</p>\n<p>You may unsubscribe from any of our lists at any time. If you wish to\nupdate your information, delete or otherwise make changes to your\nrelationship with us, or remove yourself entirely from our list(s),\n<a href=\"http://act2.freepress.net/unsubscribe/unsubscribe_freepress/\">click here.</a></p>\n<p>Lists Free Press maintains for electronic mailings are exclusively\n“opt-in” lists. We do not purchase information from third-party sources\nor gather personal data from the Web (known as spidering) for inclusion\nin our email lists.</p>\n<p><strong>Online Activism</strong></p>\n<p>Our website offers many ways to engage in online activism. Many of these\ntools are hosted and administered by a third party (currently ActionKit).\nWhen you provide personal information by signing a petition or engaging\nin other actions, that personal information may be stored on our\nserver(s) and/or ActionKit’s server(s). If you choose to join a mailing\nlist or become a member at the same time that you participate in an\nonline action, your relevant information will be kept and used for those\nother purposes.</p>\n<p>We may deliver petitions and surveys you’ve completed to the president,\nfederal and state legislators, agencies like the Federal Communications\nCommission, other elected and appointed officials, or other entities\nsuch as companies whose policies we seek to change. We ask for your\naddress so we can deliver your message to the appropriate legislative\noffices, and may include information such as your name, town or city and\nstate in these deliveries.</p>\n<p>ActionKit strictly adheres to policies preventing unauthorized access to\nyour personal information and will not make such information available\nto anyone outside of Free Press or ActionKit (unless legally compelled\nto do so).</p>\n<p><strong>Financial Support</strong></p>\n<p>Free Press and the Free Press Action Fund are committed to maintaining\nthe trust and security of all financial supporters. We collect personal\ninformation including the email and mailing addresses that members and\ndonors provide. We might use this information for online and print\nmailings to keep you informed about our programs and occasionally to ask\nfor additional financial support. You may opt out of these\ncommunications at any time.</p>\n<p>To opt out of email communication,\n<a href=\"http://act2.freepress.net/unsubscribe/unsubscribe_freepress/\">click here.</a></p>\n<p>To opt out of print mailings, please call us at 413-585-1533 or\n<a href=\"mailto:info@freepress.net\">email us</a>.</p>\n<p>On occasion, Free Press or the Free Press Action Fund sends messages on\nbehalf of other reputable organizations when we believe such messages\nmay be of value to our members and supporters. Our ability to send you\nthese messages on behalf of other entities helps us build our membership\nbase and further the movement for your rights to connect and\ncommunicate. If you do not wish to receive such messages from our allied\nor aligned organizations, please call us at 413-585-1533 or\n<a href=\"mailto:info@freepress.net\">email us</a>. Free Press is not\nresponsible for the privacy practices or the content produced or\nprovided by any of these other entities.</p>\n<p>All financial data is collected via a secure Web connection, and is\nstored or transmitted using appropriate security measures at all times.</p>\n<p><strong>Online and Phone Orders for Materials</strong></p>\n<p>Information provided to us in the course of placing an order for\neducational materials, activist toolkits, promotional materials or other\nmaterials offered by Free Press (whether or not the materials are\noffered at a cost) may be retained for use in future communications,\nsuch as membership drives, or when we unveil similar offerings we\nbelieve may be of interest to you. This information will not be given,\nsold, rented, shared or otherwise provided to anyone else without your\nprior consent (except when compelled by law — see below).</p>\n<p>All financial data is collected via a secure Web connection, and is\nstored or transmitted using appropriate security measures at all times.</p>\n<p><strong>Compelled Disclosure</strong></p>\n<p>If we are required by law to disclose any information that you have\nprovided us, we will attempt to give you notice (unless we are\nprohibited from doing so) that a request for your information has been\nmade, in order to give you an opportunity to object. We will attempt to\nprovide this notice by email, if you have given us an email address, or\nby postal mail if you have entered a postal address. If you do not\nchallenge the disclosure request, we may be legally required to turn\nover your information. In addition, we may independently object to any\ndisclosures we believe to be improper.</p>\n<p><strong>Questions?</strong></p>\n<p>If  you would like additional information about our privacy practices\nand/or our policies, please contact info(AT)freepress.net.</p>\n<p><strong>Copyright Policies</strong></p>\n<p>All original text, images and other materials hosted on freepress.net\nservers are copyright 2009–2014 Free Press, unless otherwise noted\n(e.g., news articles and licensed photos).</p>\n<p>We encourage reproduction and distribution of original materials on this\nsite for educational and personal use. All Free Press-created content on\nthis site (unless otherwise noted) is available to you under a Creative\nCommons Attribution-NonCommercial-ShareAlike license.</p>\n<p>In short, this license allows you to copy, distribute, display or make\nderivative works provided that you a) credit Free Press, b) do not use\nit for commercial purposes and c) release any derivative works under\nthis same license.</p>\n<p><strong>Copyright-Infringement Notification</strong></p>\n<p>If you have a copyright complaint, please follow the procedures set\nforth in the Digital Millennium Copyright Act. Our agent for notice is\nKimberly Longey, chief operating officer. She may be reached by phone at\n413.585.1533, by fax at 413.585.8904 or by email at\ncopyright@freepress.net. Please direct your written correspondence to\nher at:</p>\n<p>Free Press<br>\n40 Main St., Suite 301<br>\nFlorence, MA 01062</p>"
+          }
+        }
+      },
       "redalert": {
         "sharing": {
           "title": "The Senate voted to save net neutrality",
@@ -62,7 +141,7 @@
         },
         "title": "Join the People’s Lobby for Net Neutrality",
         "intro_html": "<p>The antidote to Big Cable’s campaign to destroy the open Internet is real,\neveryday people joining forces to hold Congress accountable. That’s why we’re\norganizing and training people passionate about net neutrality to meet with\ntheir representatives in-district during August recess. The dates and times\nof the meetings are still being set. If you're interested in attending, please\nfill-in the information below.</p>",
-        "cta_button": "Sign up",
+        "cta_button": "RSVP",
         "tweet_text": "Join the People’s Lobby for Net Neutrality to meet with your lawmakers during\nthe August congressional recess\n",
         "form": {
           "title": "Sign Up",
@@ -96,69 +175,15 @@
           }
         },
         "events": {
-          "title": "Stay Up-to-Date",
-          "body_html": "<p>\n  Join a regional Facebook group to help keep the pressure on your\n  representative:\n</p>"
-        }
-      },
-      "index": {
-        "document_title": "Join the Battle for Net Neutrality",
-        "title": "Does your rep support net neutrality?",
-        "intro_html": "<p>The FCC officially gutted the open internet, allowing your cable company to scam\nyou for more money, censor websites, and slow down online content. Congress can\nstop this, but many lawmakers are in the pocket of Big Cable. <strong>Fill out the form\nto contact Congress and find out whether your reps sold you out.</strong></p>",
-        "persistent_button": "Contact Congress",
-        "form": {
-          "name_placeholder": "Name*",
-          "email_placeholder": "E-mail*",
-          "address_placeholder": "Address*",
-          "zip_placeholder": "Zip*",
-          "phone_placeholder": "Phone # (for text list)",
-          "business_owner_label": "Are you a business owner who supports net neutrality?",
-          "company_name_placeholder": "Company Name",
-          "company_url_placeholder": "Company Website",
-          "clear_comments": "Clear letter",
-          "button_loading": "Saving...",
-          "button_cta": "Write Congress",
-          "default_letter": "Last December's FCC vote to destroy the net neutrality protections cannot stand.\n\nI’m calling on you to work with your colleagues to use the Congressional Review Act to pass a \"resolution of disapproval\" reversing the FCC's vote.\n\nThe FCC's December decision willfully ignored the outcry of tens of millions of people, and it abdicated the FCC's responsibility to protect the internet from ISP blocking and discrimination. The FCC has injured our economy and free speech in just one action, all without so much as a single public hearing.\n\nWe need members of Congress to stand up for the open internet and for the digital rights of their constituents now. Please co-sponsor, sign the discharge petition for, and vote for the CRA Resolution of Disapproval that would overturn the FCC's December \"Restoring Internet Freedom\" vote.\n\nThank you.\n"
-        },
-        "sections": {
-          "join": {
-            "title": "Net neutrality was repealed, but the fight has just begun",
-            "body_html": "<p>The FCC’s repeal of net neutrality officially kicked in on\n<a href=\"https://medium.com/@fightfortheftr/the-senate-just-voted-to-save-net-neutrality-e2fa2fa67b79\"\ntarget=\"_blank\">June 11th</a>. The Internet as we know it won’t end overnight. But with each second\nthat passes until net neutrality is restored, it will be slowly dying as Internet providers like AT&amp;T,\nVerizon and Comcast\n<a href=\"https://www.fool.com/investing/2018/07/14/wireless-service-prices-are-climbing-across-the-bo.aspx\"\ntarget=\"_blank\">raise prices</a>,\n<a href=\"https://www.fastcompany.com/40588895/atts-time-warner-deal-and-net-neutralitys-end-gave-us-watchtv\"\ntarget=\"_blank\">prioritize data</a>, and\n<a href=\"https://www.eff.org/deeplinks/2018/06/while-net-neutrality-fight-continues-congress-and-states-att-and-verizon-are\"\ntarget=\"_blank\">eliminate competition</a>.</p>\n<p>People are angry. And rightly so. We need to channel that anger productively and flood House lawmakers\nwith calls and emails demanding that they use the Congressional Review Act (CRA) to overrule the FCC.</p>\n<p>So take whatever corner of the Internet that you control — whether it’s a major platform or a personal\nInstagram account — and harness its reach to pressure Congress. Here’s how:</p>\n<ol>\n  <li>Change your social media avatars and profile pics to help sound the alarm. You can find great\n  artwork in our gallery <a href=\"/media/#social\">here.</a></li>\n  <li>If you make videos, consider making a video about net neutrality, or use our simple\n  <a href=\"https://drive.google.com/drive/folders/0B7iKho2OIeVzY1FKTlAzS1NOVTg\"\n  target=_blank\">video bumper</a> to help spread the word.</li>\n  <li>If you run a website or blog, post our banner ads to let your visitors know you support net neutrality.\n  We’ve provided examples in our gallery <a href=\"/media/#banners\">here</a>.\n  Link back to BattleForTheNet.com whenever you can so people can easily contact their lawmakers.</li>\n  <li>If you run a website or blog, deploy our updated widget to let your users contact Congress without ever\n  leaving your site. Details below.</li>\n</ol>\n<div class=\"modals flex-center\">\n  <img src=\"/images/july-23-widget-screenshot2.jpg\"\n       alt=\"A screenshot of our widget when minimized\"\n       class=\"rounded\">\n</div>\n<div class=\"modal-tip\">\n  <p>This widget will allow your site's users to send a letter to Congress by entering their\n  contact info.  Users who close the widget won’t see it again for 24 hours. Try it out for\n  yourself by clicking the button below:</p>\n  <p><a class=\"btn btn-large btn-block\" href=\"https://www.fightforthefuture.org?widget=july23\"\n  target=\"_blank\">Try it out</a></p>\n  <p>It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to\n  <a href=\"https://github.com/fightforthefuture/july23-widget\">visit our\n  GitHub page</a> to learn how to customize the widget for your site.</p>\n  <code>&lt;script src=\"https://july23.battleforthenet.com/widget.js\" async&gt;&lt;/script&gt;</code>\n</div>"
-          },
-          "cra": {
-            "title": "Here’s how we get Congress to save net neutrality",
-            "body_html": "<p>Our elected officials in Congress can overrule the FCC and save net\nneutrality using the Congressional Review Act (CRA). But they’ll only do\nit if we make them. The CRA resolution\n<a href=\"https://www.washingtonpost.com/news/the-switch/wp/2018/05/16/net-neutrality-is-getting-a-big-vote-in-the-senate-today-heres-what-to-expect/?noredirect=on&utm_term=.b708d06a9545\"\ntarget=\"_blank\">passed the Senate 52-47</a> in a historic upset. But now\nwe’re fighting an uphill battle to get the House of Representatives to do\nthe same. It’s not going to be easy, but if the whole Internet comes\ntogether to fight, we can win.</p>\n<p>In the House, we’ll need a simple majority of sign on to a\n\"<a href=\"https://www.eff.org/deeplinks/2018/05/path-victory-net-neutrality-house-representatives-and-how-you-can-help\"\ntarget=\"_blank\">discharge petition</a>” in order to force a vote past leadership\nto the floor. That means we’ll need to convince all the Democrats and about 25\nRepublicans to support the CRA. The clock is ticking — if the CRA resolution\ndoesn’t get a vote this year, it dies when the new Congress comes into session\nin January 2019.</p>\n<h3>\n  <br>\n  Here’s how we’ll do it this time:\n</h3>\n<ul>\n  <li class=\"calls\">\n    <h4>\n      <img src=\"/images/gradient-calls.png\" alt=\"\">\n      <span>Flood them with calls and emails</span>\n    </h4>\n    <p>\n      When millions of people call and email their representatives, Congress listens.\n      That’s why we developed a widget that website owners can place on their site,\n      giving their site’s users the opportunity to contact Congress. And we’ve created\n      art assets that will allow individuals to spread the word on powerful\n      social media platforms.\n    </p>\n  </li>\n  <li class=\"constituents\">\n    <h4>\n      <img src=\"/images/gradient-constituents.png\" alt=\"\">\n      <span>In-district constituent pressure</span>\n    </h4>\n    <p>\n      It’s important for lawmakers to see the people who support net neutrality.  We’ll\n      help schedule in-person events, protests, meetings, and canvassing to mobilize\n      constituencies (\n      <a href=\"https://www.vetsforthe.net/\"target=\"_blank\">like veterans</a>\n      ) that lawmakers listen to.\n    </p>\n  </li>\n  <li class=\"business\">\n    <h4>\n      <img src=\"/images/gradient-business.png\" alt=\"\">\n      <span>Mobilizing small businesses</span>\n    </h4>\n    <p>\n      In Washington, money talks. So lawmakers\n      listen to the small business owners in their districts because those\n      business owners are vital to the local economy. We need to reach out to\n      small business owners to ask them to sign our\n      <a href=\"https://www.businessesfornetneutrality.com/\">petition</a> in\n      support of net neutrality, then we hand-deliver this petition to our\n      politicians.\n    </p>\n  </li>\n</ul>"
-          },
-          "stats": {
-            "title": "We're making Congress listen\n",
-            "body_html": "<p>Voters from across the political spectrum agree: they don't want their\ncable company to control what they see and do online. The FCC's reckless\nrepeal of net neutrality has sparked an unprecedented backlash, as\nmillions of Americans have contacted their lawmakers in protest.  The\nnumbers below represent actions taken through BattleForTheNet.com and its\npartners. Many more have taken action on other sites or contacted their\nlawmakers directly.</p>\n<p>To help convince the House, <a href=\"#bftn-action-form\">contact congress\nnow</a> and add to these numbers.</p>"
-          },
-          "scoreboard": {
-            "title": "View the Congressional Scoreboard",
-            "body_html": "<p>We’re keeping track of who supports net neutrality … and who doesn’t. Now\nyou can, too.  Below you'll find a link to a list of your state's Senators\nand Representatives. The ones in green have signed a discharge petition in\nsupport of net neutrality, so let them know you appreciate their support.\nThe ones in red need to be convinced, so let them know how important this\nissue is to you.</p>\n<p>We already won in the Senate. Now we must win in the House. So please tweet\nand call your <a href=\"/scoreboard/#house\">representatives</a>.</p>"
-          },
-          "events": {
-            "title": "Attend an event in your area",
-            "body_html": "<p>Want to make your voice heard? Check out the map below to find a protest\nor a meeting with a representative in your state. And if there are no\nevents in your area, consider organizing one!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
-          },
-          "net-neutrality": {
-            "title": "What is net neutrality? Why does it matter?",
-            "body_html": "<p>Net neutrality is the principle that everyone should have access to\nwebsites and apps, preventing Internet providers like Comcast &amp; Verizon\nfrom creating “<a href=\"https://arstechnica.com/information-technology/2016/02/verizons-mobile-video-wont-count-against-data-caps-but-netflix-will/\"\ntarget=\"_blank\">fast lanes</a>,” <a\nhref=\"http://netneutrality.koumbit.org/en/node/5\" target=\"_blank\">censoring\ncontent</a>,\n<a href=\"https://www.extremetech.com/computing/186576-verizon-caught-throttling-netflix-traffic-even-after-its-pays-for-more-bandwidth\"\ntarget=\"_blank\">throttling traffic</a> and even outright <a\nhref=\"http://www.washingtonpost.com/blogs/post-tech/post/fcc-fines-verizon-125m-for-blocking-tethering-apps/2012/07/31/gJQAXjRLNX_blog.html\"\ntarget=\"_blank\">blocking access</a> to their competitor's products. This\nprinciple has guided the world wide web from the beginning, and has been\nprotected by federal policy under Republican AND Democrat leadership since\nthe <a href=\"https://apps.fcc.gov/edocs_public/attachmatch/FCC-05-151A1.pdf\"\ntarget=\"_blank\">early 2000s</a>.</p>\n<p>Unfortunately, Internet providers ignored this policy and even actively\n<a href=\"https://en.wikipedia.org/wiki/Verizon_Communications_Inc._v._FCC_(2014)\"\ntarget=\"_blank\">sued the federal government</a> to destroy net neutrality\nprotections … and they won. Their anti-consumer practices finally convinced\nthe FCC to issue the Open Internet Order as a last resort in 2015. But\nunder new leadership, the FCC has removed these regulations, threatening\nto end the web as we know it.</p>\n<h3 id=\"wanttolearnmorewatchthesevideos\">Want to learn more? Watch these videos!</h3>"
-          },
-          "team-internet": {
-            "title": "We are Team Internet",
-            "body_html": "<p>Members of Team Internet support free speech and free markets online through\nmeaningful, enforceable net neutrality laws. We are everyday Americans from\n<a href=\"http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules\"\ntarget=\"_blank\">across the political spectrum</a>. We are\n<a href=\"https://www.businessesfornetneutrality.com/\" target=\"_blank\">thousands\nof small business owners</a>.  We are startups, tech giants and grassroots\norganizations with millions of members. Check out the list below to see who’s\ntaken action to save net neutrality:</p>"
-          },
-          "team-cable": {
-            "title": "They are Team Cable",
-            "body_html": "<p>Team Cable wants to end net neutrality so they can control and tax the\nInternet. Team Cable <a\nhref=\"https://www.wired.com/story/the-fcc-says-net-neutrality-cripples-investment-thats-not-true/\"\ntarget=\"_blank\">lies about the effects of net neutrality</a> on the free\nmarket and <a\nhref=\"https://gizmodo.com/senators-demand-fcc-answer-for-fake-comments-after-real-1826213294\"\ntarget=\"_blank\">ignores blatant corruption</a> in the regulatory process.\nIf they get their way, we will all pay more money for worse Internet\naccess. Independent voices <a href=\"https://www.donttreadonthe.net/\"\ntarget=\"_blank\">will be stifled</a>. And innovative start-ups will\nstruggle to compete in the online marketplace.</p>"
-          }
+          "title": "Find an Upcoming Meeting",
+          "body_html": "<p>Click on the map below to find an upcoming meeting near you. Be sure to\nalso join a regional Facebook group to help keep the pressure on your\nrepresentative:</p>"
         }
       },
       "california": {
         "title": "California can still save net neutrality",
-        "intro_html": "<p>Telecom giants like AT&amp;T and Comcast tried everything to water down the best state level net neutrality bill in the country, California’s SB 822, but they failed. The bill has been restored and is now headed for a vote on the Assembly floor. But the ISPs are still lobbying fiercely to defeat it. <strong>Call the California Assembly right now and tell them to pass SB 822 and restore net neutrality!</strong></p>",
+        "intro_html": "<p>Victory! The California Legislature just passed SB 822, the strongest net neutrality bill in the country. Now Governor Jerry Brown has 30 days to decide whether to sign it, and lobbyists for big telecoms like AT&amp;T and Comcast will be pushing hard for a veto. Call the Governor right now and tell him to sign SB 822 and restore net neutrality!</p>",
         "scoreboard_form": {
-          "title": "Does your representative support net neutrality?",
+          "title": "Do your California lawmakers support net neutrality?",
           "body_html": "<p>Enter your information below to see if your California Assembly member supports net neutrality, and learn what you can do to help.</p>",
           "address_placeholder": "Street address*",
           "zip_placeholder": "ZIP Code*",
@@ -168,14 +193,17 @@
           "error_rep_not_found": "Oh no! We couldn’t find a California Assembly member for your address."
         },
         "scoreboard": {
-          "title": "State Assembly Scoreboard",
-          "body_html": "<p>This is where every member of the California State Assembly stands on SB 822.</p>",
-          "legend_against": "Against the bill to restore net neutrality",
-          "legend_supports": "Supports the bill to restore net neutrality"
+          "title": "State Legislature Scoreboard",
+          "body_html": "<p>This is how every member of the California State Legislature voted on SB 822.</p>",
+          "vote_filter": "Show me legislators who:",
+          "voted_yes": "Voted Yes",
+          "voted_no": "Voted No",
+          "assembly": "Assembly Members",
+          "senators": "Senators"
         },
         "social": {
-          "title": "Help California save net neutrality",
-          "description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
+          "title": "California just passed a law to restore net neutrality",
+          "description": "Now we just need Governor Jerry Brown to sign it.",
           "image": "https://www.battleforthenet.com/images/share_images/CA-Flag.jpg",
           "url": "https://www.battleforthenet.com/california/"
         }
@@ -188,6 +216,14 @@
           "share_description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
           "share_image": "https://www.battleforthenet.com/images/share_images/CA-Flag.jpg",
           "share_url": "https://www.battleforthenet.com/call/california"
+        },
+        "maryland": {
+          "title": "Maryland can still save net neutrality",
+          "body_html": "<p>Telecom giants like AT&amp;T and Comcast tried everything to water down the best state level net neutrality bill in the\ncountry, Maryland’s SB 822, but they failed. The bill has been restored and is now headed for a vote on the Assembly\nfloor. But the ISPs are still lobbying fiercely to defeat it. <strong>Call the Maryland Assembly right now and tell them to\npass SB 822 and restore net neutrality!</strong></p>",
+          "share_title": "Help Maryland save net neutrality",
+          "share_description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
+          "share_image": "https://www.battleforthenet.com/images/share_images/MD-Flag.jpg",
+          "share_url": "https://www.battleforthenet.com/call/maryland"
         }
       },
       "map": {
@@ -199,27 +235,29 @@
         "no_events_title": "No events found 😐",
         "no_events_description": "We don't have any events scheduled at the moment. Perhaps you'd like to host one?",
         "social": {
-          "title": "Join an important letter delivery to save net neutrality July 19th",
-          "description": "Attending an in-person delivery is the most important thing you can do to help save the open Internet.",
+          "title": "Click here to find a net neutrality event near you.",
+          "description": "Find events near you and RSVP to help save the open Internet.",
           "image": "https://data.battleforthenet.com/events.png",
           "url": "https://www.battleforthenet.com/map/"
         }
       },
       "scoreboard": {
         "index": {
-          "title": "Does your representative support net neutrality?",
-          "intro_html": "<p>In the House of Representatives, we need a simple majority in support of net neutrality to force a vote.  Enter your information below to see if your representative supports net neutrality, and learn what you can do to help</p>",
+          "title": "Do your lawmakers support net neutrality?",
+          "intro_html": "<p>A new Congress is in session, and the House is already gearing up to introduce legislation to restore net neutrality. But telecom lobbyists have been spending huge amounts of money to make sure that doesn't happen. Enter your information below to find out if your lawmakers support net neutrality or if they've sold out to big cable companies.</p>",
           "view_all": "View Full Scoreboard"
         },
         "all": {
           "document_title": "Net Neutrality Scoreboard",
           "title": "Here's where every Congressperson stands on net neutrality",
-          "intro_html": "<p>Enter your information below to see if your representative supports net neutrality, and learn what you can do to help.</p>",
+          "intro_html": "<p>Our scoreboard keeps track of who <strong>really</strong> supports net neutrality. Members of Congress highlighted in blue are on Team Internet because they’ve cosponsored or voted for the Save the Internet Act. Lawmakers highlighted in red are on Team Cable because they are not yet cosponsors or voted against the bill.</p>",
           "legend": {
             "against_label": "Red",
-            "against_description": "Against the petition to restore net neutrality",
+            "against_description": "Against net neutrality",
             "for_label": "Blue",
-            "for_description": "Supports the petition to restore net neutrality"
+            "for_description": "Supports net neutrality",
+            "neutral_label": "Grey",
+            "neutral_description": "No stance on net neutrality"
           },
           "state_placeholder": "Select state",
           "view_button": "View",
@@ -229,12 +267,14 @@
           "california": {
             "call_form_title": "California can save net neutrality",
             "supports": {
-              "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
-              "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #savethenet"
+              "title_html": "<p>Your lawmaker <br> <strong>SUPPORTS</strong> net neutrality</p>",
+              "description_html": "<p>{name} supports net neutrality and voted for SB 822, the bill to restore open Internet protections in California. Please take a second to say thank you, and join the Facebook group to stay involved. <a href=\"/california/\">Then contact the Governor.</a></p>",
+              "tweet_text": ".@{twitter} is helping to save the internet. See where your CA lawmaker stands on SB-822: https://www.battleforthenet.com/california/ #battleforthenet #netneutrality #PassSB822"
             },
             "against": {
-              "description_html": "<p>{name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
-              "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet"
+              "title_html": "<p>Your lawmaker has <strong>NOT</strong> yet <br> supported net neutrality</p>",
+              "description_html": "<p>{name} sold you out by voting against net neutrality bill SB 822. Companies like Comcast and AT&amp;T are spending and donating millions of dollars to buy off California state legislators so they can squeeze you for even more money. Let {name} know that you’re outraged your elected official sided with big telecom companies over constituents. <a href=\"/california/\">Then contact the Governor.</a></p>",
+              "tweet_text": ".@{twitter} has not yet supported #SB822, which stops ISPs like AT&T and Comcast from censoring and manipulating us. We can stop them: {url} #battleforthenet #netneutrality #PassSB822"
             },
             "boxes": {
               "facebook_group": {
@@ -252,18 +292,27 @@
           "supports": {
             "document_title": "{name} supports net neutrality",
             "title_html": "<p>Your {title}<br> <strong>SUPPORTS</strong> net neutrality</p>",
-            "description_html": "<p>{name} supports net neutrality by signing the petition to discharge the FCC’s decision to destroy net neutrality regulations.  This prevents cable companies throttling traffic, blocking access to websites and apps, and imposing unfair fees on everyday Americans like me.</p>",
+            "description_html": "<p>{name} supports net neutrality protections that would prevent companies like Comcast, Spectrum, and AT&amp;T from throttling traffic, blocking access to apps, and imposing unfair fees. But they still need to hear messages of support from voters like you.  Reach out to thank them for their support.</p>",
             "tweet_text": ".@{twitter} is helping to save the internet. See where your rep stands: https://www.battleforthenet.com/scoreboard #battleforthenet #netneutrality #savethenet",
             "facebook_button": "Share on Facebook",
             "twitter_button": "Share on Twitter",
             "volunteer_button": "Volunteer"
           },
           "against": {
-            "document_title": "{name} is against net neutrality",
+            "document_title": "{name} does not support net neutrality",
             "title_html": "<p>Your {title}<br> is <strong>AGAINST</strong> net neutrality</p>",
-            "description_html": "<p>{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
-            "no_amount_description_html": "<p>{name} opposes net neutrality protections that would prevent companies like Comcast, Charter and AT&amp;T from throttling traffic, blocking access to websites and apps, and imposing unfair fees.</p>",
+            "description_html": "<p>{name} took {amount} in “campaign donations” from big ISPs.  No wonder this representative opposes strong net neutrality protections that would prevent companies like Comcast, Verizon, Spectrum, and AT&amp;T from throttling traffic, blocking access to apps, and imposing unfair fees. Contact your lawmaker now and let them know that your online freedom is more important than handouts to corporate monopolies.  Then share this page with everyone in your social network to turn up the pressure.</p>",
+            "no_amount_description_html": "<p>{name} opposes strong net neutrality protections that would prevent companies like Comcast, Verizon, Spectrum, and AT&amp;T from throttling traffic, blocking access to apps, and imposing unfair fees. Contact your lawmaker now and let them know that your online freedom is more important than handouts to corporate monopolies.  Then share this page with everyone in your social network to turn up the pressure</p>",
             "tweet_text": ".@{twitter} is allowing internet companies to censor and manipulate us. We can stop them: {url} #battleforthenet #netneutrality #savethenet",
+            "call_button": "Call",
+            "write_button": "Write",
+            "tweet_button": "Tweet"
+          },
+          "neutral": {
+            "document_title": "{name} has no stance on net neutrality",
+            "title_html": "<p>Your {title}<br> has <strong>NO STANCE</strong> on net neutrality</p>",
+            "description_html": "<p>{name} hasn’t yet taken a clear stance on net neutrality.  But you can help change that.  Contact your lawmaker now and let them know you want strong Title II protections for net neutrality that would prevent companies like Comcast, Spectrum, and AT&amp;T from throttling traffic, blocking access to apps, and imposing unfair fees.</p>",
+            "tweet_text": ".@{twitter} strong #NetNeutrality protections are important to me. Do you agree? {url} #battleforthenet",
             "call_button": "Call",
             "write_button": "Write",
             "tweet_button": "Tweet"
@@ -306,20 +355,20 @@
           "petition_form_title": "Congress can save net neutrality"
         },
         "social": {
-          "title": "Does your representative support net neutrality?",
-          "description": "We need 47 more votes to win in the House. Find out where your rep stands.",
-          "image": "https://www.battleforthenet.com/images/share_images/take.png",
+          "title": "Do your representatives support net neutrality?",
+          "description": "Here’s a “scoreboard” showing where every member of Congress stands on the Save The Internet Act to overturn the FCC’s net neutrality repeal.",
+          "image": "https://www.battleforthenet.com/images/share_images/scoreboard.png",
           "url": "https://www.battleforthenet.com/scoreboard/"
         }
       },
       "media": {
         "title": "Show your support for net neutrality",
-        "intro_html": "<p>The FCC officially gutted the open internet, allowing your cable company to scam\nyou for more money, censor websites, and slow down online content. Congress can\nstop this, but many lawmakers are in the pocket of Big Cable. <strong>Change your social media avatars and profile pics to help sound the alarm.</strong></p>",
+        "intro_html": "<p>After a long wait, a federal court ruling has opened up the path to restore net \nneutrality by passing new national and state laws. Show your friends and family \nthat you are ready to fight for free speech and free markets on the Internet. \n<strong>Change your social media avatars and profile pics to help rally support.</strong></p>",
         "download_button": "Download Image",
         "sections": {
           "social": {
             "title": "Social Media",
-            "body_html": "<p>Change your social media avatars and profile pics to help sound the alarm.</p>"
+            "body_html": "<p>Change your social media avatars and profile pics to help rally support.</p>"
           },
           "banners": {
             "title": "Banner Ads",
@@ -335,7 +384,7 @@
         "sms": "Messages sent to Congress by text",
         "sigs": "Petition signatures",
         "web": "Websites sounding the alarm",
-        "biz": "Businesses supporting the CRA",
+        "biz": "Businesses on Team Internet",
         "placeholder": "🤔"
       },
       "WantedPoster": {
@@ -385,7 +434,6 @@
       "RepInterstitial": {
         "supports_headline_html": "<p>Your message to Congress has been sent. Your representative <strong>SUPPORTS</strong> net neutrality, but you can do more to help out:</p>",
         "against_headline_html": "<p>Your message to Congress has been sent, but your representative is <strong>AGAINST</strong> net neutrality.</p>",
-        "neutral_headline_html": "<p>Your message to Congress has been sent, but your representative has <strong>NO STANCE</strong> on net neutrality.</p>",
         "call_button": "Call",
         "volunteer_button": "Volunteer",
         "events_button": "Attend an Event",
@@ -394,17 +442,34 @@
       },
       "ScoreboardLegend": {
         "against_label": "Red",
-        "against_description": "Against the petition to restore net neutrality",
+        "against_description": "Against net neutrality",
         "supports_label": "Blue",
-        "supports_description": "Supports the petition to restore net neutrality"
+        "supports_description": "Supports net neutrality",
+        "neutral_label": "Grey",
+        "neutral_description": "No stance on net neutrality"
+      },
+      "Scoreboard": {
+        "select_state": "Select state",
+        "no_politicians_found": "Sorry, but we don't have any data for your state yet.",
+        "view_all": "View all"
+      },
+      "CopyToClipboard": {
+        "copy_button_text": "Copy",
+        "copied_button_text": "Copied!"
+      },
+      "WidgetInstructions": {
+        "widget_explainer_text": "This widget will allow your site's users to send a letter to Congress by entering their\ncontact info.  Users who close the widget won’t see it again for 24 hours. Try it out for\nyourself by clicking the button below:\n",
+        "try_button_text": "Try it out",
+        "widget_explainer_part_2_html": "<p>It’s easy to use. Simply add the line of code below to your website’s header. And don’t forget to\n<a href=\"https://github.com/fightforthefuture/watch-widget/\">visit our\nGitHub page</a> to learn how to customize the widget for your site.</p>",
+        "embed_code": "<script src=\"https://watch.battleforthenet.com/widget.js\" async></script>"
       }
     },
     "social": {
-      "share_title": "Were your lawmakers bought by Big Cable?",
-      "share_description": "Click here to find out.",
-      "share_image": "https://www.battleforthenet.com/images/share_images/2019-watch-share.jpg",
+      "share_title": "The fight for net neutrality is back",
+      "share_description": "Click here to tell your Senators to vote for the Save the Internet Act to restore net neutrality.",
+      "share_image": "https://www.battleforthenet.com/images/share_images/back.jpg",
       "share_url": "https://www.battleforthenet.com",
-      "tweet_text": "Big Cable is spending millions to get Congress to sell you out on #netneutrality. Want to know if your rep was bought off?\n\nhttps://www.battleforthenet.com?s=t0\n"
+      "tweet_text": "The fight for net neutrality is back. Click here to tell your Senators to vote for the Save the Internet Act to restore net neutrality.\n\nhttps://www.battleforthenet.com?s=t0\n"
     }
   }
 }
