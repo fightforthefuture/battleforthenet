@@ -4,11 +4,11 @@ document_title: Join the Battle for Net Neutrality
 title: "US APPEALS COURT ATTACKS NET NEUTRALITY"
 title_call: "US APPEALS COURT ATTACKS NET NEUTRALITY"
 intro_html: |
-  The FCC killed net neutrality at the federal level, and now a US appeals court has 
+  The FCC killed net neutrality at the federal level, and now a US appeals court has
   <a href="https://www.reuters.com/article/usa-internet/us-appeals-court-will-not-reconsider-net-neutrality-repeal-case-idUSL1N2A62BA" target="_blank">
-  ruled</a> in favor of the FCC's disastrous decision. As the courts turn against us, 
-  our last remaining hope is to pass strong net neutrality laws at the state level 
-  while building up support in Congress for national legislation. **Contact your 
+  ruled</a> in favor of the FCC's disastrous decision. As the courts turn against us,
+  our last remaining hope is to pass strong net neutrality laws at the state level
+  while building up support in Congress for national legislation. **Contact your
   lawmakers now and urge them to save net neutrality.**
 persistent_button: Contact Congress
 
@@ -42,28 +42,41 @@ form:
     Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target="_blank" href="https://www.fightforthefuture.org/privacy">Privacy Policy</a> and <a target="_blank" href="https://www.fightforthefuture.org/terms">Terms of Service</a>
 
 sections:
+  state:
+    title: State Fights for Net Neutrality
+    body_html: |
+      <p>Ever since the FCC repealed net neutrality we’ve <a href="https://www.vice.com/en_us/article/kz4g9x/study-proves-the-fccs-core-justification-for-killing-net-neutrality-was-false" target="_blank">seen the impact</a>: Slower connections, bogus fees, and even threats to public safety—with none of the increased broadband investment promised by FCC chair Ajit Pai.</p>
+
+      <p>But when the court ruled on the repeal, they threw out the part that blocks states from enacting their own net neutrality laws. This gives us a huge opening, so we’re taking the fight to the states!</p>
+      <p class="text-center">
+        <a class="btn"
+           href="/maryland">
+          Maryland
+        </a>
+      </p>
+
   join:
     title: Fight for net neutrality
     body_html: |
         Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&T and
         T-Mobile have been
         <a href="https://www.bloomberg.com/news/articles/2019-08-19/wireless-carrier-throttling-of-online-video-is-pervasive-study" target="_blank">
-        throttling traffic</a> "pretty much everywhere all the time." Worse yet, 
-        federal courts have 
-        <a href="https://arstechnica.com/tech-policy/2020/02/ajit-pai-defeats-another-attempt-to-restore-fccs-net-neutrality-rules/" target="_blank">        
+        throttling traffic</a> "pretty much everywhere all the time." Worse yet,
+        federal courts have
+        <a href="https://arstechnica.com/tech-policy/2020/02/ajit-pai-defeats-another-attempt-to-restore-fccs-net-neutrality-rules/" target="_blank">
         refused</a> to overturn the FCC's disastrous decision, leaving us with few
-        options to restore freedom online. 
+        options to restore freedom online.
         <br>
         <br>
-        Our last hope? Win net neutrality at the state level. This will show the 
-        federal government that the 
+        Our last hope? Win net neutrality at the state level. This will show the
+        federal government that the
         <a href="https://thehill.com/policy/technology/435009-4-in-5-americans-say-they-support-net-neutrality-poll" target="_blank">
         majority of Americans</a> demand a free and open Internet, pressuring our
-        lawmakers to enshrine net neutrality into national law once and for all. 
-        We've already won in 
+        lawmakers to enshrine net neutrality into national law once and for all.
+        We've already won in
         <a href="https://www.nytimes.com/2019/10/02/opinion/net-neutrality-fcc-wheeler.html" target="_blank">
         California</a>, and we're going to win in other states, too. But we need your
-        support, now more than ever. 
+        support, now more than ever.
         <br>
         <br>
         **Here’s how you can help:**
@@ -104,7 +117,7 @@ sections:
       <a href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html"
          target="_blank">
         killed net neutrality</a>
-      by repealing the Open Internet order. It's clear that we can't count on unlected 
+      by repealing the Open Internet order. It's clear that we can't count on unlected
       bureaucrats to consistently defend our online freedoms, and we can't rely on the
       courts to overrule disastrous policy decisions, either. We need strong legislation
       to protect net neutrality for as long as the Internet exists.
@@ -113,8 +126,8 @@ sections:
          target="_blank">
         The Save the Internet Act of 2019</a>
       is a simple, three-page bill that would restore the Open Internet Order
-      enshrining net neutrality into law. Plain and simple. Read it for yourself below, 
-      then contact your Congressional lawmakers to urge them to suport this important 
+      enshrining net neutrality into law. Plain and simple. Read it for yourself below,
+      then contact your Congressional lawmakers to urge them to suport this important
       legislation:
 
       <div class="letter-wrapper push-top-3">
