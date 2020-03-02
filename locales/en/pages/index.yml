@@ -1,15 +1,15 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "BREAKING: Bombshell Net Neutrality Ruling"
-title_call: "BREAKING: Bombshell Net Neutrality Ruling"
+title: "US APPEALS COURT ATTACKS NET NEUTRALITY"
+title_call: "US APPEALS COURT ATTACKS NET NEUTRALITY"
 intro_html: |
-  A bombshell court decision just reignited the fight for net neutrality. Lobbyists for
-  big cable companies are already swarming Congress to push bad legislation that will
-  allow ISPs to continue throttling Internet speeds and imposing unfair fees. But we
-  have a strategy to fight them in DC and at the state level and restore net neutrality
-  once and for all. **Contact Congress now to demand your lawmakers pass the bipartisan
-  Save the Internet Act.**
+  The FCC killed net neutrality at the federal level, and now a US appeals court has 
+  <a href="https://www.reuters.com/article/usa-internet/us-appeals-court-will-not-reconsider-net-neutrality-repeal-case-idUSL1N2A62BA" target="_blank">
+  ruled</a> in favor of the FCC's disastrous decision. As the courts turn against us, 
+  our last remaining hope is to pass strong net neutrality laws at the state level 
+  while building up support in Congress for national legislation. **Contact your 
+  lawmakers now and urge them to save net neutrality.**
 persistent_button: Contact Congress
 
 form:
@@ -48,15 +48,25 @@ sections:
         Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&T and
         T-Mobile have been
         <a href="https://www.bloomberg.com/news/articles/2019-08-19/wireless-carrier-throttling-of-online-video-is-pervasive-study" target="_blank">
-        throttling traffic</a> "pretty much everywhere all the time." But on October
-        1st, 2019, a federal court
-        <a href="https://thehill.com/policy/technology/463805-appeals-court-upholds-net-neutrality-repeal-but-rules-fcc-cant-block-state" target="_blank">
-        ruled</a> that the FCC's policy doesn't preempt net neutrality laws at the state
-        and national level. Big cable lobbyists are working overtime to push for bad
-        legislation, but we can stop them. The
-        <a href="https://www.congress.gov/bill/116th-congress/house-bill/1644/text" target="_blank">
-        Save the Internet Act</a> has already passed the House of Representatives with bipartisan
-        support, and now we need the Senate to do the same. **Here’s how you can help:**
+        throttling traffic</a> "pretty much everywhere all the time." Worse yet, 
+        federal courts have 
+        <a href="https://arstechnica.com/tech-policy/2020/02/ajit-pai-defeats-another-attempt-to-restore-fccs-net-neutrality-rules/" target="_blank">        
+        refused</a> to overturn the FCC's disastrous decision, leaving us with few
+        options to restore freedom online. 
+        <br>
+        <br>
+        Our last hope? Win net neutrality at the state level. This will show the 
+        federal government that the 
+        <a href="https://thehill.com/policy/technology/435009-4-in-5-americans-say-they-support-net-neutrality-poll" target="_blank">
+        majority of Americans</a> demand a free and open Internet, pressuring our
+        lawmakers to enshrine net neutrality into national law once and for all. 
+        We've already won in 
+        <a href="https://www.nytimes.com/2019/10/02/opinion/net-neutrality-fcc-wheeler.html" target="_blank">
+        California</a>, and we're going to win in other states, too. But we need your
+        support, now more than ever. 
+        <br>
+        <br>
+        **Here’s how you can help:**
 
         <ol>
           <li><strong>Speak out on social media.</strong> Here are some
@@ -94,31 +104,18 @@ sections:
       <a href="https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html"
          target="_blank">
         killed net neutrality</a>
-      by repealing the Open Internet order. Since then, cable companies like
-      <a href="https://www.publicknowledge.org/news-blog/blogs/broadband-providers-are-quietly-taking-advantage-of-an-internet-without-net-neutrality-protections?gclid=EAIaIQobChMI-qKqppy04QIVSJ7ACh2-ogPZEAAYASAAEgLyRvD_BwE"
-         target="_blank">
-        Comcast, AT&T, and Sprint</a>
-      have been rolling out Internet fast lanes and slowing down data being used
-      by competitors’ services.
-
-      <a href="https://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules"
-         target="_blank">
-        Americans want net neutrality</a>,
-      and we’ve demanded that our lawmakers pass strong legislation to protect
-      our digital rights.  The FCC's leadership can be changed with every
-      election cycle, and recent history has proven that we can't count on
-      these unlected bureaucrats to consistently defend our online freedoms.
-
+      by repealing the Open Internet order. It's clear that we can't count on unlected 
+      bureaucrats to consistently defend our online freedoms, and we can't rely on the
+      courts to overrule disastrous policy decisions, either. We need strong legislation
+      to protect net neutrality for as long as the Internet exists.
 
       <a href="https://www.congress.gov/116/bills/s682/BILLS-116s682is.pdf"
          target="_blank">
         The Save the Internet Act of 2019</a>
       is a simple, three-page bill that would restore the Open Internet Order
-      by rolling back the FCC’s disastrous decision to destroy net neutrality.
-      If this bill passes the House and the Senate, it will enshrine net
-      neutrality into law. Plain and simple.
-
-      Read it for yourself below:
+      enshrining net neutrality into law. Plain and simple. Read it for yourself below, 
+      then contact your Congressional lawmakers to urge them to suport this important 
+      legislation:
 
       <div class="letter-wrapper push-top-3">
         <h3 class="text-center">S. 682 - The Save the Internet Act</h3>
