@@ -1,0 +1,31 @@
+title: Maryland can still save net neutrality
+intro_html: |
+  Victory! The Maryland Legislature just passed SB 822, the strongest net neutrality bill in the country. Now Governor Jerry Brown has 30 days to decide whether to sign it, and lobbyists for big telecoms like AT&T and Comcast will be pushing hard for a veto. Call the Governor right now and tell him to sign SB 822 and restore net neutrality!
+
+scoreboard_form:
+  title: Do your Maryland lawmakers support net neutrality?
+  body_html: |
+    Enter your information below to see if your Maryland Assembly member supports net neutrality, and learn what you can do to help.
+  address_placeholder: Street address*
+  zip_placeholder: ZIP Code*
+  cta_button: Let’s go!
+  loading_button: Searching...
+  disclaimer: Your information will only be used to look up your representative.
+  error_rep_not_found: Oh no! We couldn’t find a Maryland Assembly member for your address.
+
+
+scoreboard:
+  title: State Legislature Scoreboard
+  body_html: |
+    This is how every member of the Maryland State Legislature voted on SB 822.
+  vote_filter: "Show me legislators who:"
+  voted_yes: Voted Yes
+  voted_no: Voted No
+  assembly: Assembly Members
+  senators: Senators
+
+social:
+  title: Maryland just passed a law to restore net neutrality
+  description: Now we just need Governor Jerry Brown to sign it.
+  image: https://www.battleforthenet.com/images/share_images/CA-Flag.jpg
+  url: https://www.battleforthenet.com/Maryland/

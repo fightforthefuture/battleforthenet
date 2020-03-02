@@ -20,9 +20,11 @@ export default ({ app, store, isDev }) => {
           augustrecess: require('~/locales/en/pages/augustrecess.yml'),
           california: require('~/locales/en/pages/california.yml'),
           call: {
-            california: require('~/locales/en/pages/call/california.yml')
+            california: require('~/locales/en/pages/call/california.yml'),
+            maryland: require('~/locales/en/pages/call/maryland.yml')
           },
           map: require('~/locales/en/pages/map.yml'),
+          maryland: require('~/locales/en/pages/maryland.yml'),
           scoreboard: {
             index: require('~/locales/en/pages/scoreboard/index.yml'),
             all: require('~/locales/en/pages/scoreboard/all.yml'),

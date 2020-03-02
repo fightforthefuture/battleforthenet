@@ -21,6 +21,10 @@
     "stateCampaigns": [],
     "defaultCampaign": "California-SB-822 ROUND 2"
   },
+  "marylandPage": {
+    "stateCampaigns": [],
+    "defaultCampaign": "battleforthenetMD"
+  },
   "scoreboardPage": {
     "stateCampaigns": [],
     "defaultCampaign": "BattleForTheNet-2019"

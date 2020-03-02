@@ -18,7 +18,8 @@ const messages = formatStrings({
       augustrecess: loadStrings('pages/augustrecess.yml'),
       california: loadStrings('pages/california.yml'),
       call: {
-        california: loadStrings('pages/call/california.yml')
+        california: loadStrings('pages/call/california.yml'),
+        maryland: loadString('pages/call/maryland.yml')
       },
       map: loadStrings('pages/map.yml'),
       scoreboard: {
