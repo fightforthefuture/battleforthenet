@@ -13,7 +13,7 @@ export default {
           return "https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn"
         case "fftf":
         default:
-          return "https://donate.fightforthefuture.org"
+          return "https://www.donatefornetneutrality.com/"
       }
     }
   }

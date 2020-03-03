@@ -47,6 +47,10 @@ export default {
     }
   },
 
+  beforeCreate() {
+    this.$store.commit('setOrg', 'fftf')
+  },
+
   methods: {
     $lt(key, vars={}) {
       return this.$t(`pages.${this.state}.${key}`, vars)

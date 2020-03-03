@@ -93,14 +93,26 @@ hr {
     <hr>
     <h3>Done calling? Do these things, too!</h3>
     <div class="buttons">
-      <a v-if="page != 'california'" class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
+      <a v-if="page != 'california' && page != 'maryland'" class="btn btn-events" href="https://events.battleforthenet.com/" target="_blank" @click="$trackEvent('call_script_events_button', 'click')">
         <img src="~/assets/images/map-marker.svg" alt="">
         Join an event near you
       </a>
       <div class="flex-row">
-        <facebook-button @clicked="$trackEvent('call_script_facebook_button', 'click')">Share on Facebook</facebook-button>
-        <twitter-button @clicked="$trackEvent('call_script_twitter_button', 'click')">Share on Twitter</twitter-button>
-        <donate-button @clicked="$trackEvent('call_script_donate_button', 'click')">Donate</donate-button>
+        <facebook-button
+          @clicked="$trackEvent('call_script_facebook_button', 'click')"
+          :url="shareUrl">
+          Share on Facebook
+        </facebook-button>
+        <twitter-button
+          @clicked="$trackEvent('call_script_twitter_button', 'click')"
+          :url="shareUrl"
+          :text="tweetText">
+          Share on Twitter
+        </twitter-button>
+        <donate-button
+          @clicked="$trackEvent('call_script_donate_button', 'click')">
+          Donate
+        </donate-button>
       </div>
     </div>
   </div>
@@ -114,6 +126,22 @@ export default {
 
   computed: {
     ...mapState(['org']),
+
+    tweetText() {
+      if (this.page === 'maryland') {
+        return this.$t(`pages.maryland.social.description`)
+      } else {
+        return null
+      }
+    },
+
+    shareUrl() {
+      if (this.page === 'maryland') {
+        return this.$t(`pages.maryland.social.url`)
+      } else {
+        return null
+      }
+    },
 
     callScript() {
       if (this.page === 'california') {
