@@ -66,7 +66,7 @@ action_team:
 boxes:
   events:
     title: See What's Happening
-    description: Join or organize activities and protests in your area
+    description: Join or start a group in your area to organize protests and other important activities.
     cta_button: Join Now
 
   business:
