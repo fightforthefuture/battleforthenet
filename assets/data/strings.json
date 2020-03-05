@@ -350,9 +350,9 @@
           },
           "boxes": {
             "events": {
-              "title": "Attend an Event",
-              "description": "Join a protest in your city … or organize one!",
-              "cta_button": "Attend"
+              "title": "See What's Happening",
+              "description": "Join or start a group in your area to organize protests and other important activities.",
+              "cta_button": "Join Now"
             },
             "business": {
               "title": "Local Businesses Care",

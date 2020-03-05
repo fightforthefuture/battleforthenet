@@ -215,11 +215,11 @@ sections:
       Our scoreboard keeps track of who **really** supports net neutrality. Members of Congress highlighted in blue are on Team Internet because they’ve cosponsored or voted for the Save the Internet Act. Lawmakers highlighted in red are on Team Cable because they are not yet cosponsors or voted against the bill.
 
   events:
-    title: Attend an event in your area
+    title: See what's happening in your area
     body_html: |
-      Want to make your voice heard? Check out the map below to find a protest
-      or a meeting with a representative in your state. And if there are no
-      events in your area, consider organizing one!
+      Want to make your voice heard? Check out the map below to see what activities
+      are being organized near you. And if nothing is happening in your area, 
+      consider organizing a group or event!
 
       <a href="/map/"><img src="https://data.battleforthenet.com/events.png" alt="Events Map" class="rounded"></a>
 
