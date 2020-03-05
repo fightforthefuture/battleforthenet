@@ -252,12 +252,12 @@
       "newyork": {
         "title": "New York can lead on net neutrality!",
         "intro_html": "<p>Governor Cuomo has announced his intention to pass the\n“<a href=\"https://www.vice.com/en_us/article/kz4g9x/study-proves-the-fccs-core-justification-for-killing-net-neutrality-was-false\" target=\"_blank\">strongest net neutrality protections in the United States.</a>”\nBut a lot of the legislation is being discussed behind closed doors,\nand that’s where Verizon, Comcast, and other ISPs can weasel their way\nin and weaken the bill. <strong>Call Governor Cuomo right now and tell him you’re\nholding him to his promise of the strongest net neutrality protections in the country!</strong></p>",
-        "call_script": "FIXME SCRIPT\n",
+        "call_script": "I expect Governor Cuomo to pass a strong net neutrality bill, and not to let the bill get weakened by the cable and telecommunications industry.\n",
         "social": {
           "title": "Help win net neutrality in New York!",
-          "description": "We’ve got a chance to win net neutrality for New York! Call you state legislator and urge them to support strong net neutrality to protect New York’s Internet! https://www.battleforthenet.com/new-york/",
-          "image": "https://www.battleforthenet.com/images/share_images/MD-Flag.png",
-          "url": "https://www.battleforthenet.com/new-york/"
+          "description": "Don’t let @NYGovCuomo pass a weak #NetNeutrality bill! Take action to make sure he doesn’t give into big cable, and that he actually passes the strongest bill in the country to protect our Internet! battleforthenet.com/newyork\n",
+          "image": "https://www.battleforthenet.com/images/share_images/NY-Flag.png",
+          "url": "https://www.battleforthenet.com/newyork/"
         }
       },
       "scoreboard": {
