@@ -50,8 +50,8 @@
             "body_html": "<p>Our scoreboard keeps track of who <strong>really</strong> supports net neutrality. Members of Congress highlighted in blue are on Team Internet because they’ve cosponsored or voted for the Save the Internet Act. Lawmakers highlighted in red are on Team Cable because they are not yet cosponsors or voted against the bill.</p>"
           },
           "events": {
-            "title": "Attend an event in your area",
-            "body_html": "<p>Want to make your voice heard? Check out the map below to find a protest\nor a meeting with a representative in your state. And if there are no\nevents in your area, consider organizing one!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
+            "title": "See what's happening in your area",
+            "body_html": "<p>Want to make your voice heard? Check out the map below to see what activities\nare being organized near you. And if nothing is happening in your area, \nconsider organizing a group or event!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
           },
           "net-neutrality": {
             "title": "What is net neutrality? Why does it matter?",
@@ -186,6 +186,7 @@
       "california": {
         "title": "California can still save net neutrality",
         "intro_html": "<p>Victory! The California Legislature just passed SB 822, the strongest net neutrality bill in the country. Now Governor Jerry Brown has 30 days to decide whether to sign it, and lobbyists for big telecoms like AT&amp;T and Comcast will be pushing hard for a veto. Call the Governor right now and tell him to sign SB 822 and restore net neutrality!</p>",
+        "call_script": "I'm calling to ask Governor Jerry Brown to sign SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs.\n",
         "scoreboard_form": {
           "title": "Do your California lawmakers support net neutrality?",
           "body_html": "<p>Enter your information below to see if your California Assembly member supports net neutrality, and learn what you can do to help.</p>",
@@ -240,30 +241,23 @@
       "maryland": {
         "title": "Maryland can still save net neutrality",
         "intro_html": "<p>Maryland legislators have introduced a net neutrality law in the state house. Already, big cable companies are lobbying in Annapolis, trying to weaken the bill or make sure it doesn’t get enough votes to pass. But we know that Marylanders support net neutrality. <strong>Call your state legislator right now and tell them to pass HB 957 to restore net neutrality bill for Maryland!</strong></p>",
-        "scoreboard_form": {
-          "title": "Do your Maryland lawmakers support net neutrality?",
-          "body_html": "<p>Enter your information below to see if your Maryland Assembly member supports net neutrality, and learn what you can do to help.</p>",
-          "address_placeholder": "Street address*",
-          "zip_placeholder": "ZIP Code*",
-          "cta_button": "Let’s go!",
-          "loading_button": "Searching...",
-          "disclaimer": "Your information will only be used to look up your representative.",
-          "error_rep_not_found": "Oh no! We couldn’t find a Maryland Assembly member for your address."
-        },
-        "scoreboard": {
-          "title": "State Legislature Scoreboard",
-          "body_html": "<p>This is how every member of the Maryland State Legislature voted on SB 822.</p>",
-          "vote_filter": "Show me legislators who:",
-          "voted_yes": "Voted Yes",
-          "voted_no": "Voted No",
-          "assembly": "Assembly Members",
-          "senators": "Senators"
-        },
+        "call_script": "I’m calling to tell my lawmakers to support House Bill 957, which would establish strong net neutrality laws for the people of Maryland. Thank you.\n",
         "social": {
           "title": "Help win net neutrality in Maryland!",
           "description": "We’ve got a chance to win net neutrality for Maryland! Call you state legislator and urge them to support strong net neutrality to protect Maryland’s Internet! https://www.battleforthenet.com/maryland/",
           "image": "https://www.battleforthenet.com/images/share_images/MD-Flag.png",
           "url": "https://www.battleforthenet.com/maryland/"
+        }
+      },
+      "newyork": {
+        "title": "New York can lead on net neutrality!",
+        "intro_html": "<p>Governor Cuomo has announced his intention to pass the\n“<a href=\"https://www.vice.com/en_us/article/kz4g9x/study-proves-the-fccs-core-justification-for-killing-net-neutrality-was-false\" target=\"_blank\">strongest net neutrality protections in the United States.</a>”\nBut a lot of the legislation is being discussed behind closed doors,\nand that’s where Verizon, Comcast, and other ISPs can weasel their way\nin and weaken the bill. <strong>Call Governor Cuomo right now and tell him you’re\nholding him to his promise of the strongest net neutrality protections in the country!</strong></p>",
+        "call_script": "FIXME SCRIPT\n",
+        "social": {
+          "title": "Help win net neutrality in New York!",
+          "description": "We’ve got a chance to win net neutrality for New York! Call you state legislator and urge them to support strong net neutrality to protect New York’s Internet! https://www.battleforthenet.com/new-york/",
+          "image": "https://www.battleforthenet.com/images/share_images/MD-Flag.png",
+          "url": "https://www.battleforthenet.com/new-york/"
         }
       },
       "scoreboard": {
