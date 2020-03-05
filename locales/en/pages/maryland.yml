@@ -1,28 +1,8 @@
 title: Maryland can still save net neutrality
 intro_html: |
   Maryland legislators have introduced a net neutrality law in the state house. Already, big cable companies are lobbying in Annapolis, trying to weaken the bill or make sure it doesn’t get enough votes to pass. But we know that Marylanders support net neutrality. <strong>Call your state legislator right now and tell them to pass HB 957 to restore net neutrality bill for Maryland!</strong>
-scoreboard_form:
-  title: Do your Maryland lawmakers support net neutrality?
-  body_html: |
-    Enter your information below to see if your Maryland Assembly member supports net neutrality, and learn what you can do to help.
-  address_placeholder: Street address*
-  zip_placeholder: ZIP Code*
-  cta_button: Let’s go!
-  loading_button: Searching...
-  disclaimer: Your information will only be used to look up your representative.
-  error_rep_not_found: Oh no! We couldn’t find a Maryland Assembly member for your address.
-
-
-scoreboard:
-  title: State Legislature Scoreboard
-  body_html: |
-    This is how every member of the Maryland State Legislature voted on SB 822.
-  vote_filter: "Show me legislators who:"
-  voted_yes: Voted Yes
-  voted_no: Voted No
-  assembly: Assembly Members
-  senators: Senators
-
+call_script: |
+  I’m calling to tell my lawmakers to support House Bill 957, which would establish strong net neutrality laws for the people of Maryland. Thank you.
 social:
   title: Help win net neutrality in Maryland!
   description: We’ve got a chance to win net neutrality for Maryland! Call you state legislator and urge them to support strong net neutrality to protect Maryland’s Internet! https://www.battleforthenet.com/maryland/

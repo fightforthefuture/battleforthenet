@@ -128,26 +128,24 @@ export default {
     ...mapState(['org']),
 
     tweetText() {
-      if (this.page === 'maryland') {
-        return this.$t(`pages.maryland.social.description`)
+      if (['maryland','newyork'].includes(this.page)) {
+        return this.$t(`pages.${this.page}.social.description`)
       } else {
         return null
       }
     },
 
     shareUrl() {
-      if (this.page === 'maryland') {
-        return this.$t(`pages.maryland.social.url`)
+      if (['maryland','newyork'].includes(this.page)) {
+        return this.$t(`pages.${this.page}.social.url`)
       } else {
         return null
       }
     },
 
     callScript() {
-      if (this.page === 'california') {
-        return "I'm calling to ask Governor Jerry Brown to sign SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs."
-      } else if (this.page === 'maryland') {
-        return  "I’m calling to tell my lawmakers to support House Bill 957, which would establish strong net neutrality laws for the people of Maryland. Thank you."
+      if (['california','maryland','newyork'].includes(this.page)) {
+        return this.$t(`pages.${this.page}.call_script`)
       } else {
         return "I'm calling to tell my lawmakers I support strong net neutrality, and I want them to co-sponsor and demand a vote on the Save the Internet Act in the Senate. Thank you."
       }

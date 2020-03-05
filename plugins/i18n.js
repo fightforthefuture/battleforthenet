@@ -24,6 +24,7 @@ export default ({ app, store, isDev }) => {
           },
           map: require('~/locales/en/pages/map.yml'),
           maryland: require('~/locales/en/pages/maryland.yml'),
+          newyork: require('~/locales/en/pages/newyork.yml'),
           scoreboard: {
             index: require('~/locales/en/pages/scoreboard/index.yml'),
             all: require('~/locales/en/pages/scoreboard/all.yml'),

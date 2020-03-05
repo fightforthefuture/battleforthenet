@@ -1,7 +1,8 @@
 title: California can still save net neutrality
 intro_html: |
   Victory! The California Legislature just passed SB 822, the strongest net neutrality bill in the country. Now Governor Jerry Brown has 30 days to decide whether to sign it, and lobbyists for big telecoms like AT&T and Comcast will be pushing hard for a veto. Call the Governor right now and tell him to sign SB 822 and restore net neutrality!
-
+call_script: |
+  I'm calling to ask Governor Jerry Brown to sign SB 822 which restores net neutrality protections to California. We need these protections to ensure an open internet for all Californians, including small business owners, activists and entrepreneurs.
 scoreboard_form:
   title: Do your California lawmakers support net neutrality?
   body_html: |

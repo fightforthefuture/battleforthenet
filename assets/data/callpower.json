@@ -25,6 +25,10 @@
     "stateCampaigns": [],
     "defaultCampaign": "battleforthenetMD"
   },
+  "new-yorkPage": {
+    "stateCampaigns": [],
+    "defaultCampaign": "FIXME"
+  },
   "scoreboardPage": {
     "stateCampaigns": [],
     "defaultCampaign": "BattleForTheNet-2019"
