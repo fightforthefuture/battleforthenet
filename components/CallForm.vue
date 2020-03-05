@@ -90,8 +90,6 @@ export default {
     if (this.zipCode) {
       this.geocodeZip()
     }
-    this.hasCalled = true
-        this.modalVisible = true
   },
 
   computed: {
