@@ -25,9 +25,9 @@
     "stateCampaigns": [],
     "defaultCampaign": "battleforthenetMD"
   },
-  "new-yorkPage": {
+  "newyorkPage": {
     "stateCampaigns": [],
-    "defaultCampaign": "FIXME"
+    "defaultCampaign": "NYBattleForTheNet"
   },
   "scoreboardPage": {
     "stateCampaigns": [],

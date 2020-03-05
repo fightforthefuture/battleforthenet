@@ -90,6 +90,8 @@ export default {
     if (this.zipCode) {
       this.geocodeZip()
     }
+    this.hasCalled = true
+        this.modalVisible = true
   },
 
   computed: {
@@ -127,6 +129,8 @@ export default {
           return 'California-SB-822'
         case 'maryland':
           return 'battleforthenetMD'
+        case 'newyork':
+          return 'NYBattleForTheNet'
         case 'fftf':
         default:
           return this.campaign
