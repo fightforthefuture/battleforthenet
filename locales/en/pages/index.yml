@@ -53,6 +53,10 @@ sections:
            href="/maryland">
           Maryland
         </a>
+        <a class="btn"
+           href="/newyork">
+          New York
+        </a>
       </p>
 
   join:
@@ -218,7 +222,7 @@ sections:
     title: See what's happening in your area
     body_html: |
       Want to make your voice heard? Check out the map below to see what activities
-      are being organized near you. And if nothing is happening in your area, 
+      are being organized near you. And if nothing is happening in your area,
       consider organizing a group or event!
 
       <a href="/map/"><img src="https://data.battleforthenet.com/events.png" alt="Events Map" class="rounded"></a>
