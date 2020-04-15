@@ -53,7 +53,7 @@ form:
     Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target="_blank" href="https://www.fightforthefuture.org/privacy">Privacy Policy</a> and <a target="_blank" href="https://www.fightforthefuture.org/terms">Terms of Service</a>
 
 sections:
-  <!---
+  <!--
   state:
     title: State Fights for Net Neutrality
     body_html: |
@@ -66,7 +66,7 @@ sections:
           Maryland
         </a>
       </p>
-  --->
+  -->
   join:
     title: Fight for net neutrality
     body_html: |
