@@ -1,23 +1,18 @@
 # HTML document title (shows in browser tab)
 document_title: Join the Battle for Net Neutrality
 
-title: "GET EVERYONE ONLINE DURING COVID-19 THE CRISIS"
+title: "GET EVERYONE ONLINE DURING THE COVID-19 CRISIS"
 title_call: "GET EVERYONE ONLINE DURING THE COVID-19 CRISIS"
 intro_html: |
-  Internet access is more important than ever before. But 22 percent of households in 
-  the U.S. 
+  Internet access is more important than ever before, but 22 percent of households in 
+  the U.S. still
   <a href="https://www.theguardian.com/commentisfree/2020/mar/23/us-students-are-being-asked-to-work-remotely-but-22-of-homes-dont-have-internet" target="_blank">
-  don’t have home internet</a>, including more than four million homes with school-age 
-  children. Poor families and people of color are particularly likely to be disconnected, 
-  and millions of folks losing their jobs now may not be able to afford their Internet bill. 
-  Congress’ next COVID-19 stimulus package must include funding to make sure everyone has 
-  affordable Internet access. But the same politicians who killed net neutrality want to put 
-  their friends at Comcast and Verizon first, without making sure everyone can get online. 
-  We can’t let that happen.
-  <br>
-  <br>
-  <strong>Tell Congress: Don’t bail out telecom execs, make sure everyone can get online 
-  during the COVID-19 crisis.</strong>
+  don’t have home internet</a>. Congress’ next COVID-19 stimulus package must include 
+  funding to make sure everyone has affordable Internet access. But the same politicians 
+  who killed net neutrality want to put their friends at Comcast and Verizon first, without 
+  making sure everyone can get online. We can’t let that happen. <strong>Tell Congress: 
+  Don’t bail out telecom execs, make sure everyone can get online during the COVID-19 crisis.
+  </strong>
 persistent_button: Contact Congress
 
 form:
@@ -39,7 +34,7 @@ form:
   button_loading: Saving...
   button_cta: Write Congress
   default_letter: |
-    Over the past few weeks people have been told to stay home to stay safe. But without affordable, reliable Internet access this becomes increasingly harder. Everyone needs to be able to get online. I’m writing to demand Congress pass funding to ensure Internet access for everyone. Specifically, Congress should:
+    Over the past few weeks people have been told to stay home to stay safe. But without affordable, reliable Internet access this becomes increasingly harder. Already 22 percent of households in the U.S. don’t have home internet, including more than four million homes with school-age children. Millions of folks losing their jobs now may not be able to afford their Internet bill. Poor families and people of color are particularly likely to be disconnected. Everyone needs to be able to get online. I’m writing to demand Congress pass funding to ensure Internet access for everyone. Specifically, Congress should:
 
     - Subsidize Internet access for anyone who needs it for the duration of this crisis.
     
