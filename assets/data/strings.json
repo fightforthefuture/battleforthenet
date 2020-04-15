@@ -3,9 +3,9 @@
     "pages": {
       "index": {
         "document_title": "Join the Battle for Net Neutrality",
-        "title": "US APPEALS COURT ATTACKS NET NEUTRALITY",
-        "title_call": "US APPEALS COURT ATTACKS NET NEUTRALITY",
-        "intro_html": "<p>The FCC killed net neutrality at the federal level, and now a US appeals court has\n<a href=\"https://www.reuters.com/article/usa-internet/us-appeals-court-will-not-reconsider-net-neutrality-repeal-case-idUSL1N2A62BA\" target=\"_blank\">\nruled</a> in favor of the FCC's disastrous decision. As the courts turn against us,\nour last remaining hope is to pass strong net neutrality laws at the state level\nwhile building up support in Congress for national legislation. <strong>Contact your\nlawmakers now and urge them to save net neutrality.</strong></p>",
+        "title": "GET EVERYONE ONLINE DURING THE COVID-19 CRISIS",
+        "title_call": "GET EVERYONE ONLINE DURING THE COVID-19 CRISIS",
+        "intro_html": "<p>Internet access is more important than ever before, but 22 percent of households in\nthe U.S. still\n<a href=\"https://www.theguardian.com/commentisfree/2020/mar/23/us-students-are-being-asked-to-work-remotely-but-22-of-homes-dont-have-internet\" target=\"_blank\">\ndon’t have home internet</a>. Congress’ next COVID-19 stimulus package must include\nfunding to make sure everyone has affordable Internet access. But the same politicians\nwho killed net neutrality want to put their friends at Comcast and Verizon first, without\nmaking sure everyone can get online. We can’t let that happen. <strong>Tell Congress:\nDon’t bail out telecom execs, make sure everyone can get online during the COVID-19 crisis.\n</strong></p>",
         "persistent_button": "Contact Congress",
         "form": {
           "name_label": "Name*",
@@ -25,14 +25,16 @@
           "clear_comments": "Clear letter",
           "button_loading": "Saving...",
           "button_cta": "Write Congress",
-          "default_letter": "We need net neutrality now more than ever.\n\nSince the FCC repealed net neutrality, Internet service providers (ISPs) have been routinely throttling Internet speeds ... something ISPs promised they wouldn't do. The truth is that we need strong, enforceable net neutrality laws to ensure that our online freedom is protected.\n\nEighty percent of Americans support net neutrality, including Republicans, Democrats, and Independents. We urge you to do the same.  Please work with your colleagues to support the Save the Internet Act so that Americans can once again use the Internet without fear of throttling, censorship, or unfair fees.\n\nThank you.\n",
+          "default_letter": "Over the past few weeks people have been told to stay home to stay safe. But without affordable, reliable Internet access this becomes increasingly harder. Already 22 percent of households in the U.S. don’t have home internet, including more than four million homes with school-age children. Millions of folks losing their jobs now may not be able to afford their Internet bill. Poor families and people of color are particularly likely to be disconnected. Everyone needs to be able to get online. I’m writing to demand Congress pass funding to ensure Internet access for everyone. Specifically, Congress should:\n\n- Subsidize Internet access for anyone who needs it for the duration of this crisis.\n\n- Fund and expand programs that help people afford Internet access, like the FCC’s Lifeline and e-Rate initiatives. These programs already exist and can help students access educational resources, and help those who can’t afford broadband — a number that will grow as more people lose their jobs as this crisis continues.\n\n- Fund broadband deployment to ensure that rural communities have Internet access.\n\n- Pass the Save the Internet Act to ensure just and reasonable Internet service and prevent ISPs from throttling traffic, censoring content, and imposing unfair fees.\n\n- Direct ISPs to suspend all data caps and fees, pause all disconnects for non-payment of broadband fees, and offer free home Internet to those in need during this crisis\n\nIt’s unrealistic to tell people to stay home without a way to connect to the outside world. Internet access is a human right and a public health imperative. I am calling for urgent action to ensure everyone is able to access the Internet now.\n\nThank you.\n",
           "sms_disclaimer_html": "<p>Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target=\"_blank\" href=\"https://www.fightforthefuture.org/privacy\">Privacy Policy</a> and <a target=\"_blank\" href=\"https://www.fightforthefuture.org/terms\">Terms of Service</a></p>"
         },
-        "sections": {
+        "archive": {
           "state": {
             "title": "State Fights for Net Neutrality",
-            "body_html": "<p>Ever since the FCC repealed net neutrality we’ve <a href=\"https://www.vice.com/en_us/article/kz4g9x/study-proves-the-fccs-core-justification-for-killing-net-neutrality-was-false\" target=\"_blank\">seen the impact</a>: Slower connections, bogus fees, and even threats to public safety—with none of the increased broadband investment promised by FCC chair Ajit Pai.</p>\n<p>But when the court ruled on the repeal, they threw out the part that blocks states from enacting their own net neutrality laws. This gives us a huge opening, so we’re taking the fight to the states!</p>\n<p class=\"text-center\">\n  <a class=\"btn\"\n     href=\"/maryland\">\n    Maryland\n  </a>\n</p>"
-          },
+            "body_html": "<p>Ever since the FCC repealed net neutrality we’ve <a href=\"https://www.vice.com/en_us/article/kz4g9x/study-proves-the-fccs-core-justification-for-killing-net-neutrality-was-false\" target=\"_blank\">seen the impact</a>: Slower connections, bogus fees, and even threats to public safety—with none of the increased broadband investment promised by FCC chair Ajit Pai.</p>\n<p>But when the court ruled on the repeal, they threw out the part that blocks states from enacting their own net neutrality laws. This gives us a huge opening, so we’re taking the fight to the states!</p>\n<p class=\"text-center\">\n  <a class=\"btn\"\n     href=\"/maryland\">\n    Maryland\n  </a>\n  <a class=\"btn\"\n     href=\"/newyork\">\n    New York\n  </a>\n</p>"
+          }
+        },
+        "sections": {
           "join": {
             "title": "Fight for net neutrality",
             "body_html": "<p>Ever since the FCC repealed net neutrality, ISPs like Verizon, AT&amp;T and\nT-Mobile have been\n<a href=\"https://www.bloomberg.com/news/articles/2019-08-19/wireless-carrier-throttling-of-online-video-is-pervasive-study\" target=\"_blank\">\nthrottling traffic</a> \"pretty much everywhere all the time.\" Worse yet,\nfederal courts have\n<a href=\"https://arstechnica.com/tech-policy/2020/02/ajit-pai-defeats-another-attempt-to-restore-fccs-net-neutrality-rules/\" target=\"_blank\">\nrefused</a> to overturn the FCC's disastrous decision, leaving us with few\noptions to restore freedom online.\n<br>\n<br>\nOur last hope? Win net neutrality at the state level. This will show the\nfederal government that the\n<a href=\"https://thehill.com/policy/technology/435009-4-in-5-americans-say-they-support-net-neutrality-poll\" target=\"_blank\">\nmajority of Americans</a> demand a free and open Internet, pressuring our\nlawmakers to enshrine net neutrality into national law once and for all.\nWe've already won in\n<a href=\"https://www.nytimes.com/2019/10/02/opinion/net-neutrality-fcc-wheeler.html\" target=\"_blank\">\nCalifornia</a>, and we're going to win in other states, too. But we need your\nsupport, now more than ever.\n<br>\n<br>\n<strong>Here’s how you can help:</strong></p>\n<ol>\n  <li><strong>Speak out on social media.</strong> Here are some\n  <a href=\"https://docs.google.com/document/d/19_uSpp3EHXEepe82xFq9I2lpuDlNNtB41kMG7ixljVs\"\n  target=_blank\">suggestions</a> you can use to spread the word. And be sure to share our\n  <a href=\"/media\"\n  target=_blank\">awesome graphics</a> to get the word out.</li>\n  <li><strong>Tell everyone to text WATCH to 687-88.</strong> They can set a reminder to watch the\n  hearing and pressure their members of Congress to pass a clean bill from their smartphone.</li>\n<!--\n  <li><strong>Add our hearing livestream alert widget to your homepage. </strong>Put it up now to\n  start raising awareness ahead of the vote and we'll add the livestream to the Battle for the Net\n  homepage as soon as it’s available.</li>\n-->\n</ol>\n<!--\n<div class=\"modals flex-center\">\n  <img src=\"/images/watch-widget-screenshot.jpg\"\n       alt=\"A screenshot of our widget when minimized\"\n       class=\"rounded\">\n</div>\n-->"
@@ -51,7 +53,7 @@
           },
           "events": {
             "title": "See what's happening in your area",
-            "body_html": "<p>Want to make your voice heard? Check out the map below to see what activities\nare being organized near you. And if nothing is happening in your area, \nconsider organizing a group or event!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
+            "body_html": "<p>Want to make your voice heard? Check out the map below to see what activities\nare being organized near you. And if nothing is happening in your area,\nconsider organizing a group or event!</p>\n<p><a href=\"/map/\"><img src=\"https://data.battleforthenet.com/events.png\" alt=\"Events Map\" class=\"rounded\"></a></p>\n<p><a class=\"btn\" href=\"/map/\">View Full Map</a></p>"
           },
           "net-neutrality": {
             "title": "What is net neutrality? Why does it matter?",
@@ -484,11 +486,11 @@
       }
     },
     "social": {
-      "share_title": "The fight for net neutrality is back",
-      "share_description": "Click here to tell your Senators to vote for the Save the Internet Act to restore net neutrality.",
+      "share_title": "Internet access is more important now than ever. BattlefortheNet.com",
+      "share_description": "Click here to tell your Senators to restore net neutrality and ensure we all have Internet access during COVID-19.",
       "share_image": "https://www.battleforthenet.com/images/share_images/back.jpg",
       "share_url": "https://www.battleforthenet.com",
-      "tweet_text": "The fight for net neutrality is back. Click here to tell your Senators to vote for the Save the Internet Act to restore net neutrality.\n\nhttps://www.battleforthenet.com?s=t0\n"
+      "tweet_text": "Imagine not being able to access the Internet right now. For millions of people this is their reality, and it puts them in danger. Tell Congress: Get everyone Internet access now:\n\nhttps://www.battleforthenet.com?s=t0\n"
     }
   }
 }
