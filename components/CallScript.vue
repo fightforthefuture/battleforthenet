@@ -147,7 +147,7 @@ export default {
       if (['california','maryland','newyork'].includes(this.page)) {
         return this.$t(`pages.${this.page}.call_script`)
       } else {
-        return "I'm calling to tell my lawmakers that Internet access is a necessity right now, and I want them to include funding in the next Coronavirus relief package to make sure everyone is able to get online now and throughout the duration of this crisis."
+        return "I'm calling to tell my lawmakers that Internet access is a necessity right now, and I want them to include funding in the next Coronavirus relief package to make sure everyone is able to get online now and throughout the COVID-19 crisis."
       }
     }
   }
