@@ -1,11 +1,11 @@
 {
   "homePage": {
     "stateCampaigns": [],
-    "defaultCampaign": "BattleForTheNet-2019"
+    "defaultCampaign": "BattleForTheNet_COVIDInternetAccess"
   },
   "callPage": {
     "stateCampaigns": [],
-    "defaultCampaign": "BattleForTheNet-2019",
+    "defaultCampaign": "BattleForTheNet_COVIDInternetAccess",
     "stateCampaigns_DISABLED_BUT_LEFT_HERE_FOR_REFERENCE": [
       {
         "id": "STATE_SPECIFIC_CAMPAIGN_A",
@@ -31,6 +31,6 @@
   },
   "scoreboardPage": {
     "stateCampaigns": [],
-    "defaultCampaign": "BattleForTheNet-2019"
+    "defaultCampaign": "BattleForTheNet_COVIDInternetAccess"
   }
 }

@@ -147,7 +147,7 @@ export default {
       if (['california','maryland','newyork'].includes(this.page)) {
         return this.$t(`pages.${this.page}.call_script`)
       } else {
-        return "I'm calling to tell my lawmakers I support strong net neutrality, and I want them to co-sponsor and demand a vote on the Save the Internet Act in the Senate. Thank you."
+        return "I'm calling to tell my lawmakers that Internet access is a necessity right now, and I want them to include funding in the next Coronavirus relief package to make sure everyone is able to get online now and throughout the duration of this crisis."
       }
     }
   }
