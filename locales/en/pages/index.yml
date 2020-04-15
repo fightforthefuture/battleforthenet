@@ -4,13 +4,13 @@ document_title: Join the Battle for Net Neutrality
 title: "GET EVERYONE ONLINE DURING THE COVID-19 CRISIS"
 title_call: "GET EVERYONE ONLINE DURING THE COVID-19 CRISIS"
 intro_html: |
-  Internet access is more important than ever before, but 22 percent of households in 
+  Internet access is more important than ever before, but 22 percent of households in
   the U.S. still
   <a href="https://www.theguardian.com/commentisfree/2020/mar/23/us-students-are-being-asked-to-work-remotely-but-22-of-homes-dont-have-internet" target="_blank">
-  don’t have home internet</a>. Congress’ next COVID-19 stimulus package must include 
-  funding to make sure everyone has affordable Internet access. But the same politicians 
-  who killed net neutrality want to put their friends at Comcast and Verizon first, without 
-  making sure everyone can get online. We can’t let that happen. <strong>Tell Congress: 
+  don’t have home internet</a>. Congress’ next COVID-19 stimulus package must include
+  funding to make sure everyone has affordable Internet access. But the same politicians
+  who killed net neutrality want to put their friends at Comcast and Verizon first, without
+  making sure everyone can get online. We can’t let that happen. <strong>Tell Congress:
   Don’t bail out telecom execs, make sure everyone can get online during the COVID-19 crisis.
   </strong>
 persistent_button: Contact Congress
@@ -37,23 +37,22 @@ form:
     Over the past few weeks people have been told to stay home to stay safe. But without affordable, reliable Internet access this becomes increasingly harder. Already 22 percent of households in the U.S. don’t have home internet, including more than four million homes with school-age children. Millions of folks losing their jobs now may not be able to afford their Internet bill. Poor families and people of color are particularly likely to be disconnected. Everyone needs to be able to get online. I’m writing to demand Congress pass funding to ensure Internet access for everyone. Specifically, Congress should:
 
     - Subsidize Internet access for anyone who needs it for the duration of this crisis.
-    
+
     - Fund and expand programs that help people afford Internet access, like the FCC’s Lifeline and e-Rate initiatives. These programs already exist and can help students access educational resources, and help those who can’t afford broadband — a number that will grow as more people lose their jobs as this crisis continues.
-    
+
     - Fund broadband deployment to ensure that rural communities have Internet access.
-    
+
     - Pass the Save the Internet Act to ensure just and reasonable Internet service and prevent ISPs from throttling traffic, censoring content, and imposing unfair fees.
-    
+
     - Direct ISPs to suspend all data caps and fees, pause all disconnects for non-payment of broadband fees, and offer free home Internet to those in need during this crisis
 
     It’s unrealistic to tell people to stay home without a way to connect to the outside world. Internet access is a human right and a public health imperative. I am calling for urgent action to ensure everyone is able to access the Internet now.
-    
+
     Thank you.
   sms_disclaimer_html: >
     Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target="_blank" href="https://www.fightforthefuture.org/privacy">Privacy Policy</a> and <a target="_blank" href="https://www.fightforthefuture.org/terms">Terms of Service</a>
 
-sections:
-  <!--
+archive:
   state:
     title: State Fights for Net Neutrality
     body_html: |
@@ -70,7 +69,8 @@ sections:
           New York
         </a>
       </p>
-  -->
+
+sections:
   join:
     title: Fight for net neutrality
     body_html: |
