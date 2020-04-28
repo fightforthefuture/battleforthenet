@@ -185,7 +185,7 @@ import RepInterstitial from '~/components/RepInterstitial'
 import axios from 'axios'
 
 // New BFTN petition for 2020
-const petitionId = '39dd7356-e6bf-4eb8-8d68-2be9322db937'
+const petitionIdDefault = '39dd7356-e6bf-4eb8-8d68-2be9322db937'
 
 // BFNN petition
 const bizPetitionId = '94ac8142-99b8-411f-83af-133d02649af1'
@@ -204,6 +204,23 @@ export default {
       type: Boolean,
       default: false
     },
+
+    petitionId: {
+      type: String,
+      required: false,
+      default: petitionIdDefault
+    },
+
+    defaultComment: {
+      type: String,
+      required: false
+    },
+
+    fccDocket: {
+      type: String,
+      required: false,
+      default: null
+    }
   },
 
   data() {
@@ -213,7 +230,7 @@ export default {
       modalVisible: false,
       name: null,
       email: null,
-      comments: this.$lt('default_letter'),
+      comments: null,
       isBusinessOwner: false,
       companyName: null,
       companyURL: null,
@@ -227,6 +244,10 @@ export default {
         this.resetForm()
       }
     }
+  },
+
+  created() {
+    this.comments = this.defaultComment || this.$lt('default_letter')
   },
 
   computed: {
@@ -299,10 +320,10 @@ export default {
           hp_enabled: 'true',
           guard: '',
           contact_congress: 1,
-          fcc_ecfs_docket: "17-108",
+          fcc_ecfs_docket: this.fccDocket,
           org: this.org,
           an_tags: "[\"net-neutrality\"]",
-          an_petition_id: petitionId,
+          an_petition_id: this.petitionId,
           action_comment: this.comments
         })
 
@@ -362,7 +383,7 @@ export default {
       this.address = null
       this.zipCode = null
       this.phone = null
-      this.comments = this.$lt('default_letter')
+      this.comments = this.defaultComment
       this.isBusinessOwner = false
       this.companyName = null
       this.companyURL = null

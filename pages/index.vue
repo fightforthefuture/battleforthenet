@@ -59,7 +59,11 @@
         <h1 v-text="isCallPage ? $lt('title_call') : $lt('title')"></h1>
         <div v-html="$lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
-        <petition-form v-else />
+        <petition-form v-else
+          :default-comment="$lt('form.default_letter')"
+          :petition-id="$lt('form.an_petition_id')"
+          :fcc-docket="$lt('form.fcc_docket')"
+        />
       </div>
     </section>
 
@@ -70,7 +74,7 @@
       </div>
     </section> -->
 
-    <section v-for="(section, id) in $lt('sections')" :id="id" :key="id">
+    <section v-for="(section, id) in $t('pages.index.sections')" :id="id" :key="id">
       <div class="container">
         <h2 class="section-title">{{ section.title }}</h2>
         <div v-html="section.body_html"></div>

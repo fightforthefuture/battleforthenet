@@ -20,6 +20,7 @@ const messages = formatStrings({
       call: {
         california: loadStrings('pages/call/california.yml')
       },
+      public_safety: loadStrings('pages/public_safety.yml'),
       map: loadStrings('pages/map.yml'),
       maryland: loadStrings('pages/maryland.yml'),
       newyork: loadStrings('pages/newyork.yml'),
