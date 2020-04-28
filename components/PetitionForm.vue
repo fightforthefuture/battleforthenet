@@ -214,6 +214,12 @@ export default {
     defaultComment: {
       type: String,
       required: false
+    },
+
+    fccDocket: {
+      type: String,
+      required: false,
+      default: null
     }
   },
 
@@ -314,7 +320,7 @@ export default {
           hp_enabled: 'true',
           guard: '',
           contact_congress: 1,
-          fcc_ecfs_docket: "17-108",
+          fcc_ecfs_docket: this.fccDocket,
           org: this.org,
           an_tags: "[\"net-neutrality\"]",
           an_petition_id: this.petitionId,
@@ -377,7 +383,7 @@ export default {
       this.address = null
       this.zipCode = null
       this.phone = null
-      this.comments = this.defaultComment || this.$lt('default_letter')
+      this.comments = this.defaultComment
       this.isBusinessOwner = false
       this.companyName = null
       this.companyURL = null

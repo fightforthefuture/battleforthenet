@@ -30,9 +30,10 @@ social:
   tweet: |
     FCC wants to know if repealing #NetNeutrality was bad for public safety. OF COURSE IT WAS! Submit your comment here: battleforthenet.com/net-neutrality-for-safety
   image: https://www.battleforthenet.com/images/share_images/net-neutrality-for-safety.png
-  url: https://www.battleforthenet.com/net-neutrality-for-safety/
+  url: https://www.battleforthenet.com/public-safety/
 
 form:
+  fcc_docket: 17-108
   an_petition_id: 1a533915-9fb3-4630-8df9-102652ab7d0b
   default_letter: |
     When the FCC repealed net neutrality it put public safety in danger.
