@@ -25,6 +25,8 @@
           "clear_comments": "Clear letter",
           "button_loading": "Saving...",
           "button_cta": "Write Congress",
+          "fcc_docket": "",
+          "an_petition_id": "39dd7356-e6bf-4eb8-8d68-2be9322db937",
           "default_letter": "Over the past few weeks people have been told to stay home to stay safe. But without affordable, reliable Internet access this becomes increasingly harder. Already 22 percent of households in the U.S. don’t have home internet, including more than four million homes with school-age children. Millions of folks losing their jobs now may not be able to afford their Internet bill. Poor families and people of color are particularly likely to be disconnected. Everyone needs to be able to get online. I’m writing to demand Congress pass funding to ensure Internet access for everyone. Specifically, Congress should:\n\n- Subsidize Internet access for anyone who needs it for the duration of this crisis.\n\n- Fund and expand programs that help people afford Internet access, like the FCC’s Lifeline and e-Rate initiatives. These programs already exist and can help students access educational resources, and help those who can’t afford broadband — a number that will grow as more people lose their jobs as this crisis continues.\n\n- Fund broadband deployment to ensure that rural communities have Internet access.\n\n- Pass the Save the Internet Act to ensure just and reasonable Internet service and prevent ISPs from throttling traffic, censoring content, and imposing unfair fees.\n\n- Direct ISPs to suspend all data caps and fees, pause all disconnects for non-payment of broadband fees, and offer free home Internet to those in need during this crisis\n\nIt’s unrealistic to tell people to stay home without a way to connect to the outside world. Internet access is a human right and a public health imperative. I am calling for urgent action to ensure everyone is able to access the Internet now.\n\nThank you.\n",
           "sms_disclaimer_html": "<p>Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target=\"_blank\" href=\"https://www.fightforthefuture.org/privacy\">Privacy Policy</a> and <a target=\"_blank\" href=\"https://www.fightforthefuture.org/terms\">Terms of Service</a></p>"
         },
@@ -223,6 +225,25 @@
           "share_description": "After a corrupt lawmaker railroaded net neutrality protections, lawmakers need to hear from you.",
           "share_image": "https://www.battleforthenet.com/images/share_images/CA-Flag.jpg",
           "share_url": "https://www.battleforthenet.com/call/california"
+        }
+      },
+      "public_safety": {
+        "document_title": "Join the Battle for Net Neutrality",
+        "title": "The FCC’s repeal of net neutrality makes the COVID-19 crisis worse.",
+        "title_call": "The FCC’s repeal of net neutrality makes the COVID-19 crisis worse.",
+        "intro_html": "<p>\n  When the FCC repealed net neutrality and gave up its ability to protect us from the abuses\n  of Internet Service Providers, it put people in danger. This is especially clear right now\n  when people are relying on the Internet for health, safety, and connection, and the FCC has\n  only been able to ask ISPs to voluntarily pledge to keep people connected. But we know we can’t\n  trust ISPs—we’ve seen them put corporate interests over public safety, even\n  <a href=\"https://www.npr.org/2018/08/22/640815074/verizon-throttled-firefighters-data-as-mendocino-wildfire-raged-fire-chief-says\" target=\"_blank\">throttling</a>\n  firefighters’ internet service and putting their communications on the line when they needed it most.\n</p>\n<p>\n  The FCC is holding a court-mandated public comment period on how the net neutrality repeal impacts public safety. This is our opportunity to make it clear that we need net neutrality protections to keep the people safe, now more than ever.\n</p>\n<p><strong>\n  Tell the FCC: repealing net neutrality has put people in danger, and the only solution is to reinstate it now.\n</strong></p>",
+        "persistent_button": "Contact Congress",
+        "social": {
+          "title": "Tell the FCC: repealing net neutrality made us less safe\n",
+          "description": "The FCC is accepting comments right now on how the net neutrality repeal has been bad for public safety. Submit a comment here: battleforthenet.com/net-neutrality-for-safety\n",
+          "tweet": "FCC wants to know if repealing #NetNeutrality was bad for public safety. OF COURSE IT WAS! Submit your comment here: battleforthenet.com/net-neutrality-for-safety\n",
+          "image": "https://www.battleforthenet.com/images/share_images/net-neutrality-for-safety.png",
+          "url": "https://www.battleforthenet.com/public-safety/"
+        },
+        "form": {
+          "fcc_docket": "17-108",
+          "an_petition_id": "1a533915-9fb3-4630-8df9-102652ab7d0b",
+          "default_letter": "When the FCC repealed net neutrality it put public safety in danger.\n\nDuring this health crisis, we need to be able to rely on a free and open Internet, but this isn’t possible without net neutrality. The FCC should be leading efforts to ensure that everyone has reliable communication networks that are critical during times of crisis. But instead, the FCC is only able to ask Internet Service Providers to make voluntary pledges to keep people connected, to not throttle service, and to provide financial support to those who can’t afford their Internet bills.\n\nThis isn’t the first time we’ve seen how the repeal of net neutrality harms public safety. In 2018, during the California wildfires, Verizon throttled Internet service for firefighters, putting their communications on the line when they needed it most. There is no reason to trust ISPs to do the right thing now, when we’ve already seen that they’re willing to disregard public safety.\n\nThe only way to address these issues, and ensure a free and open Internet for everyone, is to reinstate the net neutrality protections and basic FCC oversight under Title II of the Communications Act.\n"
         }
       },
       "map": {
@@ -488,7 +509,7 @@
     "social": {
       "share_title": "Internet access is more important now than ever. BattlefortheNet.com",
       "share_description": "Click here to tell your Senators to restore net neutrality and ensure we all have Internet access during COVID-19.",
-      "share_image": "https://www.battleforthenet.com/images/share_images/back.jpg",
+      "share_image": "https://www.battleforthenet.com/images/share_images/COVID.jpg",
       "share_url": "https://www.battleforthenet.com",
       "tweet_text": "Imagine not being able to access the Internet right now. For millions of people this is their reality, and it puts them in danger. Tell Congress: Get everyone Internet access now:\n\nhttps://www.battleforthenet.com?s=t0\n"
     }
