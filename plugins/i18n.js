@@ -22,6 +22,7 @@ export default ({ app, store, isDev }) => {
           call: {
             california: require('~/locales/en/pages/call/california.yml')
           },
+          nn_for_safety: require('~/locales/en/pages/nn_for_safety.yml'),
           map: require('~/locales/en/pages/map.yml'),
           maryland: require('~/locales/en/pages/maryland.yml'),
           newyork: require('~/locales/en/pages/newyork.yml'),
