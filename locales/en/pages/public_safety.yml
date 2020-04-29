@@ -34,7 +34,7 @@ social:
 
 form:
   button_cta: Send to FCC
-  fcc_docket: 17-108
+  fcc_docket: 17-108, 17-287, 11-42
   an_petition_id: 1a533915-9fb3-4630-8df9-102652ab7d0b
   default_letter: |
     When the FCC repealed net neutrality it put public safety in danger.
