@@ -59,7 +59,9 @@
         <h1 v-text="isCallPage ? $lt('title_call') : $lt('title')"></h1>
         <div v-html="$lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
-        <petition-form v-else />
+        <petition-form v-else
+          :petition-id="petitionId"
+         />
       </div>
     </section>
 
@@ -126,6 +128,11 @@ export default {
     WidgetInstructions
   },
 
+  data() {
+    return {
+      petitionId: null
+    }
+  },
 
   computed: {
     isCallPage() {
@@ -136,6 +143,7 @@ export default {
   created() {
     if (this.$route.name == 'public-safety') {
       this.$store.commit('setOrg', 'fftf')
+      this.petitionId = this.$t('pages.public_safety.form.an_petition_id')
     }
   },
 
