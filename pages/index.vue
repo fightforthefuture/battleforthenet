@@ -59,11 +59,7 @@
         <h1 v-text="isCallPage ? $lt('title_call') : $lt('title')"></h1>
         <div v-html="$lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
-        <petition-form v-else
-          :default-comment="$lt('form.default_letter')"
-          :petition-id="$lt('form.an_petition_id')"
-          :fcc-docket="$lt('form.fcc_docket')"
-        />
+        <petition-form v-else />
       </div>
     </section>
 
@@ -134,6 +130,12 @@ export default {
   computed: {
     isCallPage() {
       return this.$route.name === 'call' || this.$route.query.call
+    }
+  },
+
+  created() {
+    if (this.$route.name == 'public-safety') {
+      this.$store.commit('setOrg', 'fftf')
     }
   },
 

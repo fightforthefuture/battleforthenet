@@ -13,15 +13,18 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
-  computed: mapState(['org']),
-
   props: {
     sms: {
       type: Boolean,
       default: false
+    },
+
+    org: {
+      type: String,
+      default() {
+        return this.$store.state.org
+      }
     }
   }
 }

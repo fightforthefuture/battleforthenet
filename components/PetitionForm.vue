@@ -157,8 +157,7 @@
           <input v-model.trim="companyURL" type="text" :placeholder="$lt('company_url_placeholder')">
         </div>
         <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
-          <span v-if="isSending">{{ $lt('button_loading') }}</span>
-          <span v-else>{{ $lt('button_cta') }}</span>
+          <span>{{ ctaText }}</span>
         </button>
         <no-ssr>
           <disclaimer :sms="false"></disclaimer>
@@ -166,19 +165,40 @@
       </form>
     </div>
 
-    <div v-if="hasSigned">
+    <div v-if="hasSigned && !isPublicSafetyPage">
       <CallForm v-if="inModal" :in-modal="true" />
       <modal v-else-if="modalVisible">
         <RepInterstitial v-if="rep" :rep="rep" />
         <CallForm v-else :in-modal="true" />
       </modal>
     </div>
+    <modal v-else-if="hasSigned && modalVisible">
+      <h2>Thanks for signing!</h2>
+      <p>Please consider sharing with your friends and family.</p>
+      <div class="flex-row">
+        <facebook-button
+          @clicked="$trackEvent('petition_form_facebook_button', 'click')"
+          :url="shareUrl">
+          Share on Facebook
+        </facebook-button>
+        <twitter-button
+          @clicked="$trackEvent('petition_form_twitter_button', 'click')"
+          :url="shareUrl"
+          :text="tweetText">
+          Share on Twitter
+        </twitter-button>
+        <donate-button
+          @clicked="$trackEvent('petition_form_donate_button', 'click')">
+          Donate
+        </donate-button>
+      </div>
+    </modal>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import { fetchRepScoreboard, pingCounter, sendToMothership, startTextFlow } from '~/assets/js/helpers'
+import { fetchRepScoreboard, pingCounter, sendToMothership } from '~/assets/js/helpers'
 import CallForm from '~/components/CallForm'
 import FancyToggle from '~/components/FancyToggle'
 import RepInterstitial from '~/components/RepInterstitial'
@@ -209,17 +229,6 @@ export default {
       type: String,
       required: false,
       default: petitionIdDefault
-    },
-
-    defaultComment: {
-      type: String,
-      required: false
-    },
-
-    fccDocket: {
-      type: String,
-      required: false,
-      default: null
     }
   },
 
@@ -247,7 +256,7 @@ export default {
   },
 
   created() {
-    this.comments = this.defaultComment || this.$lt('default_letter')
+    this.comments = this.defaultComment
   },
 
   computed: {
@@ -285,6 +294,50 @@ export default {
       set(value) {
         this.$store.commit('setStreetAddress', value)
       }
+    },
+
+    isPublicSafetyPage() {
+      return this.$route.name == 'public-safety'
+    },
+
+    ctaText() {
+      if (this.isSending) {
+        return this.$lt('button_loading')
+      }
+      else if (this.isPublicSafetyPage) {
+        return this.$t('pages.public_safety.form.button_cta')
+      }
+      else {
+        return this.$lt('button_cta')
+      }
+    },
+
+    defaultComment() {
+      if (this.isPublicSafetyPage) {
+        return this.$t(`pages.${this.isPublicSafetyPage ? 'public_safety' : 'index'}.form.default_letter`)
+      }
+      return this.$lt('default_letter')
+    },
+
+    fccDocket() {
+      if (this.isPublicSafetyPage) {
+        return this.$t('pages.public_safety.form.fcc_docket')
+      }
+      return this.$lt('fcc_docket')
+    },
+
+    shareUrl() {
+      if (this.isPublicSafetyPage) {
+        return this.$t('pages.public_safety.social.url')
+      }
+      return null
+    },
+
+    tweetText() {
+      if (this.isPublicSafetyPage) {
+        return this.$t('pages.public_safety.social.tweet')
+      }
+      return null
     }
   },
 
@@ -341,10 +394,6 @@ export default {
         this.modalVisible = true
         this.hasSigned = true
 
-        if (this.phone && this.org === 'fftf') {
-          this.startTextFlow()
-        }
-
         if (this.companyName && this.companyURL) {
           this.signBusinessPetition()
         }
@@ -387,17 +436,6 @@ export default {
       this.isBusinessOwner = false
       this.companyName = null
       this.companyURL = null
-    },
-
-    startTextFlow() {
-      startTextFlow({
-        opt_in_path: 'OP5953C0BBD1870756CE4041DD8F00C7C1',
-        phone: this.phone,
-        name: this.name,
-        email: this.email,
-        zip_code: this.zipCode,
-        street: this.street
-      })
     }
   }
 }

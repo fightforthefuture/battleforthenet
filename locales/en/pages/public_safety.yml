@@ -28,11 +28,12 @@ social:
   description: |
      The FCC is accepting comments right now on how the net neutrality repeal has been bad for public safety. Submit a comment here: battleforthenet.com/net-neutrality-for-safety
   tweet: |
-    FCC wants to know if repealing #NetNeutrality was bad for public safety. OF COURSE IT WAS! Submit your comment here: battleforthenet.com/net-neutrality-for-safety
+    FCC wants to know if repealing #NetNeutrality was bad for public safety. OF COURSE IT WAS! Submit your comment here: battleforthenet.com/public-safety
   image: https://www.battleforthenet.com/images/share_images/net-neutrality-for-safety.png
   url: https://www.battleforthenet.com/public-safety/
 
 form:
+  button_cta: Send to FCC
   fcc_docket: 17-108
   an_petition_id: 1a533915-9fb3-4630-8df9-102652ab7d0b
   default_letter: |
