@@ -118,11 +118,11 @@ export default {
 
   created() {
     this.fetchStats()
-    this.statsInterval = setInterval(this.fetchStats, 3000)
+    // this.statsInterval = setInterval(this.fetchStats, 3000)
   },
 
   destroyed() {
-    clearInterval(this.statsInterval)
+    // clearInterval(this.statsInterval)
   },
 
   methods: {
