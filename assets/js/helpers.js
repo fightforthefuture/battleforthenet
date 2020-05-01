@@ -103,7 +103,7 @@ export async function geocodeState() {
   }
 
   try {
-    const response = await axios.get('https://fftf-geocoder.herokuapp.com')
+    const response = await axios.get('https://geocode-ip.fftf.xyz')
     const geo = response.data
 
     if (
