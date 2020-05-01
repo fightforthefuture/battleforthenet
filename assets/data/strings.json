@@ -229,19 +229,20 @@
       },
       "public_safety": {
         "document_title": "Join the Battle for Net Neutrality",
-        "title": "The FCC’s repeal of net neutrality makes the COVID-19 crisis worse.",
-        "title_call": "The FCC’s repeal of net neutrality makes the COVID-19 crisis worse.",
-        "intro_html": "<p>\n  When the FCC repealed net neutrality and gave up its ability to protect us from the abuses\n  of Internet Service Providers, it put people in danger. This is especially clear right now\n  when people are relying on the Internet for health, safety, and connection, and the FCC has\n  only been able to ask ISPs to voluntarily pledge to keep people connected. But we know we can’t\n  trust ISPs—we’ve seen them put corporate interests over public safety, even\n  <a href=\"https://www.npr.org/2018/08/22/640815074/verizon-throttled-firefighters-data-as-mendocino-wildfire-raged-fire-chief-says\" target=\"_blank\">throttling</a>\n  firefighters’ internet service and putting their communications on the line when they needed it most.\n</p>\n<p>\n  The FCC is holding a court-mandated public comment period on how the net neutrality repeal impacts public safety. This is our opportunity to make it clear that we need net neutrality protections to keep the people safe, now more than ever.\n</p>\n<p><strong>\n  Tell the FCC: repealing net neutrality has put people in danger, and the only solution is to reinstate it now.\n</strong></p>",
-        "persistent_button": "Contact Congress",
+        "Submit a public comment to the FCC right now to make it clear": "repealing net neutrality has put people in danger, and the only solution is to reinstate it now.",
+        "title": "Repealing net neutrality makes us less safe",
+        "intro_html": "<p>When the FCC repealed net neutrality and gave up its ability to protect us from the abuses of Internet Service Providers, it put people in danger. This is especially clear right now when people are relying on the Internet for health, safety, and connection, and the FCC has only only been able to ask ISPs to voluntarily pledge to keep people connected. But we know <a href=\"https://www.npr.org/2018/08/22/640815074/verizon-throttled-firefighters-data-as-mendocino-wildfire-raged-fire-chief-says\" target=\"_blank\">we can’t trust</a> ISPs.</p>\n<p>Submit a public comment to the FCC right now to make it clear: <b>repealing net neutrality has put people in danger, and the only solution is to reinstate it now.</b></p>",
+        "persistent_button": "Contact the FCC",
         "social": {
           "title": "Tell the FCC: repealing net neutrality made us less safe\n",
           "description": "The FCC is accepting comments right now on how the net neutrality repeal has been bad for public safety. Submit a comment here: battleforthenet.com/net-neutrality-for-safety\n",
-          "tweet": "FCC wants to know if repealing #NetNeutrality was bad for public safety. OF COURSE IT WAS! Submit your comment here: battleforthenet.com/net-neutrality-for-safety\n",
-          "image": "https://www.battleforthenet.com/images/share_images/net-neutrality-for-safety.png",
+          "tweet": "FCC wants to know if repealing #NetNeutrality was bad for public safety. OF COURSE IT WAS! Submit your comment here: battleforthenet.com/public-safety\n",
+          "image": "https://www.battleforthenet.com/images/share_images/public-safety.png",
           "url": "https://www.battleforthenet.com/public-safety/"
         },
         "form": {
-          "fcc_docket": "17-108",
+          "button_cta": "Send to FCC",
+          "fcc_docket": "17-108, 17-287, 11-42",
           "an_petition_id": "1a533915-9fb3-4630-8df9-102652ab7d0b",
           "default_letter": "When the FCC repealed net neutrality it put public safety in danger.\n\nDuring this health crisis, we need to be able to rely on a free and open Internet, but this isn’t possible without net neutrality. The FCC should be leading efforts to ensure that everyone has reliable communication networks that are critical during times of crisis. But instead, the FCC is only able to ask Internet Service Providers to make voluntary pledges to keep people connected, to not throttle service, and to provide financial support to those who can’t afford their Internet bills.\n\nThis isn’t the first time we’ve seen how the repeal of net neutrality harms public safety. In 2018, during the California wildfires, Verizon throttled Internet service for firefighters, putting their communications on the line when they needed it most. There is no reason to trust ISPs to do the right thing now, when we’ve already seen that they’re willing to disregard public safety.\n\nThe only way to address these issues, and ensure a free and open Internet for everyone, is to reinstate the net neutrality protections and basic FCC oversight under Title II of the Communications Act.\n"
         }
