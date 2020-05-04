@@ -110,13 +110,13 @@
         <div class="flex-row">
           <div>
             <label>{{ $lt('name_label') }}</label>
-            <input v-model.trim="name" type="text"
+            <input v-model.lazy.trim="name" type="text"
                    :placeholder="`${$lt('name_placeholder')}`"
                    required class="name">
           </div>
           <div>
             <label>{{ $lt('email_label') }}</label>
-            <input v-model.trim="email" type="email"
+            <input v-model.lazy.trim="email" type="email"
                    :placeholder="`${$lt('email_placeholder')}`"
                    required class="email">
           </div>
@@ -124,13 +124,13 @@
         <div class="flex-row">
           <div>
             <label>{{ $lt('address_label') }}</label>
-            <input v-model.trim="address" type="text"
+            <input v-model.lazy.trim="address" type="text"
                    :placeholder="`${$lt('address_placeholder')}`"
                    required class="address">
           </div>
           <div>
             <label>{{ $lt('zip_label') }}</label>
-            <input v-model.trim="zipCode" type="tel"
+            <input v-model.lazy.trim="zipCode" type="tel"
                    :placeholder="`${$lt('zip_placeholder')}`"
                    required class="zip-code">
           </div>
@@ -138,14 +138,14 @@
         <div class="flex-row">
           <div>
             <label>{{ $lt('phone_label') }}</label>
-            <input v-model.trim="phone" type="tel"
+            <input v-model.lazy.trim="phone" type="tel"
                    :placeholder="`${$lt('phone_placeholder')}`">
             <p class="disclaimer sms-disclaimer"><small v-html="$lt('sms_disclaimer_html')"></small></p>
           </div>
         </div>
         <div class="letter">
           <label>{{ $lt('comments_label') }}</label>
-          <textarea v-model="comments" ref="comments"></textarea>
+          <textarea v-model.lazy="comments" ref="comments"></textarea>
           <a href="#" class="clear btn" @click.prevent="clearComments()">{{ $lt('clear_comments') }}</a>
         </div>
         <div class="biz-row" v-show="false">
@@ -153,8 +153,8 @@
           <fancy-toggle :on="isBusinessOwner" @change="setBusinessOwner"></fancy-toggle>
         </div>
         <div v-if="isBusinessOwner" class="flex-row">
-          <input v-model.trim="companyName" type="text" :placeholder="$lt('company_name_placeholder')">
-          <input v-model.trim="companyURL" type="text" :placeholder="$lt('company_url_placeholder')">
+          <input v-model.lazy.trim="companyName" type="text" :placeholder="$lt('company_name_placeholder')">
+          <input v-model.lazy.trim="companyURL" type="text" :placeholder="$lt('company_url_placeholder')">
         </div>
         <button class="btn btn-block btn-large btn-cta" :disabled="isSending">
           <span>{{ ctaText }}</span>
