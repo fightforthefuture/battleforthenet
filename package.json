@@ -27,6 +27,8 @@
     "nuxt": "^1.4.4"
   },
   "devDependencies": {
+    "@sentry/browser": "^5.15.5",
+    "@sentry/integrations": "^5.15.5",
     "axios": "^0.18.1",
     "babel-eslint": "^8.2.1",
     "babel-polyfill": "^6.26.0",
@@ -41,7 +43,6 @@
     "normalize.css": "^8.0.0",
     "nuxt-sass-resources-loader": "^2.0.3",
     "qs": "^6.5.2",
-    "raven-js": "^3.24.2",
     "sass-loader": "^7.0.3",
     "showdown": "^1.9.1",
     "vue-count-to": "^1.0.13",
