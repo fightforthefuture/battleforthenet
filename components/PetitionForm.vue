@@ -376,8 +376,9 @@ export default {
           fcc_ecfs_docket: this.fccDocket,
           org: this.org,
           an_tags: "[\"net-neutrality\"]",
-          an_petition_id: this.petitionId,
-          action_comment: this.comments
+          an_petition_id: this.petitionId || petitionIdDefault,
+          action_comment: this.comments,
+          autoresponder_text: this.$lt('autoresponder_text')
         })
 
 /* Quick hack to disable incorrect rep data

@@ -54,6 +54,8 @@ form:
     Thank you.
   sms_disclaimer_html: >
     Message and data rates apply. Message frequency varies. Text STOP to cancel your subscription. Text HELP for more information. <a target="_blank" href="https://www.fightforthefuture.org/privacy">Privacy Policy</a> and <a target="_blank" href="https://www.fightforthefuture.org/terms">Terms of Service</a>
+  autoresponder_text: |
+    Thanks for taking action. If you can, chip in to keep fighting for the net donatefornetneutrality.com Text HELP for help, STOP to quit. Msg&Data rates may apply
 
 archive:
   state:
