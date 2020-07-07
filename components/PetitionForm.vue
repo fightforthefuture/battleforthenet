@@ -391,6 +391,7 @@ export default {
         */
 
         this.$trackEvent('petition_form_labels', 'submit')
+        this.$trackGoal('signPetition')
         this.isSending = false
         this.modalVisible = true
         this.hasSigned = true

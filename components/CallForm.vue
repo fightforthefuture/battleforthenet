@@ -180,6 +180,7 @@ export default {
         this.hasCalled = true
         this.modalVisible = true
         this.$trackEvent('call_form', 'submit')
+        this.$trackGoal('makePhoneCall')
         pingCounter('call')
       }
       catch (err) {
