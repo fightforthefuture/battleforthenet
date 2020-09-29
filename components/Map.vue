@@ -276,10 +276,9 @@ export default {
       L.mapbox.accessToken = settings.mapboxToken
 
       // see https://www.mapbox.com/api-documentation/#introduction
-      const mapId = 'mapbox.light'
-
-      const mapboxTiles = L.tileLayer(`https://api.mapbox.com/v4/${mapId}/{z}/{x}/{y}.png?access_token=${L.mapbox.accessToken}`, {
-          attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      const mapId = 'light-v10'
+      const mapboxTiles = L.tileLayer(`https://api.mapbox.com/styles/v1/mapbox/${mapId}/tiles/512/{z}/{x}/{y}?access_token=${L.mapbox.accessToken}`, {
+        attribution: '© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       })
 
       map = L.map('js-event-map', {
