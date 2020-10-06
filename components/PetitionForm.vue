@@ -300,6 +300,10 @@ export default {
       return this.$route.name == 'public-safety'
     },
 
+    shouldUsePageComment() {
+      return ['public-safety','access'].includes(this.$route.name)
+    },
+
     ctaText() {
       if (this.isSending) {
         return this.$lt('button_loading')
@@ -313,8 +317,8 @@ export default {
     },
 
     defaultComment() {
-      if (this.isPublicSafetyPage) {
-        return this.$t(`pages.${this.isPublicSafetyPage ? 'public_safety' : 'index'}.form.default_letter`)
+      if (this.shouldUsePageComment) {
+        return this.$t(`pages.${this.$route.name.replace('-','_')}.form.default_letter`)
       }
       return this.$lt('default_letter')
     },

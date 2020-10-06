@@ -15,6 +15,7 @@ const messages = formatStrings({
       index: loadStrings('pages/index.yml'),
       privacy: loadStrings('pages/privacy.yml'),
       redalert: loadStrings('pages/redalert.yml'),
+      access: loadStrings('pages/access.yml'),
       augustrecess: loadStrings('pages/augustrecess.yml'),
       california: loadStrings('pages/california.yml'),
       call: {
