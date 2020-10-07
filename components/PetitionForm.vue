@@ -204,8 +204,8 @@ import FancyToggle from '~/components/FancyToggle'
 import RepInterstitial from '~/components/RepInterstitial'
 import axios from 'axios'
 
-// New BFTN petition for 2020
-const petitionIdDefault = '39dd7356-e6bf-4eb8-8d68-2be9322db937'
+// New BFTN petition for October 2020
+const petitionIdDefault = 'e8d1ee23-ec86-4214-9e47-a7838d3505d9'
 
 // BFNN petition
 const bizPetitionId = '94ac8142-99b8-411f-83af-133d02649af1'
