@@ -16,6 +16,10 @@ export default {
     }
   },
 
+  created() {
+    this.petitionId = this.$lt('form.an_petition_id')
+  },
+
   methods: {
     $lt(key) {
       return this.$t(`pages.access.${key}`)
