@@ -127,14 +127,18 @@ export default {
   computed: {
     ...mapState(['org']),
 
+    isCallPage() {
+      return this.$route.name === 'call' || this.$route.query.call
+    },
     tweetText() {
       if (['maryland','newyork'].includes(this.page)) {
         return this.$t(`pages.${this.page}.social.description`)
+      } else if (this.isCallPage) {
+        return "The Senate is about to vote on the worst FCC nominee in history. This guy literally wrote Trump’s proposal for the FCC to censor the internet. Call now to tell the Senate to block Nathan Simington: http://battleforthenet.com/call"
       } else {
         return null
       }
     },
-
     shareUrl() {
       if (['maryland','newyork'].includes(this.page)) {
         return this.$t(`pages.${this.page}.social.url`)
@@ -146,7 +150,9 @@ export default {
     callScript() {
       if (['california','maryland','newyork'].includes(this.page)) {
         return this.$t(`pages.${this.page}.call_script`)
-      } else {
+      } else if (this.isCallPage) {
+        return "I’m calling to oppose the confirmation of telecom lawyer Nathan Simington to the FCC because he is unqualified and supports online censorship."
+      }else {
         return "I'm calling to tell my lawmakers that Internet access is a necessity right now, and I want them to include funding in the next Coronavirus relief package to make sure everyone is able to get online now and throughout the COVID-19 crisis."
       }
     }

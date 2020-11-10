@@ -50,14 +50,21 @@
     }
   }
 }
+
+.call-page {
+  section#join,
+  section#bill {
+    display:none;
+  }
+}
 </style>
 
 <template>
-  <div class="index-page">
+  <div class="index-page" :class="isCallPage ? 'call-page' :''">
     <section id="bftn-action-form" class="page-header bg-image">
       <div class="container">
         <h1 v-text="isCallPage ? $lt('title_call') : $lt('title')"></h1>
-        <div v-html="$lt('intro_html')" class="intro"></div>
+        <div v-html="isCallPage ? $lt('title_intro_html') : $lt('intro_html')" class="intro"></div>
         <call-form v-if="isCallPage" page="call"></call-form>
         <petition-form v-else
           :petition-id="petitionId"
