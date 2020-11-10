@@ -142,6 +142,8 @@ export default {
     shareUrl() {
       if (['maryland','newyork'].includes(this.page)) {
         return this.$t(`pages.${this.page}.social.url`)
+      } else if (this.isCallPage) {
+        return "https://www.battleforthenet.com/call"
       } else {
         return null
       }
