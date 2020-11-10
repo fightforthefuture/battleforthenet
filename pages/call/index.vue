@@ -13,8 +13,8 @@ export default {
         }
       ],
       meta: createMetaTags({
-        title: this.$t('social.share_title'),
-        description: "Call now to block the worst FCC nominee in history!",
+        title: "Call now to block the worst FCC nominee in history!",
+        description: this.$t('social.share_description'),
         image: this.$t('social.share_image'),
         url: this.$t('social.share_url')
       })
