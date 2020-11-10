@@ -16,7 +16,7 @@ export default {
         title: "Call now to block the worst FCC nominee in history!",
         description: this.$t('social.share_description'),
         image: this.$t('social.share_image'),
-        url: this.$t('social.share_url')
+        url: "https://www.battleforthenet.com/call"
       })
     }
   }
