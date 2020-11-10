@@ -5,7 +5,7 @@
   },
   "callPage": {
     "stateCampaigns": [],
-    "defaultCampaign": "BattleForTheNet_COVIDInternetAccess",
+    "defaultCampaign": "NetNeutrality_SimingtonFCCNom_20201109",
     "stateCampaigns_DISABLED_BUT_LEFT_HERE_FOR_REFERENCE": [
       {
         "id": "STATE_SPECIFIC_CAMPAIGN_A",
