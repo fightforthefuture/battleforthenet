@@ -51,12 +51,10 @@
   }
 }
 
-.call-page {
-  section#join,
-  section#bill {
-    display:none;
-  }
+.call-page section:first-child {
+  padding-bottom: 10rem;
 }
+
 </style>
 
 <template>
@@ -79,7 +77,7 @@
       </div>
     </section> -->
 
-    <section v-for="(section, id) in $t('pages.index.sections')" :id="id" :key="id">
+    <section v-if="!isCallPage" v-for="(section, id) in $t('pages.index.sections')" :id="id" :key="id">
       <div class="container">
         <h2 class="section-title">{{ section.title }}</h2>
         <div v-html="section.body_html"></div>
