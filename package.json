@@ -38,7 +38,7 @@
     "eslint-plugin-vue": "^4.0.0",
     "haversine": "^1.1.0",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-sass": "^4.14.0",
     "normalize.css": "^8.0.0",
     "nuxt-sass-resources-loader": "^2.0.3",
